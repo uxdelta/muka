@@ -1,9 +1,1504 @@
 {
   "global": {},
-  "$themes": [],
+  "theme/light": {
+    "component-specific": {
+      "button": {
+        "color-fill": {
+          "primary-default": {
+            "value": "{button.color.fill.primary-on-light}",
+            "type": "color"
+          },
+          "primary-pressed": {
+            "value": "{button.color.fill.primary-pressed-on-light}",
+            "type": "color"
+          },
+          "secondary-default": {
+            "value": "{button.color.fill.secondary-on-light}",
+            "type": "color"
+          },
+          "secondary-pressed": {
+            "value": "{button.color.fill.secondary-pressed-on-light}",
+            "type": "color"
+          },
+          "tertiary-default": {
+            "value": "{color.shade.white.alpha-50}",
+            "type": "color"
+          },
+          "tertiary-pressed": {
+            "value": "{color.shade.white.alpha-10}",
+            "type": "color"
+          }
+        },
+        "color-text": {
+          "primary": {
+            "value": "{button.color.text.primary-on-light}",
+            "type": "color"
+          },
+          "primary-pressed": {
+            "value": "{button.color.text.primary-pressed-on-light}",
+            "type": "color"
+          },
+          "secondary": {
+            "value": "{button.color.text.secondary-on-light}",
+            "type": "color"
+          },
+          "secondary-pressed": {
+            "value": "{button.color.text.secondary-pressed-on-light}",
+            "type": "color"
+          },
+          "tertiary": {
+            "value": "{button.color.text.secondary-on-light}",
+            "type": "color"
+          }
+        }
+      },
+      "message": {
+        "color-fill": {
+          "info": {
+            "value": "{color.shade.blue.50}",
+            "type": "color"
+          },
+          "warning": {
+            "value": "{color.shade.yellow.50}",
+            "type": "color"
+          },
+          "error": {
+            "value": "{color.shade.red.50}",
+            "type": "color"
+          },
+          "success": {
+            "value": "{color.shade.green.50}",
+            "type": "color"
+          }
+        },
+        "color-border": {
+          "info": {
+            "value": "{color.shade.blue.200}",
+            "type": "color"
+          },
+          "warning": {
+            "value": "{color.shade.yellow.300}",
+            "type": "color"
+          },
+          "error": {
+            "value": "{color.shade.red.100}",
+            "type": "color"
+          },
+          "success": {
+            "value": "{color.shade.green.200}",
+            "type": "color"
+          }
+        },
+        "color-text-heading": {
+          "info": {
+            "value": "{color.shade.blue.700}",
+            "type": "color"
+          },
+          "warning": {
+            "value": "{color.shade.yellow.800}",
+            "type": "color"
+          },
+          "error": {
+            "value": "{color.shade.red-orange.600}",
+            "type": "color"
+          },
+          "success": {
+            "value": "{color.shade.green.800}",
+            "type": "color"
+          }
+        }
+      },
+      "input": {
+        "color-fill": {
+          "default": {
+            "value": "{semantic.color-fill-elevation.level-1}",
+            "type": "color"
+          },
+          "disabled": {
+            "value": "{semantic.color-fill-elevation.base}",
+            "type": "color"
+          },
+          "debossed": {
+            "value": "{color.shade.gray.100}",
+            "type": "color"
+          },
+          "toggle": {
+            "value": "{semantic.color-fill-elevation.level-1}",
+            "type": "color"
+          }
+        },
+        "color-border": {
+          "default": {
+            "value": "{semantic.color-border.primary}",
+            "type": "color"
+          },
+          "focus": {
+            "value": "{color.shade.blue.500}",
+            "type": "color"
+          },
+          "error": {
+            "value": "{color.shade.red.500}",
+            "type": "color"
+          }
+        }
+      },
+      "topbar": {
+        "color-fill": {
+          "default": {
+            "value": "{semantic.color-fill-elevation.level-1}",
+            "type": "color"
+          },
+          "secondary": {
+            "value": "{color.shade.white.alpha-80}",
+            "type": "color"
+          }
+        }
+      },
+      "chip-filter": {
+        "color-fill": {
+          "default": {
+            "value": "{color.shade.gray.200}",
+            "type": "color"
+          },
+          "active": {
+            "value": "{color.shade.gray.500}",
+            "type": "color"
+          }
+        }
+      }
+    },
+    "semantic": {
+      "color-fill-elevation": {
+        "base": {
+          "value": "{color.shade.gray.100}",
+          "type": "color"
+        },
+        "level-1": {
+          "value": "{color.shade.gray.50}",
+          "type": "color"
+        },
+        "level-2": {
+          "value": "{color.shade.white.white}",
+          "type": "color"
+        },
+        "base-inverted": {
+          "value": "{color.shade.gray.900}",
+          "type": "color"
+        },
+        "sunken": {
+          "value": "{color.shade.gray.200}",
+          "type": "color"
+        }
+      },
+      "color-border": {
+        "primary": {
+          "value": "{color.shade.gray.200}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{color.shade.gray.100}",
+          "type": "color"
+        },
+        "tertiary": {
+          "value": "{color.shade.gray.50}",
+          "type": "color"
+        }
+      },
+      "color-text": {
+        "primary": {
+          "value": "{color.shade.gray.900}",
+          "type": "color"
+        },
+        "primary-inverted": {
+          "value": "{color.shade.white.white}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{color.shade.gray.500}",
+          "type": "color"
+        },
+        "secondary-inverted": {
+          "value": "{color.shade.gray.300}",
+          "type": "color"
+        },
+        "tertiary": {
+          "value": "{color.shade.gray.400}",
+          "type": "color"
+        },
+        "quarternary": {
+          "value": "{color.shade.gray.300}",
+          "type": "color"
+        },
+        "action-default": {
+          "value": "{color.shade.blue.600}",
+          "type": "color"
+        },
+        "action-pressed": {
+          "value": "{color.shade.blue.700}",
+          "type": "color"
+        },
+        "success": {
+          "value": "{color.shade.green.500}",
+          "type": "color"
+        },
+        "error": {
+          "value": "{color.shade.red.500}",
+          "type": "color"
+        }
+      },
+      "color-brand": {
+        "primary": {
+          "value": "{color.brand.contrast.on-light}",
+          "type": "color"
+        },
+        "complementary": {
+          "value": "{color.brand.complementary.on-light}",
+          "type": "color"
+        },
+        "accent": {
+          "value": "{color.accent.on-light}",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "theme/dark": {
+    "component-specific": {
+      "button": {
+        "color-fill": {
+          "primary-default": {
+            "value": "{button.color.fill.primary-on-dark}",
+            "type": "color"
+          },
+          "primary-pressed": {
+            "value": "{button.color.fill.primary-pressed-on-dark}",
+            "type": "color"
+          },
+          "secondary-default": {
+            "value": "{button.color.fill.secondary-on-dark}",
+            "type": "color"
+          },
+          "secondary-pressed": {
+            "value": "{button.color.fill.secondary-pressed-on-dark}",
+            "type": "color"
+          },
+          "tertiary-default": {
+            "value": "{color.shade.gray.alpha-30}",
+            "type": "color"
+          },
+          "tertiary-pressed": {
+            "value": "{color.shade.gray.alpha-50}",
+            "type": "color"
+          }
+        },
+        "color-text": {
+          "primary": {
+            "value": "{button.color.text.primary-on-dark}",
+            "type": "color"
+          },
+          "primary-pressed": {
+            "value": "{button.color.text.primary-pressed-on-dark}",
+            "type": "color"
+          },
+          "secondary": {
+            "value": "{button.color.text.secondary-on-dark}",
+            "type": "color"
+          },
+          "secondary-pressed": {
+            "value": "{button.color.text.secondary-pressed-on-dark}",
+            "type": "color"
+          },
+          "tertiary": {
+            "value": "{button.color.text.secondary-on-dark}",
+            "type": "color"
+          }
+        }
+      },
+      "message": {
+        "color-fill": {
+          "info": {
+            "value": "{color.shade.blue.900}",
+            "type": "color"
+          },
+          "warning": {
+            "value": "{color.shade.yellow.900}",
+            "type": "color"
+          },
+          "error": {
+            "value": "{color.shade.red-orange.800}",
+            "type": "color"
+          },
+          "success": {
+            "value": "{color.shade.green.900}",
+            "type": "color"
+          }
+        },
+        "color-border": {
+          "info": {
+            "value": "{component-specific.message.color-fill.info}",
+            "type": "color"
+          },
+          "warning": {
+            "value": "{component-specific.message.color-fill.warning}",
+            "type": "color"
+          },
+          "error": {
+            "value": "{component-specific.message.color-fill.error}",
+            "type": "color"
+          },
+          "success": {
+            "value": "{component-specific.message.color-fill.success}",
+            "type": "color"
+          }
+        },
+        "color-text-heading": {
+          "info": {
+            "value": "{color.shade.white.white}",
+            "type": "color"
+          },
+          "warning": {
+            "value": "{color.shade.white.white}",
+            "type": "color"
+          },
+          "error": {
+            "value": "{color.shade.white.white}",
+            "type": "color"
+          },
+          "success": {
+            "value": "{color.shade.white.white}",
+            "type": "color"
+          }
+        }
+      },
+      "input": {
+        "color-fill": {
+          "default": {
+            "value": "{semantic.color-fill-elevation.level-1}",
+            "type": "color"
+          },
+          "disabled": {
+            "value": "{semantic.color-fill-elevation.base}",
+            "type": "color"
+          },
+          "debossed": {
+            "value": "{semantic.color-fill-elevation.base}",
+            "type": "color"
+          },
+          "toggle": {
+            "value": "{color.shade.white.white}",
+            "type": "color"
+          }
+        },
+        "color-border": {
+          "default": {
+            "value": "{semantic.color-border.primary}",
+            "type": "color"
+          },
+          "focus": {
+            "value": "{color.shade.blue.400}",
+            "type": "color"
+          },
+          "error": {
+            "value": "{color.shade.red.400}",
+            "type": "color"
+          }
+        }
+      },
+      "topbar": {
+        "color-fill": {
+          "default": {
+            "value": "{semantic.color-fill-elevation.level-1}",
+            "type": "color"
+          },
+          "secondary": {
+            "value": "{color.shade.white.alpha-10}",
+            "type": "color"
+          }
+        }
+      },
+      "chip-filter": {
+        "color-fill": {
+          "default": {
+            "value": "{color.shade.gray.600}",
+            "type": "color"
+          },
+          "active": {
+            "value": "{color.shade.gray.100}",
+            "type": "color"
+          }
+        }
+      }
+    },
+    "semantic": {
+      "color-fill-elevation": {
+        "base": {
+          "value": "{color.shade.gray.900}",
+          "type": "color"
+        },
+        "level-1": {
+          "value": "{color.shade.gray.800}",
+          "type": "color"
+        },
+        "level-2": {
+          "value": "{color.shade.gray.700}",
+          "type": "color"
+        },
+        "base-inverted": {
+          "value": "{color.shade.gray.700}",
+          "type": "color"
+        },
+        "sunken": {
+          "value": "{color.shade.gray.950}",
+          "type": "color"
+        }
+      },
+      "color-border": {
+        "primary": {
+          "value": "{color.shade.gray.500}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{color.shade.gray.600}",
+          "type": "color"
+        },
+        "tertiary": {
+          "value": "{color.shade.gray.700}",
+          "type": "color"
+        }
+      },
+      "color-text": {
+        "primary": {
+          "value": "{color.shade.gray.50}",
+          "type": "color"
+        },
+        "primary-inverted": {
+          "value": "{color.shade.gray.900}",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "{color.shade.gray.300}",
+          "type": "color"
+        },
+        "secondary-inverted": {
+          "value": "{color.shade.gray.500}",
+          "type": "color"
+        },
+        "tertiary": {
+          "value": "{color.shade.gray.500}",
+          "type": "color"
+        },
+        "quarternary": {
+          "value": "{color.shade.gray.600}",
+          "type": "color"
+        },
+        "action-default": {
+          "value": "{color.shade.blue.400}",
+          "type": "color"
+        },
+        "action-pressed": {
+          "value": "{color.shade.blue.500}",
+          "type": "color"
+        },
+        "success": {
+          "value": "{color.shade.green.400}",
+          "type": "color"
+        },
+        "error": {
+          "value": "{color.shade.red.400}",
+          "type": "color"
+        }
+      },
+      "color-brand": {
+        "primary": {
+          "value": "{color.brand.contrast.on-dark}",
+          "type": "color"
+        },
+        "complementary": {
+          "value": "{color.brand.complementary.on-dark}",
+          "type": "color"
+        },
+        "accent": {
+          "value": "{color.accent.on-dark}",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "primitives/none": {
+    "size": {
+      "0": {
+        "value": "0rem",
+        "type": "dimension"
+      },
+      "1": {
+        "value": "0.25rem",
+        "type": "dimension"
+      },
+      "2": {
+        "value": "0.5rem",
+        "type": "dimension"
+      },
+      "3": {
+        "value": "0.75rem",
+        "type": "dimension"
+      },
+      "4": {
+        "value": "1rem",
+        "type": "dimension"
+      },
+      "5": {
+        "value": "1.25rem",
+        "type": "dimension"
+      },
+      "6": {
+        "value": "1.5rem",
+        "type": "dimension"
+      },
+      "7": {
+        "value": "1.75rem",
+        "type": "dimension"
+      },
+      "8": {
+        "value": "2rem",
+        "type": "dimension"
+      },
+      "9": {
+        "value": "2.25rem",
+        "type": "dimension"
+      },
+      "10": {
+        "value": "2.5rem",
+        "type": "dimension"
+      },
+      "11": {
+        "value": "2.75rem",
+        "type": "dimension"
+      },
+      "12": {
+        "value": "3rem",
+        "type": "dimension"
+      },
+      "13": {
+        "value": "4rem",
+        "type": "dimension"
+      },
+      "14": {
+        "value": "4.5rem",
+        "type": "dimension"
+      },
+      "15": {
+        "value": "5rem",
+        "type": "dimension"
+      },
+      "16": {
+        "value": "6rem",
+        "type": "dimension"
+      },
+      "17": {
+        "value": "8rem",
+        "type": "dimension"
+      },
+      "18": {
+        "value": "10rem",
+        "type": "dimension"
+      },
+      "19": {
+        "value": "12rem",
+        "type": "dimension"
+      },
+      "20": {
+        "value": "14rem",
+        "type": "dimension"
+      }
+    },
+    "space": {
+      "0": {
+        "value": "0rem",
+        "type": "dimension"
+      },
+      "1": {
+        "value": "0.25rem",
+        "type": "dimension"
+      },
+      "2": {
+        "value": "0.5rem",
+        "type": "dimension"
+      },
+      "3": {
+        "value": "0.75rem",
+        "type": "dimension"
+      },
+      "4": {
+        "value": "1rem",
+        "type": "dimension"
+      },
+      "5": {
+        "value": "1.25rem",
+        "type": "dimension"
+      },
+      "6": {
+        "value": "1.5rem",
+        "type": "dimension"
+      },
+      "7": {
+        "value": "1.75rem",
+        "type": "dimension"
+      },
+      "8": {
+        "value": "2rem",
+        "type": "dimension"
+      },
+      "9": {
+        "value": "2.25rem",
+        "type": "dimension"
+      },
+      "10": {
+        "value": "2.5rem",
+        "type": "dimension"
+      },
+      "11": {
+        "value": "2.75rem",
+        "type": "dimension"
+      },
+      "12": {
+        "value": "3rem",
+        "type": "dimension"
+      },
+      "14": {
+        "value": "3.5rem",
+        "type": "dimension"
+      },
+      "16": {
+        "value": "4rem",
+        "type": "dimension"
+      },
+      "20": {
+        "value": "5rem",
+        "type": "dimension"
+      },
+      "24": {
+        "value": "6rem",
+        "type": "dimension"
+      },
+      "28": {
+        "value": "7rem",
+        "type": "dimension"
+      },
+      "32": {
+        "value": "8rem",
+        "type": "dimension"
+      },
+      "36": {
+        "value": "9rem",
+        "type": "dimension"
+      },
+      "40": {
+        "value": "10rem",
+        "type": "dimension"
+      },
+      "44": {
+        "value": "11rem",
+        "type": "dimension"
+      },
+      "48": {
+        "value": "12rem",
+        "type": "dimension"
+      },
+      "52": {
+        "value": "13rem",
+        "type": "dimension"
+      },
+      "56": {
+        "value": "14rem",
+        "type": "dimension"
+      },
+      "60": {
+        "value": "15rem",
+        "type": "dimension"
+      },
+      "64": {
+        "value": "16rem",
+        "type": "dimension"
+      },
+      "72": {
+        "value": "18rem",
+        "type": "dimension"
+      },
+      "80": {
+        "value": "20rem",
+        "type": "dimension"
+      },
+      "96": {
+        "value": "24rem",
+        "type": "dimension"
+      },
+      "px": {
+        "value": "0.062rem",
+        "type": "dimension"
+      },
+      "0,5": {
+        "value": "0.125rem",
+        "type": "dimension"
+      },
+      "1,5": {
+        "value": "0.375rem",
+        "type": "dimension"
+      },
+      "2,5": {
+        "value": "0.625rem",
+        "type": "dimension"
+      },
+      "3,5": {
+        "value": "0.875rem",
+        "type": "dimension"
+      }
+    }
+  },
+  "layout/xl": {
+    "text": {
+      "size": {
+        "h1": {
+          "value": "{font.size.6xl}",
+          "type": "dimension"
+        },
+        "h2": {
+          "value": "{font.size.5xl}",
+          "type": "dimension"
+        },
+        "h3": {
+          "value": "{font.size.3xl}",
+          "type": "dimension"
+        },
+        "h3-subheading": {
+          "value": "{font.size.2xl}",
+          "type": "dimension"
+        },
+        "h2-subheading": {
+          "value": "{font.size.4xl}",
+          "type": "dimension"
+        },
+        "h4": {
+          "value": "{font.size.2xl}",
+          "type": "dimension"
+        },
+        "h4-subheading": {
+          "value": "{font.size.xl}",
+          "type": "dimension"
+        },
+        "h5": {
+          "value": "{font.size.lg}",
+          "type": "dimension"
+        },
+        "h1-subheading": {
+          "value": "{font.size.5xl}",
+          "type": "dimension"
+        },
+        "p": {
+          "value": "{font.size.xl}",
+          "type": "dimension"
+        },
+        "p-lineheight": {
+          "value": "{font.sans.line-height}",
+          "type": "dimension"
+        }
+      }
+    },
+    "viewport": {
+      "width": {
+        "value": "120rem",
+        "type": "dimension"
+      },
+      "max-width": {
+        "value": "120rem",
+        "type": "dimension"
+      },
+      "min-width": {
+        "value": "95.5rem",
+        "type": "dimension"
+      },
+      "height": {
+        "value": "69.812rem",
+        "type": "dimension"
+      }
+    },
+    "section": {
+      "padding-horizontal": {
+        "value": "{space.8}",
+        "type": "dimension"
+      },
+      "padding-vertical": {
+        "value": "{space.28}",
+        "type": "dimension"
+      },
+      "gap": {
+        "value": "{space.8}",
+        "type": "dimension"
+      }
+    },
+    "layout": {
+      "max-width": {
+        "value": "100rem",
+        "type": "dimension"
+      },
+      "gap": {
+        "value": "{space.16}",
+        "type": "dimension"
+      }
+    },
+    "wrapper": {
+      "gap": {
+        "value": "{space.6}",
+        "type": "dimension"
+      }
+    }
+  },
+  "layout/lg": {
+    "text": {
+      "size": {
+        "h1": {
+          "value": "{font.size.6xl}",
+          "type": "dimension"
+        },
+        "h2": {
+          "value": "{font.size.4xl}",
+          "type": "dimension"
+        },
+        "h3": {
+          "value": "{font.size.2xl}",
+          "type": "dimension"
+        },
+        "h3-subheading": {
+          "value": "{font.size.xl}",
+          "type": "dimension"
+        },
+        "h2-subheading": {
+          "value": "{font.size.3xl}",
+          "type": "dimension"
+        },
+        "h4": {
+          "value": "{font.size.xl}",
+          "type": "dimension"
+        },
+        "h4-subheading": {
+          "value": "{font.size.lg}",
+          "type": "dimension"
+        },
+        "h5": {
+          "value": "{font.size.lg}",
+          "type": "dimension"
+        },
+        "h1-subheading": {
+          "value": "{font.size.5xl}",
+          "type": "dimension"
+        },
+        "p": {
+          "value": "{font.size.lg}",
+          "type": "dimension"
+        },
+        "p-lineheight": {
+          "value": "{font.sans.line-height}",
+          "type": "dimension"
+        }
+      }
+    },
+    "viewport": {
+      "width": {
+        "value": "90rem",
+        "type": "dimension"
+      },
+      "max-width": {
+        "value": "95.438rem",
+        "type": "dimension"
+      },
+      "min-width": {
+        "value": "76.5rem",
+        "type": "dimension"
+      },
+      "height": {
+        "value": "60rem",
+        "type": "dimension"
+      }
+    },
+    "section": {
+      "padding-horizontal": {
+        "value": "{space.8}",
+        "type": "dimension"
+      },
+      "padding-vertical": {
+        "value": "{space.16}",
+        "type": "dimension"
+      },
+      "gap": {
+        "value": "{space.8}",
+        "type": "dimension"
+      }
+    },
+    "layout": {
+      "max-width": {
+        "value": "80rem",
+        "type": "dimension"
+      },
+      "gap": {
+        "value": "{space.8}",
+        "type": "dimension"
+      }
+    },
+    "wrapper": {
+      "gap": {
+        "value": "{space.4}",
+        "type": "dimension"
+      }
+    }
+  },
+  "layout/md": {
+    "text": {
+      "size": {
+        "h1": {
+          "value": "{font.size.5xl}",
+          "type": "dimension"
+        },
+        "h2": {
+          "value": "{font.size.4xl}",
+          "type": "dimension"
+        },
+        "h3": {
+          "value": "{font.size.2xl}",
+          "type": "dimension"
+        },
+        "h3-subheading": {
+          "value": "{font.size.xl}",
+          "type": "dimension"
+        },
+        "h2-subheading": {
+          "value": "{font.size.3xl}",
+          "type": "dimension"
+        },
+        "h4": {
+          "value": "{font.size.xl}",
+          "type": "dimension"
+        },
+        "h4-subheading": {
+          "value": "{font.size.lg}",
+          "type": "dimension"
+        },
+        "h5": {
+          "value": "{font.size.base}",
+          "type": "dimension"
+        },
+        "h1-subheading": {
+          "value": "{font.size.4xl}",
+          "type": "dimension"
+        },
+        "p": {
+          "value": "{font.size.lg}",
+          "type": "dimension"
+        },
+        "p-lineheight": {
+          "value": "{font.sans.line-height}",
+          "type": "dimension"
+        }
+      }
+    },
+    "viewport": {
+      "width": {
+        "value": "64rem",
+        "type": "dimension"
+      },
+      "max-width": {
+        "value": "76.438rem",
+        "type": "dimension"
+      },
+      "min-width": {
+        "value": "48rem",
+        "type": "dimension"
+      },
+      "height": {
+        "value": "48rem",
+        "type": "dimension"
+      }
+    },
+    "section": {
+      "padding-horizontal": {
+        "value": "{space.6}",
+        "type": "dimension"
+      },
+      "padding-vertical": {
+        "value": "{space.16}",
+        "type": "dimension"
+      },
+      "gap": {
+        "value": "{space.6}",
+        "type": "dimension"
+      }
+    },
+    "layout": {
+      "max-width": {
+        "value": "64rem",
+        "type": "dimension"
+      },
+      "gap": {
+        "value": "{space.8}",
+        "type": "dimension"
+      }
+    },
+    "wrapper": {
+      "gap": {
+        "value": "{space.4}",
+        "type": "dimension"
+      }
+    }
+  },
+  "layout/sm": {
+    "text": {
+      "size": {
+        "h1": {
+          "value": "{font.size.3xl}",
+          "type": "dimension"
+        },
+        "h2": {
+          "value": "{font.size.2xl}",
+          "type": "dimension"
+        },
+        "h3": {
+          "value": "{font.size.lg}",
+          "type": "dimension"
+        },
+        "h3-subheading": {
+          "value": "{font.size.base}",
+          "type": "dimension"
+        },
+        "h2-subheading": {
+          "value": "{font.size.xl}",
+          "type": "dimension"
+        },
+        "h4": {
+          "value": "{font.size.base}",
+          "type": "dimension"
+        },
+        "h4-subheading": {
+          "value": "{font.size.sm}",
+          "type": "dimension"
+        },
+        "h5": {
+          "value": "{font.size.base}",
+          "type": "dimension"
+        },
+        "h1-subheading": {
+          "value": "{font.size.2xl}",
+          "type": "dimension"
+        },
+        "p": {
+          "value": "{font.size.base}",
+          "type": "dimension"
+        },
+        "p-lineheight": {
+          "value": "{font.sans.line-height}",
+          "type": "dimension"
+        }
+      }
+    },
+    "viewport": {
+      "width": {
+        "value": "24.562rem",
+        "type": "dimension"
+      },
+      "max-width": {
+        "value": "47.938rem",
+        "type": "dimension"
+      },
+      "min-width": {
+        "value": "20rem",
+        "type": "dimension"
+      },
+      "height": {
+        "value": "53.25rem",
+        "type": "dimension"
+      }
+    },
+    "section": {
+      "padding-horizontal": {
+        "value": "{space.4}",
+        "type": "dimension"
+      },
+      "padding-vertical": {
+        "value": "{space.12}",
+        "type": "dimension"
+      },
+      "gap": {
+        "value": "{space.6}",
+        "type": "dimension"
+      }
+    },
+    "layout": {
+      "max-width": {
+        "value": "47.938rem",
+        "type": "dimension"
+      },
+      "gap": {
+        "value": "{space.6}",
+        "type": "dimension"
+      }
+    },
+    "wrapper": {
+      "gap": {
+        "value": "{space.4}",
+        "type": "dimension"
+      }
+    }
+  },
+  "$themes": [
+    {
+      "id": "theme-light",
+      "name": "light",
+      "group": "theme",
+      "selectedTokenSets": {
+        "theme/light": "enabled"
+      },
+      "$figmaStyleReferences": {},
+      "$figmaVariableReferences": {
+        "component-specific.button.color-fill.primary-default": "d20657c135ace2793bc83b4eedecabdd16f57975",
+        "component-specific.button.color-fill.primary-pressed": "7b686bc66c6887a6f461c9e3a1d9b1157c79dd06",
+        "semantic.color-fill-elevation.base": "7ba4082a9ef57f53465ef174d80b5104cafb7f95",
+        "semantic.color-fill-elevation.level-1": "f96661a057879c4b0b5c804cf2698e1f9d35d7bc",
+        "semantic.color-fill-elevation.level-2": "058ce505ef7794252fd126148b19569e472930bc",
+        "component-specific.button.color-fill.secondary-default": "a84c2688064a7d67c8904599710dbf0337936af9",
+        "component-specific.message.color-fill.info": "94bef33d8bdcd68c2053b5a13078a36331cb32da",
+        "component-specific.message.color-fill.warning": "222b2a98e2666c36a4252cf4906439ee166338af",
+        "component-specific.message.color-fill.error": "54b15ff90fc21dc369a5bf1e3ddc0d71d048ad56",
+        "component-specific.message.color-fill.success": "d2eba594cbef92f5f031155ddc833915828d5319",
+        "component-specific.button.color-fill.secondary-pressed": "6d3ffb0d141bfdf6f25cb19d38d4d1a6a347740d",
+        "component-specific.button.color-fill.tertiary-default": "f8e0b27a1ac69bce043b8be9317859b09c2bff6b",
+        "component-specific.button.color-fill.tertiary-pressed": "7c88093196a9557a73d781ca3ca9e69126ffdbbc",
+        "component-specific.input.color-fill.default": "d7a025279313829bb2428861306079d86a1ac5ef",
+        "component-specific.input.color-fill.disabled": "36de9e4116bf945d8de40b426c9bb28a6a384d53",
+        "component-specific.input.color-fill.debossed": "d51d51128966326369c679fb93c01d3c13506661",
+        "component-specific.input.color-fill.toggle": "673005c14c9b37e58188fc220bef2c2cfb6e42a9",
+        "semantic.color-fill-elevation.base-inverted": "f796a68a7bc12d8cfc657c0bfe780284a3c29cea",
+        "component-specific.topbar.color-fill.default": "9ccb5d469e6578ba018f1c2f5d0c4b18f8dd827a",
+        "component-specific.topbar.color-fill.secondary": "33e2f383db7681ba420b9a9fe0435850fd5a437b",
+        "semantic.color-border.primary": "1b0951462ab8bd5264915961b6cda74e56e144b6",
+        "semantic.color-border.secondary": "c62f497e62c50b420fb18eb16544935d118f02b6",
+        "semantic.color-border.tertiary": "a927ca57531191ee56c68072c42788912120de7f",
+        "component-specific.message.color-border.info": "bd5631b7ecbd4b8329421800d4cf8a534ce82d76",
+        "component-specific.message.color-border.warning": "7eefa3d2f56e7831060b38c9a5a716365db11e2c",
+        "component-specific.message.color-border.error": "84838a728e71293650110a37a0ebeaa6575e872b",
+        "component-specific.message.color-border.success": "0555099e08624cb013fe6bbffb6844ebd9b6b2c5",
+        "component-specific.input.color-border.default": "fa0a7b6f29e2362913d4ded72be3c4a6935908c7",
+        "component-specific.input.color-border.focus": "23652a34f37c995ff5812aae1b03577aaf8288fa",
+        "component-specific.input.color-border.error": "abc4da80f9762a4439e0f32457a71e21ca204fb1",
+        "semantic.color-text.primary": "b7655567d280ae9da6a561b5ed7dcd4fd798f0af",
+        "semantic.color-text.primary-inverted": "6f7bd97afde456c4305e3067468ea2929dabedfb",
+        "semantic.color-text.secondary": "0f0c91cb360cf449eeaebf2b45325beb7d4753ee",
+        "semantic.color-text.secondary-inverted": "a7c77444d7fad3ad6c6237a35cbe9838e0d32e41",
+        "semantic.color-text.tertiary": "c42701497f1a7cfeef9529f39edcab3f97bd9ca2",
+        "semantic.color-text.quarternary": "188125e064421f2aaa70f97eb81082b3ca7b68a7",
+        "semantic.color-text.action-default": "803cc8e43794b3464938d5775920dfef61a45b07",
+        "semantic.color-text.action-pressed": "6fd351c105e46df9f051b85cffd434e5e1bced8a",
+        "semantic.color-text.success": "d64c3058d22cf6666bc6a29561f7d354cc12c9cb",
+        "semantic.color-text.error": "8191ce6d423a8857b785a3ec09c57ff089696c68",
+        "component-specific.button.color-text.primary": "0676df4a84187395b1167cbd8c25af7ff81ea150",
+        "component-specific.button.color-text.primary-pressed": "cc02e2badd5ca9e95e385ea4ca173b483d83fd72",
+        "component-specific.button.color-text.secondary": "88b9c69080f0141b88461a01ea3731c03bd3a3e5",
+        "component-specific.button.color-text.secondary-pressed": "763e00eca021d7c4ee1538030cfa04836261fe2b",
+        "component-specific.button.color-text.tertiary": "b1bf2a57dd631fcbf39f1bdadb11b5dd5e571727",
+        "component-specific.message.color-text-heading.info": "43c43d797e9e6f50a5c9289b8cb07816bdb0af96",
+        "component-specific.message.color-text-heading.warning": "68a2dfa0c3aca53531e3e0970b71eb61930fdba9",
+        "component-specific.message.color-text-heading.error": "dfb42c98a6adc6c3b2edd3432bf720d4ef727986",
+        "component-specific.message.color-text-heading.success": "c2459015e78e04778105b88feb972217e571ef89",
+        "component-specific.chip-filter.color-fill.default": "4333598447954d0a18cd02f77cd26b6eb5c27a93",
+        "component-specific.chip-filter.color-fill.active": "cde71b5ec2a866b318f39b23358e95fd52df0762",
+        "semantic.color-fill-elevation.sunken": "e373ed3d559f8117bcfd7fa954503a87bf569c69",
+        "semantic.color-brand.primary": "f71f3cd6cce3ee9d77ecfc3581b62c7cf12103f2",
+        "semantic.color-brand.complementary": "307c90714d359ff4494f372cf4098325fe5b7597",
+        "semantic.color-brand.accent": "51065f57bf279129a56fe101a97aa7dfac1a50c9"
+      },
+      "$figmaModeId": "12092:7",
+      "$figmaCollectionId": "VariableCollectionId:12092:18590"
+    },
+    {
+      "id": "theme-dark",
+      "name": "dark",
+      "group": "theme",
+      "selectedTokenSets": {
+        "theme/dark": "enabled"
+      },
+      "$figmaStyleReferences": {},
+      "$figmaVariableReferences": {
+        "component-specific.button.color-fill.primary-default": "d20657c135ace2793bc83b4eedecabdd16f57975",
+        "component-specific.button.color-fill.primary-pressed": "7b686bc66c6887a6f461c9e3a1d9b1157c79dd06",
+        "semantic.color-fill-elevation.base": "7ba4082a9ef57f53465ef174d80b5104cafb7f95",
+        "semantic.color-fill-elevation.level-1": "f96661a057879c4b0b5c804cf2698e1f9d35d7bc",
+        "semantic.color-fill-elevation.level-2": "058ce505ef7794252fd126148b19569e472930bc",
+        "component-specific.button.color-fill.secondary-default": "a84c2688064a7d67c8904599710dbf0337936af9",
+        "component-specific.message.color-fill.info": "94bef33d8bdcd68c2053b5a13078a36331cb32da",
+        "component-specific.message.color-fill.warning": "222b2a98e2666c36a4252cf4906439ee166338af",
+        "component-specific.message.color-fill.error": "54b15ff90fc21dc369a5bf1e3ddc0d71d048ad56",
+        "component-specific.message.color-fill.success": "d2eba594cbef92f5f031155ddc833915828d5319",
+        "component-specific.button.color-fill.secondary-pressed": "6d3ffb0d141bfdf6f25cb19d38d4d1a6a347740d",
+        "component-specific.button.color-fill.tertiary-default": "f8e0b27a1ac69bce043b8be9317859b09c2bff6b",
+        "component-specific.button.color-fill.tertiary-pressed": "7c88093196a9557a73d781ca3ca9e69126ffdbbc",
+        "component-specific.input.color-fill.default": "d7a025279313829bb2428861306079d86a1ac5ef",
+        "component-specific.input.color-fill.disabled": "36de9e4116bf945d8de40b426c9bb28a6a384d53",
+        "component-specific.input.color-fill.debossed": "d51d51128966326369c679fb93c01d3c13506661",
+        "component-specific.input.color-fill.toggle": "673005c14c9b37e58188fc220bef2c2cfb6e42a9",
+        "semantic.color-fill-elevation.base-inverted": "f796a68a7bc12d8cfc657c0bfe780284a3c29cea",
+        "component-specific.topbar.color-fill.default": "9ccb5d469e6578ba018f1c2f5d0c4b18f8dd827a",
+        "component-specific.topbar.color-fill.secondary": "33e2f383db7681ba420b9a9fe0435850fd5a437b",
+        "semantic.color-border.primary": "1b0951462ab8bd5264915961b6cda74e56e144b6",
+        "semantic.color-border.secondary": "c62f497e62c50b420fb18eb16544935d118f02b6",
+        "semantic.color-border.tertiary": "a927ca57531191ee56c68072c42788912120de7f",
+        "component-specific.message.color-border.info": "bd5631b7ecbd4b8329421800d4cf8a534ce82d76",
+        "component-specific.message.color-border.warning": "7eefa3d2f56e7831060b38c9a5a716365db11e2c",
+        "component-specific.message.color-border.error": "84838a728e71293650110a37a0ebeaa6575e872b",
+        "component-specific.message.color-border.success": "0555099e08624cb013fe6bbffb6844ebd9b6b2c5",
+        "component-specific.input.color-border.default": "fa0a7b6f29e2362913d4ded72be3c4a6935908c7",
+        "component-specific.input.color-border.focus": "23652a34f37c995ff5812aae1b03577aaf8288fa",
+        "component-specific.input.color-border.error": "abc4da80f9762a4439e0f32457a71e21ca204fb1",
+        "semantic.color-text.primary": "b7655567d280ae9da6a561b5ed7dcd4fd798f0af",
+        "semantic.color-text.primary-inverted": "6f7bd97afde456c4305e3067468ea2929dabedfb",
+        "semantic.color-text.secondary": "0f0c91cb360cf449eeaebf2b45325beb7d4753ee",
+        "semantic.color-text.secondary-inverted": "a7c77444d7fad3ad6c6237a35cbe9838e0d32e41",
+        "semantic.color-text.tertiary": "c42701497f1a7cfeef9529f39edcab3f97bd9ca2",
+        "semantic.color-text.quarternary": "188125e064421f2aaa70f97eb81082b3ca7b68a7",
+        "semantic.color-text.action-default": "803cc8e43794b3464938d5775920dfef61a45b07",
+        "semantic.color-text.action-pressed": "6fd351c105e46df9f051b85cffd434e5e1bced8a",
+        "semantic.color-text.success": "d64c3058d22cf6666bc6a29561f7d354cc12c9cb",
+        "semantic.color-text.error": "8191ce6d423a8857b785a3ec09c57ff089696c68",
+        "component-specific.button.color-text.primary": "0676df4a84187395b1167cbd8c25af7ff81ea150",
+        "component-specific.button.color-text.primary-pressed": "cc02e2badd5ca9e95e385ea4ca173b483d83fd72",
+        "component-specific.button.color-text.secondary": "88b9c69080f0141b88461a01ea3731c03bd3a3e5",
+        "component-specific.button.color-text.secondary-pressed": "763e00eca021d7c4ee1538030cfa04836261fe2b",
+        "component-specific.button.color-text.tertiary": "b1bf2a57dd631fcbf39f1bdadb11b5dd5e571727",
+        "component-specific.message.color-text-heading.info": "43c43d797e9e6f50a5c9289b8cb07816bdb0af96",
+        "component-specific.message.color-text-heading.warning": "68a2dfa0c3aca53531e3e0970b71eb61930fdba9",
+        "component-specific.message.color-text-heading.error": "dfb42c98a6adc6c3b2edd3432bf720d4ef727986",
+        "component-specific.message.color-text-heading.success": "c2459015e78e04778105b88feb972217e571ef89",
+        "component-specific.chip-filter.color-fill.default": "4333598447954d0a18cd02f77cd26b6eb5c27a93",
+        "component-specific.chip-filter.color-fill.active": "cde71b5ec2a866b318f39b23358e95fd52df0762",
+        "semantic.color-fill-elevation.sunken": "e373ed3d559f8117bcfd7fa954503a87bf569c69",
+        "semantic.color-brand.primary": "f71f3cd6cce3ee9d77ecfc3581b62c7cf12103f2",
+        "semantic.color-brand.complementary": "307c90714d359ff4494f372cf4098325fe5b7597",
+        "semantic.color-brand.accent": "51065f57bf279129a56fe101a97aa7dfac1a50c9"
+      },
+      "$figmaModeId": "12093:8",
+      "$figmaCollectionId": "VariableCollectionId:12092:18590"
+    },
+    {
+      "id": "primitives-none",
+      "name": "none",
+      "group": "primitives",
+      "selectedTokenSets": {
+        "primitives/none": "enabled"
+      },
+      "$figmaStyleReferences": {},
+      "$figmaVariableReferences": {
+        "size.1": "59710a1f976f887089c0596ebdc9664a2df422a9",
+        "size.2": "76996094fb96c2ba69278431aab289d6a7da18c3",
+        "size.4": "495bc9978359b76c36332403e66950023070b378",
+        "size.6": "c00104e0bc2dcf21419bd14abc548fbdb1008529",
+        "size.8": "72b1e5e4d19e4a1fa1e2b0eae13d15d2ba3f4981",
+        "size.12": "ddcc7e35cf49eb121144d27e67419cc4b9884ced",
+        "space.0": "ef17c4c3f4a31a3ec021e0a5257307c4e9870405",
+        "space.px": "fe2745319003b6b540d43f88c855fdfb7fcd12c4",
+        "space.0,5": "d7e8f3ca4a2c3c5e9c55539274600573c0859069",
+        "space.1": "225697433c59add1f157c2e60aa3d2fd783134e6",
+        "space.1,5": "d86073feff6c8e2a88b28e0e0fa11138750c2309",
+        "space.2": "dd7cb96b3b4ec0038fd46a2e368799cac8d3e994",
+        "space.2,5": "809648459fa0f0204d5bb2ebccfde29158ece633",
+        "space.3": "5479983cde811cc3cfaa928233565b088b0b0685",
+        "space.3,5": "5ecc71731016b966fd0202c6080da86e831b7c43",
+        "space.4": "8aecf00578034c1888031e5f3eaef9afbdfe3dce",
+        "space.5": "a420927d70ecaf371979925bd6ddd45166b10621",
+        "space.6": "19617f69b45758b0bf988fffd8c301946cd9e577",
+        "space.7": "a34dae8a54f2ea8dec0599c82deeab4ec789f448",
+        "space.8": "a13d715f8bc28604e754d6eaf83e07676ee696a6",
+        "space.9": "167415fb2272812e8abbdc8746a805798f380426",
+        "space.10": "64f1aafc53448863430fc1a81369b6bf0073837e",
+        "space.11": "6f1a4dc7f0876c7cd19b29af9e56d88a1b569d21",
+        "space.12": "22f7e65afbb0db35bf26ac237003993338894b02",
+        "space.14": "934265fe5654962220c7f1b182b73610106e2a10",
+        "space.16": "7f198b1d6ae70a7b2c91d0dbfa1f016b1983cbf7",
+        "space.20": "46e9bae5dd411f0e0c56298ffecfd9989eeaa63d",
+        "space.24": "2f20f40279d72295fdc2a75003eb73e47b70dc16",
+        "space.28": "5a23945eee3f209ac2b9d68b6ce905d52a1ac667",
+        "space.32": "6820b34ed443c083ec5bfd634d12f44e9376abce",
+        "space.36": "40805541537113b2402a789295e08ae66a028e1e",
+        "space.40": "561fa28440a86f2217d9e198efab5d9d21c9ddff",
+        "space.44": "03d9cd2db65ddb8ed665b1edb87ee9588d62979f",
+        "space.48": "54053e3a6e07c003e303432374da274b5e0ee817",
+        "space.52": "fc33a888fb8e8780859b07a3c5823a7bf0410b08",
+        "space.56": "cf5c0293157c0b94c39aaa49482d7b84d3a1da88",
+        "space.60": "ec89b3fce06c6431c2ec79d4d87077ad669130e1",
+        "space.64": "d3f522eeaf788d4d937a07acaf3f26bedc72db01",
+        "space.72": "13a6642d5f4700c65a08597fbab714062ced2ad3",
+        "space.80": "7682da12d2267ea662fe56b5fad8b32e3bccd9a0",
+        "space.96": "8afb87934f329c98aa402aabf396f31fab4f9972",
+        "size.0": "75ac7f22e4e438309c4c990b79de30870ff99ba2",
+        "size.3": "4dcb84317bb573d890ed25f353148ffcf48942df",
+        "size.5": "42e1962fa08aa5c106c426917e2c18569dc843b0",
+        "size.7": "4fedb8b0e7ae605a25e78faea6861441e6eff664",
+        "size.9": "8b071855eb7fab7f71cf411af89f2596f7b30077",
+        "size.10": "35e96b9467a392a0d4791e3bd18650e5acdd3094",
+        "size.11": "af0cef802aba3ac44c338f89115b5b1650112394",
+        "size.13": "ab76cc5c2c21724a748fd8a0129754a03bf3fd12",
+        "size.14": "e6d3bd1658790419a06b6de0d6c53117f41b0040",
+        "size.15": "0400c7e83f8e2e099eef330cbe6247867395d203",
+        "size.16": "5fe2a1c91f458429c800d96f57b4ce019b6baddc",
+        "size.17": "9a388d99aad70458ed03c62a1be5bc4bd7aca86d",
+        "size.18": "a5a4b3548003a169b80a3ea8a449c0babf0d2109",
+        "size.19": "ae7c5e7f3b478ace32583a29dff0bf13aef78295",
+        "size.20": "6420da587db90f9d624924419b4f796c8197d82c"
+      },
+      "$figmaModeId": "12092:2",
+      "$figmaCollectionId": "VariableCollectionId:12092:18294"
+    },
+    {
+      "id": "layout-xl",
+      "name": "xl",
+      "group": "layout",
+      "selectedTokenSets": {
+        "layout/xl": "enabled"
+      },
+      "$figmaStyleReferences": {},
+      "$figmaVariableReferences": {
+        "text.size.h1": "05c5d992c60d85c659fac5e12fe7fe6a9994d0ad",
+        "viewport.width": "0016d4cdeb3b3c6284324d64e1f2a1b7ff8e6a15",
+        "viewport.max-width": "c0f73fd49bf68ed370f214fecb2c974a71b8ed53",
+        "viewport.min-width": "61b725038575d033a6aac5cff66ade65e0801176",
+        "text.size.h2": "4721769ef5485691102de89394f79e75c9df7179",
+        "text.size.h3": "c5f00139dbf0e241c008095f98c15128baadd75a",
+        "text.size.h3-subheading": "eb0a9c586ac96dcd6667421affaa73b63c22b3a8",
+        "text.size.h2-subheading": "23943a2249c5238e565874b80d0c97941c7a7e3d",
+        "text.size.h4": "0caea31de073b399f6c3a4208df508d6d38110b7",
+        "text.size.h4-subheading": "3e2db94b4e295a13eeb3a8e81e23c5a93d0148e7",
+        "text.size.h5": "82e53e269570a78ca45abbfa312b1655477c51cf",
+        "viewport.height": "16b72e290a73a7a2cb430d471c65f0f259c241f2",
+        "section.padding-horizontal": "692947d53540ab8bbb5683375bb6f5850c457354",
+        "section.padding-vertical": "05d50ec2ae45710b5881d82b3fd59cde9bdb7c09",
+        "section.gap": "29fbd9f488a133588bd8b4859c9a6065499a31cc",
+        "text.size.h1-subheading": "2f949e046fe169ff10e1160f8ff24fac913e6752",
+        "layout.max-width": "b7cbfb9e55207bc0b469bd34ae3d3da5eaeb4fa3",
+        "layout.gap": "093185e823d3a357a15726b55673c9283fa8bb6a",
+        "wrapper.gap": "85ede573a0dbc0680e3a9c93a616afb8234b691d",
+        "text.size.p": "d951406e8b8f038b1f03d763cdb88ffca14bc66e",
+        "text.size.p-lineheight": "cf97940458a977e3e3b11d9b502cfb8ab850f176"
+      },
+      "$figmaModeId": "40000006:0",
+      "$figmaCollectionId": "VariableCollectionId:40000006:27126"
+    },
+    {
+      "id": "layout-lg",
+      "name": "lg",
+      "group": "layout",
+      "selectedTokenSets": {
+        "layout/lg": "enabled"
+      },
+      "$figmaStyleReferences": {},
+      "$figmaVariableReferences": {
+        "text.size.h1": "05c5d992c60d85c659fac5e12fe7fe6a9994d0ad",
+        "viewport.width": "0016d4cdeb3b3c6284324d64e1f2a1b7ff8e6a15",
+        "viewport.max-width": "c0f73fd49bf68ed370f214fecb2c974a71b8ed53",
+        "viewport.min-width": "61b725038575d033a6aac5cff66ade65e0801176",
+        "text.size.h2": "4721769ef5485691102de89394f79e75c9df7179",
+        "text.size.h3": "c5f00139dbf0e241c008095f98c15128baadd75a",
+        "text.size.h3-subheading": "eb0a9c586ac96dcd6667421affaa73b63c22b3a8",
+        "text.size.h2-subheading": "23943a2249c5238e565874b80d0c97941c7a7e3d",
+        "text.size.h4": "0caea31de073b399f6c3a4208df508d6d38110b7",
+        "text.size.h4-subheading": "3e2db94b4e295a13eeb3a8e81e23c5a93d0148e7",
+        "text.size.h5": "82e53e269570a78ca45abbfa312b1655477c51cf",
+        "viewport.height": "16b72e290a73a7a2cb430d471c65f0f259c241f2",
+        "section.padding-horizontal": "692947d53540ab8bbb5683375bb6f5850c457354",
+        "section.padding-vertical": "05d50ec2ae45710b5881d82b3fd59cde9bdb7c09",
+        "section.gap": "29fbd9f488a133588bd8b4859c9a6065499a31cc",
+        "text.size.h1-subheading": "2f949e046fe169ff10e1160f8ff24fac913e6752",
+        "layout.max-width": "b7cbfb9e55207bc0b469bd34ae3d3da5eaeb4fa3",
+        "layout.gap": "093185e823d3a357a15726b55673c9283fa8bb6a",
+        "wrapper.gap": "85ede573a0dbc0680e3a9c93a616afb8234b691d",
+        "text.size.p": "d951406e8b8f038b1f03d763cdb88ffca14bc66e",
+        "text.size.p-lineheight": "cf97940458a977e3e3b11d9b502cfb8ab850f176"
+      },
+      "$figmaModeId": "40000008:1",
+      "$figmaCollectionId": "VariableCollectionId:40000006:27126"
+    },
+    {
+      "id": "layout-md",
+      "name": "md",
+      "group": "layout",
+      "selectedTokenSets": {
+        "layout/md": "enabled"
+      },
+      "$figmaStyleReferences": {},
+      "$figmaVariableReferences": {
+        "text.size.h1": "05c5d992c60d85c659fac5e12fe7fe6a9994d0ad",
+        "viewport.width": "0016d4cdeb3b3c6284324d64e1f2a1b7ff8e6a15",
+        "viewport.max-width": "c0f73fd49bf68ed370f214fecb2c974a71b8ed53",
+        "viewport.min-width": "61b725038575d033a6aac5cff66ade65e0801176",
+        "text.size.h2": "4721769ef5485691102de89394f79e75c9df7179",
+        "text.size.h3": "c5f00139dbf0e241c008095f98c15128baadd75a",
+        "text.size.h3-subheading": "eb0a9c586ac96dcd6667421affaa73b63c22b3a8",
+        "text.size.h2-subheading": "23943a2249c5238e565874b80d0c97941c7a7e3d",
+        "text.size.h4": "0caea31de073b399f6c3a4208df508d6d38110b7",
+        "text.size.h4-subheading": "3e2db94b4e295a13eeb3a8e81e23c5a93d0148e7",
+        "text.size.h5": "82e53e269570a78ca45abbfa312b1655477c51cf",
+        "viewport.height": "16b72e290a73a7a2cb430d471c65f0f259c241f2",
+        "section.padding-horizontal": "692947d53540ab8bbb5683375bb6f5850c457354",
+        "section.padding-vertical": "05d50ec2ae45710b5881d82b3fd59cde9bdb7c09",
+        "section.gap": "29fbd9f488a133588bd8b4859c9a6065499a31cc",
+        "text.size.h1-subheading": "2f949e046fe169ff10e1160f8ff24fac913e6752",
+        "layout.max-width": "b7cbfb9e55207bc0b469bd34ae3d3da5eaeb4fa3",
+        "layout.gap": "093185e823d3a357a15726b55673c9283fa8bb6a",
+        "wrapper.gap": "85ede573a0dbc0680e3a9c93a616afb8234b691d",
+        "text.size.p": "d951406e8b8f038b1f03d763cdb88ffca14bc66e",
+        "text.size.p-lineheight": "cf97940458a977e3e3b11d9b502cfb8ab850f176"
+      },
+      "$figmaModeId": "40000008:3",
+      "$figmaCollectionId": "VariableCollectionId:40000006:27126"
+    },
+    {
+      "id": "layout-sm",
+      "name": "sm",
+      "group": "layout",
+      "selectedTokenSets": {
+        "layout/sm": "enabled"
+      },
+      "$figmaStyleReferences": {},
+      "$figmaVariableReferences": {
+        "text.size.h1": "05c5d992c60d85c659fac5e12fe7fe6a9994d0ad",
+        "viewport.width": "0016d4cdeb3b3c6284324d64e1f2a1b7ff8e6a15",
+        "viewport.max-width": "c0f73fd49bf68ed370f214fecb2c974a71b8ed53",
+        "viewport.min-width": "61b725038575d033a6aac5cff66ade65e0801176",
+        "text.size.h2": "4721769ef5485691102de89394f79e75c9df7179",
+        "text.size.h3": "c5f00139dbf0e241c008095f98c15128baadd75a",
+        "text.size.h3-subheading": "eb0a9c586ac96dcd6667421affaa73b63c22b3a8",
+        "text.size.h2-subheading": "23943a2249c5238e565874b80d0c97941c7a7e3d",
+        "text.size.h4": "0caea31de073b399f6c3a4208df508d6d38110b7",
+        "text.size.h4-subheading": "3e2db94b4e295a13eeb3a8e81e23c5a93d0148e7",
+        "text.size.h5": "82e53e269570a78ca45abbfa312b1655477c51cf",
+        "viewport.height": "16b72e290a73a7a2cb430d471c65f0f259c241f2",
+        "section.padding-horizontal": "692947d53540ab8bbb5683375bb6f5850c457354",
+        "section.padding-vertical": "05d50ec2ae45710b5881d82b3fd59cde9bdb7c09",
+        "section.gap": "29fbd9f488a133588bd8b4859c9a6065499a31cc",
+        "text.size.h1-subheading": "2f949e046fe169ff10e1160f8ff24fac913e6752",
+        "layout.max-width": "b7cbfb9e55207bc0b469bd34ae3d3da5eaeb4fa3",
+        "layout.gap": "093185e823d3a357a15726b55673c9283fa8bb6a",
+        "wrapper.gap": "85ede573a0dbc0680e3a9c93a616afb8234b691d",
+        "text.size.p": "d951406e8b8f038b1f03d763cdb88ffca14bc66e",
+        "text.size.p-lineheight": "cf97940458a977e3e3b11d9b502cfb8ab850f176"
+      },
+      "$figmaModeId": "40000008:4",
+      "$figmaCollectionId": "VariableCollectionId:40000006:27126"
+    }
+  ],
   "$metadata": {
     "tokenSetOrder": [
-      "global"
+      "global",
+      "theme/light",
+      "theme/dark",
+      "primitives/none",
+      "layout/xl",
+      "layout/lg",
+      "layout/md",
+      "layout/sm"
     ]
   }
 }
