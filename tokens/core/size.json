@@ -1,16 +1,20 @@
 {
   "size": {
     "xs": {
-      "value": "0.75rem"
+      "value": "0.75rem",
+      "type": "sizing"
     },
     "sm": {
-      "value": "1rem"
+      "value": "1rem",
+      "type": "sizing"
     },
     "md": {
-      "value": "1.5rem"
+      "value": "1.5rem",
+      "type": "sizing"
     },
     "lg": {
-      "value": "2rem"
+      "value": "2rem",
+      "type": "sizing"
     }
   }
 }

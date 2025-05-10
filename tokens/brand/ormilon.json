@@ -1,10 +1,12 @@
 {
   "brand": {
     "primary": {
-      "value": "#009688"
+      "value": "#009688",
+      "type": "other"
     },
     "fontFamily": {
-      "value": "Roboto"
+      "value": "Roboto",
+      "type": "other"
     }
   }
 }

@@ -1,16 +1,20 @@
 {
   "spacing": {
     "xs": {
-      "value": "0.25rem"
+      "value": "0.25rem",
+      "type": "spacing"
     },
     "sm": {
-      "value": "0.5rem"
+      "value": "0.5rem",
+      "type": "spacing"
     },
     "md": {
-      "value": "1rem"
+      "value": "1rem",
+      "type": "spacing"
     },
     "lg": {
-      "value": "2rem"
+      "value": "2rem",
+      "type": "spacing"
     }
   }
 }

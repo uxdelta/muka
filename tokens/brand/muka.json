@@ -1,10 +1,12 @@
 {
   "brand": {
     "primary": {
-      "value": "#ff3366"
+      "value": "#ff3366",
+      "type": "other"
     },
     "fontFamily": {
-      "value": "Inter"
+      "value": "Inter",
+      "type": "other"
     }
   }
 }

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "f782340747e37b6984ddef24436f582e0aac4b5f",
+    "name": "light",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "brand/muka": "enabled",
+      "brand/ormilon": "enabled",
+      "theme/theme": "enabled"
+    }
+  },
+  {
+    "id": "a3417029d7878fb7076d3abe3dd6eb12dc4fe85a",
+    "name": "dark",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "theme/theme": "enabled",
+      "brand/muka": "enabled",
+      "brand/ormilon": "enabled"
+    }
+  }
+]
