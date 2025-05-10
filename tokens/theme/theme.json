@@ -1,0 +1,16 @@
+{
+  "color": {
+    "bg": {
+      "primary": {
+        "value": "{color.gray.100}",
+        "type": "color"
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "{color.gray.900}",
+        "type": "color"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "brand": {
+    "primary": {
+      "value": "#ff3366"
+    },
+    "fontFamily": {
+      "value": "Inter"
+    }
+  }
+}

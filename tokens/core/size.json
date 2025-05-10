@@ -1,0 +1,16 @@
+{
+  "size": {
+    "xs": {
+      "value": "0.75rem"
+    },
+    "sm": {
+      "value": "1rem"
+    },
+    "md": {
+      "value": "1.5rem"
+    },
+    "lg": {
+      "value": "2rem"
+    }
+  }
+}

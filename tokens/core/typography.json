@@ -1,0 +1,46 @@
+{
+  "typography": {
+    "heading": {
+      "fontSize": {
+        "value": "2rem"
+      },
+      "fontWeight": {
+        "value": "700"
+      },
+      "lineHeight": {
+        "value": "2.5rem"
+      },
+      "fontFamily": {
+        "value": "Inter"
+      }
+    },
+    "body": {
+      "fontSize": {
+        "value": "1rem"
+      },
+      "fontWeight": {
+        "value": "400"
+      },
+      "lineHeight": {
+        "value": "1.5rem"
+      },
+      "fontFamily": {
+        "value": "Inter"
+      }
+    },
+    "caption": {
+      "fontSize": {
+        "value": "0.875rem"
+      },
+      "fontWeight": {
+        "value": "400"
+      },
+      "lineHeight": {
+        "value": "1.25rem"
+      },
+      "fontFamily": {
+        "value": "Inter"
+      }
+    }
+  }
+}

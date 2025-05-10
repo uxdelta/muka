@@ -1,0 +1,10 @@
+{
+  "brand": {
+    "primary": {
+      "value": "#009688"
+    },
+    "fontFamily": {
+      "value": "Roboto"
+    }
+  }
+}
