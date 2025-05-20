@@ -3,11 +3,11 @@
     "button": {
       "primary": {
         "background": {
-          "value": "{semantic.color.action.primary.background}",
+          "value": "{action.primary.background}",
           "type": "color"
         },
         "foreground": {
-          "value": "{semantic.color.action.primary.foreground}",
+          "value": "{action.primary.foreground}",
           "type": "color"
         },
         "border": {
@@ -30,7 +30,7 @@
         },
         "hover": {
           "background": {
-            "value": "{semantic.color.action.primary.hover.background}",
+            "value": "{action.primary.hover.background}",
             "type": "color"
           },
           "elevation": {
@@ -40,7 +40,7 @@
         },
         "active": {
           "background": {
-            "value": "{semantic.color.action.primary.active.background}",
+            "value": "{action.primary.active.background}",
             "type": "color"
           },
           "elevation": {
@@ -50,11 +50,11 @@
         },
         "disabled": {
           "background": {
-            "value": "{semantic.color.action.primary.disabled.background}",
+            "value": "{action.primary.disabled.background}",
             "type": "color"
           },
           "foreground": {
-            "value": "{semantic.color.action.primary.disabled.foreground}",
+            "value": "{action.primary.disabled.foreground}",
             "type": "color"
           }
         },
@@ -71,11 +71,11 @@
       },
       "secondary": {
         "background": {
-          "value": "{semantic.color.action.secondary.background}",
+          "value": "{action.secondary.background}",
           "type": "color"
         },
         "foreground": {
-          "value": "{semantic.color.action.secondary.foreground}",
+          "value": "{action.secondary.foreground}",
           "type": "color"
         },
         "border": {
@@ -98,7 +98,7 @@
         },
         "hover": {
           "background": {
-            "value": "{semantic.color.action.secondary.hover.background}",
+            "value": "{action.secondary.hover.background}",
             "type": "color"
           },
           "elevation": {
@@ -108,7 +108,7 @@
         },
         "active": {
           "background": {
-            "value": "{semantic.color.action.secondary.active.background}",
+            "value": "{action.secondary.active.background}",
             "type": "color"
           },
           "elevation": {
@@ -118,11 +118,11 @@
         },
         "disabled": {
           "background": {
-            "value": "{semantic.color.action.secondary.disabled.background}",
+            "value": "{action.secondary.disabled.background}",
             "type": "color"
           },
           "foreground": {
-            "value": "{semantic.color.action.secondary.disabled.foreground}",
+            "value": "{action.secondary.disabled.foreground}",
             "type": "color"
           }
         },

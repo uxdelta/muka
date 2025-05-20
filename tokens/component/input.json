@@ -2,15 +2,15 @@
   "component": {
     "input": {
       "background": {
-        "value": "{semantic.color.background.primary}",
+        "value": "{background.primary}",
         "type": "color"
       },
       "foreground": {
-        "value": "{semantic.color.text.primary}",
+        "value": "{text.primary}",
         "type": "color"
       },
       "border": {
-        "value": "1px solid {semantic.color.border.default}",
+        "value": "1px solid {border.default}",
         "type": "border"
       },
       "radius": {
@@ -29,13 +29,13 @@
       },
       "hover": {
         "border": {
-          "value": "1px solid {semantic.color.border.strong}",
+          "value": "1px solid {border.strong}",
           "type": "border"
         }
       },
       "focus": {
         "border": {
-          "value": "1px solid {semantic.color.border.focus}",
+          "value": "1px solid {border.focus}",
           "type": "border"
         },
         "elevation": {
@@ -45,21 +45,21 @@
       },
       "disabled": {
         "background": {
-          "value": "{semantic.color.background.disabled}",
+          "value": "{background.disabled}",
           "type": "color"
         },
         "foreground": {
-          "value": "{semantic.color.text.disabled}",
+          "value": "{text.disabled}",
           "type": "color"
         },
         "border": {
-          "value": "1px solid {semantic.color.border.disabled}",
+          "value": "1px solid {border.disabled}",
           "type": "border"
         }
       },
       "error": {
         "border": {
-          "value": "1px solid {semantic.color.status.error}",
+          "value": "1px solid {status.error}",
           "type": "border"
         }
       },

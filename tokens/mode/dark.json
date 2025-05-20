@@ -4,39 +4,39 @@
       "color": {
         "background": {
           "primary": {
-            "value": "{semantic.color.background.inverse}",
+            "value": "{background.inverse}",
             "type": "color"
           },
           "secondary": {
-            "value": "{semantic.color.background.primary}",
+            "value": "{background.primary}",
             "type": "color"
           },
           "tertiary": {
-            "value": "{semantic.color.background.secondary}",
+            "value": "{background.secondary}",
             "type": "color"
           }
         },
         "text": {
           "primary": {
-            "value": "{semantic.color.text.inverse}",
+            "value": "{text.inverse}",
             "type": "color"
           },
           "secondary": {
-            "value": "{semantic.color.text.tertiary}",
+            "value": "{text.tertiary}",
             "type": "color"
           },
           "tertiary": {
-            "value": "{semantic.color.text.secondary}",
+            "value": "{text.secondary}",
             "type": "color"
           }
         },
         "border": {
           "default": {
-            "value": "{semantic.color.border.strong}",
+            "value": "{border.strong}",
             "type": "color"
           },
           "strong": {
-            "value": "{semantic.color.border.default}",
+            "value": "{border.default}",
             "type": "color"
           }
         }

@@ -4,85 +4,85 @@
       "color": {
         "primary": {
           "50": {
-            "value": "{semantic.color.action.primary.background}",
+            "value": "{action.primary.background}",
             "type": "color"
           },
           "100": {
-            "value": "{semantic.color.action.primary.hover.background}",
+            "value": "{action.primary.hover.background}",
             "type": "color"
           },
           "200": {
-            "value": "{semantic.color.action.primary.active.background}",
+            "value": "{action.primary.active.background}",
             "type": "color"
           },
           "300": {
-            "value": "{semantic.color.action.primary.disabled.background}",
+            "value": "{action.primary.disabled.background}",
             "type": "color"
           },
           "400": {
-            "value": "{semantic.color.action.primary.disabled.foreground}",
+            "value": "{action.primary.disabled.foreground}",
             "type": "color"
           },
           "500": {
-            "value": "{semantic.color.action.primary.background}",
+            "value": "{action.primary.background}",
             "type": "color"
           },
           "600": {
-            "value": "{semantic.color.action.primary.hover.background}",
+            "value": "{action.primary.hover.background}",
             "type": "color"
           },
           "700": {
-            "value": "{semantic.color.action.primary.active.background}",
+            "value": "{action.primary.active.background}",
             "type": "color"
           },
           "800": {
-            "value": "{semantic.color.action.primary.disabled.background}",
+            "value": "{action.primary.disabled.background}",
             "type": "color"
           },
           "900": {
-            "value": "{semantic.color.action.primary.disabled.foreground}",
+            "value": "{action.primary.disabled.foreground}",
             "type": "color"
           }
         },
         "neutral": {
           "50": {
-            "value": "{semantic.color.background.secondary}",
+            "value": "{background.secondary}",
             "type": "color"
           },
           "100": {
-            "value": "{semantic.color.background.tertiary}",
+            "value": "{background.tertiary}",
             "type": "color"
           },
           "200": {
-            "value": "{semantic.color.background.disabled}",
+            "value": "{background.disabled}",
             "type": "color"
           },
           "300": {
-            "value": "{semantic.color.text.disabled}",
+            "value": "{text.disabled}",
             "type": "color"
           },
           "400": {
-            "value": "{semantic.color.text.tertiary}",
+            "value": "{text.tertiary}",
             "type": "color"
           },
           "500": {
-            "value": "{semantic.color.text.secondary}",
+            "value": "{text.secondary}",
             "type": "color"
           },
           "600": {
-            "value": "{semantic.color.text.secondary}",
+            "value": "{text.secondary}",
             "type": "color"
           },
           "700": {
-            "value": "{semantic.color.text.primary}",
+            "value": "{text.primary}",
             "type": "color"
           },
           "800": {
-            "value": "{semantic.color.text.primary}",
+            "value": "{text.primary}",
             "type": "color"
           },
           "900": {
-            "value": "{semantic.color.text.primary}",
+            "value": "{text.primary}",
             "type": "color"
           }
         }
