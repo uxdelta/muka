@@ -1,9 +1,9 @@
 {
   "tokenSetOrder": [
-    "core/color-base",
     "core/size",
     "core/spacing",
     "core/typography",
+    "core/color",
     "theme/theme",
     "layout/layout",
     "brand/muka",
