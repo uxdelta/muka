@@ -20,11 +20,11 @@
         },
         "padding": {
           "x": {
-            "value": "{spacing.4}",
+            "value": "{spacing.scale.4}",
             "type": "spacing"
           },
           "y": {
-            "value": "{spacing.2}",
+            "value": "{spacing.scale.2}",
             "type": "spacing"
           }
         },
@@ -88,11 +88,11 @@
         },
         "padding": {
           "x": {
-            "value": "{spacing.4}",
+            "value": "{spacing.scale.4}",
             "type": "spacing"
           },
           "y": {
-            "value": "{spacing.2}",
+            "value": "{spacing.scale.2}",
             "type": "spacing"
           }
         },

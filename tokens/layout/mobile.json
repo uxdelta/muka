@@ -11,11 +11,11 @@
       },
       "spacing": {
         "section": {
-          "value": "{spacing.4}",
+          "value": "{spacing.scale.4}",
           "type": "spacing"
         },
         "content": {
-          "value": "{spacing.3}",
+          "value": "{spacing.scale.3}",
           "type": "spacing"
         }
       }

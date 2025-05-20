@@ -2,7 +2,7 @@
   "spacing": {
     "scale": {
       "0": {
-        "value": "0",
+        "value": "{0}",
         "type": "spacing"
       },
       "1": {
