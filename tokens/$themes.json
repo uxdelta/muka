@@ -5,7 +5,8 @@
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
       "brand/whitelabel": "enabled",
-      "semantic/color": "enabled"
+      "semantic/color": "enabled",
+      "component/button": "enabled"
     },
     "group": "Brand"
   },
@@ -23,7 +24,8 @@
     "name": "Light",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "mode/light": "enabled"
+      "mode/light": "enabled",
+      "component/button": "disabled"
     },
     "group": "Mode"
   },
@@ -32,7 +34,8 @@
     "name": "Dark",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "mode/dark": "enabled"
+      "mode/dark": "enabled",
+      "component/button": "disabled"
     },
     "group": "Mode"
   },
@@ -41,7 +44,8 @@
     "name": "Mobile",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "layout/mobile": "enabled"
+      "layout/mobile": "enabled",
+      "component/button": "disabled"
     },
     "group": "Layout"
   },
@@ -50,7 +54,8 @@
     "name": "Tablet",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "layout/tablet": "enabled"
+      "layout/tablet": "enabled",
+      "component/button": "disabled"
     },
     "group": "Layout"
   },
@@ -59,7 +64,8 @@
     "name": "Desktop",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "layout/desktop": "enabled"
+      "layout/desktop": "enabled",
+      "component/button": "disabled"
     },
     "group": "Layout"
   }
