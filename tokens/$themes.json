@@ -6,7 +6,13 @@
     "selectedTokenSets": {
       "brand/muka": "enabled",
       "brand/ormilon": "enabled",
-      "theme/theme": "enabled"
+      "mode/dark": "enabled",
+      "brand/whitelabel": "disabled",
+      "mode/light": "disabled",
+      "layout/desktop": "disabled",
+      "layout/tablet": "disabled",
+      "layout/mobile": "disabled",
+      "semantic/color/action": "disabled"
     }
   },
   {
@@ -14,9 +20,15 @@
     "name": "dark",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "theme/theme": "enabled",
       "brand/muka": "enabled",
-      "brand/ormilon": "enabled"
+      "brand/ormilon": "enabled",
+      "mode/dark": "enabled",
+      "brand/whitelabel": "disabled",
+      "mode/light": "disabled",
+      "layout/desktop": "disabled",
+      "layout/tablet": "disabled",
+      "layout/mobile": "disabled",
+      "semantic/color/action": "disabled"
     }
   }
 ]

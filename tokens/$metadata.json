@@ -4,9 +4,14 @@
     "core/spacing",
     "core/typography",
     "core/color",
-    "theme/theme",
-    "layout/layout",
+    "semantic/color/action",
+    "mode/light",
+    "mode/dark",
+    "brand/whitelabel",
     "brand/muka",
-    "brand/ormilon"
+    "brand/ormilon",
+    "layout/mobile",
+    "layout/tablet",
+    "layout/desktop"
   ]
 }
