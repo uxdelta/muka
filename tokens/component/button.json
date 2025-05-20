@@ -1,1 +1,142 @@
-{}
+{
+  "component": {
+    "button": {
+      "primary": {
+        "background": {
+          "value": "{semantic.color.action.primary.background}",
+          "type": "color"
+        },
+        "foreground": {
+          "value": "{semantic.color.action.primary.foreground}",
+          "type": "color"
+        },
+        "border": {
+          "value": "none",
+          "type": "border"
+        },
+        "radius": {
+          "value": "{semantic.radius.interactive.button}",
+          "type": "borderRadius"
+        },
+        "padding": {
+          "x": {
+            "value": "{core.spacing.4}",
+            "type": "spacing"
+          },
+          "y": {
+            "value": "{core.spacing.2}",
+            "type": "spacing"
+          }
+        },
+        "hover": {
+          "background": {
+            "value": "{semantic.color.action.primary.hover.background}",
+            "type": "color"
+          },
+          "elevation": {
+            "value": "{semantic.elevation.interactive.hover}",
+            "type": "boxShadow"
+          }
+        },
+        "active": {
+          "background": {
+            "value": "{semantic.color.action.primary.active.background}",
+            "type": "color"
+          },
+          "elevation": {
+            "value": "{semantic.elevation.interactive.active}",
+            "type": "boxShadow"
+          }
+        },
+        "disabled": {
+          "background": {
+            "value": "{semantic.color.action.primary.disabled.background}",
+            "type": "color"
+          },
+          "foreground": {
+            "value": "{semantic.color.action.primary.disabled.foreground}",
+            "type": "color"
+          }
+        },
+        "transition": {
+          "duration": {
+            "value": "{semantic.motion.transition.fast.duration}",
+            "type": "duration"
+          },
+          "easing": {
+            "value": "{semantic.motion.transition.fast.easing}",
+            "type": "cubicBezier"
+          }
+        }
+      },
+      "secondary": {
+        "background": {
+          "value": "{semantic.color.action.secondary.background}",
+          "type": "color"
+        },
+        "foreground": {
+          "value": "{semantic.color.action.secondary.foreground}",
+          "type": "color"
+        },
+        "border": {
+          "value": "none",
+          "type": "border"
+        },
+        "radius": {
+          "value": "{semantic.radius.interactive.button}",
+          "type": "borderRadius"
+        },
+        "padding": {
+          "x": {
+            "value": "{core.spacing.4}",
+            "type": "spacing"
+          },
+          "y": {
+            "value": "{core.spacing.2}",
+            "type": "spacing"
+          }
+        },
+        "hover": {
+          "background": {
+            "value": "{semantic.color.action.secondary.hover.background}",
+            "type": "color"
+          },
+          "elevation": {
+            "value": "{semantic.elevation.interactive.hover}",
+            "type": "boxShadow"
+          }
+        },
+        "active": {
+          "background": {
+            "value": "{semantic.color.action.secondary.active.background}",
+            "type": "color"
+          },
+          "elevation": {
+            "value": "{semantic.elevation.interactive.active}",
+            "type": "boxShadow"
+          }
+        },
+        "disabled": {
+          "background": {
+            "value": "{semantic.color.action.secondary.disabled.background}",
+            "type": "color"
+          },
+          "foreground": {
+            "value": "{semantic.color.action.secondary.disabled.foreground}",
+            "type": "color"
+          }
+        },
+        "transition": {
+          "duration": {
+            "value": "{semantic.motion.transition.fast.duration}",
+            "type": "duration"
+          },
+          "easing": {
+            "value": "{semantic.motion.transition.fast.easing}",
+            "type": "cubicBezier"
+          }
+        }
+      }
+    }
+  }
+}

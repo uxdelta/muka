@@ -1,0 +1,42 @@
+{
+  "semantic": {
+    "grid": {
+      "breakpoint": {
+        "mobile": {
+          "value": "{core.grid.breakpoint.sm}",
+          "type": "size"
+        },
+        "tablet": {
+          "value": "{core.grid.breakpoint.md}",
+          "type": "size"
+        },
+        "desktop": {
+          "value": "{core.grid.breakpoint.lg}",
+          "type": "size"
+        },
+        "wide": {
+          "value": "{core.grid.breakpoint.xl}",
+          "type": "size"
+        }
+      },
+      "container": {
+        "narrow": {
+          "value": "{core.grid.container.sm}",
+          "type": "size"
+        },
+        "default": {
+          "value": "{core.grid.container.md}",
+          "type": "size"
+        },
+        "wide": {
+          "value": "{core.grid.container.lg}",
+          "type": "size"
+        },
+        "full": {
+          "value": "{core.grid.container.full}",
+          "type": "size"
+        }
+      }
+    }
+  }
+} 

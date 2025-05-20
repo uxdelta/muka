@@ -1,0 +1,38 @@
+{
+  "semantic": {
+    "radius": {
+      "surface": {
+        "default": {
+          "value": "{core.radius.none}",
+          "type": "borderRadius"
+        },
+        "card": {
+          "value": "{core.radius.md}",
+          "type": "borderRadius"
+        },
+        "modal": {
+          "value": "{core.radius.lg}",
+          "type": "borderRadius"
+        },
+        "pill": {
+          "value": "{core.radius.full}",
+          "type": "borderRadius"
+        }
+      },
+      "interactive": {
+        "button": {
+          "value": "{core.radius.md}",
+          "type": "borderRadius"
+        },
+        "input": {
+          "value": "{core.radius.sm}",
+          "type": "borderRadius"
+        },
+        "badge": {
+          "value": "{core.radius.full}",
+          "type": "borderRadius"
+        }
+      }
+    }
+  }
+} 

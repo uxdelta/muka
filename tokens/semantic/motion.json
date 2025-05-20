@@ -1,0 +1,70 @@
+{
+  "semantic": {
+    "motion": {
+      "interaction": {
+        "hover": {
+          "duration": {
+            "value": "{core.motion.duration.fast}",
+            "type": "duration"
+          },
+          "easing": {
+            "value": "{core.motion.easing.easeOut}",
+            "type": "cubicBezier"
+          }
+        },
+        "press": {
+          "duration": {
+            "value": "{core.motion.duration.instant}",
+            "type": "duration"
+          },
+          "easing": {
+            "value": "{core.motion.easing.linear}",
+            "type": "cubicBezier"
+          }
+        },
+        "focus": {
+          "duration": {
+            "value": "{core.motion.duration.fast}",
+            "type": "duration"
+          },
+          "easing": {
+            "value": "{core.motion.easing.easeOut}",
+            "type": "cubicBezier"
+          }
+        }
+      },
+      "transition": {
+        "default": {
+          "duration": {
+            "value": "{core.motion.duration.normal}",
+            "type": "duration"
+          },
+          "easing": {
+            "value": "{core.motion.easing.easeInOut}",
+            "type": "cubicBezier"
+          }
+        },
+        "fast": {
+          "duration": {
+            "value": "{core.motion.duration.fast}",
+            "type": "duration"
+          },
+          "easing": {
+            "value": "{core.motion.easing.easeOut}",
+            "type": "cubicBezier"
+          }
+        },
+        "slow": {
+          "duration": {
+            "value": "{core.motion.duration.slow}",
+            "type": "duration"
+          },
+          "easing": {
+            "value": "{core.motion.easing.easeInOut}",
+            "type": "cubicBezier"
+          }
+        }
+      }
+    }
+  }
+} 

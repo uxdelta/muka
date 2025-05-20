@@ -1,0 +1,58 @@
+{
+  "core": {
+    "grid": {
+      "breakpoint": {
+        "xs": {
+          "value": "320px",
+          "type": "size"
+        },
+        "sm": {
+          "value": "640px",
+          "type": "size"
+        },
+        "md": {
+          "value": "768px",
+          "type": "size"
+        },
+        "lg": {
+          "value": "1024px",
+          "type": "size"
+        },
+        "xl": {
+          "value": "1280px",
+          "type": "size"
+        },
+        "2xl": {
+          "value": "1536px",
+          "type": "size"
+        }
+      },
+      "container": {
+        "sm": {
+          "value": "640px",
+          "type": "size"
+        },
+        "md": {
+          "value": "768px",
+          "type": "size"
+        },
+        "lg": {
+          "value": "1024px",
+          "type": "size"
+        },
+        "xl": {
+          "value": "1280px",
+          "type": "size"
+        },
+        "2xl": {
+          "value": "1536px",
+          "type": "size"
+        },
+        "full": {
+          "value": "100%",
+          "type": "size"
+        }
+      }
+    }
+  }
+} 

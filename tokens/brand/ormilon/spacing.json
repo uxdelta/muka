@@ -1,0 +1,72 @@
+{
+  "spacing": {
+    "scale": {
+      "0": {
+        "value": "0",
+        "type": "spacing"
+      },
+      "1": {
+        "value": "0.125rem",
+        "type": "spacing"
+      },
+      "2": {
+        "value": "0.25rem",
+        "type": "spacing"
+      },
+      "3": {
+        "value": "0.5rem",
+        "type": "spacing"
+      },
+      "4": {
+        "value": "0.75rem",
+        "type": "spacing"
+      },
+      "5": {
+        "value": "1rem",
+        "type": "spacing"
+      },
+      "6": {
+        "value": "1.25rem",
+        "type": "spacing"
+      },
+      "8": {
+        "value": "1.5rem",
+        "type": "spacing"
+      },
+      "10": {
+        "value": "2rem",
+        "type": "spacing"
+      },
+      "12": {
+        "value": "2.5rem",
+        "type": "spacing"
+      },
+      "16": {
+        "value": "3rem",
+        "type": "spacing"
+      },
+      "20": {
+        "value": "4rem",
+        "type": "spacing"
+      },
+      "24": {
+        "value": "5rem",
+        "type": "spacing"
+      }
+    },
+    "layout": {
+      "section": {
+        "value": "3rem",
+        "type": "spacing"
+      },
+      "container": {
+        "value": "1.5rem",
+        "type": "spacing"
+      },
+      "component": {
+        "value": "1rem",
+        "type": "spacing"
+      }
+    }
+  }
+} 

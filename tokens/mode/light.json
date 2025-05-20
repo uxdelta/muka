@@ -1,1 +1,46 @@
-{}
+{
+  "mode": {
+    "light": {
+      "color": {
+        "background": {
+          "primary": {
+            "value": "{semantic.color.background.primary}",
+            "type": "color"
+          },
+          "secondary": {
+            "value": "{semantic.color.background.secondary}",
+            "type": "color"
+          },
+          "tertiary": {
+            "value": "{semantic.color.background.tertiary}",
+            "type": "color"
+          }
+        },
+        "text": {
+          "primary": {
+            "value": "{semantic.color.text.primary}",
+            "type": "color"
+          },
+          "secondary": {
+            "value": "{semantic.color.text.secondary}",
+            "type": "color"
+          },
+          "tertiary": {
+            "value": "{semantic.color.text.tertiary}",
+            "type": "color"
+          }
+        },
+        "border": {
+          "default": {
+            "value": "{semantic.color.border.default}",
+            "type": "color"
+          },
+          "strong": {
+            "value": "{semantic.color.border.strong}",
+            "type": "color"
+          }
+        }
+      }
+    }
+  }
+}

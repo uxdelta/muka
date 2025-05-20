@@ -1,0 +1,78 @@
+{
+  "component": {
+    "input": {
+      "background": {
+        "value": "{semantic.color.background.primary}",
+        "type": "color"
+      },
+      "foreground": {
+        "value": "{semantic.color.text.primary}",
+        "type": "color"
+      },
+      "border": {
+        "value": "1px solid {semantic.color.border.default}",
+        "type": "border"
+      },
+      "radius": {
+        "value": "{semantic.radius.interactive.input}",
+        "type": "borderRadius"
+      },
+      "padding": {
+        "x": {
+          "value": "{core.spacing.3}",
+          "type": "spacing"
+        },
+        "y": {
+          "value": "{core.spacing.2}",
+          "type": "spacing"
+        }
+      },
+      "hover": {
+        "border": {
+          "value": "1px solid {semantic.color.border.strong}",
+          "type": "border"
+        }
+      },
+      "focus": {
+        "border": {
+          "value": "1px solid {semantic.color.border.focus}",
+          "type": "border"
+        },
+        "elevation": {
+          "value": "{semantic.elevation.interactive.focus}",
+          "type": "boxShadow"
+        }
+      },
+      "disabled": {
+        "background": {
+          "value": "{semantic.color.background.disabled}",
+          "type": "color"
+        },
+        "foreground": {
+          "value": "{semantic.color.text.disabled}",
+          "type": "color"
+        },
+        "border": {
+          "value": "1px solid {semantic.color.border.disabled}",
+          "type": "border"
+        }
+      },
+      "error": {
+        "border": {
+          "value": "1px solid {semantic.color.status.error}",
+          "type": "border"
+        }
+      },
+      "transition": {
+        "duration": {
+          "value": "{semantic.motion.transition.fast.duration}",
+          "type": "duration"
+        },
+        "easing": {
+          "value": "{semantic.motion.transition.fast.easing}",
+          "type": "cubicBezier"
+        }
+      }
+    }
+  }
+} 

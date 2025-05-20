@@ -1,1 +1,24 @@
-{}
+{
+  "layout": {
+    "mobile": {
+      "breakpoint": {
+        "value": "{semantic.grid.breakpoint.mobile}",
+        "type": "size"
+      },
+      "container": {
+        "value": "{semantic.grid.container.narrow}",
+        "type": "size"
+      },
+      "spacing": {
+        "section": {
+          "value": "{core.spacing.4}",
+          "type": "spacing"
+        },
+        "content": {
+          "value": "{core.spacing.3}",
+          "type": "spacing"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "semantic": {
+    "elevation": {
+      "surface": {
+        "default": {
+          "value": "{core.elevation.shadow.none}",
+          "type": "boxShadow"
+        },
+        "raised": {
+          "value": "{core.elevation.shadow.sm}",
+          "type": "boxShadow"
+        },
+        "floating": {
+          "value": "{core.elevation.shadow.md}",
+          "type": "boxShadow"
+        },
+        "modal": {
+          "value": "{core.elevation.shadow.lg}",
+          "type": "boxShadow"
+        },
+        "popover": {
+          "value": "{core.elevation.shadow.xl}",
+          "type": "boxShadow"
+        }
+      },
+      "interactive": {
+        "hover": {
+          "value": "{core.elevation.shadow.md}",
+          "type": "boxShadow"
+        },
+        "active": {
+          "value": "{core.elevation.shadow.inner}",
+          "type": "boxShadow"
+        },
+        "focus": {
+          "value": "{core.elevation.shadow.sm}",
+          "type": "boxShadow"
+        }
+      }
+    }
+  }
+} 

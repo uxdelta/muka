@@ -2,19 +2,47 @@
   {
     "id": "93e00ce49e8f3a3f49012a5c5eb26a1f766a0ca6",
     "name": "White Label",
+    "description": "Base theme with default styling",
+    "version": "1.0.0",
+    "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "brand/whitelabel": "enabled",
+      "core/size": "enabled",
+      "core/spacing": "enabled",
+      "core/typography": "enabled",
+      "core/color": "enabled",
+      "motion/duration": "enabled",
+      "motion/easing": "enabled",
+      "elevation/shadow": "enabled",
+      "radius/base": "enabled",
+      "grid/breakpoint": "enabled",
+      "grid/container": "enabled",
       "semantic/color": "enabled",
-      "component/button": "enabled"
+      "component/button": "enabled",
+      "brand/whitelabel": "enabled"
     },
     "group": "Brand"
   },
   {
     "id": "253edec58e2b39ad5e016e0f502c7d32f578bb1f",
     "name": "Muka",
+    "description": "Muka brand theme with custom styling",
+    "version": "1.0.0",
+    "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
+      "core/size": "enabled",
+      "core/spacing": "enabled",
+      "core/typography": "enabled",
+      "core/color": "enabled",
+      "motion/duration": "enabled",
+      "motion/easing": "enabled",
+      "elevation/shadow": "enabled",
+      "radius/base": "enabled",
+      "grid/breakpoint": "enabled",
+      "grid/container": "enabled",
+      "semantic/color": "enabled",
+      "component/button": "enabled",
       "brand/muka": "enabled"
     },
     "group": "Brand"
@@ -22,6 +50,9 @@
   {
     "id": "f782340747e37b6984ddef24436f582e0aac4b5f",
     "name": "Light",
+    "description": "Light mode theme",
+    "version": "1.0.0",
+    "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
       "mode/light": "enabled",
@@ -32,6 +63,9 @@
   {
     "id": "a3417029d7878fb7076d3abe3dd6eb12dc4fe85a",
     "name": "Dark",
+    "description": "Dark mode theme",
+    "version": "1.0.0",
+    "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
       "mode/dark": "enabled",
@@ -42,6 +76,9 @@
   {
     "id": "061ccea1d5d59b2d9fb26f8487986ec9d56cec4f",
     "name": "Mobile",
+    "description": "Mobile layout theme",
+    "version": "1.0.0",
+    "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
       "layout/mobile": "enabled",
@@ -52,6 +89,9 @@
   {
     "id": "3c255eff0e7a22aa4567a1d49c2a66430081319d",
     "name": "Tablet",
+    "description": "Tablet layout theme",
+    "version": "1.0.0",
+    "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
       "layout/tablet": "enabled",
@@ -62,6 +102,9 @@
   {
     "id": "899d8519474dbbe0499895951fc716a3ad6c3d95",
     "name": "Desktop",
+    "description": "Desktop layout theme",
+    "version": "1.0.0",
+    "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
       "layout/desktop": "enabled",
