@@ -4,7 +4,7 @@
     "core/spacing",
     "core/typography",
     "core/color",
-    "semantic/color/action",
+    "semantic/color",
     "mode/light",
     "mode/dark",
     "brand/whitelabel",

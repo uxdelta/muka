@@ -1,0 +1,14 @@
+{
+  "action": {
+    "primary": {
+      "background": {
+        "value": "{color.blue.500}",
+        "type": "color"
+      },
+      "foreground": {
+        "value": "{color.white}",
+        "type": "color"
+      }
+    }
+  }
+}

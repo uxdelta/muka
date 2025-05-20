@@ -1,34 +1,66 @@
 [
   {
-    "id": "f782340747e37b6984ddef24436f582e0aac4b5f",
-    "name": "light",
+    "id": "93e00ce49e8f3a3f49012a5c5eb26a1f766a0ca6",
+    "name": "White Label",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "brand/muka": "enabled",
-      "brand/ormilon": "enabled",
-      "mode/dark": "enabled",
-      "brand/whitelabel": "disabled",
-      "mode/light": "disabled",
-      "layout/desktop": "disabled",
-      "layout/tablet": "disabled",
-      "layout/mobile": "disabled",
-      "semantic/color/action": "disabled"
-    }
+      "brand/whitelabel": "enabled",
+      "semantic/color": "enabled"
+    },
+    "group": "Brand"
+  },
+  {
+    "id": "253edec58e2b39ad5e016e0f502c7d32f578bb1f",
+    "name": "Muka",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "brand/muka": "enabled"
+    },
+    "group": "Brand"
+  },
+  {
+    "id": "f782340747e37b6984ddef24436f582e0aac4b5f",
+    "name": "Light",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "mode/light": "enabled"
+    },
+    "group": "Mode"
   },
   {
     "id": "a3417029d7878fb7076d3abe3dd6eb12dc4fe85a",
-    "name": "dark",
+    "name": "Dark",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "brand/muka": "enabled",
-      "brand/ormilon": "enabled",
-      "mode/dark": "enabled",
-      "brand/whitelabel": "disabled",
-      "mode/light": "disabled",
-      "layout/desktop": "disabled",
-      "layout/tablet": "disabled",
-      "layout/mobile": "disabled",
-      "semantic/color/action": "disabled"
-    }
+      "mode/dark": "enabled"
+    },
+    "group": "Mode"
+  },
+  {
+    "id": "061ccea1d5d59b2d9fb26f8487986ec9d56cec4f",
+    "name": "Mobile",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "layout/mobile": "enabled"
+    },
+    "group": "Layout"
+  },
+  {
+    "id": "3c255eff0e7a22aa4567a1d49c2a66430081319d",
+    "name": "Tablet",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "layout/tablet": "enabled"
+    },
+    "group": "Layout"
+  },
+  {
+    "id": "899d8519474dbbe0499895951fc716a3ad6c3d95",
+    "name": "Desktop",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "layout/desktop": "enabled"
+    },
+    "group": "Layout"
   }
 ]
