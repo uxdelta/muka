@@ -4,31 +4,31 @@
       "interaction": {
         "hover": {
           "duration": {
-            "value": "{core.motion.duration.fast}",
+            "value": "{duration.fast}",
             "type": "duration"
           },
           "easing": {
-            "value": "{core.motion.easing.easeOut}",
+            "value": "{easing.easeOut}",
             "type": "cubicBezier"
           }
         },
         "press": {
           "duration": {
-            "value": "{core.motion.duration.instant}",
+            "value": "{duration.instant}",
             "type": "duration"
           },
           "easing": {
-            "value": "{core.motion.easing.linear}",
+            "value": "{easing.linear}",
             "type": "cubicBezier"
           }
         },
         "focus": {
           "duration": {
-            "value": "{core.motion.duration.fast}",
+            "value": "{duration.fast}",
             "type": "duration"
           },
           "easing": {
-            "value": "{core.motion.easing.easeOut}",
+            "value": "{easing.easeOut}",
             "type": "cubicBezier"
           }
         }
@@ -36,31 +36,31 @@
       "transition": {
         "default": {
           "duration": {
-            "value": "{core.motion.duration.normal}",
+            "value": "{duration.normal}",
             "type": "duration"
           },
           "easing": {
-            "value": "{core.motion.easing.easeInOut}",
+            "value": "{easing.easeInOut}",
             "type": "cubicBezier"
           }
         },
         "fast": {
           "duration": {
-            "value": "{core.motion.duration.fast}",
+            "value": "{duration.fast}",
             "type": "duration"
           },
           "easing": {
-            "value": "{core.motion.easing.easeOut}",
+            "value": "{easing.easeOut}",
             "type": "cubicBezier"
           }
         },
         "slow": {
           "duration": {
-            "value": "{core.motion.duration.slow}",
+            "value": "{duration.slow}",
             "type": "duration"
           },
           "easing": {
-            "value": "{core.motion.easing.easeInOut}",
+            "value": "{easing.easeInOut}",
             "type": "cubicBezier"
           }
         }

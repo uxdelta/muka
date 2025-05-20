@@ -3,37 +3,37 @@
     "elevation": {
       "surface": {
         "default": {
-          "value": "{core.elevation.shadow.none}",
+          "value": "{shadow.none}",
           "type": "boxShadow"
         },
         "raised": {
-          "value": "{core.elevation.shadow.sm}",
+          "value": "{shadow.sm}",
           "type": "boxShadow"
         },
         "floating": {
-          "value": "{core.elevation.shadow.md}",
+          "value": "{shadow.md}",
           "type": "boxShadow"
         },
         "modal": {
-          "value": "{core.elevation.shadow.lg}",
+          "value": "{shadow.lg}",
           "type": "boxShadow"
         },
         "popover": {
-          "value": "{core.elevation.shadow.xl}",
+          "value": "{shadow.xl}",
           "type": "boxShadow"
         }
       },
       "interactive": {
         "hover": {
-          "value": "{core.elevation.shadow.md}",
+          "value": "{shadow.md}",
           "type": "boxShadow"
         },
         "active": {
-          "value": "{core.elevation.shadow.inner}",
+          "value": "{shadow.inner}",
           "type": "boxShadow"
         },
         "focus": {
-          "value": "{core.elevation.shadow.sm}",
+          "value": "{shadow.sm}",
           "type": "boxShadow"
         }
       }

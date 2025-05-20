@@ -3,37 +3,37 @@
     "grid": {
       "breakpoint": {
         "mobile": {
-          "value": "{core.grid.breakpoint.sm}",
+          "value": "{breakpoint.sm}",
           "type": "size"
         },
         "tablet": {
-          "value": "{core.grid.breakpoint.md}",
+          "value": "{breakpoint.md}",
           "type": "size"
         },
         "desktop": {
-          "value": "{core.grid.breakpoint.lg}",
+          "value": "{breakpoint.lg}",
           "type": "size"
         },
         "wide": {
-          "value": "{core.grid.breakpoint.xl}",
+          "value": "{breakpoint.xl}",
           "type": "size"
         }
       },
       "container": {
         "narrow": {
-          "value": "{core.grid.container.sm}",
+          "value": "{container.sm}",
           "type": "size"
         },
         "default": {
-          "value": "{core.grid.container.md}",
+          "value": "{container.md}",
           "type": "size"
         },
         "wide": {
-          "value": "{core.grid.container.lg}",
+          "value": "{container.lg}",
           "type": "size"
         },
         "full": {
-          "value": "{core.grid.container.full}",
+          "value": "{container.full}",
           "type": "size"
         }
       }

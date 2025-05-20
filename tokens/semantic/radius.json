@@ -3,33 +3,33 @@
     "radius": {
       "surface": {
         "default": {
-          "value": "{core.radius.none}",
+          "value": "{none}",
           "type": "borderRadius"
         },
         "card": {
-          "value": "{core.radius.md}",
+          "value": "{md}",
           "type": "borderRadius"
         },
         "modal": {
-          "value": "{core.radius.lg}",
+          "value": "{lg}",
           "type": "borderRadius"
         },
         "pill": {
-          "value": "{core.radius.full}",
+          "value": "{full}",
           "type": "borderRadius"
         }
       },
       "interactive": {
         "button": {
-          "value": "{core.radius.md}",
+          "value": "{md}",
           "type": "borderRadius"
         },
         "input": {
-          "value": "{core.radius.sm}",
+          "value": "{sm}",
           "type": "borderRadius"
         },
         "badge": {
-          "value": "{core.radius.full}",
+          "value": "{full}",
           "type": "borderRadius"
         }
       }
