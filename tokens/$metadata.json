@@ -9,14 +9,24 @@
     "core/radius",
     "core/grid",
     "semantic/color",
+    "semantic/elevation",
+    "semantic/grid",
+    "semantic/motion",
+    "semantic/radius",
     "component/button",
-    "brand/whitelabel",
+    "component/input",
     "brand/muka",
+    "brand/muka/size",
+    "brand/muka/spacing",
     "brand/ormilon",
+    "brand/ormilon/size",
+    "brand/ormilon/spacing",
     "mode/light",
     "mode/dark",
     "layout/mobile",
     "layout/tablet",
-    "layout/desktop"
+    "layout/desktop",
+    "brand/default/size",
+    "brand/default/spacing"
   ]
 }

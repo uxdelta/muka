@@ -11,15 +11,17 @@
       "core/spacing": "enabled",
       "core/typography": "enabled",
       "core/color": "enabled",
-      "motion/duration": "enabled",
-      "motion/easing": "enabled",
-      "elevation/shadow": "enabled",
-      "radius/base": "enabled",
-      "grid/breakpoint": "enabled",
-      "grid/container": "enabled",
       "semantic/color": "enabled",
       "component/button": "enabled",
-      "brand/whitelabel": "enabled"
+      "core/motion": "enabled",
+      "core/elevation": "enabled",
+      "core/radius": "enabled",
+      "core/grid": "enabled",
+      "semantic/grid": "enabled",
+      "semantic/elevation": "enabled",
+      "semantic/motion": "enabled",
+      "semantic/radius": "enabled",
+      "component/input": "enabled"
     },
     "group": "Brand"
   },
@@ -35,15 +37,20 @@
       "core/spacing": "enabled",
       "core/typography": "enabled",
       "core/color": "enabled",
-      "motion/duration": "enabled",
-      "motion/easing": "enabled",
-      "elevation/shadow": "enabled",
-      "radius/base": "enabled",
-      "grid/breakpoint": "enabled",
-      "grid/container": "enabled",
       "semantic/color": "enabled",
       "component/button": "enabled",
-      "brand/muka": "enabled"
+      "brand/muka": "enabled",
+      "core/motion": "enabled",
+      "core/elevation": "enabled",
+      "core/radius": "enabled",
+      "core/grid": "enabled",
+      "semantic/elevation": "enabled",
+      "semantic/grid": "enabled",
+      "semantic/motion": "enabled",
+      "semantic/radius": "enabled",
+      "component/input": "enabled",
+      "brand/muka/size": "enabled",
+      "brand/muka/spacing": "enabled"
     },
     "group": "Brand"
   },
@@ -55,8 +62,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "mode/light": "enabled",
-      "component/button": "disabled"
+      "mode/light": "enabled"
     },
     "group": "Mode"
   },
@@ -68,8 +74,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "mode/dark": "enabled",
-      "component/button": "disabled"
+      "mode/dark": "enabled"
     },
     "group": "Mode"
   },
@@ -81,8 +86,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "layout/mobile": "enabled",
-      "component/button": "disabled"
+      "layout/mobile": "enabled"
     },
     "group": "Layout"
   },
@@ -94,8 +98,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "layout/tablet": "enabled",
-      "component/button": "disabled"
+      "layout/tablet": "enabled"
     },
     "group": "Layout"
   },
@@ -107,8 +110,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "layout/desktop": "enabled",
-      "component/button": "disabled"
+      "layout/desktop": "enabled"
     },
     "group": "Layout"
   }
