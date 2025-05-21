@@ -83,6 +83,12 @@
         "value": "{core.color.gray.900}",
         "type": "color"
       }
+    },
+    "action": {
+      "default": {
+        "value": "{color.violet.500}",
+        "type": "color"
+      }
     }
   },
   "font": {

@@ -37,6 +37,12 @@
         "value": "{color.gray.300}",
         "type": "color"
       }
+    },
+    "action": {
+      "default": {
+        "value": "{color.blue.500}",
+        "type": "color"
+      }
     }
   },
   "grid": {

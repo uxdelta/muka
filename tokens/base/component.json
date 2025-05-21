@@ -2,7 +2,7 @@
   "button": {
     "primary": {
       "background": {
-        "value": "{color.background.primary}",
+        "value": "{color.action.default}",
         "type": "color"
       },
       "text": {

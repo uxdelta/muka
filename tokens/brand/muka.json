@@ -83,6 +83,12 @@
         "value": "{text.primary}",
         "type": "color"
       }
+    },
+    "action": {
+      "default": {
+        "value": "{color.amber.500}",
+        "type": "color"
+      }
     }
   },
   "font": {
