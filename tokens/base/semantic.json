@@ -1,0 +1,208 @@
+{
+  "color": {
+    "background": {
+      "primary": {
+        "value": "{color.white}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{color.gray.50}",
+        "type": "color"
+      },
+      "tertiary": {
+        "value": "{color.gray.100}",
+        "type": "color"
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "{color.gray.900}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{color.gray.600}",
+        "type": "color"
+      },
+      "tertiary": {
+        "value": "{color.gray.500}",
+        "type": "color"
+      }
+    },
+    "border": {
+      "primary": {
+        "value": "{color.gray.200}",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "{color.gray.300}",
+        "type": "color"
+      }
+    }
+  },
+  "grid": {
+    "breakpoint": {
+      "xs": {
+        "value": "{grid.breakpoint.xs}",
+        "type": "size"
+      },
+      "sm": {
+        "value": "{grid.breakpoint.sm}",
+        "type": "size"
+      },
+      "md": {
+        "value": "{grid.breakpoint.md}",
+        "type": "size"
+      },
+      "lg": {
+        "value": "{grid.breakpoint.lg}",
+        "type": "size"
+      },
+      "xl": {
+        "value": "{grid.breakpoint.xl}",
+        "type": "size"
+      },
+      "2xl": {
+        "value": "{grid.breakpoint.2xl}",
+        "type": "size"
+      }
+    }
+  },
+  "motion": {
+    "duration": {
+      "instant": {
+        "value": "{motion.duration-instant}",
+        "type": "duration"
+      },
+      "fastest": {
+        "value": "{motion.duration-fastest}",
+        "type": "duration"
+      },
+      "faster": {
+        "value": "{motion.duration-faster}",
+        "type": "duration"
+      },
+      "fast": {
+        "value": "{motion.duration-fast}",
+        "type": "duration"
+      },
+      "normal": {
+        "value": "{motion.duration-normal}",
+        "type": "duration"
+      },
+      "slow": {
+        "value": "{motion.duration-slow}",
+        "type": "duration"
+      },
+      "slower": {
+        "value": "{motion.duration-slower}",
+        "type": "duration"
+      },
+      "slowest": {
+        "value": "{motion.duration-slowest}",
+        "type": "duration"
+      }
+    },
+    "easing": {
+      "linear": {
+        "value": "{motion.easing-linear}",
+        "type": "cubicBezier"
+      },
+      "ease": {
+        "value": "{motion.easing-ease}",
+        "type": "cubicBezier"
+      },
+      "easeIn": {
+        "value": "{motion.easing-easeIn}",
+        "type": "cubicBezier"
+      },
+      "easeOut": {
+        "value": "{motion.easing-easeOut}",
+        "type": "cubicBezier"
+      },
+      "easeInOut": {
+        "value": "{motion.easing-easeInOut}",
+        "type": "cubicBezier"
+      },
+      "bounce": {
+        "value": "{motion.easing-bounce}",
+        "type": "cubicBezier"
+      }
+    }
+  },
+  "elevation": {
+    "none": {
+      "value": "{elevation.none}",
+      "type": "boxShadow"
+    },
+    "xs": {
+      "value": "{elevation.xs}",
+      "type": "boxShadow"
+    },
+    "sm": {
+      "value": "{elevation.sm}",
+      "type": "boxShadow"
+    },
+    "base": {
+      "value": "{elevation.base}",
+      "type": "boxShadow"
+    },
+    "md": {
+      "value": "{elevation.md}",
+      "type": "boxShadow"
+    },
+    "lg": {
+      "value": "{elevation.lg}",
+      "type": "boxShadow"
+    },
+    "xl": {
+      "value": "{elevation.xl}",
+      "type": "boxShadow"
+    },
+    "2xl": {
+      "value": "{elevation.2xl}",
+      "type": "boxShadow"
+    },
+    "inner": {
+      "value": "{elevation.inner}",
+      "type": "boxShadow"
+    }
+  },
+  "radius": {
+    "none": {
+      "value": "{radius.none}",
+      "type": "borderRadius"
+    },
+    "sm": {
+      "value": "{radius.sm}",
+      "type": "borderRadius"
+    },
+    "base": {
+      "value": "{radius.base}",
+      "type": "borderRadius"
+    },
+    "md": {
+      "value": "{radius.md}",
+      "type": "borderRadius"
+    },
+    "lg": {
+      "value": "{radius.lg}",
+      "type": "borderRadius"
+    },
+    "xl": {
+      "value": "{radius.xl}",
+      "type": "borderRadius"
+    },
+    "2xl": {
+      "value": "{radius.2xl}",
+      "type": "borderRadius"
+    },
+    "3xl": {
+      "value": "{radius.3xl}",
+      "type": "borderRadius"
+    },
+    "full": {
+      "value": "{radius.full}",
+      "type": "borderRadius"
+    }
+  }
+} 

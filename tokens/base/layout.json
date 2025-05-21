@@ -1,0 +1,44 @@
+{
+  "mobile": {
+    "container": {
+      "value": "{grid.container.sm}",
+      "type": "size"
+    },
+    "spacing": {
+      "value": "{spacing.4}",
+      "type": "spacing"
+    },
+    "breakpoint": {
+      "value": "{grid.breakpoint.sm}",
+      "type": "size"
+    }
+  },
+  "tablet": {
+    "container": {
+      "value": "{grid.container.md}",
+      "type": "size"
+    },
+    "spacing": {
+      "value": "{spacing.6}",
+      "type": "spacing"
+    },
+    "breakpoint": {
+      "value": "{grid.breakpoint.md}",
+      "type": "size"
+    }
+  },
+  "desktop": {
+    "container": {
+      "value": "{grid.container.lg}",
+      "type": "size"
+    },
+    "spacing": {
+      "value": "{spacing.8}",
+      "type": "spacing"
+    },
+    "breakpoint": {
+      "value": "{grid.breakpoint.lg}",
+      "type": "size"
+    }
+  }
+} 
