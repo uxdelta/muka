@@ -6,43 +6,43 @@ This directory contains all design tokens for the design system, organized in a 
 
 The tokens follow a clear hierarchy:
 
-1. **Core Tokens** (`/core`)
+1. **Core Tokens** (`/base/core.json`)
    - Raw values and base tokens
-   - Never referenced directly by components
+   - Never referenced directly by components or other layers (except Semantic)
    - Includes: colors, spacing, typography, motion, elevation, radius, grid
 
-2. **Semantic Tokens** (`/semantic`)
+2. **Semantic Tokens** (`/base/semantic.json`)
    - References core tokens
    - Provides meaningful, purpose-driven names
    - Single source of truth for design decisions
    - Includes: colors, motion, elevation, radius, grid
 
-3. **Component Tokens** (`/component`)
+3. **Component Tokens** (`/base/component.json`)
    - References semantic tokens
    - Defines component-specific styles
    - Includes: button, input, etc.
 
-4. **Brand Tokens** (`/brand`)
+4. **Brand Tokens** (`/brand/`)
    - References semantic tokens
    - Defines brand-specific overrides
-   - Includes: muka, ormilon
+   - Includes: muka.json, ormilon.json
 
-5. **Layout Tokens** (`/layout`)
+5. **Layout Tokens** (`/base/layout.json`)
    - References semantic tokens
    - Defines responsive layout configurations
-   - Includes: mobile, tablet, desktop
+   - Includes: mobile, tablet, desktop specific values within the file
 
-6. **Mode Tokens** (`/mode`)
+6. **Mode Tokens** (`/base/mode.json`)
    - References semantic tokens
-   - Defines theme variations
-   - Includes: light, dark
+   - Defines theme variations (light/dark) within the file
+   - Includes: light, dark specific values within the file
 
 ### Token Hierarchy Diagram
 
 ```mermaid
 graph TD
     subgraph "Core Layer"
-        C[Core Tokens]
+        C[Core Tokens\n(base/core.json)]
         C --> C1[Colors]
         C --> C2[Spacing]
         C --> C3[Typography]
@@ -53,7 +53,7 @@ graph TD
     end
 
     subgraph "Semantic Layer"
-        S[Semantic Tokens]
+        S[Semantic Tokens\n(base/semantic.json)]
         S --> S1[Colors]
         S --> S2[Motion]
         S --> S3[Elevation]
@@ -62,10 +62,10 @@ graph TD
     end
 
     subgraph "Application Layer"
-        A1[Component Tokens]
-        A2[Brand Tokens]
-        A3[Layout Tokens]
-        A4[Mode Tokens]
+        A1[Component Tokens\n(base/component.json)]
+        A2[Brand Tokens\n(brand/*.json)]
+        A3[Layout Tokens\n(base/layout.json)]
+        A4[Mode Tokens\n(base/mode.json)]
     end
 
     C --> S
@@ -82,143 +82,112 @@ graph TD
     style A4 fill:#bfb,stroke:#333,stroke-width:2px
 ```
 
-The diagram above illustrates:
-- **Core Layer** (Pink): Raw values and base tokens
-- **Semantic Layer** (Blue): Purpose-driven tokens that reference core tokens
-- **Application Layer** (Green): Implementation-specific tokens that reference semantic tokens
+The diagram above illustrates the logical hierarchy:
+- **Core Layer** (Pink): Raw values and base tokens defined in `base/core.json`
+- **Semantic Layer** (Blue): Purpose-driven tokens that reference core tokens, defined in `base/semantic.json`
+- **Application Layer** (Green): Implementation-specific tokens that reference semantic tokens, defined in `base/component.json`, `brand/*.json`, `base/layout.json`, and `base/mode.json`
 
 ## Directory Structure
 
 ```
 tokens/
-├── core/               # Raw values and base tokens
-├── semantic/           # Purpose-driven tokens
-├── component/          # Component-specific tokens
-├── brand/             # Brand-specific tokens
-├── layout/            # Responsive layout tokens
-├── mode/              # Theme mode tokens
-├── $metadata.json     # Token metadata
-└── $themes.json       # Theme configurations
+├── base/              # Consolidated base tokens (core, semantic, component, layout, mode)
+│   ├── component.json
+│   ├── core.json
+│   ├── layout.json
+│   ├── mode.json
+│   └── semantic.json
+├── brand/             # Brand-specific token overrides
+│   ├── muka.json
+│   └── ormilon.json
+├── $metadata.json     # Token metadata (includes token set order)
+└── $themes.json       # Theme configurations (for Tokens Studio layering)
 ```
 
-## Token Categories
+## Token Categories (within base files)
 
-### Core Tokens
-- `color.json`: Base color palette
-- `spacing.json`: Base spacing scale
-- `typography.json`: Base typography settings
-- `motion.json`: Animation durations and easing
-- `elevation.json`: Shadow definitions
-- `radius.json`: Border radius values
-- `grid.json`: Breakpoints and container sizes
+### Base Core Tokens (in `base/core.json`)
+- `color`: Base color palette
+- `spacing`: Base spacing scale
+- `typography`: Base typography settings
+- `motion`: Animation durations and easing
+- `elevation`: Shadow definitions
+- `radius`: Border radius values
+- `grid`: Breakpoints and container sizes
 
-### Semantic Tokens
-- `color.json`: Purpose-driven color tokens
-- `motion.json`: Semantic motion tokens
-- `elevation.json`: Semantic elevation tokens
-- `radius.json`: Semantic radius tokens
-- `grid.json`: Semantic grid tokens
+### Base Semantic Tokens (in `base/semantic.json`)
+- `color`: Purpose-driven color tokens
+- `motion`: Semantic motion tokens
+- `elevation`: Semantic elevation tokens
+- `radius`: Semantic radius tokens
+- `grid`: Semantic grid tokens
 
-### Component Tokens
-- `button.json`: Button styles and states
-- `input.json`: Input field styles and states
+### Base Component Tokens (in `base/component.json`)
+- Defines component-specific styles (e.g., `button`, `input`)
 
-### Brand Tokens
-- `muka.json`: Muka brand configuration
-- `ormilon.json`: Ormilon brand configuration
+### Brand Tokens (in `brand/*.json`)
+- Defines brand-specific overrides for colors, typography, etc.
 
-### Layout Tokens
-- `mobile.json`: Mobile layout configuration
-- `tablet.json`: Tablet layout configuration
-- `desktop.json`: Desktop layout configuration
+### Base Layout Tokens (in `base/layout.json`)
+- Defines responsive layout configurations (e.g., values for `mobile`, `tablet`, `desktop`)
 
-### Mode Tokens
-- `light.json`: Light theme configuration
-- `dark.json`: Dark theme configuration
+### Base Mode Tokens (in `base/mode.json`)
+- Defines theme variations (e.g., values for `light`, `dark`)
 
 ## Usage Guidelines
 
-1. **Never reference core tokens directly** in components or brand configurations
-2. **Always use semantic tokens** as the source of truth for design decisions
-3. **Use component tokens** for component-specific styling
-4. **Use brand tokens** for brand-specific overrides
-5. **Use layout tokens** for responsive design
-6. **Use mode tokens** for theme variations
+1. **Core tokens** are the foundation and should generally only be referenced by semantic tokens.
+2. **Semantic tokens** provide meaning and should be the primary reference point for component, brand, layout, and mode tokens.
+3. **Component, Brand, Layout, and Mode tokens** can override semantic tokens to provide specific styling based on context.
+4. **Layer themes in Tokens Studio** using the `$themes.json` configuration (e.g., Base Brand -> Specific Brand -> Mode -> Layout).
 
-## Token References
+## Token References (Examples - refer to specific token files for actual structure)
 
-### Color References
+### Semantic Token References (e.g., in `base/semantic.json`)
 ```json
 {
-  "semantic.color.background.primary": "Base background color",
-  "semantic.color.text.primary": "Primary text color",
-  "semantic.color.action.primary.background": "Primary action background"
+  "color": {
+    "background": {
+      "primary": {
+        "value": "{core.color.gray.100}",
+        "type": "color"
+      }
+      // ... other semantic color tokens referencing core colors
+    }
+    // ... other semantic categories referencing core tokens
+  }
 }
 ```
 
-### Motion References
+### Application Layer References (e.g., in `base/component.json`, `brand/*.json`, `base/layout.json`, `base/mode.json`)
 ```json
 {
-  "semantic.motion.transition.fast": "Fast transition",
-  "semantic.motion.interaction.hover": "Hover interaction"
-}
-```
-
-### Elevation References
-```json
-{
-  "semantic.elevation.surface.default": "Default surface elevation",
-  "semantic.elevation.interactive.hover": "Hover state elevation"
-}
-```
-
-### Radius References
-```json
-{
-  "semantic.radius.surface.card": "Card border radius",
-  "semantic.radius.interactive.button": "Button border radius"
-}
-```
-
-### Grid References
-```json
-{
-  "semantic.grid.breakpoint.mobile": "Mobile breakpoint",
-  "semantic.grid.container.default": "Default container width"
+  "button": {
+    "primary": {
+      "background": {
+        "value": "{semantic.color.action.primary.background}",
+        "type": "color"
+      }
+      // ... other component tokens referencing semantic tokens
+    }
+  }
+  // ... other application layer tokens referencing semantic or core tokens where appropriate (e.g., raw brand colors)
 }
 ```
 
 ## Best Practices
 
-1. **Maintain Hierarchy**
-   - Core → Semantic → Component/Brand/Layout/Mode
-   - Never skip levels in the hierarchy
-
-2. **Naming Conventions**
-   - Use semantic names that describe purpose
-   - Follow consistent naming patterns
-   - Use camelCase for token names
-
-3. **Token Types**
-   - Always specify the correct type
-   - Use appropriate value formats
-   - Maintain consistent units
-
-4. **Documentation**
-   - Keep this documentation updated
-   - Document any new token categories
-   - Include usage examples
-
-5. **Version Control**
-   - Review token changes carefully
-   - Consider impact on existing components
-   - Test changes across all themes
+1. **Maintain Hierarchy:** Core → Semantic → Component/Brand/Layout/Mode. Strive to follow this logical flow in your token references.
+2. **Naming Conventions:** Use clear, semantic names. Follow consistent patterns.
+3. **Token Types:** Always specify the correct type.
+4. **Documentation:** Keep this documentation updated.
+5. **Version Control:** Review token changes carefully and test thoroughly.
 
 ## Contributing
 
-When adding new tokens:
-1. Follow the established hierarchy
-2. Use semantic naming
-3. Reference existing tokens when possible
-4. Update this documentation
-5. Test across all themes and components 
+When adding or modifying tokens:
+1. Understand the token hierarchy and place tokens in the correct file (`tokens/base/*.json` or `tokens/brand/*.json`).
+2. Use semantic naming where appropriate.
+3. Reference existing tokens according to the hierarchy.
+4. Update this documentation (`tokens/README.md`).
+5. Test your changes in Tokens Studio and on actual components across different themes and layouts. 

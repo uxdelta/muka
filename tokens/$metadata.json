@@ -1,32 +1,11 @@
 {
   "tokenSetOrder": [
-    "core/size",
-    "core/spacing",
-    "core/typography",
-    "core/color",
-    "core/motion",
-    "core/elevation",
-    "core/radius",
-    "core/grid",
-    "semantic/color",
-    "semantic/elevation",
-    "semantic/grid",
-    "semantic/motion",
-    "semantic/radius",
-    "component/button",
-    "component/input",
+    "base/core",
+    "base/semantic",
+    "base/component",
+    "base/layout",
+    "base/mode",
     "brand/muka",
-    "brand/muka/size",
-    "brand/muka/spacing",
-    "brand/ormilon",
-    "brand/ormilon/size",
-    "brand/ormilon/spacing",
-    "mode/light",
-    "mode/dark",
-    "layout/mobile",
-    "layout/tablet",
-    "layout/desktop",
-    "brand/default/size",
-    "brand/default/spacing"
+    "brand/ormilon"
   ]
 }
