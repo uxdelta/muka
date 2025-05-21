@@ -1,7 +1,7 @@
 [
   {
     "id": "93e00ce49e8f3a3f49012a5c5eb26a1f766a0ca6",
-    "name": "White Label",
+    "name": "Default",
     "description": "Base theme with default styling",
     "version": "1.0.0",
     "author": "Design System Team",
@@ -9,9 +9,7 @@
     "selectedTokenSets": {
       "base/core": "enabled",
       "base/semantic": "enabled",
-      "base/component": "enabled",
-      "base/layout": "enabled",
-      "base/mode": "enabled"
+      "base/component": "enabled"
     },
     "group": "Brand"
   },
@@ -91,11 +89,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "base/core": "enabled",
-      "base/semantic": "enabled",
-      "base/component": "enabled",
-      "base/layout": "enabled",
-      "base/mode": "enabled"
+      "mode/light": "enabled"
     },
     "group": "Mode"
   },
@@ -107,11 +101,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "base/core": "enabled",
-      "base/semantic": "enabled",
-      "base/component": "enabled",
-      "base/layout": "enabled",
-      "base/mode": "enabled"
+      "mode/dark": "enabled"
     },
     "group": "Mode"
   },
@@ -123,11 +113,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "base/core": "enabled",
-      "base/semantic": "enabled",
-      "base/component": "enabled",
-      "base/layout": "enabled",
-      "base/mode": "enabled"
+      "layout/mobile": "enabled"
     },
     "group": "Layout"
   },
@@ -139,11 +125,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "base/core": "enabled",
-      "base/semantic": "enabled",
-      "base/component": "enabled",
-      "base/layout": "enabled",
-      "base/mode": "enabled"
+      "layout/tablet": "enabled"
     },
     "group": "Layout"
   },
@@ -155,11 +137,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "base/core": "enabled",
-      "base/semantic": "enabled",
-      "base/component": "enabled",
-      "base/layout": "enabled",
-      "base/mode": "enabled"
+      "layout/desktop": "enabled"
     },
     "group": "Layout"
   }
