@@ -14,70 +14,26 @@
     "group": "Brand"
   },
   {
-    "id": "253edec58e2b39ad5e016e0f502c7d32f578bb1f",
-    "name": "Muka Light",
-    "description": "Muka brand theme with light mode styling",
+    "id": "new-muka-brand-id",
+    "name": "Muka",
+    "description": "Muka brand overrides",
     "version": "1.0.0",
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "base/core": "enabled",
-      "base/semantic": "enabled",
-      "base/component": "enabled",
-      "base/layout": "enabled",
-      "base/mode": "enabled",
-      "brand/muka.light": "enabled"
+      "brand/muka": "enabled"
     },
     "group": "Brand"
   },
   {
-    "id": "253edec58e2b39ad5e016e0f502c7d32f578bb1f",
-    "name": "Muka Dark",
-    "description": "Muka brand theme with dark mode styling",
+    "id": "new-ormilon-brand-id",
+    "name": "Ormilon",
+    "description": "Ormilon brand overrides",
     "version": "1.0.0",
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "base/core": "enabled",
-      "base/semantic": "enabled",
-      "base/component": "enabled",
-      "base/layout": "enabled",
-      "base/mode": "enabled",
-      "brand/muka.dark": "enabled"
-    },
-    "group": "Brand"
-  },
-  {
-    "id": "253edec58e2b39ad5e016e0f502c7d32f578bb1f",
-    "name": "Ormilon Light",
-    "description": "Ormilon brand theme with light mode styling",
-    "version": "1.0.0",
-    "author": "Design System Team",
-    "$figmaStyleReferences": {},
-    "selectedTokenSets": {
-      "base/core": "enabled",
-      "base/semantic": "enabled",
-      "base/component": "enabled",
-      "base/layout": "enabled",
-      "base/mode": "enabled",
-      "brand/ormilon.light": "enabled"
-    },
-    "group": "Brand"
-  },
-  {
-    "id": "253edec58e2b39ad5e016e0f502c7d32f578bb1f",
-    "name": "Ormilon Dark",
-    "description": "Ormilon brand theme with dark mode styling",
-    "version": "1.0.0",
-    "author": "Design System Team",
-    "$figmaStyleReferences": {},
-    "selectedTokenSets": {
-      "base/core": "enabled",
-      "base/semantic": "enabled",
-      "base/component": "enabled",
-      "base/layout": "enabled",
-      "base/mode": "enabled",
-      "brand/ormilon.dark": "enabled"
+      "brand/ormilon": "enabled"
     },
     "group": "Brand"
   },
@@ -89,7 +45,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "mode/light": "enabled"
+      "base/mode": "enabled"
     },
     "group": "Mode"
   },
@@ -101,7 +57,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "mode/dark": "enabled"
+      "base/mode": "enabled"
     },
     "group": "Mode"
   },
@@ -113,7 +69,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "layout/mobile": "enabled"
+      "base/layout": "enabled"
     },
     "group": "Layout"
   },
@@ -125,7 +81,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "layout/tablet": "enabled"
+      "base/layout": "enabled"
     },
     "group": "Layout"
   },
@@ -137,7 +93,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "layout/desktop": "enabled"
+      "base/layout": "enabled"
     },
     "group": "Layout"
   }
