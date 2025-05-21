@@ -1,74 +1,18 @@
 {
-  "size": {
-    "base": {
-      "xs": {
-        "value": "0.625rem",
-        "type": "sizing"
-      },
-      "sm": {
-        "value": "0.875rem",
-        "type": "sizing"
-      },
-      "md": {
-        "value": "1.25rem",
-        "type": "sizing"
-      },
-      "lg": {
-        "value": "1.75rem",
-        "type": "sizing"
-      },
-      "xl": {
-        "value": "2.25rem",
-        "type": "sizing"
-      },
-      "2xl": {
-        "value": "2.75rem",
-        "type": "sizing"
-      }
-    },
-    "container": {
-      "sm": {
-        "value": "600px",
-        "type": "sizing"
-      },
-      "md": {
-        "value": "720px",
-        "type": "sizing"
-      },
-      "lg": {
-        "value": "960px",
-        "type": "sizing"
-      },
-      "xl": {
-        "value": "1200px",
-        "type": "sizing"
-      },
-      "2xl": {
-        "value": "1440px",
-        "type": "sizing"
-      }
-    },
-    "icon": {
-      "xs": {
-        "value": "0.875rem",
-        "type": "sizing"
-      },
-      "sm": {
-        "value": "1.125rem",
-        "type": "sizing"
-      },
-      "md": {
-        "value": "1.375rem",
-        "type": "sizing"
-      },
-      "lg": {
-        "value": "1.75rem",
-        "type": "sizing"
-      },
-      "xl": {
-        "value": "2.25rem",
-        "type": "sizing"
-      }
-    }
-  }
+  "xs": { "value": "0.625rem", "type": "sizing" },
+  "sm": { "value": "0.875rem", "type": "sizing" },
+  "md": { "value": "1.25rem", "type": "sizing" },
+  "lg": { "value": "1.75rem", "type": "sizing" },
+  "xl": { "value": "2.25rem", "type": "sizing" },
+  "2xl": { "value": "2.75rem", "type": "sizing" },
+  "container-sm": { "value": "600px", "type": "sizing" },
+  "container-md": { "value": "720px", "type": "sizing" },
+  "container-lg": { "value": "960px", "type": "sizing" },
+  "container-xl": { "value": "1200px", "type": "sizing" },
+  "container-2xl": { "value": "1440px", "type": "sizing" },
+  "icon-xs": { "value": "0.875rem", "type": "sizing" },
+  "icon-sm": { "value": "1.125rem", "type": "sizing" },
+  "icon-md": { "value": "1.375rem", "type": "sizing" },
+  "icon-lg": { "value": "1.75rem", "type": "sizing" },
+  "icon-xl": { "value": "2.25rem", "type": "sizing" }
 }
