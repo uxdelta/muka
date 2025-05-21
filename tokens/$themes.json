@@ -21,7 +21,12 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "brand/muka": "enabled"
+      "brand/muka": "enabled",
+      "base/core": "enabled",
+      "base/semantic": "enabled",
+      "base/component": "enabled",
+      "base/layout": "enabled",
+      "base/mode": "enabled"
     },
     "group": "Brand"
   },
@@ -33,33 +38,14 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "brand/ormilon": "enabled"
+      "brand/ormilon": "enabled",
+      "base/core": "enabled",
+      "base/semantic": "enabled",
+      "base/component": "enabled",
+      "base/layout": "enabled",
+      "base/mode": "enabled"
     },
     "group": "Brand"
-  },
-  {
-    "id": "f782340747e37b6984ddef24436f582e0aac4b5f",
-    "name": "Light",
-    "description": "Light mode theme",
-    "version": "1.0.0",
-    "author": "Design System Team",
-    "$figmaStyleReferences": {},
-    "selectedTokenSets": {
-      "base/mode": "enabled"
-    },
-    "group": "Mode"
-  },
-  {
-    "id": "a3417029d7878fb7076d3abe3dd6eb12dc4fe85a",
-    "name": "Dark",
-    "description": "Dark mode theme",
-    "version": "1.0.0",
-    "author": "Design System Team",
-    "$figmaStyleReferences": {},
-    "selectedTokenSets": {
-      "base/mode": "enabled"
-    },
-    "group": "Mode"
   },
   {
     "id": "061ccea1d5d59b2d9fb26f8487986ec9d56cec4f",
@@ -96,5 +82,29 @@
       "base/layout": "enabled"
     },
     "group": "Layout"
+  },
+  {
+    "id": "f782340747e37b6984ddef24436f582e0aac4b5f",
+    "name": "Light",
+    "description": "Light mode theme",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "base/mode": "enabled"
+    },
+    "group": "Mode"
+  },
+  {
+    "id": "a3417029d7878fb7076d3abe3dd6eb12dc4fe85a",
+    "name": "Dark",
+    "description": "Dark mode theme",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "base/mode": "enabled"
+    },
+    "group": "Mode"
   }
 ]
