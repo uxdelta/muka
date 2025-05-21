@@ -1,20 +1,16 @@
 {
-  "duration": {
-    "instant": { "value": "0ms", "type": "duration" },
-    "fastest": { "value": "100ms", "type": "duration" },
-    "faster": { "value": "150ms", "type": "duration" },
-    "fast": { "value": "200ms", "type": "duration" },
-    "normal": { "value": "300ms", "type": "duration" },
-    "slow": { "value": "400ms", "type": "duration" },
-    "slower": { "value": "500ms", "type": "duration" },
-    "slowest": { "value": "1000ms", "type": "duration" }
-  },
-  "easing": {
-    "linear": { "value": "cubic-bezier(0, 0, 1, 1)", "type": "cubicBezier" },
-    "ease": { "value": "cubic-bezier(0.25, 0.1, 0.25, 1)", "type": "cubicBezier" },
-    "easeIn": { "value": "cubic-bezier(0.42, 0, 1, 1)", "type": "cubicBezier" },
-    "easeOut": { "value": "cubic-bezier(0, 0, 0.58, 1)", "type": "cubicBezier" },
-    "easeInOut": { "value": "cubic-bezier(0.42, 0, 0.58, 1)", "type": "cubicBezier" },
-    "bounce": { "value": "cubic-bezier(0.68, -0.55, 0.265, 1.55)", "type": "cubicBezier" }
-  }
+  "duration-instant": { "value": "0ms", "type": "duration" },
+  "duration-fastest": { "value": "100ms", "type": "duration" },
+  "duration-faster": { "value": "150ms", "type": "duration" },
+  "duration-fast": { "value": "200ms", "type": "duration" },
+  "duration-normal": { "value": "300ms", "type": "duration" },
+  "duration-slow": { "value": "400ms", "type": "duration" },
+  "duration-slower": { "value": "500ms", "type": "duration" },
+  "duration-slowest": { "value": "1000ms", "type": "duration" },
+  "easing-linear": { "value": "cubic-bezier(0, 0, 1, 1)", "type": "cubicBezier" },
+  "easing-ease": { "value": "cubic-bezier(0.25, 0.1, 0.25, 1)", "type": "cubicBezier" },
+  "easing-easeIn": { "value": "cubic-bezier(0.42, 0, 1, 1)", "type": "cubicBezier" },
+  "easing-easeOut": { "value": "cubic-bezier(0, 0, 0.58, 1)", "type": "cubicBezier" },
+  "easing-easeInOut": { "value": "cubic-bezier(0.42, 0, 0.58, 1)", "type": "cubicBezier" },
+  "easing-bounce": { "value": "cubic-bezier(0.68, -0.55, 0.265, 1.55)", "type": "cubicBezier" }
 }
