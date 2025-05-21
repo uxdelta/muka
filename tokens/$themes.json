@@ -17,8 +17,8 @@
   },
   {
     "id": "253edec58e2b39ad5e016e0f502c7d32f578bb1f",
-    "name": "Muka",
-    "description": "Muka brand theme with custom styling",
+    "name": "Muka Light",
+    "description": "Muka brand theme with light mode styling",
     "version": "1.0.0",
     "author": "Design System Team",
     "$figmaStyleReferences": {},
@@ -28,7 +28,58 @@
       "base/component": "enabled",
       "base/layout": "enabled",
       "base/mode": "enabled",
-      "brand/muka": "enabled"
+      "brand/muka.light": "enabled"
+    },
+    "group": "Brand"
+  },
+  {
+    "id": "253edec58e2b39ad5e016e0f502c7d32f578bb1f",
+    "name": "Muka Dark",
+    "description": "Muka brand theme with dark mode styling",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "base/core": "enabled",
+      "base/semantic": "enabled",
+      "base/component": "enabled",
+      "base/layout": "enabled",
+      "base/mode": "enabled",
+      "brand/muka.dark": "enabled"
+    },
+    "group": "Brand"
+  },
+  {
+    "id": "253edec58e2b39ad5e016e0f502c7d32f578bb1f",
+    "name": "Ormilon Light",
+    "description": "Ormilon brand theme with light mode styling",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "base/core": "enabled",
+      "base/semantic": "enabled",
+      "base/component": "enabled",
+      "base/layout": "enabled",
+      "base/mode": "enabled",
+      "brand/ormilon.light": "enabled"
+    },
+    "group": "Brand"
+  },
+  {
+    "id": "253edec58e2b39ad5e016e0f502c7d32f578bb1f",
+    "name": "Ormilon Dark",
+    "description": "Ormilon brand theme with dark mode styling",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "base/core": "enabled",
+      "base/semantic": "enabled",
+      "base/component": "enabled",
+      "base/layout": "enabled",
+      "base/mode": "enabled",
+      "brand/ormilon.dark": "enabled"
     },
     "group": "Brand"
   },
