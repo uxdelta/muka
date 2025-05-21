@@ -2,43 +2,43 @@
   "color": {
     "primary": {
       "50": {
-        "value": "#fdf4ff",
+        "value": "{core.color.violet.50}",
         "type": "color"
       },
       "100": {
-        "value": "#fae8ff",
+        "value": "{core.color.violet.100}",
         "type": "color"
       },
       "200": {
-        "value": "#f5d0fe",
+        "value": "{core.color.violet.200}",
         "type": "color"
       },
       "300": {
-        "value": "#f0abfc",
+        "value": "{core.color.violet.300}",
         "type": "color"
       },
       "400": {
-        "value": "#e879f9",
+        "value": "{core.color.violet.400}",
         "type": "color"
       },
       "500": {
-        "value": "#d946ef",
+        "value": "{core.color.violet.500}",
         "type": "color"
       },
       "600": {
-        "value": "#c026d3",
+        "value": "{core.color.violet.600}",
         "type": "color"
       },
       "700": {
-        "value": "#a21caf",
+        "value": "{core.color.violet.700}",
         "type": "color"
       },
       "800": {
-        "value": "#86198f",
+        "value": "{core.color.violet.800}",
         "type": "color"
       },
       "900": {
-        "value": "#701a75",
+        "value": "{core.color.violet.900}",
         "type": "color"
       }
     },
@@ -88,11 +88,11 @@
   "font": {
     "family": {
       "primary": {
-        "value": "Roboto",
+        "value": "Space Grotesk",
         "type": "fontFamily"
       },
       "secondary": {
-        "value": "Roboto",
+        "value": "Space Grotesk",
         "type": "fontFamily"
       }
     },
@@ -208,19 +208,19 @@
   "typography": {
     "heading": {
       "fontFamily": {
-        "value": "Roboto",
+        "value": "{core.font.family.primary}",
         "type": "typography"
       }
     },
     "body": {
       "fontFamily": {
-        "value": "Roboto",
+        "value": "{core.font.family.secondary}",
         "type": "typography"
       }
     },
     "caption": {
       "fontFamily": {
-        "value": "Roboto",
+        "value": "{core.font.family.secondary}",
         "type": "typography"
       }
     }
