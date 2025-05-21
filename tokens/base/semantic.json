@@ -48,27 +48,27 @@
   "grid": {
     "breakpoint": {
       "xs": {
-        "value": "{grid.breakpoint.xs}",
+        "value": "{core.grid.breakpoint.xs}",
         "type": "size"
       },
       "sm": {
-        "value": "{grid.breakpoint.sm}",
+        "value": "{core.grid.breakpoint.sm}",
         "type": "size"
       },
       "md": {
-        "value": "{grid.breakpoint.md}",
+        "value": "{core.grid.breakpoint.md}",
         "type": "size"
       },
       "lg": {
-        "value": "{grid.breakpoint.lg}",
+        "value": "{core.grid.breakpoint.lg}",
         "type": "size"
       },
       "xl": {
-        "value": "{grid.breakpoint.xl}",
+        "value": "{core.grid.breakpoint.xl}",
         "type": "size"
       },
       "2xl": {
-        "value": "{grid.breakpoint.2xl}",
+        "value": "{core.grid.breakpoint.2xl}",
         "type": "size"
       }
     }
@@ -76,139 +76,195 @@
   "motion": {
     "duration": {
       "instant": {
-        "value": "{motion.duration-instant}",
+        "value": "{core.motion.duration-instant}",
         "type": "duration"
       },
       "fastest": {
-        "value": "{motion.duration-fastest}",
+        "value": "{core.motion.duration-fastest}",
         "type": "duration"
       },
       "faster": {
-        "value": "{motion.duration-faster}",
+        "value": "{core.motion.duration-faster}",
         "type": "duration"
       },
       "fast": {
-        "value": "{motion.duration-fast}",
+        "value": "{core.motion.duration-fast}",
         "type": "duration"
       },
       "normal": {
-        "value": "{motion.duration-normal}",
+        "value": "{core.motion.duration-normal}",
         "type": "duration"
       },
       "slow": {
-        "value": "{motion.duration-slow}",
+        "value": "{core.motion.duration-slow}",
         "type": "duration"
       },
       "slower": {
-        "value": "{motion.duration-slower}",
+        "value": "{core.motion.duration-slower}",
         "type": "duration"
       },
       "slowest": {
-        "value": "{motion.duration-slowest}",
+        "value": "{core.motion.duration-slowest}",
         "type": "duration"
       }
     },
     "easing": {
       "linear": {
-        "value": "{motion.easing-linear}",
+        "value": "{core.motion.easing-linear}",
         "type": "cubicBezier"
       },
       "ease": {
-        "value": "{motion.easing-ease}",
+        "value": "{core.motion.easing-ease}",
         "type": "cubicBezier"
       },
       "easeIn": {
-        "value": "{motion.easing-easeIn}",
+        "value": "{core.motion.easing-easeIn}",
         "type": "cubicBezier"
       },
       "easeOut": {
-        "value": "{motion.easing-easeOut}",
+        "value": "{core.motion.easing-easeOut}",
         "type": "cubicBezier"
       },
       "easeInOut": {
-        "value": "{motion.easing-easeInOut}",
+        "value": "{core.motion.easing-easeInOut}",
         "type": "cubicBezier"
       },
       "bounce": {
-        "value": "{motion.easing-bounce}",
+        "value": "{core.motion.easing-bounce}",
         "type": "cubicBezier"
       }
     }
   },
   "elevation": {
     "none": {
-      "value": "{elevation.none}",
+      "value": "{core.elevation.none}",
       "type": "boxShadow"
     },
     "xs": {
-      "value": "{elevation.xs}",
+      "value": "{core.elevation.xs}",
       "type": "boxShadow"
     },
     "sm": {
-      "value": "{elevation.sm}",
+      "value": "{core.elevation.sm}",
       "type": "boxShadow"
     },
     "base": {
-      "value": "{elevation.base}",
+      "value": "{core.elevation.base}",
       "type": "boxShadow"
     },
     "md": {
-      "value": "{elevation.md}",
+      "value": "{core.elevation.md}",
       "type": "boxShadow"
     },
     "lg": {
-      "value": "{elevation.lg}",
+      "value": "{core.elevation.lg}",
       "type": "boxShadow"
     },
     "xl": {
-      "value": "{elevation.xl}",
+      "value": "{core.elevation.xl}",
       "type": "boxShadow"
     },
     "2xl": {
-      "value": "{elevation.2xl}",
+      "value": "{core.elevation.2xl}",
       "type": "boxShadow"
     },
     "inner": {
-      "value": "{elevation.inner}",
+      "value": "{core.elevation.inner}",
       "type": "boxShadow"
     }
   },
   "radius": {
     "none": {
-      "value": "{radius.none}",
+      "value": "{core.radius.none}",
       "type": "borderRadius"
     },
     "sm": {
-      "value": "{radius.sm}",
+      "value": "{core.radius.sm}",
       "type": "borderRadius"
     },
     "base": {
-      "value": "{radius.base}",
+      "value": "{core.radius.base}",
       "type": "borderRadius"
     },
     "md": {
-      "value": "{radius.md}",
+      "value": "{core.radius.md}",
       "type": "borderRadius"
     },
     "lg": {
-      "value": "{radius.lg}",
+      "value": "{core.radius.lg}",
       "type": "borderRadius"
     },
     "xl": {
-      "value": "{radius.xl}",
+      "value": "{core.radius.xl}",
       "type": "borderRadius"
     },
     "2xl": {
-      "value": "{radius.2xl}",
+      "value": "{core.radius.2xl}",
       "type": "borderRadius"
     },
     "3xl": {
-      "value": "{radius.3xl}",
+      "value": "{core.radius.3xl}",
       "type": "borderRadius"
     },
     "full": {
-      "value": "{radius.full}",
+      "value": "{core.radius.full}",
       "type": "borderRadius"
+    }
+  },
+  "typography": {
+    "heading": {
+      "fontFamily": {
+        "value": "{core.typography.heading.fontFamily}",
+        "type": "typography"
+      },
+      "fontSize": {
+        "value": "{core.typography.heading.fontSize}",
+        "type": "typography"
+      },
+      "fontWeight": {
+        "value": "{core.typography.heading.fontWeight}",
+        "type": "typography"
+      },
+      "lineHeight": {
+        "value": "{core.typography.heading.lineHeight}",
+        "type": "typography"
+      }
+    },
+    "body": {
+      "fontFamily": {
+        "value": "{core.typography.body.fontFamily}",
+        "type": "typography"
+      },
+      "fontSize": {
+        "value": "{core.typography.body.fontSize}",
+        "type": "typography"
+      },
+      "fontWeight": {
+        "value": "{core.typography.body.fontWeight}",
+        "type": "typography"
+      },
+      "lineHeight": {
+        "value": "{core.typography.body.lineHeight}",
+        "type": "typography"
+      }
+    },
+    "caption": {
+      "fontFamily": {
+        "value": "{core.typography.caption.fontFamily}",
+        "type": "typography"
+      },
+      "fontSize": {
+        "value": "{core.typography.caption.fontSize}",
+        "type": "typography"
+      },
+      "fontWeight": {
+        "value": "{core.typography.caption.fontWeight}",
+        "type": "typography"
+      },
+      "lineHeight": {
+        "value": "{core.typography.caption.lineHeight}",
+        "type": "typography"
+      }
     }
   }
 }
