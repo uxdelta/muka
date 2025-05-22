@@ -136,41 +136,29 @@
     }
   },
   "elevation": {
-    "none": {
-      "value": "{core.elevation.none}",
-      "type": "boxShadow"
+    "surface": {
+      "default": {
+        "value": "{core.elevation.none}",
+        "type": "boxShadow"
+      },
+      "raised": {
+        "value": "{core.elevation.sm}",
+        "type": "boxShadow"
+      },
+      "overlay": {
+        "value": "{core.elevation.lg}",
+        "type": "boxShadow"
+      }
     },
-    "xs": {
-      "value": "{core.elevation.xs}",
-      "type": "boxShadow"
-    },
-    "sm": {
-      "value": "{core.elevation.sm}",
-      "type": "boxShadow"
-    },
-    "base": {
-      "value": "{core.elevation.base}",
-      "type": "boxShadow"
-    },
-    "md": {
-      "value": "{core.elevation.md}",
-      "type": "boxShadow"
-    },
-    "lg": {
-      "value": "{core.elevation.lg}",
-      "type": "boxShadow"
-    },
-    "xl": {
-      "value": "{core.elevation.xl}",
-      "type": "boxShadow"
-    },
-    "2xl": {
-      "value": "{core.elevation.2xl}",
-      "type": "boxShadow"
-    },
-    "inner": {
-      "value": "{core.elevation.inner}",
-      "type": "boxShadow"
+    "interactive": {
+      "hover": {
+        "value": "{core.elevation.md}",
+        "type": "boxShadow"
+      },
+      "pressed": {
+        "value": "{core.elevation.xs}",
+        "type": "boxShadow"
+      }
     }
   },
   "radius": {
@@ -182,31 +170,27 @@
       "value": "{core.radius.sm}",
       "type": "borderRadius"
     },
-    "base": {
+    "md": {
       "value": "{core.radius.base}",
       "type": "borderRadius"
     },
-    "md": {
+    "lg": {
       "value": "{core.radius.md}",
       "type": "borderRadius"
     },
-    "lg": {
-      "value": "{core.radius.lg}",
+    "button": {
+      "value": "{core.radius.base}",
       "type": "borderRadius"
     },
-    "xl": {
-      "value": "{core.radius.xl}",
+    "card": {
+      "value": "{core.radius.md}",
       "type": "borderRadius"
     },
-    "2xl": {
-      "value": "{core.radius.2xl}",
+    "input": {
+      "value": "{core.radius.base}",
       "type": "borderRadius"
     },
-    "3xl": {
-      "value": "{core.radius.3xl}",
-      "type": "borderRadius"
-    },
-    "full": {
+    "avatar": {
       "value": "{core.radius.full}",
       "type": "borderRadius"
     }
@@ -263,6 +247,78 @@
       },
       "lineHeight": {
         "value": "{core.typography.caption.lineHeight}",
+        "type": "typography"
+      }
+    },
+    "h1": {
+      "fontFamily": {
+        "value": "{core.typography.heading.fontFamily}",
+        "type": "typography"
+      },
+      "fontSize": {
+        "value": "{core.size.4xl}",
+        "type": "fontSize"
+      },
+      "fontWeight": {
+        "value": "{core.typography.heading.fontWeight}",
+        "type": "typography"
+      },
+      "lineHeight": {
+        "value": "{core.typography.heading.lineHeight}",
+        "type": "typography"
+      }
+    },
+    "h2": {
+      "fontFamily": {
+        "value": "{core.typography.heading.fontFamily}",
+        "type": "typography"
+      },
+      "fontSize": {
+        "value": "{core.size.3xl}",
+        "type": "fontSize"
+      },
+      "fontWeight": {
+        "value": "{core.typography.heading.fontWeight}",
+        "type": "typography"
+      },
+      "lineHeight": {
+        "value": "{core.typography.heading.lineHeight}",
+        "type": "typography"
+      }
+    },
+    "h3": {
+      "fontFamily": {
+        "value": "{core.typography.heading.fontFamily}",
+        "type": "typography"
+      },
+      "fontSize": {
+        "value": "{core.size.2xl}",
+        "type": "fontSize"
+      },
+      "fontWeight": {
+        "value": "{core.typography.heading.fontWeight}",
+        "type": "typography"
+      },
+      "lineHeight": {
+        "value": "{core.typography.heading.lineHeight}",
+        "type": "typography"
+      }
+    },
+    "h4": {
+      "fontFamily": {
+        "value": "{core.typography.heading.fontFamily}",
+        "type": "typography"
+      },
+      "fontSize": {
+        "value": "{core.size.xl}",
+        "type": "fontSize"
+      },
+      "fontWeight": {
+        "value": "{core.typography.heading.fontWeight}",
+        "type": "typography"
+      },
+      "lineHeight": {
+        "value": "{core.typography.heading.lineHeight}",
         "type": "typography"
       }
     }
