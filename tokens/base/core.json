@@ -1147,53 +1147,53 @@
     "breakpoint": {
       "xs": {
         "value": "320px",
-        "type": "size"
+        "type": "sizing"
       },
       "sm": {
         "value": "640px",
-        "type": "size"
+        "type": "sizing"
       },
       "md": {
         "value": "768px",
-        "type": "size"
+        "type": "sizing"
       },
       "lg": {
         "value": "1024px",
-        "type": "size"
+        "type": "sizing"
       },
       "xl": {
         "value": "1280px",
-        "type": "size"
+        "type": "sizing"
       },
       "2xl": {
         "value": "1536px",
-        "type": "size"
+        "type": "sizing"
       }
     },
     "container": {
       "sm": {
         "value": "640px",
-        "type": "size"
+        "type": "sizing"
       },
       "md": {
         "value": "768px",
-        "type": "size"
+        "type": "sizing"
       },
       "lg": {
         "value": "1024px",
-        "type": "size"
+        "type": "sizing"
       },
       "xl": {
         "value": "1280px",
-        "type": "size"
+        "type": "sizing"
       },
       "2xl": {
         "value": "1536px",
-        "type": "size"
+        "type": "sizing"
       },
       "full": {
         "value": "100%",
-        "type": "size"
+        "type": "sizing"
       }
     }
   },
@@ -1238,93 +1238,59 @@
   "motion": {
     "duration-instant": {
       "value": "0ms",
-      "type": "duration"
+      "type": "other"
     },
     "duration-fastest": {
       "value": "100ms",
-      "type": "duration"
+      "type": "other"
     },
     "duration-faster": {
       "value": "150ms",
-      "type": "duration"
+      "type": "other"
     },
     "duration-fast": {
       "value": "200ms",
-      "type": "duration"
+      "type": "other"
     },
     "duration-normal": {
       "value": "300ms",
-      "type": "duration"
+      "type": "other"
     },
     "duration-slow": {
       "value": "400ms",
-      "type": "duration"
+      "type": "other"
     },
     "duration-slower": {
       "value": "500ms",
-      "type": "duration"
+      "type": "other"
     },
     "duration-slowest": {
       "value": "1000ms",
-      "type": "duration"
+      "type": "other"
     },
     "easing-linear": {
       "value": "cubic-bezier(0, 0, 1, 1)",
-      "type": "cubicBezier"
+      "type": "other"
     },
     "easing-ease": {
       "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-      "type": "cubicBezier"
+      "type": "other"
     },
     "easing-easeIn": {
       "value": "cubic-bezier(0.42, 0, 1, 1)",
-      "type": "cubicBezier"
+      "type": "other"
     },
     "easing-easeOut": {
       "value": "cubic-bezier(0, 0, 0.58, 1)",
-      "type": "cubicBezier"
+      "type": "other"
     },
     "easing-easeInOut": {
       "value": "cubic-bezier(0.42, 0, 0.58, 1)",
-      "type": "cubicBezier"
+      "type": "other"
     },
     "easing-bounce": {
       "value": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
-      "type": "cubicBezier"
-    }
-  },
-  "radius": {
-    "sm": {
-      "value": "0.125rem",
-      "type": "borderRadius"
-    },
-    "base": {
-      "value": "0.25rem",
-      "type": "borderRadius"
-    },
-    "md": {
-      "value": "0.375rem",
-      "type": "borderRadius"
-    },
-    "lg": {
-      "value": "0.5rem",
-      "type": "borderRadius"
-    },
-    "xl": {
-      "value": "0.75rem",
-      "type": "borderRadius"
-    },
-    "2xl": {
-      "value": "1rem",
-      "type": "borderRadius"
-    },
-    "3xl": {
-      "value": "1.5rem",
-      "type": "borderRadius"
-    },
-    "full": {
-      "value": "9999px",
-      "type": "borderRadius"
+      "type": "other"
     }
   }
 }
