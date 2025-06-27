@@ -1236,61 +1236,66 @@
     }
   },
   "motion": {
-    "duration-instant": {
-      "value": "0ms",
-      "type": "other"
+    "duration": {
+      "instant": {
+        "value": "0ms",
+        "type": "other"
+      },
+      "fastest": {
+        "value": "100ms",
+        "type": "other"
+      },
+      "faster": {
+        "value": "150ms",
+        "type": "other"
+      },
+      "fast": {
+        "value": "200ms",
+        "type": "other"
+      },
+      "normal": {
+        "value": "300ms",
+        "type": "other"
+      },
+      "slow": {
+        "value": "400ms",
+        "type": "other"
+      },
+      "slower": {
+        "value": "500ms",
+        "type": "other"
+      },
+      "slowest": {
+        "value": "1000ms",
+        "type": "other"
+      },
+
     },
-    "duration-fastest": {
-      "value": "100ms",
-      "type": "other"
-    },
-    "duration-faster": {
-      "value": "150ms",
-      "type": "other"
-    },
-    "duration-fast": {
-      "value": "200ms",
-      "type": "other"
-    },
-    "duration-normal": {
-      "value": "300ms",
-      "type": "other"
-    },
-    "duration-slow": {
-      "value": "400ms",
-      "type": "other"
-    },
-    "duration-slower": {
-      "value": "500ms",
-      "type": "other"
-    },
-    "duration-slowest": {
-      "value": "1000ms",
-      "type": "other"
-    },
-    "easing-linear": {
-      "value": "cubic-bezier(0, 0, 1, 1)",
-      "type": "other"
-    },
-    "easing-ease": {
-      "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
-      "type": "other"
-    },
-    "easing-easeIn": {
-      "value": "cubic-bezier(0.42, 0, 1, 1)",
-      "type": "other"
-    },
-    "easing-easeOut": {
-      "value": "cubic-bezier(0, 0, 0.58, 1)",
-      "type": "other"
-    },
-    "easing-easeInOut": {
-      "value": "cubic-bezier(0.42, 0, 0.58, 1)",
-      "type": "other"
-    },
-    "easing-bounce": {
-      "value": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
-      "type": "other"
+    "easing": {
+      "linear": {
+        "value": "cubic-bezier(0, 0, 1, 1)",
+        "type": "other"
+      },
+      "ease": {
+        "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+        "type": "other"
+      },
+      "easeIn": {
+        "value": "cubic-bezier(0.42, 0, 1, 1)",
+        "type": "other"
+      },
+      "easeOut": {
+        "value": "cubic-bezier(0, 0, 0.58, 1)",
+        "type": "other"
+      },
+      "easeInOut": {
+        "value": "cubic-bezier(0.42, 0, 0.58, 1)",
+        "type": "other"
+      },
+      "bounce": {
+        "value": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "type": "other"
+      }
     }
   }
 }
