@@ -932,63 +932,43 @@
     },
     "size": {
       "xs": {
-        "value": {
-          "fontSize": "0.75rem"
-        },
+        "value": "0.75rem",
         "type": "typography"
       },
       "sm": {
-        "value": {
-          "fontSize": "0.875rem"
-        },
+        "value": "0.875rem",
         "type": "typography"
       },
       "md": {
-        "value": {
-          "fontSize": "1rem"
-        },
+        "value": "1rem",
         "type": "typography"
       },
       "lg": {
-        "value": {
-          "fontSize": "1.125rem"
-        },
+        "value": "1.125rem",
         "type": "typography"
       },
       "xl": {
-        "value": {
-          "fontSize": "1.25rem"
-        },
+        "value": "1.25rem",
         "type": "typography"
       },
       "2xl": {
-        "value": {
-          "fontSize": "1.5rem"
-        },
+        "value": "1.5rem",
         "type": "typography"
       },
       "3xl": {
-        "value": {
-          "fontSize": "2rem"
-        },
+        "value": "2rem",
         "type": "typography"
       },
       "4xl": {
-        "value": {
-          "fontSize": "2.5rem"
-        },
+        "value": "2.5rem",
         "type": "typography"
       },
       "5xl": {
-        "value": {
-          "fontSize": "3rem"
-        },
+        "value": "3rem",
         "type": "typography"
       },
       "6xl": {
-        "value": {
-          "fontSize": "4rem"
-        },
+        "value": "4rem",
         "type": "typography"
       }
     }
