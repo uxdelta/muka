@@ -24,17 +24,21 @@
     },
     "text": {
       "primary": {
-        "value": "{color.gray.900}",
-        "type": "color",
-        "inverted": {
+        "default": {
+          "value": "{color.gray.900}",
+          "type": "color"
+        },
+        "inverse": {
           "value": "{color.white}",
           "type": "color"
         }
       },
       "secondary": {
-        "value": "{color.gray.600}",
-        "type": "color",
-        "inverted": {
+        "default": {
+          "value": "{color.gray.600}",
+          "type": "color"
+        },
+        "inverse": {
           "value": "{color.gray.300}",
           "type": "color"
         }
