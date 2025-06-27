@@ -885,7 +885,7 @@
         "value": "Inter",
         "type": "typography"
       },
-      "legible": {
+      "plain": {
         "value": {
           "fontFamily": "Inter"
         },
@@ -900,6 +900,32 @@
       "mono": {
         "value": {
           "fontFamily": "Menlo"
+        },
+        "type": "typography"
+      }
+    },
+    "weight": {
+      "regular": {
+        "value": {
+          "fontWeight": "Normal"
+        },
+        "type": "typography"
+      },
+      "medium": {
+        "value": {
+          "fontWeight": "Medium"
+        },
+        "type": "typography"
+      },
+      "semibold": {
+        "value": {
+          "fontWeight": "Semi Bold"
+        },
+        "type": "typography"
+      },
+      "bold": {
+        "value": {
+          "fontWeight": "Bold"
         },
         "type": "typography"
       }
@@ -962,32 +988,6 @@
       "6xl": {
         "value": {
           "fontSize": "4rem"
-        },
-        "type": "typography"
-      }
-    },
-    "weight": {
-      "regular": {
-        "value": {
-          "fontWeight": "Normal"
-        },
-        "type": "typography"
-      },
-      "medium": {
-        "value": {
-          "fontWeight": "Medium"
-        },
-        "type": "typography"
-      },
-      "semibold": {
-        "value": {
-          "fontWeight": "Semi Bold"
-        },
-        "type": "typography"
-      },
-      "bold": {
-        "value": {
-          "fontWeight": "Bold"
         },
         "type": "typography"
       }
