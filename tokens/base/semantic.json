@@ -157,50 +157,42 @@
     "p": {
       "font": {
         "family": {
-          "value": "{font.size.md}",
+          "value": "{font.family.plain}",
           "type": "typography"
-          },
-          "fontWeight": {
-            "value": "{font.body.fontWeight}",
+        },
+        "weight": {
+          "value": "{font.weight.regular}",
+          "type": "typography"
+        },
+        "size": {
+          "xs": {
+            "value": "{font.size.sm}",
             "type": "typography"
           },
-          "lineHeight": {
-            "value": "{font.body.lineHeight}",
+          "sm": {
+            "value": "{font.size.sm}",
             "type": "typography"
           },
-          "size": {
-            "xs": {
-              "value": "{font.size.sm}",
-              "type": "typography"
-            },
-            "sm": {
-              "value": "{font.size.sm}",
-              "type": "typography"
-            },
-            "base": {
-              "value": "{font.size.md}",
-              "type": "typography"
-            },
-            "lg": {
-              "value": "{font.size.lg}",
-              "type": "typography"
-            },
-            "xl": {
-              "value": "{font.size.xl}",
-              "type": "typography"
-            }
+          "base": {
+            "value": "{font.size.md}",
+            "type": "typography"
+          },
+          "lg": {
+            "value": "{font.size.lg}",
+            "type": "typography"
+          },
+          "xl": {
+            "value": "{font.size.xl}",
+            "type": "typography"
           }
         }
+      }
     },
     "h1": {
       "font": {
         "family": {
-          "value": "{font.family.heading}",
+          "value": "{font.family.brand}",
           "type": "typography"
-        },
-        "size": {
-          "value": "{font.size.4xl}",
-          "type": "fontSize"
         },
         "weight": {
           "value": "{font.weight.semibold}",
@@ -209,18 +201,20 @@
         "lineHeight": {
           "value": "{font.heading.lineHeight}",
           "type": "typography"
+        },
+        "size": {
+          "value": {
+            "fontSize": "{font.size.2xl}"
+          },
+          "type": "typography"
         }
       }
     },
     "h2": {
       "font": {
         "family": {
-          "value": "{font.family.heading}",
+          "value": "{font.family.brand}",
           "type": "typography"
-        },
-        "size": {
-          "value": "{font.size.3xl}",
-          "type": "fontSize"
         },
         "weight": {
           "value": "{font.weight.semibold}",
@@ -233,31 +227,25 @@
       }
     },
     "h3": {
-      "fontFamily": {
-        "value": "{font.family.brand.heading}",
-        "type": "typography"
-      },
-      "fontSize": {
-        "value": "{size.2xl}",
-        "type": "fontSize"
-      },
-      "fontWeight": {
-        "value": "{font.heading.fontWeight}",
-        "type": "typography"
-      },
-      "lineHeight": {
-        "value": "{font.heading.lineHeight}",
-        "type": "typography"
+      "font": {
+        "family": {
+          "value": "{font.family.brand}",
+          "type": "typography"
+        },
+        "weight": {
+          "value": "{font.weight.medium}",
+          "type": "typography"
+        },
+        "lineHeight": {
+          "value": "{font.heading.lineHeight}",
+          "type": "typography"
+        }
       }
     },
     "h4": {
       "fontFamily": {
         "value": "{font.family.brand.heading}",
         "type": "typography"
-      },
-      "fontSize": {
-        "value": "{size.xl}",
-        "type": "fontSize"
       },
       "fontWeight": {
         "value": "{font.heading.fontWeight}",
