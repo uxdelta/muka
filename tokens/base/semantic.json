@@ -114,31 +114,31 @@
   "radius": {
     "sm": {
       "value": "{size.xs}",
-      "type": "sizing"
+      "type": "borderRadius"
     },
     "md": {
       "value": "{size.sm}",
-      "type": "sizing"
+      "type": "borderRadius"
     },
     "lg": {
       "value": "{size.md}",
-      "type": "sizing"
+      "type": "borderRadius"
     },
     "xl": {
       "value": "{size.lg}",
-      "type": "sizing"
+      "type": "borderRadius"
     },
     "2xl": {
       "value": "{size.xl}",
-      "type": "sizing"
+      "type": "borderRadius"
     },
     "3xl": {
       "value": "2xl",
-      "type": "sizing"
+      "type": "borderRadius"
     },
     "full": {
       "value": "9999px",
-      "type": "sizing"
+      "type": "borderRadius"
     }
   },
   "text": {
