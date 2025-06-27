@@ -881,7 +881,6 @@
   },
   "font": {
     "family": {
-      "brand": {
         "primary": {
           "value": "Inter",
           "type": "typography"
@@ -969,31 +968,29 @@
       }
     },
     "weight": {
-      "brand": {
-        "regular": {
-          "value": {
-            "fontWeight": "Normal"
-          },
-          "type": "typography"
+      "regular": {
+        "value": {
+          "fontWeight": "Normal"
         },
-        "medium": {
-          "value": {
-            "fontWeight": "Medium"
-          },
-          "type": "typography"
+        "type": "typography"
+      },
+      "medium": {
+        "value": {
+          "fontWeight": "Medium"
         },
-        "semibold": {
-          "value": {
-            "fontWeight": "Semi Bold"
-          },
-          "type": "typography"
+        "type": "typography"
+      },
+      "semibold": {
+        "value": {
+          "fontWeight": "Semi Bold"
         },
-        "bold": {
-          "value": {
-            "fontWeight": "Bold"
-          },
-          "type": "typography"
-        }
+        "type": "typography"
+      },
+      "bold": {
+        "value": {
+          "fontWeight": "Bold"
+        },
+        "type": "typography"
       }
     }
   },
