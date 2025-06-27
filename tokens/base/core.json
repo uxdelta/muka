@@ -881,28 +881,27 @@
   },
   "font": {
     "family": {
-        "primary": {
-          "value": "Inter",
-          "type": "typography"
+      "brand": {
+        "value": "Inter",
+        "type": "typography"
+      },
+      "legible": {
+        "value": {
+          "fontFamily": "Inter"
         },
-        "secondary": {
-          "value": {
-            "fontFamily": "Inter"
-          },
-          "type": "typography"
+        "type": "typography"
+      },
+      "script": {
+        "value": {
+          "fontFamily": "Yesteryear"
         },
-        "script": {
-          "value": {
-            "fontFamily": "Yesteryear"
-          },
-          "type": "typography"
+        "type": "typography"
+      },
+      "mono": {
+        "value": {
+          "fontFamily": "Menlo"
         },
-        "mono": {
-          "value": {
-            "fontFamily": "Menlo"
-          },
-          "type": "typography"
-        }
+        "type": "typography"
       }
     },
     "size": {
