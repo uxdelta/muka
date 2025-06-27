@@ -1294,10 +1294,6 @@
     }
   },
   "radius": {
-    "none": {
-      "value": "0",
-      "type": "borderRadius"
-    },
     "sm": {
       "value": "0.125rem",
       "type": "borderRadius"
