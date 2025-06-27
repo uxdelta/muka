@@ -801,61 +801,48 @@
     }
   },
   "size": {
-    "0.25": { "value": "0.0625rem", "type": "sizing" }, // 1px
-    "0.5": { "value": "0.125rem", "type": "sizing" }, // 2px
-    "1": { "value": "0.25rem", "type": "sizing" }, // 4px
-    "2": { "value": "0.5rem", "type": "sizing" }, // 8px
-    "3": { "value": "0.75rem", "type": "sizing" }, // 12px
-    "4": { "value": "1.0rem", "type": "sizing" }, // 16px
-    "5": { "value": "2.0rem", "type": "sizing" }, // 32px
-    "6": { "value": "3.0rem", "type": "sizing" }, // 48px
-    "7": { "value": "4.0rem", "type": "sizing" }, // 64px
-    "8": { "value": "5.0rem", "type": "sizing" }, // 80px
-    "9": { "value": "6.0rem", "type": "sizing" }, // 96px
-    "10": { "value": "7.0rem", "type": "sizing" }, // 112px
-    "11": { "value": "8.0rem", "type": "sizing" }, // 128px
-    "12": { "value": "9.0rem", "type": "sizing" }, // 144px
-    "13": { "value": "10.0rem", "type": "sizing" }, // 160px
-    "14": { "value": "11.0rem", "type": "sizing" }, // 176px
-    "15": { "value": "12.0rem", "type": "sizing" }, // 192px
-    "16": { "value": "13.0rem", "type": "sizing" }, // 208px
-    "17": { "value": "14.0rem", "type": "sizing" }, // 224px
-    "18": { "value": "15.0rem", "type": "sizing" }, // 240px
-    "19": { "value": "16.0rem", "type": "sizing" }, // 256px
-    "20": { "value": "17.0rem", "type": "sizing" }, // 272px
-    "21": { "value": "18.0rem", "type": "sizing" }, // 288px
-    "22": { "value": "19.0rem", "type": "sizing" }, // 304px
-    "23": { "value": "20.0rem", "type": "sizing" }, // 320px
-    "24": { "value": "21.0rem", "type": "sizing" }, // 336px
-    "25": { "value": "22.0rem", "type": "sizing" }, // 352px
-    "26": { "value": "23.0rem", "type": "sizing" }, // 368px
-    "27": { "value": "24.0rem", "type": "sizing" }, // 384px
-    "28": { "value": "25.0rem", "type": "sizing" }, // 400px
-    "29": { "value": "26.0rem", "type": "sizing" }, // 416px
-    "30": { "value": "27.0rem", "type": "sizing" }, // 432px
-    "31": { "value": "28.0rem", "type": "sizing" }, // 448px
-    "32": { "value": "29.0rem", "type": "sizing" }, // 464px
-    "33": { "value": "30.0rem", "type": "sizing" }, // 480px
-    "34": { "value": "31.0rem", "type": "sizing" }, // 496px
-    "35": { "value": "32.0rem", "type": "sizing" }, // 512px
-    "36": { "value": "33.0rem", "type": "sizing" }, // 528px
-    "37": { "value": "34.0rem", "type": "sizing" }, // 544px
-    "38": { "value": "35.0rem", "type": "sizing" }, // 560px
-    "39": { "value": "36.0rem", "type": "sizing" }, // 576px
-    "40": { "value": "37.0rem", "type": "sizing" }, // 592px
-    "41": { "value": "38.0rem", "type": "sizing" }, // 608px
-    "42": { "value": "39.0rem", "type": "sizing" }, // 624px
-    "43": { "value": "40.0rem", "type": "sizing" }, // 640px
-    "44": { "value": "41.0rem", "type": "sizing" }, // 656px
-    "45": { "value": "42.0rem", "type": "sizing" }, // 672px
-    "46": { "value": "43.0rem", "type": "sizing" }, // 688px
-    "47": { "value": "44.0rem", "type": "sizing" }, // 704px
-    "48": { "value": "45.0rem", "type": "sizing" }, // 720px
-    "49": { "value": "46.0rem", "type": "sizing" }, // 736px
-    "50": { "value": "47.0rem", "type": "sizing" }, // 752px
-    "51": { "value": "48.0rem", "type": "sizing" }, // 768px
-    "52": { "value": "49.0rem", "type": "sizing" }, // 784px
-    "53": { "value": "50.0rem", "type": "sizing" } // 800px
+    "4xs": { "value": "0.0625rem", "type": "sizing" },
+    "3xs": { "value": "0.125rem", "type": "sizing" },
+    "2xs": { "value": "0.25rem", "type": "sizing" },
+    "xs": { "value": "0.5rem", "type": "sizing" },
+    "sm": { "value": "0.75rem", "type": "sizing" },
+    "md": { "value": "1.0rem", "type": "sizing" },
+    "lg": { "value": "2.0rem", "type": "sizing" },
+    "xl": { "value": "3.0rem", "type": "sizing" },
+    "2xl": { "value": "4.0rem", "type": "sizing" },
+    "3xl": { "value": "5.0rem", "type": "sizing" },
+    "4xl": { "value": "6.0rem", "type": "sizing" },
+    "5xl": { "value": "7.0rem", "type": "sizing" },
+    "6xl": { "value": "8.0rem", "type": "sizing" },
+    "7xl": { "value": "9.0rem", "type": "sizing" },
+    "8xl": { "value": "10.0rem", "type": "sizing" },
+    "9xl": { "value": "11.0rem", "type": "sizing" },
+    "10xl": { "value": "12.0rem", "type": "sizing" },
+    "11xl": { "value": "13.0rem", "type": "sizing" },
+    "12xl": { "value": "14.0rem", "type": "sizing" },
+    "13xl": { "value": "15.0rem", "type": "sizing" },
+    "14xl": { "value": "16.0rem", "type": "sizing" },
+    "15xl": { "value": "17.0rem", "type": "sizing" },
+    "16xl": { "value": "18.0rem", "type": "sizing" },
+    "17xl": { "value": "19.0rem", "type": "sizing" },
+    "18xl": { "value": "20.0rem", "type": "sizing" },
+    "19xl": { "value": "21.0rem", "type": "sizing" },
+    "20xl": { "value": "22.0rem", "type": "sizing" },
+    "21xl": { "value": "23.0rem", "type": "sizing" },
+    "22xl": { "value": "24.0rem", "type": "sizing" },
+    "23xl": { "value": "25.0rem", "type": "sizing" },
+    "24xl": { "value": "26.0rem", "type": "sizing" },
+    "25xl": { "value": "27.0rem", "type": "sizing" },
+    "26xl": { "value": "28.0rem", "type": "sizing" },
+    "27xl": { "value": "29.0rem", "type": "sizing" },
+    "28xl": { "value": "30.0rem", "type": "sizing" },
+    "29xl": { "value": "31.0rem", "type": "sizing" },
+    "30xl": { "value": "32.0rem", "type": "sizing" },
+    "31xl": { "value": "33.0rem", "type": "sizing" },
+    "32xl": { "value": "34.0rem", "type": "sizing" },
+    "33xl": { "value": "35.0rem", "type": "sizing" },
+    "34xl": { "value": "36.0rem", "type": "sizing" },
+    "35xl": { "value": "37.0rem", "type": "sizing" }
   },
   "grid": {
     "container": {
