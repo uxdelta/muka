@@ -859,7 +859,7 @@
     "32xl": { "value": "34.0rem", "type": "sizing" },
     "33xl": { "value": "35.0rem", "type": "sizing" },
     "34xl": { "value": "36.0rem", "type": "sizing" },
-    "35xl": { "value": "37.0rem", "type": "sizing" },
+    "35xl": { "value": "37.0rem", "type": "sizing" }
   },
   "shadow": {
     "none": {
