@@ -1,6 +1,6 @@
 {
   "color": {
-    "background": {
+    "surface": {
       "level3": {
         "value": "{color.white}",
         "type": "color"
