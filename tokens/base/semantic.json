@@ -166,7 +166,7 @@
         },
         "size": {
           "xs": {
-            "value": "{font.size.sm}",
+            "value": "{font.size.xs}",
             "type": "typography"
           },
           "sm": {
@@ -199,12 +199,12 @@
           "type": "typography"
         },
         "lineHeight": {
-          "value": "{font.heading.lineHeight}",
+          "value": "{font.size.4xl}",
           "type": "typography"
         },
         "size": {
           "value": {
-            "fontSize": "{font.size.2xl}"
+            "fontSize": "{font.size.4xl}"
           },
           "type": "typography"
         }
@@ -223,6 +223,12 @@
         "lineHeight": {
           "value": "{font.size.3xl}",
           "type": "typography"
+        },
+        "size": {
+          "value": {
+            "fontSize": "{font.size.3xl}"
+          },
+          "type": "typography"
         }
       }
     },
@@ -237,7 +243,13 @@
           "type": "typography"
         },
         "lineHeight": {
-          "value": "{font.heading.lineHeight}",
+          "value": "{font.size.2xl}",
+          "type": "typography"
+        },
+        "size": {
+          "value": {
+            "fontSize": "{font.size.2xl}"
+          },
           "type": "typography"
         }
       }
