@@ -93,49 +93,25 @@
       }
     }
   },
-  "elevation": {
-    "surface": {
-      "default": {
-        "value": "{shadow.none}",
-        "type": "boxShadow"
-      },
-      "raised": {
-        "value": "{shadow.sm}",
-        "type": "boxShadow"
-      },
-      "overlay": {
-        "value": "{elevation.lg}",
-        "type": "boxShadow"
-      }
+  "shadow": {
+    "level1": {
+      "value": "{shadow.sm}",
+      "type": "boxShadow"
     },
-    "interactive": {
-      "hover": {
-        "value": "{elevation.md}",
-        "type": "boxShadow"
-      },
-      "pressed": {
-        "value": "{shadow.xs}",
-        "type": "boxShadow"
-      }
+    "level2": {
+      "value": "{shadow.md}",
+      "type": "boxShadow"
+    },
+    "level3": {
+      "value": "{shadow.lg}",
+      "type": "boxShadow"
+    },
+    "overlay": {
+      "value": "{shadow.2xl}",
+      "type": "boxShadow"
     }
   },
   "radius": {
-    "none": {
-      "value": "{radius.none}",
-      "type": "borderRadius"
-    },
-    "sm": {
-      "value": "{radius.sm}",
-      "type": "borderRadius"
-    },
-    "md": {
-      "value": "{radius.base}",
-      "type": "borderRadius"
-    },
-    "lg": {
-      "value": "{radius.md}",
-      "type": "borderRadius"
-    },
     "button": {
       "value": "{radius.base}",
       "type": "borderRadius"
@@ -203,7 +179,7 @@
           "type": "typography"
         },
         "lineHeight": {
-          "value": "{font.heading.lineHeight}",
+          "value": "{font.size.4xl}",
           "type": "typography"
         }
       }
@@ -242,7 +218,6 @@
           "value": "{font.weight.semibold}",
           "type": "typography"
         },
-
         "lineHeight": {
           "value": "{font.size.2xl}",
           "type": "typography"
