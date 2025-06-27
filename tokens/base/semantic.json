@@ -188,7 +188,7 @@
     },
     "h1": {
       "fontFamily": {
-        "value": "{font.family.brand.primary}",
+        "value": "{font.family.brand.heading}",
         "type": "typography"
       },
       "fontSize": {
@@ -206,7 +206,7 @@
     },
     "h2": {
       "fontFamily": {
-        "value": "{font.family.brand.primary}",
+        "value": "{font.family.brand.heading}",
         "type": "typography"
       },
       "fontSize": {
@@ -224,7 +224,7 @@
     },
     "h3": {
       "fontFamily": {
-        "value": "{font.family.brand.primary}",
+        "value": "{font.family.brand.heading}",
         "type": "typography"
       },
       "fontSize": {
@@ -242,7 +242,7 @@
     },
     "h4": {
       "fontFamily": {
-        "value": "{font.family.brand.primary}",
+        "value": "{font.family.brand.heading}",
         "type": "typography"
       },
       "fontSize": {
