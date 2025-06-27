@@ -791,58 +791,88 @@
       "type": "spacing"
     }
   },
-  "typography": {
-    "heading": {
-      "fontSize": {
-        "value": "2rem",
+  "font": {
+    "brand": {
+      "primary": {
+        "value": "Funnel Display",
         "type": "typography"
       },
-      "fontWeight": {
-        "value": "700",
+      "secondary": {
+        "value": {
+          "fontFamily": "Funnel Sans"
+        },
         "type": "typography"
       },
-      "lineHeight": {
-        "value": "2.5rem",
+      "script": {
+        "value": {
+          "fontFamily": "Yesteryear"
+        },
         "type": "typography"
       },
-      "fontFamily": {
-        "value": "Inter",
+      "mono": {
+        "value": {
+          "fontFamily": "Menlo"
+        },
         "type": "typography"
       }
     },
-    "body": {
-      "fontSize": {
-        "value": "1rem",
+    "size": {
+      "xs": {
+        "value": "0.75rem",
         "type": "typography"
       },
-      "fontWeight": {
-        "value": "400",
+      "sm": {
+        "value": {
+          "lineHeight": "0.875rem"
+        },
         "type": "typography"
       },
-      "lineHeight": {
-        "value": "1.5rem",
+      "base": {
+        "value": {
+          "fontSize": "1rem"
+        },
         "type": "typography"
       },
-      "fontFamily": {
-        "value": "Inter",
-        "type": "typography"
-      }
-    },
-    "caption": {
-      "fontSize": {
-        "value": "0.875rem",
+      "lg": {
+        "value": {
+          "fontSize": "1.125rem"
+        },
         "type": "typography"
       },
-      "fontWeight": {
-        "value": "400",
+      "xl": {
+        "value": {
+          "lineHeight": "0.8rem"
+        },
         "type": "typography"
       },
-      "lineHeight": {
-        "value": "1.25rem",
+      "2xl": {
+        "value": {
+          "fontSize": "1.5rem"
+        },
         "type": "typography"
       },
-      "fontFamily": {
-        "value": "Inter",
+      "3xl": {
+        "value": {
+          "fontSize": "2rem"
+        },
+        "type": "typography"
+      },
+      "4xl": {
+        "value": {
+          "fontSize": "2.5rem"
+        },
+        "type": "typography"
+      },
+      "5xl": {
+        "value": {
+          "fontSize": "3rem"
+        },
+        "type": "typography"
+      },
+      "6xl": {
+        "value": {
+          "fontSize": "4rem"
+        },
         "type": "typography"
       }
     }

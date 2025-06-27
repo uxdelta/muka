@@ -93,70 +93,6 @@
       }
     }
   },
-  "grid": {
-    "breakpoint": {
-      "xs": {
-        "value": "{grid.breakpoint.xs}",
-        "type": "size"
-      },
-      "sm": {
-        "value": "{grid.breakpoint.sm}",
-        "type": "size"
-      },
-      "md": {
-        "value": "{grid.breakpoint.md}",
-        "type": "size"
-      },
-      "lg": {
-        "value": "{grid.breakpoint.lg}",
-        "type": "size"
-      },
-      "xl": {
-        "value": "{grid.breakpoint.xl}",
-        "type": "size"
-      },
-      "2xl": {
-        "value": "{grid.breakpoint.2xl}",
-        "type": "size"
-      }
-    }
-  },
-  "motion": {
-    "duration": {
-      "instant": {
-        "value": "{motion.duration-instant}",
-        "type": "duration"
-      },
-      "fastest": {
-        "value": "{motion.duration-fastest}",
-        "type": "duration"
-      },
-      "faster": {
-        "value": "{motion.duration-faster}",
-        "type": "duration"
-      },
-      "fast": {
-        "value": "{motion.duration-fast}",
-        "type": "duration"
-      },
-      "normal": {
-        "value": "{motion.duration-normal}",
-        "type": "duration"
-      },
-      "slow": {
-        "value": "{motion.duration-slow}",
-        "type": "duration"
-      },
-      "slower": {
-        "value": "{motion.duration-slower}",
-        "type": "duration"
-      },
-      "slowest": {
-        "value": "{motion.duration-slowest}",
-        "type": "duration"
-      }
-    }
-  },
   "elevation": {
     "surface": {
       "default": {
@@ -252,7 +188,7 @@
     },
     "h1": {
       "fontFamily": {
-        "value": "{typography.heading.fontFamily}",
+        "value": "{font.brand.primary}",
         "type": "typography"
       },
       "fontSize": {
@@ -270,7 +206,7 @@
     },
     "h2": {
       "fontFamily": {
-        "value": "{typography.heading.fontFamily}",
+        "value": "{font.brand.primary}",
         "type": "typography"
       },
       "fontSize": {
@@ -288,7 +224,7 @@
     },
     "h3": {
       "fontFamily": {
-        "value": "{typography.heading.fontFamily}",
+        "value": "{font.brand.primary}",
         "type": "typography"
       },
       "fontSize": {
@@ -306,7 +242,7 @@
     },
     "h4": {
       "fontFamily": {
-        "value": "{typography.heading.fontFamily}",
+        "value": "{font.brand.primary}",
         "type": "typography"
       },
       "fontSize": {
