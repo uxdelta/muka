@@ -5,7 +5,6 @@
     "base/component",
     "base/layout",
     "base/mode",
-    "brand/muka",
-    "brand/ormilon"
+    "brand/MukaLight"
   ]
 }

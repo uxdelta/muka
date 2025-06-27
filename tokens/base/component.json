@@ -6,7 +6,7 @@
         "type": "color"
       },
       "text": {
-        "value": "{color.text.primary}",
+        "value": "{color.text.level3}",
         "type": "color"
       },
       "border": {
@@ -56,11 +56,11 @@
     },
     "secondary": {
       "background": {
-        "value": "{color.background.secondary}",
+        "value": "{color.background.level2}",
         "type": "color"
       },
       "text": {
-        "value": "{color.text.secondary}",
+        "value": "{color.text.level2}",
         "type": "color"
       },
       "border": {
@@ -111,11 +111,11 @@
   },
   "input": {
     "background": {
-      "value": "{color.background.primary}",
+      "value": "{color.background.level3}",
       "type": "color"
     },
     "text": {
-      "value": "{color.text.primary}",
+      "value": "{color.text.level3}",
       "type": "color"
     },
     "border": {

@@ -3,25 +3,25 @@
     "color": {
       "background": {
         "primary": {
-          "value": "{color.background.primary}",
+          "value": "{color.background.level3}",
           "type": "color"
         },
         "secondary": {
-          "value": "{color.background.secondary}",
+          "value": "{color.background.level2}",
           "type": "color"
         },
         "tertiary": {
-          "value": "{color.background.tertiary}",
+          "value": "{color.background.level1}",
           "type": "color"
         }
       },
       "text": {
         "primary": {
-          "value": "{color.text.primary}",
+          "value": "{color.text.level3}",
           "type": "color"
         },
         "secondary": {
-          "value": "{color.text.secondary}",
+          "value": "{color.text.level2}",
           "type": "color"
         },
         "tertiary": {
