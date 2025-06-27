@@ -171,11 +171,11 @@
           "size": {
             "xs": {
               "value": "{font.size.sm}",
-              "type": "typography",
+              "type": "typography"
             },
             "sm": {
               "value": "{font.size.sm}",
-              "type": "typography",
+              "type": "typography"
             },
             "base": {
               "value": "{font.size.md}",
@@ -183,11 +183,11 @@
             },
             "lg": {
               "value": "{font.size.lg}",
-              "type": "typography",
+              "type": "typography"
             },
             "xl": {
               "value": "{font.size.xl}",
-              "type": "typography",
+              "type": "typography"
             }
           }
         }
