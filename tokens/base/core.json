@@ -1268,8 +1268,7 @@
       "slowest": {
         "value": "1000ms",
         "type": "other"
-      },
-
+      }
     },
     "easing": {
       "linear": {
