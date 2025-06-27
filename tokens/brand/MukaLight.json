@@ -100,6 +100,20 @@
       "secondary": {
         "value": "Inter",
         "type": "fontFamily"
+      },
+      "brand": {
+        "primary": {
+          "value": {
+            "fontFamily": "Funnel Display"
+          },
+          "type": "typography"
+        },
+        "secondary": {
+          "value": {
+            "fontFamily": "Funnel Sans"
+          },
+          "type": "typography"
+        }
       }
     },
     "weight": {
@@ -183,6 +197,24 @@
         "value": "2",
         "type": "lineHeight"
       }
+    },
+    "heading": {
+      "fontFamily": {
+        "value": "Funnel Display",
+        "type": "typography"
+      }
+    },
+    "body": {
+      "fontFamily": {
+        "value": "Funnel Sans",
+        "type": "typography"
+      }
+    },
+    "caption": {
+      "fontFamily": {
+        "value": "Inter",
+        "type": "typography"
+      }
     }
   },
   "typography": {
@@ -212,22 +244,6 @@
           "value": "0.1em",
           "type": "letterSpacing"
         }
-      },
-      "fontFamily": {
-        "value": "Funnel Display",
-        "type": "typography"
-      }
-    },
-    "body": {
-      "fontFamily": {
-        "value": "Funnel Sans",
-        "type": "typography"
-      }
-    },
-    "caption": {
-      "fontFamily": {
-        "value": "Inter",
-        "type": "typography"
       }
     }
   }

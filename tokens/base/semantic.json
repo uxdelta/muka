@@ -156,7 +156,7 @@
   "typography": {
     "body": {
       "fontSize": {
-        "value": "{typography.body.fontSize}",
+        "value": "{font.size.md}",
         "type": "typography"
       },
       "fontWeight": {
@@ -170,7 +170,7 @@
     },
     "caption": {
       "fontFamily": {
-        "value": "{typography.caption.fontFamily}",
+        "value": "{font.caption.fontFamily}",
         "type": "typography"
       },
       "fontSize": {

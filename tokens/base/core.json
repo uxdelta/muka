@@ -883,12 +883,12 @@
     "family": {
       "brand": {
         "primary": {
-          "value": "Funnel Display",
+          "value": "Inter",
           "type": "typography"
         },
         "secondary": {
           "value": {
-            "fontFamily": "Funnel Sans"
+            "fontFamily": "Inter"
           },
           "type": "typography"
         },
@@ -966,6 +966,34 @@
           "fontSize": "4rem"
         },
         "type": "typography"
+      }
+    },
+    "weight": {
+      "brand": {
+        "regular": {
+          "value": {
+            "fontWeight": "Normal"
+          },
+          "type": "typography"
+        },
+        "medium": {
+          "value": {
+            "fontWeight": "Medium"
+          },
+          "type": "typography"
+        },
+        "semibold": {
+          "value": {
+            "fontWeight": "Semi Bold"
+          },
+          "type": "typography"
+        },
+        "bold": {
+          "value": {
+            "fontWeight": "Bold"
+          },
+          "type": "typography"
+        }
       }
     }
   },

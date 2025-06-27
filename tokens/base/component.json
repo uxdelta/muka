@@ -40,7 +40,7 @@
         "type": "typography"
       },
       "fontFamily": {
-        "value": "{typography.body.fontFamily}",
+        "value": "{font.body.fontFamily}",
         "type": "typography"
       },
       "transition": {
@@ -94,7 +94,7 @@
         "type": "typography"
       },
       "fontFamily": {
-        "value": "{typography.body.fontFamily}",
+        "value": "{font.body.fontFamily}",
         "type": "typography"
       },
       "transition": {
@@ -149,7 +149,7 @@
       "type": "typography"
     },
     "fontFamily": {
-      "value": "{typography.body.fontFamily}",
+      "value": "{font.body.fontFamily}",
       "type": "typography"
     },
     "transition": {
