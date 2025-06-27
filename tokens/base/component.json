@@ -5,12 +5,8 @@
         "value": "{color.action.default}",
         "type": "color"
       },
-      "text": {
-        "value": "{color.text.level3}",
-        "type": "color"
-      },
-      "border": {
-        "value": "{color.border.primary}",
+      "foreground": {
+        "value": "{color.text.action.inverse}",
         "type": "color"
       },
       "radius": {
@@ -28,7 +24,7 @@
         }
       },
       "fontSize": {
-        "value": "{typography.body.fontSize}",
+        "value": "{text.label.lg}",
         "type": "typography"
       },
       "fontWeight": {
@@ -42,16 +38,6 @@
       "fontFamily": {
         "value": "{font.body.fontFamily}",
         "type": "typography"
-      },
-      "transition": {
-        "duration": {
-          "value": "{motion.duration.normal}",
-          "type": "duration"
-        },
-        "easing": {
-          "value": "{motion.easing.ease}",
-          "type": "cubicBezier"
-        }
       }
     },
     "secondary": {
