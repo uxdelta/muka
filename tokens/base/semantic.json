@@ -96,11 +96,11 @@
   "elevation": {
     "surface": {
       "default": {
-        "value": "{elevation.none}",
+        "value": "{shadow.none}",
         "type": "boxShadow"
       },
       "raised": {
-        "value": "{elevation.sm}",
+        "value": "{shadow.sm}",
         "type": "boxShadow"
       },
       "overlay": {
@@ -114,7 +114,7 @@
         "type": "boxShadow"
       },
       "pressed": {
-        "value": "{elevation.xs}",
+        "value": "{shadow.xs}",
         "type": "boxShadow"
       }
     }
