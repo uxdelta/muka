@@ -112,21 +112,33 @@
     }
   },
   "radius": {
-    "button": {
-      "value": "{radius.base}",
-      "type": "borderRadius"
+    "sm": {
+      "value": "{size.xs}",
+      "type": "sizing"
     },
-    "card": {
-      "value": "{radius.md}",
-      "type": "borderRadius"
+    "md": {
+      "value": "{size.sm}",
+      "type": "sizing"
     },
-    "input": {
-      "value": "{radius.base}",
-      "type": "borderRadius"
+    "lg": {
+      "value": "{size.md}",
+      "type": "sizing"
     },
-    "avatar": {
-      "value": "{radius.full}",
-      "type": "borderRadius"
+    "xl": {
+      "value": "{size.lg}",
+      "type": "sizing"
+    },
+    "2xl": {
+      "value": "{size.xl}",
+      "type": "sizing"
+    },
+    "3xl": {
+      "value": "2xl",
+      "type": "sizing"
+    },
+    "full": {
+      "value": "9999px",
+      "type": "sizing"
     }
   },
   "text": {
