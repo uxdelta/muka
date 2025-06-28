@@ -1,16 +1,18 @@
 {
   "button": {
-    "primary": {
-      "background": {
-        "value": "{color.action.default}",
-        "type": "color"
-      },
-      "foreground": {
-        "value": "{color.text.action.inverse}",
-        "type": "color"
+    "color": {
+      "primary": {
+        "background": {
+          "value": "{color.action.primary",
+          "type": "color"
+        },
+        "foreground": {
+          "value": "{color.text.action.inverse}",
+          "type": "color"
+        }
       },
       "radius": {
-        "value": "{radius.base}",
+        "value": "{radius.sm}",
         "type": "borderRadius"
       },
       "padding": {
