@@ -994,174 +994,74 @@
     }
   },
   "size": {
-    "4xs": {
+    "0": {
+      "value": "0rem",
+      "type": "sizing"
+    },
+    "px": { 
       "value": "0.0625rem",
-      "type": "sizing"
-    },
-    "3xs": {
-      "value": "0.125rem",
-      "type": "sizing"
-    },
-    "2xs": {
-      "value": "0.25rem",
-      "type": "sizing"
-    },
-    "xs": {
-      "value": "0.5rem",
-      "type": "sizing"
-    },
-    "sm": {
-      "value": "0.75rem",
-      "type": "sizing"
-    },
-    "md": {
-      "value": "1.0rem",
-      "type": "sizing"
-    },
-    "lg": {
-      "value": "2.0rem",
-      "type": "sizing"
-    },
-    "xl": {
-      "value": "3.0rem",
-      "type": "sizing"
-    },
-    "2xl": {
-      "value": "4.0rem",
-      "type": "sizing"
-    },
-    "3xl": {
-      "value": "5.0rem",
-      "type": "sizing"
-    },
-    "4xl": {
-      "value": "6.0rem",
-      "type": "sizing"
-    },
-    "5xl": {
-      "value": "7.0rem",
-      "type": "sizing"
-    },
-    "6xl": {
-      "value": "8.0rem",
-      "type": "sizing"
-    },
-    "7xl": {
-      "value": "9.0rem",
-      "type": "sizing"
-    },
-    "8xl": {
-      "value": "10.0rem",
-      "type": "sizing"
-    },
-    "9xl": {
-      "value": "11.0rem",
-      "type": "sizing"
-    },
-    "10xl": {
-      "value": "12.0rem",
-      "type": "sizing"
-    },
-    "11xl": {
-      "value": "13.0rem",
-      "type": "sizing"
-    },
-    "12xl": {
-      "value": "14.0rem",
-      "type": "sizing"
-    },
-    "13xl": {
-      "value": "15.0rem",
-      "type": "sizing"
-    },
-    "14xl": {
-      "value": "16.0rem",
-      "type": "sizing"
-    },
-    "15xl": {
-      "value": "17.0rem",
-      "type": "sizing"
-    },
-    "16xl": {
-      "value": "18.0rem",
-      "type": "sizing"
-    },
-    "17xl": {
-      "value": "19.0rem",
-      "type": "sizing"
-    },
-    "18xl": {
-      "value": "20.0rem",
-      "type": "sizing"
-    },
-    "19xl": {
-      "value": "21.0rem",
-      "type": "sizing"
-    },
-    "20xl": {
-      "value": "22.0rem",
-      "type": "sizing"
-    },
-    "21xl": {
-      "value": "23.0rem",
-      "type": "sizing"
-    },
-    "22xl": {
-      "value": "24.0rem",
-      "type": "sizing"
-    },
-    "23xl": {
-      "value": "25.0rem",
-      "type": "sizing"
-    },
-    "24xl": {
-      "value": "26.0rem",
-      "type": "sizing"
-    },
-    "25xl": {
-      "value": "27.0rem",
-      "type": "sizing"
-    },
-    "26xl": {
-      "value": "28.0rem",
-      "type": "sizing"
-    },
-    "27xl": {
-      "value": "29.0rem",
-      "type": "sizing"
-    },
-    "28xl": {
-      "value": "30.0rem",
-      "type": "sizing"
-    },
-    "29xl": {
-      "value": "31.0rem",
-      "type": "sizing"
-    },
-    "30xl": {
-      "value": "32.0rem",
-      "type": "sizing"
-    },
-    "31xl": {
-      "value": "33.0rem",
-      "type": "sizing"
-    },
-    "32xl": {
-      "value": "34.0rem",
-      "type": "sizing"
-    },
-    "33xl": {
-      "value": "35.0rem",
-      "type": "sizing"
-    },
-    "34xl": {
-      "value": "36.0rem",
-      "type": "sizing"
-    },
-    "35xl": {
-      "value": "37.0rem",
-      "type": "sizing"
-    }
+      "type": "sizing" 
+    }, 
+    "3xs": { "value": "0.125rem", "type": "sizing" },
+    "2xs": { "value": "0.25rem",  "type": "sizing" },
+    "xs":  { "value": "0.5rem",   "type": "sizing" },
+    "sm":  { "value": "0.75rem",  "type": "sizing" },
+    "md":  { "value": "1rem",     "type": "sizing" },
+    "md1": { "value": "1.25rem",  "type": "sizing" },
+    "md2": { "value": "1.5rem",   "type": "sizing" },
+    "lg":  { "value": "2rem",     "type": "sizing" },
+    "xl":  { "value": "2.5rem",   "type": "sizing" },
+    "2xl": { "value": "3rem",     "type": "sizing" },
+    "3xl": { "value": "3.5rem",   "type": "sizing" },
+    "4xl": { "value": "4rem",     "type": "sizing" },
+    "5xl": { "value": "4.5rem",   "type": "sizing" },
+    "6xl": { "value": "5rem",     "type": "sizing" },
+    "7xl": { "value": "6rem",     "type": "sizing" },
+    "8xl": { "value": "7rem",     "type": "sizing" },
+    "9xl": { "value": "8rem",     "type": "sizing" },
+    "10xl": { "value": "9rem",    "type": "sizing" },
+    "11xl": { "value": "10rem",   "type": "sizing" },
+    "12xl": { "value": "11rem",   "type": "sizing" },
+    "13xl": { "value": "12rem",   "type": "sizing" },
+    "14xl": { "value": "13rem",   "type": "sizing" },
+    "15xl": { "value": "14rem",   "type": "sizing" },
+    "16xl": { "value": "15rem",   "type": "sizing" },
+    "17xl": { "value": "16rem",   "type": "sizing" },
+    "18xl": { "value": "17rem",   "type": "sizing" },
+    "19xl": { "value": "18rem",   "type": "sizing" },
+    "20xl": { "value": "19rem",   "type": "sizing" },
+    "21xl": { "value": "20rem",   "type": "sizing" },
+    "22xl": { "value": "21rem",   "type": "sizing" },
+    "23xl": { "value": "22rem",   "type": "sizing" },
+    "24xl": { "value": "23rem",   "type": "sizing" },
+    "25xl": { "value": "24rem",   "type": "sizing" },
+    "26xl": { "value": "25rem",   "type": "sizing" },
+    "27xl": { "value": "26rem",   "type": "sizing" },
+    "28xl": { "value": "27rem",   "type": "sizing" },
+    "29xl": { "value": "28rem",   "type": "sizing" },
+    "30xl": { "value": "29rem",   "type": "sizing" },
+    "31xl": { "value": "30rem",   "type": "sizing" },
+    "32xl": { "value": "31rem",   "type": "sizing" },
+    "33xl": { "value": "32rem",   "type": "sizing" },
+    "34xl": { "value": "33rem",   "type": "sizing" },
+    "35xl": { "value": "34rem",   "type": "sizing" },
+    "36xl": { "value": "35rem",   "type": "sizing" },
+    "37xl": { "value": "36rem",   "type": "sizing" },
+    "38xl": { "value": "37rem",   "type": "sizing" },
+    "39xl": { "value": "38rem",   "type": "sizing" },
+    "40xl": { "value": "39rem",   "type": "sizing" },
+    "41xl": { "value": "40rem",   "type": "sizing" },
+    "42xl": { "value": "41rem",   "type": "sizing" },
+    "43xl": { "value": "42rem",   "type": "sizing" },
+    "44xl": { "value": "43rem",   "type": "sizing" },
+    "45xl": { "value": "44rem",   "type": "sizing" },
+    "46xl": { "value": "45rem",   "type": "sizing" },
+    "47xl": { "value": "46rem",   "type": "sizing" },
+    "48xl": { "value": "47rem",   "type": "sizing" },
+    "49xl": { "value": "48rem",   "type": "sizing" },
+    "50xl": { "value": "49rem",   "type": "sizing" },
+    "51xl": { "value": "50rem",   "type": "sizing" }
+
   },
   "grid": {
     "breakpoint": {
