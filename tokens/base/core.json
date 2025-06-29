@@ -879,127 +879,23 @@
       "type": "spacing"
     }
   },
-  "text": {
-    "style": {
+  "font": {
+    "family": {
       "brand": {
-        "regular": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Regular"
-          },
-          "type": "typography"
-        },
-        "medium": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Medium"
-          },
-          "type": "typography"
-        },
-        "semibold": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Semi Bold"
-          },
-          "type": "typography"
-        },
-        "bold": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Bold"
-          },
-          "type": "typography"
-        }
+        "value": "Funnel Display",
+        "type": "font"
       },
       "plain": {
-        "regular": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Regular"
-          },
-          "type": "typography"
-        },
-        "medium": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Medium"
-          },
-          "type": "typography"
-        },
-        "semibold": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Semi Bold"
-          },
-          "type": "typography"
-        },
-        "bold": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Bold"
-          },
-          "type": "typography"
-        }
-      },
-      "script": {
-        "regular": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Regular"
-          },
-          "type": "typography"
-        },
-        "medium": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Medium"
-          },
-          "type": "typography"
-        },
-        "semibold": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Semi Bold"
-          },
-          "type": "typography"
-        },
-        "bold": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Bold"
-          },
-          "type": "typography"
-        }
+        "value": "Funnel Sans",
+        "type": "font"
       },
       "mono": {
-        "regular": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Regular"
-          },
-          "type": "typography"
-        },
-        "medium": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Medium"
-          },
-          "type": "typography"
-        },
-        "semibold": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Semi Bold"
-          },
-          "type": "typography"
-        },
-        "bold": {
-          "value": {
-            "fontFamily": "Inter",
-            "fontWeight": "Bold"
-          },
-          "type": "typography"
-        }
+        "value": "Yesteryear",
+        "type": "font"
+      },
+      "script": {
+        "value": "Menlo",
+        "type": "font"
       }
     },
     "size": {
