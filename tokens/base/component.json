@@ -53,7 +53,7 @@
       },
       "lg": {
         "x": {
-          "value": "{spacing.5}",
+          "value": "{spacing.4}",
           "type": "spacing"
         },
         "y": {
