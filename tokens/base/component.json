@@ -22,18 +22,18 @@
         "type": "borderRadius"
       },
       "md": {
-        "value": "{radius.md}",
+        "value": "{radius.sm}",
         "type": "borderRadius"
       },
       "lg": {
-        "value": "{radius.lg}",
+        "value": "{radius.md}",
         "type": "borderRadius"
       }
     },
     "padding": {
       "sm": {
         "x": {
-          "value": "{spacing.2}",
+          "value": "{spacing.3}",
           "type": "spacing"
         },
         "y": {
@@ -47,7 +47,7 @@
           "type": "spacing"
         },
         "y": {
-          "value": "{spacing.2}",
+          "value": "{spacing.3}",
           "type": "spacing"
         }
       },
@@ -57,7 +57,7 @@
           "type": "spacing"
         },
         "y": {
-          "value": "{spacing.3}",
+          "value": "{spacing.4}",
           "type": "spacing"
         }
       }
@@ -70,7 +70,7 @@
             "type": "typography"
           },
           "size": {
-            "value": "{text.size.md}",
+            "value": "{font.size.md}",
             "type": "typography"
           },
           "weight": {
@@ -78,7 +78,7 @@
             "type": "typography"
           },
           "lineHeight": {
-            "value": "{text.size.md}",
+            "value": "{font.size.md}",
             "type": "typography"
           }
         }
@@ -90,7 +90,7 @@
             "type": "typography"
           },
           "size": {
-            "value": "{text.size.lg}",
+            "value": "{font.size.lg}",
             "type": "typography"
           },
           "weight": {
@@ -98,7 +98,7 @@
             "type": "typography"
           },
           "lineHeight": {
-            "value": "{text.size.lg}",
+            "value": "{font.size.lg}",
             "type": "typography"
           }
         }
@@ -110,7 +110,7 @@
             "type": "typography"
           },
           "size": {
-            "value": "{text.size.sm}",
+            "value": "{font.size.md}",
             "type": "typography"
           },
           "weight": {
@@ -118,7 +118,7 @@
             "type": "typography"
           },
           "lineHeight": {
-            "value": "{text.size.sm}",
+            "value": "{font.size.sm}",
             "type": "typography"
           }
         }
@@ -133,7 +133,7 @@
           "type": "spacing"
         },
         "lg": {
-          "value": "{spacing.4}",
+          "value": "{spacing.3}",
           "type": "spacing"
         }
       }

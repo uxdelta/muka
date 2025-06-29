@@ -249,7 +249,7 @@
         "value": {
           "fontFamily": "{font.plain.family}",
           "fontSize": "{font.size.sm}",
-          "lineHeight": "{font.size.sm}",
+          "lineHeight": "{font.size.md}",
           "fontWeight": "{font.plain.weight.semibold}"
         },
         "type": "typography"
