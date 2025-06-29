@@ -908,17 +908,45 @@
       "family": {
         "value": "Funnel Sans",
         "type": "font"
+      },
+      "weight": {
+        "regular": {
+          "value": "400",
+          "type": "font"
+        },
+        "medium": {
+          "value": "500",
+          "type": "font"
+        },
+        "semibold": {
+          "value": "600",
+          "type": "font"
+        },
+        "bold": {
+          "value": "700",
+          "type": "font"
+        }
       }
     },
     "mono": {
       "family": {
-        "value": "Yesteryear",
+        "value": "Menlo",
         "type": "font"
+      },
+      "weight": {
+        "regular": {
+          "value": "Regular",
+          "type": "font"
+        },
+        "bold": {
+          "value": "Bold",
+          "type": "font"
+        }
       }
     },
     "script": {
       "family": {
-        "value": "Menlo",
+        "value": "Yesteryear",
         "type": "font"
       }
     },
