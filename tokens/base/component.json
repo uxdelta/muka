@@ -31,6 +31,16 @@
       }
     },
     "padding": {
+      "sm": {
+        "x": {
+          "value": "{spacing.3}",
+          "type": "spacing"
+        },
+        "y": {
+          "value": "{spacing.1}",
+          "type": "spacing"
+        }
+      },
       "md": {
         "x": {
           "value": "{spacing.4}",
@@ -48,16 +58,6 @@
         },
         "y": {
           "value": "{spacing.3}",
-          "type": "spacing"
-        }
-      },
-      "sm": {
-        "x": {
-          "value": "{spacing.3}",
-          "type": "spacing"
-        },
-        "y": {
-          "value": "{spacing.1}",
           "type": "spacing"
         }
       }
