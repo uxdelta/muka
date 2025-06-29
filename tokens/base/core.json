@@ -880,20 +880,26 @@
     }
   },
   "font": {
-    "family": {
-      "brand": {
+    "brand": {
+      "family": {
         "value": "Funnel Display",
         "type": "font"
-      },
-      "plain": {
+      }
+    },
+    "plain": {
+      "family": {
         "value": "Funnel Sans",
         "type": "font"
-      },
-      "mono": {
+      }
+    },
+    "mono": {
+      "family": {
         "value": "Yesteryear",
         "type": "font"
-      },
-      "script": {
+      }
+    },
+    "script": {
+      "family": {
         "value": "Menlo",
         "type": "font"
       }
