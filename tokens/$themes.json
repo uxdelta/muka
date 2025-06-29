@@ -302,9 +302,9 @@
       "input.radius.sm": "9e1c02a621012e74b8d223940ef3cb4e0813beaf",
       "button.padding.lg.x": "2d53b6df5f7890c70c7eddd5fef84dc6e2a77905",
       "button.padding.lg.y": "a400ce4ef18e1cea14bff1b7bd08cb7fd84b0548",
-      "input.color.background": "60b680dcbcd472accb82d68b99596d27e5388f90",
-      "input.color.foreground": "e0005885886124ebb3de1175f6caa0b1cf2ca77a",
-      "input.color.border": "ded4dc9e4366713878062612ccd922f0eccaa232"
+      "input.color.default.background": "60b680dcbcd472accb82d68b99596d27e5388f90",
+      "input.color.default.foreground": "e0005885886124ebb3de1175f6caa0b1cf2ca77a",
+      "input.color.default.border": "ded4dc9e4366713878062612ccd922f0eccaa232"
     },
     "$figmaCollectionId": "VariableCollectionId:72:2",
     "$figmaModeId": "102:0"
@@ -764,9 +764,9 @@
       "input.radius.sm": "9e1c02a621012e74b8d223940ef3cb4e0813beaf",
       "button.padding.lg.x": "2d53b6df5f7890c70c7eddd5fef84dc6e2a77905",
       "button.padding.lg.y": "a400ce4ef18e1cea14bff1b7bd08cb7fd84b0548",
-      "input.color.background": "60b680dcbcd472accb82d68b99596d27e5388f90",
-      "input.color.foreground": "e0005885886124ebb3de1175f6caa0b1cf2ca77a",
-      "input.color.border": "ded4dc9e4366713878062612ccd922f0eccaa232"
+      "input.color.default.background": "60b680dcbcd472accb82d68b99596d27e5388f90",
+      "input.color.default.foreground": "e0005885886124ebb3de1175f6caa0b1cf2ca77a",
+      "input.color.default.border": "ded4dc9e4366713878062612ccd922f0eccaa232"
     },
     "$figmaCollectionId": "VariableCollectionId:72:2",
     "$figmaModeId": "72:1"
