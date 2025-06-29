@@ -118,11 +118,11 @@
       "transition": {
         "duration": {
           "value": "{motion.duration.normal}",
-          "type": "duration"
+          "type": "other"
         },
         "easing": {
           "value": "{motion.easing.ease}",
-          "type": "cubicBezier"
+          "type": "other"
         }
       }
     },
@@ -130,11 +130,11 @@
       "transition": {
         "duration": {
           "value": "{motion.duration.normal}",
-          "type": "duration"
+          "type": "other"
         },
         "easing": {
           "value": "{motion.easing.ease}",
-          "type": "cubicBezier"
+          "type": "other"
         }
       }
     }
