@@ -122,6 +122,20 @@
             "type": "typography"
           }
         }
+      },
+      "margin": {
+        "sm": {
+          "value": "{spacing.1}",
+          "type": "spacing"
+        },
+        "md": {
+          "value": "{spacing.2}",
+          "type": "spacing"
+        },
+        "lg": {
+          "value": "{spacing.4}",
+          "type": "spacing"
+        }
       }
     }
   },
