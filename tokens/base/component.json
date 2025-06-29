@@ -113,30 +113,6 @@
           }
         }
       }
-    },
-    "primary": {
-      "transition": {
-        "duration": {
-          "value": "{motion.duration.normal}",
-          "type": "other"
-        },
-        "easing": {
-          "value": "{motion.easing.ease}",
-          "type": "other"
-        }
-      }
-    },
-    "secondary": {
-      "transition": {
-        "duration": {
-          "value": "{motion.duration.normal}",
-          "type": "other"
-        },
-        "easing": {
-          "value": "{motion.easing.ease}",
-          "type": "other"
-        }
-      }
     }
   },
   "input": {
@@ -206,16 +182,6 @@
       "y": {
         "value": "{spacing.2}",
         "type": "spacing"
-      }
-    },
-    "transition": {
-      "duration": {
-        "value": "{motion.duration.normal}",
-        "type": "duration"
-      },
-      "easing": {
-        "value": "{motion.easing.ease}",
-        "type": "cubicBezier"
       }
     }
   }
