@@ -6,11 +6,59 @@
           "default": {
             "value": "{color.action.default}",
             "type": "color"
+          },
+          "hover": {
+            "value": "{color.action.hover}",
+            "type": "color"
           }
         },
         "foreground": {
           "default": {
             "value": "{color.text.primary.inverse}",
+            "type": "color"
+          }
+        }
+      },
+      "secondary": {
+        "background": {
+          "default": {
+            "value": "{color.surface.level1}",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{color.surface.level0}",
+            "type": "color"
+          }
+        },
+        "foreground": {
+          "default": {
+            "value": "{color.text.primary.default}",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{color.action.hover}",
+            "type": "color"
+          }
+        }
+      },
+      "ghost": {
+        "background": {
+          "default": {
+            "value": "{color.white-alpha.10}",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{color.surface.level1}",
+            "type": "color"
+          }
+        },
+        "foreground": {
+          "default": {
+            "value": "{color.text.primary.default}",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{color.action.hover}",
             "type": "color"
           }
         }
@@ -22,7 +70,7 @@
         "type": "borderRadius"
       },
       "md": {
-        "value": "{radius.sm}",
+        "value": "{radius.md}",
         "type": "borderRadius"
       },
       "lg": {
@@ -33,7 +81,7 @@
     "padding": {
       "sm": {
         "x": {
-          "value": "{spacing.3}",
+          "value": "{spacing.2}",
           "type": "spacing"
         },
         "y": {

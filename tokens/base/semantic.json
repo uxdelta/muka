@@ -52,12 +52,16 @@
         "type": "color"
       },
       "action": {
-        "default": {
-          "value": "{color.blue.600}",
+        "pressed": {
+          "value": "{color.indigo.800}",
           "type": "color"
         },
-        "pressed": {
-          "value": "{color.blue.700}",
+        "default": {
+          "value": "{color.indigo.600}",
+          "type": "color"
+        },
+        "hover": {
+          "value": "{color.indigo.700}",
           "type": "color"
         }
       },
@@ -82,17 +86,25 @@
       "secondary": {
         "value": "{color.gray.200}",
         "type": "color"
+      },
+      "focus": {
+        "value": "{color.blue.500}",
+        "type": "color"
       }
     },
     "action": {
       "default": {
-        "value": "{color.indigo.500}",
+        "value": "{color.indigo.600}",
+        "type": "color"
+      },
+      "hover": {
+        "value": "{color.indigo.700}",
         "type": "color"
       }
     },
     "brand": {
       "primary": {
-        "value": "{color.indigo.500}",
+        "value": "{color.indigo.600}",
         "type": "color"
       },
       "secondary": {
@@ -175,7 +187,7 @@
     "h1": {
       "font": {
         "family": {
-          "value": "{font.family.brand}",
+          "value": "{font.brand.family}",
           "type": "typography"
         },
         "size": {
@@ -195,7 +207,7 @@
     "h2": {
       "font": {
         "family": {
-          "value": "{font.family.brand}",
+          "value": "{font.brand.family}",
           "type": "typography"
         },
         "size": {
@@ -215,7 +227,7 @@
     "h3": {
       "font": {
         "family": {
-          "value": "{font.family.brand}",
+          "value": "{font.brand.family}",
           "type": "typography"
         },
         "size": {
@@ -235,7 +247,7 @@
     "h4": {
       "font": {
         "family": {
-          "value": "{font.family.brand}",
+          "value": "{font.brand.family}",
           "type": "typography"
         },
         "size": {
