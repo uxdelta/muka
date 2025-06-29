@@ -149,29 +149,29 @@
       "type": "borderRadius"
     }
   },
-  "p": {
-    "xs": {
-      "value": "{font.size.sm}",
-      "type": "typography"
-    },
-    "sm": {
-      "value": "{font.size.sm}",
-      "type": "typography"
-    },
-    "base": {
-      "value": "{font.size.md}",
-      "type": "typography"
-    },
-    "lg": {
-      "value": "{font.size.lg}",
-      "type": "typography"
-    },
-    "xl": {
-      "value": "{font.size.xl}",
-      "type": "typography"
-    }
-  },
   "text": {
+    "p": {
+      "xs": {
+        "value": "{font.size.sm}",
+        "type": "typography"
+      },
+      "sm": {
+        "value": "{font.size.sm}",
+        "type": "typography"
+      },
+      "base": {
+        "value": "{font.size.md}",
+        "type": "typography"
+      },
+      "lg": {
+        "value": "{font.size.lg}",
+        "type": "typography"
+      },
+      "xl": {
+        "value": "{font.size.xl}",
+        "type": "typography"
+      }
+    },
     "h1": {
       "font": {
         "family": {
