@@ -149,41 +149,29 @@
       "type": "borderRadius"
     }
   },
-  "text": {
-    "p": {
-      "font": {
-        "family": {
-          "value": "{font.family.plain}",
-          "type": "typography"
-        },
-        "weight": {
-          "value": "{font.weight.regular}",
-          "type": "typography"
-        },
-        "size": {
-          "xs": {
-            "value": "{font.size.sm}",
-            "type": "typography"
-          },
-          "sm": {
-            "value": "{font.size.sm}",
-            "type": "typography"
-          },
-          "base": {
-            "value": "{font.size.md}",
-            "type": "typography"
-          },
-          "lg": {
-            "value": "{font.size.lg}",
-            "type": "typography"
-          },
-          "xl": {
-            "value": "{font.size.xl}",
-            "type": "typography"
-          }
-        }
-      }
+  "p": {
+    "xs": {
+      "value": "{font.size.sm}",
+      "type": "typography"
     },
+    "sm": {
+      "value": "{font.size.sm}",
+      "type": "typography"
+    },
+    "base": {
+      "value": "{font.size.md}",
+      "type": "typography"
+    },
+    "lg": {
+      "value": "{font.size.lg}",
+      "type": "typography"
+    },
+    "xl": {
+      "value": "{font.size.xl}",
+      "type": "typography"
+    }
+  },
+  "text": {
     "h1": {
       "font": {
         "family": {
