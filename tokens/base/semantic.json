@@ -250,7 +250,7 @@
           "fontFamily": "{font.plain.family}",
           "fontSize": "{font.size.sm}",
           "lineHeight": "{font.size.sm}",
-          "fontWeight": "{font.plain.weight.regular}"
+          "fontWeight": "{font.plain.weight.semibold}"
         },
         "type": "typography"
       },
@@ -259,7 +259,7 @@
           "fontFamily": "{font.plain.family}",
           "fontSize": "{font.size.base}",
           "lineHeight": "{font.size.base}",
-          "fontWeight": "{font.plain.weight.regular}"
+          "fontWeight": "{font.plain.weight.semibold}"
         },
         "type": "typography"
       },
@@ -268,7 +268,7 @@
           "fontFamily": "{font.plain.family}",
           "fontSize": "{font.size.lg}",
           "lineHeight": "{font.size.lg}",
-          "fontWeight": "{font.plain.weight.regular}"
+          "fontWeight": "{font.plain.weight.semibold}"
         },
         "type": "typography"
       },
@@ -277,7 +277,7 @@
           "fontFamily": "{font.plain.family}",
           "fontSize": "{font.size.xl}",
           "lineHeight": "{font.size.xl}",
-          "fontWeight": "{font.plain.weight.regular}"
+          "fontWeight": "{font.plain.weight.semibold}"
         },
         "type": "typography"
       }
