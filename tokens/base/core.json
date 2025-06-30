@@ -883,113 +883,113 @@
     "brand": {
       "family": {
         "value": "Funnel Display",
-        "type": "Font Family"
+        "type": "fontFamily"
       },
       "weight": {
         "regular": {
           "value": "400",
-          "type": "Font Weight"
+          "type": "fontWeight"
         },
         "medium": {
           "value": "500",
-          "type": "Font Weight"
+          "type": "fontWeight"
         },
         "semibold": {
           "value": "600",
-          "type": "Font Weight"
+          "type": "fontWeight"
         },
         "bold": {
           "value": "700",
-          "type": "Font Weight"
+          "type": "fontWeight"
         }
       }
     },
     "plain": {
       "family": {
         "value": "Funnel Sans",
-        "type": "Font Family"
+        "type": "fontFamily"
       },
       "weight": {
         "regular": {
           "value": "400",
-          "type": "Font Weight"
+          "type": "fontWeight"
         },
         "medium": {
           "value": "500",
-          "type": "Font Weight"
+          "type": "fontWeight"
         },
         "semibold": {
           "value": "600",
-          "type": "Font Weight"
+          "type": "fontWeight"
         },
         "bold": {
           "value": "700",
-          "type": "Font Weight"
+          "type": "fontWeight"
         }
       }
     },
     "mono": {
       "family": {
         "value": "Menlo",
-        "type": "Font Family"
+        "type": "fontFamily"
       },
       "weight": {
         "regular": {
           "value": "Regular",
-          "type": "Font Weight"
+          "type": "fontWeight"
         },
         "bold": {
           "value": "Bold",
-          "type": "Font Weight"
+          "type": "fontWeight"
         }
       }
     },
     "script": {
       "family": {
         "value": "Yesteryear",
-        "type": "Font Family"
+        "type": "fontFamily"
       }
     },
     "size": {
       "xs": {
         "value": "0.75rem",
-        "type": "Font Size"
+        "type": "fontSize"
       },
       "sm": {
         "value": "0.875rem",
-        "type": "Font Size"
+        "type": "fontSize"
       },
       "md": {
         "value": "1rem",
-        "type": "Font Size"
+        "type": "fontSize"
       },
       "lg": {
         "value": "1.125rem",
-        "type": "Font Size"
+        "type": "fontSize"
       },
       "xl": {
         "value": "1.25rem",
-        "type": "Font Size"
+        "type": "fontSize"
       },
       "2xl": {
         "value": "1.5rem",
-        "type": "Font Size"
+        "type": "fontSize"
       },
       "3xl": {
         "value": "2rem",
-        "type": "Font Size"
+        "type": "fontSize"
       },
       "4xl": {
         "value": "2.5rem",
-        "type": "Font Size"
+        "type": "fontSize"
       },
       "5xl": {
         "value": "3rem",
-        "type": "Font Size"
+        "type": "fontSize"
       },
       "6xl": {
         "value": "4rem",
-        "type": "Font Size"
+        "type": "fontSize"
       }
     }
   },
@@ -1241,54 +1241,85 @@
   },
   "grid": {
     "breakpoint": {
-      "xs": {
-        "value": "320px",
-        "type": "composition"
-      },
       "sm": {
-        "value": "640px",
-        "type": "composition"
+        "value": {
+          "width": "393px",
+          "minWidth": "320px",
+          "maxWidth": "672px"
+        },
+        "type": "composition",
+        "description": "Phones"
       },
       "md": {
-        "value": "768px",
-        "type": "composition"
+        "value": {
+          "width": "768px",
+          "minWidth": "672px",
+          "maxWidth": "1055px"
+        },
+        "type": "composition",
+        "description": "Tablets"
       },
       "lg": {
-        "value": "1024px",
-        "type": "composition"
+        "value": {
+          "width": "1280px",
+          "minWidth": "1056px",
+          "maxWidth": "1311px"
+        },
+        "type": "composition",
+        "description": "Desktop"
       },
       "xl": {
-        "value": "1280px",
-        "type": "composition"
+        "value": {
+          "width": "1440",
+          "minWidth": "1312",
+          "maxWidth": "1583"
+        },
+        "type": "composition",
+        "description": "Large desktop"
       },
-      "2xl": {
-        "value": "1536px",
-        "type": "composition"
+      "max": {
+        "value": {
+          "width": "1920",
+          "minWidth": "1584"
+        },
+        "type": "composition",
+        "description": "Very large displays"
       }
     },
     "container": {
       "sm": {
-        "value": "640px",
+        "value": {
+          "width": "100%",
+          "horizontalPadding": "16px"
+        },
         "type": "composition"
       },
       "md": {
-        "value": "768px",
+        "value": {
+          "maxWidth": "608px",
+          "horizontalPadding": "32px"
+        },
         "type": "composition"
       },
       "lg": {
-        "value": "1024px",
+        "value": {
+          "maxWidth": "992px",
+          "horizontalPadding": "32px"
+        },
         "type": "composition"
       },
       "xl": {
-        "value": "1280px",
+        "value": {
+          "maxWidth": "1312px",
+          "horizontalPadding": "32px"
+        },
         "type": "composition"
       },
-      "2xl": {
-        "value": "1536px",
-        "type": "composition"
-      },
-      "full": {
-        "value": "100%",
+      "max": {
+        "value": {
+          "maxWidth": "1440px",
+          "horizontalPadding": "72px"
+        },
         "type": "composition"
       }
     }
