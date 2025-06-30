@@ -883,113 +883,113 @@
     "brand": {
       "family": {
         "value": "Funnel Display",
-        "type": "fontFamily"
+        "type": "Font Family"
       },
       "weight": {
         "regular": {
           "value": "400",
-          "type": "fontWeight"
+          "type": "Font Weight"
         },
         "medium": {
           "value": "500",
-          "type": "fontWeight"
+          "type": "Font Weight"
         },
         "semibold": {
           "value": "600",
-          "type": "fontWeight"
+          "type": "Font Weight"
         },
         "bold": {
           "value": "700",
-          "type": "fontWeight"
+          "type": "Font Weight"
         }
       }
     },
     "plain": {
       "family": {
         "value": "Funnel Sans",
-        "type": "fontFamily"
+        "type": "Font Family"
       },
       "weight": {
         "regular": {
           "value": "400",
-          "type": "fontWeight"
+          "type": "Font Weight"
         },
         "medium": {
           "value": "500",
-          "type": "fontWeight"
+          "type": "Font Weight"
         },
         "semibold": {
           "value": "600",
-          "type": "fontWeight"
+          "type": "Font Weight"
         },
         "bold": {
           "value": "700",
-          "type": "fontWeight"
+          "type": "Font Weight"
         }
       }
     },
     "mono": {
       "family": {
         "value": "Menlo",
-        "type": "fontFamily"
+        "type": "Font Family"
       },
       "weight": {
         "regular": {
           "value": "Regular",
-          "type": "fontWeight"
+          "type": "Font Weight"
         },
         "bold": {
           "value": "Bold",
-          "type": "fontWeight"
+          "type": "Font Weight"
         }
       }
     },
     "script": {
       "family": {
         "value": "Yesteryear",
-        "type": "fontFamily"
+        "type": "Font Family"
       }
     },
     "size": {
       "xs": {
         "value": "0.75rem",
-        "type": "fontSize"
+        "type": "Font Size"
       },
       "sm": {
         "value": "0.875rem",
-        "type": "fontSize"
+        "type": "Font Size"
       },
       "md": {
         "value": "1rem",
-        "type": "fontSize"
+        "type": "Font Size"
       },
       "lg": {
         "value": "1.125rem",
-        "type": "fontSize"
+        "type": "Font Size"
       },
       "xl": {
         "value": "1.25rem",
-        "type": "fontSize"
+        "type": "Font Size"
       },
       "2xl": {
         "value": "1.5rem",
-        "type": "fontSize"
+        "type": "Font Size"
       },
       "3xl": {
         "value": "2rem",
-        "type": "fontSize"
+        "type": "Font Size"
       },
       "4xl": {
         "value": "2.5rem",
-        "type": "fontSize"
+        "type": "Font Size"
       },
       "5xl": {
         "value": "3rem",
-        "type": "fontSize"
+        "type": "Font Size"
       },
       "6xl": {
         "value": "4rem",
-        "type": "fontSize"
+        "type": "Font Size"
       }
     }
   },
