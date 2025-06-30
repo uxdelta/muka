@@ -883,113 +883,113 @@
     "brand": {
       "family": {
         "value": "Funnel Display",
-        "type": "font"
+        "type": "fontFamily"
       },
       "weight": {
         "regular": {
           "value": "400",
-          "type": "font"
+          "type": "fontWeight"
         },
         "medium": {
           "value": "500",
-          "type": "font"
+          "type": "fontWeight"
         },
         "semibold": {
           "value": "600",
-          "type": "font"
+          "type": "fontWeight"
         },
         "bold": {
           "value": "700",
-          "type": "font"
+          "type": "fontWeight"
         }
       }
     },
     "plain": {
       "family": {
         "value": "Funnel Sans",
-        "type": "font"
+        "type": "fontFamily"
       },
       "weight": {
         "regular": {
           "value": "400",
-          "type": "font"
+          "type": "fontWeight"
         },
         "medium": {
           "value": "500",
-          "type": "font"
+          "type": "fontWeight"
         },
         "semibold": {
           "value": "600",
-          "type": "font"
+          "type": "fontWeight"
         },
         "bold": {
           "value": "700",
-          "type": "font"
+          "type": "fontWeight"
         }
       }
     },
     "mono": {
       "family": {
         "value": "Menlo",
-        "type": "font"
+        "type": "fontFamily"
       },
       "weight": {
         "regular": {
           "value": "Regular",
-          "type": "font"
+          "type": "fontWeight"
         },
         "bold": {
           "value": "Bold",
-          "type": "font"
+          "type": "fontWeight"
         }
       }
     },
     "script": {
       "family": {
         "value": "Yesteryear",
-        "type": "font"
+        "type": "fontFamily"
       }
     },
     "size": {
       "xs": {
         "value": "0.75rem",
-        "type": "typography"
+        "type": "fontSize"
       },
       "sm": {
         "value": "0.875rem",
-        "type": "typography"
+        "type": "fontSize"
       },
       "md": {
         "value": "1rem",
-        "type": "typography"
+        "type": "fontSize"
       },
       "lg": {
         "value": "1.125rem",
-        "type": "typography"
+        "type": "fontSize"
       },
       "xl": {
         "value": "1.25rem",
-        "type": "typography"
+        "type": "fontSize"
       },
       "2xl": {
         "value": "1.5rem",
-        "type": "typography"
+        "type": "fontSize"
       },
       "3xl": {
         "value": "2rem",
-        "type": "typography"
+        "type": "fontSize"
       },
       "4xl": {
         "value": "2.5rem",
-        "type": "typography"
+        "type": "fontSize"
       },
       "5xl": {
         "value": "3rem",
-        "type": "typography"
+        "type": "fontSize"
       },
       "6xl": {
         "value": "4rem",
-        "type": "typography"
+        "type": "fontSize"
       }
     }
   },
@@ -1243,92 +1243,92 @@
     "breakpoint": {
       "xs": {
         "value": "320px",
-        "type": "sizing"
+        "type": "composition"
       },
       "sm": {
         "value": "640px",
-        "type": "sizing"
+        "type": "composition"
       },
       "md": {
         "value": "768px",
-        "type": "sizing"
+        "type": "composition"
       },
       "lg": {
         "value": "1024px",
-        "type": "sizing"
+        "type": "composition"
       },
       "xl": {
         "value": "1280px",
-        "type": "sizing"
+        "type": "composition"
       },
       "2xl": {
         "value": "1536px",
-        "type": "sizing"
+        "type": "composition"
       }
     },
     "container": {
       "sm": {
         "value": "640px",
-        "type": "sizing"
+        "type": "composition"
       },
       "md": {
         "value": "768px",
-        "type": "sizing"
+        "type": "composition"
       },
       "lg": {
         "value": "1024px",
-        "type": "sizing"
+        "type": "composition"
       },
       "xl": {
         "value": "1280px",
-        "type": "sizing"
+        "type": "composition"
       },
       "2xl": {
         "value": "1536px",
-        "type": "sizing"
+        "type": "composition"
       },
       "full": {
         "value": "100%",
-        "type": "sizing"
+        "type": "composition"
       }
     }
   },
   "shadow": {
     "none": {
       "value": "none",
-      "type": "boxShadow"
+      "type": "other"
     },
     "xs": {
       "value": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-      "type": "boxShadow"
+      "type": "other"
     },
     "sm": {
       "value": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
-      "type": "boxShadow"
+      "type": "other"
     },
     "base": {
       "value": "0 1px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-      "type": "boxShadow"
+      "type": "other"
     },
     "md": {
       "value": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-      "type": "boxShadow"
+      "type": "other"
     },
     "lg": {
       "value": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-      "type": "boxShadow"
+      "type": "other"
     },
     "xl": {
       "value": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      "type": "boxShadow"
+      "type": "other"
     },
     "2xl": {
       "value": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-      "type": "boxShadow"
+      "type": "other"
     },
     "inner": {
       "value": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
-      "type": "boxShadow"
+      "type": "other"
     }
   },
   "motion": {
