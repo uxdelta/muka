@@ -6,26 +6,26 @@
         "type": "color"
       },
       "level2": {
-        "value": "{color.gray.50}",
+        "value": "{color.slate.50}",
         "type": "color"
       },
       "level1": {
-        "value": "{color.gray.100}",
+        "value": "{color.slate.100}",
         "type": "color"
       },
       "level0": {
-        "value": "{color.gray.200}",
+        "value": "{color.slate.200}",
         "type": "color"
       },
       "sunken": {
-        "value": "{color.gray.300}",
+        "value": "{color.slate.300}",
         "type": "color"
       }
     },
     "text": {
       "primary": {
         "default": {
-          "value": "{color.gray.900}",
+          "value": "{color.slate.900}",
           "type": "color"
         },
         "inverse": {
@@ -35,21 +35,25 @@
       },
       "secondary": {
         "default": {
-          "value": "{color.gray.600}",
+          "value": "{color.slate.600}",
           "type": "color"
         },
         "inverse": {
-          "value": "{color.gray.300}",
+          "value": "{color.slate.300}",
           "type": "color"
         }
       },
       "tertiary": {
-        "value": "{color.gray.500}",
-        "type": "color"
+        "default": {
+          "value": "{color.slate.500}",
+          "type": "color"
+        }
       },
       "quarternary": {
-        "value": "{color.gray.300}",
-        "type": "color"
+        "default": {
+          "value": "{color.slate.300}",
+          "type": "color"
+        }
       },
       "action": {
         "pressed": {
@@ -66,25 +70,29 @@
         }
       },
       "success": {
-        "value": "{color.green.500}",
-        "type": "color"
+        "default": {
+          "value": "{color.green.500}",
+          "type": "color"
+        }
       },
       "error": {
-        "value": "{color.red.500}",
-        "type": "color"
+        "default": {
+          "value": "{color.red.500}",
+          "type": "color"
+        }
       }
     },
     "border": {
       "contrast": {
-        "value": "{color.gray.400}",
+        "value": "{color.slate.400}",
         "type": "color"
       },
-      "primary": {
-        "value": "{color.gray.300}",
+      "default": {
+        "value": "{color.slate.300}",
         "type": "color"
       },
-      "secondary": {
-        "value": "{color.gray.200}",
+      "muted": {
+        "value": "{color.slate.200}",
         "type": "color"
       },
       "focus": {

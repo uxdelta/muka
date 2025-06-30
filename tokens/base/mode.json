@@ -25,17 +25,17 @@
           "type": "color"
         },
         "tertiary": {
-          "value": "{color.text.tertiary}",
+          "value": "{color.text.tertiary.default}",
           "type": "color"
         }
       },
       "border": {
         "primary": {
-          "value": "{color.border.primary}",
+          "value": "{color.border.default}",
           "type": "color"
         },
         "secondary": {
-          "value": "{color.border.secondary}",
+          "value": "{color.border.muted}",
           "type": "color"
         }
       }

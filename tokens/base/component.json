@@ -139,7 +139,7 @@
           "type": "color"
         },
         "border": {
-          "value": "{color.border.primary}",
+          "value": "{color.border.default}",
           "type": "color"
         }
       },
