@@ -76,7 +76,7 @@
       "text.body.base": "S:6b5f724a7d87feaeee5650b46b3848a2ef9eaa99,",
       "text.body.lg": "S:d05a99d4265d30c72413ef9f32fbb9a4efc3713c,",
       "text.body.xl": "S:e3b6c6f1a0dc749a866796b77db156e0c0049603,",
-      "text.heading.h1": "S:47391bd88d3d88181f8f0d887c062bbceac7bb30,",
+      "text.heading.h1": "S:45f75b4425ee1aee7876fa80e0c44358b4632bd7,",
       "text.heading.h2": "S:3779b2aca0a5c32604f6adaa7ebe7e121c5a3d83,",
       "text.heading.h3": "S:96fc89e426fe82cef4f6cf8b4439cba2cfa722f4,",
       "text.heading.h4": "S:e73d8a8984a9c1a85c15cb55c211f3ed8c18ada2,",
@@ -142,7 +142,13 @@
       "button.label.lg.fontFamily": "S:f50f77198bac38aef9c3261a0467f04ef65239db,",
       "button.label.lg.fontSize": "S:9a5af3f94d56cfe882804363ba1fc656d2c3d7d3,",
       "button.label.lg.fontWeight": "S:36b3efa102b7e9b769fa76b724ef94c3ab5e346d,",
-      "button.label.lg.lineHeight": "S:f3f157b8ce864abbafdd3f4cad20bd174aba2875,"
+      "button.label.lg.lineHeight": "S:f3f157b8ce864abbafdd3f4cad20bd174aba2875,",
+      "text.body.xs": "S:869a4afcbc325c2c23991cbaea31412af2889cbb,",
+      "text.label.md": "S:f6f8ba5570ec48228b3cf8839f6b7c335a65d096,",
+      "text.subheading.h1": "S:3ea8fad7f187c54e49d220bc338a644bc83e0fd1,",
+      "text.subheading.h2": "S:9782d0cdd927ddc9ebb272b78e00dfcca99f9dd5,",
+      "text.subheading.h3": "S:7833639c6a718f2624bb4ad06d584ce87766c64f,",
+      "text.subheading.h4": "S:808ce0a9d91875f4f8bee2b1d224f896edc59816,"
     },
     "selectedTokenSets": {
       "base/core": "enabled",
