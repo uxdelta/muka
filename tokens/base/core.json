@@ -883,113 +883,155 @@
     "brand": {
       "family": {
         "value": "Funnel Display",
-        "type": "Font Family"
+        "type": "fontFamilies"
       },
       "weight": {
         "regular": {
           "value": "400",
-          "type": "Font Weight"
+          "type": "fontWeights"
         },
         "medium": {
           "value": "500",
-          "type": "Font Weight"
+          "type": "fontWeights"
         },
         "semibold": {
           "value": "600",
-          "type": "Font Weight"
+          "type": "fontWeights"
         },
         "bold": {
           "value": "700",
-          "type": "Font Weight"
+          "type": "fontWeights"
         }
       }
     },
     "plain": {
       "family": {
         "value": "Funnel Sans",
-        "type": "Font Family"
+        "type": "fontFamilies"
       },
       "weight": {
         "regular": {
           "value": "400",
-          "type": "Font Weight"
+          "type": "fontWeights"
         },
         "medium": {
           "value": "500",
-          "type": "Font Weight"
+          "type": "fontWeights"
         },
         "semibold": {
           "value": "600",
-          "type": "Font Weight"
+          "type": "fontWeights"
         },
         "bold": {
           "value": "700",
-          "type": "Font Weight"
+          "type": "fontWeights"
         }
       }
     },
     "mono": {
       "family": {
         "value": "Menlo",
-        "type": "Font Family"
+        "type": "fontFamilies"
       },
       "weight": {
         "regular": {
           "value": "Regular",
-          "type": "Font Weight"
+          "type": "fontWeights"
         },
         "bold": {
           "value": "Bold",
-          "type": "Font Weight"
+          "type": "fontWeights"
         }
       }
     },
     "script": {
       "family": {
         "value": "Yesteryear",
-        "type": "Font Family"
+        "type": "fontFamilies"
       }
     },
     "size": {
       "xs": {
         "value": "0.75rem",
-        "type": "Font Size"
+        "type": "fontSizes"
       },
       "sm": {
         "value": "0.875rem",
-        "type": "Font Size"
+        "type": "fontSizes"
       },
       "md": {
         "value": "1rem",
-        "type": "Font Size"
+        "type": "fontSizes"
       },
       "lg": {
         "value": "1.125rem",
-        "type": "Font Size"
+        "type": "fontSizes"
       },
       "xl": {
         "value": "1.25rem",
-        "type": "Font Size"
+        "type": "fontSizes"
       },
       "2xl": {
         "value": "1.5rem",
-        "type": "Font Size"
+        "type": "fontSizes"
       },
       "3xl": {
         "value": "2rem",
-        "type": "Font Size"
+        "type": "fontSizes"
       },
       "4xl": {
         "value": "2.5rem",
-        "type": "Font Size"
+        "type": "fontSizes"
       },
       "5xl": {
         "value": "3rem",
-        "type": "Font Size"
+        "type": "fontSizes"
       },
       "6xl": {
         "value": "4rem",
-        "type": "Font Size"
+        "type": "fontSizes"
+      }
+    },
+    "lineHeight": {
+      "xs": {
+        "value": "0.75rem",
+        "type": "lineHeights"
+      },
+      "sm": {
+        "value": "0.875rem",
+        "type": "lineHeights"
+      },
+      "md": {
+        "value": "1rem",
+        "type": "lineHeights"
+      },
+      "lg": {
+        "value": "1.125rem",
+        "type": "lineHeights"
+      },
+      "xl": {
+        "value": "1.25rem",
+        "type": "lineHeights"
+      },
+      "2xl": {
+        "value": "1.5rem",
+        "type": "lineHeights"
+      },
+      "3xl": {
+        "value": "2rem",
+        "type": "lineHeights"
+      },
+      "4xl": {
+        "value": "2.5rem",
+        "type": "lineHeights"
+      },
+      "5xl": {
+        "value": "3rem",
+        "type": "lineHeights"
+      },
+      "6xl": {
+        "value": "4rem",
+        "type": "lineHeights"
       }
     }
   },
