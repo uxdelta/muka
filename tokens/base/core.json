@@ -1241,54 +1241,85 @@
   },
   "grid": {
     "breakpoint": {
-      "xs": {
-        "value": "320px",
-        "type": "composition"
-      },
       "sm": {
-        "value": "640px",
-        "type": "composition"
+        "value": {
+          "width": "393px",
+          "minWidth": "320px",
+          "maxWidth": "672px"
+        },
+        "type": "composition",
+        "description": "Phones"
       },
       "md": {
-        "value": "768px",
-        "type": "composition"
+        "value": {
+          "width": "768px",
+          "minWidth": "672px",
+          "maxWidth": "1055px"
+        },
+        "type": "composition",
+        "description": "Tablets"
       },
       "lg": {
-        "value": "1024px",
-        "type": "composition"
+        "value": {
+          "width": "1280px",
+          "minWidth": "1056px",
+          "maxWidth": "1311px"
+        },
+        "type": "composition",
+        "description": "Desktop"
       },
       "xl": {
-        "value": "1280px",
-        "type": "composition"
+        "value": {
+          "width": "1440",
+          "minWidth": "1312",
+          "maxWidth": "1583"
+        },
+        "type": "composition",
+        "description": "Large desktop"
       },
-      "2xl": {
-        "value": "1536px",
-        "type": "composition"
+      "max": {
+        "value": {
+          "width": "1920",
+          "minWidth": "1584"
+        },
+        "type": "composition",
+        "description": "Very large displays"
       }
     },
     "container": {
       "sm": {
-        "value": "640px",
+        "value": {
+          "width": "100%",
+          "horizontalPadding": "16px"
+        },
         "type": "composition"
       },
       "md": {
-        "value": "768px",
+        "value": {
+          "maxWidth": "608px",
+          "horizontalPadding": "32px"
+        },
         "type": "composition"
       },
       "lg": {
-        "value": "1024px",
+        "value": {
+          "maxWidth": "992px",
+          "horizontalPadding": "32px"
+        },
         "type": "composition"
       },
       "xl": {
-        "value": "1280px",
+        "value": {
+          "maxWidth": "1312px",
+          "horizontalPadding": "32px"
+        },
         "type": "composition"
       },
-      "2xl": {
-        "value": "1536px",
-        "type": "composition"
-      },
-      "full": {
-        "value": "100%",
+      "max": {
+        "value": {
+          "maxWidth": "1440px",
+          "horizontalPadding": "72px"
+        },
         "type": "composition"
       }
     }
