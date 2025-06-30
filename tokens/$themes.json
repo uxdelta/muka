@@ -148,7 +148,12 @@
       "text.subheading.h1": "S:3ea8fad7f187c54e49d220bc338a644bc83e0fd1,",
       "text.subheading.h2": "S:9782d0cdd927ddc9ebb272b78e00dfcca99f9dd5,",
       "text.subheading.h3": "S:7833639c6a718f2624bb4ad06d584ce87766c64f,",
-      "text.subheading.h4": "S:808ce0a9d91875f4f8bee2b1d224f896edc59816,"
+      "text.subheading.h4": "S:808ce0a9d91875f4f8bee2b1d224f896edc59816,",
+      "text.body-deprecated.xs": "S:acdc4d51d476701e9a86526d5b3e2747356a91ca,",
+      "text.body-deprecated.sm": "S:efa07fa59b295cd3c6806a80ce0c059387023491,",
+      "text.body-deprecated.base": "S:8c4bc979bbbead24e13c1122156fdd62a686cee9,",
+      "text.body-deprecated.lg": "S:fce4bfb6391d3e4a4f8c6e521e292a0e7233690f,",
+      "text.body-deprecated.xl": "S:5c5d58f818642bfaa0b0091b0535f89a705daebc,"
     },
     "selectedTokenSets": {
       "base/core": "enabled",

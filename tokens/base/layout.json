@@ -15,25 +15,25 @@
     "typography": {
       "h1": {
         "fontSize": {
-          "value": "{size.2xl}",
+          "value": "{font.size.2xl}",
           "type": "fontSize"
         }
       },
       "h2": {
         "fontSize": {
-          "value": "{size.xl}",
+          "value": "{font.size.xl}",
           "type": "fontSize"
         }
       },
       "h3": {
         "fontSize": {
-          "value": "{size.lg}",
+          "value": "{font.size.lg}",
           "type": "fontSize"
         }
       },
       "h4": {
         "fontSize": {
-          "value": "{size.base}",
+          "value": "{font.size.base}",
           "type": "fontSize"
         }
       }
@@ -55,25 +55,25 @@
     "typography": {
       "h1": {
         "fontSize": {
-          "value": "{size.3xl}",
+          "value": "{font.size.3xl}",
           "type": "fontSize"
         }
       },
       "h2": {
         "fontSize": {
-          "value": "{size.2xl}",
+          "value": "{font.size.2xl}",
           "type": "fontSize"
         }
       },
       "h3": {
         "fontSize": {
-          "value": "{size.xl}",
+          "value": "{font.size.xl}",
           "type": "fontSize"
         }
       },
       "h4": {
         "fontSize": {
-          "value": "{size.lg}",
+          "value": "{font.size.lg}",
           "type": "fontSize"
         }
       }
@@ -95,25 +95,25 @@
     "typography": {
       "h1": {
         "fontSize": {
-          "value": "{size.5xl}",
+          "value": "{font.size.5xl}",
           "type": "fontSize"
         }
       },
       "h2": {
         "fontSize": {
-          "value": "{size.4xl}",
+          "value": "{font.size.4xl}",
           "type": "fontSize"
         }
       },
       "h3": {
         "fontSize": {
-          "value": "{size.3xl}",
+          "value": "{font.size.3xl}",
           "type": "fontSize"
         }
       },
       "h4": {
         "fontSize": {
-          "value": "{size.2xl}",
+          "value": "{font.size.2xl}",
           "type": "fontSize"
         }
       }
