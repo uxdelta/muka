@@ -2,7 +2,7 @@
   "mobile": {
     "container": {
       "value": "{grid.container.sm}",
-      "type": "size"
+      "type": "dimension"
     },
     "spacing": {
       "value": "{spacing.4}",
@@ -10,7 +10,7 @@
     },
     "breakpoint": {
       "value": "{grid.breakpoint.sm}",
-      "type": "size"
+      "type": "dimension"
     },
     "typography": {
       "h1": {
@@ -42,7 +42,7 @@
   "tablet": {
     "container": {
       "value": "{grid.container.md}",
-      "type": "size"
+      "type": "dimension"
     },
     "spacing": {
       "value": "{spacing.6}",
@@ -50,7 +50,7 @@
     },
     "breakpoint": {
       "value": "{grid.breakpoint.md}",
-      "type": "size"
+      "type": "dimension"
     },
     "typography": {
       "h1": {
@@ -82,7 +82,7 @@
   "desktop": {
     "container": {
       "value": "{grid.container.lg}",
-      "type": "size"
+      "type": "dimension"
     },
     "spacing": {
       "value": "{spacing.8}",
@@ -90,7 +90,7 @@
     },
     "breakpoint": {
       "value": "{grid.breakpoint.lg}",
-      "type": "size"
+      "type": "dimension"
     },
     "typography": {
       "h1": {
