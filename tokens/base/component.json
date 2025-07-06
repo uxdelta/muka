@@ -82,31 +82,31 @@
       "sm": {
         "x": {
           "value": "{spacing.2}",
-          "type": "spacing"
+          "type": "dimension"
         },
         "y": {
           "value": "{spacing.2}",
-          "type": "spacing"
+          "type": "dimension"
         }
       },
       "md": {
         "x": {
           "value": "{spacing.3}",
-          "type": "spacing"
+          "type": "dimension"
         },
         "y": {
           "value": "{spacing.3}",
-          "type": "spacing"
+          "type": "dimension"
         }
       },
       "lg": {
         "x": {
           "value": "{spacing.4}",
-          "type": "spacing"
+          "type": "dimension"
         },
         "y": {
           "value": "{spacing.4}",
-          "type": "spacing"
+          "type": "dimension"
         }
       }
     },
@@ -114,15 +114,15 @@
       "margin": {
         "sm": {
           "value": "{spacing.1}",
-          "type": "spacing"
+          "type": "dimension"
         },
         "md": {
           "value": "{spacing.2}",
-          "type": "spacing"
+          "type": "dimension"
         },
         "lg": {
           "value": "{spacing.3}",
-          "type": "spacing"
+          "type": "dimension"
         }
       }
     }
@@ -203,11 +203,11 @@
     "padding": {
       "x": {
         "value": "{spacing.3}",
-        "type": "spacing"
+        "type": "dimension"
       },
       "y": {
         "value": "{spacing.2}",
-        "type": "spacing"
+        "type": "dimension"
       }
     },
     "border": {
