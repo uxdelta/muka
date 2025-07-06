@@ -282,7 +282,7 @@
         }
       }
     },
-    "checkbox": {
+    "control": {
       "height": {
         "sm": {
           "value": "{size.lg}",
@@ -296,25 +296,7 @@
           "value": "{size.2xl}",
           "type": "dimension"
         }
-      }
-    },
-    "label": {
-      "height": {
-        "sm": {
-          "value": "{size.xl}",
-          "type": "dimension"
-        },
-        "default": {
-          "value": "{size.2xl}",
-          "type": "dimension"
-        },
-        "lg": {
-          "value": "{size.3xl}",
-          "type": "dimension"
-        }
-      }
-    },
-    "control": {
+      },
       "color": {
         "default": {
           "background": {
@@ -343,6 +325,22 @@
             "value": "{color.border.default}",
             "type": "color"
           }
+        }
+      }
+    },
+    "label": {
+      "height": {
+        "sm": {
+          "value": "{size.xl}",
+          "type": "dimension"
+        },
+        "default": {
+          "value": "{size.2xl}",
+          "type": "dimension"
+        },
+        "lg": {
+          "value": "{size.3xl}",
+          "type": "dimension"
         }
       }
     }
