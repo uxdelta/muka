@@ -68,18 +68,34 @@
           "value": "{color.indigo.700}",
           "type": "color"
         }
+      }
+    },
+    "success": {
+      "default": {
+        "value": "{color.green.500}",
+        "type": "color"
       },
-      "success": {
-        "default": {
-          "value": "{color.green.500}",
-          "type": "color"
-        }
+      "contrast": {
+        "value": "{color.green.700}",
+        "type": "color"
       },
-      "error": {
-        "default": {
-          "value": "{color.red.500}",
-          "type": "color"
-        }
+      "muted": {
+        "value": "{color.green.50}",
+        "type": "color"
+      }
+    },
+    "error": {
+      "default": {
+        "value": "{color.red.500}",
+        "type": "color"
+      },
+      "contrast": {
+        "value": "{color.red.700}",
+        "type": "color"
+      },
+      "muted": {
+        "value": "{color.red.50}",
+        "type": "color"
       }
     },
     "border": {
@@ -105,8 +121,12 @@
         "value": "{color.indigo.600}",
         "type": "color"
       },
-      "hover": {
+      "contrast": {
         "value": "{color.indigo.700}",
+        "type": "color"
+      },
+      "muted": {
+        "value": "{color.indigo.50}",
         "type": "color"
       }
     },
@@ -139,34 +159,46 @@
       "type": "boxShadow"
     }
   },
-  "radius": {
-    "sm": {
-      "value": "{size.xs}",
-      "type": "borderRadius"
+  "border": {
+    "radius": {
+      "sm": {
+        "value": "{size.xs}",
+        "type": "borderRadius"
+      },
+      "md": {
+        "value": "{size.sm}",
+        "type": "borderRadius"
+      },
+      "lg": {
+        "value": "{size.md}",
+        "type": "borderRadius"
+      },
+      "xl": {
+        "value": "{size.lg}",
+        "type": "borderRadius"
+      },
+      "2xl": {
+        "value": "{size.xl}",
+        "type": "borderRadius"
+      },
+      "3xl": {
+        "value": "2xl",
+        "type": "borderRadius"
+      },
+      "full": {
+        "value": "9999px",
+        "type": "borderRadius"
+      }
     },
-    "md": {
-      "value": "{size.sm}",
-      "type": "borderRadius"
-    },
-    "lg": {
-      "value": "{size.md}",
-      "type": "borderRadius"
-    },
-    "xl": {
-      "value": "{size.lg}",
-      "type": "borderRadius"
-    },
-    "2xl": {
-      "value": "{size.xl}",
-      "type": "borderRadius"
-    },
-    "3xl": {
-      "value": "2xl",
-      "type": "borderRadius"
-    },
-    "full": {
-      "value": "9999px",
-      "type": "borderRadius"
+    "width": {
+      "regular": {
+        "value": "{size.4xs}",
+        "type": "borderWidth"
+      },
+      "bold": {
+        "value": "{size.3xs}",
+        "type": "borderWidth"
+      }
     }
   },
   "text": {
@@ -359,7 +391,7 @@
         "bold": {
           "value": {
             "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.regular}",
+            "fontWeight": "{font.plain.weight.bold}",
             "fontSize": "{font.size.lg}",
             "lineHeight": "{size.3xl}",
             "paragraphSpacing": "{spacing.3}"
@@ -381,8 +413,30 @@
         "bold": {
           "value": {
             "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.regular}",
+            "fontWeight": "{font.plain.weight.bold}",
             "fontSize": "{font.size.xl}",
+            "lineHeight": "{size.3xl}",
+            "paragraphSpacing": "{spacing.4}"
+          },
+          "type": "typography"
+        }
+      },
+      "2xl": {
+        "regular": {
+          "value": {
+            "fontFamily": "{font.plain.family}",
+            "fontWeight": "{font.plain.weight.regular}",
+            "fontSize": "{font.size.2xl}",
+            "lineHeight": "{size.3xl}",
+            "paragraphSpacing": "{spacing.4}"
+          },
+          "type": "typography"
+        },
+        "bold": {
+          "value": {
+            "fontFamily": "{font.plain.family}",
+            "fontWeight": "{font.plain.weight.bold}",
+            "fontSize": "{font.size.2xl}",
             "lineHeight": "{size.3xl}",
             "paragraphSpacing": "{spacing.4}"
           },

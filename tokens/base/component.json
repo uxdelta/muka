@@ -8,7 +8,7 @@
             "type": "color"
           },
           "hover": {
-            "value": "{color.action.hover}",
+            "value": "{color.action.contrast}",
             "type": "color"
           }
         },
@@ -36,7 +36,7 @@
             "type": "color"
           },
           "hover": {
-            "value": "{color.action.hover}",
+            "value": "{color.action.contrast}",
             "type": "color"
           }
         }
@@ -58,7 +58,7 @@
             "type": "color"
           },
           "hover": {
-            "value": "{color.action.hover}",
+            "value": "{color.action.contrast}",
             "type": "color"
           }
         }
@@ -66,15 +66,15 @@
     },
     "radius": {
       "sm": {
-        "value": "{radius.sm}",
+        "value": "{border.radius.sm}",
         "type": "borderRadius"
       },
       "md": {
-        "value": "{radius.md}",
+        "value": "{border.radius.md}",
         "type": "borderRadius"
       },
       "lg": {
-        "value": "{radius.md}",
+        "value": "{border.radius.md}",
         "type": "borderRadius"
       }
     },
@@ -170,19 +170,33 @@
           "value": "{color.action.default}",
           "type": "color"
         }
+      },
+      "error": {
+        "background": {
+          "value": "{color.surface.level3}",
+          "type": "color"
+        },
+        "foreground": {
+          "value": "{color.text.primary.default}",
+          "type": "color"
+        },
+        "border": {
+          "value": "{color.action.default}",
+          "type": "color"
+        }
       }
     },
     "radius": {
       "sm": {
-        "value": "{radius.sm}",
+        "value": "{border.radius.sm}",
         "type": "borderRadius"
       },
       "md": {
-        "value": "{radius.md}",
+        "value": "{border.radius.md}",
         "type": "borderRadius"
       },
       "lg": {
-        "value": "{radius.lg}",
+        "value": "{border.radius.lg}",
         "type": "borderRadius"
       }
     },
@@ -194,6 +208,32 @@
       "y": {
         "value": "{spacing.2}",
         "type": "spacing"
+      }
+    },
+    "border": {
+      "default": {
+        "value": {
+          "color": "{input.color.default.border}",
+          "width": "{border.width.bold}",
+          "style": ""
+        },
+        "type": "border"
+      },
+      "hover": {
+        "value": {
+          "color": "{input.color.hover.border}",
+          "width": "{border.width.regular}",
+          "style": ""
+        },
+        "type": "border"
+      },
+      "active": {
+        "value": {
+          "color": "{input.color.focus.border}",
+          "width": "{border.width.bold}",
+          "style": ""
+        },
+        "type": "border"
       }
     }
   }
