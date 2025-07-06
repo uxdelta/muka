@@ -246,7 +246,7 @@
           "fontFamily": "{font.plain.family}",
           "fontWeight": "{font.plain.weight.semibold}",
           "fontSize": "{font.size.sm}",
-          "lineHeight": "{font.size.md}"
+          "lineHeight": "{font.size.sm}"
         },
         "type": "typography"
       },
@@ -442,6 +442,35 @@
           },
           "type": "typography"
         }
+      }
+    },
+    "input": {
+      "sm": {
+        "value": {
+          "fontFamily": "{font.plain.family}",
+          "fontWeight": "{font.plain.weight.regular}",
+          "fontSize": "{font.size.sm}",
+          "lineHeight": "{font.size.sm}"
+        },
+        "type": "typography"
+      },
+      "md": {
+        "value": {
+          "fontFamily": "{font.plain.family}",
+          "fontWeight": "{font.plain.weight.regular}",
+          "fontSize": "{font.size.md}",
+          "lineHeight": "{font.size.md}"
+        },
+        "type": "typography"
+      },
+      "lg": {
+        "value": {
+          "fontFamily": "{font.plain.family}",
+          "fontWeight": "{font.plain.weight.regular}",
+          "fontSize": "{font.size.lg}",
+          "lineHeight": "{font.size.lg}"
+        },
+        "type": "typography"
       }
     }
   }

@@ -181,7 +181,7 @@
           "type": "color"
         },
         "border": {
-          "value": "{color.action.default}",
+          "value": "{color.error.default}",
           "type": "color"
         }
       }
@@ -234,6 +234,54 @@
           "style": ""
         },
         "type": "border"
+      }
+    },
+    "field": {
+      "height": {
+        "sm": {
+          "value": "{size.2xl}",
+          "type": "dimension"
+        },
+        "default": {
+          "value": "{size.3xl}",
+          "type": "dimension"
+        },
+        "lg": {
+          "value": "{size.4xl}",
+          "type": "dimension"
+        }
+      }
+    },
+    "textarea": {
+      "height": {
+        "sm": {
+          "value": "{size.8xl}",
+          "type": "dimension"
+        },
+        "default": {
+          "value": "{size.10xl}",
+          "type": "dimension"
+        },
+        "lg": {
+          "value": "{size.13xl}",
+          "type": "dimension"
+        }
+      }
+    },
+    "checkbox": {
+      "height": {
+        "sm": {
+          "value": "{size.lg}",
+          "type": "dimension"
+        },
+        "default": {
+          "value": "{size.xl}",
+          "type": "dimension"
+        },
+        "lg": {
+          "value": "{size.2xl}",
+          "type": "dimension"
+        }
       }
     }
   }
