@@ -128,61 +128,91 @@
     }
   },
   "input": {
-    "color": {
-      "default": {
-        "background": {
-          "value": "{color.surface.level3}",
-          "type": "color"
+    "field": {
+      "color": {
+        "default": {
+          "background": {
+            "value": "{color.surface.level3}",
+            "type": "color"
+          },
+          "foreground": {
+            "value": "{color.text.default.default}",
+            "type": "color"
+          },
+          "border": {
+            "value": "{color.border.default}",
+            "type": "color"
+          }
         },
-        "foreground": {
-          "value": "{color.text.default.default}",
-          "type": "color"
+        "hover": {
+          "background": {
+            "value": "{color.surface.level3}",
+            "type": "color"
+          },
+          "foreground": {
+            "value": "{color.text.default.default}",
+            "type": "color"
+          },
+          "border": {
+            "value": "{color.border.contrast}",
+            "type": "color"
+          }
         },
-        "border": {
-          "value": "{color.border.default}",
-          "type": "color"
+        "focus": {
+          "background": {
+            "value": "{color.surface.level3}",
+            "type": "color"
+          },
+          "foreground": {
+            "value": "{color.text.default.default}",
+            "type": "color"
+          },
+          "border": {
+            "value": "{color.action.default}",
+            "type": "color"
+          }
+        },
+        "error": {
+          "background": {
+            "value": "{color.surface.level3}",
+            "type": "color"
+          },
+          "foreground": {
+            "value": "{color.text.default.default}",
+            "type": "color"
+          },
+          "border": {
+            "value": "{color.error.default}",
+            "type": "color"
+          }
+        },
+        "disabled": {
+          "background": {
+            "value": "{color.surface.level1}",
+            "type": "color"
+          },
+          "foreground": {
+            "value": "{color.text.default.default}",
+            "type": "color"
+          },
+          "border": {
+            "value": "{color.border.default}",
+            "type": "color"
+          }
         }
       },
-      "hover": {
-        "background": {
-          "value": "{color.surface.level3}",
-          "type": "color"
+      "height": {
+        "sm": {
+          "value": "{size.2xl}",
+          "type": "dimension"
         },
-        "foreground": {
-          "value": "{color.text.default.default}",
-          "type": "color"
+        "default": {
+          "value": "{size.3xl}",
+          "type": "dimension"
         },
-        "border": {
-          "value": "{color.border.contrast}",
-          "type": "color"
-        }
-      },
-      "focus": {
-        "background": {
-          "value": "{color.surface.level3}",
-          "type": "color"
-        },
-        "foreground": {
-          "value": "{color.text.default.default}",
-          "type": "color"
-        },
-        "border": {
-          "value": "{color.action.default}",
-          "type": "color"
-        }
-      },
-      "error": {
-        "background": {
-          "value": "{color.surface.level3}",
-          "type": "color"
-        },
-        "foreground": {
-          "value": "{color.text.default.default}",
-          "type": "color"
-        },
-        "border": {
-          "value": "{color.error.default}",
-          "type": "color"
+        "lg": {
+          "value": "{size.4xl}",
+          "type": "dimension"
         }
       }
     },
@@ -213,7 +243,7 @@
     "border": {
       "default": {
         "value": {
-          "color": "{input.color.default.border}",
+          "color": "{input.field.color.default.border}",
           "width": "{border.width.bold}",
           "style": ""
         },
@@ -221,7 +251,7 @@
       },
       "hover": {
         "value": {
-          "color": "{input.color.hover.border}",
+          "color": "{input.field.color.hover.border}",
           "width": "{border.width.regular}",
           "style": ""
         },
@@ -229,27 +259,11 @@
       },
       "active": {
         "value": {
-          "color": "{input.color.focus.border}",
+          "color": "{input.field.color.focus.border}",
           "width": "{border.width.bold}",
           "style": ""
         },
         "type": "border"
-      }
-    },
-    "field": {
-      "height": {
-        "sm": {
-          "value": "{size.2xl}",
-          "type": "dimension"
-        },
-        "default": {
-          "value": "{size.3xl}",
-          "type": "dimension"
-        },
-        "lg": {
-          "value": "{size.4xl}",
-          "type": "dimension"
-        }
       }
     },
     "textarea": {
@@ -297,6 +311,38 @@
         "lg": {
           "value": "{size.3xl}",
           "type": "dimension"
+        }
+      }
+    },
+    "control": {
+      "color": {
+        "default": {
+          "background": {
+            "value": "{color.surface.level3}",
+            "type": "color"
+          },
+          "foreground": {
+            "value": "{color.action.default}",
+            "type": "color"
+          },
+          "border": {
+            "value": "{color.border.default}",
+            "type": "color"
+          }
+        },
+        "disabled": {
+          "background": {
+            "value": "{color.surface.level1}",
+            "type": "color"
+          },
+          "foreground": {
+            "value": "{color.border.default}",
+            "type": "color"
+          },
+          "border": {
+            "value": "{color.border.default}",
+            "type": "color"
+          }
         }
       }
     }
