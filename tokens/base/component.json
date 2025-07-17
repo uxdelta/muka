@@ -8,12 +8,24 @@
             "type": "color"
           },
           "hover": {
-            "value": "{color.action.contrast}",
+            "value": "{color.action.hover}",
+            "type": "color"
+          },
+          "pressed": {
+            "value": "{color.action.pressed}",
             "type": "color"
           }
         },
         "foreground": {
           "default": {
+            "value": "{color.text.default.inverse}",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{color.text.default.inverse}",
+            "type": "color"
+          },
+          "pressed": {
             "value": "{color.text.default.inverse}",
             "type": "color"
           }
@@ -28,6 +40,10 @@
           "hover": {
             "value": "{color.surface.level0}",
             "type": "color"
+          },
+          "pressed": {
+            "value": "{color.surface.sunken}",
+            "type": "color"
           }
         },
         "foreground": {
@@ -36,7 +52,11 @@
             "type": "color"
           },
           "hover": {
-            "value": "{color.action.contrast}",
+            "value": "{color.text.default.default}",
+            "type": "color"
+          },
+          "pressed": {
+            "value": "{color.text.default.default}",
             "type": "color"
           }
         }
@@ -50,15 +70,23 @@
           "hover": {
             "value": "{color.surface.level1}",
             "type": "color"
+          },
+          "pressed": {
+            "value": "{color.surface.level0}",
+            "type": "color"
           }
         },
         "foreground": {
           "default": {
-            "value": "{color.text.default.default}",
+            "value": "{color.action.default}",
             "type": "color"
           },
           "hover": {
-            "value": "{color.action.contrast}",
+            "value": "{color.action.hover}",
+            "type": "color"
+          },
+          "pressed": {
+            "value": "{color.action.pressed}",
             "type": "color"
           }
         }
@@ -346,7 +374,11 @@
     }
   },
   "icon": {
-    "height": {
+    "size": {
+      "xs": {
+        "value": "{size.md}",
+        "type": "dimension"
+      },
       "sm": {
         "value": "{size.lg}",
         "type": "dimension"

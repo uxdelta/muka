@@ -50,16 +50,16 @@
         }
       },
       "action": {
-        "pressed": {
-          "value": "{color.indigo.800}",
-          "type": "color"
-        },
         "default": {
           "value": "{color.indigo.600}",
           "type": "color"
         },
         "hover": {
           "value": "{color.indigo.700}",
+          "type": "color"
+        },
+        "pressed": {
+          "value": "{color.indigo.800}",
           "type": "color"
         }
       }
@@ -115,8 +115,12 @@
         "value": "{color.indigo.600}",
         "type": "color"
       },
-      "contrast": {
+      "hover": {
         "value": "{color.indigo.700}",
+        "type": "color"
+      },
+      "pressed": {
+        "value": "{color.indigo.800}",
         "type": "color"
       },
       "muted": {
