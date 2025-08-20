@@ -1,25 +1,90 @@
 {
-    "neutral.50": { "$value": "{color.gray.50}" },
-    "neutral.100": { "$value": "{color.gray.100}" },
-    "neutral.200": { "$value": "{color.gray.200}" },
-    "neutral.300": { "$value": "{color.gray.300}" },
-    "neutral.400": { "$value": "{color.gray.400}" },
-    "neutral.500": { "$value": "{color.gray.500}" },
-    "neutral.600": { "$value": "{color.gray.600}" },
-    "neutral.700": { "$value": "{color.gray.700}" },
-    "neutral.800": { "$value": "{color.gray.800}" },
-    "neutral.900": { "$value": "{color.gray.900}" },
-    "neutral.950": { "$value": "{color.gray.950}" },
-
-    "brand.primary": { "$value": "{color.blue.600}" },
-    "brand.secondary": { "$value": "{color.purple.600}" },
-
-    "accent.primary": { "$value": "{alias.brand.primary}" },
-    "accent.secondary": { "$value": "{alias.brand.secondary}" },
-    "accent.tertiary": { "$value": "{color.teal.600}" },
-
-    "support.success": { "$value": "{color.green.600}" },
-    "support.warning": { "$value": "{color.amber.600}" },
-    "support.error": { "$value": "{color.red.600}" },
-    "support.info": { "$value": "{color.sky.600}" }
+  "neutral": {
+    "50": {
+      "value": "{color.gray.50}",
+      "type": "other"
+    },
+    "100": {
+      "value": "{color.gray.100}",
+      "type": "other"
+    },
+    "200": {
+      "value": "{color.gray.200}",
+      "type": "other"
+    },
+    "300": {
+      "value": "{color.gray.300}",
+      "type": "other"
+    },
+    "400": {
+      "value": "{color.gray.400}",
+      "type": "other"
+    },
+    "500": {
+      "value": "{color.gray.500}",
+      "type": "other"
+    },
+    "600": {
+      "value": "{color.gray.600}",
+      "type": "other"
+    },
+    "700": {
+      "value": "{color.gray.700}",
+      "type": "other"
+    },
+    "800": {
+      "value": "{color.gray.800}",
+      "type": "other"
+    },
+    "900": {
+      "value": "{color.gray.900}",
+      "type": "other"
+    },
+    "950": {
+      "value": "{color.gray.950}",
+      "type": "other"
+    }
+  },
+  "brand": {
+    "primary": {
+      "value": "{color.blue.600}",
+      "type": "other"
+    },
+    "secondary": {
+      "value": "{color.purple.600}",
+      "type": "other"
+    }
+  },
+  "accent": {
+    "primary": {
+      "value": "{alias.brand.primary}",
+      "type": "other"
+    },
+    "secondary": {
+      "value": "{alias.brand.secondary}",
+      "type": "other"
+    },
+    "tertiary": {
+      "value": "{color.teal.600}",
+      "type": "other"
+    }
+  },
+  "support": {
+    "success": {
+      "value": "{color.green.600}",
+      "type": "other"
+    },
+    "warning": {
+      "value": "{color.amber.600}",
+      "type": "other"
+    },
+    "error": {
+      "value": "{color.red.600}",
+      "type": "other"
+    },
+    "info": {
+      "value": "{color.sky.600}",
+      "type": "other"
+    }
+  }
 }

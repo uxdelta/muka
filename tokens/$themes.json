@@ -184,8 +184,7 @@
       "base/core": "enabled",
       "base/semantic": "enabled",
       "base/component": "enabled",
-      "base/layout": "enabled",
-      "base/mode": "enabled"
+      "base/layout": "enabled"
     },
     "$figmaVariableReferences": {
       "color.action.default": "102f758125deef67c94a0614a9db16542cea3733",
@@ -757,9 +756,7 @@
       "base/core": "enabled",
       "base/semantic": "enabled",
       "base/component": "enabled",
-      "base/layout": "enabled",
-      "base/mode": "enabled",
-      "brand/MukaLight": "enabled"
+      "base/layout": "enabled"
     },
     "$figmaVariableReferences": {
       "color.white": "abe678ca9d4683d3c90b6be8bb6c253b1ed7f579",
@@ -1204,9 +1201,7 @@
     "version": "1.0.0",
     "author": "Design System Team",
     "$figmaStyleReferences": {},
-    "selectedTokenSets": {
-      "base/mode": "enabled"
-    },
+    "selectedTokenSets": {},
     "group": "Mode",
     "$figmaVariableReferences": {
       "light.color.background.primary": "6b83a680c924ab8f6c342fd29ee3c0dafa0ae1dc",
@@ -1236,9 +1231,7 @@
     "version": "1.0.0",
     "author": "Design System Team",
     "$figmaStyleReferences": {},
-    "selectedTokenSets": {
-      "base/mode": "enabled"
-    },
+    "selectedTokenSets": {},
     "group": "Mode",
     "$figmaVariableReferences": {
       "light.color.background.primary": "6b83a680c924ab8f6c342fd29ee3c0dafa0ae1dc",
