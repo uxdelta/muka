@@ -1,0 +1,25 @@
+{
+    "neutral.50": { "$value": "{color.gray.50}" },
+    "neutral.100": { "$value": "{color.gray.100}" },
+    "neutral.200": { "$value": "{color.gray.200}" },
+    "neutral.300": { "$value": "{color.gray.300}" },
+    "neutral.400": { "$value": "{color.gray.400}" },
+    "neutral.500": { "$value": "{color.gray.500}" },
+    "neutral.600": { "$value": "{color.gray.600}" },
+    "neutral.700": { "$value": "{color.gray.700}" },
+    "neutral.800": { "$value": "{color.gray.800}" },
+    "neutral.900": { "$value": "{color.gray.900}" },
+    "neutral.950": { "$value": "{color.gray.950}" },
+
+    "brand.primary": { "$value": "{color.blue.600}" },
+    "brand.secondary": { "$value": "{color.purple.600}" },
+
+    "accent.primary": { "$value": "{alias.brand.primary}" },
+    "accent.secondary": { "$value": "{alias.brand.secondary}" },
+    "accent.tertiary": { "$value": "{color.teal.600}" },
+
+    "support.success": { "$value": "{color.green.600}" },
+    "support.warning": { "$value": "{color.amber.600}" },
+    "support.error": { "$value": "{color.red.600}" },
+    "support.info": { "$value": "{color.sky.600}" }
+}
