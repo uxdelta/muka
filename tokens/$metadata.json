@@ -4,7 +4,7 @@
     "base/semantic",
     "base/component",
     "base/layout",
-    "base/alias",
-    "brand/muka/styles"
+    "base/mode",
+    "brand/MukaLight"
   ]
 }

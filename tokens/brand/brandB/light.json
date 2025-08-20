@@ -1,0 +1,9 @@
+{
+    "color": {
+        "primary": {
+            "50": {
+                "value": "{core.color.blue.50}"
+            }
+        }
+    }
+}
