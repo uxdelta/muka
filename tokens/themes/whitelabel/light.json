@@ -58,7 +58,7 @@
       "brand": {
         "primary": {
           "$type": "color",
-          "$value": "{color.gray.11}"
+          "$value": "{color.gray.12}"
         },
         "complementary": {
           "$type": "color",
@@ -74,21 +74,39 @@
         },
         "muted": {
           "$type": "color",
-          "$value": "{color.gray.5}"
+          "$value": "{color.gray.11}"
         }
       },
       "accent": {
         "default": {
           "$type": "color",
-          "$value": "{color.gray.9}"
+          "$value": "{color.gray.12}"
         },
         "hover": {
+          "$extensions": {
+            "studio.tokens": {
+              "modify": {
+                "type": "lighten",
+                "value": "0.02",
+                "space": "lch"
+              }
+            }
+          },
           "$type": "color",
-          "$value": "{color.gray.10}"
+          "$value": "{color.gray.12}"
         },
         "pressed": {
+          "$extensions": {
+            "studio.tokens": {
+              "modify": {
+                "type": "darken",
+                "value": "0.2",
+                "space": "lch"
+              }
+            }
+          },
           "$type": "color",
-          "$value": "{color.gray.11}"
+          "$value": "{color.gray.12}"
         },
         "contrast": {
           "$type": "color",
@@ -96,7 +114,7 @@
         },
         "muted": {
           "$type": "color",
-          "$value": "{color.gray.8}"
+          "$value": "{color.gray.11}"
         }
       },
       "state": {

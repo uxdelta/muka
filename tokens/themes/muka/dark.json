@@ -58,45 +58,45 @@
       "brand": {
         "primary": {
           "$type": "color",
-          "$value": "{color.slateDark.11}"
+          "$value": "{color.indigoDark.10}"
         },
         "complementary": {
           "$type": "color",
-          "$value": "{color.slateDark.9}"
+          "$value": "{color.indigoDark.12}"
         },
         "default": {
           "$type": "color",
-          "$value": "{color.slateDark.9}"
+          "$value": "{color.indigoDark.9}"
         },
         "contrast": {
           "$type": "color",
-          "$value": "{color.slateDark.12}"
+          "$value": "{color.indigoDark.12}"
         },
         "muted": {
           "$type": "color",
-          "$value": "{color.slateDark.5}"
+          "$value": "{color.indigoDark.5}"
         }
       },
       "accent": {
         "default": {
           "$type": "color",
-          "$value": "{color.slateDark.9}"
+          "$value": "{color.indigoDark.9}"
         },
         "hover": {
           "$type": "color",
-          "$value": "{color.slateDark.10}"
+          "$value": "{color.indigoDark.10}"
         },
         "pressed": {
           "$type": "color",
-          "$value": "{color.slateDark.11}"
+          "$value": "{color.indigoDark.11}"
         },
         "contrast": {
           "$type": "color",
-          "$value": "{color.slateDark.12}"
+          "$value": "{color.indigoDark.12}"
         },
         "muted": {
           "$type": "color",
-          "$value": "{color.slateDark.8}"
+          "$value": "{color.indigoDark.8}"
         }
       },
       "state": {

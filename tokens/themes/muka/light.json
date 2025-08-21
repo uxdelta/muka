@@ -58,45 +58,45 @@
       "brand": {
         "primary": {
           "$type": "color",
-          "$value": "{color.slate.11}"
+          "$value": "{color.indigo.11}"
         },
         "complementary": {
           "$type": "color",
-          "$value": "{color.slate.9}"
+          "$value": "{color.indigo.12}"
         },
         "default": {
           "$type": "color",
-          "$value": "{color.slate.9}"
+          "$value": "{color.indigo.9}"
         },
         "contrast": {
           "$type": "color",
-          "$value": "{color.slate.12}"
+          "$value": "{color.indigo.12}"
         },
         "muted": {
           "$type": "color",
-          "$value": "{color.slate.5}"
+          "$value": "{color.indigo.5}"
         }
       },
       "accent": {
         "default": {
           "$type": "color",
-          "$value": "{color.slate.9}"
+          "$value": "{color.indigo.9}"
         },
         "hover": {
           "$type": "color",
-          "$value": "{color.slate.10}"
+          "$value": "{color.indigo.10}"
         },
         "pressed": {
           "$type": "color",
-          "$value": "{color.slate.11}"
+          "$value": "{color.indigo.11}"
         },
         "contrast": {
           "$type": "color",
-          "$value": "{color.slate.12}"
+          "$value": "{color.indigo.12}"
         },
         "muted": {
           "$type": "color",
-          "$value": "{color.slate.8}"
+          "$value": "{color.indigo.8}"
         }
       },
       "state": {
