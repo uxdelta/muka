@@ -5,18 +5,20 @@
     "base/component/input",
     "base/primitives/color",
     "base/primitives/font",
-    "base/primitives/grid",
     "base/primitives/motion",
     "base/primitives/shadow",
     "base/primitives/size",
     "base/primitives/spacing",
-    "base/semantic/layout",
+    "base/primitives/layout",
     "base/semantic/semantic",
     "themes/muka/base",
     "themes/muka/dark",
     "themes/muka/light",
     "themes/whitelabel/base",
     "themes/whitelabel/dark",
-    "themes/whitelabel/light"
+    "themes/whitelabel/light",
+    "themes/layout/lg",
+    "themes/layout/md",
+    "themes/layout/sm"
   ]
 }

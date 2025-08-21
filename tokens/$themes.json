@@ -188,12 +188,10 @@
       "base/component/input": "enabled",
       "base/primitives/color": "enabled",
       "base/primitives/font": "enabled",
-      "base/primitives/grid": "enabled",
       "base/primitives/motion": "enabled",
       "base/primitives/shadow": "enabled",
       "base/primitives/size": "enabled",
       "base/primitives/spacing": "enabled",
-      "base/semantic/layout": "enabled",
       "base/semantic/semantic": "enabled"
     },
     "$figmaVariableReferences": {
@@ -657,13 +655,11 @@
       "base/component/button": "enabled",
       "base/component/input": "enabled",
       "base/primitives/color": "enabled",
-      "base/primitives/grid": "enabled",
       "base/primitives/font": "enabled",
       "base/primitives/motion": "enabled",
       "base/primitives/shadow": "enabled",
       "base/primitives/size": "enabled",
       "base/primitives/spacing": "enabled",
-      "base/semantic/layout": "enabled",
       "base/semantic/semantic": "enabled"
     },
     "$figmaVariableReferences": {
@@ -1244,12 +1240,10 @@
       "base/component/input": "enabled",
       "base/primitives/color": "enabled",
       "base/primitives/font": "enabled",
-      "base/primitives/grid": "enabled",
       "base/primitives/motion": "enabled",
       "base/primitives/shadow": "enabled",
       "base/primitives/size": "enabled",
       "base/primitives/spacing": "enabled",
-      "base/semantic/layout": "enabled",
       "base/semantic/semantic": "enabled"
     },
     "$figmaVariableReferences": {
@@ -1772,12 +1766,10 @@
       "base/component/input": "enabled",
       "base/primitives/color": "enabled",
       "base/primitives/font": "enabled",
-      "base/primitives/grid": "enabled",
       "base/primitives/shadow": "enabled",
       "base/primitives/size": "enabled",
       "base/primitives/motion": "enabled",
       "base/primitives/spacing": "enabled",
-      "base/semantic/layout": "enabled",
       "base/semantic/semantic": "enabled",
       "themes/muka/light": "enabled"
     },
@@ -2247,12 +2239,14 @@
   },
   {
     "id": "061ccea1d5d59b2d9fb26f8487986ec9d56cec4f",
-    "name": "Mobile",
+    "name": "Small",
     "description": "Mobile layout theme",
     "version": "1.0.0",
     "author": "Design System Team",
     "$figmaStyleReferences": {},
-    "selectedTokenSets": {},
+    "selectedTokenSets": {
+      "themes/layout/sm": "enabled"
+    },
     "$figmaVariableReferences": {
       "mobile.container": "e09eccb548b21958a2de702f612ec547e209177a",
       "mobile.spacing": "f9cfac3f0593609e1fec3750d7b758421e827e26",
@@ -2270,12 +2264,14 @@
   },
   {
     "id": "3c255eff0e7a22aa4567a1d49c2a66430081319d",
-    "name": "Tablet",
+    "name": "Medium",
     "description": "Tablet layout theme",
     "version": "1.0.0",
     "author": "Design System Team",
     "$figmaStyleReferences": {},
-    "selectedTokenSets": {},
+    "selectedTokenSets": {
+      "themes/layout/md": "enabled"
+    },
     "$figmaVariableReferences": {
       "mobile.container": "e09eccb548b21958a2de702f612ec547e209177a",
       "mobile.spacing": "f9cfac3f0593609e1fec3750d7b758421e827e26",
@@ -2293,12 +2289,14 @@
   },
   {
     "id": "899d8519474dbbe0499895951fc716a3ad6c3d95",
-    "name": "Desktop",
+    "name": "Large",
     "description": "Desktop layout theme",
     "version": "1.0.0",
     "author": "Design System Team",
     "$figmaStyleReferences": {},
-    "selectedTokenSets": {},
+    "selectedTokenSets": {
+      "themes/layout/lg": "enabled"
+    },
     "$figmaVariableReferences": {
       "mobile.container": "e09eccb548b21958a2de702f612ec547e209177a",
       "mobile.spacing": "f9cfac3f0593609e1fec3750d7b758421e827e26",

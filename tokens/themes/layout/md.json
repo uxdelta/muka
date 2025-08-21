@@ -1,46 +1,46 @@
 {
-    "$schema": {
-        "$type": "other",
-        "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "md": {
+    "container": {
+      "$type": "dimension",
+      "$value": "{grid.container.md}"
     },
-    "md": {
-        "container": {
-            "$type": "dimension",
-            "$value": "{grid.container.md}"
-        },
-        "spacing": {
-            "$type": "spacing",
-            "$value": "{spacing.6}"
-        },
-        "breakpoint": {
-            "$type": "dimension",
-            "$value": "{grid.breakpoint.md}"
-        },
-        "typography": {
-            "h1": {
-                "fontSize": {
-                    "$type": "fontSize",
-                    "$value": "{font.size.3xl}"
-                }
-            },
-            "h2": {
-                "fontSize": {
-                    "$type": "fontSize",
-                    "$value": "{font.size.2xl}"
-                }
-            },
-            "h3": {
-                "fontSize": {
-                    "$type": "fontSize",
-                    "$value": "{font.size.xl}"
-                }
-            },
-            "h4": {
-                "fontSize": {
-                    "$type": "fontSize",
-                    "$value": "{font.size.lg}"
-                }
-            }
+    "spacing": {
+      "$type": "spacing",
+      "$value": "{spacing.6}"
+    },
+    "breakpoint": {
+      "$type": "dimension",
+      "$value": "{grid.breakpoint.md}"
+    },
+    "typography": {
+      "h1": {
+        "fontSize": {
+          "$type": "fontSize",
+          "$value": "{font.size.3xl}"
         }
+      },
+      "h2": {
+        "fontSize": {
+          "$type": "fontSize",
+          "$value": "{font.size.2xl}"
+        }
+      },
+      "h3": {
+        "fontSize": {
+          "$type": "fontSize",
+          "$value": "{font.size.xl}"
+        }
+      },
+      "h4": {
+        "fontSize": {
+          "$type": "fontSize",
+          "$value": "{font.size.lg}"
+        }
+      }
     }
+  }
 }
