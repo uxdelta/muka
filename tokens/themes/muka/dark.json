@@ -3,39 +3,159 @@
     "$type": "other",
     "$value": "https://design-tokens.org/schemas/1.0/schema.json"
   },
-  "color": {
-    "primary": {
-      "1": {
-        "$type": "color",
-        "$value": "{core.color.blueDark.1}"
-      }
-    },
-    "background": {
-      "1": {
-        "$type": "color",
-        "$value": "{core.color.grayDark.1}"
+  "alias": {
+    "color": {
+      "neutral": {
+        "1": {
+          "$type": "color",
+          "$value": "{color.slateDark.1}"
+        },
+        "2": {
+          "$type": "color",
+          "$value": "{color.slateDark.3}"
+        },
+        "3": {
+          "$type": "color",
+          "$value": "{color.slateDark.4}"
+        },
+        "4": {
+          "$type": "color",
+          "$value": "{color.slateDark.5}"
+        },
+        "5": {
+          "$type": "color",
+          "$value": "{color.slateDark.6}"
+        },
+        "6": {
+          "$type": "color",
+          "$value": "{color.slateDark.7}"
+        },
+        "7": {
+          "$type": "color",
+          "$value": "{color.slateDark.8}"
+        },
+        "8": {
+          "$type": "color",
+          "$value": "{color.slateDark.9}"
+        },
+        "9": {
+          "$type": "color",
+          "$value": "{color.slateDark.10}"
+        },
+        "10": {
+          "$type": "color",
+          "$value": "{color.slateDark.11}"
+        },
+        "11": {
+          "$type": "color",
+          "$value": "{color.slateDark.12}"
+        },
+        "12": {
+          "$type": "color",
+          "$value": "{color.slateDark.12}"
+        }
       },
-      "2": {
-        "$type": "color",
-        "$value": "{core.color.grayDark.2}"
+      "brand": {
+        "primary": {
+          "$type": "color",
+          "$value": "{color.slateDark.11}"
+        },
+        "complementary": {
+          "$type": "color",
+          "$value": "{color.slateDark.9}"
+        },
+        "default": {
+          "$type": "color",
+          "$value": "{color.slateDark.9}"
+        },
+        "contrast": {
+          "$type": "color",
+          "$value": "{color.slateDark.12}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.slateDark.5}"
+        }
       },
-      "3": {
-        "$type": "color",
-        "$value": "{core.color.grayDark.3}"
-      }
-    },
-    "foreground": {
-      "1": {
-        "$type": "color",
-        "$value": "{core.color.grayDark.12}"
+      "accent": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.slateDark.9}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.slateDark.10}"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "{color.slateDark.11}"
+        },
+        "contrast": {
+          "$type": "color",
+          "$value": "{color.slateDark.12}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.slateDark.8}"
+        }
       },
-      "2": {
-        "$type": "color",
-        "$value": "{core.color.grayDark.11}"
-      },
-      "3": {
-        "$type": "color",
-        "$value": "{core.color.grayDark.10}"
+      "state": {
+        "success": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.jadeDark.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.jadeDark.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.jadeDark.3}"
+          }
+        },
+        "warning": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.orangeDark.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.orangeDark.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.orangeDark.3}"
+          }
+        },
+        "error": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.tomatoDark.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.tomatoDark.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.tomatoDark.3}"
+          }
+        },
+        "info": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.indigoDark.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.indigoDark.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.indigoDark.3}"
+          }
+        }
       }
     }
   }
