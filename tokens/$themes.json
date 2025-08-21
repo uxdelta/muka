@@ -185,7 +185,6 @@
       "base/component": "enabled",
       "base/layout": "enabled",
       "base/alias": "enabled",
-      "brand/whitelabel/dark": "disabled",
       "brand/whitelabel/light": "enabled",
       "brand/whitelabel/styles": "enabled",
       "base/primitives": "enabled"
@@ -763,9 +762,6 @@
       "base/alias": "enabled",
       "brand/muka/light": "enabled",
       "brand/muka/styles": "enabled",
-      "brand/whitelabel/dark": "disabled",
-      "brand/whitelabel/light": "disabled",
-      "brand/whitelabel/styles": "disabled",
       "base/primitives": "enabled"
     },
     "$figmaVariableReferences": {
@@ -1138,10 +1134,7 @@
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
       "brand/muka/light": "enabled",
-      "brand/whitelabel/dark": "disabled",
-      "brand/whitelabel/light": "enabled",
-      "brand/whitelabel/styles": "disabled",
-      "base/primitives": "disabled"
+      "brand/whitelabel/light": "enabled"
     },
     "$figmaVariableReferences": {
       "light.color.background.primary": "6b83a680c924ab8f6c342fd29ee3c0dafa0ae1dc",
@@ -1174,10 +1167,7 @@
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
       "brand/muka/dark": "enabled",
-      "brand/whitelabel/dark": "enabled",
-      "brand/whitelabel/light": "disabled",
-      "brand/whitelabel/styles": "disabled",
-      "base/primitives": "disabled"
+      "brand/whitelabel/dark": "enabled"
     },
     "$figmaVariableReferences": {
       "light.color.background.primary": "6b83a680c924ab8f6c342fd29ee3c0dafa0ae1dc",
@@ -1209,11 +1199,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "base/layout": "enabled",
-      "brand/whitelabel/dark": "disabled",
-      "brand/whitelabel/light": "disabled",
-      "brand/whitelabel/styles": "disabled",
-      "base/primitives": "disabled"
+      "base/layout": "enabled"
     },
     "$figmaVariableReferences": {
       "mobile.container": "e09eccb548b21958a2de702f612ec547e209177a",
@@ -1238,11 +1224,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "base/layout": "enabled",
-      "brand/whitelabel/dark": "disabled",
-      "brand/whitelabel/light": "disabled",
-      "brand/whitelabel/styles": "disabled",
-      "base/primitives": "disabled"
+      "base/layout": "enabled"
     },
     "$figmaVariableReferences": {
       "mobile.container": "e09eccb548b21958a2de702f612ec547e209177a",
@@ -1267,11 +1249,7 @@
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "base/layout": "enabled",
-      "brand/whitelabel/dark": "disabled",
-      "brand/whitelabel/light": "disabled",
-      "brand/whitelabel/styles": "disabled",
-      "base/primitives": "disabled"
+      "base/layout": "enabled"
     },
     "$figmaVariableReferences": {
       "mobile.container": "e09eccb548b21958a2de702f612ec547e209177a",
