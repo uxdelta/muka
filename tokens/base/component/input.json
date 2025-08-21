@@ -59,7 +59,7 @@
           },
           "border": {
             "$type": "color",
-            "$value": "{color.error.default}"
+            "$value": "{color.error.foreground}"
           }
         },
         "disabled": {

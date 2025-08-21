@@ -1,92 +1,92 @@
 {
-    "$schema": {
+  "$schema": {
     "$type": "other",
     "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "font": {
+    "size": {
+      "xs": {
+        "$type": "fontSizes",
+        "$value": "0.75rem"
+      },
+      "sm": {
+        "$type": "fontSizes",
+        "$value": "0.875rem"
+      },
+      "md": {
+        "$type": "fontSizes",
+        "$value": "1rem"
+      },
+      "lg": {
+        "$type": "fontSizes",
+        "$value": "1.125rem"
+      },
+      "xl": {
+        "$type": "fontSizes",
+        "$value": "1.25rem"
+      },
+      "2xl": {
+        "$type": "fontSizes",
+        "$value": "1.5rem"
+      },
+      "3xl": {
+        "$type": "fontSizes",
+        "$value": "2rem"
+      },
+      "4xl": {
+        "$type": "fontSizes",
+        "$value": "2.5rem"
+      },
+      "5xl": {
+        "$type": "fontSizes",
+        "$value": "3rem"
+      },
+      "6xl": {
+        "$type": "fontSizes",
+        "$value": "4rem"
+      }
     },
-    "font": {  
-        "size": {
-            "xs": {
-                "$type": "fontSizes",
-                "$value": "0.75rem"
-            },
-            "sm": {
-                "$type": "fontSizes",
-                "$value": "0.875rem"
-            },
-            "md": {
-                "$type": "fontSizes",
-                "$value": "1rem"
-            },
-            "lg": {
-                "$type": "fontSizes",
-                "$value": "1.125rem"
-            },
-            "xl": {
-                "$type": "fontSizes",
-                "$value": "1.25rem"
-            },
-            "2xl": {
-                "$type": "fontSizes",
-                "$value": "1.5rem"
-            },
-            "3xl": {
-                "$type": "fontSizes",
-                "$value": "2rem"
-            },
-            "4xl": {
-                "$type": "fontSizes",
-                "$value": "2.5rem"
-            },
-            "5xl": {
-                "$type": "fontSizes",
-                "$value": "3rem"
-            },
-            "6xl": {
-                "$type": "fontSizes",
-                "$value": "4rem"
-            }
-        },
-        "lineHeight": {
-            "xs": {
-                "$type": "lineHeights",
-                "$value": "0.75rem"
-            },
-            "sm": {
-                "$type": "lineHeights",
-                "$value": "0.875rem"
-            },
-            "md": {
-                "$type": "lineHeights",
-                "$value": "1rem"
-            },
-            "lg": {
-                "$type": "lineHeights",
-                "$value": "1.125rem"
-            },
-            "xl": {
-                "$type": "lineHeights",
-                "$value": "1.25rem"
-            },
-            "2xl": {
-                "$type": "lineHeights",
-                "$value": "1.5rem"
-            },
-            "3xl": {
-                "$type": "lineHeights",
-                "$value": "2rem"
-            },
-            "4xl": {
-                "$type": "lineHeights",
-                "$value": "2.5rem"
-            },
-            "5xl": {
-                "$type": "lineHeights",
-                "$value": "3rem"
-            },
-            "6xl": {
-                "$type": "lineHeights",
-                "$value": "4rem"
-            }
-        }
+    "lineHeight": {
+      "xs": {
+        "$type": "lineHeights",
+        "$value": "0.75rem"
+      },
+      "sm": {
+        "$type": "lineHeights",
+        "$value": "0.875rem"
+      },
+      "md": {
+        "$type": "lineHeights",
+        "$value": "1rem"
+      },
+      "lg": {
+        "$type": "lineHeights",
+        "$value": "1.125rem"
+      },
+      "xl": {
+        "$type": "lineHeights",
+        "$value": "1.25rem"
+      },
+      "2xl": {
+        "$type": "lineHeights",
+        "$value": "1.5rem"
+      },
+      "3xl": {
+        "$type": "lineHeights",
+        "$value": "2rem"
+      },
+      "4xl": {
+        "$type": "lineHeights",
+        "$value": "2.5rem"
+      },
+      "5xl": {
+        "$type": "lineHeights",
+        "$value": "3rem"
+      },
+      "6xl": {
+        "$type": "lineHeights",
+        "$value": "4rem"
+      }
     }
+  }
 }

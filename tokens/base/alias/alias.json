@@ -78,13 +78,21 @@
         }
       },
       "accent": {
-        "contrast": {
-          "$type": "color",
-          "$value": "{color.gray.12}"
-        },
         "default": {
           "$type": "color",
           "$value": "{color.gray.9}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.gray.10}"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "{color.gray.11}"
+        },
+        "contrast": {
+          "$type": "color",
+          "$value": "{color.gray.12}"
         },
         "muted": {
           "$type": "color",
