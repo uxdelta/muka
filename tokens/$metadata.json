@@ -1,8 +1,5 @@
 {
   "tokenSetOrder": [
-    "base/alias/alias",
-    "base/component/button",
-    "base/component/input",
     "base/primitives/color",
     "base/primitives/font",
     "base/primitives/motion",
@@ -10,7 +7,10 @@
     "base/primitives/size",
     "base/primitives/spacing",
     "base/primitives/layout",
+    "base/alias/alias",
     "base/semantic/semantic",
+    "base/component/button",
+    "base/component/input",
     "themes/muka/base",
     "themes/muka/dark",
     "themes/muka/light",

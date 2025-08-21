@@ -198,8 +198,8 @@
       "h1": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{font.brand.family}",
-          "fontWeight": "{font.brand.weight.semibold}",
+          "fontFamily": "{alias.font.brand.family}",
+          "fontWeight": "{alias.font.brand.weight.semibold}",
           "fontSize": "{font.size.4xl}",
           "lineHeight": "{font.size.4xl}"
         }
@@ -207,8 +207,8 @@
       "h2": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{font.brand.family}",
-          "fontWeight": "{font.brand.weight.semibold}",
+          "fontFamily": "{alias.font.brand.family}",
+          "fontWeight": "{alias.font.brand.weight.semibold}",
           "fontSize": "{font.size.3xl}",
           "lineHeight": "{font.size.3xl}"
         }
@@ -216,8 +216,8 @@
       "h3": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{font.brand.family}",
-          "fontWeight": "{font.brand.weight.semibold}",
+          "fontFamily": "{alias.font.brand.family}",
+          "fontWeight": "{alias.font.brand.weight.semibold}",
           "fontSize": "{font.size.2xl}",
           "lineHeight": "{font.size.2xl}"
         }
@@ -225,8 +225,8 @@
       "h4": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{font.brand.family}",
-          "fontWeight": "{font.brand.weight.semibold}",
+          "fontFamily": "{alias.font.brand.family}",
+          "fontWeight": "{alias.font.brand.weight.semibold}",
           "fontSize": "{font.size.xl}",
           "lineHeight": "{font.size.xl}"
         }
@@ -237,8 +237,8 @@
         "regular": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.regular}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.regular}",
             "fontSize": "{font.size.sm}",
             "lineHeight": "{font.size.sm}"
           }
@@ -246,8 +246,8 @@
         "semibold": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.semibold}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.semibold}",
             "fontSize": "{font.size.sm}",
             "lineHeight": "{font.size.sm}"
           }
@@ -255,8 +255,8 @@
         "bold": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.bold}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.bold}",
             "fontSize": "{font.size.sm}",
             "lineHeight": "{font.size.sm}"
           }
@@ -266,8 +266,8 @@
         "regular": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.regular}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.regular}",
             "fontSize": "{font.size.md}",
             "lineHeight": "{font.size.md}"
           }
@@ -275,8 +275,8 @@
         "semibold": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.semibold}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.semibold}",
             "fontSize": "{font.size.md}",
             "lineHeight": "{font.size.md}"
           }
@@ -284,8 +284,8 @@
         "bold": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.bold}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.bold}",
             "fontSize": "{font.size.md}",
             "lineHeight": "{font.size.md}"
           }
@@ -295,8 +295,8 @@
         "regular": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.regular}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.regular}",
             "fontSize": "{font.size.lg}",
             "lineHeight": "{font.size.lg}"
           }
@@ -304,8 +304,8 @@
         "semibold": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.semibold}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.semibold}",
             "fontSize": "{font.size.lg}",
             "lineHeight": "{font.size.lg}"
           }
@@ -313,8 +313,8 @@
         "bold": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.bold}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.bold}",
             "fontSize": "{font.size.lg}",
             "lineHeight": "{font.size.lg}"
           }
@@ -325,18 +325,18 @@
       "h1": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{font.plain.family}",
-          "fontWeight": "{font.weight.regular}",
+          "fontFamily": "{alias.font.plain.family}",
           "fontSize": "{font.size.3xl}",
           "lineHeight": "{font.size.3xl}",
-          "paragraphSpacing": "{spacing.4}"
+          "paragraphSpacing": "{spacing.4}",
+          "fontWeight": "{alias.font.plain.weight.regular}"
         }
       },
       "h2": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{font.plain.family}",
-          "fontWeight": "{font.weight.regular}",
+          "fontFamily": "{alias.font.plain.family}",
+          "fontWeight": "{alias.font.plain.weight.regular}",
           "fontSize": "{font.size.xl}",
           "lineHeight": "{font.size.xl}",
           "paragraphSpacing": "{spacing.3}"
@@ -345,8 +345,8 @@
       "h3": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{font.plain.family}",
-          "fontWeight": "{font.weight.regular}",
+          "fontFamily": "{alias.font.plain.family}",
+          "fontWeight": "{alias.font.plain.weight.regular}",
           "fontSize": "{font.size.lg}",
           "lineHeight": "{font.size.lg}",
           "paragraphSpacing": "{spacing.2}"
@@ -355,8 +355,8 @@
       "h4": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{font.plain.family}",
-          "fontWeight": "{font.weight.regular}",
+          "fontFamily": "{alias.font.plain.family}",
+          "fontWeight": "{alias.font.plain.weight.regular}",
           "fontSize": "{font.size.md}",
           "lineHeight": "{font.size.md}"
         }
@@ -367,8 +367,8 @@
         "regular": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.regular}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.regular}",
             "fontSize": "{font.size.xs}",
             "lineHeight": "{size.lg}",
             "paragraphSpacing": "{spacing.2}"
@@ -377,8 +377,8 @@
         "bold": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.bold}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.bold}",
             "fontSize": "{font.size.xs}",
             "lineHeight": "{size.lg}",
             "paragraphSpacing": "{spacing.2}"
@@ -389,8 +389,8 @@
         "regular": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.regular}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.regular}",
             "fontSize": "{font.size.sm}",
             "lineHeight": "{size.xl}",
             "paragraphSpacing": "{spacing.1}"
@@ -399,8 +399,8 @@
         "bold": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.bold}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.bold}",
             "fontSize": "{font.size.sm}",
             "lineHeight": "{size.xl}",
             "paragraphSpacing": "{spacing.1}"
@@ -411,8 +411,8 @@
         "regular": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.regular}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.regular}",
             "fontSize": "{font.size.md}",
             "lineHeight": "{size.2xl}",
             "paragraphSpacing": "{spacing.2}"
@@ -421,8 +421,8 @@
         "bold": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.bold}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.bold}",
             "fontSize": "{font.size.md}",
             "lineHeight": "{size.2xl}",
             "paragraphSpacing": "{spacing.2}"
@@ -433,8 +433,8 @@
         "regular": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.regular}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.regular}",
             "fontSize": "{font.size.lg}",
             "lineHeight": "{size.3xl}",
             "paragraphSpacing": "{spacing.3}"
@@ -443,8 +443,8 @@
         "bold": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.bold}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.bold}",
             "fontSize": "{font.size.lg}",
             "lineHeight": "{size.3xl}",
             "paragraphSpacing": "{spacing.3}"
@@ -455,8 +455,8 @@
         "regular": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.regular}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.regular}",
             "fontSize": "{font.size.xl}",
             "lineHeight": "{size.3xl}",
             "paragraphSpacing": "{spacing.4}"
@@ -465,8 +465,8 @@
         "bold": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.bold}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.bold}",
             "fontSize": "{font.size.xl}",
             "lineHeight": "{size.3xl}",
             "paragraphSpacing": "{spacing.4}"
@@ -477,8 +477,8 @@
         "regular": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.regular}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.regular}",
             "fontSize": "{font.size.2xl}",
             "lineHeight": "{size.3xl}",
             "paragraphSpacing": "{spacing.4}"
@@ -487,8 +487,8 @@
         "bold": {
           "$type": "typography",
           "$value": {
-            "fontFamily": "{font.plain.family}",
-            "fontWeight": "{font.plain.weight.bold}",
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.bold}",
             "fontSize": "{font.size.2xl}",
             "lineHeight": "{size.3xl}",
             "paragraphSpacing": "{spacing.4}"
@@ -500,8 +500,8 @@
       "sm": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{font.plain.family}",
-          "fontWeight": "{font.plain.weight.regular}",
+          "fontFamily": "{alias.font.plain.family}",
+          "fontWeight": "{alias.font.plain.weight.regular}",
           "fontSize": "{font.size.sm}",
           "lineHeight": "{font.size.sm}"
         }
@@ -509,8 +509,8 @@
       "md": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{font.plain.family}",
-          "fontWeight": "{font.plain.weight.regular}",
+          "fontFamily": "{alias.font.plain.family}",
+          "fontWeight": "{alias.font.plain.weight.regular}",
           "fontSize": "{font.size.md}",
           "lineHeight": "{font.size.md}"
         }
@@ -518,8 +518,8 @@
       "lg": {
         "$type": "typography",
         "$value": {
-          "fontFamily": "{font.plain.family}",
-          "fontWeight": "{font.plain.weight.regular}",
+          "fontFamily": "{alias.font.plain.family}",
+          "fontWeight": "{alias.font.plain.weight.regular}",
           "fontSize": "{font.size.lg}",
           "lineHeight": "{font.size.lg}"
         }
