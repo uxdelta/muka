@@ -1,122 +1,35 @@
 {
   "mobile": {
-    "container": {
-      "value": "{grid.container.sm}",
-      "type": "dimension"
-    },
-    "spacing": {
-      "value": "{spacing.4}",
-      "type": "spacing"
-    },
-    "breakpoint": {
-      "value": "{grid.breakpoint.sm}",
-      "type": "dimension"
-    },
+    "container": { "$type": "dimension", "$value": "{grid.container.sm}" },
+    "spacing":   { "$type": "spacing",  "$value": "{spacing.4}" },
+    "breakpoint":{ "$type": "dimension", "$value": "{grid.breakpoint.sm}" },
     "typography": {
-      "h1": {
-        "fontSize": {
-          "value": "{font.size.2xl}",
-          "type": "fontSize"
-        }
-      },
-      "h2": {
-        "fontSize": {
-          "value": "{font.size.xl}",
-          "type": "fontSize"
-        }
-      },
-      "h3": {
-        "fontSize": {
-          "value": "{font.size.lg}",
-          "type": "fontSize"
-        }
-      },
-      "h4": {
-        "fontSize": {
-          "value": "{font.size.base}",
-          "type": "fontSize"
-        }
-      }
+      "h1": { "fontSize": { "$type": "fontSize", "$value": "{font.size.2xl}" } },
+      "h2": { "fontSize": { "$type": "fontSize", "$value": "{font.size.xl}" } },
+      "h3": { "fontSize": { "$type": "fontSize", "$value": "{font.size.lg}" } },
+      "h4": { "fontSize": { "$type": "fontSize", "$value": "{font.size.base}" } }
     }
   },
   "tablet": {
-    "container": {
-      "value": "{grid.container.md}",
-      "type": "dimension"
-    },
-    "spacing": {
-      "value": "{spacing.6}",
-      "type": "spacing"
-    },
-    "breakpoint": {
-      "value": "{grid.breakpoint.md}",
-      "type": "dimension"
-    },
+    "container": { "$type": "dimension", "$value": "{grid.container.md}" },
+    "spacing":   { "$type": "spacing",  "$value": "{spacing.6}" },
+    "breakpoint":{ "$type": "dimension", "$value": "{grid.breakpoint.md}" },
     "typography": {
-      "h1": {
-        "fontSize": {
-          "value": "{font.size.3xl}",
-          "type": "fontSize"
-        }
-      },
-      "h2": {
-        "fontSize": {
-          "value": "{font.size.2xl}",
-          "type": "fontSize"
-        }
-      },
-      "h3": {
-        "fontSize": {
-          "value": "{font.size.xl}",
-          "type": "fontSize"
-        }
-      },
-      "h4": {
-        "fontSize": {
-          "value": "{font.size.lg}",
-          "type": "fontSize"
-        }
-      }
+      "h1": { "fontSize": { "$type": "fontSize", "$value": "{font.size.3xl}" } },
+      "h2": { "fontSize": { "$type": "fontSize", "$value": "{font.size.2xl}" } },
+      "h3": { "fontSize": { "$type": "fontSize", "$value": "{font.size.xl}" } },
+      "h4": { "fontSize": { "$type": "fontSize", "$value": "{font.size.lg}" } }
     }
   },
   "desktop": {
-    "container": {
-      "value": "{grid.container.lg}",
-      "type": "dimension"
-    },
-    "spacing": {
-      "value": "{spacing.8}",
-      "type": "spacing"
-    },
-    "breakpoint": {
-      "value": "{grid.breakpoint.lg}",
-      "type": "dimension"
-    },
+    "container": { "$type": "dimension", "$value": "{grid.container.lg}" },
+    "spacing":   { "$type": "spacing",  "$value": "{spacing.8}" },
+    "breakpoint":{ "$type": "dimension", "$value": "{grid.breakpoint.lg}" },
     "typography": {
-      "h1": {
-        "fontSize": {
-          "value": "{font.size.5xl}",
-          "type": "fontSize"
-        }
-      },
-      "h2": {
-        "fontSize": {
-          "value": "{font.size.4xl}",
-          "type": "fontSize"
-        }
-      },
-      "h3": {
-        "fontSize": {
-          "value": "{font.size.3xl}",
-          "type": "fontSize"
-        }
-      },
-      "h4": {
-        "fontSize": {
-          "value": "{font.size.2xl}",
-          "type": "fontSize"
-        }
-      }
+      "h1": { "fontSize": { "$type": "fontSize", "$value": "{font.size.5xl}" } },
+      "h2": { "fontSize": { "$type": "fontSize", "$value": "{font.size.4xl}" } },
+      "h3": { "fontSize": { "$type": "fontSize", "$value": "{font.size.3xl}" } },
+      "h4": { "fontSize": { "$type": "fontSize", "$value": "{font.size.2xl}" } }
     }
   }
 }
