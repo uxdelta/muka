@@ -1,0 +1,15 @@
+{
+  "tokenSetOrder": [
+    "base/primitives",
+    "base/alias",
+    "base/semantic",
+    "base/component",
+    "base/layout",
+    "brand/whitelabel/dark",
+    "brand/whitelabel/light",
+    "brand/whitelabel/styles",
+    "brand/muka/dark",
+    "brand/muka/light",
+    "brand/muka/styles"
+  ]
+}
