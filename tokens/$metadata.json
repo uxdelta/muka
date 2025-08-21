@@ -1,15 +1,22 @@
 {
   "tokenSetOrder": [
-    "base/primitives",
-    "base/alias",
-    "base/semantic",
-    "base/component",
-    "base/layout",
-    "brand/whitelabel/dark",
-    "brand/whitelabel/light",
-    "brand/whitelabel/styles",
-    "brand/muka/dark",
-    "brand/muka/light",
-    "brand/muka/styles"
+    "base/alias/alias",
+    "base/component/button",
+    "base/component/input",
+    "base/primitives/color",
+    "base/primitives/font",
+    "base/primitives/grid",
+    "base/primitives/motion",
+    "base/primitives/shadow",
+    "base/primitives/size",
+    "base/primitives/spacing",
+    "base/semantic/layout",
+    "base/semantic/semantic",
+    "themes/muka/base",
+    "themes/muka/dark",
+    "themes/muka/light",
+    "themes/whitelabel/base",
+    "themes/whitelabel/dark",
+    "themes/whitelabel/light"
   ]
 }

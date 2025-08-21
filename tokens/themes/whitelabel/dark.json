@@ -1,8 +1,14 @@
 {
-  "$schema": "https://design-tokens.org/schemas/1.0/schema.json",
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
   "color": {
     "primary": {
-      "50": { "$type": "color", "$value": "{core.color.blue.50}" }
+      "50": {
+        "$type": "color",
+        "$value": "{core.color.blue.50}"
+      }
     }
   }
 }

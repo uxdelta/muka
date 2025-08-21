@@ -1,31 +1,90 @@
 {
-  "$schema": "https://design-tokens.org/schemas/1.0/schema.json",
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
   "neutral": {
-    "50":  { "$type": "color", "$value": "{color.gray.50}" },
-    "100": { "$type": "color", "$value": "{color.gray.100}" },
-    "200": { "$type": "color", "$value": "{color.gray.200}" },
-    "300": { "$type": "color", "$value": "{color.gray.300}" },
-    "400": { "$type": "color", "$value": "{color.gray.400}" },
-    "500": { "$type": "color", "$value": "{color.gray.500}" },
-    "600": { "$type": "color", "$value": "{color.gray.600}" },
-    "700": { "$type": "color", "$value": "{color.gray.700}" },
-    "800": { "$type": "color", "$value": "{color.gray.800}" },
-    "900": { "$type": "color", "$value": "{color.gray.900}" },
-    "950": { "$type": "color", "$value": "{color.gray.950}" }
+    "50": {
+      "$type": "color",
+      "$value": "{color.gray.50}"
+    },
+    "100": {
+      "$type": "color",
+      "$value": "{color.gray.100}"
+    },
+    "200": {
+      "$type": "color",
+      "$value": "{color.gray.200}"
+    },
+    "300": {
+      "$type": "color",
+      "$value": "{color.gray.300}"
+    },
+    "400": {
+      "$type": "color",
+      "$value": "{color.gray.400}"
+    },
+    "500": {
+      "$type": "color",
+      "$value": "{color.gray.500}"
+    },
+    "600": {
+      "$type": "color",
+      "$value": "{color.gray.600}"
+    },
+    "700": {
+      "$type": "color",
+      "$value": "{color.gray.700}"
+    },
+    "800": {
+      "$type": "color",
+      "$value": "{color.gray.800}"
+    },
+    "900": {
+      "$type": "color",
+      "$value": "{color.gray.900}"
+    },
+    "950": {
+      "$type": "color",
+      "$value": "{color.gray.950}"
+    }
   },
   "brand": {
-    "primary":   { "$type": "color", "$value": "{color.blue.600}" },
-    "secondary": { "$type": "color", "$value": "{color.purple.600}" }
+    "primary": {
+      "$type": "color",
+      "$value": "{color.blue.600}"
+    }
   },
   "accent": {
-    "primary":   { "$type": "color", "$value": "{alias.brand.primary}" },
-    "secondary": { "$type": "color", "$value": "{alias.brand.secondary}" },
-    "tertiary":  { "$type": "color", "$value": "{color.teal.600}" }
+    "primary": {
+      "$type": "color",
+      "$value": "{alias.brand.primary}"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{alias.brand.secondary}"
+    },
+    "tertiary": {
+      "$type": "color",
+      "$value": "{color.teal.600}"
+    }
   },
   "support": {
-    "success": { "$type": "color", "$value": "{color.green.600}" },
-    "warning": { "$type": "color", "$value": "{color.amber.600}" },
-    "error":   { "$type": "color", "$value": "{color.red.600}" },
-    "info":    { "$type": "color", "$value": "{color.sky.600}" }
+    "success": {
+      "$type": "color",
+      "$value": "{color.green.600}"
+    },
+    "warning": {
+      "$type": "color",
+      "$value": "{color.amber.600}"
+    },
+    "error": {
+      "$type": "color",
+      "$value": "{color.red.600}"
+    },
+    "info": {
+      "$type": "color",
+      "$value": "{color.sky.600}"
+    }
   }
 }

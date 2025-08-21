@@ -1,94 +1,244 @@
 {
-  "$schema": "https://design-tokens.org/schemas/1.0/schema.json",
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
   "input": {
     "field": {
       "color": {
         "default": {
-          "background": { "$type": "color", "$value": "{color.surface.level3}" },
-          "foreground": { "$type": "color", "$value": "{color.text.default.default}" },
-          "border":     { "$type": "color", "$value": "{color.border.default}" }
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level3}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.text.default.default}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.border.default}"
+          }
         },
         "hover": {
-          "background": { "$type": "color", "$value": "{color.surface.level3}" },
-          "foreground": { "$type": "color", "$value": "{color.text.default.default}" },
-          "border":     { "$type": "color", "$value": "{color.border.contrast}" }
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level3}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.text.default.default}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.border.contrast}"
+          }
         },
         "focus": {
-          "background": { "$type": "color", "$value": "{color.surface.level3}" },
-          "foreground": { "$type": "color", "$value": "{color.text.default.default}" },
-          "border":     { "$type": "color", "$value": "{color.action.default}" }
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level3}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.text.default.default}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.action.default}"
+          }
         },
         "error": {
-          "background": { "$type": "color", "$value": "{color.surface.level3}" },
-          "foreground": { "$type": "color", "$value": "{color.text.default.default}" },
-          "border":     { "$type": "color", "$value": "{color.error.default}" }
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level3}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.text.default.default}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.error.default}"
+          }
         },
         "disabled": {
-          "background": { "$type": "color", "$value": "{color.surface.level1}" },
-          "foreground": { "$type": "color", "$value": "{color.text.default.default}" },
-          "border":     { "$type": "color", "$value": "{color.border.default}" }
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level1}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.text.default.default}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.border.default}"
+          }
         }
       },
       "radius": {
-        "sm": { "$type": "borderRadius", "$value": "{border.radius.sm}" },
-        "md": { "$type": "borderRadius", "$value": "{border.radius.md}" },
-        "lg": { "$type": "borderRadius", "$value": "{border.radius.lg}" }
+        "sm": {
+          "$type": "borderRadius",
+          "$value": "{border.radius.sm}"
+        },
+        "md": {
+          "$type": "borderRadius",
+          "$value": "{border.radius.md}"
+        },
+        "lg": {
+          "$type": "borderRadius",
+          "$value": "{border.radius.lg}"
+        }
       },
       "padding": {
-        "x": { "$type": "dimension", "$value": "{spacing.3}" },
-        "y": { "$type": "dimension", "$value": "{spacing.2}" }
+        "x": {
+          "$type": "dimension",
+          "$value": "{spacing.3}"
+        },
+        "y": {
+          "$type": "dimension",
+          "$value": "{spacing.2}"
+        }
       },
       "border": {
-        "default": { "$type": "border", "$value": { "color": "{input.field.color.default.border}", "width": "{border.width.bold}", "style": "" } },
-        "hover":   { "$type": "border", "$value": { "color": "{input.field.color.hover.border}",   "width": "{border.width.regular}", "style": "" } },
-        "active":  { "$type": "border", "$value": { "color": "{input.field.color.focus.border}",   "width": "{border.width.bold}", "style": "" } }
+        "default": {
+          "$type": "border",
+          "$value": {
+            "color": "{input.field.color.default.border}",
+            "width": "{border.width.bold}",
+            "style": ""
+          }
+        },
+        "hover": {
+          "$type": "border",
+          "$value": {
+            "color": "{input.field.color.hover.border}",
+            "width": "{border.width.regular}",
+            "style": ""
+          }
+        },
+        "active": {
+          "$type": "border",
+          "$value": {
+            "color": "{input.field.color.focus.border}",
+            "width": "{border.width.bold}",
+            "style": ""
+          }
+        }
       },
       "height": {
-        "sm":      { "$type": "dimension", "$value": "{size.2xl}" },
-        "default": { "$type": "dimension", "$value": "{size.3xl}" },
-        "lg":      { "$type": "dimension", "$value": "{size.4xl}" }
+        "sm": {
+          "$type": "dimension",
+          "$value": "{size.2xl}"
+        },
+        "default": {
+          "$type": "dimension",
+          "$value": "{size.3xl}"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{size.4xl}"
+        }
       }
     },
     "textarea": {
       "height": {
-        "sm":      { "$type": "dimension", "$value": "{size.8xl}" },
-        "default": { "$type": "dimension", "$value": "{size.10xl}" },
-        "lg":      { "$type": "dimension", "$value": "{size.13xl}" }
+        "sm": {
+          "$type": "dimension",
+          "$value": "{size.8xl}"
+        },
+        "default": {
+          "$type": "dimension",
+          "$value": "{size.10xl}"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{size.13xl}"
+        }
       }
     },
     "control": {
       "height": {
-        "sm":      { "$type": "dimension", "$value": "{size.lg}" },
-        "default": { "$type": "dimension", "$value": "{size.xl}" },
-        "lg":      { "$type": "dimension", "$value": "{size.2xl}" }
+        "sm": {
+          "$type": "dimension",
+          "$value": "{size.lg}"
+        },
+        "default": {
+          "$type": "dimension",
+          "$value": "{size.xl}"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{size.2xl}"
+        }
       },
       "color": {
         "default": {
-          "background": { "$type": "color", "$value": "{color.surface.level3}" },
-          "foreground": { "$type": "color", "$value": "{color.action.default}" },
-          "border":     { "$type": "color", "$value": "{color.border.default}" }
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level3}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.action.default}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.border.default}"
+          }
         },
         "disabled": {
-          "background": { "$type": "color", "$value": "{color.surface.level1}" },
-          "foreground": { "$type": "color", "$value": "{color.border.default}" },
-          "border":     { "$type": "color", "$value": "{color.border.default}" }
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level1}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.border.default}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.border.default}"
+          }
         }
       }
     },
     "label": {
       "height": {
-        "sm":      { "$type": "dimension", "$value": "{size.xl}" },
-        "default": { "$type": "dimension", "$value": "{size.2xl}" },
-        "lg":      { "$type": "dimension", "$value": "{size.3xl}" }
+        "sm": {
+          "$type": "dimension",
+          "$value": "{size.xl}"
+        },
+        "default": {
+          "$type": "dimension",
+          "$value": "{size.2xl}"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{size.3xl}"
+        }
       }
     }
   },
   "icon": {
     "size": {
-      "xs":      { "$type": "dimension", "$value": "{size.md}" },
-      "sm":      { "$type": "dimension", "$value": "{size.lg}" },
-      "default": { "$type": "dimension", "$value": "{size.xl}" },
-      "lg":      { "$type": "dimension", "$value": "{size.2xl}" }
+      "xs": {
+        "$type": "dimension",
+        "$value": "{size.md}"
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.lg}"
+      },
+      "default": {
+        "$type": "dimension",
+        "$value": "{size.xl}"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{size.2xl}"
+      }
     }
   }
 }
