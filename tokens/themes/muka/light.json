@@ -9,6 +9,34 @@
         "$type": "color",
         "$value": "{core.color.blue.1}"
       }
+    },
+    "background": {
+      "1": {
+        "$type": "color",
+        "$value": "{core.color.gray.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{core.color.gray.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{core.color.gray.3}"
+      }
+    },
+    "foreground": {
+      "1": {
+        "$type": "color",
+        "$value": "{core.color.gray.12}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{core.color.gray.11}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{core.color.gray.10}"
+      }
     }
   }
 }

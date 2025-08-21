@@ -7,139 +7,129 @@
     "surface": {
       "level3": {
         "$type": "color",
-        "$value": "{color.white}"
+        "$value": "{alias.color.neutral.1}"
       },
       "level2": {
         "$type": "color",
-        "$value": "{color.slate.1}"
+        "$value": "{alias.color.neutral.1}"
       },
       "level1": {
         "$type": "color",
-        "$value": "{color.slate.5}"
+        "$value": "{alias.color.neutral.4}"
       },
       "level0": {
         "$type": "color",
-        "$value": "{color.slate.5}"
+        "$value": "{alias.color.neutral.4}"
       },
       "sunken": {
         "$type": "color",
-        "$value": "{color.slate.5}"
+        "$value": "{alias.color.neutral.4}"
       }
     },
     "text": {
       "default": {
         "default": {
           "$type": "color",
-          "$value": "{color.slate.12}"
+          "$value": "{alias.color.neutral.11}"
         },
         "inverse": {
           "$type": "color",
-          "$value": "{color.white}"
+          "$value": "{alias.color.neutral.1}"
         }
       },
       "subtle": {
         "default": {
           "$type": "color",
-          "$value": "{color.slate.7}"
+          "$value": "{alias.color.neutral.6}"
         },
         "inverse": {
           "$type": "color",
-          "$value": "{color.slate.5}"
+          "$value": "{alias.color.neutral.4}"
         }
       },
       "muted": {
         "default": {
           "$type": "color",
-          "$value": "{color.slate.7}"
+          "$value": "{alias.color.neutral.6}"
         }
       },
       "action": {
         "default": {
           "$type": "color",
-          "$value": "{color.indigo.9}"
+          "$value": "{alias.color.brand.strong}"
         },
         "hover": {
           "$type": "color",
-          "$value": "{color.indigo.9}"
+          "$value": "{alias.color.brand.strong}"
         },
         "pressed": {
           "$type": "color",
-          "$value": "{color.indigo.9}"
+          "$value": "{alias.color.brand.strong}"
         }
       }
     },
     "success": {
       "default": {
         "$type": "color",
-        "$value": "{color.green.7}"
+        "$value": "{alias.color.state.success.medium}"
       },
-      "contrast": {
+      "foreground": {
         "$type": "color",
-        "$value": "{color.green.9}"
+        "$value": "{alias.color.state.success.strong}"
       },
-      "muted": {
+      "background": {
         "$type": "color",
-        "$value": "{color.green.1}"
+        "$value": "{alias.color.state.success.weak}"
       }
     },
     "error": {
       "default": {
         "$type": "color",
-        "$value": "{color.red.7}"
+        "$value": "{alias.color.state.error.medium}"
       },
-      "contrast": {
+      "foreground": {
         "$type": "color",
-        "$value": "{color.red.9}"
+        "$value": "{alias.color.state.error.strong}"
       },
-      "muted": {
+      "background": {
         "$type": "color",
-        "$value": "{color.red.1}"
+        "$value": "{alias.color.state.error.weak}"
       }
     },
     "border": {
       "contrast": {
         "$type": "color",
-        "$value": "{color.slate.7}"
+        "$value": "{alias.color.neutral.6}"
       },
       "default": {
         "$type": "color",
-        "$value": "{color.slate.5}"
+        "$value": "{alias.color.neutral.4}"
       },
       "muted": {
         "$type": "color",
-        "$value": "{color.slate.5}"
+        "$value": "{alias.color.neutral.4}"
       },
       "focus": {
         "$type": "color",
-        "$value": "{color.blue.7}"
+        "$value": "{alias.color.state.info.medium}"
       }
     },
     "action": {
       "default": {
         "$type": "color",
-        "$value": "{color.indigo.9}"
+        "$value": "{alias.color.state.info.medium}"
       },
       "hover": {
         "$type": "color",
-        "$value": "{color.indigo.9}"
+        "$value": "{alias.color.state.info.medium}"
       },
       "pressed": {
         "$type": "color",
-        "$value": "{color.indigo.9}"
+        "$value": "{alias.color.state.info.medium}"
       },
       "muted": {
         "$type": "color",
-        "$value": "{color.indigo.1}"
-      }
-    },
-    "brand": {
-      "primary": {
-        "$type": "color",
-        "$value": "{color.indigo.9}"
-      },
-      "secondary": {
-        "$type": "color",
-        "$value": "{color.magenta.7}"
+        "$value": "{alias.color.state.info.weak}"
       }
     }
   },
