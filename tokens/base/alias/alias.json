@@ -6,138 +6,142 @@
   "alias": {
     "color": {
       "neutral": {
-        "50": {
+        "1": {
           "$type": "color",
-          "$value": "{color.gray.50}"
+          "$value": "{color.gray.1}"
         },
-        "100": {
+        "2": {
           "$type": "color",
-          "$value": "{color.gray.100}"
+          "$value": "{color.gray.3}"
         },
-        "200": {
+        "3": {
           "$type": "color",
-          "$value": "{color.gray.200}"
+          "$value": "{color.gray.4}"
         },
-        "300": {
+        "4": {
           "$type": "color",
-          "$value": "{color.gray.300}"
+          "$value": "{color.gray.5}"
         },
-        "400": {
+        "5": {
           "$type": "color",
-          "$value": "{color.gray.400}"
+          "$value": "{color.gray.6}"
         },
-        "500": {
+        "6": {
           "$type": "color",
-          "$value": "{color.gray.500}"
+          "$value": "{color.gray.7}"
         },
-        "600": {
+        "7": {
           "$type": "color",
-          "$value": "{color.gray.600}"
+          "$value": "{color.gray.8}"
         },
-        "700": {
+        "8": {
           "$type": "color",
-          "$value": "{color.gray.700}"
+          "$value": "{color.gray.9}"
         },
-        "800": {
+        "9": {
           "$type": "color",
-          "$value": "{color.gray.800}"
+          "$value": "{color.gray.10}"
         },
-        "900": {
+        "10": {
           "$type": "color",
-          "$value": "{color.gray.900}"
+          "$value": "{color.gray.11}"
         },
-        "950": {
+        "11": {
           "$type": "color",
-          "$value": "{color.gray.950}"
+          "$value": "{color.gray.12}"
+        },
+        "12": {
+          "$type": "color",
+          "$value": "{color.gray.12}"
         }
       },
       "brand": {
         "primary": {
           "$type": "color",
-          "$value": "{color.gray.700}"
+          "$value": "{color.gray.11}"
         },
         "complementary": {
           "$type": "color",
-          "$value": "{color.gray.500}"
+          "$value": "{color.gray.9}"
         },
         "medium": {
           "$type": "color",
-          "$value": "{color.gray.500}"
+          "$value": "{color.gray.9}"
         },
         "strong": {
           "$type": "color",
-          "$value": "{color.gray.800}"
+          "$value": "{color.gray.12}"
         }
       },
       "accent": {
         "strong": {
           "$type": "color",
-          "$value": "{color.gray.950}"
+          "$value": "{color.gray.12}"
         },
         "medium": {
           "$type": "color",
-          "$value": "{color.gray.500}"
+          "$value": "{color.gray.9}"
         },
         "weak": {
           "$type": "color",
-          "$value": "{color.gray.400}"
+          "$value": "{color.gray.8}"
         }
       },
       "state": {
         "success": {
           "strong": {
             "$type": "color",
-            "$value": "{color.green.800}"
+            "$value": "{color.green.11}"
           },
           "medium": {
             "$type": "color",
-            "$value": "{color.green.600}"
+            "$value": "{color.green.9}"
           },
           "weak": {
             "$type": "color",
-            "$value": "{color.green.100}"
+            "$value": "{color.green.3}"
           }
         },
         "warning": {
           "strong": {
             "$type": "color",
-            "$value": "{color.amber.800}"
+            "$value": "{color.amber.11}"
           },
           "medium": {
             "$type": "color",
-            "$value": "{color.amber.600}"
+            "$value": "{color.amber.9}"
           },
           "weak": {
             "$type": "color",
-            "$value": "{color.amber.100}"
+            "$value": "{color.amber.3}"
           }
         },
         "error": {
           "strong": {
             "$type": "color",
-            "$value": "{color.red.800}"
+            "$value": "{color.red.11}"
           },
           "medium": {
             "$type": "color",
-            "$value": "{color.red.600}"
+            "$value": "{color.red.9}"
           },
           "weak": {
             "$type": "color",
-            "$value": "{color.red.100}"
+            "$value": "{color.red.3}"
           }
         },
         "info": {
           "strong": {
             "$type": "color",
-            "$value": "{color.blue.800}"
+            "$value": "{color.blue.11}"
           },
           "medium": {
             "$type": "color",
-            "$value": "{color.blue.500}"
+            "$value": "{color.blue.9}"
           },
           "weak": {
             "$type": "color",
-            "$value": "{color.blue.100}"
+            "$value": "{color.blue.3}"
           }
         }
       }
