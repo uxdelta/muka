@@ -56,44 +56,44 @@
       "action": {
         "default": {
           "$type": "color",
-          "$value": "{alias.color.brand.strong}"
+          "$value": "{alias.color.brand.contrast}"
         },
         "hover": {
           "$type": "color",
-          "$value": "{alias.color.brand.strong}"
+          "$value": "{alias.color.brand.contrast}"
         },
         "pressed": {
           "$type": "color",
-          "$value": "{alias.color.brand.strong}"
+          "$value": "{alias.color.brand.contrast}"
         }
       }
     },
     "success": {
       "default": {
         "$type": "color",
-        "$value": "{alias.color.state.success.medium}"
+        "$value": "{alias.color.state.success.default}"
       },
       "foreground": {
         "$type": "color",
-        "$value": "{alias.color.state.success.strong}"
+        "$value": "{alias.color.state.success.contrast}"
       },
       "background": {
         "$type": "color",
-        "$value": "{alias.color.state.success.weak}"
+        "$value": "{alias.color.state.success.muted}"
       }
     },
     "error": {
       "default": {
         "$type": "color",
-        "$value": "{alias.color.state.error.medium}"
+        "$value": "{alias.color.state.error.default}"
       },
       "foreground": {
         "$type": "color",
-        "$value": "{alias.color.state.error.strong}"
+        "$value": "{alias.color.state.error.contrast}"
       },
       "background": {
         "$type": "color",
-        "$value": "{alias.color.state.error.weak}"
+        "$value": "{alias.color.state.error.muted}"
       }
     },
     "border": {
@@ -111,25 +111,25 @@
       },
       "focus": {
         "$type": "color",
-        "$value": "{alias.color.state.info.medium}"
+        "$value": "{alias.color.state.info.default}"
       }
     },
     "action": {
       "default": {
         "$type": "color",
-        "$value": "{alias.color.state.info.medium}"
+        "$value": "{alias.color.state.info.default}"
       },
       "hover": {
         "$type": "color",
-        "$value": "{alias.color.state.info.medium}"
+        "$value": "{alias.color.state.info.default}"
       },
       "pressed": {
         "$type": "color",
-        "$value": "{alias.color.state.info.medium}"
+        "$value": "{alias.color.state.info.default}"
       },
       "muted": {
         "$type": "color",
-        "$value": "{alias.color.state.info.weak}"
+        "$value": "{alias.color.state.info.muted}"
       }
     }
   },

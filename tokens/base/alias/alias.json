@@ -64,82 +64,86 @@
           "$type": "color",
           "$value": "{color.gray.9}"
         },
-        "medium": {
+        "default": {
           "$type": "color",
           "$value": "{color.gray.9}"
         },
-        "strong": {
+        "contrast": {
           "$type": "color",
           "$value": "{color.gray.12}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.gray.5}"
         }
       },
       "accent": {
-        "strong": {
+        "contrast": {
           "$type": "color",
           "$value": "{color.gray.12}"
         },
-        "medium": {
+        "default": {
           "$type": "color",
           "$value": "{color.gray.9}"
         },
-        "weak": {
+        "muted": {
           "$type": "color",
           "$value": "{color.gray.8}"
         }
       },
       "state": {
         "success": {
-          "strong": {
+          "contrast": {
             "$type": "color",
             "$value": "{color.green.11}"
           },
-          "medium": {
+          "default": {
             "$type": "color",
             "$value": "{color.green.9}"
           },
-          "weak": {
+          "muted": {
             "$type": "color",
             "$value": "{color.green.3}"
           }
         },
         "warning": {
-          "strong": {
+          "contrast": {
             "$type": "color",
             "$value": "{color.amber.11}"
           },
-          "medium": {
+          "default": {
             "$type": "color",
             "$value": "{color.amber.9}"
           },
-          "weak": {
+          "muted": {
             "$type": "color",
             "$value": "{color.amber.3}"
           }
         },
         "error": {
-          "strong": {
+          "contrast": {
             "$type": "color",
             "$value": "{color.red.11}"
           },
-          "medium": {
+          "default": {
             "$type": "color",
             "$value": "{color.red.9}"
           },
-          "weak": {
+          "muted": {
             "$type": "color",
             "$value": "{color.red.3}"
           }
         },
         "info": {
-          "strong": {
+          "contrast": {
             "$type": "color",
             "$value": "{color.blue.11}"
           },
-          "medium": {
+          "default": {
             "$type": "color",
             "$value": "{color.blue.9}"
           },
-          "weak": {
+          "muted": {
             "$type": "color",
             "$value": "{color.blue.3}"
           }
