@@ -1,9 +1,10 @@
 {
-    "color": {
-        "primary": {
-            "50": {
-                "value": "{core.color.blue.50}"
-            }
-        }
+  "color": {
+    "primary": {
+      "50": {
+        "value": "{core.color.blue.50}",
+        "type": "color"
+      }
     }
+  }
 }
