@@ -1,0 +1,88 @@
+{
+    "$schema": "https://design-tokens.org/schemas/1.0/schema.json",
+    "grid": {
+        "breakpoint": {
+        "sm": {
+            "$type": "composition",
+            "$value": {
+            "width": "393px",
+            "minWidth": "320px",
+            "maxWidth": "672px"
+            },
+            "$description": "Phones"
+        },
+        "md": {
+            "$type": "composition",
+            "$value": {
+            "width": "768px",
+            "minWidth": "672px",
+            "maxWidth": "1055px"
+            },
+            "$description": "Tablets"
+        },
+        "lg": {
+            "$type": "composition",
+            "$value": {
+            "width": "1280px",
+            "minWidth": "1056px",
+            "maxWidth": "1311px"
+            },
+            "$description": "Desktop"
+        },
+        "xl": {
+            "$type": "composition",
+            "$value": {
+            "width": "1440",
+            "minWidth": "1312",
+            "maxWidth": "1583"
+            },
+            "$description": "Large desktop"
+        },
+        "max": {
+            "$type": "composition",
+            "$value": {
+            "width": "1920",
+            "minWidth": "1584"
+            },
+            "$description": "Very large displays"
+        }
+        },
+        "container": {
+            "sm": {
+                "$type": "composition",
+                "$value": {
+                "width": "100%",
+                "horizontalPadding": "16px"
+                }
+            },
+            "md": {
+                "$type": "composition",
+                "$value": {
+                "maxWidth": "608px",
+                "horizontalPadding": "32px"
+                }
+            },
+            "lg": {
+                "$type": "composition",
+                "$value": {
+                "maxWidth": "992px",
+                "horizontalPadding": "32px"
+                }
+            },
+            "xl": {
+                "$type": "composition",
+                "$value": {
+                "maxWidth": "1312px",
+                "horizontalPadding": "32px"
+                }
+            },
+            "max": {
+                "$type": "composition",
+                "$value": {
+                "maxWidth": "1440px",
+                "horizontalPadding": "72px"
+                }
+            }
+        }
+    }
+}

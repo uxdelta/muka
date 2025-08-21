@@ -1,0 +1,63 @@
+{
+    "$schema": "https://design-tokens.org/schemas/1.0/schema.json",
+    "button": {
+        "color": {
+            "primary": {
+                "background": {
+                    "default": { "$type": "color", "$value": "{color.action.default}" },
+                    "hover":   { "$type": "color", "$value": "{color.action.hover}" },
+                    "pressed": { "$type": "color", "$value": "{color.action.pressed}" }
+                },
+                "foreground": {
+                    "default": { "$type": "color", "$value": "{color.text.default.inverse}" },
+                    "hover":   { "$type": "color", "$value": "{color.text.default.inverse}" },
+                    "pressed": { "$type": "color", "$value": "{color.text.default.inverse}" }
+                }
+            },
+            "secondary": {
+                "background": {
+                    "default": { "$type": "color", "$value": "{color.surface.level1}" },
+                    "hover":   { "$type": "color", "$value": "{color.surface.level0}" },
+                    "pressed": { "$type": "color", "$value": "{color.surface.sunken}" }
+                },
+                "foreground": {
+                    "default": { "$type": "color", "$value": "{color.text.default.default}" },
+                    "hover":   { "$type": "color", "$value": "{color.text.default.default}" },
+                    "pressed": { "$type": "color", "$value": "{color.text.default.default}" }
+                }
+            },
+            "ghost": {
+                "background": {
+                    "default": { "$type": "color", "$value": "{color.white-alpha.10}" },
+                    "hover":   { "$type": "color", "$value": "{color.surface.level1}" },
+                    "pressed": { "$type": "color", "$value": "{color.surface.level0}" }
+                },
+                "foreground": {
+                    "default": { "$type": "color", "$value": "{color.action.default}" },
+                    "hover":   { "$type": "color", "$value": "{color.action.hover}" },
+                    "pressed": { "$type": "color", "$value": "{color.action.pressed}" }
+                }
+            }
+        },
+        "radius": {
+            "sm": { "$type": "borderRadius", "$value": "{border.radius.sm}" },
+            "md": { "$type": "borderRadius", "$value": "{border.radius.md}" },
+            "lg": { "$type": "borderRadius", "$value": "{border.radius.md}" }
+        },
+        "padding": {
+            "sm": { "x": { "$type": "dimension", "$value": "{spacing.2}" },
+                    "y": { "$type": "dimension", "$value": "{spacing.2}" } },
+            "md": { "x": { "$type": "dimension", "$value": "{spacing.3}" },
+                    "y": { "$type": "dimension", "$value": "{spacing.3}" } },
+            "lg": { "x": { "$type": "dimension", "$value": "{spacing.4}" },
+                    "y": { "$type": "dimension", "$value": "{spacing.4}" } }
+        },
+        "label": {
+            "margin": {
+                "sm": { "$type": "dimension", "$value": "{spacing.1}" },
+                "md": { "$type": "dimension", "$value": "{spacing.2}" },
+                "lg": { "$type": "dimension", "$value": "{spacing.3}" }
+            }
+        }
+    }
+}
