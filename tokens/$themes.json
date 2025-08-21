@@ -182,7 +182,19 @@
     },
     "selectedTokenSets": {
       "themes/whitelabel/base": "enabled",
-      "themes/whitelabel/light": "enabled"
+      "themes/whitelabel/light": "enabled",
+      "base/alias/alias": "enabled",
+      "base/component/button": "enabled",
+      "base/component/input": "enabled",
+      "base/primitives/color": "enabled",
+      "base/primitives/font": "enabled",
+      "base/primitives/grid": "enabled",
+      "base/primitives/motion": "enabled",
+      "base/primitives/shadow": "enabled",
+      "base/primitives/size": "enabled",
+      "base/primitives/spacing": "enabled",
+      "base/semantic/layout": "enabled",
+      "base/semantic/semantic": "enabled"
     },
     "$figmaVariableReferences": {
       "color.primary.50": "838efccab82d5572f764d396c5e60179e326e41f"
@@ -200,7 +212,19 @@
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
       "themes/whitelabel/base": "enabled",
-      "themes/whitelabel/dark": "enabled"
+      "themes/whitelabel/dark": "enabled",
+      "base/alias/alias": "enabled",
+      "base/component/button": "enabled",
+      "base/component/input": "enabled",
+      "base/primitives/color": "enabled",
+      "base/primitives/grid": "enabled",
+      "base/primitives/font": "enabled",
+      "base/primitives/motion": "enabled",
+      "base/primitives/shadow": "enabled",
+      "base/primitives/size": "enabled",
+      "base/primitives/spacing": "enabled",
+      "base/semantic/layout": "enabled",
+      "base/semantic/semantic": "enabled"
     },
     "$figmaVariableReferences": {
       "color.primary.50": "838efccab82d5572f764d396c5e60179e326e41f"
@@ -334,7 +358,19 @@
     },
     "selectedTokenSets": {
       "themes/muka/base": "enabled",
-      "themes/muka/light": "enabled"
+      "themes/muka/light": "enabled",
+      "base/alias/alias": "enabled",
+      "base/component/button": "enabled",
+      "base/component/input": "enabled",
+      "base/primitives/color": "enabled",
+      "base/primitives/font": "enabled",
+      "base/primitives/grid": "enabled",
+      "base/primitives/motion": "enabled",
+      "base/primitives/shadow": "enabled",
+      "base/primitives/size": "enabled",
+      "base/primitives/spacing": "enabled",
+      "base/semantic/layout": "enabled",
+      "base/semantic/semantic": "enabled"
     },
     "$figmaVariableReferences": {
       "color.action.default": "102f758125deef67c94a0614a9db16542cea3733",
@@ -384,7 +420,19 @@
     },
     "selectedTokenSets": {
       "themes/muka/base": "enabled",
-      "themes/muka/dark": "enabled"
+      "base/alias/alias": "enabled",
+      "base/component/button": "enabled",
+      "base/component/input": "enabled",
+      "base/primitives/color": "enabled",
+      "base/primitives/font": "enabled",
+      "base/primitives/grid": "enabled",
+      "base/primitives/shadow": "enabled",
+      "base/primitives/size": "enabled",
+      "base/primitives/motion": "enabled",
+      "base/primitives/spacing": "enabled",
+      "base/semantic/layout": "enabled",
+      "base/semantic/semantic": "enabled",
+      "themes/muka/light": "enabled"
     },
     "$figmaVariableReferences": {
       "color.action.default": "102f758125deef67c94a0614a9db16542cea3733",
