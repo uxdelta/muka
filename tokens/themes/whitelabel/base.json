@@ -3,11 +3,77 @@
     "$type": "other",
     "$value": "https://design-tokens.org/schemas/1.0/schema.json"
   },
-  "color": {
-    "primary": {
-      "1": {
-        "$type": "color",
-        "$value": "{core.color.blue.1}"
+  "alias": {
+    "font": {
+      "brand": {
+        "family": {
+          "$type": "fontFamilies",
+          "$value": "Funnel Display"
+        },
+        "weight": {
+          "regular": {
+            "$type": "fontWeights",
+            "$value": "400"
+          },
+          "medium": {
+            "$type": "fontWeights",
+            "$value": "500"
+          },
+          "semibold": {
+            "$type": "fontWeights",
+            "$value": "600"
+          },
+          "bold": {
+            "$type": "fontWeights",
+            "$value": "700"
+          }
+        }
+      },
+      "plain": {
+        "family": {
+          "$type": "fontFamilies",
+          "$value": "Funnel Sans"
+        },
+        "weight": {
+          "regular": {
+            "$type": "fontWeights",
+            "$value": "400"
+          },
+          "medium": {
+            "$type": "fontWeights",
+            "$value": "500"
+          },
+          "semibold": {
+            "$type": "fontWeights",
+            "$value": "600"
+          },
+          "bold": {
+            "$type": "fontWeights",
+            "$value": "700"
+          }
+        }
+      },
+      "mono": {
+        "family": {
+          "$type": "fontFamilies",
+          "$value": "Menlo"
+        },
+        "weight": {
+          "regular": {
+            "$type": "fontWeights",
+            "$value": "Regular"
+          },
+          "bold": {
+            "$type": "fontWeights",
+            "$value": "Bold"
+          }
+        }
+      },
+      "script": {
+        "family": {
+          "$type": "fontFamilies",
+          "$value": "Yesteryear"
+        }
       }
     }
   }

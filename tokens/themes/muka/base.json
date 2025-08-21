@@ -3,266 +3,76 @@
     "$type": "other",
     "$value": "https://design-tokens.org/schemas/1.0/schema.json"
   },
-  "color": {
-    "primary": {
-      "1": {
-        "$type": "color",
-        "$value": "{color.sky.1}"
-      },
-      "2": {
-        "$type": "color",
-        "$value": "{color.sky.2}"
-      },
-      "3": {
-        "$type": "color",
-        "$value": "{color.sky.3}"
-      },
-      "4": {
-        "$type": "color",
-        "$value": "{color.sky.4}"
-      },
-      "5": {
-        "$type": "color",
-        "$value": "{color.sky.5}"
-      },
-      "6": {
-        "$type": "color",
-        "$value": "{color.sky.6}"
-      },
-      "7": {
-        "$type": "color",
-        "$value": "{color.sky.7}"
-      },
-      "8": {
-        "$type": "color",
-        "$value": "{color.sky.8}"
-      },
-      "9": {
-        "$type": "color",
-        "$value": "{color.sky.9}"
-      },
-      "10": {
-        "$type": "color",
-        "$value": "{color.sky.10}"
-      },
-      "11": {
-        "$type": "color",
-        "$value": "{color.sky.11}"
-      },
-      "12": {
-        "$type": "color",
-        "$value": "{color.sky.12}"
-      }
-    },
-    "neutral": {
-      "1": {
-        "$type": "color",
-        "$value": "{background.secondary}"
-      },
-      "2": {
-        "$type": "color",
-        "$value": "{background.tertiary}"
-      },
-      "3": {
-        "$type": "color",
-        "$value": "{background.disabled}"
-      },
-      "4": {
-        "$type": "color",
-        "$value": "{text.disabled}"
-      },
-      "5": {
-        "$type": "color",
-        "$value": "{text.tertiary}"
-      },
-      "6": {
-        "$type": "color",
-        "$value": "{text.tertiary}"
-      },
-      "7": {
-        "$type": "color",
-        "$value": "{text.secondary}"
-      },
-      "8": {
-        "$type": "color",
-        "$value": "{text.secondary}"
-      },
-      "9": {
-        "$type": "color",
-        "$value": "{text.primary}"
-      },
-      "10": {
-        "$type": "color",
-        "$value": "{text.primary}"
-      },
-      "11": {
-        "$type": "color",
-        "$value": "{text.primary}"
-      },
-      "12": {
-        "$type": "color",
-        "$value": "{text.primary}"
-      }
-    },
-    "action": {
-      "default": {
-        "$type": "color",
-        "$value": "{color.amber.7}"
-      }
-    }
-  },
-  "font": {
-    "family": {
-      "primary": {
-        "$type": "fontFamily",
-        "$value": "Inter"
-      },
-      "secondary": {
-        "$type": "fontFamily",
-        "$value": "Inter"
-      },
+  "alias": {
+    "font": {
       "brand": {
-        "primary": {
-          "$type": "typography",
-          "$value": {
-            "fontFamily": "Funnel Display"
-          }
+        "family": {
+          "$type": "fontFamilies",
+          "$value": "Funnel Display"
         },
-        "secondary": {
-          "$type": "typography",
-          "$value": {
-            "fontFamily": "Funnel Sans"
+        "weight": {
+          "regular": {
+            "$type": "fontWeights",
+            "$value": "400"
+          },
+          "medium": {
+            "$type": "fontWeights",
+            "$value": "500"
+          },
+          "semibold": {
+            "$type": "fontWeights",
+            "$value": "600"
+          },
+          "bold": {
+            "$type": "fontWeights",
+            "$value": "700"
           }
         }
-      }
-    },
-    "weight": {
-      "light": {
-        "$type": "fontWeight",
-        "$value": "300"
       },
-      "regular": {
-        "$type": "fontWeight",
-        "$value": "400"
-      },
-      "medium": {
-        "$type": "fontWeight",
-        "$value": "500"
-      },
-      "semibold": {
-        "$type": "fontWeight",
-        "$value": "600"
-      },
-      "bold": {
-        "$type": "fontWeight",
-        "$value": "700"
-      }
-    },
-    "size": {
-      "xs": {
-        "$type": "fontSize",
-        "$value": "0.75rem"
-      },
-      "sm": {
-        "$type": "fontSize",
-        "$value": "0.875rem"
-      },
-      "base": {
-        "$type": "fontSize",
-        "$value": "1rem"
-      },
-      "lg": {
-        "$type": "fontSize",
-        "$value": "1.125rem"
-      },
-      "xl": {
-        "$type": "fontSize",
-        "$value": "1.25rem"
-      },
-      "2xl": {
-        "$type": "fontSize",
-        "$value": "1.5rem"
-      },
-      "3xl": {
-        "$type": "fontSize",
-        "$value": "1.875rem"
-      },
-      "4xl": {
-        "$type": "fontSize",
-        "$value": "2.25rem"
-      },
-      "5xl": {
-        "$type": "fontSize",
-        "$value": "3rem"
-      }
-    },
-    "lineHeight": {
-      "none": {
-        "$type": "lineHeight",
-        "$value": "1"
-      },
-      "tight": {
-        "$type": "lineHeight",
-        "$value": "1.25"
-      },
-      "normal": {
-        "$type": "lineHeight",
-        "$value": "1.5"
-      },
-      "relaxed": {
-        "$type": "lineHeight",
-        "$value": "1.75"
-      },
-      "loose": {
-        "$type": "lineHeight",
-        "$value": "2"
-      }
-    },
-    "heading": {
-      "fontFamily": {
-        "$type": "typography",
-        "$value": "Funnel Display"
-      }
-    },
-    "body": {
-      "fontFamily": {
-        "$type": "typography",
-        "$value": "Funnel Sans"
-      }
-    },
-    "caption": {
-      "fontFamily": {
-        "$type": "typography",
-        "$value": "Inter"
-      }
-    }
-  },
-  "typography": {
-    "heading": {
-      "letterSpacing": {
-        "tighter": {
-          "$type": "letterSpacing",
-          "$value": "-0.05em"
+      "plain": {
+        "family": {
+          "$type": "fontFamilies",
+          "$value": "Funnel Sans"
         },
-        "tight": {
-          "$type": "letterSpacing",
-          "$value": "-0.025em"
+        "weight": {
+          "regular": {
+            "$type": "fontWeights",
+            "$value": "400"
+          },
+          "medium": {
+            "$type": "fontWeights",
+            "$value": "500"
+          },
+          "semibold": {
+            "$type": "fontWeights",
+            "$value": "600"
+          },
+          "bold": {
+            "$type": "fontWeights",
+            "$value": "700"
+          }
+        }
+      },
+      "mono": {
+        "family": {
+          "$type": "fontFamilies",
+          "$value": "Menlo"
         },
-        "normal": {
-          "$type": "letterSpacing",
-          "$value": "0"
-        },
-        "wide": {
-          "$type": "letterSpacing",
-          "$value": "0.025em"
-        },
-        "wider": {
-          "$type": "letterSpacing",
-          "$value": "0.05em"
-        },
-        "widest": {
-          "$type": "letterSpacing",
-          "$value": "0.1em"
+        "weight": {
+          "regular": {
+            "$type": "fontWeights",
+            "$value": "Regular"
+          },
+          "bold": {
+            "$type": "fontWeights",
+            "$value": "Bold"
+          }
+        }
+      },
+      "script": {
+        "family": {
+          "$type": "fontFamilies",
+          "$value": "Yesteryear"
         }
       }
     }

@@ -87,6 +87,32 @@
         "$type": "lineHeights",
         "$value": "4rem"
       }
+    },
+    "letterSpacing": {
+      "tighter": {
+        "$type": "letterSpacing",
+        "$value": "-0.05em"
+      },
+      "tight": {
+        "$type": "letterSpacing",
+        "$value": "-0.025em"
+      },
+      "normal": {
+        "$type": "letterSpacing",
+        "$value": "0"
+      },
+      "wide": {
+        "$type": "letterSpacing",
+        "$value": "0.025em"
+      },
+      "wider": {
+        "$type": "letterSpacing",
+        "$value": "0.05em"
+      },
+      "widest": {
+        "$type": "letterSpacing",
+        "$value": "0.1em"
+      }
     }
   }
 }

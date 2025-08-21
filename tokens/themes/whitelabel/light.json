@@ -3,11 +3,159 @@
     "$type": "other",
     "$value": "https://design-tokens.org/schemas/1.0/schema.json"
   },
-  "color": {
-    "primary": {
-      "1": {
-        "$type": "color",
-        "$value": "{core.color.blue.1}"
+  "alias": {
+    "color": {
+      "neutral": {
+        "1": {
+          "$type": "color",
+          "$value": "{color.gray.1}"
+        },
+        "2": {
+          "$type": "color",
+          "$value": "{color.gray.3}"
+        },
+        "3": {
+          "$type": "color",
+          "$value": "{color.gray.4}"
+        },
+        "4": {
+          "$type": "color",
+          "$value": "{color.gray.5}"
+        },
+        "5": {
+          "$type": "color",
+          "$value": "{color.gray.6}"
+        },
+        "6": {
+          "$type": "color",
+          "$value": "{color.gray.7}"
+        },
+        "7": {
+          "$type": "color",
+          "$value": "{color.gray.8}"
+        },
+        "8": {
+          "$type": "color",
+          "$value": "{color.gray.9}"
+        },
+        "9": {
+          "$type": "color",
+          "$value": "{color.gray.10}"
+        },
+        "10": {
+          "$type": "color",
+          "$value": "{color.gray.11}"
+        },
+        "11": {
+          "$type": "color",
+          "$value": "{color.gray.12}"
+        },
+        "12": {
+          "$type": "color",
+          "$value": "{color.gray.12}"
+        }
+      },
+      "brand": {
+        "primary": {
+          "$type": "color",
+          "$value": "{color.gray.11}"
+        },
+        "complementary": {
+          "$type": "color",
+          "$value": "{color.gray.9}"
+        },
+        "default": {
+          "$type": "color",
+          "$value": "{color.gray.9}"
+        },
+        "contrast": {
+          "$type": "color",
+          "$value": "{color.gray.12}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.gray.5}"
+        }
+      },
+      "accent": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.gray.9}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.gray.10}"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "{color.gray.11}"
+        },
+        "contrast": {
+          "$type": "color",
+          "$value": "{color.gray.12}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.gray.8}"
+        }
+      },
+      "state": {
+        "success": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.green.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.green.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.green.3}"
+          }
+        },
+        "warning": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.amber.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.amber.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.amber.3}"
+          }
+        },
+        "error": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.red.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.red.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.red.3}"
+          }
+        },
+        "info": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.blue.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.blue.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.blue.3}"
+          }
+        }
       }
     }
   }
