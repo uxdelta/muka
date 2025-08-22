@@ -130,6 +130,24 @@
       "muted": {
         "$type": "color",
         "$value": "{alias.color.accent.muted}"
+      },
+      "inverse": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.accent.inverse.default}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{alias.color.accent.inverse.hover}"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "{alias.color.accent.inverse.pressed}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{alias.color.accent.inverse.muted}"
+        }
       }
     }
   },

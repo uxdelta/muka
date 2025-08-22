@@ -115,6 +115,28 @@
         "muted": {
           "$type": "color",
           "$value": "{color.gray.11}"
+        },
+        "inverse": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.gray.1}"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{color.white}"
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": "{color.gray.2}"
+          },
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.white}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.gray.3}"
+          }
         }
       },
       "state": {
