@@ -47,11 +47,11 @@
         "background": {
           "default": {
             "$type": "color",
-            "$value": "{color.surface.level1}"
+            "$value": "{color.surface.level2}"
           },
           "hover": {
             "$type": "color",
-            "$value": "{color.surface.level0}"
+            "$value": "{color.surface.level1}"
           },
           "pressed": {
             "$type": "color",
@@ -77,15 +77,15 @@
         "background": {
           "default": {
             "$type": "color",
-            "$value": "{color.white-alpha.10}"
+            "$value": "{color.surface.level3}"
           },
           "hover": {
             "$type": "color",
-            "$value": "{color.surface.level1}"
+            "$value": "{color.surface.level3}"
           },
           "pressed": {
             "$type": "color",
-            "$value": "{color.surface.level0}"
+            "$value": "{color.surface.level2}"
           }
         },
         "foreground": {
