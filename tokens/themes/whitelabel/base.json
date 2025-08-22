@@ -8,7 +8,7 @@
       "brand": {
         "family": {
           "$type": "fontFamilies",
-          "$value": "Funnel Display"
+          "$value": "Helvetica"
         },
         "weight": {
           "regular": {
@@ -32,7 +32,7 @@
       "plain": {
         "family": {
           "$type": "fontFamilies",
-          "$value": "Funnel Sans"
+          "$value": "Helvetica"
         },
         "weight": {
           "regular": {
@@ -56,23 +56,23 @@
       "mono": {
         "family": {
           "$type": "fontFamilies",
-          "$value": "Menlo"
+          "$value": "Lucida Console"
         },
         "weight": {
           "regular": {
             "$type": "fontWeights",
-            "$value": "Regular"
+            "$value": "400"
           },
           "bold": {
             "$type": "fontWeights",
-            "$value": "Bold"
+            "$value": "700"
           }
         }
       },
       "script": {
         "family": {
           "$type": "fontFamilies",
-          "$value": "Yesteryear"
+          "$value": "Times New Roman"
         }
       }
     }

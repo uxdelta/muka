@@ -162,7 +162,7 @@
       "brand": {
         "family": {
           "$type": "fontFamilies",
-          "$value": "Funnel Display"
+          "$value": "Arial"
         },
         "weight": {
           "regular": {
@@ -186,7 +186,7 @@
       "plain": {
         "family": {
           "$type": "fontFamilies",
-          "$value": "Funnel Sans"
+          "$value": "Arial"
         },
         "weight": {
           "regular": {
@@ -210,7 +210,7 @@
       "mono": {
         "family": {
           "$type": "fontFamilies",
-          "$value": "Menlo"
+          "$value": "Courier New"
         },
         "weight": {
           "regular": {
@@ -226,7 +226,7 @@
       "script": {
         "family": {
           "$type": "fontFamilies",
-          "$value": "Yesteryear"
+          "$value": "Times New Roman"
         }
       }
     }
