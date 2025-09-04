@@ -21,12 +21,12 @@
     }
   },
   {
-    "id": "theme-light",
+    "id": "mode-light",
     "name": "Light",
-    "description": "Light theme mode",
+    "description": "Light mode for all brands",
     "version": "1.0.0",
     "author": "Design System Team",
-    "group": "Theme",
+    "group": "Mode",
     "selectedTokenSets": {
       "base": "enabled",
       "themes/muka/light": "enabled",
@@ -34,12 +34,12 @@
     }
   },
   {
-    "id": "theme-dark",
+    "id": "mode-dark",
     "name": "Dark",
-    "description": "Dark theme mode",
+    "description": "Dark mode for all brands",
     "version": "1.0.0",
     "author": "Design System Team",
-    "group": "Theme",
+    "group": "Mode",
     "selectedTokenSets": {
       "base": "enabled",
       "themes/muka/dark": "enabled",
@@ -49,25 +49,29 @@
   {
     "id": "brand-wireframe",
     "name": "Wireframe",
-    "description": "Wireframe brand",
+    "description": "Wireframe brand for all modes",
     "version": "1.0.0",
     "author": "Design System Team",
     "group": "Brand",
     "selectedTokenSets": {
       "base": "enabled",
-      "themes/wireframe/base": "enabled"
+      "themes/wireframe/base": "enabled",
+      "themes/wireframe/light": "enabled",
+      "themes/wireframe/dark": "enabled"
     }
   },
   {
     "id": "brand-muka",
     "name": "Muka",
-    "description": "Muka brand",
+    "description": "Muka brand for all modes",
     "version": "1.0.0",
     "author": "Design System Team",
     "group": "Brand",
     "selectedTokenSets": {
       "base": "enabled",
-      "themes/muka/base": "enabled"
+      "themes/muka/base": "enabled",
+      "themes/muka/light": "enabled",
+      "themes/muka/dark": "enabled"
     }
   },
   {
@@ -106,4 +110,4 @@
       "themes/layout/lg": "enabled"
     }
   }
-]
+] 
