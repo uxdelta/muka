@@ -1,14 +1,12 @@
 [
   {
-    "id": "theme-light",
-    "name": "Light",
-    "description": "Light theme mode",
+    "id": "base",
+    "name": "Base",
+    "description": "Base theme with all primitives, semantics, alias and component tokens",
     "version": "1.0.0",
     "author": "Design System Team",
-    "group": "Theme",
+    "group": "Base",
     "selectedTokenSets": {
-      "themes/muka/light": "enabled",
-      "themes/wireframe/light": "enabled",
       "base/alias/alias": "enabled",
       "base/component/button": "enabled",
       "base/component/input": "enabled",
@@ -19,6 +17,18 @@
       "base/primitives/size": "enabled",
       "base/primitives/spacing": "enabled",
       "base/semantic/semantic": "enabled"
+    }
+  },
+  {
+    "id": "theme-light",
+    "name": "Light",
+    "description": "Light theme mode",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "group": "Theme",
+    "selectedTokenSets": {
+      "themes/muka/light": "enabled",
+      "themes/wireframe/light": "enabled"
     }
   },
   {
@@ -30,17 +40,7 @@
     "group": "Theme",
     "selectedTokenSets": {
       "themes/muka/dark": "enabled",
-      "themes/wireframe/dark": "enabled",
-      "base/alias/alias": "enabled",
-      "base/component/button": "enabled",
-      "base/component/input": "enabled",
-      "base/primitives/color": "enabled",
-      "base/primitives/font": "enabled",
-      "base/primitives/motion": "enabled",
-      "base/primitives/shadow": "enabled",
-      "base/primitives/size": "enabled",
-      "base/primitives/spacing": "enabled",
-      "base/semantic/semantic": "enabled"
+      "themes/wireframe/dark": "enabled"
     }
   },
   {
@@ -51,19 +51,7 @@
     "author": "Design System Team",
     "group": "Brand",
     "selectedTokenSets": {
-      "themes/wireframe/base": "enabled",
-      "themes/wireframe/light": "enabled",
-      "themes/wireframe/dark": "enabled",
-      "base/alias/alias": "enabled",
-      "base/component/button": "enabled",
-      "base/component/input": "enabled",
-      "base/primitives/color": "enabled",
-      "base/primitives/font": "enabled",
-      "base/primitives/motion": "enabled",
-      "base/primitives/shadow": "enabled",
-      "base/primitives/size": "enabled",
-      "base/primitives/spacing": "enabled",
-      "base/semantic/semantic": "enabled"
+      "themes/wireframe/base": "enabled"
     }
   },
   {
@@ -74,19 +62,7 @@
     "author": "Design System Team",
     "group": "Brand",
     "selectedTokenSets": {
-      "themes/muka/base": "enabled",
-      "themes/muka/light": "enabled",
-      "themes/muka/dark": "enabled",
-      "base/alias/alias": "enabled",
-      "base/component/button": "enabled",
-      "base/component/input": "enabled",
-      "base/primitives/color": "enabled",
-      "base/primitives/font": "enabled",
-      "base/primitives/motion": "enabled",
-      "base/primitives/shadow": "enabled",
-      "base/primitives/size": "enabled",
-      "base/primitives/spacing": "enabled",
-      "base/semantic/semantic": "enabled"
+      "themes/muka/base": "enabled"
     }
   },
   {
