@@ -83,7 +83,7 @@
     "group": "Layout",
     "selectedTokenSets": {
       "base": "enabled",
-      "layouts/layout/sm": "enabled"
+      "layouts/sm": "enabled"
     }
   },
   {
@@ -95,7 +95,7 @@
     "group": "Layout",
     "selectedTokenSets": {
       "base": "enabled",
-      "layouts/layout/md": "enabled"
+      "layouts/md": "enabled"
     }
   },
   {
@@ -107,7 +107,7 @@
     "group": "Layout",
     "selectedTokenSets": {
       "base": "enabled",
-      "layouts/layout/lg": "enabled"
+      "layouts/lg": "enabled"
     }
   }
 ] 
