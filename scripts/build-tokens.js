@@ -177,8 +177,8 @@ class TokenBuilder {
     const combinations = [
       { brand: 'muka', theme: 'light' },
       { brand: 'muka', theme: 'dark' },
-      { brand: 'whitelabel', theme: 'light' },
-      { brand: 'whitelabel', theme: 'dark' }
+      { brand: 'wireframe', theme: 'light' },
+      { brand: 'wireframe', theme: 'dark' }
     ];
     
     combinations.forEach(({ brand, theme }) => {

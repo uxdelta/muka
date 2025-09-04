@@ -603,7 +603,7 @@ button.color.primary.background.default
 
 ### Brand Differences:
 - **🎨 Muka**: Uses indigo color palette, modern personality, designed for creative professionals
-- **⚪ WhiteLabel**: Uses gray palette, neutral professional look, designed for enterprise clients
+- **📐 Wireframe**: Uses gray palette, neutral professional look, designed for enterprise clients
 
 ### Theme Differences:  
 - **☀️ Light**: Bright backgrounds, dark text, optimized for daytime use
@@ -651,7 +651,7 @@ export const BrandComparison: Story = {
       </div>
       
       <div 
-        data-brand="whitelabel" 
+        data-brand="wireframe" 
         data-theme="light" 
         style={{ 
           padding: '1.5rem', 
@@ -661,7 +661,7 @@ export const BrandComparison: Story = {
         }}
       >
         <h4 style={{ color: 'var(--color-text-default-default)', margin: '0 0 1rem 0' }}>
-          ⚪ WhiteLabel Brand
+          📐 Wireframe Brand
         </h4>
         <div style={{ display: 'flex', gap: '0.75rem', flexDirection: 'column' }}>
           <Button variant="primary" size="md">Primary Action</Button>
@@ -673,7 +673,7 @@ export const BrandComparison: Story = {
           fontSize: 'var(--text-size-sm)', 
           margin: '1rem 0 0 0' 
         }}>
-          Professional, neutral, gray-based palette
+          Professional, neutral, wireframe-based palette
         </p>
       </div>
     </div>
@@ -689,7 +689,7 @@ export const BrandComparison: Story = {
 This story shows both brands using the same components simultaneously. 
 
 **Key Observations:**
-- Same component code, different visual personalities
+- Same component code, different visual personalities (Muka vs Wireframe)
 - Consistent spacing, typography, and interaction patterns
 - Brand-specific color palettes applied through the alias layer
 - Perfect for client presentations and design system documentation

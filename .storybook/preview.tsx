@@ -5,8 +5,8 @@ import '../styles/tokens.css';
 // Import all theme combinations
 import '../styles/tokens-muka-light.css';
 import '../styles/tokens-muka-dark.css';
-import '../styles/tokens-whitelabel-light.css';
-import '../styles/tokens-whitelabel-dark.css';
+import '../styles/tokens-wireframe-light.css';
+import '../styles/tokens-wireframe-dark.css';
 
 const preview: Preview = {
   parameters: {
@@ -37,7 +37,7 @@ const preview: Preview = {
         icon: 'paintbrush',
         items: [
           { value: 'muka', title: '🎨 Muka Brand', left: '🎨' },
-          { value: 'whitelabel', title: '⚪ WhiteLabel', left: '⚪' },
+          { value: 'wireframe', title: '📐 Wireframe', left: '📐' },
         ],
         dynamicTitle: true,
       },
@@ -71,8 +71,8 @@ const preview: Preview = {
         const backgrounds = {
           'muka-light': '#fcfcfd',
           'muka-dark': '#0d1117',
-          'whitelabel-light': '#ffffff',
-          'whitelabel-dark': '#111111',
+          'wireframe-light': '#ffffff',
+          'wireframe-dark': '#111111',
         };
         
         document.body.style.backgroundColor = backgrounds[`${brand}-${theme}`] || '#ffffff';
