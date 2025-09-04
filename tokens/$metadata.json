@@ -11,14 +11,14 @@
     "base/semantic/semantic",
     "base/component/button",
     "base/component/input",
-    "themes/muka/base",
-    "themes/muka/dark",
-    "themes/muka/light",
-    "themes/layout/lg",
-    "themes/layout/md",
-    "themes/layout/sm",
-    "themes/wireframe/base",
-    "themes/wireframe/dark",
-    "themes/wireframe/light"
+    "brands/muka/base",
+    "brands/muka/dark",
+    "brands/muka/light",
+    "brands/wireframe/base",
+    "brands/wireframe/dark",
+    "brands/wireframe/light",
+    "layouts/lg",
+    "layouts/md",
+    "layouts/sm"
   ]
 }
