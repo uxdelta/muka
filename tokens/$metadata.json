@@ -11,14 +11,14 @@
     "base/semantic/semantic",
     "base/component/button",
     "base/component/input",
-    "themes/whitelabel/base",
-    "themes/whitelabel/dark",
-    "themes/whitelabel/light",
     "themes/muka/base",
     "themes/muka/dark",
     "themes/muka/light",
     "themes/layout/lg",
     "themes/layout/md",
-    "themes/layout/sm"
+    "themes/layout/sm",
+    "themes/wireframe/base",
+    "themes/wireframe/dark",
+    "themes/wireframe/light"
   ]
 }
