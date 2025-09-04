@@ -29,8 +29,8 @@
     "group": "Mode",
     "selectedTokenSets": {
       "base": "enabled",
-      "modes/light/muka": "enabled",
-      "modes/light/wireframe": "enabled"
+      "brands/muka/light": "enabled",
+      "brands/wireframe/light": "enabled"
     }
   },
   {
@@ -42,8 +42,8 @@
     "group": "Mode",
     "selectedTokenSets": {
       "base": "enabled",
-      "modes/dark/muka": "enabled",
-      "modes/dark/wireframe": "enabled"
+      "brands/muka/dark": "enabled",
+      "brands/wireframe/dark": "enabled"
     }
   },
   {
@@ -56,8 +56,8 @@
     "selectedTokenSets": {
       "base": "enabled",
       "brands/wireframe/base": "enabled",
-      "modes/light/wireframe": "enabled",
-      "modes/dark/wireframe": "enabled"
+      "brands/wireframe/light": "enabled",
+      "brands/wireframe/dark": "enabled"
     }
   },
   {
@@ -70,8 +70,8 @@
     "selectedTokenSets": {
       "base": "enabled",
       "brands/muka/base": "enabled",
-      "modes/light/muka": "enabled",
-      "modes/dark/muka": "enabled"
+      "brands/muka/light": "enabled",
+      "brands/muka/dark": "enabled"
     }
   },
   {
