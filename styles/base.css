@@ -1,0 +1,89 @@
+/* Base styles for Storybook preview */
+/* Fallback values in case tokens don't load */
+
+:root {
+  /* Basic color fallbacks */
+  --color-action-default: #8d8d8d;
+  --color-action-hover: #838383;
+  --color-action-pressed: #646464;
+  --color-action-muted: #bbbbbb;
+  --color-action-inverse-default: #ffffff;
+  --color-action-inverse-hover: #ffffff;
+  --color-action-inverse-pressed: #ffffff;
+  --color-action-inverse-muted: #ffffff;
+  
+  --color-surface-level1: #f9f9f9;
+  --color-surface-level2: #f0f0f0;
+  --color-surface-level3: #fcfcfc;
+  --color-surface-sunken: #e0e0e0;
+  
+  --color-text-default-default: #646464;
+  --color-border-default: #e8e8e8;
+  --color-border-contrast: #d9d9d9;
+  --color-border-focus: #8d8d8d;
+  
+  /* Button-specific fallbacks */
+  --button-color-primary-background-default: #8d8d8d;
+  --button-color-primary-background-hover: #838383;
+  --button-color-primary-background-pressed: #646464;
+  --button-color-primary-background-muted: #bbbbbb;
+  --button-color-primary-foreground-default: #ffffff;
+  --button-color-primary-foreground-hover: #ffffff;
+  --button-color-primary-foreground-pressed: #ffffff;
+  --button-color-primary-foreground-muted: #ffffff;
+  
+  --button-color-secondary-background-default: #f0f0f0;
+  --button-color-secondary-background-hover: #f9f9f9;
+  --button-color-secondary-background-pressed: #e0e0e0;
+  --button-color-secondary-foreground-default: #646464;
+  --button-color-secondary-foreground-hover: #646464;
+  --button-color-secondary-foreground-pressed: #646464;
+  
+  --button-color-ghost-background-default: #fcfcfc;
+  --button-color-ghost-background-hover: #fcfcfc;
+  --button-color-ghost-background-pressed: #f0f0f0;
+  --button-color-ghost-foreground-default: #8d8d8d;
+  --button-color-ghost-foreground-hover: #838383;
+  --button-color-ghost-foreground-pressed: #646464;
+  
+  /* Spacing fallbacks */
+  --button-padding-sm-x: 0.5rem;
+  --button-padding-sm-y: 0.5rem;
+  --button-padding-md-x: 0.75rem;
+  --button-padding-md-y: 0.75rem;
+  --button-padding-lg-x: 1rem;
+  --button-padding-lg-y: 1rem;
+  
+  /* Border radius fallbacks */
+  --button-radius-sm: 4px;
+  --button-radius-md: 6px;
+  --button-radius-lg: 6px;
+  
+  /* Typography fallbacks */
+  --text-label-sm-fontSize: 0.875rem;
+  --text-label-sm-lineHeight: 1.25rem;
+  --text-label-md-fontSize: 1rem;
+  --text-label-md-lineHeight: 1.5rem;
+  --text-label-lg-fontSize: 1.125rem;
+  --text-label-lg-lineHeight: 1.75rem;
+  
+  /* Font fallbacks */
+  --alias-font-brand-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --alias-font-brand-weight-semibold: 600;
+  
+  /* Label margin fallbacks */
+  --button-label-margin-sm: 0.25rem;
+  --button-label-margin-md: 0.5rem;
+  --button-label-margin-lg: 0.75rem;
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--alias-font-brand-family);
+  margin: 0;
+  padding: 0;
+}
