@@ -29,8 +29,8 @@
     "group": "Mode",
     "selectedTokenSets": {
       "base": "enabled",
-      "themes/muka/light": "enabled",
-      "themes/wireframe/light": "enabled"
+      "themes/light/muka": "enabled",
+      "themes/light/wireframe": "enabled"
     }
   },
   {
@@ -42,8 +42,8 @@
     "group": "Mode",
     "selectedTokenSets": {
       "base": "enabled",
-      "themes/muka/dark": "enabled",
-      "themes/wireframe/dark": "enabled"
+      "themes/dark/muka": "enabled",
+      "themes/dark/wireframe": "enabled"
     }
   },
   {
@@ -55,9 +55,9 @@
     "group": "Brand",
     "selectedTokenSets": {
       "base": "enabled",
-      "themes/wireframe/base": "enabled",
-      "themes/wireframe/light": "enabled",
-      "themes/wireframe/dark": "enabled"
+      "brands/wireframe/base": "enabled",
+      "themes/light/wireframe": "enabled",
+      "themes/dark/wireframe": "enabled"
     }
   },
   {
@@ -69,9 +69,9 @@
     "group": "Brand",
     "selectedTokenSets": {
       "base": "enabled",
-      "themes/muka/base": "enabled",
-      "themes/muka/light": "enabled",
-      "themes/muka/dark": "enabled"
+      "brands/muka/base": "enabled",
+      "themes/light/muka": "enabled",
+      "themes/dark/muka": "enabled"
     }
   },
   {
@@ -83,7 +83,7 @@
     "group": "Layout",
     "selectedTokenSets": {
       "base": "enabled",
-      "themes/layout/sm": "enabled"
+      "layouts/layout/sm": "enabled"
     }
   },
   {
@@ -95,7 +95,7 @@
     "group": "Layout",
     "selectedTokenSets": {
       "base": "enabled",
-      "themes/layout/md": "enabled"
+      "layouts/layout/md": "enabled"
     }
   },
   {
@@ -107,7 +107,7 @@
     "group": "Layout",
     "selectedTokenSets": {
       "base": "enabled",
-      "themes/layout/lg": "enabled"
+      "layouts/layout/lg": "enabled"
     }
   }
 ] 

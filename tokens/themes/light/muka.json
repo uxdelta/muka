@@ -1,0 +1,184 @@
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "alias": {
+    "color": {
+      "neutral": {
+        "1": {
+          "$type": "color",
+          "$value": "{color.slate.1}"
+        },
+        "2": {
+          "$type": "color",
+          "$value": "{color.slate.3}"
+        },
+        "3": {
+          "$type": "color",
+          "$value": "{color.slate.4}"
+        },
+        "4": {
+          "$type": "color",
+          "$value": "{color.slate.5}"
+        },
+        "5": {
+          "$type": "color",
+          "$value": "{color.slate.6}"
+        },
+        "6": {
+          "$type": "color",
+          "$value": "{color.slate.7}"
+        },
+        "7": {
+          "$type": "color",
+          "$value": "{color.slate.8}"
+        },
+        "8": {
+          "$type": "color",
+          "$value": "{color.slate.9}"
+        },
+        "9": {
+          "$type": "color",
+          "$value": "{color.slate.10}"
+        },
+        "10": {
+          "$type": "color",
+          "$value": "{color.slate.11}"
+        },
+        "11": {
+          "$type": "color",
+          "$value": "{color.slate.12}"
+        },
+        "12": {
+          "$type": "color",
+          "$value": "{color.slate.12}"
+        }
+      },
+      "brand": {
+        "primary": {
+          "$type": "color",
+          "$value": "{color.indigo.11}"
+        },
+        "complementary": {
+          "$type": "color",
+          "$value": "{color.indigo.12}"
+        },
+        "default": {
+          "$type": "color",
+          "$value": "{color.indigo.9}"
+        },
+        "contrast": {
+          "$type": "color",
+          "$value": "{color.indigo.12}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.indigo.5}"
+        }
+      },
+      "accent": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.indigo.9}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.indigo.10}"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "{color.indigo.11}"
+        },
+        "contrast": {
+          "$type": "color",
+          "$value": "{color.indigo.12}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.indigo.8}"
+        },
+        "inverse": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.indigo.1}"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{color.white}"
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": "{color.indigo.2}"
+          },
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.white}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.indigo.3}"
+          }
+        }
+      },
+      "state": {
+        "success": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.jade.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.jade.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.jade.3}"
+          }
+        },
+        "warning": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.orange.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.orange.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.orange.3}"
+          }
+        },
+        "error": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.tomato.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.tomato.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.tomato.3}"
+          }
+        },
+        "info": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.indigo.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.indigo.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.indigo.3}"
+          }
+        }
+      }
+    }
+  }
+}
