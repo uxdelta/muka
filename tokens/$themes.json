@@ -3586,18 +3586,17 @@
     },
     "selectedTokenSets": {
       "themes/muka/base": "enabled",
+      "themes/muka/dark": "enabled",
       "base/alias/alias": "enabled",
       "base/component/button": "enabled",
       "base/component/input": "enabled",
       "base/primitives/color": "enabled",
       "base/primitives/font": "enabled",
+      "base/primitives/motion": "enabled",
       "base/primitives/shadow": "enabled",
       "base/primitives/size": "enabled",
-      "base/primitives/motion": "enabled",
       "base/primitives/spacing": "enabled",
-      "base/semantic/semantic": "enabled",
-      "themes/muka/dark": "enabled",
-      "base/primitives/layout": "enabled"
+      "base/semantic/semantic": "enabled"
     },
     "$figmaVariableReferences": {
       "alias.font.brand.family": "12ca2bee581e436969abf1ad3bfbcb91951bfff6",
