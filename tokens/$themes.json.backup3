@@ -1,0 +1,109 @@
+[
+  {
+    "id": "base",
+    "name": "Base",
+    "description": "Base theme with all primitives, semantics, alias and component tokens",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "group": "Base",
+    "selectedTokenSets": {
+      "base/alias/alias": "enabled",
+      "base/component/button": "enabled",
+      "base/component/input": "enabled",
+      "base/primitives/color": "enabled",
+      "base/primitives/font": "enabled",
+      "base/primitives/motion": "enabled",
+      "base/primitives/shadow": "enabled",
+      "base/primitives/size": "enabled",
+      "base/primitives/spacing": "enabled",
+      "base/primitives/layout": "enabled",
+      "base/semantic/semantic": "enabled"
+    }
+  },
+  {
+    "id": "theme-light",
+    "name": "Light",
+    "description": "Light theme mode",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "group": "Theme",
+    "selectedTokenSets": {
+      "base": "enabled",
+      "themes/muka/light": "enabled",
+      "themes/wireframe/light": "enabled"
+    }
+  },
+  {
+    "id": "theme-dark",
+    "name": "Dark",
+    "description": "Dark theme mode",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "group": "Theme",
+    "selectedTokenSets": {
+      "base": "enabled",
+      "themes/muka/dark": "enabled",
+      "themes/wireframe/dark": "enabled"
+    }
+  },
+  {
+    "id": "brand-wireframe",
+    "name": "Wireframe",
+    "description": "Wireframe brand",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "group": "Brand",
+    "selectedTokenSets": {
+      "base": "enabled",
+      "themes/wireframe/base": "enabled"
+    }
+  },
+  {
+    "id": "brand-muka",
+    "name": "Muka",
+    "description": "Muka brand",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "group": "Brand",
+    "selectedTokenSets": {
+      "base": "enabled",
+      "themes/muka/base": "enabled"
+    }
+  },
+  {
+    "id": "layout-small",
+    "name": "Small",
+    "description": "Mobile layout",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "group": "Layout",
+    "selectedTokenSets": {
+      "base": "enabled",
+      "themes/layout/sm": "enabled"
+    }
+  },
+  {
+    "id": "layout-medium",
+    "name": "Medium",
+    "description": "Tablet layout",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "group": "Layout",
+    "selectedTokenSets": {
+      "base": "enabled",
+      "themes/layout/md": "enabled"
+    }
+  },
+  {
+    "id": "layout-large",
+    "name": "Large",
+    "description": "Desktop layout",
+    "version": "1.0.0",
+    "author": "Design System Team",
+    "group": "Layout",
+    "selectedTokenSets": {
+      "base": "enabled",
+      "themes/layout/lg": "enabled"
+    }
+  }
+]
