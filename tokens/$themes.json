@@ -1,7 +1,7 @@
 [
   {
     "id": "93e00ce49e8f3a3f49012a5c5eb26a1f766a0ca6",
-    "name": "Whitelabel Light",
+    "name": "Wireframe Light",
     "description": "Base theme with default styling",
     "version": "1.0.0",
     "author": "Design System Team",
@@ -181,8 +181,8 @@
       "text.label.lg.bold": "S:761acc6326a645b4a4c16f459432defcb7e6b047,"
     },
     "selectedTokenSets": {
-      "themes/whitelabel/base": "enabled",
-      "themes/whitelabel/light": "enabled",
+      "themes/wireframe/base": "enabled",
+      "themes/wireframe/light": "enabled",
       "base/alias/alias": "enabled",
       "base/component/button": "enabled",
       "base/component/input": "enabled",
@@ -1257,14 +1257,14 @@
   },
   {
     "id": "f782340747e37b6984ddef24436f582e0aac4b5f",
-    "name": "Whitelabel Dark",
-    "description": "Light mode theme",
+    "name": "Wireframe Dark",
+    "description": "Dark mode theme",
     "version": "1.0.0",
     "author": "Design System Team",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "themes/whitelabel/base": "enabled",
-      "themes/whitelabel/dark": "enabled",
+      "themes/wireframe/base": "enabled",
+      "themes/wireframe/dark": "enabled",
       "base/alias/alias": "enabled",
       "base/component/button": "enabled",
       "base/component/input": "enabled",
