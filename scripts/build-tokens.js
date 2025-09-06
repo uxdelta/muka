@@ -24,10 +24,7 @@ class TokenBuilder {
       'base/alias/alias.json',
       'base/semantic/semantic.json',
       'base/component/button.json',
-      'base/component/input.json',
-      // Brand tokens loaded AFTER base tokens to allow overrides
-      'brands/muka/base.json',
-      'brands/wireframe/base.json'
+      'base/component/input.json'
     ];
 
     console.log('🏗️  Loading design tokens...');
@@ -131,7 +128,17 @@ class TokenBuilder {
       
       if (value && typeof value === 'object' && value.$value) {
         // This is a token with a value
-        callback(cssName, value.$value);
+        if (value.$type === 'typography' && typeof value.$value === 'object') {
+          // Handle typography tokens specially - flatten the object
+          for (const [prop, propValue] of Object.entries(value.$value)) {
+            const resolvedPropValue = this.resolveTokenValue(propValue);
+            callback(`${cssName}-${prop}`, resolvedPropValue);
+          }
+        } else {
+          // Regular token with simple value
+          const resolvedValue = this.resolveTokenValue(value.$value);
+          callback(cssName, resolvedValue);
+        }
       } else if (value && typeof value === 'object') {
         // This is a nested object, recurse
         this.processTokensForCSS(value, cssName, callback);

@@ -69,12 +69,43 @@
           }
         }
       },
-      "script": {
-        "family": {
-          "$type": "fontFamilies",
-          "$value": "Times New Roman"
+    "script": {
+      "family": {
+        "$type": "fontFamilies",
+        "$value": "Times New Roman"
+      }
+    }
+  },
+  "button": {
+    "typography": {
+      "sm": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{alias.font.brand.family}",
+          "fontWeight": "{alias.font.brand.weight.semibold}",
+          "fontSize": "{font.size.sm}",
+          "lineHeight": "{font.size.sm}"
+        }
+      },
+      "md": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{alias.font.brand.family}",
+          "fontWeight": "{alias.font.brand.weight.semibold}",
+          "fontSize": "{font.size.md}",
+          "lineHeight": "{font.size.md}"
+        }
+      },
+      "lg": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{alias.font.brand.family}",
+          "fontWeight": "{alias.font.brand.weight.semibold}",
+          "fontSize": "{font.size.lg}",
+          "lineHeight": "{font.size.lg}"
         }
       }
     }
   }
+}
 }
