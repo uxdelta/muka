@@ -78,7 +78,7 @@
   },
   "alias": {
     "color": {
-    "brand": {
+      "brand": {
       "primary": {
         "$type": "color",
         "$value": "{color.indigo.11}"
@@ -176,6 +176,6 @@
       }
     }
   }
+    }
   }
-}
 }
