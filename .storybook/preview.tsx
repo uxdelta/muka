@@ -2,6 +2,12 @@ import type { Preview } from '@storybook/react-vite';
 import React, { useEffect } from 'react';
 import '../styles/base.css';
 import '../styles/tokens.css';
+
+// Load Google Fonts for brand fonts
+const link = document.createElement('link');
+link.href = 'https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600;700&family=Funnel+Sans:wght@400;500;600;700&display=swap';
+link.rel = 'stylesheet';
+document.head.appendChild(link);
 // Import all theme combinations
 import '../styles/tokens-muka-light.css';
 import '../styles/tokens-muka-dark.css';
