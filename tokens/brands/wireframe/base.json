@@ -79,10 +79,10 @@
   "alias": {
     "color": {
       "brand": {
-      "primary": {
-        "$type": "color",
-        "$value": "{color.slate.11}"
-      },
+       "primary": {
+         "$type": "color",
+         "$value": "{color.gray.12}"
+       },
       "complementary": {
         "$type": "color",
         "$value": "{color.slate.12}"
