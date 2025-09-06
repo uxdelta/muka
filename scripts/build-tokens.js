@@ -22,6 +22,9 @@ class TokenBuilder {
       'base/primitives/motion.json',
       'base/primitives/layout.json',
       'base/alias/alias.json',
+      // Brand base tokens override alias layer
+      'brands/muka/base.json',
+      'brands/wireframe/base.json',
       'base/semantic/semantic.json',
       'base/component/button.json',
       'base/component/input.json'
@@ -215,17 +218,10 @@ class TokenBuilder {
 
   // Load theme-specific token overrides
   loadThemeTokens(brand, theme) {
-    // Start with base tokens (deep copy)
+    // Start with base tokens (deep copy) - brand base tokens already included
     let themeTokens = JSON.parse(JSON.stringify(this.tokens));
     
-    // Apply brand base overrides
-    const brandBasePath = path.join(__dirname, '../tokens/brands', brand, 'base.json');
-    if (fs.existsSync(brandBasePath)) {
-      const brandOverrides = JSON.parse(fs.readFileSync(brandBasePath, 'utf8'));
-      this.deepMergeTheme(themeTokens, brandOverrides);
-    }
-    
-    // Apply theme-specific overrides
+    // Apply theme-specific overrides only
     const themePath = path.join(__dirname, '../tokens/brands', brand, `${theme}.json`);
     if (fs.existsSync(themePath)) {
       const themeOverrides = JSON.parse(fs.readFileSync(themePath, 'utf8'));
