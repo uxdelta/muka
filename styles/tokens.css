@@ -997,11 +997,6 @@
   --alias-color-state-info-contrast: #0d74ce;
   --alias-color-state-info-default: #0091ff;
   --alias-color-state-info-muted: #edf6ff;
-  --alias-font-brand-family: Arial;
-  --alias-font-brand-weight-regular: 400;
-  --alias-font-brand-weight-medium: 500;
-  --alias-font-brand-weight-semibold: 600;
-  --alias-font-brand-weight-bold: 700;
   --alias-font-plain-family: Arial;
   --alias-font-plain-weight-regular: 400;
   --alias-font-plain-weight-medium: 500;
@@ -1084,6 +1079,9 @@
   --button-label-margin-sm: 0.25rem;
   --button-label-margin-md: 0.5rem;
   --button-label-margin-lg: 0.75rem;
+  --button-typography-sm: [object Object];
+  --button-typography-md: [object Object];
+  --button-typography-lg: [object Object];
   --input-field-color-default-background: #fcfcfc;
   --input-field-color-default-foreground: #202020;
   --input-field-color-default-border: #e0e0e0;
