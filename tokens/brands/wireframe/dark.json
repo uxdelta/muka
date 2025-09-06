@@ -180,5 +180,25 @@
         }
       }
     }
+  },
+  "color": {
+    "action": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.slate.9}"
+      }
+    }
+  },
+  "button": {
+    "color": {
+      "primary": {
+        "background": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.slate.9}"
+          }
+        }
+      }
+    }
   }
 }

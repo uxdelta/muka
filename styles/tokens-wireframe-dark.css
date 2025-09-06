@@ -795,7 +795,7 @@
   --color-border-default: #e0e0e0;
   --color-border-muted: #e0e0e0;
   --color-border-focus: #8d8d8d;
-  --color-action-default: #646464;
+  --color-action-default: #8b8d98;
   --color-action-hover: #8d8d8d;
   --color-action-pressed: #202020;
   --color-action-muted: #bbbbbb;
@@ -1190,7 +1190,7 @@
   --text-input-lg-fontWeight: 400;
   --text-input-lg-fontSize: 1.125rem;
   --text-input-lg-lineHeight: 1.125rem;
-  --button-color-primary-background-default: #646464;
+  --button-color-primary-background-default: #8b8d98;
   --button-color-primary-background-hover: #8d8d8d;
   --button-color-primary-background-pressed: #202020;
   --button-color-primary-background-muted: #bbbbbb;
