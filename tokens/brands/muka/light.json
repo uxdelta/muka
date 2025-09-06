@@ -188,5 +188,17 @@
         "$value": "{color.indigo.11}"
       }
     }
+  },
+  "button": {
+    "color": {
+      "primary": {
+        "background": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.indigo.11}"
+          }
+        }
+      }
+    }
   }
 }

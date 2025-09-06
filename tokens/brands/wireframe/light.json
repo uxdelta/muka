@@ -206,5 +206,17 @@
         "$value": "{color.gray.12}"
       }
     }
+  },
+  "button": {
+    "color": {
+      "primary": {
+        "background": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.gray.12}"
+          }
+        }
+      }
+    }
   }
 }
