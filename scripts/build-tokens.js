@@ -21,7 +21,6 @@ class TokenBuilder {
       'base/primitives/shadow.json',
       'base/primitives/motion.json',
       'base/primitives/layout.json',
-      'base/alias/alias.json',
       'base/semantic/semantic.json',
       'base/component/button.json',
       'base/component/input.json'
@@ -218,15 +217,7 @@ class TokenBuilder {
     // Start with base tokens (deep copy)
     let themeTokens = JSON.parse(JSON.stringify(this.tokens));
     
-    // Apply brand base overrides first
-    const brandBasePath = path.join(__dirname, '../tokens/brands', brand, 'base.json');
-    if (fs.existsSync(brandBasePath)) {
-      const brandOverrides = JSON.parse(fs.readFileSync(brandBasePath, 'utf8'));
-      this.deepMergeTheme(themeTokens, brandOverrides);
-    }
-    
-    // Re-resolve all token references after brand base overrides
-    this.resolveTokenReferences(themeTokens);
+    // Note: Brand base files removed - using direct theme overrides only
     
     // Apply theme-specific overrides
     const themePath = path.join(__dirname, '../tokens/brands', brand, `${theme}.json`);
