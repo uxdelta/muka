@@ -225,6 +225,9 @@ class TokenBuilder {
       this.deepMergeTheme(themeTokens, brandOverrides);
     }
     
+    // Re-resolve all token references after brand base overrides
+    this.resolveTokenReferences(themeTokens);
+    
     // Apply theme-specific overrides
     const themePath = path.join(__dirname, '../tokens/brands', brand, `${theme}.json`);
     if (fs.existsSync(themePath)) {
@@ -235,6 +238,51 @@ class TokenBuilder {
     return themeTokens;
   }
 
+  // Utility to get nested object value by path
+  getNestedValue(obj, path) {
+    return path.split('.').reduce((current, key) => {
+      return current && current[key];
+    }, obj);
+  }
+  
+  // Re-resolve token references after brand overrides
+  resolveTokenReferences(tokens) {
+    const resolveValue = (value, context = tokens) => {
+      if (typeof value !== 'string') return value;
+      
+      const match = value.match(/^\{([^}]+)\}$/);
+      if (!match) return value;
+      
+      const path = match[1];
+      const resolvedValue = this.getNestedValue(context, path);
+      
+      if (resolvedValue && typeof resolvedValue === 'object' && resolvedValue.$value) {
+        return resolveValue(resolvedValue.$value, context);
+      }
+      
+      return resolvedValue || value;
+    };
+    
+    const processObject = (obj) => {
+      if (typeof obj !== 'object' || obj === null) return obj;
+      
+      if (obj.$value) {
+        obj.$value = resolveValue(obj.$value);
+        return obj;
+      }
+      
+      for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          obj[key] = processObject(obj[key]);
+        }
+      }
+      
+      return obj;
+    };
+    
+    processObject(tokens);
+  }
+  
   // Deep merge utility for theme tokens
   deepMergeTheme(target, source) {
     for (const key in source) {
