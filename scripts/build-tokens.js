@@ -218,10 +218,10 @@ class TokenBuilder {
 
   // Load theme-specific token overrides
   loadThemeTokens(brand, theme) {
-    // Start with base tokens (deep copy) - brand base tokens already included
+    // Start with base tokens (deep copy)
     let themeTokens = JSON.parse(JSON.stringify(this.tokens));
     
-    // Apply theme-specific overrides only
+    // Apply theme-specific overrides
     const themePath = path.join(__dirname, '../tokens/brands', brand, `${theme}.json`);
     if (fs.existsSync(themePath)) {
       const themeOverrides = JSON.parse(fs.readFileSync(themePath, 'utf8'));
