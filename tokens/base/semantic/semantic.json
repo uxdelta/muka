@@ -117,15 +117,15 @@
     "action": {
       "default": {
         "$type": "color",
-        "$value": "{alias.color.brand.primary}"
+        "$value": "{color.indigo.11}"
       },
       "hover": {
         "$type": "color",
-        "$value": "{alias.color.brand.default}"
+        "$value": "{color.indigo.10}"
       },
       "pressed": {
         "$type": "color",
-        "$value": "{alias.color.brand.contrast}"
+        "$value": "{color.indigo.12}"
       },
       "muted": {
         "$type": "color",

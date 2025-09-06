@@ -226,7 +226,23 @@ class TokenBuilder {
     }
     
     // Re-resolve all token references after brand base overrides
+    console.log(`\n🔧 Debugging ${brand}-${theme} token resolution:`);
+    
+    // Check what alias.color.brand.primary resolves to before re-resolution
+    const beforeBrandPrimary = this.getNestedValue(themeTokens, 'alias.color.brand.primary');
+    console.log('  Before re-resolution - alias.color.brand.primary:', beforeBrandPrimary);
+    
+    // Check what color.action.default references
+    const actionDefault = this.getNestedValue(themeTokens, 'color.action.default');
+    console.log('  color.action.default definition:', actionDefault);
+    
     this.resolveTokenReferences(themeTokens);
+    
+    // Check after re-resolution
+    const afterBrandPrimary = this.getNestedValue(themeTokens, 'alias.color.brand.primary');
+    const afterActionDefault = this.getNestedValue(themeTokens, 'color.action.default');
+    console.log('  After re-resolution - alias.color.brand.primary:', afterBrandPrimary);
+    console.log('  After re-resolution - color.action.default:', afterActionDefault);
     
     // Apply theme-specific overrides
     const themePath = path.join(__dirname, '../tokens/brands', brand, `${theme}.json`);

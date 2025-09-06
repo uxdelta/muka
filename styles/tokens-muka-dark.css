@@ -795,9 +795,9 @@
   --color-border-default: #e0e0e0;
   --color-border-muted: #e0e0e0;
   --color-border-focus: #8d8d8d;
-  --color-action-default: #646464;
-  --color-action-hover: #8d8d8d;
-  --color-action-pressed: #202020;
+  --color-action-default: #3a5ccc;
+  --color-action-hover: #3358d4;
+  --color-action-pressed: #1f2d5c;
   --color-action-muted: #bbbbbb;
   --color-action-inverse-default: #fcfcfc;
   --color-action-inverse-hover: #ffffff;
@@ -1190,9 +1190,9 @@
   --text-input-lg-fontWeight: 400;
   --text-input-lg-fontSize: 1.125rem;
   --text-input-lg-lineHeight: 1.125rem;
-  --button-color-primary-background-default: #646464;
-  --button-color-primary-background-hover: #8d8d8d;
-  --button-color-primary-background-pressed: #202020;
+  --button-color-primary-background-default: #3a5ccc;
+  --button-color-primary-background-hover: #3358d4;
+  --button-color-primary-background-pressed: #1f2d5c;
   --button-color-primary-background-muted: #bbbbbb;
   --button-color-primary-foreground-default: #fcfcfc;
   --button-color-primary-foreground-hover: #ffffff;
@@ -1207,9 +1207,9 @@
   --button-color-ghost-background-default: #fcfcfc;
   --button-color-ghost-background-hover: #fcfcfc;
   --button-color-ghost-background-pressed: #f0f0f0;
-  --button-color-ghost-foreground-default: #646464;
-  --button-color-ghost-foreground-hover: #8d8d8d;
-  --button-color-ghost-foreground-pressed: #202020;
+  --button-color-ghost-foreground-default: #3a5ccc;
+  --button-color-ghost-foreground-hover: #3358d4;
+  --button-color-ghost-foreground-pressed: #1f2d5c;
   --button-radius-sm: 0.5rem;
   --button-radius-md: 0.75rem;
   --button-radius-lg: 0.75rem;
@@ -1230,7 +1230,7 @@
   --input-field-color-hover-border: #cecece;
   --input-field-color-focus-background: #fcfcfc;
   --input-field-color-focus-foreground: #202020;
-  --input-field-color-focus-border: #646464;
+  --input-field-color-focus-border: #3a5ccc;
   --input-field-color-error-background: #fcfcfc;
   --input-field-color-error-foreground: #202020;
   --input-field-color-error-border: #cd2b31;
@@ -1255,7 +1255,7 @@
   --input-control-height-default: 1.5rem;
   --input-control-height-lg: 2rem;
   --input-control-color-default-background: #fcfcfc;
-  --input-control-color-default-foreground: #646464;
+  --input-control-color-default-foreground: #3a5ccc;
   --input-control-color-default-border: #e0e0e0;
   --input-control-color-disabled-background: #e8e8e8;
   --input-control-color-disabled-foreground: #e0e0e0;
