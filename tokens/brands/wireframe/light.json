@@ -198,5 +198,13 @@
         }
       }
     }
+  },
+  "color": {
+    "action": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.gray.12}"
+      }
+    }
   }
 }

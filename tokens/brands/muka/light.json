@@ -180,5 +180,13 @@
         }
       }
     }
+  },
+  "color": {
+    "action": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.indigo.11}"
+      }
+    }
   }
 }
