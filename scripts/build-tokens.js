@@ -24,7 +24,10 @@ class TokenBuilder {
       'base/alias/alias.json',
       'base/semantic/semantic.json',
       'base/component/button.json',
-      'base/component/input.json'
+      'base/component/input.json',
+      // Brand tokens loaded AFTER base tokens to allow overrides
+      'brands/muka/base.json',
+      'brands/wireframe/base.json'
     ];
 
     console.log('🏗️  Loading design tokens...');
@@ -209,14 +212,14 @@ class TokenBuilder {
     let themeTokens = JSON.parse(JSON.stringify(this.tokens));
     
     // Apply brand base overrides
-    const brandBasePath = path.join(__dirname, '../tokens/themes', brand, 'base.json');
+    const brandBasePath = path.join(__dirname, '../tokens/brands', brand, 'base.json');
     if (fs.existsSync(brandBasePath)) {
       const brandOverrides = JSON.parse(fs.readFileSync(brandBasePath, 'utf8'));
       this.deepMergeTheme(themeTokens, brandOverrides);
     }
     
     // Apply theme-specific overrides
-    const themePath = path.join(__dirname, '../tokens/themes', brand, `${theme}.json`);
+    const themePath = path.join(__dirname, '../tokens/brands', brand, `${theme}.json`);
     if (fs.existsSync(themePath)) {
       const themeOverrides = JSON.parse(fs.readFileSync(themePath, 'utf8'));
       this.deepMergeTheme(themeTokens, themeOverrides);
