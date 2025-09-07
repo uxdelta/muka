@@ -105,7 +105,7 @@ npm run setup:automation
 3. Check "Deploy Storybook" runs
 
 ### View Live Storybook
-- URL: `https://your-username.github.io/your-repo-name/`
+- URL: `https://uxdelta.github.io/muka/`
 - Updates automatically when tokens change
 
 ### Debug Logs

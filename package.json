@@ -24,6 +24,8 @@
     "lint": "eslint . --ext .ts,.tsx",
     "validate:tokens": "node scripts/validate-tokens.js",
     "setup:automation": "node scripts/setup-automation.js",
+    "disable:automation": "node scripts/disable-automation.js",
+    "enable:automation": "node scripts/enable-automation.js",
     "postinstall": "husky install"
   },
   "keywords": [
