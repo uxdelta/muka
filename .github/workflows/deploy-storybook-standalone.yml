@@ -1,4 +1,4 @@
-name: Deploy Storybook
+name: Deploy Storybook (Standalone)
 
 on:
   push:
@@ -10,18 +10,19 @@ on:
       - '.storybook/**'
       - 'package.json'
       - 'package-lock.json'
-  workflow_run:
-    workflows: ["Build Design Tokens"]
-    types: [completed]
+      - 'tokens/**'
+  workflow_dispatch: # Allow manual triggering
 
 jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     permissions:
       contents: read
       pages: write
       id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     
     steps:
     - name: Checkout code
@@ -35,6 +36,9 @@ jobs:
         
     - name: Install dependencies
       run: npm ci
+      
+    - name: Build design tokens
+      run: npm run build:tokens
       
     - name: Build Storybook
       run: npm run build-storybook
