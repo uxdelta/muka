@@ -26,11 +26,20 @@ npm run storybook
 # 2. Edit tokens (if needed)
 # Edit files in tokens/ directory
 
-# 3. Rebuild tokens
-node scripts/build-tokens.js
+# 3. Tokens are automatically rebuilt on commit/push! 🎉
+# No manual rebuild needed - automation handles it
 
 # 4. Export to Figma (optional)
 node scripts/export-for-figma.js
+```
+
+### 3. Setup Automation (One-time)
+```bash
+# Install automation dependencies
+npm install --save-dev husky
+
+# Setup automation
+npm run setup:automation
 ```
 
 ## 🎨 Design System Architecture
@@ -252,14 +261,27 @@ touch components/NewComponent/README.md
 # Document token usage
 ```
 
-### 2. Token Updates
+### 2. Token Updates (Automated! 🎉)
 ```bash
-# Edit token files
-# Rebuild CSS
+# Edit token files in tokens/ directory
+# Commit changes - tokens are automatically rebuilt!
+git add .
+git commit -m "Update brand colors"
+git push
+
+# ✅ GitHub Actions automatically:
+# - Rebuilds CSS files
+# - Updates Storybook
+# - Deploys changes
+```
+
+### 3. Manual Token Rebuild (if needed)
+```bash
+# Only needed for local testing
 node scripts/build-tokens.js
 
 # Test in Storybook
-# Verify brand/theme compatibility
+npm run storybook
 ```
 
 ### 3. Documentation
@@ -268,6 +290,78 @@ node scripts/build-tokens.js
 # Add AI-friendly examples
 # Document token relationships
 # Include copy-paste code
+```
+
+## 🤖 Automation Setup
+
+### Automatic Token Building
+
+Your design system now includes **automatic token building** that eliminates manual rebuilds:
+
+#### What's Automated
+- ✅ **Token changes** → CSS files rebuilt automatically
+- ✅ **Push to main** → Storybook deployed automatically  
+- ✅ **Pre-commit hooks** → Local token validation
+- ✅ **Pull requests** → Automatic token rebuilds
+
+#### How It Works
+
+**1. GitHub Actions** (`.github/workflows/build-tokens.yml`)
+```yaml
+# Triggers on:
+- Push to main branch
+- Changes to tokens/ directory
+- Changes to build/manifest.json
+- Changes to scripts/build-tokens.js
+
+# Automatically:
+- Installs dependencies
+- Rebuilds CSS files
+- Commits updated styles/
+- Comments on PRs
+```
+
+**2. Pre-commit Hooks** (`.husky/pre-commit`)
+```bash
+# Runs before every commit:
+- Detects token file changes
+- Rebuilds CSS locally
+- Stages updated files
+- Ensures consistency
+```
+
+**3. Storybook Deployment** (`.github/workflows/deploy-storybook.yml`)
+```yaml
+# Triggers when:
+- CSS files change
+- Components change
+- Storybook config changes
+
+# Automatically:
+- Builds Storybook
+- Deploys to GitHub Pages
+- Updates live documentation
+```
+
+#### Setup Commands
+```bash
+# One-time setup
+npm install --save-dev husky
+npm run setup:automation
+
+# Verify setup
+git add .
+git commit -m "test automation"
+# Check GitHub Actions tab for workflow runs
+```
+
+#### Manual Override
+```bash
+# If you need to rebuild manually
+node scripts/build-tokens.js
+
+# If automation fails
+npm run setup:automation
 ```
 
 ## 🧪 Testing Strategy

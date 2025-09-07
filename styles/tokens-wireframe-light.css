@@ -914,7 +914,7 @@
   --color-border-muted: #e0e0e0;
   --color-border-focus: #8d8d8d;
   --color-action-default: #646464;
-  --color-action-hover: #8d8d8d;
+  --color-action-hover: #838383;
   --color-action-pressed: #202020;
   --color-action-muted: #bbbbbb;
   --color-action-inverse-default: #fcfcfc;
@@ -1176,7 +1176,7 @@
   --icon-size-default: 1.5rem;
   --icon-size-lg: 2rem;
   --button-color-primary-background-default: #646464;
-  --button-color-primary-background-hover: #8d8d8d;
+  --button-color-primary-background-hover: #838383;
   --button-color-primary-background-pressed: #202020;
   --button-color-primary-background-muted: #bbbbbb;
   --button-color-primary-foreground-default: #fcfcfc;
@@ -1193,7 +1193,7 @@
   --button-color-ghost-background-hover: #fcfcfc;
   --button-color-ghost-background-pressed: #f0f0f0;
   --button-color-ghost-foreground-default: #646464;
-  --button-color-ghost-foreground-hover: #8d8d8d;
+  --button-color-ghost-foreground-hover: #838383;
   --button-color-ghost-foreground-pressed: #202020;
   --button-radius-sm: 0.5rem;
   --button-radius-md: 0.75rem;

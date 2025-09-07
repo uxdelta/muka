@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Auto-build tokens when token files change
+echo "🎨 Checking for token changes..."
+
+# Check if any token files have changed
+if git diff --cached --name-only | grep -E '^(tokens/|build/manifest\.json)$'; then
+  echo "📦 Token files changed, rebuilding CSS..."
+  
+  # Build tokens
+  node scripts/build-tokens.js
+  
+  # Add the generated CSS files to the commit
+  git add styles/
+  
+  echo "✅ Tokens rebuilt and CSS files staged"
+else
+  echo "ℹ️ No token files changed, skipping rebuild"
+fi

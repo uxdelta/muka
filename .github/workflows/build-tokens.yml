@@ -1,0 +1,98 @@
+name: Build Design Tokens
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'tokens/**'
+      - 'build/manifest.json'
+      - 'scripts/build-tokens.js'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'tokens/**'
+      - 'build/manifest.json'
+      - 'scripts/build-tokens.js'
+
+jobs:
+  build-tokens:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build design tokens
+      run: node scripts/build-tokens.js
+      
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        if [ -n "$(git status --porcelain styles/)" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+          echo "Files changed in styles/ directory"
+          git status --porcelain styles/
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+          echo "No changes in styles/ directory"
+        fi
+        
+    - name: Commit and push changes
+      if: steps.verify-changed-files.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add styles/
+        git commit -m "🤖 Auto-build: Update design tokens CSS files
+        
+        - Rebuilt CSS files from latest token changes
+        - Generated theme-specific stylesheets
+        - Updated Storybook-ready token files
+        
+        Triggered by: ${{ github.event.head_commit.message }}"
+        git push
+        
+    - name: Comment on PR
+      if: github.event_name == 'pull_request' && steps.verify-changed-files.outputs.changed == 'true'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: '🎨 **Design tokens have been automatically rebuilt!**\n\n' +
+                  'The CSS files in the `styles/` directory have been updated with your latest token changes.\n\n' +
+                  '✅ Storybook will now reflect your updated design tokens\n' +
+                  '✅ All theme combinations have been regenerated\n' +
+                  '✅ Ready for deployment'
+          })
+          
+    - name: Summary
+      if: always()
+      run: |
+        echo "## 🎨 Design Token Build Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        if [ "${{ steps.verify-changed-files.outputs.changed }}" == "true" ]; then
+          echo "✅ **Status:** Tokens successfully rebuilt and committed" >> $GITHUB_STEP_SUMMARY
+          echo "📁 **Files updated:** styles/ directory" >> $GITHUB_STEP_SUMMARY
+          echo "🚀 **Next:** Storybook will reflect the new tokens" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "ℹ️ **Status:** No changes detected in styles/ directory" >> $GITHUB_STEP_SUMMARY
+          echo "💡 **Note:** Token changes may not have affected CSS output" >> $GITHUB_STEP_SUMMARY
+        fi

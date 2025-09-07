@@ -22,7 +22,9 @@
     "build-storybook": "storybook build",
     "test": "jest",
     "lint": "eslint . --ext .ts,.tsx",
-    "validate:tokens": "node scripts/validate-tokens.js"
+    "validate:tokens": "node scripts/validate-tokens.js",
+    "setup:automation": "node scripts/setup-automation.js",
+    "postinstall": "husky install"
   },
   "keywords": [
     "design-system",
