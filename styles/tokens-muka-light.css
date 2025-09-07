@@ -913,9 +913,9 @@
   --color-border-default: #e0e1e6;
   --color-border-muted: #e0e1e6;
   --color-border-focus: #3e63dd;
-  --color-action-default: #646464;
-  --color-action-hover: #838383;
-  --color-action-pressed: #202020;
+  --color-action-default: #3a5ccc;
+  --color-action-hover: #3e63dd;
+  --color-action-pressed: #1f2d5c;
   --color-action-muted: #8da4ef;
   --color-action-inverse-default: #fdfdfe;
   --color-action-inverse-hover: #ffffff;
@@ -1138,7 +1138,7 @@
   --input-field-color-hover-border: #cecfd6;
   --input-field-color-focus-background: #fcfcfd;
   --input-field-color-focus-foreground: #1c2024;
-  --input-field-color-focus-border: #646464;
+  --input-field-color-focus-border: #3a5ccc;
   --input-field-color-error-background: #fcfcfd;
   --input-field-color-error-foreground: #1c2024;
   --input-field-color-error-border: #cd2b31;
@@ -1163,7 +1163,7 @@
   --input-control-height-default: 1.5rem;
   --input-control-height-lg: 2rem;
   --input-control-color-default-background: #fcfcfd;
-  --input-control-color-default-foreground: #646464;
+  --input-control-color-default-foreground: #3a5ccc;
   --input-control-color-default-border: #e0e1e6;
   --input-control-color-disabled-background: #e8e8ec;
   --input-control-color-disabled-foreground: #e0e1e6;
@@ -1175,9 +1175,9 @@
   --icon-size-sm: 1.25rem;
   --icon-size-default: 1.5rem;
   --icon-size-lg: 2rem;
-  --button-color-primary-background-default: #646464;
-  --button-color-primary-background-hover: #838383;
-  --button-color-primary-background-pressed: #202020;
+  --button-color-primary-background-default: #3a5ccc;
+  --button-color-primary-background-hover: #3e63dd;
+  --button-color-primary-background-pressed: #1f2d5c;
   --button-color-primary-background-muted: #8da4ef;
   --button-color-primary-foreground-default: #fdfdfe;
   --button-color-primary-foreground-hover: #ffffff;
@@ -1192,9 +1192,9 @@
   --button-color-ghost-background-default: #fcfcfd;
   --button-color-ghost-background-hover: #fcfcfd;
   --button-color-ghost-background-pressed: #f0f0f3;
-  --button-color-ghost-foreground-default: #646464;
-  --button-color-ghost-foreground-hover: #838383;
-  --button-color-ghost-foreground-pressed: #202020;
+  --button-color-ghost-foreground-default: #3a5ccc;
+  --button-color-ghost-foreground-hover: #3e63dd;
+  --button-color-ghost-foreground-pressed: #1f2d5c;
   --button-radius-sm: 0.5rem;
   --button-radius-md: 0.75rem;
   --button-radius-lg: 0.75rem;
