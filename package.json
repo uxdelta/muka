@@ -55,10 +55,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/muka-design-system.git"
+    "url": "https://github.com/uxdelta/muka.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/muka-design-system/issues"
+    "url": "https://github.com/uxdelta/muka/issues"
   },
-  "homepage": "https://github.com/your-org/muka-design-system#readme"
+  "homepage": "https://github.com/uxdelta/muka#readme"
 }
