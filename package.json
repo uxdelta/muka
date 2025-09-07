@@ -26,6 +26,7 @@
     "setup:automation": "node scripts/setup-automation.js",
     "disable:automation": "node scripts/disable-automation.js",
     "enable:automation": "node scripts/enable-automation.js",
+    "check:automation": "node scripts/check-automation-status.js",
     "postinstall": "husky install"
   },
   "keywords": [
