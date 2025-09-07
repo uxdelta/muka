@@ -62,36 +62,6 @@
           "muted": { "$type": "color", "$value": "{color.blue.3}" }
         }
       }
-    },
-    "font": {
-      "plain": {
-        "family": { "$type": "fontFamilies", "$value": "Arial" },
-        "weight": {
-          "regular": { "$type": "fontWeights", "$value": "400" },
-          "medium": { "$type": "fontWeights", "$value": "500" },
-          "semibold": { "$type": "fontWeights", "$value": "600" },
-          "bold": { "$type": "fontWeights", "$value": "700" }
-        }
-      },
-      "mono": {
-        "family": { "$type": "fontFamilies", "$value": "Courier New" },
-        "weight": {
-          "regular": { "$type": "fontWeights", "$value": "Regular" },
-          "bold": { "$type": "fontWeights", "$value": "Bold" }
-        }
-      },
-      "script": {
-        "family": { "$type": "fontFamilies", "$value": "Times New Roman" }
-      },
-      "brand": {
-        "family": { "$type": "fontFamilies", "$value": "Arial" },
-        "weight": {
-          "regular": { "$type": "fontWeights", "$value": "400" },
-          "medium": { "$type": "fontWeights", "$value": "500" },
-          "semibold": { "$type": "fontWeights", "$value": "600" },
-          "bold": { "$type": "fontWeights", "$value": "700" }
-        }
-      }
     }
   }
 }

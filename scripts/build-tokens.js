@@ -1,51 +1,44 @@
 const fs = require('fs');
 const path = require('path');
+const glob = require('glob');
 
 /**
- * Simple token-to-CSS converter for Storybook preview
- * Converts your JSON design tokens to CSS custom properties
+ * Token builder that uses the manifest.json to build themes correctly
  */
 class TokenBuilder {
   constructor() {
+    this.manifest = null;
     this.tokens = {};
-    this.resolvedTokens = {};
   }
 
-  // Load all token files in the correct order
-  loadTokens() {
-    const tokenOrder = [
-      'base/primitives/color.json',
-      'base/primitives/font.json',
-      'base/primitives/spacing.json',
-      'base/primitives/size.json',
-      'base/primitives/shadow.json',
-      'base/primitives/motion.json',
-      'base/primitives/layout.json',
-      'base/alias/alias.json',
-      'base/semantic/semantic.json',
-      'base/component/button.json',
-      'base/component/input.json'
-    ];
+  // Load manifest configuration
+  loadManifest() {
+    const manifestPath = path.join(__dirname, '../build/manifest.json');
+    this.manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    console.log('📋 Loaded manifest configuration');
+  }
 
-    console.log('🏗️  Loading design tokens...');
+  // Load and merge tokens from file patterns
+  loadTokensFromPattern(pattern) {
+    const tokensDir = path.join(__dirname, '../tokens');
+    const fullPattern = path.join(__dirname, '..', pattern);
     
-    tokenOrder.forEach(tokenPath => {
-      const fullPath = path.join(__dirname, '../tokens', tokenPath);
-      if (fs.existsSync(fullPath)) {
-        const tokenData = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
-        this.mergeTokens(tokenData);
-        console.log(`   ✅ Loaded ${tokenPath}`);
-      } else {
-        console.log(`   ⚠️  Missing ${tokenPath}`);
+    const files = glob.sync(fullPattern);
+    let mergedTokens = {};
+    
+    files.forEach(file => {
+      try {
+        const tokenData = JSON.parse(fs.readFileSync(file, 'utf8'));
+        this.deepMerge(mergedTokens, tokenData);
+        console.log(`   ✅ Loaded ${path.relative(tokensDir, file)}`);
+      } catch (error) {
+        console.log(`   ⚠️  Error loading ${path.relative(tokensDir, file)}: ${error.message}`);
       }
     });
+    return mergedTokens;
   }
 
-  // Merge token objects
-  mergeTokens(newTokens) {
-    this.deepMerge(this.tokens, newTokens);
-  }
-
+  // Deep merge utility
   deepMerge(target, source) {
     for (const key in source) {
       if (key.startsWith('$')) continue; // Skip metadata
@@ -60,7 +53,7 @@ class TokenBuilder {
   }
 
   // Resolve token references like {color.gray.9}
-  resolveTokenValue(value, visited = new Set()) {
+  resolveTokenValue(value, tokens, visited = new Set()) {
     if (typeof value !== 'string' || !value.includes('{')) {
       return value;
     }
@@ -78,25 +71,24 @@ class TokenBuilder {
     
     visited.add(tokenPath);
     
-    const resolvedValue = this.getTokenValue(tokenPath);
+    const resolvedValue = this.getTokenValue(tokenPath, tokens);
     if (resolvedValue !== null) {
       const newValue = value.replace(tokenRef[0], resolvedValue);
-      return this.resolveTokenValue(newValue, visited);
+      return this.resolveTokenValue(newValue, tokens, visited);
     }
     
     return value;
   }
 
   // Get token value by path (e.g., "color.gray.9")
-  getTokenValue(tokenPath) {
+  getTokenValue(tokenPath, tokens) {
     const pathParts = tokenPath.split('.');
-    let current = this.tokens;
+    let current = tokens;
     
     for (const part of pathParts) {
       if (current && current[part]) {
         current = current[part];
       } else {
-        console.warn(`⚠️  Token not found: ${tokenPath}`);
         return null;
       }
     }
@@ -104,170 +96,13 @@ class TokenBuilder {
     return current && current.$value ? current.$value : null;
   }
 
-  // Convert tokens to CSS custom properties
-  generateCSS() {
-    console.log('🎨 Generating CSS custom properties...');
-    
-    let css = `/* Muka Design System Tokens */\n/* Generated automatically from design tokens */\n\n:root {\n`;
-    
-    this.processTokensForCSS(this.tokens, '', (name, value) => {
-      const resolvedValue = this.resolveTokenValue(value);
-      css += `  --${name}: ${resolvedValue};\n`;
-    });
-    
-    css += '}\n';
-    return css;
-  }
-
-  // Recursively process tokens for CSS generation
-  processTokensForCSS(obj, prefix, callback) {
-    for (const [key, value] of Object.entries(obj)) {
-      if (key.startsWith('$')) continue; // Skip metadata
-      
-      const cssName = prefix ? `${prefix}-${key}` : key;
-      
-      if (value && typeof value === 'object' && value.$value) {
-        // This is a token with a value
-        if (value.$type === 'typography' && typeof value.$value === 'object') {
-          // Handle typography tokens specially - flatten the object
-          for (const [prop, propValue] of Object.entries(value.$value)) {
-            const resolvedPropValue = this.resolveTokenValue(propValue);
-            callback(`${cssName}-${prop}`, resolvedPropValue);
-          }
-        } else {
-          // Regular token with simple value
-          const resolvedValue = this.resolveTokenValue(value.$value);
-          callback(cssName, resolvedValue);
-        }
-      } else if (value && typeof value === 'object') {
-        // This is a nested object, recurse
-        this.processTokensForCSS(value, cssName, callback);
-      }
-    }
-  }
-
-  // Build tokens for Storybook
-  async build() {
-    console.log('🚀 Building design tokens for Storybook...\n');
-    
-    try {
-      // Load all tokens
-      this.loadTokens();
-      
-      // Generate base CSS
-      const css = this.generateCSS();
-      
-      // Ensure output directory exists
-      const outputDir = path.join(__dirname, '../styles');
-      if (!fs.existsSync(outputDir)) {
-        fs.mkdirSync(outputDir, { recursive: true });
-      }
-      
-      // Write base CSS file
-      const outputPath = path.join(outputDir, 'tokens.css');
-      fs.writeFileSync(outputPath, css);
-      
-      console.log(`✅ Base tokens built successfully!`);
-      console.log(`📁 Output: ${outputPath}`);
-      console.log(`🎨 Generated ${css.split('\\n').length - 4} CSS custom properties`);
-      
-      // Build all theme combinations
-      this.buildAllThemes();
-      
-    } catch (error) {
-      console.error('❌ Error building tokens:', error);
-      process.exit(1);
-    }
-  }
-
-  // Build all brand/theme combinations
-  buildAllThemes() {
-    console.log('\n🎨 Building brand/theme combinations...\n');
-    
-    const combinations = [
-      { brand: 'muka', theme: 'light' },
-      { brand: 'muka', theme: 'dark' },
-      { brand: 'wireframe', theme: 'light' },
-      { brand: 'wireframe', theme: 'dark' }
-    ];
-    
-    combinations.forEach(({ brand, theme }) => {
-      console.log(`📦 Building ${brand}-${theme}...`);
-      
-      try {
-        // Load theme-specific tokens
-        const themeTokens = this.loadThemeTokens(brand, theme);
-        const css = this.generateThemeCSS(themeTokens, brand, theme);
-        
-        // Write theme-specific CSS
-        const outputDir = path.join(__dirname, '../styles');
-        const outputPath = path.join(outputDir, `tokens-${brand}-${theme}.css`);
-        fs.writeFileSync(outputPath, css);
-        
-        console.log(`   ✅ Generated: tokens-${brand}-${theme}.css`);
-      } catch (error) {
-        console.error(`   ❌ Error building ${brand}-${theme}:`, error.message);
-      }
-    });
-    
-    console.log('\n🎉 All theme combinations built successfully!');
-  }
-
-  // Load theme-specific token overrides
-  loadThemeTokens(brand, theme) {
-    // Start with base tokens (deep copy)
-    let themeTokens = JSON.parse(JSON.stringify(this.tokens));
-    
-    // Apply brand base overrides first
-    const brandBasePath = path.join(__dirname, '../tokens/brands', brand, 'base.json');
-    if (fs.existsSync(brandBasePath)) {
-      const brandOverrides = JSON.parse(fs.readFileSync(brandBasePath, 'utf8'));
-      this.deepMergeTheme(themeTokens, brandOverrides);
-    }
-    
-    // Re-resolve all token references after brand base overrides
-    this.resolveTokenReferences(themeTokens);
-    
-    // Apply theme-specific overrides
-    const themePath = path.join(__dirname, '../tokens/brands', brand, `${theme}.json`);
-    if (fs.existsSync(themePath)) {
-      const themeOverrides = JSON.parse(fs.readFileSync(themePath, 'utf8'));
-      this.deepMergeTheme(themeTokens, themeOverrides);
-    }
-    
-    return themeTokens;
-  }
-
-  // Utility to get nested object value by path
-  getNestedValue(obj, path) {
-    return path.split('.').reduce((current, key) => {
-      return current && current[key];
-    }, obj);
-  }
-  
-  // Re-resolve token references after brand overrides
-  resolveTokenReferences(tokens) {
-    const resolveValue = (value, context = tokens) => {
-      if (typeof value !== 'string') return value;
-      
-      const match = value.match(/^\{([^}]+)\}$/);
-      if (!match) return value;
-      
-      const path = match[1];
-      const resolvedValue = this.getNestedValue(context, path);
-      
-      if (resolvedValue && typeof resolvedValue === 'object' && resolvedValue.$value) {
-        return resolveValue(resolvedValue.$value, context);
-      }
-      
-      return resolvedValue || value;
-    };
-    
+  // Resolve all token references in a token object
+  resolveAllReferences(tokens) {
     const processObject = (obj) => {
       if (typeof obj !== 'object' || obj === null) return obj;
       
       if (obj.$value) {
-        obj.$value = resolveValue(obj.$value);
+        obj.$value = this.resolveTokenValue(obj.$value, tokens);
         return obj;
       }
       
@@ -280,48 +115,139 @@ class TokenBuilder {
       return obj;
     };
     
-    processObject(tokens);
-  }
-  
-  // Deep merge utility for theme tokens
-  deepMergeTheme(target, source) {
-    for (const key in source) {
-      if (key.startsWith('$')) continue; // Skip metadata
-      
-      if (source[key] && typeof source[key] === 'object' && !source[key].$value) {
-        if (!target[key]) target[key] = {};
-        this.deepMergeTheme(target[key], source[key]);
-      } else {
-        target[key] = source[key];
-      }
-    }
-    return target;
+    return processObject(tokens);
   }
 
-  // Generate theme-specific CSS with data attributes
-  generateThemeCSS(tokens, brand, theme) {
-    let css = `/* Muka Design System - ${brand} ${theme} theme */\n`;
-    css += `/* Generated automatically from design tokens */\n\n`;
-    css += `[data-brand="${brand}"][data-theme="${theme}"] {\n`;
+  // Convert tokens to CSS custom properties
+  generateCSS(tokens, brand = null, theme = null) {
+    let css = '';
+    
+    if (brand && theme) {
+      css += `/* Muka Design System - ${brand} ${theme} theme */\n`;
+      css += `/* Generated automatically from design tokens */\n\n`;
+      css += `[data-brand="${brand}"][data-theme="${theme}"] {\n`;
+    } else {
+      css += `/* Muka Design System Tokens */\n`;
+      css += `/* Generated automatically from design tokens */\n\n`;
+      css += `:root {\n`;
+    }
     
     this.processTokensForCSS(tokens, '', (name, value) => {
-      const resolvedValue = this.resolveTokenValue(value);
+      const resolvedValue = this.resolveTokenValue(value, tokens);
       css += `  --${name}: ${resolvedValue};\n`;
     });
     
-    css += '}\n\n';
+    css += '}\n';
     
     // Add root fallback for default theme
     if (brand === 'muka' && theme === 'light') {
-      css += `/* Default theme fallback */\n:root {\n`;
+      css += '\n/* Default theme fallback */\n:root {\n';
       this.processTokensForCSS(tokens, '', (name, value) => {
-        const resolvedValue = this.resolveTokenValue(value);
+        const resolvedValue = this.resolveTokenValue(value, tokens);
         css += `  --${name}: ${resolvedValue};\n`;
       });
       css += '}\n';
     }
     
     return css;
+  }
+
+  // Recursively process tokens for CSS generation
+  processTokensForCSS(obj, prefix, callback) {
+    for (const [key, value] of Object.entries(obj)) {
+      if (key.startsWith('$')) continue; // Skip metadata
+      
+      const cssName = prefix ? `${prefix}-${key}` : key;
+      
+      if (value && typeof value === 'object' && value.$value !== undefined) {
+        // This is a token with a value
+        if (value.$type === 'typography' && typeof value.$value === 'object') {
+          // Handle typography tokens specially - flatten the object
+          for (const [prop, propValue] of Object.entries(value.$value)) {
+            const resolvedPropValue = this.resolveTokenValue(propValue, obj);
+            callback(`${cssName}-${prop}`, resolvedPropValue);
+          }
+        } else {
+          // Regular token with simple value
+          const resolvedValue = this.resolveTokenValue(value.$value, obj);
+          callback(cssName, resolvedValue);
+        }
+      } else if (value && typeof value === 'object' && !value.$value) {
+        // This is a nested object, recurse
+        this.processTokensForCSS(value, cssName, callback);
+      }
+    }
+  }
+
+  // Build tokens for Storybook
+  async build() {
+    console.log('🚀 Building design tokens for Storybook...\n');
+    
+    try {
+      // Load manifest
+      this.loadManifest();
+      
+      // Ensure output directory exists
+      const outputDir = path.join(__dirname, '../styles');
+      if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+      }
+      
+      // Build all themes
+      this.buildAllThemes();
+      
+    } catch (error) {
+      console.error('❌ Error building tokens:', error);
+      process.exit(1);
+    }
+  }
+
+  // Build all brand/theme combinations
+  buildAllThemes() {
+    console.log('\n🎨 Building brand/theme combinations...\n');
+    
+    const themes = Object.keys(this.manifest.themes);
+    
+    themes.forEach(themeName => {
+      console.log(`📦 Building ${themeName}...`);
+      
+      try {
+        // Load tokens for this theme
+        const tokens = this.loadTokensForTheme(themeName);
+        
+        // Resolve all token references
+        const resolvedTokens = this.resolveAllReferences(tokens);
+        
+        // Generate CSS
+        const css = this.generateCSS(resolvedTokens);
+        
+        // Write CSS file
+        const outputDir = path.join(__dirname, '../styles');
+        const outputPath = path.join(outputDir, `tokens-${themeName}.css`);
+        fs.writeFileSync(outputPath, css);
+        
+        console.log(`   ✅ Generated: tokens-${themeName}.css`);
+      } catch (error) {
+        console.error(`   ❌ Error building ${themeName}:`, error.message);
+      }
+    });
+    
+    console.log('\n🎉 All theme combinations built successfully!');
+  }
+
+  // Load tokens for a specific theme
+  loadTokensForTheme(themeName) {
+    const themeFiles = this.manifest.themes[themeName];
+    let mergedTokens = {};
+    
+    console.log(`🏗️  Loading design tokens for ${themeName}...`);
+    
+    themeFiles.forEach(filePattern => {
+      const tokens = this.loadTokensFromPattern(filePattern);
+      this.deepMerge(mergedTokens, tokens);
+    });
+    
+    return mergedTokens;
   }
 }
 

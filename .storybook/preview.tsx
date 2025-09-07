@@ -2,17 +2,15 @@ import type { Preview } from '@storybook/react-vite';
 import React, { useEffect } from 'react';
 import '../styles/base.css';
 import '../styles/tokens.css';
+import manifest from '../build/manifest.json';
 
 // Load Google Fonts for brand fonts
 const link = document.createElement('link');
 link.href = 'https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600;700&family=Funnel+Sans:wght@400;500;600;700&display=swap';
 link.rel = 'stylesheet';
 document.head.appendChild(link);
-// Import all theme combinations
-import '../styles/tokens-muka-light.css';
-import '../styles/tokens-muka-dark.css';
-import '../styles/tokens-wireframe-light.css';
-import '../styles/tokens-wireframe-dark.css';
+// Extract theme configurations from manifest
+const availableThemes = Object.keys(manifest.themes);
 
 const preview: Preview = {
   parameters: {
@@ -35,29 +33,22 @@ const preview: Preview = {
   },
   
   globalTypes: {
-    brand: {
-      description: 'Brand variant',
-      defaultValue: 'muka',
-      toolbar: {
-        title: 'Brand',
-        icon: 'paintbrush',
-        items: [
-          { value: 'muka', title: '🎨 Muka Brand', left: '🎨' },
-          { value: 'wireframe', title: '📐 Wireframe', left: '📐' },
-        ],
-        dynamicTitle: true,
-      },
-    },
     theme: {
-      description: 'Color theme',
-      defaultValue: 'light',
+      description: 'Complete theme variant',
+      defaultValue: availableThemes[0],
       toolbar: {
         title: 'Theme',
-        icon: 'contrast',
-        items: [
-          { value: 'light', title: '☀️ Light', left: '☀️' },
-          { value: 'dark', title: '🌙 Dark', left: '🌙' },
-        ],
+        icon: 'paintbrush',
+        items: availableThemes.map(theme => {
+          const [brand, mode] = theme.split('-');
+          const icon = brand === 'muka' ? '🎨' : '📐';
+          const modeIcon = mode === 'light' ? '☀️' : '🌙';
+          return {
+            value: theme,
+            title: `${icon} ${brand} ${modeIcon} ${mode}`,
+            left: icon,
+          };
+        }),
         dynamicTitle: true,
       },
     },
@@ -65,13 +56,29 @@ const preview: Preview = {
   
   decorators: [
     (Story, context) => {
-      const brand = context.globals.brand || 'muka';
-      const theme = context.globals.theme || 'light';
+      const selectedTheme = context.globals.theme || availableThemes[0];
+      const [brand, mode] = selectedTheme.split('-');
       
       // Apply theme to document body for global background
       useEffect(() => {
         document.body.setAttribute('data-brand', brand);
-        document.body.setAttribute('data-theme', theme);
+        document.body.setAttribute('data-theme', mode);
+        
+        // Dynamically load the correct CSS file
+        const cssId = 'dynamic-tokens';
+        
+        // Remove existing dynamic CSS
+        const existingLink = document.getElementById(cssId);
+        if (existingLink) {
+          existingLink.remove();
+        }
+        
+        // Add new CSS link
+        const link = document.createElement('link');
+        link.id = cssId;
+        link.rel = 'stylesheet';
+        link.href = `/styles/tokens-${selectedTheme}.css`;
+        document.head.appendChild(link);
         
         // Set appropriate background color based on theme
         const backgrounds = {
@@ -81,8 +88,8 @@ const preview: Preview = {
           'wireframe-dark': '#111111',
         };
         
-        document.body.style.backgroundColor = backgrounds[`${brand}-${theme}`] || '#ffffff';
-        document.body.style.color = theme === 'dark' ? '#ffffff' : '#000000';
+        document.body.style.backgroundColor = backgrounds[selectedTheme] || '#ffffff';
+        document.body.style.color = mode === 'dark' ? '#ffffff' : '#000000';
         document.body.style.transition = 'all 0.2s ease';
         
         return () => {
@@ -91,13 +98,19 @@ const preview: Preview = {
           document.body.style.backgroundColor = '';
           document.body.style.color = '';
           document.body.style.transition = '';
+          
+          // Clean up dynamic CSS
+          const linkToRemove = document.getElementById(cssId);
+          if (linkToRemove) {
+            linkToRemove.remove();
+          }
         };
-      }, [brand, theme]);
+      }, [selectedTheme, brand, mode]);
       
       return (
         <div 
           data-brand={brand} 
-          data-theme={theme}
+          data-theme={mode}
           style={{ 
             padding: '1rem',
             minHeight: '100vh',
