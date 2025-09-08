@@ -34,9 +34,9 @@
         "muted": { "$type": "color", "$value": "{color.grayDark.8}" },
         "inverse": {
           "default": { "$type": "color", "$value": "{color.grayDark.1}" },
-          "hover": { "$type": "color", "$value": "{color.white}" },
+          "hover": { "$type": "color", "$value": "{color.grayDark.2}" },
           "pressed": { "$type": "color", "$value": "{color.grayDark.2}" },
-          "contrast": { "$type": "color", "$value": "{color.white}" },
+          "contrast": { "$type": "color", "$value": "{color.grayDark.2}" },
           "muted": { "$type": "color", "$value": "{color.grayDark.3}" }
         }
       },
