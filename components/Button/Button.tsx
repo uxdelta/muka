@@ -1,5 +1,5 @@
-import React from 'react';
-// Removed CSS import to fix loading issue - styles now inline with fallbacks
+import React, { useState } from 'react';
+import './Button.css';
 
 export interface ButtonProps {
   /** Button content */
@@ -73,119 +73,70 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props
 }) => {
+  const [isPressed, setIsPressed] = useState(false);
+
   const handleClick = () => {
     if (!disabled && onClick) {
       onClick();
     }
   };
 
-  // Base styles with CSS custom properties and fallbacks
-  const getButtonStyles = (): React.CSSProperties => {
-    const baseStyles: React.CSSProperties = {
-      display: 'inline-flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 'var(--button-label-margin-md, 0.5rem)',
-      fontFamily: 'var(--alias-font-brand-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif)',
-      fontWeight: 'var(--alias-font-brand-weight-semibold, 600)',
-      textDecoration: 'none',
-      border: 'none',
-      cursor: disabled ? 'not-allowed' : 'pointer',
-      userSelect: 'none',
-      transition: 'all 0.2s ease',
-      outline: 'none',
-      position: 'relative',
-      width: fullWidth ? '100%' : 'auto',
-      opacity: disabled ? 0.6 : 1,
-    };
-
-    // Size-specific styles
-    const sizeStyles: Record<string, React.CSSProperties> = {
-      sm: {
-        padding: 'var(--button-padding-sm-y, 0.5rem) var(--button-padding-sm-x, 0.5rem)',
-        borderRadius: 'var(--button-radius-sm, 4px)',
-        fontSize: 'var(--font-size-sm, 0.875rem)',
-        lineHeight: 'var(--font-size-sm, 1.25rem)',
-        minHeight: '32px',
-      },
-      md: {
-        padding: 'var(--button-padding-md-y, 0.75rem) var(--button-padding-md-x, 0.75rem)',
-        borderRadius: 'var(--button-radius-md, 6px)',
-        fontSize: 'var(--font-size-md, 1rem)',
-        lineHeight: 'var(--font-size-md, 1.5rem)',
-        minHeight: '40px',
-      },
-      lg: {
-        padding: 'var(--button-padding-lg-y, 1rem) var(--button-padding-lg-x, 1rem)',
-        borderRadius: 'var(--button-radius-lg, 6px)',
-        fontSize: 'var(--font-size-lg, 1.125rem)',
-        lineHeight: 'var(--font-size-lg, 1.75rem)',
-        minHeight: '48px',
-      },
-    };
-
-    // Variant-specific styles
-    const variantStyles: Record<string, React.CSSProperties> = {
-      primary: {
-        backgroundColor: 'var(--button-color-primary-background-default, #8d8d8d)',
-        color: 'var(--button-color-primary-foreground-default, #ffffff)',
-      },
-      secondary: {
-        backgroundColor: 'var(--button-color-secondary-background-default, #f0f0f0)',
-        color: 'var(--button-color-secondary-foreground-default, #646464)',
-        border: '1px solid var(--color-border-default, #e8e8e8)',
-      },
-      ghost: {
-        backgroundColor: 'var(--button-color-ghost-background-default, transparent)',
-        color: 'var(--button-color-ghost-foreground-default, #8d8d8d)',
-      },
-    };
-
-    return {
-      ...baseStyles,
-      ...sizeStyles[size],
-      ...variantStyles[variant],
-    };
+  const handleMouseDown = () => {
+    if (!disabled) {
+      setIsPressed(true);
+    }
   };
 
-  const iconStyles: React.CSSProperties = {
-    display: 'inline-flex',
-    alignItems: 'center',
-    flexShrink: 0,
+  const handleMouseUp = () => {
+    setIsPressed(false);
   };
+
+  const handleMouseLeave = () => {
+    setIsPressed(false);
+  };
+
+  // Generate CSS classes for the button
+  const buttonClasses = [
+    'muka-button',
+    `muka-button--${variant}`,
+    `muka-button--${size}`,
+    disabled && 'muka-button--disabled',
+    fullWidth && 'muka-button--full-width',
+    iconOnly && 'muka-button--icon-only',
+    isPressed && 'muka-button--pressed',
+    className
+  ].filter(Boolean).join(' ');
 
   // Consistent spacing: button padding matches label padding for balanced distribution
   const hasLeftIcon = Boolean(iconLeft);
   const hasRightIcon = Boolean(iconRight);
   const showLabel = !iconOnly;
-  
-  // Icon spacing - only add margin between icon and label when both are present
-  const leftIconMargin = showLabel ? { marginRight: 'var(--button-label-margin-sm, 0.25rem)' } : {};
-  const rightIconMargin = showLabel ? { marginLeft: 'var(--button-label-margin-sm, 0.25rem)' } : {};
 
   return (
     <button
-      style={getButtonStyles()}
+      className={buttonClasses}
       onClick={handleClick}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseLeave}
       disabled={disabled}
       type={type}
-      className={className}
       {...props}
     >
       {hasLeftIcon && (
-        <span style={{ ...iconStyles, ...leftIconMargin }}>
+        <span className={`muka-button__icon ${showLabel ? 'muka-button__icon--left' : ''}`}>
           {iconLeft}
         </span>
       )}
       
       {showLabel && (
-        <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+        <span className="muka-button__label">
           {children}
         </span>
       )}
       
       {hasRightIcon && (
-        <span style={{ ...iconStyles, ...rightIconMargin }}>
+        <span className={`muka-button__icon ${showLabel ? 'muka-button__icon--right' : ''}`}>
           {iconRight}
         </span>
       )}

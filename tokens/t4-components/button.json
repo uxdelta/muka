@@ -19,7 +19,7 @@
             "$type": "color",
             "$value": "{color.action.pressed}"
           },
-          "muted": {
+          "disabled": {
             "$type": "color",
             "$value": "{color.action.muted}"
           }
@@ -37,7 +37,7 @@
             "$type": "color",
             "$value": "{color.action.inverse.pressed}"
           },
-          "muted": {
+          "disabled": {
             "$type": "color",
             "$value": "{color.action.inverse.muted}"
           }
@@ -56,6 +56,10 @@
           "pressed": {
             "$type": "color",
             "$value": "{color.surface.sunken}"
+          },
+          "disabled": {
+            "$type": "color",
+            "$value": "{color.surface.level1}"
           }
         },
         "foreground": {
@@ -65,11 +69,15 @@
           },
           "hover": {
             "$type": "color",
-            "$value": "{color.text.default.default}"
+            "$value": "{color.action.hover}"
           },
           "pressed": {
             "$type": "color",
-            "$value": "{color.text.default.default}"
+            "$value": "{color.action.pressed}"
+          },
+          "disabled": {
+            "$type": "color",
+            "$value": "{color.text.muted.default}"
           }
         }
       },
@@ -81,11 +89,15 @@
           },
           "hover": {
             "$type": "color",
-            "$value": "{color.surface.level3}"
+            "$value": "{color.surface.level2}"
           },
           "pressed": {
             "$type": "color",
-            "$value": "{color.surface.level2}"
+            "$value": "{color.surface.level1}"
+          },
+          "disabled": {
+            "$type": "color",
+            "$value": "{color.surface.level3}"
           }
         },
         "foreground": {
@@ -100,6 +112,10 @@
           "pressed": {
             "$type": "color",
             "$value": "{color.action.pressed}"
+          },
+          "disabled": {
+            "$type": "color",
+            "$value": "{color.text.muted.default}"
           }
         }
       }

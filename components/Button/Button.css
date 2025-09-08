@@ -66,9 +66,17 @@
   color: var(--button-color-primary-foreground-hover);
 }
 
-.muka-button--primary:active:not(:disabled) {
+.muka-button--primary:active:not(:disabled),
+.muka-button--primary.muka-button--pressed:not(:disabled) {
   background-color: var(--button-color-primary-background-pressed);
   color: var(--button-color-primary-foreground-pressed);
+}
+
+.muka-button--primary:disabled {
+  background-color: var(--button-color-primary-background-disabled);
+  color: var(--button-color-primary-foreground-disabled);
+  cursor: not-allowed;
+  opacity: 1; /* Remove opacity since we have proper disabled tokens */
 }
 
 /* Secondary variant - supporting actions */
@@ -84,9 +92,18 @@
   border-color: var(--color-border-contrast);
 }
 
-.muka-button--secondary:active:not(:disabled) {
+.muka-button--secondary:active:not(:disabled),
+.muka-button--secondary.muka-button--pressed:not(:disabled) {
   background-color: var(--button-color-secondary-background-pressed);
   color: var(--button-color-secondary-foreground-pressed);
+}
+
+.muka-button--secondary:disabled {
+  background-color: var(--button-color-secondary-background-disabled);
+  color: var(--button-color-secondary-foreground-disabled);
+  border-color: var(--color-border-default);
+  cursor: not-allowed;
+  opacity: 1;
 }
 
 /* Ghost variant - minimal styling */
@@ -100,17 +117,23 @@
   color: var(--button-color-ghost-foreground-hover);
 }
 
-.muka-button--ghost:active:not(:disabled) {
+.muka-button--ghost:active:not(:disabled),
+.muka-button--ghost.muka-button--pressed:not(:disabled) {
   background-color: var(--button-color-ghost-background-pressed);
   color: var(--button-color-ghost-foreground-pressed);
 }
 
-/* Disabled state */
-.muka-button--disabled {
-  background-color: var(--button-color-primary-background-muted);
-  color: var(--button-color-primary-foreground-muted);
+.muka-button--ghost:disabled {
+  background-color: var(--button-color-ghost-background-disabled);
+  color: var(--button-color-ghost-foreground-disabled);
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 1;
+}
+
+/* General disabled state - fallback */
+.muka-button:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Full width modifier */

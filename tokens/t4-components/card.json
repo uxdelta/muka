@@ -1,3 +1,142 @@
 {
-  "$schema": {"$type":"other","$value":"https://design-tokens.org/schemas/1.0/schema.json"}
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "card": {
+    "color": {
+      "default": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.level3}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.text.default.default}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{color.border.default}"
+        }
+      },
+      "hover": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.level2}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.text.default.default}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{color.border.contrast}"
+        }
+      },
+      "pressed": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.level1}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.text.default.default}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{color.action.default}"
+        }
+      },
+      "selected": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.level2}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.text.default.default}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{color.action.default}"
+        }
+      }
+    },
+    "radius": {
+      "sm": {
+        "$type": "borderRadius",
+        "$value": "{border.radius.sm}"
+      },
+      "md": {
+        "$type": "borderRadius",
+        "$value": "{border.radius.md}"
+      },
+      "lg": {
+        "$type": "borderRadius",
+        "$value": "{border.radius.lg}"
+      }
+    },
+    "padding": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{spacing.3}"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{spacing.4}"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{spacing.6}"
+      }
+    },
+    "shadow": {
+      "default": {
+        "$type": "boxShadow",
+        "$value": "{shadow.level1}"
+      },
+      "hover": {
+        "$type": "boxShadow",
+        "$value": "{shadow.level2}"
+      },
+      "pressed": {
+        "$type": "boxShadow",
+        "$value": "{shadow.level1}"
+      }
+    },
+    "border": {
+      "default": {
+        "$type": "border",
+        "$value": {
+          "color": "{card.color.default.border}",
+          "width": "{border.width.regular}",
+          "style": "solid"
+        }
+      },
+      "hover": {
+        "$type": "border",
+        "$value": {
+          "color": "{card.color.hover.border}",
+          "width": "{border.width.regular}",
+          "style": "solid"
+        }
+      },
+      "pressed": {
+        "$type": "border",
+        "$value": {
+          "color": "{card.color.pressed.border}",
+          "width": "{border.width.bold}",
+          "style": "solid"
+        }
+      },
+      "selected": {
+        "$type": "border",
+        "$value": {
+          "color": "{card.color.selected.border}",
+          "width": "{border.width.bold}",
+          "style": "solid"
+        }
+      }
+    }
+  }
 }
