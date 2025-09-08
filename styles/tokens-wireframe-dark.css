@@ -918,7 +918,7 @@
   --color-action-pressed: #b4b4b4;
   --color-action-muted: #606060;
   --color-action-inverse-default: #111111;
-  --color-action-inverse-hover: #ffffff;
+  --color-action-inverse-hover: #191919;
   --color-action-inverse-pressed: #191919;
   --color-action-inverse-muted: #222222;
   --alias-color-neutral-1: #111111;
@@ -944,9 +944,9 @@
   --alias-color-accent-contrast: #eeeeee;
   --alias-color-accent-muted: #606060;
   --alias-color-accent-inverse-default: #111111;
-  --alias-color-accent-inverse-hover: #ffffff;
+  --alias-color-accent-inverse-hover: #191919;
   --alias-color-accent-inverse-pressed: #191919;
-  --alias-color-accent-inverse-contrast: #ffffff;
+  --alias-color-accent-inverse-contrast: #191919;
   --alias-color-accent-inverse-muted: #222222;
   --alias-color-state-success-contrast: #18794e;
   --alias-color-state-success-default: #30a46c;
@@ -1211,7 +1211,7 @@
   --button-color-primary-background-pressed: #b4b4b4;
   --button-color-primary-background-disabled: #606060;
   --button-color-primary-foreground-default: #111111;
-  --button-color-primary-foreground-hover: #ffffff;
+  --button-color-primary-foreground-hover: #191919;
   --button-color-primary-foreground-pressed: #191919;
   --button-color-primary-foreground-disabled: #222222;
   --button-color-secondary-background-default: #222222;
