@@ -28,10 +28,10 @@
       },
       "accent": {
         "default": { "$type": "color", "$value": "{color.indigoDark.9}" },
-        "hover": { "$type": "color", "$value": "{color.indigoDark.10}" },
-        "pressed": { "$type": "color", "$value": "{color.indigoDark.11}" },
+        "hover": { "$type": "color", "$value": "{color.indigoDark.8}" },
+        "pressed": { "$type": "color", "$value": "{color.indigoDark.7}" },
         "contrast": { "$type": "color", "$value": "{color.indigoDark.12}" },
-        "muted": { "$type": "color", "$value": "{color.indigoDark.8}" },
+        "muted": { "$type": "color", "$value": "{color.indigoDark.6}" },
         "inverse": {
           "default": { "$type": "color", "$value": "{color.indigoDark.1}" },
           "hover": { "$type": "color", "$value": "{color.white}" },
