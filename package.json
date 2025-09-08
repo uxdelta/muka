@@ -30,6 +30,7 @@
     "diagnose:deployment": "node scripts/diagnose-deployment.js",
     "check:deployment": "node scripts/check-deployment-status.js",
     "deploy:manual": "node scripts/manual-deploy.js",
+    "deploy:gh-pages": "node scripts/deploy-to-gh-pages.js",
     "postinstall": "husky install"
   },
   "keywords": [
