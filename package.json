@@ -29,6 +29,7 @@
     "check:automation": "node scripts/check-automation-status.js",
     "diagnose:deployment": "node scripts/diagnose-deployment.js",
     "check:deployment": "node scripts/check-deployment-status.js",
+    "deploy:manual": "node scripts/manual-deploy.js",
     "postinstall": "husky install"
   },
   "keywords": [
