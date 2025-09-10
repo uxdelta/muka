@@ -1,18 +1,11 @@
-name: Deploy Storybook (Standalone)
+# DISABLED WORKFLOW - Conflicts with manual gh-pages deployment
+# Use: npm run deploy:gh-pages instead
+# This file is kept for reference but disabled to prevent conflicts
 
-# DISABLED: Conflicts with manual gh-pages deployment
-# Use: npm run deploy:gh-pages instead  
-on:
-  # push:
-  #   branches: [ main ]
-  workflow_dispatch: # Manual trigger only
-    paths:
-      - 'styles/**'
-      - 'components/**'
-      - 'stories/**'
-      - '.storybook/**'
-      - 'package.json'
-      - 'package-lock.json'
+name: Deploy Storybook (Standalone) - DISABLED
+
+# Completely disabled - no triggers
+on: []
       - 'tokens/**'
   workflow_dispatch: # Allow manual triggering
 

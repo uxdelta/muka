@@ -1,12 +1,11 @@
-name: Deploy Storybook (Simple)
-
-# DISABLED: Conflicts with manual gh-pages deployment  
+# DISABLED WORKFLOW - Conflicts with manual gh-pages deployment
 # Use: npm run deploy:gh-pages instead
-on:
-  # push:
-  #   branches: [ main ]
-  workflow_dispatch: # Manual trigger only
-  workflow_dispatch:
+# This file is kept for reference but disabled to prevent conflicts
+
+name: Deploy Storybook (Simple) - DISABLED
+
+# Completely disabled - no triggers
+on: []
 
 jobs:
   deploy:
