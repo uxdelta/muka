@@ -80,11 +80,11 @@
       "accent": {
         "default": {
           "$type": "color",
-          "$value": "{color.grayDark.10}"
+          "$value": "{color.grayDark.11}"
         },
         "hover": {
           "$type": "color",
-          "$value": "{color.grayDark.11}"
+          "$value": "{color.grayDark.12}"
         },
         "pressed": {
           "$type": "color",
