@@ -6,60 +6,219 @@
   "alias": {
     "color": {
       "neutral": {
-        "1": { "$type": "color", "$value": "{color.slateDark.1}" },
-        "2": { "$type": "color", "$value": "{color.slateDark.3}" },
-        "3": { "$type": "color", "$value": "{color.slateDark.4}" },
-        "4": { "$type": "color", "$value": "{color.slateDark.5}" },
-        "5": { "$type": "color", "$value": "{color.slateDark.6}" },
-        "6": { "$type": "color", "$value": "{color.slateDark.7}" },
-        "7": { "$type": "color", "$value": "{color.slateDark.8}" },
-        "8": { "$type": "color", "$value": "{color.slateDark.9}" },
-        "9": { "$type": "color", "$value": "{color.slateDark.10}" },
-        "10": { "$type": "color", "$value": "{color.slateDark.11}" },
-        "11": { "$type": "color", "$value": "{color.slateDark.12}" },
-        "12": { "$type": "color", "$value": "{color.slateDark.12}" }
+        "1": {
+          "$type": "color",
+          "$value": "{color.slateDark.1}"
+        },
+        "2": {
+          "$type": "color",
+          "$value": "{color.slateDark.3}"
+        },
+        "3": {
+          "$type": "color",
+          "$value": "{color.slateDark.4}"
+        },
+        "4": {
+          "$type": "color",
+          "$value": "{color.slateDark.5}"
+        },
+        "5": {
+          "$type": "color",
+          "$value": "{color.slateDark.6}"
+        },
+        "6": {
+          "$type": "color",
+          "$value": "{color.slateDark.7}"
+        },
+        "7": {
+          "$type": "color",
+          "$value": "{color.slateDark.8}"
+        },
+        "8": {
+          "$type": "color",
+          "$value": "{color.slateDark.9}"
+        },
+        "9": {
+          "$type": "color",
+          "$value": "{color.slateDark.10}"
+        },
+        "10": {
+          "$type": "color",
+          "$value": "{color.slateDark.11}"
+        },
+        "11": {
+          "$type": "color",
+          "$value": "{color.slateDark.12}"
+        },
+        "12": {
+          "$type": "color",
+          "$value": "{color.slateDark.12}"
+        }
       },
       "brand": {
-        "primary": { "$type": "color", "$value": "{color.indigoDark.11}" },
-        "complementary": { "$type": "color", "$value": "{color.indigoDark.9}" },
-        "default": { "$type": "color", "$value": "{color.indigoDark.9}" },
-        "contrast": { "$type": "color", "$value": "{color.indigoDark.12}" },
-        "muted": { "$type": "color", "$value": "{color.indigoDark.5}" }
+        "primary": {
+          "$type": "color",
+          "$value": "{color.indigoDark.11}"
+        },
+        "complementary": {
+          "$type": "color",
+          "$value": "{color.indigoDark.9}"
+        },
+        "default": {
+          "$type": "color",
+          "$value": "{color.indigoDark.9}"
+        },
+        "contrast": {
+          "$type": "color",
+          "$value": "{color.indigoDark.12}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.indigoDark.5}"
+        }
       },
       "accent": {
-        "default": { "$type": "color", "$value": "{color.indigoDark.11}" },
-        "hover": { "$type": "color", "$value": "{color.indigoDark.12}" },
-        "pressed": { "$type": "color", "$value": "{color.indigoDark.10}" },
-        "contrast": { "$type": "color", "$value": "{color.indigoDark.12}" },
-        "muted": { "$type": "color", "$value": "{color.indigoDark.6}" },
+        "default": {
+          "$type": "color",
+          "$value": "{color.indigoDark.11}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.indigoDark.12}"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "{color.indigoDark.10}"
+        },
+        "contrast": {
+          "$type": "color",
+          "$value": "{color.indigoDark.12}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.indigoDark.6}"
+        },
         "inverse": {
-          "default": { "$type": "color", "$value": "{color.indigoDark.1}" },
-          "hover": { "$type": "color", "$value": "{color.indigoDark.2}" },
-          "pressed": { "$type": "color", "$value": "{color.indigoDark.2}" },
-          "contrast": { "$type": "color", "$value": "{color.indigoDark.2}" },
-          "muted": { "$type": "color", "$value": "{color.indigoDark.3}" }
+          "default": {
+            "$type": "color",
+            "$value": "{color.indigoDark.1}"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{color.indigoDark.2}"
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": "{color.indigoDark.2}"
+          },
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.indigoDark.2}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.indigoDark.3}"
+          }
         }
       },
       "state": {
         "success": {
-          "contrast": { "$type": "color", "$value": "{color.green.11}" },
-          "default": { "$type": "color", "$value": "{color.green.9}" },
-          "muted": { "$type": "color", "$value": "{color.green.3}" }
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.green.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.green.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.green.3}"
+          }
         },
         "warning": {
-          "contrast": { "$type": "color", "$value": "{color.amber.11}" },
-          "default": { "$type": "color", "$value": "{color.amber.9}" },
-          "muted": { "$type": "color", "$value": "{color.amber.3}" }
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.amber.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.amber.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.amber.3}"
+          }
         },
         "error": {
-          "contrast": { "$type": "color", "$value": "{color.red.11}" },
-          "default": { "$type": "color", "$value": "{color.red.9}" },
-          "muted": { "$type": "color", "$value": "{color.red.3}" }
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.red.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.red.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.red.3}"
+          }
         },
         "info": {
-          "contrast": { "$type": "color", "$value": "{color.blue.11}" },
-          "default": { "$type": "color", "$value": "{color.blue.9}" },
-          "muted": { "$type": "color", "$value": "{color.blue.3}" }
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.blue.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.blue.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.blue.3}"
+          }
+        }
+      },
+      "overlay": {
+        "0": {
+          "$type": "color",
+          "$value": "rgba( {color.slate.12}, 0)"
+        },
+        "10": {
+          "$type": "color",
+          "$value": "rgba( {color.slate.12}, 0.1)"
+        },
+        "20": {
+          "$type": "color",
+          "$value": "rgba( {color.slate.12}, 0.2)"
+        },
+        "30": {
+          "$type": "color",
+          "$value": "rgba( {color.slate.12}, 0.3)"
+        },
+        "40": {
+          "$type": "color",
+          "$value": "rgba( {color.slate.12}, 0.4)"
+        },
+        "50": {
+          "$type": "color",
+          "$value": "rgba( {color.slate.12}, 0.5)"
+        },
+        "60": {
+          "$type": "color",
+          "$value": "rgba( {color.slate.12}, 0.6)"
+        },
+        "70": {
+          "$type": "color",
+          "$value": "rgba( {color.slate.12}, 0.7)"
+        },
+        "80": {
+          "$type": "color",
+          "$value": "rgba( {color.slate.12}, 0.8)"
+        },
+        "90": {
+          "$type": "color",
+          "$value": "rgba( {color.slate.12}, 0.9)"
         }
       }
     }
