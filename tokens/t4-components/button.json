@@ -41,6 +41,24 @@
             "$type": "color",
             "$value": "{color.action.inverse.muted}"
           }
+        },
+        "inner-shadow": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.overlay.30}"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{color.overlay.30}"
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": "{color.overlay.0}"
+          },
+          "disabled": {
+            "$type": "color",
+            "$value": "{color.overlay.0}"
+          }
         }
       },
       "secondary": {
