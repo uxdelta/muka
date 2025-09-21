@@ -7,11 +7,11 @@
     "surface": {
       "sunken": {
         "$type": "color",
-        "$value": "{alias.color.neutral.5}"
+        "$value": "{alias.color.neutral.1}"
       },
       "level0": {
         "$type": "color",
-        "$value": "{alias.color.neutral.4}"
+        "$value": "{alias.color.neutral.2}"
       },
       "level1": {
         "$type": "color",
@@ -19,11 +19,11 @@
       },
       "level2": {
         "$type": "color",
-        "$value": "{alias.color.neutral.2}"
+        "$value": "{alias.color.neutral.4}"
       },
       "level3": {
         "$type": "color",
-        "$value": "{alias.color.neutral.1}"
+        "$value": "{alias.color.neutral.5}"
       }
     },
     "text": {
@@ -40,7 +40,7 @@
       "subtle": {
         "default": {
           "$type": "color",
-          "$value": "{alias.color.neutral.6}"
+          "$value": "{alias.color.neutral.5}"
         },
         "inverse": {
           "$type": "color",
