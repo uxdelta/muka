@@ -8,51 +8,51 @@
       "neutral": {
         "1": {
           "$type": "color",
-          "$value": "{color.slate.12}"
+          "$value": "{color.mauveDark.1}"
         },
         "2": {
           "$type": "color",
-          "$value": "{color.slate.11}"
+          "$value": "{color.mauveDark.2}"
         },
         "3": {
           "$type": "color",
-          "$value": "{color.slate.10}"
+          "$value": "{color.mauveDark.3}"
         },
         "4": {
           "$type": "color",
-          "$value": "{color.slate.9}"
+          "$value": "{color.mauveDark.4}"
         },
         "5": {
           "$type": "color",
-          "$value": "{color.slate.8}"
+          "$value": "{color.mauveDark.5}"
         },
         "6": {
           "$type": "color",
-          "$value": "{color.slate.7}"
+          "$value": "{color.mauveDark.6}"
         },
         "7": {
           "$type": "color",
-          "$value": "{color.slate.6}"
+          "$value": "{color.mauveDark.7}"
         },
         "8": {
           "$type": "color",
-          "$value": "{color.slate.5}"
+          "$value": "{color.mauveDark.8}"
         },
         "9": {
           "$type": "color",
-          "$value": "{color.slate.4}"
+          "$value": "{color.mauveDark.9}"
         },
         "10": {
           "$type": "color",
-          "$value": "{color.slate.3}"
+          "$value": "{color.mauveDark.10}"
         },
         "11": {
           "$type": "color",
-          "$value": "{color.slate.2}"
+          "$value": "{color.mauveDark.11}"
         },
         "12": {
           "$type": "color",
-          "$value": "{color.slate.1}"
+          "$value": "{color.mauveDark.12}"
         }
       },
       "brand": {

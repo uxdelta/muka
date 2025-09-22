@@ -293,6 +293,32 @@
           }
         }
       }
+    },
+    "radius": {
+      "sm": {
+        "$type": "borderRadius",
+        "$value": "0.1875rem"
+      },
+      "md": {
+        "$type": "borderRadius",
+        "$value": "0.375rem"
+      },
+      "lg": {
+        "$type": "borderRadius",
+        "$value": "0.75rem"
+      },
+      "xl": {
+        "$type": "borderRadius",
+        "$value": "1.5rem"
+      },
+      "2xl": {
+        "$type": "borderRadius",
+        "$value": "3rem"
+      },
+      "full": {
+        "$type": "borderRadius",
+        "$value": "999rem"
+      }
     }
   }
 }

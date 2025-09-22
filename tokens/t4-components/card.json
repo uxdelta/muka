@@ -65,15 +65,15 @@
     "radius": {
       "sm": {
         "$type": "borderRadius",
-        "$value": "{border.radius.sm}"
+        "$value": "{alias.radius.sm}"
       },
       "md": {
         "$type": "borderRadius",
-        "$value": "{border.radius.md}"
+        "$value": "{alias.radius.md}"
       },
       "lg": {
         "$type": "borderRadius",
-        "$value": "{border.radius.lg}"
+        "$value": "{alias.radius.lg}"
       }
     },
     "padding": {

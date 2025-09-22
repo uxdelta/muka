@@ -65,11 +65,11 @@
         "background": {
           "default": {
             "$type": "color",
-            "$value": "{color.surface.level2}"
+            "$value": "{alias.color.overlay.20}"
           },
           "hover": {
             "$type": "color",
-            "$value": "{color.surface.level1}"
+            "$value": "{alias.color.overlay.20}"
           },
           "pressed": {
             "$type": "color",
@@ -159,15 +159,15 @@
     "radius": {
       "sm": {
         "$type": "borderRadius",
-        "$value": "{border.radius.sm}"
+        "$value": "{alias.radius.sm}"
       },
       "md": {
         "$type": "borderRadius",
-        "$value": "{border.radius.md}"
+        "$value": "{alias.radius.md}"
       },
       "lg": {
         "$type": "borderRadius",
-        "$value": "{border.radius.md}"
+        "$value": "{alias.radius.lg}"
       }
     },
     "padding": {
