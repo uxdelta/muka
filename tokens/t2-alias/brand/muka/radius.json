@@ -7,27 +7,27 @@
     "radius": {
       "sm": {
         "$type": "borderRadius",
-        "$value": "0.1875rem"
+        "$value": "{radius.sm}"
       },
       "md": {
         "$type": "borderRadius",
-        "$value": "0.375rem"
+        "$value": "{radius.md}"
       },
       "lg": {
         "$type": "borderRadius",
-        "$value": "0.75rem"
+        "$value": "{radius.lg}"
       },
       "xl": {
         "$type": "borderRadius",
-        "$value": "1.5rem"
+        "$value": "{radius.xl}"
       },
       "2xl": {
         "$type": "borderRadius",
-        "$value": "3rem"
+        "$value": "{radius.2xl}"
       },
       "full": {
         "$type": "borderRadius",
-        "$value": "999rem"
+        "$value": "{radius.full}"
       }
     }
   }
