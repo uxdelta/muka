@@ -7,7 +7,6 @@
     "author": "Design System Team",
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
-      "t1-primitives/radius": "enabled",
       "t1-primitives/typography": "enabled",
       "t2-alias/brand/wireframe/fonts": "enabled",
       "t2-alias/brand/wireframe/light": "enabled",
@@ -1083,7 +1082,6 @@
       "border.radius.lg": "b2597fc8ad11ff4d81d1123e8153b189343840f9",
       "border.radius.xl": "2c9f7b6bf3a8ff48f03dec53336454b51dd4dfab",
       "border.radius.2xl": "f5242a47647429e9c223ea317937f56d8365cf23",
-      "border.radius.3xl": "1b44626877c1c2aaefca2bc5500aa21ca92aa38d",
       "border.radius.full": "5bb24b6125a3c96d718d81e5073c172b50ec963d",
       "border.width.regular": "674d8104c77a166e192bd83c82482dab12d5073a",
       "border.width.bold": "3bc0e34af36b36d0e8d55296fef6578d63fe340b",
@@ -1208,7 +1206,6 @@
     "author": "Design System Team",
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
-      "t1-primitives/radius": "enabled",
       "t1-primitives/typography": "enabled",
       "t2-alias/brand/wireframe/dark": "enabled",
       "t2-alias/brand/wireframe/fonts": "enabled",
@@ -2324,7 +2321,6 @@
       "border.radius.lg": "b2597fc8ad11ff4d81d1123e8153b189343840f9",
       "border.radius.xl": "2c9f7b6bf3a8ff48f03dec53336454b51dd4dfab",
       "border.radius.2xl": "f5242a47647429e9c223ea317937f56d8365cf23",
-      "border.radius.3xl": "1b44626877c1c2aaefca2bc5500aa21ca92aa38d",
       "border.radius.full": "5bb24b6125a3c96d718d81e5073c172b50ec963d",
       "border.width.regular": "674d8104c77a166e192bd83c82482dab12d5073a",
       "border.width.bold": "3bc0e34af36b36d0e8d55296fef6578d63fe340b",
@@ -2447,7 +2443,6 @@
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
-      "t1-primitives/radius": "enabled",
       "t1-primitives/typography": "enabled",
       "t3-semantics/layout": "enabled",
       "t3-semantics/ui": "enabled",
@@ -3522,7 +3517,6 @@
       "border.radius.lg": "b2597fc8ad11ff4d81d1123e8153b189343840f9",
       "border.radius.xl": "2c9f7b6bf3a8ff48f03dec53336454b51dd4dfab",
       "border.radius.2xl": "f5242a47647429e9c223ea317937f56d8365cf23",
-      "border.radius.3xl": "1b44626877c1c2aaefca2bc5500aa21ca92aa38d",
       "border.radius.full": "5bb24b6125a3c96d718d81e5073c172b50ec963d",
       "border.width.regular": "674d8104c77a166e192bd83c82482dab12d5073a",
       "border.width.bold": "3bc0e34af36b36d0e8d55296fef6578d63fe340b",
@@ -3691,7 +3685,6 @@
     },
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
-      "t1-primitives/radius": "enabled",
       "t1-primitives/typography": "enabled",
       "t2-alias/brand/muka/dark": "enabled",
       "t2-alias/brand/muka/fonts": "enabled",
@@ -4766,7 +4759,6 @@
       "border.radius.lg": "b2597fc8ad11ff4d81d1123e8153b189343840f9",
       "border.radius.xl": "2c9f7b6bf3a8ff48f03dec53336454b51dd4dfab",
       "border.radius.2xl": "f5242a47647429e9c223ea317937f56d8365cf23",
-      "border.radius.3xl": "1b44626877c1c2aaefca2bc5500aa21ca92aa38d",
       "border.radius.full": "5bb24b6125a3c96d718d81e5073c172b50ec963d",
       "border.width.regular": "674d8104c77a166e192bd83c82482dab12d5073a",
       "border.width.bold": "3bc0e34af36b36d0e8d55296fef6578d63fe340b",

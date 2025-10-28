@@ -1,7 +1,6 @@
 {
   "tokenSetOrder": [
     "t1-primitives/color",
-    "t1-primitives/radius",
     "t1-primitives/scale",
     "t1-primitives/typography",
     "t2-alias/base",
