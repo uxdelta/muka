@@ -199,11 +199,11 @@
     "width": {
       "regular": {
         "$type": "borderWidth",
-        "$value": "{alias.border.width.regular}"
+        "$value": "{size.4xs}"
       },
       "bold": {
         "$type": "borderWidth",
-        "$value": "{alias.border.width.bold}"
+        "$value": "{size.3xs}"
       }
     }
   },
