@@ -99,15 +99,15 @@
     "border": {
       "contrast": {
         "$type": "color",
-        "$value": "{alias.color.neutral.6}"
+        "$value": "{alias.color.neutral.7}"
       },
       "default": {
         "$type": "color",
-        "$value": "{alias.color.neutral.3}"
+        "$value": "{alias.color.neutral.4}"
       },
       "muted": {
         "$type": "color",
-        "$value": "{alias.color.neutral.2}"
+        "$value": "{alias.color.neutral.3}"
       },
       "focus": {
         "$type": "color",
