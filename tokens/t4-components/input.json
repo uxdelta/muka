@@ -130,15 +130,15 @@
       "height": {
         "sm": {
           "$type": "dimension",
-          "$value": "{size-deprecated.2xl}"
+          "$value": "{size.2xl}"
         },
         "default": {
           "$type": "dimension",
-          "$value": "{size-deprecated.3xl}"
+          "$value": "{size.3xl}"
         },
         "lg": {
           "$type": "dimension",
-          "$value": "{size-deprecated.4xl}"
+          "$value": "{size.4xl}"
         }
       }
     },
@@ -146,15 +146,15 @@
       "height": {
         "sm": {
           "$type": "dimension",
-          "$value": "{size-deprecated.8xl}"
+          "$value": "{size.8xl}"
         },
         "default": {
           "$type": "dimension",
-          "$value": "{size-deprecated.10xl}"
+          "$value": "{size.10xl}"
         },
         "lg": {
           "$type": "dimension",
-          "$value": "{size-deprecated.13xl}"
+          "$value": "{size.13xl}"
         }
       }
     },
@@ -162,15 +162,15 @@
       "height": {
         "sm": {
           "$type": "dimension",
-          "$value": "{size-deprecated.lg}"
+          "$value": "{size.lg}"
         },
         "default": {
           "$type": "dimension",
-          "$value": "{size-deprecated.xl}"
+          "$value": "{size.xl}"
         },
         "lg": {
           "$type": "dimension",
-          "$value": "{size-deprecated.2xl}"
+          "$value": "{size.2xl}"
         }
       },
       "color": {
@@ -236,15 +236,15 @@
       "height": {
         "sm": {
           "$type": "dimension",
-          "$value": "{size-deprecated.xl}"
+          "$value": "{size.xl}"
         },
         "default": {
           "$type": "dimension",
-          "$value": "{size-deprecated.2xl}"
+          "$value": "{size.2xl}"
         },
         "lg": {
           "$type": "dimension",
-          "$value": "{size-deprecated.3xl}"
+          "$value": "{size.3xl}"
         }
       }
     }
@@ -253,19 +253,19 @@
     "size": {
       "xs": {
         "$type": "dimension",
-        "$value": "{size-deprecated.md}"
+        "$value": "{size.md}"
       },
       "sm": {
         "$type": "dimension",
-        "$value": "{size-deprecated.lg}"
+        "$value": "{size.lg}"
       },
       "default": {
         "$type": "dimension",
-        "$value": "{size-deprecated.xl}"
+        "$value": "{size.xl}"
       },
       "lg": {
         "$type": "dimension",
-        "$value": "{size-deprecated.2xl}"
+        "$value": "{size.2xl}"
       }
     }
   }
