@@ -7,16 +7,16 @@
     "author": "Design System Team",
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
+      "t1-primitives/depth": "enabled",
+      "t1-primitives/scale": "enabled",
       "t1-primitives/typography": "enabled",
       "t2-alias/brand/wireframe/fonts": "enabled",
       "t2-alias/brand/wireframe/light": "enabled",
       "t3-semantics/layout": "enabled",
       "t3-semantics/ui": "enabled",
-      "t4-components/card": "enabled",
       "t4-components/button": "enabled",
-      "t4-components/input": "enabled",
-      "t1-primitives/scale": "enabled",
-      "t2-alias/brand/wireframe/radius": "enabled"
+      "t4-components/card": "enabled",
+      "t4-components/input": "enabled"
     },
     "$figmaStyleReferences": {},
     "$figmaCollectionId": "VariableCollectionId:3:2",
@@ -1206,16 +1206,16 @@
     "author": "Design System Team",
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
+      "t1-primitives/depth": "enabled",
+      "t1-primitives/scale": "enabled",
       "t1-primitives/typography": "enabled",
       "t2-alias/brand/wireframe/dark": "enabled",
       "t2-alias/brand/wireframe/fonts": "enabled",
-      "t4-components/button": "enabled",
-      "t4-components/card": "enabled",
-      "t4-components/input": "enabled",
       "t3-semantics/layout": "enabled",
       "t3-semantics/ui": "enabled",
-      "t1-primitives/scale": "enabled",
-      "t2-alias/brand/wireframe/radius": "enabled"
+      "t4-components/button": "enabled",
+      "t4-components/card": "enabled",
+      "t4-components/input": "enabled"
     },
     "$figmaStyleReferences": {
       "text.heading.h1": "S:47e0294c0c82ba991a3daa8b71956fa96b072812,",
@@ -2443,16 +2443,17 @@
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
+      "t1-primitives/depth": "enabled",
+      "t1-primitives/scale": "enabled",
       "t1-primitives/typography": "enabled",
+      "t2-alias/brand/muka/fonts": "enabled",
+      "t2-alias/brand/muka/light": "enabled",
+      "t2-alias/brand/muka/radius": "enabled",
       "t3-semantics/layout": "enabled",
       "t3-semantics/ui": "enabled",
       "t4-components/button": "enabled",
       "t4-components/card": "enabled",
-      "t4-components/input": "enabled",
-      "t2-alias/brand/muka/light": "enabled",
-      "t2-alias/brand/muka/fonts": "enabled",
-      "t1-primitives/scale": "enabled",
-      "t2-alias/brand/muka/radius": "enabled"
+      "t4-components/input": "enabled"
     },
     "$figmaCollectionId": "VariableCollectionId:3:2",
     "$figmaModeId": "3:2",
@@ -3685,16 +3686,17 @@
     },
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
+      "t1-primitives/depth": "enabled",
+      "t1-primitives/scale": "enabled",
       "t1-primitives/typography": "enabled",
       "t2-alias/brand/muka/dark": "enabled",
       "t2-alias/brand/muka/fonts": "enabled",
+      "t2-alias/brand/muka/radius": "enabled",
       "t3-semantics/layout": "enabled",
       "t3-semantics/ui": "enabled",
       "t4-components/button": "enabled",
       "t4-components/card": "enabled",
-      "t4-components/input": "enabled",
-      "t1-primitives/scale": "enabled",
-      "t2-alias/brand/muka/radius": "enabled"
+      "t4-components/input": "enabled"
     },
     "$figmaCollectionId": "VariableCollectionId:3:2",
     "$figmaModeId": "3:3",
