@@ -7,19 +7,19 @@
     "surface": {
       "sunken": {
         "$type": "color",
-        "$value": "{alias.color.neutral.5}"
+        "$value": "{alias.color.neutral.6}"
       },
       "level0": {
         "$type": "color",
-        "$value": "{alias.color.neutral.4}"
+        "$value": "{alias.color.neutral.5}"
       },
       "level1": {
         "$type": "color",
-        "$value": "{alias.color.neutral.3}"
+        "$value": "{alias.color.neutral.4}"
       },
       "level2": {
         "$type": "color",
-        "$value": "{alias.color.neutral.2}"
+        "$value": "{alias.color.neutral.3}"
       },
       "level3": {
         "$type": "color",
