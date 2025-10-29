@@ -167,15 +167,15 @@
         "info": {
           "contrast": {
             "$type": "color",
-            "$value": "{color.blue.11}"
+            "$value": "{color.indigo.11}"
           },
           "default": {
             "$type": "color",
-            "$value": "{color.blue.9}"
+            "$value": "{color.indigo.9}"
           },
           "muted": {
             "$type": "color",
-            "$value": "{color.blue.3}"
+            "$value": "{color.indigo.3}"
           }
         }
       },

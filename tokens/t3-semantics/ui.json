@@ -68,32 +68,48 @@
         }
       }
     },
-    "success": {
-      "default": {
-        "$type": "color",
-        "$value": "{alias.color.state.success.default}"
+    "state": {
+      "success": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.state.success.default}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{alias.color.state.success.contrast}"
+        },
+        "background": {
+          "$type": "color",
+          "$value": "{alias.color.state.success.muted}"
+        }
       },
-      "foreground": {
-        "$type": "color",
-        "$value": "{alias.color.state.success.contrast}"
+      "error": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.state.error.default}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{alias.color.state.error.contrast}"
+        },
+        "background": {
+          "$type": "color",
+          "$value": "{alias.color.state.error.muted}"
+        }
       },
-      "background": {
-        "$type": "color",
-        "$value": "{alias.color.state.success.muted}"
-      }
-    },
-    "error": {
-      "default": {
-        "$type": "color",
-        "$value": "{alias.color.state.error.default}"
-      },
-      "foreground": {
-        "$type": "color",
-        "$value": "{alias.color.state.error.contrast}"
-      },
-      "background": {
-        "$type": "color",
-        "$value": "{alias.color.state.error.muted}"
+      "info": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.state.info.default}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{alias.color.state.info.contrast}"
+        },
+        "background": {
+          "$type": "color",
+          "$value": "{alias.color.state.info.muted}"
+        }
       }
     },
     "border": {
@@ -149,24 +165,6 @@
           "$value": "{alias.color.accent.inverse.muted}"
         }
       }
-    }
-  },
-  "shadow": {
-    "level1": {
-      "$type": "boxShadow",
-      "$value": "{shadow.sm}"
-    },
-    "level2": {
-      "$type": "boxShadow",
-      "$value": "{shadow.md}"
-    },
-    "level3": {
-      "$type": "boxShadow",
-      "$value": "{shadow.lg}"
-    },
-    "overlay": {
-      "$type": "boxShadow",
-      "$value": "{shadow.2xl}"
     }
   },
   "border": {
