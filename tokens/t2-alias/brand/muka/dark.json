@@ -177,6 +177,20 @@
             "$type": "color",
             "$value": "{color.blueDark.3}"
           }
+        },
+        "neutral": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.mauveDark.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.mauveDark.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.mauveDark.3}"
+          }
         }
       },
       "overlay": {

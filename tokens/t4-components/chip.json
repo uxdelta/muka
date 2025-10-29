@@ -1,0 +1,20 @@
+{
+  "chip": {
+    "size": {
+      "height": {
+        "sm": {
+          "$type": "sizing",
+          "$value": "{size.2xl}"
+        },
+        "md": {
+          "$type": "sizing",
+          "$value": "{size.3xl}"
+        },
+        "lg": {
+          "$type": "sizing",
+          "$value": "{size.4xl}"
+        }
+      }
+    }
+  }
+}

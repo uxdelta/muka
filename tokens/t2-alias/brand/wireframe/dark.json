@@ -125,57 +125,71 @@
         "success": {
           "contrast": {
             "$type": "color",
-            "$value": "{color.green.11}"
+            "$value": "{color.greenDark.11}"
           },
           "default": {
             "$type": "color",
-            "$value": "{color.green.9}"
+            "$value": "{color.greenDark.9}"
           },
           "muted": {
             "$type": "color",
-            "$value": "{color.green.3}"
+            "$value": "{color.greenDark.3}"
           }
         },
         "warning": {
           "contrast": {
             "$type": "color",
-            "$value": "{color.amber.11}"
+            "$value": "{color.amberDark.11}"
           },
           "default": {
             "$type": "color",
-            "$value": "{color.amber.9}"
+            "$value": "{color.amberDark.9}"
           },
           "muted": {
             "$type": "color",
-            "$value": "{color.amber.3}"
+            "$value": "{color.amberDark.3}"
           }
         },
         "error": {
           "contrast": {
             "$type": "color",
-            "$value": "{color.red.11}"
+            "$value": "{color.redDark.11}"
           },
           "default": {
             "$type": "color",
-            "$value": "{color.red.9}"
+            "$value": "{color.redDark.9}"
           },
           "muted": {
             "$type": "color",
-            "$value": "{color.red.3}"
+            "$value": "{color.redDark.3}"
           }
         },
         "info": {
           "contrast": {
             "$type": "color",
-            "$value": "{color.blue.11}"
+            "$value": "{color.blueDark.11}"
           },
           "default": {
             "$type": "color",
-            "$value": "{color.blue.9}"
+            "$value": "{color.blueDark.9}"
           },
           "muted": {
             "$type": "color",
-            "$value": "{color.blue.3}"
+            "$value": "{color.blueDark.3}"
+          }
+        },
+        "neutral": {
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.grayDark.11}"
+          },
+          "default": {
+            "$type": "color",
+            "$value": "{color.grayDark.9}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.grayDark.3}"
           }
         }
       },

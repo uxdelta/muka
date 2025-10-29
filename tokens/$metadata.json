@@ -16,6 +16,7 @@
     "t3-semantics/ui",
     "t4-components/button",
     "t4-components/card",
-    "t4-components/input"
+    "t4-components/input",
+    "t4-components/chip"
   ]
 }
