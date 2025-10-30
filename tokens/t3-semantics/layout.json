@@ -63,7 +63,7 @@
       },
       "spacious": {
         "$type": "spacing",
-        "$value": "{size.xl}"
+        "$value": "{size.2xl}"
       }
     }
   }
