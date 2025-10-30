@@ -213,7 +213,7 @@
           "fontFamily": "{alias.font.brand.family}",
           "fontWeight": "{alias.font.brand.weight.semibold}",
           "fontSize": "{font.size.4xl}",
-          "lineHeight": "{font.size.4xl}"
+          "lineHeight": "{font.size.5xl}"
         }
       },
       "h2": {
@@ -222,7 +222,7 @@
           "fontFamily": "{alias.font.brand.family}",
           "fontWeight": "{alias.font.brand.weight.semibold}",
           "fontSize": "{font.size.3xl}",
-          "lineHeight": "{font.size.3xl}"
+          "lineHeight": "{font.size.4xl}"
         }
       },
       "h3": {
@@ -231,7 +231,7 @@
           "fontFamily": "{alias.font.brand.family}",
           "fontWeight": "{alias.font.brand.weight.semibold}",
           "fontSize": "{font.size.2xl}",
-          "lineHeight": "{font.size.2xl}"
+          "lineHeight": "{font.size.3xl}"
         }
       },
       "h4": {
