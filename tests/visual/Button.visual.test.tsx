@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { render } from '@testing-library/react';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 import { Button } from '../../components/Button';
+import '../../components/Button/Button.css';
 
 // Mock icon components
 const PlusIcon = () => (
@@ -17,81 +19,116 @@ const ChevronIcon = () => (
 
 describe('Button Visual Regression Tests', () => {
   // Helper to render in a container for consistent screenshots
-  const renderInContainer = (component: React.ReactElement) => {
-    const { container } = render(
-      <div data-testid="spec" style={{ width: '343px', background: 'white', padding: '1rem' }}>
-        {component}
-      </div>
-    );
+  // This renders directly to the browser's DOM so Playwright can access it
+  const renderInContainer = async (component: React.ReactElement) => {
+    // Create container in the page's DOM
+    const container = document.createElement('div');
+    container.setAttribute('data-testid', 'spec');
+    container.style.width = '343px';
+    container.style.background = 'white';
+    container.style.padding = '1rem';
+    document.body.appendChild(container);
+
+    // Render React component to the browser DOM
+    const root = createRoot(container);
+    root.render(component);
+
+    // Wait for React to finish rendering
+    await new Promise(resolve => setTimeout(resolve, 0));
+
     return container;
   };
 
   describe('Variants', () => {
     it('should match primary button', async ({ page }) => {
-      renderInContainer(<Button variant="primary">Primary Button</Button>);
+      await renderInContainer(<Button variant="primary">Primary Button</Button>);
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
 
     it('should match secondary button', async ({ page }) => {
-      renderInContainer(<Button variant="secondary">Secondary Button</Button>);
+      await renderInContainer(<Button variant="secondary">Secondary Button</Button>);
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
 
     it('should match ghost button', async ({ page }) => {
-      renderInContainer(<Button variant="ghost">Ghost Button</Button>);
+      await renderInContainer(<Button variant="ghost">Ghost Button</Button>);
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
   });
 
   describe('Sizes', () => {
     it('should match small button', async ({ page }) => {
-      renderInContainer(<Button size="sm">Small Button</Button>);
+      await renderInContainer(<Button size="sm">Small Button</Button>);
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
 
     it('should match medium button', async ({ page }) => {
-      renderInContainer(<Button size="md">Medium Button</Button>);
+      await renderInContainer(<Button size="md">Medium Button</Button>);
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
 
     it('should match large button', async ({ page }) => {
-      renderInContainer(<Button size="lg">Large Button</Button>);
+      await renderInContainer(<Button size="lg">Large Button</Button>);
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
   });
 
   describe('States', () => {
     it('should match disabled state', async ({ page }) => {
-      renderInContainer(<Button disabled={true}>Disabled Button</Button>);
+      await renderInContainer(<Button disabled={true}>Disabled Button</Button>);
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
 
     it('should match hover state', async ({ page }) => {
-      renderInContainer(<Button>Hover Button</Button>);
+      await renderInContainer(<Button>Hover Button</Button>);
 
       const button = page.locator('.muka-button');
       await button.hover();
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
 
     it('should match pressed state', async ({ page }) => {
-      renderInContainer(<Button>Pressed Button</Button>);
+      await renderInContainer(<Button>Pressed Button</Button>);
 
       const button = page.locator('.muka-button');
       await button.click({ force: true });
@@ -100,10 +137,13 @@ describe('Button Visual Regression Tests', () => {
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
 
     it('should match full width button', async ({ page }) => {
-      renderInContainer(
+      await renderInContainer(
         <div style={{ width: '343px' }}>
           <Button fullWidth={true}>Full Width Button</Button>
         </div>
@@ -111,26 +151,35 @@ describe('Button Visual Regression Tests', () => {
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
   });
 
   describe('Icons', () => {
     it('should match button with left icon', async ({ page }) => {
-      renderInContainer(<Button iconLeft={<PlusIcon />}>Add Item</Button>);
+      await renderInContainer(<Button iconLeft={<PlusIcon />}>Add Item</Button>);
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
 
     it('should match button with right icon', async ({ page }) => {
-      renderInContainer(<Button iconRight={<ChevronIcon />}>Continue</Button>);
+      await renderInContainer(<Button iconRight={<ChevronIcon />}>Continue</Button>);
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
 
     it('should match button with both icons', async ({ page }) => {
-      renderInContainer(
+      await renderInContainer(
         <Button iconLeft={<PlusIcon />} iconRight={<ChevronIcon />}>
           Add & Continue
         </Button>
@@ -138,10 +187,13 @@ describe('Button Visual Regression Tests', () => {
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
 
     it('should match icon-only button', async ({ page }) => {
-      renderInContainer(
+      await renderInContainer(
         <Button iconLeft={<PlusIcon />} iconOnly={true}>
           Add Item
         </Button>
@@ -149,12 +201,15 @@ describe('Button Visual Regression Tests', () => {
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
   });
 
   describe('All Variants Showcase', () => {
     it('should match all variants and sizes', async ({ page }) => {
-      renderInContainer(
+      await renderInContainer(
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
           <Button variant="primary" size="sm">Primary SM</Button>
           <Button variant="primary" size="md">Primary MD</Button>
@@ -170,10 +225,13 @@ describe('Button Visual Regression Tests', () => {
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
 
     it('should match states comparison', async ({ page }) => {
-      renderInContainer(
+      await renderInContainer(
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <Button variant="primary">Default</Button>
           <Button variant="primary" disabled={true}>Disabled</Button>
@@ -183,6 +241,9 @@ describe('Button Visual Regression Tests', () => {
 
       const spec = await page.locator('[data-testid="spec"]').screenshot();
       expect(spec).toMatchImageSnapshot();
+      
+      // Cleanup
+      document.body.innerHTML = '';
     });
   });
 });

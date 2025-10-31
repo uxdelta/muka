@@ -13,7 +13,7 @@ export default defineConfig({
     globals: true,
     setupFiles: './vitest.browser.setup.ts',
     css: true,
-    include: ['**/*.browser.spec.ts'],
+    include: ['**/*.browser.spec.ts', '**/*.visual.test.tsx'],
     exclude: [
       '**/node_modules/**',
       '**/dist/**',

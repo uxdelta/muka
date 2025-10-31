@@ -13,6 +13,7 @@ export default defineConfig({
       '**/dist/**',
       '**/storybook-static/**',
       '**/*.browser.spec.ts',
+      '**/*.visual.test.tsx',
     ],
   },
 });
