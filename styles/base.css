@@ -67,9 +67,16 @@
   --text-label-lg-fontSize: 1.125rem;
   --text-label-lg-lineHeight: 1.75rem;
   
+  /* Body text fallbacks (for captions) */
+  --text-body-sm-fontSize: 0.875rem;
+  --text-body-sm-lineHeight: 1.25rem;
+  
   /* Font fallbacks */
   --alias-font-brand-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --alias-font-brand-weight-semibold: 600;
+  --alias-font-plain-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --alias-font-plain-weight-regular: 400;
+  --alias-font-plain-weight-semibold: 600;
   
   /* Label margin fallbacks */
   --button-label-margin-sm: 0.25rem;

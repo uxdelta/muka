@@ -1,0 +1,180 @@
+/* ListItem Component Styles - Using Muka Design Tokens */
+
+/* Base list item styles */
+.muka-listitem {
+  /* Layout */
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+  padding: var(--spacing-5) var(--spacing-4);
+  
+  /* Background - using semantic tokens */
+  background-color: var(--color-surface-level3);
+  
+  /* Typography */
+  font-family: var(--alias-font-brand-family);
+  
+  /* Border and spacing */
+  border: none;
+  position: relative;
+  
+  /* Interaction - only apply if interactive */
+  transition: background-color 0.2s ease;
+}
+
+/* Interactive state */
+.muka-listitem--interactive {
+  cursor: pointer;
+}
+
+.muka-listitem--interactive:hover:not(:disabled):not(.muka-listitem--disabled) {
+  background-color: var(--color-surface-level2);
+}
+
+.muka-listitem--interactive:active:not(:disabled):not(.muka-listitem--disabled),
+.muka-listitem--interactive.muka-listitem--pressed:not(:disabled):not(.muka-listitem--disabled) {
+  background-color: var(--color-surface-level1);
+}
+
+/* Focus styles for accessibility */
+.muka-listitem:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+/* Disabled state */
+.muka-listitem--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.muka-listitem--disabled:hover {
+  background-color: var(--color-surface-level3);
+}
+
+/* Selected state */
+.muka-listitem--selected {
+  background-color: var(--color-surface-level2);
+}
+
+.muka-listitem--selected:hover {
+  background-color: var(--color-surface-level1);
+}
+
+/* No divider modifier */
+.muka-listitem--no-divider .muka-listitem__divider {
+  display: none;
+}
+
+/* Leading content (icon or image) */
+.muka-listitem__leading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.muka-listitem__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--color-text-default-default);
+}
+
+.muka-listitem__image {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+/* Main content area */
+.muka-listitem__content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  min-width: 0;
+}
+
+.muka-listitem__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  min-width: 0;
+}
+
+/* Label text */
+.muka-listitem__label {
+  margin: 0;
+  padding: 0;
+  
+  /* Typography - using semantic tokens */
+  font-family: var(--alias-font-plain-family);
+  font-weight: var(--alias-font-plain-weight-semibold, 600);
+  font-size: var(--text-label-md-fontSize);
+  line-height: var(--text-label-md-lineHeight);
+  color: var(--color-text-default-default);
+  
+  /* Text handling */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Caption text */
+.muka-listitem__caption {
+  margin: 0;
+  padding: 0;
+  
+  /* Typography - using semantic tokens */
+  font-family: var(--alias-font-plain-family);
+  font-weight: var(--alias-font-plain-weight-regular, 400);
+  font-size: var(--text-body-sm-fontSize);
+  line-height: var(--text-body-sm-lineHeight);
+  color: var(--color-text-subtle-default);
+  
+  /* Text handling */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Trailing chevron */
+.muka-listitem__chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-subtle-default);
+}
+
+/* Bottom divider */
+.muka-listitem__divider {
+  position: absolute;
+  bottom: 0;
+  left: var(--spacing-4);
+  right: var(--spacing-4);
+  height: 1px;
+  background-color: var(--color-border-default);
+}
+
+/* Button and anchor specific styles */
+button.muka-listitem,
+a.muka-listitem {
+  text-align: left;
+  width: 100%;
+}
+
+/* List item specific styles */
+li.muka-listitem {
+  list-style: none;
+}

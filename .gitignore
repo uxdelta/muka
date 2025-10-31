@@ -52,3 +52,9 @@ coverage/
 # Temporary folders
 tmp/
 temp/
+
+# Test outputs
+__snapshots__/
+__screenshots__/
+*.png
+!src/**/*.png
