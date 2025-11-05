@@ -254,7 +254,8 @@
           "fontWeight": "{alias.font.brand.weight.semibold}",
           "fontSize": "{font.size.md}",
           "lineHeight": "{font.size.md}",
-          "letterSpacing": "{font.letterSpacing.wide}"
+          "letterSpacing": "{font.letterSpacing.wide}",
+          "textTransform": "uppercase"
         }
       }
     },
