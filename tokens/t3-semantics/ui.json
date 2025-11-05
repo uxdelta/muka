@@ -207,40 +207,54 @@
   },
   "text": {
     "heading": {
-      "h1": {
+      "xl": {
         "$type": "typography",
         "$value": {
           "fontFamily": "{alias.font.brand.family}",
           "fontWeight": "{alias.font.brand.weight.semibold}",
           "fontSize": "{font.size.4xl}",
-          "lineHeight": "{font.size.5xl}"
+          "lineHeight": "{font.size.5xl}",
+          "letterSpacing": "{font.letterSpacing.normal}"
         }
       },
-      "h2": {
+      "lg": {
         "$type": "typography",
         "$value": {
           "fontFamily": "{alias.font.brand.family}",
           "fontWeight": "{alias.font.brand.weight.semibold}",
           "fontSize": "{font.size.3xl}",
-          "lineHeight": "{font.size.4xl}"
+          "lineHeight": "{font.size.4xl}",
+          "letterSpacing": "{font.letterSpacing.normal}"
         }
       },
-      "h3": {
+      "md": {
         "$type": "typography",
         "$value": {
           "fontFamily": "{alias.font.brand.family}",
           "fontWeight": "{alias.font.brand.weight.semibold}",
           "fontSize": "{font.size.2xl}",
-          "lineHeight": "{font.size.3xl}"
+          "lineHeight": "{font.size.3xl}",
+          "letterSpacing": "{font.letterSpacing.normal}"
         }
       },
-      "h4": {
+      "sm": {
         "$type": "typography",
         "$value": {
           "fontFamily": "{alias.font.brand.family}",
           "fontWeight": "{alias.font.brand.weight.semibold}",
           "fontSize": "{font.size.xl}",
-          "lineHeight": "{font.size.xl}"
+          "lineHeight": "{font.size.2xl}",
+          "letterSpacing": "{font.letterSpacing.normal}"
+        }
+      },
+      "xs": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{alias.font.brand.family}",
+          "fontWeight": "{alias.font.brand.weight.semibold}",
+          "fontSize": "{font.size.md}",
+          "lineHeight": "{font.size.md}",
+          "letterSpacing": "{font.letterSpacing.wide}"
         }
       }
     },
@@ -392,7 +406,7 @@
       }
     },
     "subheading": {
-      "h1": {
+      "xl": {
         "$type": "typography",
         "$value": {
           "fontFamily": "{alias.font.plain.family}",
@@ -402,7 +416,7 @@
           "fontWeight": "{alias.font.plain.weight.regular}"
         }
       },
-      "h2": {
+      "lg": {
         "$type": "typography",
         "$value": {
           "fontFamily": "{alias.font.plain.family}",
@@ -412,7 +426,7 @@
           "paragraphSpacing": "{spacing.3}"
         }
       },
-      "h3": {
+      "md": {
         "$type": "typography",
         "$value": {
           "fontFamily": "{alias.font.plain.family}",
@@ -422,7 +436,7 @@
           "paragraphSpacing": "{spacing.2}"
         }
       },
-      "h4": {
+      "sm": {
         "$type": "typography",
         "$value": {
           "fontFamily": "{alias.font.plain.family}",
