@@ -255,7 +255,7 @@
           "fontSize": "{font.size.md}",
           "lineHeight": "{font.size.md}",
           "letterSpacing": "{font.letterSpacing.wide}",
-          "textTransform": "uppercase"
+          "textCase": "uppercase"
         }
       }
     },

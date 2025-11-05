@@ -1044,7 +1044,7 @@
   --text-heading-xs-fontSize: 1rem;
   --text-heading-xs-lineHeight: 1rem;
   --text-heading-xs-letterSpacing: 0.025em;
-  --text-heading-xs-textTransform: uppercase;
+  --text-heading-xs-textCase: uppercase;
   --text-label-sm-regular-fontFamily: Funnel Sans;
   --text-label-sm-regular-fontWeight: 400;
   --text-label-sm-regular-fontSize: 0.875rem;
