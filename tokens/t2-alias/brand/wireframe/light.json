@@ -57,22 +57,42 @@
       },
       "brand": {
         "primary": {
-          "$type": "color",
-          "$value": "{color.gray.11}"
+          "regular": {
+            "$type": "color",
+            "$value": "{color.gray.11}"
+          },
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.gray.12}"
+          },
+          "muted": {
+            "$type": "color",
+            "$value": "{color.gray.3}"
+          }
         },
-        "complementary": {
+        "secondary": {
+          "regular": {
+            "$type": "color",
+            "$value": "{color.gray.9}"
+          },
+          "contrast": {
+            "$type": "color",
+            "$value": "{color.gray.11}"
+          },
+          "contrast-copy": {
+            "$type": "color",
+            "$value": "{color.gray.3}"
+          }
+        },
+        "default-deprecated": {
           "$type": "color",
           "$value": "{color.gray.9}"
         },
-        "default": {
-          "$type": "color",
-          "$value": "{color.gray.9}"
-        },
-        "contrast": {
+        "contrast-deprecated": {
           "$type": "color",
           "$value": "{color.gray.12}"
         },
-        "muted": {
+        "muted-deprecated": {
           "$type": "color",
           "$value": "{color.gray.5}"
         }
