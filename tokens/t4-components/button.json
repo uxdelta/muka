@@ -65,7 +65,7 @@
         "background": {
           "default": {
             "$type": "color",
-            "$value": "{color.surface.level3}"
+            "$value": "{color.surface.level2}"
           },
           "hover": {
             "$type": "color",
@@ -152,6 +152,80 @@
           "disabled": {
             "$type": "color",
             "$value": "{color.text.muted.default}"
+          }
+        },
+        "border": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.border.default}"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{color.border.contrast}"
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": "{color.border.contrast}"
+          },
+          "disabled": {
+            "$type": "color",
+            "$value": "{color.border.default}"
+          }
+        }
+      },
+      "tertiary": {
+        "background": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.surface.level3}"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{color.surface.level2}"
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": "{color.surface.level1}"
+          },
+          "disabled": {
+            "$type": "color",
+            "$value": "{color.surface.level3}"
+          }
+        },
+        "foreground": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.action.default}"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{color.action.hover}"
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": "{color.action.pressed}"
+          },
+          "disabled": {
+            "$type": "color",
+            "$value": "{color.text.muted.default}"
+          }
+        },
+        "border": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.border.default}"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{color.border.contrast}"
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": "{color.border.contrast}"
+          },
+          "disabled": {
+            "$type": "color",
+            "$value": "{color.border.default}"
           }
         }
       }

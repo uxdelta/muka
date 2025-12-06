@@ -73,15 +73,15 @@
         "secondary": {
           "regular": {
             "$type": "color",
-            "$value": "{color.limeDark.8}"
+            "$value": "{color.mintDark.8}"
           },
           "contrast": {
             "$type": "color",
-            "$value": "{color.limeDark.11}"
+            "$value": "{color.mintDark.11}"
           },
           "muted": {
             "$type": "color",
-            "$value": "{color.limeDark.3}"
+            "$value": "{color.mintDark.3}"
           }
         },
         "default-deprecated": {
@@ -145,15 +145,15 @@
         "success": {
           "contrast": {
             "$type": "color",
-            "$value": "{color.greenDark.11}"
+            "$value": "{color.mintDark.11}"
           },
           "default": {
             "$type": "color",
-            "$value": "{color.greenDark.9}"
+            "$value": "{color.mintDark.9}"
           },
           "muted": {
             "$type": "color",
-            "$value": "{color.greenDark.3}"
+            "$value": "{color.mintDark.3}"
           }
         },
         "warning": {
