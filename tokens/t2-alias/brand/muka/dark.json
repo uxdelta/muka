@@ -216,43 +216,43 @@
       "overlay": {
         "0": {
           "$type": "color",
-          "$value": "rgba( {color.slate.12}, 0)"
+          "$value": "rgba( {color.slateDark.12}, 0)"
         },
         "10": {
           "$type": "color",
-          "$value": "rgba( {color.slate.12}, 0.1)"
+          "$value": "rgba( {color.slateDark.12}, 0.1)"
         },
         "20": {
           "$type": "color",
-          "$value": "rgba( {color.slate.12}, 0.2)"
+          "$value": "rgba( {color.slateDark.12}, 0.2)"
         },
         "30": {
           "$type": "color",
-          "$value": "rgba( {color.slate.12}, 0.3)"
+          "$value": "rgba( {color.slateDark.12}, 0.3)"
         },
         "40": {
           "$type": "color",
-          "$value": "rgba( {color.slate.12}, 0.4)"
+          "$value": "rgba( {color.slateDark.12}, 0.4)"
         },
         "50": {
           "$type": "color",
-          "$value": "rgba( {color.slate.12}, 0.5)"
+          "$value": "rgba( {color.slateDark.12}, 0.5)"
         },
         "60": {
           "$type": "color",
-          "$value": "rgba( {color.slate.12}, 0.6)"
+          "$value": "rgba( {color.slateDark.12}, 0.6)"
         },
         "70": {
           "$type": "color",
-          "$value": "rgba( {color.slate.12}, 0.7)"
+          "$value": "rgba( {color.slateDark.12}, 0.7)"
         },
         "80": {
           "$type": "color",
-          "$value": "rgba( {color.slate.12}, 0.8)"
+          "$value": "rgba( {color.slateDark.12}, 0.8)"
         },
         "90": {
           "$type": "color",
-          "$value": "rgba( {color.slate.12}, 0.9)"
+          "$value": "rgba( {color.slateDark.12}, 0.9)"
         }
       }
     }
