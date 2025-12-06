@@ -49,6 +49,24 @@
         "$type": "spacing",
         "$value": "{size.4xl}"
       }
+    },
+    "max-width": {
+      "small": {
+        "$type": "sizing",
+        "$value": "360px"
+      },
+      "medium": {
+        "$type": "sizing",
+        "$value": "640px"
+      },
+      "large": {
+        "$type": "sizing",
+        "$value": "920px"
+      },
+      "xlarge": {
+        "$type": "sizing",
+        "$value": "920px"
+      }
     }
   },
   "wrapper": {
