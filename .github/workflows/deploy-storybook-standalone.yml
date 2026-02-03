@@ -6,8 +6,6 @@ name: Deploy Storybook (Standalone) - DISABLED
 
 # Completely disabled - no triggers
 on: []
-      - 'tokens/**'
-  workflow_dispatch: # Allow manual triggering
 
 jobs:
   deploy-storybook:

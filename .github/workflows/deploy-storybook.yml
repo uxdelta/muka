@@ -6,11 +6,6 @@ name: Deploy Storybook - DISABLED
 
 # Completely disabled - no triggers
 on: []
-      - 'package.json'
-      - 'package-lock.json'
-  workflow_run:
-    workflows: ["Build Design Tokens"]
-    types: [completed]
 
 jobs:
   deploy-storybook:
