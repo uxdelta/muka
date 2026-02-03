@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react-vite';
 import React, { useEffect } from 'react';
 import '../styles/base.css';
-import '../styles/tokens.css';
+import '../styles/tokens-muka-light.css'; // Default theme loaded immediately
 import manifest from '../build/manifest.json';
 
 // Load Google Fonts for brand fonts

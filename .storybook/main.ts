@@ -13,7 +13,10 @@ const config: StorybookConfig = {
     "name": "@storybook/react-vite",
     "options": {}
   },
-  "staticDirs": ["../styles", "../public"],
+  "staticDirs": [
+    { from: "../styles", to: "/styles" },
+    "../public"
+  ],
   "core": {
     "disableTelemetry": true
   },
