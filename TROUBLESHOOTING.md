@@ -1,5 +1,20 @@
 # 🔧 Troubleshooting GitHub Pages Deployment
 
+## 📧 **Turn off workflow failure emails**
+
+If you're getting email notifications every time the "Deploy Storybook" workflow fails:
+
+1. Go to **GitHub → Settings → Notifications**  
+   (or [github.com/settings/notifications](https://github.com/settings/notifications))
+2. Under **System**, find **Actions**
+3. Change the dropdown from **"Email"** or **"Only notify for failed workflows"** to:
+   - **"On GitHub"** – only in-app notifications, no email, or  
+   - **"Don't notify"** – no workflow notifications at all
+
+You can also unwatch the repo or change **Watch** settings for this repository so you're not subscribed to Actions for it.
+
+---
+
 ## 🚨 **Issue: https://uxdelta.github.io/muka/ is not working**
 
 ### Quick Fixes
@@ -40,14 +55,12 @@ git add . && git commit -m "force deployment" && git push origin main
 3. Save settings
 
 ### Issue: Workflow fails with permission errors
-**Cause:** Missing permissions
-**Solution:** The workflow now includes proper permissions:
-```yaml
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-```
+**Cause:** Missing permissions or wrong deployment method
+**Solution:** The workflow uses the official GitHub Pages actions (`upload-pages-artifact` + `deploy-pages`) with:
+- **Build job:** checkout, npm ci, build tokens, build Storybook, upload `storybook-static/` as artifact
+- **Deploy job:** `pages: write` and `id-token: write`, targets the `github-pages` environment
+
+Ensure **Settings → Pages → Source** is set to **"GitHub Actions"** (not "Deploy from a branch").
 
 ### Issue: Storybook build fails
 **Cause:** Missing dependencies or build errors
@@ -62,20 +75,14 @@ npm run build-storybook
 **Cause:** Build step failed or wrong path
 **Solution:** Check that `storybook-static` folder exists after build
 
-## 🚀 **Updated Workflow**
+## 🚀 **Deploy Storybook workflow**
 
-I've created a more reliable deployment workflow:
+The workflow (`.github/workflows/deploy-storybook.yml`) uses the **official** GitHub Pages deployment:
 
-### New Features:
-- ✅ **Standalone deployment** - Doesn't depend on token workflow
-- ✅ **Manual trigger** - Can be triggered manually if needed
-- ✅ **Proper permissions** - Uses latest GitHub Pages actions
-- ✅ **Environment protection** - Uses GitHub Pages environment
-- ✅ **Token building included** - Builds tokens as part of deployment
+- **Build job:** Checkout → Node 18 → `npm ci` → `npm run build:tokens` → `npm run build-storybook` → `actions/upload-pages-artifact` (path: `storybook-static/`)
+- **Deploy job:** `actions/deploy-pages` with `pages: write` and `id-token: write`, targeting the `github-pages` environment
 
-### Files:
-- `deploy-storybook.yml` - Updated with new actions
-- `deploy-storybook-standalone.yml` - New standalone workflow
+**Required:** In the repo, **Settings → Pages → Source** must be **"GitHub Actions"**. The `github-pages` environment is created automatically if it doesn't exist.
 
 ## 🎯 **Next Steps**
 
