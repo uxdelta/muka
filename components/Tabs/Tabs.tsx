@@ -150,7 +150,7 @@ export const Tab: React.FC<TabProps> = ({
 
   const tabClasses = [
     'muka-tabs__trigger',
-    isActive && 'muka-tabs__trigger--active',
+    isActive && 'muka-tabs__trigger--current',
     disabled && 'muka-tabs__trigger--disabled',
     className,
   ].filter(Boolean).join(' ');

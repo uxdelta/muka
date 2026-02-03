@@ -45,17 +45,17 @@
   margin-bottom: calc(var(--border-width-regular) * -1);
 }
 
-/* Active tab — white bg, no bottom border, overlaps panel border */
-.muka-tabs__trigger--active {
-  background-color: var(--tabs-trigger-color-active-background);
-  color: var(--tabs-trigger-color-active-foreground);
-  border-color: var(--tabs-trigger-color-active-border);
+/* Current tab — white bg, no bottom border, overlaps panel border */
+.muka-tabs__trigger--current {
+  background-color: var(--tabs-trigger-color-current-background);
+  color: var(--tabs-trigger-color-current-foreground);
+  border-color: var(--tabs-trigger-color-current-border);
   z-index: 3;
-  /* Hide the panel's top border behind the active tab */
-  border-bottom: var(--border-width-regular) solid var(--tabs-trigger-color-active-background);
+  /* Hide the panel's top border behind the current tab */
+  border-bottom: var(--border-width-regular) solid var(--tabs-trigger-color-current-background);
 }
 
-.muka-tabs__trigger:hover:not(:disabled):not(.muka-tabs__trigger--active) {
+.muka-tabs__trigger:hover:not(:disabled):not(.muka-tabs__trigger--current) {
   background-color: var(--tabs-trigger-color-hover-background);
   color: var(--tabs-trigger-color-hover-foreground);
 }

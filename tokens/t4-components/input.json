@@ -118,7 +118,7 @@
             "style": ""
           }
         },
-        "active": {
+        "focused": {
           "$type": "border",
           "$value": {
             "color": "{input.field.color.focus.border}",

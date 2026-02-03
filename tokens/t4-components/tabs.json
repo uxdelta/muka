@@ -34,7 +34,7 @@
             "$value": "{color.border.contrast}"
           }
         },
-        "active": {
+        "current": {
           "background": {
             "$type": "color",
             "$value": "{color.surface.level3}"

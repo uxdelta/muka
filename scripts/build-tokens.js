@@ -73,6 +73,11 @@ class TokenBuilder {
     
     const resolvedValue = this.getTokenValue(tokenPath, tokens);
     if (resolvedValue !== null) {
+      // If the resolved value is non-string (array/object), return it directly
+      // when the reference is the entire value (not embedded in a larger string)
+      if (typeof resolvedValue !== 'string' && value === tokenRef[0]) {
+        return resolvedValue;
+      }
       const newValue = value.replace(tokenRef[0], resolvedValue);
       return this.resolveTokenValue(newValue, tokens, visited);
     }
@@ -102,7 +107,16 @@ class TokenBuilder {
       if (typeof obj !== 'object' || obj === null) return obj;
       
       if (obj.$value) {
-        obj.$value = this.resolveTokenValue(obj.$value, tokens);
+        if (typeof obj.$value === 'string') {
+          obj.$value = this.resolveTokenValue(obj.$value, tokens);
+        } else if (typeof obj.$value === 'object' && !Array.isArray(obj.$value)) {
+          // Resolve references inside composite token values (border, etc.)
+          for (const key in obj.$value) {
+            if (typeof obj.$value[key] === 'string') {
+              obj.$value[key] = this.resolveTokenValue(obj.$value[key], tokens);
+            }
+          }
+        }
         return obj;
       }
       
@@ -167,6 +181,19 @@ class TokenBuilder {
             const resolvedPropValue = this.resolveTokenValue(propValue, obj);
             callback(`${cssName}-${prop}`, resolvedPropValue);
           }
+        } else if (value.$type === 'border' && typeof value.$value === 'object') {
+          // Handle border composite tokens: { color, width, style } → "width style color"
+          const color = value.$value.color;
+          const width = value.$value.width;
+          const style = value.$value.style || 'solid';
+          callback(cssName, `${width} ${style} ${color}`);
+        } else if (value.$type === 'boxShadow' && Array.isArray(value.$value)) {
+          // Handle boxShadow composite tokens: array of layers → CSS box-shadow
+          const shadowStr = value.$value.map(layer => {
+            const inset = layer.type === 'innerShadow' ? 'inset ' : '';
+            return `${inset}${layer.x} ${layer.y} ${layer.blur} ${layer.spread} ${layer.color}`;
+          }).join(', ');
+          callback(cssName, shadowStr);
         } else {
           // Regular token with simple value
           const resolvedValue = this.resolveTokenValue(value.$value, obj);
