@@ -1,0 +1,239 @@
+/* Input Component Styles - Using Muka Design Tokens */
+
+/* Wrapper */
+.muka-input {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.muka-input--full-width {
+  width: 100%;
+}
+
+/* Label */
+.muka-input__label {
+  color: var(--color-text-default-default);
+  cursor: pointer;
+}
+
+.muka-input__label--sm {
+  font-family: var(--text-label-sm-semibold-fontFamily);
+  font-weight: var(--text-label-sm-semibold-fontWeight);
+  font-size: var(--text-label-sm-semibold-fontSize);
+  line-height: var(--text-label-sm-semibold-lineHeight);
+}
+
+.muka-input__label--md {
+  font-family: var(--text-label-md-semibold-fontFamily);
+  font-weight: var(--text-label-md-semibold-fontWeight);
+  font-size: var(--text-label-md-semibold-fontSize);
+  line-height: var(--text-label-md-semibold-lineHeight);
+}
+
+.muka-input__label--lg {
+  font-family: var(--text-label-lg-semibold-fontFamily);
+  font-weight: var(--text-label-lg-semibold-fontWeight);
+  font-size: var(--text-label-lg-semibold-fontSize);
+  line-height: var(--text-label-lg-semibold-lineHeight);
+}
+
+.muka-input__required {
+  color: var(--color-state-error-foreground);
+}
+
+.muka-input__label--sm + .muka-input__field--disabled,
+.muka-input__label--md + .muka-input__field--disabled,
+.muka-input__label--lg + .muka-input__field--disabled {
+  cursor: not-allowed;
+}
+
+/* Field container */
+.muka-input__field {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background-color: var(--input-field-color-default-background);
+  border: var(--border-width-regular) solid var(--input-field-color-default-border);
+  border-radius: var(--input-field-radius-md);
+  padding: var(--input-field-padding-y) var(--input-field-padding-x);
+  transition: border-color 0.2s ease, background-color 0.2s ease, border-width 0.1s ease;
+  cursor: text;
+  position: relative;
+}
+
+/* Inset shadow overlay (matches Figma) */
+.muka-input__field::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0px 1px 1px 0px rgba(26, 26, 26, 0.15),
+              inset 0px 1px 2px 0px rgba(26, 26, 26, 0.15);
+  pointer-events: none;
+}
+
+/* Size variants */
+.muka-input__field--sm {
+  min-height: var(--input-field-height-sm);
+  border-radius: var(--input-field-radius-sm);
+}
+
+.muka-input__field--md {
+  min-height: var(--input-field-height-default);
+  border-radius: var(--input-field-radius-md);
+}
+
+.muka-input__field--lg {
+  min-height: var(--input-field-height-lg);
+  border-radius: var(--input-field-radius-lg);
+}
+
+/* Hover state */
+.muka-input__field:hover:not(.muka-input__field--disabled):not(.muka-input__field--error) {
+  border-width: var(--border-width-bold);
+  border-color: var(--input-field-color-hover-border);
+  background-color: var(--input-field-color-hover-background);
+  padding: calc(var(--input-field-padding-y) - 1px) calc(var(--input-field-padding-x) - 1px);
+}
+
+/* Focus state */
+.muka-input__field--focused:not(.muka-input__field--disabled) {
+  border-width: var(--border-width-bold);
+  border-color: var(--input-field-color-focus-border);
+  background-color: var(--input-field-color-focus-background);
+  padding: calc(var(--input-field-padding-y) - 1px) calc(var(--input-field-padding-x) - 1px);
+  outline: none;
+}
+
+/* Focus ring (separate ring matching Figma — offset with blue glow) */
+.muka-input__field--focused:not(.muka-input__field--disabled)::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border: 2px solid var(--input-field-color-focus-border);
+  border-radius: calc(var(--input-field-radius-md) + 5px);
+  box-shadow: 0px 0px 4px 0px var(--color-border-focus);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.muka-input__field--sm.muka-input__field--focused::before {
+  border-radius: calc(var(--input-field-radius-sm) + 5px);
+}
+
+.muka-input__field--lg.muka-input__field--focused::before {
+  border-radius: calc(var(--input-field-radius-lg) + 5px);
+}
+
+/* Error state */
+.muka-input__field--error:not(.muka-input__field--disabled) {
+  border-width: var(--border-width-bold);
+  border-color: var(--input-field-color-error-border);
+  background-color: var(--input-field-color-error-background);
+  padding: calc(var(--input-field-padding-y) - 1px) calc(var(--input-field-padding-x) - 1px);
+}
+
+/* Disabled state */
+.muka-input__field--disabled {
+  background-color: var(--input-field-color-disabled-background);
+  border-color: var(--input-field-color-disabled-border);
+  cursor: not-allowed;
+}
+
+/* No inset shadow on disabled (matches Figma) */
+.muka-input__field--disabled::after {
+  display: none;
+}
+
+/* Native input */
+.muka-input__native {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--input-field-color-default-foreground);
+  font-family: var(--text-input-md-fontFamily);
+  font-weight: var(--text-input-md-fontWeight);
+  font-size: var(--text-input-md-fontSize);
+  line-height: var(--text-input-md-lineHeight);
+  padding: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.muka-input__field--sm .muka-input__native {
+  font-family: var(--text-input-sm-fontFamily);
+  font-weight: var(--text-input-sm-fontWeight);
+  font-size: var(--text-input-sm-fontSize);
+  line-height: var(--text-input-sm-lineHeight);
+}
+
+.muka-input__field--lg .muka-input__native {
+  font-family: var(--text-input-lg-fontFamily);
+  font-weight: var(--text-input-lg-fontWeight);
+  font-size: var(--text-input-lg-fontSize);
+  line-height: var(--text-input-lg-lineHeight);
+}
+
+.muka-input__native::placeholder {
+  color: var(--color-text-subtle-default);
+}
+
+.muka-input__field--disabled .muka-input__native {
+  color: var(--input-field-color-disabled-foreground);
+  cursor: not-allowed;
+}
+
+.muka-input__field--disabled .muka-input__native::placeholder {
+  color: var(--input-field-color-disabled-foreground);
+}
+
+/* Icons */
+.muka-input__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--color-text-subtle-default);
+  width: var(--icon-size-default);
+  height: var(--icon-size-default);
+}
+
+.muka-input__field--sm .muka-input__icon {
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+}
+
+.muka-input__field--lg .muka-input__icon {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+}
+
+.muka-input__field--disabled .muka-input__icon {
+  color: var(--input-field-color-disabled-foreground);
+}
+
+.muka-input__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Helper text */
+.muka-input__helper {
+  font-family: var(--text-label-sm-regular-fontFamily);
+  font-weight: var(--text-label-sm-regular-fontWeight);
+  font-size: var(--text-label-sm-regular-fontSize);
+  line-height: var(--text-label-sm-regular-lineHeight);
+  color: var(--color-text-subtle-default);
+  margin: 0;
+}
+
+/* Error message */
+.muka-input__error {
+  font-family: var(--text-label-sm-regular-fontFamily);
+  font-weight: var(--text-label-sm-regular-fontWeight);
+  font-size: var(--text-label-sm-regular-fontSize);
+  line-height: var(--text-label-sm-regular-lineHeight);
+  color: var(--color-state-error-foreground);
+  margin: 0;
+}

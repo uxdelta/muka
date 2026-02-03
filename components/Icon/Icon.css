@@ -1,0 +1,34 @@
+/* Icon Component Styles - Using Muka Design Tokens */
+
+.muka-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.muka-icon--xs {
+  width: var(--icon-size-xs);
+  height: var(--icon-size-xs);
+}
+
+.muka-icon--sm {
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+}
+
+.muka-icon--md {
+  width: var(--icon-size-default);
+  height: var(--icon-size-default);
+}
+
+.muka-icon--lg {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+}
+
+.muka-icon svg {
+  width: 100%;
+  height: 100%;
+}

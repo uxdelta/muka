@@ -1,0 +1,88 @@
+/* Tabs Component Styles - Folder/card-style tabs matching Figma */
+
+.muka-tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tab List — strip container */
+.muka-tabs__list {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  padding-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Tab Trigger — folder-style with rounded top corners */
+.muka-tabs__trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--tabs-trigger-height);
+  padding: var(--tabs-trigger-padding-y) var(--tabs-trigger-padding-x);
+  background-color: var(--tabs-trigger-color-default-background);
+  border: var(--border-width-regular) solid var(--tabs-trigger-color-default-border);
+  border-bottom: none;
+  border-top-left-radius: var(--tabs-trigger-radius);
+  border-top-right-radius: var(--tabs-trigger-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  color: var(--tabs-trigger-color-default-foreground);
+  font-family: var(--text-label-md-regular-fontFamily);
+  font-weight: var(--text-label-md-regular-fontWeight);
+  font-size: var(--text-label-md-regular-fontSize);
+  line-height: var(--text-label-md-regular-lineHeight);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  outline: none;
+  white-space: nowrap;
+  margin-right: calc(var(--border-width-regular) * -1);
+  position: relative;
+  /* Inactive tabs sit slightly above the panel border */
+  margin-bottom: calc(var(--border-width-regular) * -1);
+}
+
+/* Active tab — white bg, no bottom border, overlaps panel border */
+.muka-tabs__trigger--active {
+  background-color: var(--tabs-trigger-color-active-background);
+  color: var(--tabs-trigger-color-active-foreground);
+  border-color: var(--tabs-trigger-color-active-border);
+  z-index: 3;
+  /* Hide the panel's top border behind the active tab */
+  border-bottom: var(--border-width-regular) solid var(--tabs-trigger-color-active-background);
+}
+
+.muka-tabs__trigger:hover:not(:disabled):not(.muka-tabs__trigger--active) {
+  background-color: var(--tabs-trigger-color-hover-background);
+  color: var(--tabs-trigger-color-hover-foreground);
+}
+
+.muka-tabs__trigger--disabled {
+  color: var(--tabs-trigger-color-disabled-foreground);
+  background-color: var(--tabs-trigger-color-disabled-background);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.muka-tabs__trigger:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+/* Tab Panel — bordered content area */
+.muka-tabs__panel {
+  background-color: var(--tabs-panel-background);
+  border-top: var(--border-width-regular) solid var(--tabs-panel-border);
+  border-bottom: var(--border-width-regular) solid var(--tabs-panel-border);
+  padding: var(--spacing-4);
+  position: relative;
+  z-index: 1;
+}
+
+.muka-tabs__panel:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}

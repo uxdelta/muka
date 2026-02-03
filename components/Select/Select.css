@@ -1,0 +1,215 @@
+/* Select Component Styles - Using Muka Design Tokens */
+
+.muka-select {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.muka-select--full-width {
+  width: 100%;
+}
+
+/* Label */
+.muka-select__label {
+  color: var(--color-text-default-default);
+  cursor: pointer;
+}
+
+.muka-select__label--sm {
+  font-family: var(--text-label-sm-semibold-fontFamily);
+  font-weight: var(--text-label-sm-semibold-fontWeight);
+  font-size: var(--text-label-sm-semibold-fontSize);
+  line-height: var(--text-label-sm-semibold-lineHeight);
+}
+
+.muka-select__label--md {
+  font-family: var(--text-label-md-semibold-fontFamily);
+  font-weight: var(--text-label-md-semibold-fontWeight);
+  font-size: var(--text-label-md-semibold-fontSize);
+  line-height: var(--text-label-md-semibold-lineHeight);
+}
+
+.muka-select__label--lg {
+  font-family: var(--text-label-lg-semibold-fontFamily);
+  font-weight: var(--text-label-lg-semibold-fontWeight);
+  font-size: var(--text-label-lg-semibold-fontSize);
+  line-height: var(--text-label-lg-semibold-lineHeight);
+}
+
+.muka-select__required {
+  color: var(--color-state-error-foreground);
+}
+
+/* Field container */
+.muka-select__field {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--select-field-color-default-background);
+  border: var(--border-width-regular) solid var(--select-field-color-default-border);
+  border-radius: var(--select-field-radius-md);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+/* Inset shadow overlay (matches Figma) */
+.muka-select__field::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0px 1px 1px 0px rgba(26, 26, 26, 0.15),
+              inset 0px 1px 2px 0px rgba(26, 26, 26, 0.15);
+  pointer-events: none;
+}
+
+/* Sizes */
+.muka-select__field--sm {
+  min-height: var(--select-field-height-sm);
+  border-radius: var(--select-field-radius-sm);
+}
+
+.muka-select__field--md {
+  min-height: var(--select-field-height-default);
+  border-radius: var(--select-field-radius-md);
+}
+
+.muka-select__field--lg {
+  min-height: var(--select-field-height-lg);
+  border-radius: var(--select-field-radius-lg);
+}
+
+/* Hover state */
+.muka-select__field:hover:not(.muka-select__field--disabled):not(.muka-select__field--error) {
+  border-width: var(--border-width-bold);
+  border-color: var(--select-field-color-hover-border);
+}
+
+.muka-select__field:hover:not(.muka-select__field--disabled):not(.muka-select__field--error) .muka-select__native {
+  padding: calc(var(--select-field-padding-y) - 1px) calc(var(--select-field-padding-x) - 1px);
+  padding-right: calc(var(--select-field-padding-x) + 1.5rem - 1px);
+}
+
+/* Focus state */
+.muka-select__field--focused:not(.muka-select__field--disabled) {
+  border-width: var(--border-width-bold);
+  border-color: var(--select-field-color-focus-border);
+  outline: none;
+}
+
+.muka-select__field--focused:not(.muka-select__field--disabled) .muka-select__native {
+  padding: calc(var(--select-field-padding-y) - 1px) calc(var(--select-field-padding-x) - 1px);
+  padding-right: calc(var(--select-field-padding-x) + 1.5rem - 1px);
+}
+
+/* Focus ring (separate ring matching Figma) */
+.muka-select__field--focused:not(.muka-select__field--disabled)::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border: 2px solid var(--select-field-color-focus-border);
+  border-radius: calc(var(--select-field-radius-md) + 5px);
+  box-shadow: 0px 0px 4px 0px var(--color-border-focus);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.muka-select__field--sm.muka-select__field--focused::before {
+  border-radius: calc(var(--select-field-radius-sm) + 5px);
+}
+
+.muka-select__field--lg.muka-select__field--focused::before {
+  border-radius: calc(var(--select-field-radius-lg) + 5px);
+}
+
+/* Error state */
+.muka-select__field--error:not(.muka-select__field--disabled) {
+  border-width: var(--border-width-bold);
+  border-color: var(--select-field-color-error-border);
+}
+
+.muka-select__field--error:not(.muka-select__field--disabled) .muka-select__native {
+  padding: calc(var(--select-field-padding-y) - 1px) calc(var(--select-field-padding-x) - 1px);
+  padding-right: calc(var(--select-field-padding-x) + 1.5rem - 1px);
+}
+
+/* Disabled state */
+.muka-select__field--disabled {
+  background-color: var(--select-field-color-disabled-background);
+  border-color: var(--select-field-color-disabled-border);
+  cursor: not-allowed;
+}
+
+.muka-select__field--disabled::after {
+  display: none;
+}
+
+/* Native select */
+.muka-select__native {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--select-field-color-default-foreground);
+  font-family: var(--text-input-md-fontFamily);
+  font-weight: var(--text-input-md-fontWeight);
+  font-size: var(--text-input-md-fontSize);
+  line-height: var(--text-input-md-lineHeight);
+  padding: var(--select-field-padding-y) var(--select-field-padding-x);
+  padding-right: calc(var(--select-field-padding-x) + 1.5rem);
+  cursor: pointer;
+  min-width: 0;
+  width: 100%;
+}
+
+.muka-select__field--sm .muka-select__native {
+  font-family: var(--text-input-sm-fontFamily);
+  font-size: var(--text-input-sm-fontSize);
+}
+
+.muka-select__field--lg .muka-select__native {
+  font-family: var(--text-input-lg-fontFamily);
+  font-size: var(--text-input-lg-fontSize);
+}
+
+.muka-select__field--disabled .muka-select__native {
+  color: var(--select-field-color-disabled-foreground);
+  cursor: not-allowed;
+}
+
+/* Chevron */
+.muka-select__chevron {
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  right: var(--select-field-padding-x);
+  pointer-events: none;
+  color: var(--color-text-subtle-default);
+}
+
+.muka-select__field--disabled .muka-select__chevron {
+  color: var(--select-field-color-disabled-foreground);
+}
+
+/* Helper text */
+.muka-select__helper {
+  font-family: var(--text-label-sm-regular-fontFamily);
+  font-weight: var(--text-label-sm-regular-fontWeight);
+  font-size: var(--text-label-sm-regular-fontSize);
+  line-height: var(--text-label-sm-regular-lineHeight);
+  color: var(--color-text-subtle-default);
+  margin: 0;
+}
+
+/* Error message */
+.muka-select__error {
+  font-family: var(--text-label-sm-regular-fontFamily);
+  font-weight: var(--text-label-sm-regular-fontWeight);
+  font-size: var(--text-label-sm-regular-fontSize);
+  line-height: var(--text-label-sm-regular-lineHeight);
+  color: var(--color-state-error-foreground);
+  margin: 0;
+}

@@ -1,0 +1,24 @@
+/* Divider Component Styles - Using Muka Design Tokens */
+
+.muka-divider {
+  flex-shrink: 0;
+}
+
+.muka-divider--horizontal {
+  width: 100%;
+  height: var(--separator-width);
+}
+
+.muka-divider--vertical {
+  height: 100%;
+  width: var(--separator-width);
+  align-self: stretch;
+}
+
+.muka-divider--default {
+  background-color: var(--separator-color-default);
+}
+
+.muka-divider--contrast {
+  background-color: var(--separator-color-contrast);
+}

@@ -1,0 +1,38 @@
+/* Label Component Styles - Using Muka Design Tokens */
+
+.muka-label {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text-default-default);
+  cursor: pointer;
+}
+
+.muka-label--sm {
+  font-family: var(--text-label-sm-semibold-fontFamily);
+  font-weight: var(--text-label-sm-semibold-fontWeight);
+  font-size: var(--text-label-sm-semibold-fontSize);
+  line-height: var(--text-label-sm-semibold-lineHeight);
+}
+
+.muka-label--md {
+  font-family: var(--text-label-md-semibold-fontFamily);
+  font-weight: var(--text-label-md-semibold-fontWeight);
+  font-size: var(--text-label-md-semibold-fontSize);
+  line-height: var(--text-label-md-semibold-lineHeight);
+}
+
+.muka-label--lg {
+  font-family: var(--text-label-lg-semibold-fontFamily);
+  font-weight: var(--text-label-lg-semibold-fontWeight);
+  font-size: var(--text-label-lg-semibold-fontSize);
+  line-height: var(--text-label-lg-semibold-lineHeight);
+}
+
+.muka-label--disabled {
+  color: var(--color-text-subtle-default);
+  cursor: not-allowed;
+}
+
+.muka-label__required {
+  color: var(--color-state-error-foreground);
+}

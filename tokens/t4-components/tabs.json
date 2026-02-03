@@ -1,0 +1,96 @@
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "tabs": {
+    "trigger": {
+      "color": {
+        "default": {
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level2}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.text.default.default}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.border.contrast}"
+          }
+        },
+        "hover": {
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level2}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.text.default.default}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.border.contrast}"
+          }
+        },
+        "active": {
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level3}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{input.field.color.default.foreground}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.border.contrast}"
+          }
+        },
+        "disabled": {
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.text.muted.default}"
+          },
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level2}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.border.contrast}"
+          }
+        }
+      },
+      "padding": {
+        "x": {
+          "$type": "dimension",
+          "$value": "{spacing.3}"
+        },
+        "y": {
+          "$type": "dimension",
+          "$value": "{spacing.2}"
+        }
+      },
+      "height": {
+        "$type": "dimension",
+        "$value": "{input.field.height.lg}"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{input.field.radius.lg}"
+      }
+    },
+    "panel": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.surface.level3}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.border.contrast}"
+      }
+    }
+  }
+}
