@@ -12,6 +12,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HUSKY: '0'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
@@ -30,6 +32,14 @@ jobs:
 
       - name: Build Storybook
         run: npm run build-storybook
+
+      - name: Verify build output
+        run: |
+          if [ ! -d storybook-static ] || [ ! -f storybook-static/index.html ]; then
+            echo "::error::storybook-static missing or incomplete (build-storybook may have failed)"
+            exit 1
+          fi
+          ls -la storybook-static/
 
       - name: Upload Storybook artifact
         id: upload
