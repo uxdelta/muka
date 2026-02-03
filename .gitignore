@@ -25,6 +25,9 @@ storybook-static/
 *.swo
 *~
 
+# Local config
+.mcp.json
+
 # OS generated files
 .DS_Store
 .DS_Store?
