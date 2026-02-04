@@ -26,7 +26,7 @@ const meta: Meta<typeof Button> = {
 # Button Component
 
 The Button component is built using the Muka design token system with support for:
-- 3 variants: primary, secondary, ghost
+- 4 variants: primary, secondary, tertiary, ghost
 - 3 sizes: sm, md, lg  
 - Interactive states: default, hover, pressed, disabled
 - Icons with flexible positioning (left, right, or both)
@@ -54,7 +54,7 @@ When you change brand colors in the alias layer, all buttons automatically updat
   argTypes: {
     variant: {
       control: { type: 'radio' },
-      options: ['primary', 'secondary', 'ghost'],
+      options: ['primary', 'secondary', 'tertiary', 'ghost'],
       description: 'Button variant - like Figma component variants',
     },
     size: {
@@ -133,6 +133,13 @@ export const Ghost: Story = {
   args: {
     variant: 'ghost',
     children: 'Ghost Button',
+  },
+};
+
+export const Tertiary: Story = {
+  args: {
+    variant: 'tertiary',
+    children: 'Tertiary Button',
   },
 };
 
@@ -501,6 +508,9 @@ export const AllVariants: Story = {
       <Button variant="secondary" size="sm">Secondary SM</Button>
       <Button variant="secondary" size="md">Secondary MD</Button>
       <Button variant="secondary" size="lg">Secondary LG</Button>
+      <Button variant="tertiary" size="sm">Tertiary SM</Button>
+      <Button variant="tertiary" size="md">Tertiary MD</Button>
+      <Button variant="tertiary" size="lg">Tertiary LG</Button>
       <Button variant="ghost" size="sm">Ghost SM</Button>
       <Button variant="ghost" size="md">Ghost MD</Button>
       <Button variant="ghost" size="lg">Ghost LG</Button>
@@ -552,6 +562,7 @@ export const ThemeDemo: Story = {
       <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
         <Button variant="primary" size="lg">Primary CTA</Button>
         <Button variant="secondary" size="lg">Secondary</Button>
+        <Button variant="tertiary" size="lg">Tertiary</Button>
         <Button variant="ghost" size="lg">Ghost Button</Button>
       </div>
       

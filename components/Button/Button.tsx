@@ -7,7 +7,7 @@ export interface ButtonProps {
   children: React.ReactNode;
 
   /** Button variant - like Figma component variants */
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost';
 
   /** Size variant - matches your token system */
   size?: 'sm' | 'md' | 'lg';
@@ -56,7 +56,7 @@ export interface ButtonProps {
  * Button Component
  *
  * Built using the Muka design token system with support for:
- * - 3 variants: primary, secondary, ghost
+ * - 4 variants: primary, secondary, tertiary, ghost
  * - 3 sizes: sm, md, lg
  * - Interactive states: default, hover, pressed, disabled
  * - Icons with flexible positioning (left, right, or both)

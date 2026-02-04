@@ -59,73 +59,110 @@
 .muka-button--primary {
   background-color: var(--button-color-primary-background-default);
   color: var(--button-color-primary-foreground-default);
+  box-shadow: 0 -2px 0 0 var(--button-color-primary-inner-shadow-default) inset;
 }
 
 .muka-button--primary:hover:not(:disabled) {
   background-color: var(--button-color-primary-background-hover);
   color: var(--button-color-primary-foreground-hover);
+  box-shadow: 0 -2px 0 0 var(--button-color-primary-inner-shadow-hover) inset;
 }
 
 .muka-button--primary:active:not(:disabled),
 .muka-button--primary.muka-button--pressed:not(:disabled) {
   background-color: var(--button-color-primary-background-pressed);
   color: var(--button-color-primary-foreground-pressed);
+  box-shadow: 0 -2px 0 0 var(--button-color-primary-inner-shadow-pressed) inset;
 }
 
 .muka-button--primary:disabled {
   background-color: var(--button-color-primary-background-disabled);
   color: var(--button-color-primary-foreground-disabled);
+  box-shadow: 0 -2px 0 0 var(--button-color-primary-inner-shadow-disabled) inset;
   cursor: not-allowed;
   opacity: 1; /* Remove opacity since we have proper disabled tokens */
 }
 
-/* Secondary variant - supporting actions */
+/* Secondary variant - supporting actions, no border, only bottom inner shadow */
 .muka-button--secondary {
   background-color: var(--button-color-secondary-background-default);
   color: var(--button-color-secondary-foreground-default);
-  border: 1px solid var(--color-border-default);
+  box-shadow: 0 -2px 0 0 var(--button-color-secondary-inner-shadow-default) inset;
 }
 
 .muka-button--secondary:hover:not(:disabled) {
   background-color: var(--button-color-secondary-background-hover);
   color: var(--button-color-secondary-foreground-hover);
-  border-color: var(--color-border-contrast);
+  box-shadow: 0 -2px 0 0 var(--button-color-secondary-inner-shadow-hover) inset;
 }
 
 .muka-button--secondary:active:not(:disabled),
 .muka-button--secondary.muka-button--pressed:not(:disabled) {
   background-color: var(--button-color-secondary-background-pressed);
   color: var(--button-color-secondary-foreground-pressed);
+  box-shadow: 0 -2px 0 0 var(--button-color-secondary-inner-shadow-pressed) inset;
 }
 
 .muka-button--secondary:disabled {
   background-color: var(--button-color-secondary-background-disabled);
   color: var(--button-color-secondary-foreground-disabled);
-  border-color: var(--color-border-default);
+  box-shadow: 0 -2px 0 0 var(--button-color-secondary-inner-shadow-disabled) inset;
   cursor: not-allowed;
   opacity: 1;
 }
 
-/* Ghost variant - minimal styling */
+/* Tertiary variant - tinted background with accent text and border */
+.muka-button--tertiary {
+  background-color: var(--button-color-tertiary-background-default);
+  color: var(--button-color-tertiary-foreground-default);
+  border: 1px solid var(--button-color-tertiary-border-default);
+}
+
+.muka-button--tertiary:hover:not(:disabled) {
+  background-color: var(--button-color-tertiary-background-hover);
+  color: var(--button-color-tertiary-foreground-hover);
+  border-color: var(--button-color-tertiary-border-hover);
+}
+
+.muka-button--tertiary:active:not(:disabled),
+.muka-button--tertiary.muka-button--pressed:not(:disabled) {
+  background-color: var(--button-color-tertiary-background-pressed);
+  color: var(--button-color-tertiary-foreground-pressed);
+  border-color: var(--button-color-tertiary-border-pressed);
+}
+
+.muka-button--tertiary:disabled {
+  background-color: var(--button-color-tertiary-background-disabled);
+  color: var(--button-color-tertiary-foreground-disabled);
+  border-color: var(--button-color-tertiary-border-disabled);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* Ghost variant - minimal styling, border appears on hover */
 .muka-button--ghost {
   background-color: var(--button-color-ghost-background-default);
   color: var(--button-color-ghost-foreground-default);
+  border: 1px solid var(--button-color-ghost-border-default);
 }
 
 .muka-button--ghost:hover:not(:disabled) {
   background-color: var(--button-color-ghost-background-hover);
   color: var(--button-color-ghost-foreground-hover);
+  border-color: var(--button-color-ghost-border-hover);
 }
 
 .muka-button--ghost:active:not(:disabled),
 .muka-button--ghost.muka-button--pressed:not(:disabled) {
   background-color: var(--button-color-ghost-background-pressed);
   color: var(--button-color-ghost-foreground-pressed);
+  border-color: var(--button-color-ghost-border-pressed);
 }
 
 .muka-button--ghost:disabled {
   background-color: var(--button-color-ghost-background-disabled);
   color: var(--button-color-ghost-foreground-disabled);
+  border-color: var(--button-color-ghost-border-disabled);
   cursor: not-allowed;
   opacity: 1;
 }

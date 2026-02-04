@@ -101,11 +101,11 @@
         "inner-shadow": {
           "default": {
             "$type": "color",
-            "$value": "{alias.color.overlay.10}"
+            "$value": "{alias.color.overlay.20}"
           },
           "hover": {
             "$type": "color",
-            "$value": "{alias.color.overlay.20}"
+            "$value": "{alias.color.overlay.30}"
           },
           "pressed": {
             "$type": "color",
@@ -161,15 +161,15 @@
           },
           "hover": {
             "$type": "color",
-            "$value": "{alias.color.overlay.10}"
+            "$value": "{color.border.default}"
           },
           "pressed": {
             "$type": "color",
-            "$value": "{alias.color.overlay.10}"
+            "$value": "{color.border.default}"
           },
           "disabled": {
             "$type": "color",
-            "$value": "{alias.color.overlay.10}"
+            "$value": "{alias.color.overlay.0}"
           }
         }
       },
@@ -233,22 +233,22 @@
     "radius": {
       "sm": {
         "$type": "borderRadius",
-        "$value": "{alias.radius.sm}"
+        "$value": "{border.radius.lg}"
       },
       "md": {
         "$type": "borderRadius",
-        "$value": "{alias.radius.md}"
+        "$value": "{border.radius.lg}"
       },
       "lg": {
         "$type": "borderRadius",
-        "$value": "{alias.radius.lg}"
+        "$value": "{border.radius.lg}"
       }
     },
     "padding": {
       "sm": {
         "x": {
           "$type": "dimension",
-          "$value": "{spacing.2}"
+          "$value": "{spacing.4}"
         },
         "y": {
           "$type": "dimension",
@@ -258,7 +258,7 @@
       "md": {
         "x": {
           "$type": "dimension",
-          "$value": "{spacing.3}"
+          "$value": "{spacing.5}"
         },
         "y": {
           "$type": "dimension",
@@ -268,7 +268,7 @@
       "lg": {
         "x": {
           "$type": "dimension",
-          "$value": "{spacing.4}"
+          "$value": "{spacing.6}"
         },
         "y": {
           "$type": "dimension",
