@@ -1,0 +1,82 @@
+{
+  "storybook_url": "https://storybook.mukaui.com",
+  "package_name": "muka-ui",
+  "components": [
+    {
+      "name": "Button",
+      "description": "Primary, secondary, and ghost button variants",
+      "props": ["variant", "size", "disabled", "iconLeft", "iconRight", "fullWidth"],
+      "variants": ["primary", "secondary", "ghost"],
+      "sizes": ["sm", "md", "lg"]
+    },
+    {
+      "name": "Input",
+      "description": "Text input with label, helper text, and error states",
+      "props": ["label", "placeholder", "helperText", "error", "errorMessage", "disabled", "size", "type"],
+      "sizes": ["sm", "md", "lg"]
+    },
+    {
+      "name": "Card",
+      "description": "Content container with consistent padding and styling",
+      "props": ["children", "className"]
+    },
+    {
+      "name": "Badge",
+      "description": "Status indicators and labels",
+      "props": ["variant", "size", "children"],
+      "variants": ["default", "info", "success", "warning", "error"],
+      "sizes": ["sm", "md"]
+    },
+    {
+      "name": "Label",
+      "description": "Form field labels",
+      "props": ["htmlFor", "required", "children"]
+    },
+    {
+      "name": "Icon",
+      "description": "Icon wrapper for consistent sizing",
+      "props": ["name", "size", "className"]
+    },
+    {
+      "name": "Divider",
+      "description": "Visual separator between content sections",
+      "props": ["orientation", "className"],
+      "variants": ["horizontal", "vertical"]
+    },
+    {
+      "name": "Select",
+      "description": "Dropdown select with options",
+      "props": ["options", "value", "onChange", "placeholder", "disabled", "label"],
+      "types": ["SelectOption"]
+    },
+    {
+      "name": "Tabs",
+      "description": "Tabbed interface container",
+      "props": ["defaultValue", "value", "onChange", "children"],
+      "subcomponents": ["TabList", "Tab", "TabPanel"]
+    },
+    {
+      "name": "ListItem",
+      "description": "List item with consistent styling",
+      "props": ["children", "onClick", "selected", "disabled"]
+    }
+  ],
+  "planned_components": [
+    { "name": "Modal", "roadmap": "#15" },
+    { "name": "Alert", "roadmap": "#24" },
+    { "name": "Toast", "roadmap": "#24" },
+    { "name": "Table", "roadmap": "#12" },
+    { "name": "Spinner", "roadmap": "#27" },
+    { "name": "Skeleton", "roadmap": "#29" },
+    { "name": "Tooltip", "roadmap": "#18" },
+    { "name": "Progress", "roadmap": "#28" },
+    { "name": "EmptyState", "roadmap": "#30" },
+    { "name": "DatePicker", "roadmap": "#21" }
+  ],
+  "themes": [
+    { "name": "muka-light", "file": "muka-light.css", "default": true },
+    { "name": "muka-dark", "file": "muka-dark.css" },
+    { "name": "wireframe-light", "file": "wireframe-light.css" },
+    { "name": "wireframe-dark", "file": "wireframe-dark.css" }
+  ]
+}

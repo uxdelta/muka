@@ -1,19 +1,34 @@
 {
-  "name": "@muka/design-system",
+  "name": "muka-ui",
   "version": "0.1.0",
   "description": "Muka Design System - Multi-brand design tokens and React components",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
+  "main": "dist/cjs/components/index.js",
+  "module": "dist/esm/components/index.js",
+  "types": "dist/types/components/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/components/index.d.ts",
+      "import": "./dist/esm/components/index.js",
+      "require": "./dist/cjs/components/index.js"
+    },
+    "./styles": "./dist/styles/index.css",
+    "./styles/*": "./dist/styles/*"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "bin": {
+    "muka-ui": "./cli/bin/muka-ui.js"
+  },
   "files": [
     "dist",
-    "tokens",
-    "styles"
+    "cli"
   ],
   "scripts": {
-    "build": "npm run build:tokens && npm run build:components",
+    "build": "npm run build:tokens && npm run build:components && npm run build:styles",
     "build:tokens": "node scripts/build-tokens.js",
     "build:components": "npm run build:esm && npm run build:cjs && npm run build:types",
+    "build:styles": "node scripts/build-styles.js",
     "build:esm": "tsc --project tsconfig.esm.json",
     "build:cjs": "tsc --project tsconfig.cjs.json",
     "build:types": "tsc --project tsconfig.types.json",
