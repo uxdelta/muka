@@ -101,11 +101,11 @@
         "inner-shadow": {
           "default": {
             "$type": "color",
-            "$value": "{alias.color.overlay.20}"
+            "$value": "{alias.color.overlay.10}"
           },
           "hover": {
             "$type": "color",
-            "$value": "{alias.color.overlay.30}"
+            "$value": "{alias.color.overlay.20}"
           },
           "pressed": {
             "$type": "color",

@@ -1236,8 +1236,8 @@
   --button-color-secondary-foreground-hover: #d6e1ff;
   --button-color-secondary-foreground-pressed: #5472e4;
   --button-color-secondary-foreground-disabled: #4c4c57;
-  --button-color-secondary-inner-shadow-default: rgba(233, 236, 239, 0.2);
-  --button-color-secondary-inner-shadow-hover: rgba(233, 236, 239, 0.3);
+  --button-color-secondary-inner-shadow-default: rgba(233, 236, 239, 0.1);
+  --button-color-secondary-inner-shadow-hover: rgba(233, 236, 239, 0.2);
   --button-color-secondary-inner-shadow-pressed: rgba(233, 236, 239, 0);
   --button-color-secondary-inner-shadow-disabled: rgba(233, 236, 239, 0);
   --button-color-ghost-background-default: rgba(233, 236, 239, 0);
