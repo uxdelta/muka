@@ -1,9 +1,9 @@
-/* Select Component Styles - Using Muka Design Tokens */
+/* Select Component Styles - Aligned with Input for consistency */
 
 .muka-select {
   display: inline-flex;
   flex-direction: column;
-  gap: var(--spacing-1);
+  gap: var(--spacing-2);
 }
 
 .muka-select--full-width {
@@ -41,103 +41,75 @@
   color: var(--color-state-error-foreground);
 }
 
-/* Field container */
+.muka-select__label--sm + .muka-select__field--disabled,
+.muka-select__label--md + .muka-select__field--disabled,
+.muka-select__label--lg + .muka-select__field--disabled {
+  cursor: not-allowed;
+}
+
+/* Field container — same as Input: 1px border, radius, padding, inset shadow */
 .muka-select__field {
   display: flex;
   align-items: center;
+  gap: var(--spacing-2);
   position: relative;
-  background-color: var(--select-field-color-default-background);
-  border: var(--border-width-regular) solid var(--select-field-color-default-border);
-  border-radius: var(--select-field-radius-md);
+  background-color: var(--input-field-color-default-background);
+  border: var(--border-width-regular) solid var(--input-field-color-default-border);
+  border-radius: var(--input-field-radius-md);
+  padding: var(--input-field-padding-y) var(--input-field-padding-x);
   transition: border-color 0.2s ease, background-color 0.2s ease;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
-/* Inset shadow overlay (matches Figma) */
+/* Inset shadow — same as Input (single subtle line) */
 .muka-select__field::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: inset 0px 1px 1px 0px rgba(26, 26, 26, 0.15),
-              inset 0px 1px 2px 0px rgba(26, 26, 26, 0.15);
+  box-shadow: inset 0 1px 2px 0 rgba(26, 26, 26, 0.08);
   pointer-events: none;
 }
 
-/* Sizes */
+/* Size variants — same radius/height as Input */
 .muka-select__field--sm {
-  min-height: var(--select-field-height-sm);
-  border-radius: var(--select-field-radius-sm);
+  min-height: var(--input-field-height-sm);
+  border-radius: var(--input-field-radius-sm);
 }
 
 .muka-select__field--md {
-  min-height: var(--select-field-height-default);
-  border-radius: var(--select-field-radius-md);
+  min-height: var(--input-field-height-default);
+  border-radius: var(--input-field-radius-md);
 }
 
 .muka-select__field--lg {
-  min-height: var(--select-field-height-lg);
-  border-radius: var(--select-field-radius-lg);
+  min-height: var(--input-field-height-lg);
+  border-radius: var(--input-field-radius-lg);
 }
 
-/* Hover state */
-.muka-select__field:hover:not(.muka-select__field--disabled):not(.muka-select__field--error) {
-  border-width: var(--border-width-bold);
-  border-color: var(--select-field-color-hover-border);
-}
+/* Hover — no visual change (same as Input) */
 
-.muka-select__field:hover:not(.muka-select__field--disabled):not(.muka-select__field--error) .muka-select__native {
-  padding: calc(var(--select-field-padding-y) - 1px) calc(var(--select-field-padding-x) - 1px);
-  padding-right: calc(var(--select-field-padding-x) + 1.5rem - 1px);
-}
-
-/* Focus state */
+/* Focus (active) — same as Input: 2px border, padding compensation */
 .muka-select__field--focused:not(.muka-select__field--disabled) {
   border-width: var(--border-width-bold);
-  border-color: var(--select-field-color-focus-border);
-  outline: none;
+  border-color: var(--input-field-color-focus-border);
+  background-color: var(--input-field-color-focus-background);
+  padding: calc(var(--input-field-padding-y) - 1px) calc(var(--input-field-padding-x) - 1px);
 }
 
-.muka-select__field--focused:not(.muka-select__field--disabled) .muka-select__native {
-  padding: calc(var(--select-field-padding-y) - 1px) calc(var(--select-field-padding-x) - 1px);
-  padding-right: calc(var(--select-field-padding-x) + 1.5rem - 1px);
-}
-
-/* Focus ring (separate ring matching Figma) */
-.muka-select__field--focused:not(.muka-select__field--disabled)::before {
-  content: '';
-  position: absolute;
-  inset: -5px;
-  border: 2px solid var(--select-field-color-focus-border);
-  border-radius: calc(var(--select-field-radius-md) + 5px);
-  box-shadow: 0px 0px 4px 0px var(--color-border-focus);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.muka-select__field--sm.muka-select__field--focused::before {
-  border-radius: calc(var(--select-field-radius-sm) + 5px);
-}
-
-.muka-select__field--lg.muka-select__field--focused::before {
-  border-radius: calc(var(--select-field-radius-lg) + 5px);
-}
-
-/* Error state */
+/* Error — same as Input: 2px border, padding compensation */
 .muka-select__field--error:not(.muka-select__field--disabled) {
   border-width: var(--border-width-bold);
-  border-color: var(--select-field-color-error-border);
+  border-color: var(--input-field-color-error-border);
+  background-color: var(--input-field-color-error-background);
+  padding: calc(var(--input-field-padding-y) - 1px) calc(var(--input-field-padding-x) - 1px);
 }
 
-.muka-select__field--error:not(.muka-select__field--disabled) .muka-select__native {
-  padding: calc(var(--select-field-padding-y) - 1px) calc(var(--select-field-padding-x) - 1px);
-  padding-right: calc(var(--select-field-padding-x) + 1.5rem - 1px);
-}
-
-/* Disabled state */
+/* Disabled — same as Input */
 .muka-select__field--disabled {
-  background-color: var(--select-field-color-disabled-background);
-  border-color: var(--select-field-color-disabled-border);
+  background-color: var(--input-field-color-disabled-background);
+  border-color: var(--input-field-color-disabled-border);
   cursor: not-allowed;
 }
 
@@ -145,7 +117,7 @@
   display: none;
 }
 
-/* Native select */
+/* Native select — padding on field so native has 0 + right space for chevron */
 .muka-select__native {
   appearance: none;
   -webkit-appearance: none;
@@ -153,13 +125,13 @@
   border: none;
   outline: none;
   background: transparent;
-  color: var(--select-field-color-default-foreground);
+  color: var(--input-field-color-default-foreground);
   font-family: var(--text-input-md-fontFamily);
   font-weight: var(--text-input-md-fontWeight);
   font-size: var(--text-input-md-fontSize);
   line-height: var(--text-input-md-lineHeight);
-  padding: var(--select-field-padding-y) var(--select-field-padding-x);
-  padding-right: calc(var(--select-field-padding-x) + 1.5rem);
+  padding: 0;
+  padding-right: calc(var(--input-field-padding-x) + 1.5rem);
   cursor: pointer;
   min-width: 0;
   width: 100%;
@@ -167,34 +139,38 @@
 
 .muka-select__field--sm .muka-select__native {
   font-family: var(--text-input-sm-fontFamily);
+  font-weight: var(--text-input-sm-fontWeight);
   font-size: var(--text-input-sm-fontSize);
+  line-height: var(--text-input-sm-lineHeight);
 }
 
 .muka-select__field--lg .muka-select__native {
   font-family: var(--text-input-lg-fontFamily);
+  font-weight: var(--text-input-lg-fontWeight);
   font-size: var(--text-input-lg-fontSize);
+  line-height: var(--text-input-lg-lineHeight);
 }
 
 .muka-select__field--disabled .muka-select__native {
-  color: var(--select-field-color-disabled-foreground);
+  color: var(--input-field-color-disabled-foreground);
   cursor: not-allowed;
 }
 
-/* Chevron */
+/* Chevron — aligned with field padding */
 .muka-select__chevron {
   display: inline-flex;
   align-items: center;
   position: absolute;
-  right: var(--select-field-padding-x);
+  right: var(--input-field-padding-x);
   pointer-events: none;
   color: var(--color-text-subtle-default);
 }
 
 .muka-select__field--disabled .muka-select__chevron {
-  color: var(--select-field-color-disabled-foreground);
+  color: var(--input-field-color-disabled-foreground);
 }
 
-/* Helper text */
+/* Helper text — same as Input */
 .muka-select__helper {
   font-family: var(--text-label-sm-regular-fontFamily);
   font-weight: var(--text-label-sm-regular-fontWeight);
@@ -204,7 +180,7 @@
   margin: 0;
 }
 
-/* Error message */
+/* Error message — same as Input */
 .muka-select__error {
   font-family: var(--text-label-sm-regular-fontFamily);
   font-weight: var(--text-label-sm-regular-fontWeight);

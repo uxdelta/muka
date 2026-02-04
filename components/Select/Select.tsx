@@ -1,4 +1,4 @@
-import React, { useState, useId } from 'react';
+import React, { useState, useId, useRef } from 'react';
 import './Select.css';
 
 export interface SelectOption {
@@ -86,6 +86,7 @@ export const Select: React.FC<SelectProps> = ({
   ...props
 }) => {
   const [isFocused, setIsFocused] = useState(false);
+  const selectRef = useRef<HTMLSelectElement>(null);
   const generatedId = useId();
   const selectId = name || generatedId;
   const helperTextId = `${selectId}-helper`;
@@ -120,8 +121,18 @@ export const Select: React.FC<SelectProps> = ({
         </label>
       )}
 
-      <div className={fieldClasses}>
+      <div
+        className={fieldClasses}
+        onMouseDown={(e) => {
+          if (disabled) return;
+          if (e.target !== selectRef.current) {
+            e.preventDefault();
+            selectRef.current?.focus();
+          }
+        }}
+      >
         <select
+          ref={selectRef}
           id={selectId}
           className="muka-select__native"
           value={value}
