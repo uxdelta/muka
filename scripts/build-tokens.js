@@ -85,6 +85,30 @@ class TokenBuilder {
     return value;
   }
 
+  /**
+   * Fix invalid rgba( #hex, alpha) → rgba(r, g, b, alpha).
+   * CSS rgba() does not accept hex; it requires numeric RGB values.
+   */
+  fixRgbaHexValues(value) {
+    if (typeof value !== 'string') return value;
+    return value.replace(
+      /rgba\(\s*#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}),\s*([\d.]+)\s*\)/g,
+      (_, hex, alpha) => {
+        let r, g, b;
+        if (hex.length === 3) {
+          r = parseInt(hex[0] + hex[0], 16);
+          g = parseInt(hex[1] + hex[1], 16);
+          b = parseInt(hex[2] + hex[2], 16);
+        } else {
+          r = parseInt(hex.slice(0, 2), 16);
+          g = parseInt(hex.slice(2, 4), 16);
+          b = parseInt(hex.slice(4, 6), 16);
+        }
+        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+      }
+    );
+  }
+
   // Get token value by path (e.g., "color.gray.9")
   getTokenValue(tokenPath, tokens) {
     const pathParts = tokenPath.split('.');
@@ -147,7 +171,8 @@ class TokenBuilder {
     }
     
     this.processTokensForCSS(tokens, '', (name, value) => {
-      const resolvedValue = this.resolveTokenValue(value, tokens);
+      let resolvedValue = this.resolveTokenValue(value, tokens);
+      resolvedValue = this.fixRgbaHexValues(resolvedValue);
       css += `  --${name}: ${resolvedValue};\n`;
     });
     
@@ -157,7 +182,8 @@ class TokenBuilder {
     if (brand === 'muka' && theme === 'light') {
       css += '\n/* Default theme fallback */\n:root {\n';
       this.processTokensForCSS(tokens, '', (name, value) => {
-        const resolvedValue = this.resolveTokenValue(value, tokens);
+        let resolvedValue = this.resolveTokenValue(value, tokens);
+        resolvedValue = this.fixRgbaHexValues(resolvedValue);
         css += `  --${name}: ${resolvedValue};\n`;
       });
       css += '}\n';
