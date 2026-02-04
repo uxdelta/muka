@@ -1,10 +1,10 @@
 /* Input Component Styles - Using Muka Design Tokens */
 
-/* Wrapper */
+/* Wrapper — label, field, helper spacing per Figma */
 .muka-input {
   display: inline-flex;
   flex-direction: column;
-  gap: var(--spacing-1);
+  gap: var(--spacing-2);
 }
 
 .muka-input--full-width {
@@ -48,7 +48,7 @@
   cursor: not-allowed;
 }
 
-/* Field container */
+/* Field container — default/hover: 1px border. Radius per Figma (812-10825): input field tokens. */
 .muka-input__field {
   display: flex;
   align-items: center;
@@ -57,23 +57,23 @@
   border: var(--border-width-regular) solid var(--input-field-color-default-border);
   border-radius: var(--input-field-radius-md);
   padding: var(--input-field-padding-y) var(--input-field-padding-x);
-  transition: border-color 0.2s ease, background-color 0.2s ease, border-width 0.1s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
   cursor: text;
   position: relative;
+  box-sizing: border-box;
 }
 
-/* Inset shadow overlay (matches Figma) */
+/* Subtle inset shadow — single line so it doesn’t read as a second border */
 .muka-input__field::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: inset 0px 1px 1px 0px rgba(26, 26, 26, 0.15),
-              inset 0px 1px 2px 0px rgba(26, 26, 26, 0.15);
+  box-shadow: inset 0 1px 2px 0 rgba(26, 26, 26, 0.08);
   pointer-events: none;
 }
 
-/* Size variants */
+/* Size variants — radius per Figma design (input field tokens) */
 .muka-input__field--sm {
   min-height: var(--input-field-height-sm);
   border-radius: var(--input-field-radius-sm);
@@ -89,44 +89,18 @@
   border-radius: var(--input-field-radius-lg);
 }
 
-/* Hover state */
-.muka-input__field:hover:not(.muka-input__field--disabled):not(.muka-input__field--error) {
-  border-width: var(--border-width-bold);
-  border-color: var(--input-field-color-hover-border);
-  background-color: var(--input-field-color-hover-background);
-  padding: calc(var(--input-field-padding-y) - 1px) calc(var(--input-field-padding-x) - 1px);
-}
+/* Hover state — matches Figma: no visual change (same as default) */
+/* (No hover styles; default appearance is used.) */
 
-/* Focus state */
+/* Focus (active) state — Figma: ~2px blue border, white background, same radius */
 .muka-input__field--focused:not(.muka-input__field--disabled) {
   border-width: var(--border-width-bold);
   border-color: var(--input-field-color-focus-border);
   background-color: var(--input-field-color-focus-background);
   padding: calc(var(--input-field-padding-y) - 1px) calc(var(--input-field-padding-x) - 1px);
-  outline: none;
 }
 
-/* Focus ring (separate ring matching Figma — offset with blue glow) */
-.muka-input__field--focused:not(.muka-input__field--disabled)::before {
-  content: '';
-  position: absolute;
-  inset: -5px;
-  border: 2px solid var(--input-field-color-focus-border);
-  border-radius: calc(var(--input-field-radius-md) + 5px);
-  box-shadow: 0px 0px 4px 0px var(--color-border-focus);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.muka-input__field--sm.muka-input__field--focused::before {
-  border-radius: calc(var(--input-field-radius-sm) + 5px);
-}
-
-.muka-input__field--lg.muka-input__field--focused::before {
-  border-radius: calc(var(--input-field-radius-lg) + 5px);
-}
-
-/* Error state */
+/* Error state — Figma: ~2px red border, white background, same radius */
 .muka-input__field--error:not(.muka-input__field--disabled) {
   border-width: var(--border-width-bold);
   border-color: var(--input-field-color-error-border);
@@ -146,7 +120,7 @@
   display: none;
 }
 
-/* Native input */
+/* Native input — outline removed to avoid browser default (e.g. orange) focus ring */
 .muka-input__native {
   flex: 1;
   border: none;

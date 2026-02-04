@@ -1,4 +1,4 @@
-import React, { useState, useId } from 'react';
+import React, { useState, useId, useRef } from 'react';
 import './Input.css';
 
 export interface InputProps {
@@ -93,6 +93,7 @@ export const Input: React.FC<InputProps> = ({
   ...props
 }) => {
   const [isFocused, setIsFocused] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   const generatedId = useId();
   const inputId = name || generatedId;
   const helperTextId = `${inputId}-helper`;
@@ -134,7 +135,16 @@ export const Input: React.FC<InputProps> = ({
         </label>
       )}
 
-      <div className={fieldClasses}>
+      <div
+        className={fieldClasses}
+        onMouseDown={(e) => {
+          if (disabled) return;
+          if (e.target !== inputRef.current) {
+            e.preventDefault();
+            inputRef.current?.focus();
+          }
+        }}
+      >
         {hasLeftIcon && (
           <span className="muka-input__icon muka-input__icon--left" aria-hidden="true">
             {iconLeft}
@@ -142,6 +152,7 @@ export const Input: React.FC<InputProps> = ({
         )}
 
         <input
+          ref={inputRef}
           id={inputId}
           className="muka-input__native"
           type={type}
@@ -156,6 +167,11 @@ export const Input: React.FC<InputProps> = ({
           aria-describedby={describedBy}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
+          onKeyDownCapture={(e) => {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'a') {
+              e.stopPropagation();
+            }
+          }}
           {...props}
         />
 
