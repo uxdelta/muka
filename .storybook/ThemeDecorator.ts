@@ -13,7 +13,8 @@ function ThemeWrapper({
   children: ReactNode;
 }) {
   useEffect(() => {
-    const href = `/styles/tokens-${THEMES.includes(theme as ThemeId) ? theme : 'muka-light'}.css`;
+    const isValidTheme = THEMES.indexOf(theme as ThemeId) !== -1;
+    const href = `/styles/tokens-${isValidTheme ? theme : 'muka-light'}.css`;
     let link = document.getElementById(THEME_LINK_ID) as HTMLLinkElement | null;
     if (!link) {
       link = document.createElement('link');
@@ -24,14 +25,10 @@ function ThemeWrapper({
     link.href = href;
   }, [theme]);
 
-  return <>{children}</>;
+  return React.createElement(React.Fragment, null, children);
 }
 
 export const withTheme: Decorator = (Story, context) => {
   const theme = (context.globals?.theme as string) ?? 'muka-light';
-  return (
-    <ThemeWrapper theme={theme}>
-      <Story />
-    </ThemeWrapper>
-  );
+  return React.createElement(ThemeWrapper, { theme }, React.createElement(Story));
 };
