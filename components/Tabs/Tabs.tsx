@@ -39,11 +39,14 @@ export interface TabsProps {
  * Accessible tab interface with keyboard navigation.
  * Uses: <Tabs>, <TabList>, <Tab>, <TabPanel>
  *
- * Tokens used:
- * - tabs.list.border
- * - tabs.trigger.color.{state}.{foreground|border}
- * - tabs.trigger.padding.{x|y}
- * - text.label.{size}
+ * @accessibility WCAG 2.1 AA compliant (WAI-ARIA Tabs Pattern)
+ * - role="tablist" with aria-orientation
+ * - role="tab" with aria-selected, aria-controls
+ * - role="tabpanel" with aria-labelledby
+ * - Keyboard: ArrowLeft/Right, Home/End navigation
+ * - Roving tabindex pattern (active tab is focusable)
+ *
+ * @see https://www.w3.org/WAI/ARIA/apg/patterns/tabs/
  */
 export const Tabs: React.FC<TabsProps> = ({
   children,
@@ -117,6 +120,7 @@ export const TabList: React.FC<TabListProps> = ({ children, className = '' }) =>
       ref={listRef}
       className={`muka-tabs__list ${className}`.trim()}
       role="tablist"
+      aria-orientation="horizontal"
       onKeyDown={handleKeyDown}
     >
       {children}

@@ -1,44 +1,60 @@
 import React, { useState } from 'react';
+import { warnMissingA11yProp, VISUALLY_HIDDEN_CLASS } from '../../utils/accessibility';
 import './Button.css';
 
 export interface ButtonProps {
   /** Button content */
   children: React.ReactNode;
-  
+
   /** Button variant - like Figma component variants */
   variant?: 'primary' | 'secondary' | 'ghost';
-  
+
   /** Size variant - matches your token system */
   size?: 'sm' | 'md' | 'lg';
-  
+
   /** Disabled state */
   disabled?: boolean;
-  
+
   /** Click handler */
   onClick?: () => void;
-  
+
   /** Button type for forms */
   type?: 'button' | 'submit' | 'reset';
-  
+
   /** Icon for left side */
   iconLeft?: React.ReactNode;
-  
+
   /** Icon for right side */
   iconRight?: React.ReactNode;
-  
+
   /** Hide label text for icon-only button */
   iconOnly?: boolean;
-  
+
   /** Full width button */
   fullWidth?: boolean;
-  
+
   /** Additional CSS classes */
   className?: string;
+
+  /** Accessible label (required for icon-only buttons) */
+  'aria-label'?: string;
+
+  /** Indicates button is currently pressed (for toggle buttons) */
+  'aria-pressed'?: boolean;
+
+  /** Indicates button controls an expanded element */
+  'aria-expanded'?: boolean;
+
+  /** ID of element this button controls */
+  'aria-controls'?: string;
+
+  /** Indicates button triggers a popup */
+  'aria-haspopup'?: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
 }
 
 /**
  * Button Component
- * 
+ *
  * Built using the Muka design token system with support for:
  * - 3 variants: primary, secondary, ghost
  * - 3 sizes: sm, md, lg
@@ -46,18 +62,15 @@ export interface ButtonProps {
  * - Icons with flexible positioning (left, right, or both)
  * - Icon-only buttons (label can be hidden)
  * - Consistent spacing distribution
- * 
- * Icon API:
- * - iconLeft: Icon for left side
- * - iconRight: Icon for right side
- * - iconOnly: Hide label for icon-only buttons
- * 
- * Tokens used:
- * - button.color.{variant}.background.{state}
- * - button.color.{variant}.foreground.{state}
- * - button.padding.{size}.{x|y}
- * - button.radius.{size}
- * - text.label.{size}
+ *
+ * @accessibility WCAG 2.1 AA compliant
+ * - Uses native <button> element for full keyboard support
+ * - Focus indicator meets WCAG 2.4.7 (visible focus)
+ * - When iconOnly=true, aria-label is required (dev warning if missing)
+ * - Supports aria-pressed for toggle buttons
+ * - Supports aria-expanded/aria-controls for menu buttons
+ *
+ * @see https://www.w3.org/WAI/ARIA/apg/patterns/button/
  */
 export const Button: React.FC<ButtonProps> = ({
   children,
@@ -71,9 +84,21 @@ export const Button: React.FC<ButtonProps> = ({
   iconOnly = false,
   fullWidth = false,
   className = '',
+  'aria-label': ariaLabel,
+  'aria-pressed': ariaPressed,
+  'aria-expanded': ariaExpanded,
+  'aria-controls': ariaControls,
+  'aria-haspopup': ariaHaspopup,
   ...props
 }) => {
   const [isPressed, setIsPressed] = useState(false);
+
+  // Warn in development if icon-only button lacks aria-label
+  warnMissingA11yProp(
+    'Button',
+    iconOnly && !ariaLabel,
+    'Icon-only buttons require an aria-label for accessibility'
+  );
 
   const handleClick = () => {
     if (!disabled && onClick) {
@@ -121,6 +146,11 @@ export const Button: React.FC<ButtonProps> = ({
       onMouseLeave={handleMouseLeave}
       disabled={disabled}
       type={type}
+      aria-label={ariaLabel}
+      aria-pressed={ariaPressed}
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
+      aria-haspopup={ariaHaspopup}
       {...props}
     >
       {hasLeftIcon && (
@@ -128,13 +158,20 @@ export const Button: React.FC<ButtonProps> = ({
           {iconLeft}
         </span>
       )}
-      
+
       {showLabel && (
         <span className="muka-button__label">
           {children}
         </span>
       )}
-      
+
+      {/* Visually hidden fallback for icon-only buttons without aria-label */}
+      {iconOnly && !ariaLabel && (
+        <span className={VISUALLY_HIDDEN_CLASS}>
+          {children}
+        </span>
+      )}
+
       {hasRightIcon && (
         <span className={`muka-button__icon ${showLabel ? 'muka-button__icon--right' : ''}`}>
           {iconRight}

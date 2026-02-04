@@ -23,8 +23,20 @@ export interface CardProps {
   /** Selected state */
   selected?: boolean;
 
+  /** Disabled state (prevents interaction) */
+  disabled?: boolean;
+
   /** Additional CSS classes */
   className?: string;
+
+  /** Accessible label for cards without visible text */
+  'aria-label'?: string;
+
+  /** ID of element that labels this card */
+  'aria-labelledby'?: string;
+
+  /** ID of element that describes this card */
+  'aria-describedby'?: string;
 }
 
 /**
@@ -34,16 +46,18 @@ export interface CardProps {
  * - 3 variants: default, interactive, selected
  * - 3 padding sizes: sm, md, lg (plus none)
  * - 3 border radius sizes: sm, md, lg
- * - Interactive states: default, hover, pressed, selected
+ * - Interactive states: default, hover, pressed, selected, disabled
  * - Semantic HTML element support
  * - Multi-brand theming through design tokens
  *
- * Tokens used:
- * - card.color.{state}.{background|foreground|border}
- * - card.radius.{size}
- * - card.padding.{size}
- * - card.shadow.{state}
- * - card.border.{state}
+ * @accessibility WCAG 2.1 AA compliant
+ * - Interactive cards have role="button" for assistive technology
+ * - Keyboard support: Enter and Space keys activate the card
+ * - Focus indicator meets WCAG 2.4.7 (visible focus)
+ * - aria-pressed indicates selected state for toggle behavior
+ * - aria-disabled and tabIndex management for disabled state
+ *
+ * @see https://www.w3.org/WAI/ARIA/apg/patterns/button/
  */
 export const Card: React.FC<CardProps> = ({
   children,
@@ -53,12 +67,16 @@ export const Card: React.FC<CardProps> = ({
   as = 'div',
   onClick,
   selected = false,
+  disabled = false,
   className = '',
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledby,
+  'aria-describedby': ariaDescribedby,
   ...props
 }) => {
   const [isPressed, setIsPressed] = useState(false);
 
-  const isInteractive = variant === 'interactive' || Boolean(onClick);
+  const isInteractive = (variant === 'interactive' || Boolean(onClick)) && !disabled;
   const isSelected = variant === 'selected' || selected;
   const Element = as;
 
@@ -94,20 +112,33 @@ export const Card: React.FC<CardProps> = ({
     isInteractive && 'muka-card--interactive',
     isSelected && 'muka-card--selected',
     isPressed && 'muka-card--pressed',
+    disabled && 'muka-card--disabled',
     className,
   ].filter(Boolean).join(' ');
 
-  const interactiveProps = isInteractive
+  // Determine if this card should have interactive role (even if disabled)
+  const hasInteractiveIntent = variant === 'interactive' || Boolean(onClick);
+
+  const interactiveProps = hasInteractiveIntent
     ? {
-        onClick: handleClick,
-        onMouseDown: handleMouseDown,
-        onMouseUp: handleMouseUp,
-        onMouseLeave: handleMouseLeave,
-        onKeyDown: handleKeyDown,
-        tabIndex: 0,
+        onClick: isInteractive ? handleClick : undefined,
+        onMouseDown: isInteractive ? handleMouseDown : undefined,
+        onMouseUp: isInteractive ? handleMouseUp : undefined,
+        onMouseLeave: isInteractive ? handleMouseLeave : undefined,
+        onKeyDown: isInteractive ? handleKeyDown : undefined,
+        tabIndex: disabled ? -1 : 0,
         role: 'button' as const,
+        'aria-pressed': isSelected || undefined,
+        'aria-disabled': disabled || undefined,
+        'aria-label': ariaLabel,
+        'aria-labelledby': ariaLabelledby,
+        'aria-describedby': ariaDescribedby,
       }
-    : {};
+    : {
+        'aria-label': ariaLabel,
+        'aria-labelledby': ariaLabelledby,
+        'aria-describedby': ariaDescribedby,
+      };
 
   return (
     <Element className={cardClasses} {...interactiveProps} {...props}>

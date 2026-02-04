@@ -4,62 +4,80 @@ import './ListItem.css';
 export interface ListItemProps {
   /** Main label text */
   label: string;
-  
+
   /** Optional caption text below label */
   caption?: string;
-  
+
   /** Leading icon element */
   leadingIcon?: React.ReactNode;
-  
+
   /** Leading image URL */
   leadingImage?: string;
-  
+
+  /** Alt text for leading image (defaults to empty for decorative) */
+  imageAlt?: string;
+
   /** Show trailing chevron */
   showChevron?: boolean;
-  
+
   /** Show bottom divider */
   showDivider?: boolean;
-  
+
   /** Click handler */
   onClick?: () => void;
-  
+
   /** Disabled state */
   disabled?: boolean;
-  
+
   /** Selected state */
   selected?: boolean;
-  
+
   /** Additional CSS classes */
   className?: string;
-  
+
   /** Semantic HTML element */
   as?: 'div' | 'button' | 'a' | 'li';
-  
+
   /** Additional props for anchor/button elements */
   href?: string;
   type?: 'button' | 'submit' | 'reset';
+
+  /** Indicates item is currently selected in a list context */
+  'aria-selected'?: boolean;
+
+  /** Indicates item represents current location (for navigation) */
+  'aria-current'?: boolean | 'page' | 'step' | 'location' | 'date' | 'time';
+
+  /** Accessible label for the item */
+  'aria-label'?: string;
+
+  /** ID of element that describes this item */
+  'aria-describedby'?: string;
 }
 
 /**
  * ListItem Component
- * 
- * A flexible list item component with support for leading icons/images, 
- * trailing chevrons, labels, and captions. Height adjusts automatically 
+ *
+ * A flexible list item component with support for leading icons/images,
+ * trailing chevrons, labels, and captions. Height adjusts automatically
  * based on content presence.
- * 
- * Features:
- * - Interactive with hover/pressed/selected states
- * - Accessible keyboard and screen reader support
- * - Flexible leading content (icon or image)
- * - Optional trailing chevron
- * - Semantic HTML support
- * - Uses Muka design tokens
+ *
+ * @accessibility WCAG 2.1 AA compliant
+ * - Keyboard support: Enter and Space keys activate interactive items
+ * - aria-disabled for disabled state
+ * - aria-selected for selection state in lists
+ * - aria-current for navigation context (page, step, etc.)
+ * - imageAlt prop for leading image accessibility
+ * - Focus indicator meets WCAG 2.4.7 (visible focus)
+ *
+ * @see https://www.w3.org/WAI/ARIA/apg/patterns/listbox/
  */
 export const ListItem: React.FC<ListItemProps> = ({
   label,
   caption,
   leadingIcon,
   leadingImage,
+  imageAlt = '',
   showChevron = false,
   showDivider = true,
   onClick,
@@ -69,6 +87,10 @@ export const ListItem: React.FC<ListItemProps> = ({
   as = 'div',
   href,
   type,
+  'aria-selected': ariaSelected,
+  'aria-current': ariaCurrent,
+  'aria-label': ariaLabel,
+  'aria-describedby': ariaDescribedby,
   ...props
 }) => {
   const [isPressed, setIsPressed] = useState(false);
@@ -125,7 +147,11 @@ export const ListItem: React.FC<ListItemProps> = ({
     onMouseUp: handleMouseUp,
     onMouseLeave: handleMouseLeave,
     onKeyDown: handleKeyDown,
-    'aria-disabled': disabled,
+    'aria-disabled': disabled || undefined,
+    'aria-selected': ariaSelected ?? (selected || undefined),
+    'aria-current': ariaCurrent || undefined,
+    'aria-label': ariaLabel,
+    'aria-describedby': ariaDescribedby,
     tabIndex: isInteractive ? 0 : -1,
     ...props
   };
@@ -145,9 +171,9 @@ export const ListItem: React.FC<ListItemProps> = ({
       {hasLeading && (
         <div className="muka-listitem__leading">
           {leadingImage ? (
-            <img 
-              src={leadingImage} 
-              alt="" 
+            <img
+              src={leadingImage}
+              alt={imageAlt}
               className="muka-listitem__image"
             />
           ) : (

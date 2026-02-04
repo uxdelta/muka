@@ -13,6 +13,18 @@ export interface BadgeProps {
 
   /** Additional CSS classes */
   className?: string;
+
+  /** Semantic role for the badge */
+  role?: 'status' | 'alert' | 'img' | 'none';
+
+  /** Accessible label when badge needs additional context */
+  'aria-label'?: string;
+
+  /** Live region behavior for dynamic content */
+  'aria-live'?: 'polite' | 'assertive' | 'off';
+
+  /** Whether badge is purely decorative (hidden from assistive tech) */
+  decorative?: boolean;
 }
 
 /**
@@ -20,18 +32,23 @@ export interface BadgeProps {
  *
  * Used for license plate type indicators, vehicle category labels, status tags.
  *
- * Tokens used:
- * - color.state.{success|error|info}.{default|foreground|background}
- * - color.surface, color.text (default variant)
- * - chip.size.height.{sm|md}
- * - text.label.{size}
- * - border.radius.full
+ * @accessibility WCAG 2.1 AA compliant
+ * - Default role="status" for status indicators
+ * - aria-live automatically set based on variant (assertive for error)
+ * - Use decorative={true} to hide from assistive technology
+ * - Provide aria-label for badges that need context (e.g., "3 new notifications")
+ *
+ * @see https://www.w3.org/WAI/ARIA/apg/patterns/alert/
  */
 export const Badge: React.FC<BadgeProps> = ({
   children,
   variant = 'default',
   size = 'sm',
   className = '',
+  role,
+  'aria-label': ariaLabel,
+  'aria-live': ariaLive,
+  decorative = false,
   ...props
 }) => {
   const badgeClasses = [
@@ -41,8 +58,20 @@ export const Badge: React.FC<BadgeProps> = ({
     className,
   ].filter(Boolean).join(' ');
 
+  // Determine default aria-live based on variant
+  const defaultAriaLive = variant === 'error' ? 'assertive' : 'polite';
+
+  // Build accessibility attributes
+  const a11yProps = decorative
+    ? { 'aria-hidden': true as const }
+    : {
+        role: role || 'status',
+        'aria-label': ariaLabel,
+        'aria-live': ariaLive ?? defaultAriaLive,
+      };
+
   return (
-    <span className={badgeClasses} {...props}>
+    <span className={badgeClasses} {...a11yProps} {...props}>
       {children}
     </span>
   );

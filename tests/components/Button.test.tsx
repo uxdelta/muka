@@ -106,20 +106,21 @@ describe('Button Component', () => {
       expect(handleClick).toHaveBeenCalledTimes(1);
     });
 
-    it('does not call onClick when disabled', async () => {
-      const user = userEvent.setup();
+    it('does not call onClick when disabled', () => {
       const handleClick = vi.fn();
       render(<Button onClick={handleClick} disabled={true}>Button</Button>);
-      
-      const button = screen.getByText('Button');
-      await user.click(button);
+
+      const button = screen.getByRole('button');
+      // Disabled buttons have pointer-events: none in CSS
+      // Using fireEvent to verify the handler doesn't fire
+      fireEvent.click(button);
       expect(handleClick).not.toHaveBeenCalled();
     });
 
     it('sets disabled attribute when disabled prop is true', () => {
       render(<Button disabled={true}>Button</Button>);
-      const button = screen.getByText('Button') as HTMLButtonElement;
-      expect(button.disabled).toBe(true);
+      const button = screen.getByRole('button');
+      expect(button).toBeDisabled();
     });
 
     it('applies pressed state on mouse down', () => {
@@ -171,8 +172,8 @@ describe('Button Component', () => {
       const user = userEvent.setup();
       const handleClick = vi.fn();
       render(<Button onClick={handleClick}>Button</Button>);
-      
-      const button = screen.getByText('Button');
+
+      const button = screen.getByRole('button');
       button.focus();
       await user.keyboard('{Enter}');
       expect(handleClick).toHaveBeenCalledTimes(1);
@@ -182,7 +183,7 @@ describe('Button Component', () => {
       const user = userEvent.setup();
       const handleClick = vi.fn();
       render(<Button onClick={handleClick}>Button</Button>);
-      
+
       const button = screen.getByText('Button');
       button.focus();
       await user.keyboard('[Space]');
@@ -196,8 +197,62 @@ describe('Button Component', () => {
           Add Item
         </Button>
       );
-      // Label text should still be in DOM for accessibility
+      // Label text should still be in DOM for accessibility (visually hidden)
       expect(screen.getByText('Add Item')).toBeInTheDocument();
+    });
+
+    it('warns in dev when iconOnly lacks aria-label', () => {
+      const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+      render(
+        <Button iconLeft={<PlusIcon />} iconOnly>
+          Add
+        </Button>
+      );
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining('aria-label')
+      );
+      consoleSpy.mockRestore();
+    });
+
+    it('does not warn when iconOnly has aria-label', () => {
+      const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+      render(
+        <Button iconLeft={<PlusIcon />} iconOnly aria-label="Add item">
+          Add
+        </Button>
+      );
+      expect(consoleSpy).not.toHaveBeenCalled();
+      consoleSpy.mockRestore();
+    });
+
+    it('icon-only button with aria-label is accessible by name', () => {
+      render(
+        <Button iconLeft={<PlusIcon />} iconOnly aria-label="Add item">
+          Add
+        </Button>
+      );
+      expect(screen.getByRole('button', { name: 'Add item' })).toBeInTheDocument();
+    });
+
+    it('supports aria-pressed for toggle buttons', () => {
+      render(<Button aria-pressed={true}>Bold</Button>);
+      expect(screen.getByRole('button')).toHaveAttribute('aria-pressed', 'true');
+    });
+
+    it('supports aria-expanded for expandable controls', () => {
+      render(
+        <Button aria-expanded={true} aria-controls="menu-1">
+          Options
+        </Button>
+      );
+      const button = screen.getByRole('button');
+      expect(button).toHaveAttribute('aria-expanded', 'true');
+      expect(button).toHaveAttribute('aria-controls', 'menu-1');
+    });
+
+    it('supports aria-haspopup for menu triggers', () => {
+      render(<Button aria-haspopup="menu">Menu</Button>);
+      expect(screen.getByRole('button')).toHaveAttribute('aria-haspopup', 'menu');
     });
   });
 

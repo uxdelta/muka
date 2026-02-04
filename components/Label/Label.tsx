@@ -17,6 +17,9 @@ export interface LabelProps {
   /** Disabled state */
   disabled?: boolean;
 
+  /** Hide label visually but keep accessible to screen readers */
+  visuallyHidden?: boolean;
+
   /** Additional CSS classes */
   className?: string;
 }
@@ -27,11 +30,10 @@ export interface LabelProps {
  * Built using the Muka design token system.
  * Uses semantic typography tokens: text.label.{size}.semibold
  *
- * Tokens used:
- * - text.label.{size}.semibold (fontFamily, fontWeight, fontSize, lineHeight)
- * - color.text.default.default
- * - color.text.subtle.default (disabled)
- * - color.state.error.foreground (required indicator)
+ * @accessibility WCAG 2.1 AA compliant
+ * - Native <label> element with htmlFor association
+ * - Required indicator hidden from assistive tech (visual only)
+ * - visuallyHidden prop for accessible but invisible labels
  */
 export const Label: React.FC<LabelProps> = ({
   children,
@@ -39,6 +41,7 @@ export const Label: React.FC<LabelProps> = ({
   size = 'md',
   required = false,
   disabled = false,
+  visuallyHidden = false,
   className = '',
   ...props
 }) => {
@@ -46,6 +49,7 @@ export const Label: React.FC<LabelProps> = ({
     'muka-label',
     `muka-label--${size}`,
     disabled && 'muka-label--disabled',
+    visuallyHidden && 'muka-visually-hidden',
     className,
   ].filter(Boolean).join(' ');
 

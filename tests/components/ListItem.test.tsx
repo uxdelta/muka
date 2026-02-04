@@ -209,6 +209,63 @@ describe('ListItem Component', () => {
       const button = screen.getByRole('button');
       expect(button).toHaveAttribute('type', 'submit');
     });
+
+    it('has aria-selected when selected', () => {
+      const { container } = render(<ListItem label="Label" selected onClick={() => {}} />);
+      const listItem = container.querySelector('.muka-listitem');
+      expect(listItem).toHaveAttribute('aria-selected', 'true');
+    });
+
+    it('supports explicit aria-selected prop', () => {
+      const { container } = render(<ListItem label="Label" aria-selected={true} />);
+      const listItem = container.querySelector('.muka-listitem');
+      expect(listItem).toHaveAttribute('aria-selected', 'true');
+    });
+
+    it('supports aria-current for navigation', () => {
+      const { container } = render(<ListItem label="Home" aria-current="page" />);
+      const listItem = container.querySelector('.muka-listitem');
+      expect(listItem).toHaveAttribute('aria-current', 'page');
+    });
+
+    it('supports aria-current with boolean value', () => {
+      const { container } = render(<ListItem label="Active" aria-current={true} />);
+      const listItem = container.querySelector('.muka-listitem');
+      expect(listItem).toHaveAttribute('aria-current', 'true');
+    });
+
+    it('supports aria-label', () => {
+      const { container } = render(<ListItem label="Label" aria-label="Navigate to settings" />);
+      const listItem = container.querySelector('.muka-listitem');
+      expect(listItem).toHaveAttribute('aria-label', 'Navigate to settings');
+    });
+
+    it('supports aria-describedby', () => {
+      const { container } = render(
+        <>
+          <ListItem label="Label" aria-describedby="desc" />
+          <p id="desc">Description</p>
+        </>
+      );
+      const listItem = container.querySelector('.muka-listitem');
+      expect(listItem).toHaveAttribute('aria-describedby', 'desc');
+    });
+
+    it('uses imageAlt for leading image', () => {
+      const { container } = render(
+        <ListItem label="User" leadingImage="https://example.com/avatar.jpg" imageAlt="User avatar" />
+      );
+      const image = container.querySelector('.muka-listitem__image');
+      expect(image).toHaveAttribute('alt', 'User avatar');
+    });
+
+    it('uses empty alt for decorative images by default', () => {
+      const { container } = render(
+        <ListItem label="Item" leadingImage="https://example.com/image.jpg" />
+      );
+      const image = container.querySelector('.muka-listitem__image');
+      expect(image).toHaveAttribute('alt', '');
+    });
   });
 
   describe('Styling', () => {

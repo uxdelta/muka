@@ -65,3 +65,10 @@
   border-color: var(--card-color-selected-border);
   border-width: var(--border-width-bold);
 }
+
+/* Disabled state */
+.muka-card--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
