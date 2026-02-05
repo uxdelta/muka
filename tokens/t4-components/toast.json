@@ -1,0 +1,104 @@
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "toast": {
+    "color": {
+      "info": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.level3}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.text.default.default}"
+        },
+        "accent": {
+          "$type": "color",
+          "$value": "{color.state.info.default}"
+        }
+      },
+      "success": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.level3}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.text.default.default}"
+        },
+        "accent": {
+          "$type": "color",
+          "$value": "{color.state.success.default}"
+        }
+      },
+      "warning": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.level3}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.text.default.default}"
+        },
+        "accent": {
+          "$type": "color",
+          "$value": "{color.text.default.default}"
+        }
+      },
+      "error": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.level3}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.text.default.default}"
+        },
+        "accent": {
+          "$type": "color",
+          "$value": "{color.state.error.default}"
+        }
+      }
+    },
+    "padding": {
+      "x": {
+        "$type": "dimension",
+        "$value": "{spacing.4}"
+      },
+      "y": {
+        "$type": "dimension",
+        "$value": "{spacing.3}"
+      }
+    },
+    "radius": {
+      "$type": "borderRadius",
+      "$value": "{alias.radius.lg}"
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{spacing.3}"
+    },
+    "icon": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.md}"
+      }
+    },
+    "shadow": {
+      "$type": "boxShadow",
+      "$value": "{shadow.400}"
+    },
+    "width": {
+      "min": {
+        "$type": "dimension",
+        "$value": "280px"
+      },
+      "max": {
+        "$type": "dimension",
+        "$value": "420px"
+      }
+    }
+  }
+}

@@ -59,12 +59,23 @@
       "name": "ListItem",
       "description": "List item with consistent styling",
       "props": ["children", "onClick", "selected", "disabled"]
+    },
+    {
+      "name": "Alert",
+      "description": "Inline alert for contextual feedback messages",
+      "props": ["variant", "size", "title", "dismissible", "onDismiss", "action", "hideIcon"],
+      "variants": ["info", "success", "warning", "error"],
+      "sizes": ["sm", "md", "lg"]
+    },
+    {
+      "name": "Toast",
+      "description": "Non-blocking notification that appears temporarily",
+      "props": ["variant", "title", "duration", "open", "onClose", "action", "position", "hideIcon"],
+      "variants": ["info", "success", "warning", "error"]
     }
   ],
   "planned_components": [
     { "name": "Modal", "roadmap": "#15" },
-    { "name": "Alert", "roadmap": "#24" },
-    { "name": "Toast", "roadmap": "#24" },
     { "name": "Table", "roadmap": "#12" },
     { "name": "Spinner", "roadmap": "#27" },
     { "name": "Skeleton", "roadmap": "#29" },

@@ -1,0 +1,187 @@
+/* Toast Component Styles - Using Muka Design Tokens */
+
+.muka-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--toast-gap);
+  padding: var(--toast-padding-y) var(--toast-padding-x);
+  border-radius: var(--toast-radius);
+  box-shadow: var(--toast-shadow);
+  min-width: var(--toast-width-min);
+  max-width: var(--toast-width-max);
+  pointer-events: auto;
+  animation: muka-toast-slide-in 0.2s ease-out;
+}
+
+/* Entry animation */
+@keyframes muka-toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Position variants (for standalone use - typically managed by ToastProvider) */
+.muka-toast--top-right,
+.muka-toast--top-left,
+.muka-toast--top-center,
+.muka-toast--bottom-right,
+.muka-toast--bottom-left,
+.muka-toast--bottom-center {
+  position: fixed;
+  z-index: 9999;
+}
+
+.muka-toast--top-right {
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+}
+
+.muka-toast--top-left {
+  top: var(--spacing-4);
+  left: var(--spacing-4);
+}
+
+.muka-toast--top-center {
+  top: var(--spacing-4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.muka-toast--bottom-right {
+  bottom: var(--spacing-4);
+  right: var(--spacing-4);
+}
+
+.muka-toast--bottom-left {
+  bottom: var(--spacing-4);
+  left: var(--spacing-4);
+}
+
+.muka-toast--bottom-center {
+  bottom: var(--spacing-4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Variant: Info */
+.muka-toast--info {
+  background-color: var(--toast-color-info-background);
+  color: var(--toast-color-info-foreground);
+}
+
+.muka-toast--info .muka-toast__icon {
+  color: var(--toast-color-info-accent);
+}
+
+/* Variant: Success */
+.muka-toast--success {
+  background-color: var(--toast-color-success-background);
+  color: var(--toast-color-success-foreground);
+}
+
+.muka-toast--success .muka-toast__icon {
+  color: var(--toast-color-success-accent);
+}
+
+/* Variant: Warning */
+.muka-toast--warning {
+  background-color: var(--toast-color-warning-background);
+  color: var(--toast-color-warning-foreground);
+}
+
+.muka-toast--warning .muka-toast__icon {
+  color: var(--toast-color-warning-accent);
+}
+
+/* Variant: Error */
+.muka-toast--error {
+  background-color: var(--toast-color-error-background);
+  color: var(--toast-color-error-foreground);
+}
+
+.muka-toast--error .muka-toast__icon {
+  color: var(--toast-color-error-accent);
+}
+
+/* Icon */
+.muka-toast__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--toast-icon-size);
+  height: var(--toast-icon-size);
+}
+
+.muka-toast__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Content */
+.muka-toast__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.muka-toast__title {
+  font-family: var(--text-label-md-semibold-fontFamily);
+  font-weight: var(--text-label-md-semibold-fontWeight);
+  font-size: var(--text-label-md-semibold-fontSize);
+  line-height: var(--text-label-md-semibold-lineHeight);
+  margin-bottom: var(--spacing-1);
+}
+
+.muka-toast__message {
+  font-family: var(--text-body-sm-regular-fontFamily);
+  font-weight: var(--text-body-sm-regular-fontWeight);
+  font-size: var(--text-body-sm-regular-fontSize);
+  line-height: var(--text-body-sm-regular-lineHeight);
+}
+
+/* Action slot */
+.muka-toast__action {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Dismiss button */
+.muka-toast__dismiss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: -2px -4px -2px 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  opacity: 0.7;
+  cursor: pointer;
+  border-radius: var(--border-radius-sm);
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.muka-toast__dismiss:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.muka-toast__dismiss:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+  opacity: 1;
+}
+
+.muka-toast__dismiss svg {
+  width: 16px;
+  height: 16px;
+}
