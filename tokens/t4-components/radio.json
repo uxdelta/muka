@@ -1,0 +1,92 @@
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "radio": {
+    "size": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{size.lg}"
+      },
+      "default": {
+        "$type": "dimension",
+        "$value": "{size.xl}"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{size.2xl}"
+      }
+    },
+    "dot": {
+      "size": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{size.sm}"
+        },
+        "default": {
+          "$type": "dimension",
+          "$value": "{size.md}"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{size.lg}"
+        }
+      }
+    },
+    "color": {
+      "default": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.level3}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{color.border.contrast}"
+        },
+        "dot": {
+          "$type": "color",
+          "$value": "{color.surface.level3}"
+        }
+      },
+      "hover": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.level2}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{color.border.contrast}"
+        }
+      },
+      "checked": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.level3}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{color.action.default}"
+        },
+        "dot": {
+          "$type": "color",
+          "$value": "{color.action.default}"
+        }
+      },
+      "disabled": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.level1}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{color.border.default}"
+        },
+        "dot": {
+          "$type": "color",
+          "$value": "{color.border.default}"
+        }
+      }
+    }
+  }
+}

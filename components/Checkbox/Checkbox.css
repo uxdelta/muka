@@ -1,0 +1,164 @@
+/* Checkbox Component Styles - Using Muka Design Tokens */
+
+/* Wrapper - clickable label container */
+.muka-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  cursor: pointer;
+  user-select: none;
+}
+
+.muka-checkbox--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Control container */
+.muka-checkbox__control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Hidden native input */
+.muka-checkbox__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Visual indicator (square) */
+.muka-checkbox__indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--checkbox-size-default);
+  height: var(--checkbox-size-default);
+  border-radius: var(--checkbox-radius);
+  background-color: var(--checkbox-color-default-background);
+  border: var(--border-width-regular) solid var(--checkbox-color-default-border);
+  transition: all 0.15s ease;
+  box-shadow: inset 0 1px 2px 0 rgba(26, 26, 26, 0.15);
+}
+
+/* Size variants */
+.muka-checkbox--sm .muka-checkbox__indicator {
+  width: var(--checkbox-size-sm);
+  height: var(--checkbox-size-sm);
+}
+
+.muka-checkbox--lg .muka-checkbox__indicator {
+  width: var(--checkbox-size-lg);
+  height: var(--checkbox-size-lg);
+}
+
+/* Icon inside checkbox */
+.muka-checkbox__icon {
+  width: var(--checkbox-icon-size-default);
+  height: var(--checkbox-icon-size-default);
+  color: var(--checkbox-color-default-icon);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.muka-checkbox--sm .muka-checkbox__icon {
+  width: var(--checkbox-icon-size-sm);
+  height: var(--checkbox-icon-size-sm);
+}
+
+.muka-checkbox--lg .muka-checkbox__icon {
+  width: var(--checkbox-icon-size-lg);
+  height: var(--checkbox-icon-size-lg);
+}
+
+/* Hide indeterminate icon by default */
+.muka-checkbox__icon--indeterminate {
+  position: absolute;
+}
+
+/* Hover state - removed per design */
+
+/* Focus state */
+.muka-checkbox__input:focus-visible + .muka-checkbox__indicator {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Checked state */
+.muka-checkbox__input:checked + .muka-checkbox__indicator {
+  background-color: var(--checkbox-color-checked-background);
+  border-color: var(--checkbox-color-checked-border);
+  box-shadow: none;
+}
+
+.muka-checkbox__input:checked + .muka-checkbox__indicator .muka-checkbox__icon--check {
+  color: var(--checkbox-color-checked-icon);
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Indeterminate state */
+.muka-checkbox__input:indeterminate + .muka-checkbox__indicator {
+  background-color: var(--checkbox-color-checked-background);
+  border-color: var(--checkbox-color-checked-border);
+  box-shadow: none;
+}
+
+.muka-checkbox__input:indeterminate + .muka-checkbox__indicator .muka-checkbox__icon--check {
+  opacity: 0;
+}
+
+.muka-checkbox__input:indeterminate + .muka-checkbox__indicator .muka-checkbox__icon--indeterminate {
+  color: var(--checkbox-color-checked-icon);
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Disabled state */
+.muka-checkbox--disabled .muka-checkbox__indicator {
+  background-color: var(--checkbox-color-disabled-background);
+  border-color: var(--checkbox-color-disabled-border);
+  box-shadow: none;
+}
+
+.muka-checkbox__input:disabled:checked + .muka-checkbox__indicator .muka-checkbox__icon--check,
+.muka-checkbox__input:disabled:indeterminate + .muka-checkbox__indicator .muka-checkbox__icon--indeterminate {
+  color: var(--checkbox-color-disabled-icon);
+}
+
+/* Label text */
+.muka-checkbox__label {
+  font-family: var(--text-label-lg-regular-fontFamily);
+  font-weight: var(--text-label-lg-regular-fontWeight);
+  font-size: var(--text-label-lg-regular-fontSize);
+  line-height: var(--text-label-lg-regular-lineHeight);
+  color: var(--color-text-default-default);
+}
+
+.muka-checkbox--sm .muka-checkbox__label {
+  font-family: var(--text-label-md-regular-fontFamily);
+  font-weight: var(--text-label-md-regular-fontWeight);
+  font-size: var(--text-label-md-regular-fontSize);
+  line-height: var(--text-label-md-regular-lineHeight);
+}
+
+.muka-checkbox--lg .muka-checkbox__label {
+  font-family: var(--text-label-xl-regular-fontFamily);
+  font-weight: var(--text-label-xl-regular-fontWeight);
+  font-size: var(--text-label-xl-regular-fontSize);
+  line-height: var(--text-label-xl-regular-lineHeight);
+}
+
+.muka-checkbox--disabled .muka-checkbox__label {
+  color: var(--color-text-subtle-default);
+}

@@ -1,0 +1,140 @@
+/* RadioTile Component Styles - Using Muka Design Tokens */
+
+/* Base tile styles - horizontal */
+.muka-radio-tile {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  border: var(--border-width-regular) solid var(--input-field-color-default-border);
+  border-radius: var(--input-field-radius-md);
+  background-color: var(--color-surface-level3);
+  cursor: pointer;
+  transition: border-color 0.15s ease, border-width 0.15s ease;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.muka-radio-tile--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Selected state */
+.muka-radio-tile[data-checked] {
+  border-width: var(--border-width-bold);
+  border-color: var(--color-action-default);
+}
+
+/* Vertical layout */
+.muka-radio-tile--vertical {
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2);
+  position: relative;
+  width: 160px;
+}
+
+/* Radio container */
+.muka-radio-tile__radio {
+  flex-shrink: 0;
+}
+
+/* Corner-positioned radio for vertical */
+.muka-radio-tile__radio--corner {
+  position: absolute;
+  top: var(--spacing-4);
+  left: var(--spacing-4);
+}
+
+/* Adjust corner position when selected (border is thicker) */
+.muka-radio-tile[data-checked] .muka-radio-tile__radio--corner {
+  top: calc(var(--spacing-4) - 1px);
+  left: calc(var(--spacing-4) - 1px);
+}
+
+/* Icon */
+.muka-radio-tile__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--icon-size-default);
+  height: var(--icon-size-default);
+  color: var(--color-text-default-default);
+}
+
+.muka-radio-tile__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Image */
+.muka-radio-tile__image {
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: var(--border-radius-sm);
+}
+
+.muka-radio-tile__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Horizontal image sizing */
+.muka-radio-tile__image--horizontal {
+  width: 40px;
+  height: 40px;
+}
+
+/* Vertical image sizing */
+.muka-radio-tile--vertical .muka-radio-tile__image {
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+
+/* Content container */
+.muka-radio-tile__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  gap: var(--spacing-1);
+}
+
+/* Label */
+.muka-radio-tile__label {
+  font-family: var(--text-body-lg-regular-fontFamily);
+  font-weight: var(--text-body-lg-regular-fontWeight);
+  font-size: var(--text-body-lg-regular-fontSize);
+  line-height: var(--text-body-lg-regular-lineHeight);
+  color: var(--color-text-default-default);
+}
+
+.muka-radio-tile__label--bold {
+  font-family: var(--text-label-lg-semibold-fontFamily);
+  font-weight: var(--text-label-lg-semibold-fontWeight);
+  font-size: var(--text-label-lg-semibold-fontSize);
+  line-height: var(--text-label-lg-semibold-lineHeight);
+}
+
+.muka-radio-tile__label--center {
+  text-align: center;
+}
+
+/* Caption */
+.muka-radio-tile__caption {
+  font-family: var(--text-body-base-regular-fontFamily);
+  font-weight: var(--text-body-base-regular-fontWeight);
+  font-size: var(--text-body-base-regular-fontSize);
+  line-height: var(--text-body-base-regular-lineHeight);
+  color: var(--color-text-subtle-default);
+}
+
+/* Disabled states */
+.muka-radio-tile--disabled .muka-radio-tile__label,
+.muka-radio-tile--disabled .muka-radio-tile__icon {
+  color: var(--color-text-subtle-default);
+}

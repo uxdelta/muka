@@ -1,0 +1,160 @@
+/* Toggle Component Styles - Using Muka Design Tokens */
+
+/* Wrapper container */
+.muka-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  position: relative;
+  padding: var(--spacing-4) 0;
+}
+
+.muka-toggle--with-caption {
+  padding: var(--spacing-5) 0;
+}
+
+.muka-toggle--disabled {
+  opacity: 0.6;
+}
+
+/* Icon */
+.muka-toggle__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--icon-size-default);
+  height: var(--icon-size-default);
+  color: var(--color-text-default-default);
+}
+
+.muka-toggle__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Content area (label + caption) */
+.muka-toggle__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  gap: var(--spacing-1);
+}
+
+/* Label */
+.muka-toggle__label {
+  font-family: var(--text-label-lg-regular-fontFamily);
+  font-weight: var(--text-label-lg-regular-fontWeight);
+  font-size: var(--text-label-lg-regular-fontSize);
+  line-height: var(--text-label-lg-regular-lineHeight);
+  color: var(--color-text-default-default);
+  cursor: pointer;
+}
+
+.muka-toggle--with-caption .muka-toggle__label {
+  font-family: var(--text-label-lg-semibold-fontFamily);
+  font-weight: var(--text-label-lg-semibold-fontWeight);
+  font-size: var(--text-label-lg-semibold-fontSize);
+  line-height: var(--text-label-lg-semibold-lineHeight);
+}
+
+.muka-toggle--disabled .muka-toggle__label {
+  color: var(--color-text-subtle-default);
+  cursor: not-allowed;
+}
+
+/* Caption */
+.muka-toggle__caption {
+  font-family: var(--text-body-base-regular-fontFamily);
+  font-weight: var(--text-body-base-regular-fontWeight);
+  font-size: var(--text-body-base-regular-fontSize);
+  line-height: var(--text-body-base-regular-lineHeight);
+  color: var(--color-text-subtle-default);
+}
+
+/* Switch container */
+.muka-toggle__switch {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.muka-toggle--disabled .muka-toggle__switch {
+  cursor: not-allowed;
+}
+
+/* Hidden native input */
+.muka-toggle__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Track (background pill) */
+.muka-toggle__track {
+  display: flex;
+  align-items: center;
+  width: var(--toggle-track-width);
+  height: var(--toggle-track-height);
+  border-radius: var(--toggle-track-radius);
+  background-color: var(--toggle-track-color-off);
+  transition: background-color 0.2s ease;
+  box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.16);
+  position: relative;
+}
+
+/* Knob (sliding circle) */
+.muka-toggle__knob {
+  position: absolute;
+  width: var(--toggle-knob-size);
+  height: var(--toggle-knob-size);
+  border-radius: var(--border-radius-full);
+  background-color: var(--toggle-knob-color-default);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  left: var(--toggle-knob-offset);
+  transition: left 0.2s ease, transform 0.2s ease;
+}
+
+/* Focus state */
+.muka-toggle__input:focus-visible + .muka-toggle__track {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Checked (on) state */
+.muka-toggle__input:checked + .muka-toggle__track {
+  background-color: var(--toggle-track-color-on);
+}
+
+.muka-toggle__input:checked + .muka-toggle__track .muka-toggle__knob {
+  left: calc(var(--toggle-track-width) - var(--toggle-knob-size) - var(--toggle-knob-offset));
+}
+
+/* Disabled state */
+.muka-toggle--disabled .muka-toggle__track {
+  background-color: var(--toggle-track-color-disabled);
+  box-shadow: none;
+}
+
+.muka-toggle--disabled .muka-toggle__knob {
+  background-color: var(--toggle-knob-color-disabled);
+  box-shadow: none;
+}
+
+/* Divider */
+.muka-toggle__divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--color-border-muted);
+}

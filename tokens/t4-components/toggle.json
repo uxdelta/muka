@@ -1,0 +1,56 @@
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "toggle": {
+    "track": {
+      "width": {
+        "$type": "dimension",
+        "$value": "{size.5xl}"
+      },
+      "height": {
+        "$type": "dimension",
+        "$value": "{size.2xl}"
+      },
+      "radius": {
+        "$type": "borderRadius",
+        "$value": "{border.radius.full}"
+      },
+      "color": {
+        "off": {
+          "$type": "color",
+          "$value": "{color.surface.sunken}"
+        },
+        "on": {
+          "$type": "color",
+          "$value": "{color.action.default}"
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "{color.surface.level1}"
+        }
+      }
+    },
+    "knob": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.xl}"
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": "{spacing.1}"
+      },
+      "color": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.surface.level3}"
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "{color.surface.level2}"
+        }
+      }
+    }
+  }
+}

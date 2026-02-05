@@ -12,6 +12,7 @@
   --color-action-inverse-pressed: #ffffff;
   --color-action-inverse-muted: #ffffff;
   
+  --color-surface-level0: #e8e8e8;
   --color-surface-level1: #f9f9f9;
   --color-surface-level2: #f0f0f0;
   --color-surface-level3: #fcfcfc;
@@ -113,4 +114,6 @@ body {
   font-family: var(--alias-font-brand-family);
   margin: 0;
   padding: 0;
+  /* Page background uses Muka surface token so it matches theme (e.g. dark for muka-dark, wireframe-dark) */
+  background-color: var(--color-surface-level3);
 }

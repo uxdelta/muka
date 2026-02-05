@@ -1,0 +1,140 @@
+/* CheckboxTile Component Styles - Using Muka Design Tokens */
+
+/* Base tile styles - horizontal */
+.muka-checkbox-tile {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  border: var(--border-width-regular) solid var(--input-field-color-default-border);
+  border-radius: var(--input-field-radius-md);
+  background-color: var(--color-surface-level3);
+  cursor: pointer;
+  transition: border-color 0.15s ease, border-width 0.15s ease;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.muka-checkbox-tile--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Selected state */
+.muka-checkbox-tile[data-checked] {
+  border-width: var(--border-width-bold);
+  border-color: var(--color-action-default);
+}
+
+/* Vertical layout */
+.muka-checkbox-tile--vertical {
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2);
+  position: relative;
+  width: 160px;
+}
+
+/* Checkbox container */
+.muka-checkbox-tile__checkbox {
+  flex-shrink: 0;
+}
+
+/* Corner-positioned checkbox for vertical */
+.muka-checkbox-tile__checkbox--corner {
+  position: absolute;
+  top: var(--spacing-4);
+  left: var(--spacing-4);
+}
+
+/* Adjust corner position when selected (border is thicker) */
+.muka-checkbox-tile[data-checked] .muka-checkbox-tile__checkbox--corner {
+  top: calc(var(--spacing-4) - 1px);
+  left: calc(var(--spacing-4) - 1px);
+}
+
+/* Icon */
+.muka-checkbox-tile__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--icon-size-default);
+  height: var(--icon-size-default);
+  color: var(--color-text-default-default);
+}
+
+.muka-checkbox-tile__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Image */
+.muka-checkbox-tile__image {
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: var(--border-radius-sm);
+}
+
+.muka-checkbox-tile__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Horizontal image sizing */
+.muka-checkbox-tile__image--horizontal {
+  width: 40px;
+  height: 40px;
+}
+
+/* Vertical image sizing */
+.muka-checkbox-tile--vertical .muka-checkbox-tile__image {
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+
+/* Content container */
+.muka-checkbox-tile__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  gap: var(--spacing-1);
+}
+
+/* Label */
+.muka-checkbox-tile__label {
+  font-family: var(--text-body-lg-regular-fontFamily);
+  font-weight: var(--text-body-lg-regular-fontWeight);
+  font-size: var(--text-body-lg-regular-fontSize);
+  line-height: var(--text-body-lg-regular-lineHeight);
+  color: var(--color-text-default-default);
+}
+
+.muka-checkbox-tile__label--bold {
+  font-family: var(--text-label-lg-semibold-fontFamily);
+  font-weight: var(--text-label-lg-semibold-fontWeight);
+  font-size: var(--text-label-lg-semibold-fontSize);
+  line-height: var(--text-label-lg-semibold-lineHeight);
+}
+
+.muka-checkbox-tile__label--center {
+  text-align: center;
+}
+
+/* Caption */
+.muka-checkbox-tile__caption {
+  font-family: var(--text-body-base-regular-fontFamily);
+  font-weight: var(--text-body-base-regular-fontWeight);
+  font-size: var(--text-body-base-regular-fontSize);
+  line-height: var(--text-body-base-regular-lineHeight);
+  color: var(--color-text-subtle-default);
+}
+
+/* Disabled states */
+.muka-checkbox-tile--disabled .muka-checkbox-tile__label,
+.muka-checkbox-tile--disabled .muka-checkbox-tile__icon {
+  color: var(--color-text-subtle-default);
+}
