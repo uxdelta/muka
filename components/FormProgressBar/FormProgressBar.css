@@ -1,0 +1,157 @@
+/* FormProgressBar Component Styles — Using Muka Design Tokens */
+
+/* ─── Root ──────────────────────────────────────────────── */
+.muka-progress-bar {
+  width: 100%;
+  padding-bottom: var(--spacing-7);
+}
+
+/* ─── Track (layered container) ─────────────────────────── */
+.muka-progress-bar__track {
+  position: relative;
+  /* Vertical padding = (indicator size - connector height) / 2 = (32 - 4) / 2 = 14px */
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* ─── Steps layer (on top) ──────────────────────────────── */
+.muka-progress-bar__steps {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+/* ─── Individual step ───────────────────────────────────── */
+.muka-progress-bar__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  position: relative;
+}
+
+/* ─── Step indicator (circle) ───────────────────────────── */
+.muka-progress-bar__indicator {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Past: dark accent contrast circle with white checkmark */
+.muka-progress-bar__indicator--past {
+  background-color: var(--alias-color-accent-contrast);
+  color: var(--color-text-default-inverse);
+  cursor: pointer;
+}
+
+.muka-progress-bar__indicator--past:hover {
+  opacity: 0.85;
+}
+
+.muka-progress-bar__indicator--past:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Current: accent default circle with white number */
+.muka-progress-bar__indicator--current {
+  background-color: var(--alias-color-accent-default);
+  color: var(--color-text-default-inverse);
+}
+
+/* Upcoming: sunken/gray circle with dark number */
+.muka-progress-bar__indicator--upcoming {
+  background-color: var(--color-surface-sunken);
+  color: var(--color-text-default-default);
+}
+
+/* ─── Step number text ──────────────────────────────────── */
+.muka-progress-bar__number {
+  font-family: var(--text-label-md-bold-fontFamily);
+  font-weight: var(--text-label-md-bold-fontWeight);
+  font-size: var(--text-label-md-bold-fontSize);
+  line-height: var(--text-label-md-bold-lineHeight);
+  text-align: center;
+  user-select: none;
+}
+
+/* ─── Checkmark icon ────────────────────────────────────── */
+.muka-progress-bar__check-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ─── Step label ────────────────────────────────────────── */
+.muka-progress-bar__label {
+  font-family: var(--text-label-sm-regular-fontFamily);
+  font-weight: var(--text-label-sm-regular-fontWeight);
+  font-size: var(--text-label-sm-regular-fontSize);
+  line-height: var(--text-label-sm-regular-lineHeight);
+  color: var(--color-text-default-default);
+  text-align: center;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Current step label is bold */
+.muka-progress-bar__label--current {
+  font-family: var(--text-label-sm-bold-fontFamily);
+  font-weight: var(--text-label-sm-bold-fontWeight);
+}
+
+/* ─── Connectors layer (behind indicators) ──────────────── */
+.muka-progress-bar__connectors {
+  display: flex;
+  align-items: center;
+  /* Horizontal padding = indicator radius (32/2 = 16px) so lines meet circle centers */
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Individual connector line ─────────────────────────── */
+.muka-progress-bar__connector {
+  flex: 1 0 0;
+  height: 4px;
+  min-width: 1px;
+}
+
+/* Past: solid dark line */
+.muka-progress-bar__connector--past {
+  background-color: var(--alias-color-accent-contrast);
+}
+
+/* Current: gradient from past (dark) toward current step */
+.muka-progress-bar__connector--current {
+  background: linear-gradient(
+    to right,
+    var(--alias-color-accent-contrast) 0%,
+    var(--alias-color-accent-default) 100%
+  );
+}
+
+/* Current-right: gradient fading from current step into upcoming */
+.muka-progress-bar__connector--current-right {
+  background: linear-gradient(
+    to right,
+    var(--alias-color-accent-default) 0%,
+    var(--alias-color-accent-default) 15%,
+    var(--color-surface-sunken) 50%
+  );
+}
+
+/* Upcoming: solid gray line */
+.muka-progress-bar__connector--upcoming {
+  background-color: var(--color-surface-sunken);
+}

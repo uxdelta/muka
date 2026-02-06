@@ -17,3 +17,4 @@ export { CheckboxTile, type CheckboxTileProps } from './CheckboxTile';
 export { RadioTile, type RadioTileProps } from './RadioTile';
 export { Alert, type AlertProps } from './Alert';
 export { Toast, type ToastProps } from './Toast';
+export { FormProgressBar, type FormProgressBarProps, type FormProgressBarStep } from './FormProgressBar';

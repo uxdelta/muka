@@ -80,6 +80,10 @@
   padding: var(--spacing-4);
   position: relative;
   z-index: 1;
+  font-family: var(--text-body-base-regular-fontFamily);
+  font-weight: var(--text-body-base-regular-fontWeight);
+  font-size: var(--text-body-base-regular-fontSize);
+  line-height: var(--text-body-base-regular-lineHeight);
 }
 
 .muka-tabs__panel:focus-visible {
