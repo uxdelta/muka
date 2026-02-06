@@ -92,6 +92,7 @@
 .muka-bottombar--floating {
   background: transparent;
   padding: 0 var(--bottombar-floating-margin-x);
+  padding-bottom: var(--bottombar-floating-margin-bottom);
 }
 
 .muka-bottombar--floating .muka-bottombar__content {

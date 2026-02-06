@@ -37,6 +37,10 @@
         "$type": "dimension",
         "$value": "{spacing.3}"
       },
+      "margin-bottom": {
+        "$type": "dimension",
+        "$value": "{size.2xl}"
+      },
       "shadow": {
         "$type": "boxShadow",
         "$value": "{shadow.200}"
