@@ -3,12 +3,27 @@ import { withTheme } from './ThemeDecorator';
 
 const preview: Preview = {
   globalTypes: {
-    theme: {
-      description: 'Design system theme',
+    brand: {
+      description: 'Design system brand',
       toolbar: {
-        title: 'Theme',
+        title: 'Brand',
         icon: 'circlehollow',
-        items: ['muka-light', 'muka-dark', 'wireframe-light', 'wireframe-dark'],
+        items: [
+          { value: 'muka', title: 'Muka' },
+          { value: 'wireframe', title: 'Wireframe' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+    mode: {
+      description: 'Color mode',
+      toolbar: {
+        title: 'Mode',
+        icon: 'mirror',
+        items: [
+          { value: 'light', title: 'Light' },
+          { value: 'dark', title: 'Dark' },
+        ],
         dynamicTitle: true,
       },
     },
@@ -28,7 +43,8 @@ const preview: Preview = {
     },
   },
   initialGlobals: {
-    theme: 'muka-light',
+    brand: 'muka',
+    mode: 'light',
     layout_mode: 'responsive',
   },
   decorators: [withTheme],

@@ -2,24 +2,28 @@ import React, { useEffect, type ReactNode } from 'react';
 import type { Decorator } from '@storybook/react';
 
 const THEME_LINK_ID = 'muka-theme-tokens';
-const THEMES = ['muka-light', 'muka-dark', 'wireframe-light', 'wireframe-dark'] as const;
-type ThemeId = (typeof THEMES)[number];
-
+const BRANDS = ['muka', 'wireframe'] as const;
+const MODES = ['light', 'dark'] as const;
 const LAYOUT_MODES = ['responsive', 'mobile', 'tablet', 'desktop'] as const;
-type LayoutMode = (typeof LAYOUT_MODES)[number];
+
+type Brand = (typeof BRANDS)[number];
+type Mode = (typeof MODES)[number];
 
 function ThemeWrapper({
-  theme,
+  brand,
+  mode,
   layoutMode,
   children,
 }: {
-  theme: string;
+  brand: string;
+  mode: string;
   layoutMode: string;
   children: ReactNode;
 }) {
   useEffect(() => {
-    const isValidTheme = THEMES.indexOf(theme as ThemeId) !== -1;
-    const href = `/styles/tokens-${isValidTheme ? theme : 'muka-light'}.css`;
+    const validBrand = BRANDS.indexOf(brand as Brand) !== -1 ? brand : 'muka';
+    const validMode = MODES.indexOf(mode as Mode) !== -1 ? mode : 'light';
+    const href = `/styles/tokens-${validBrand}-${validMode}.css`;
     let link = document.getElementById(THEME_LINK_ID) as HTMLLinkElement | null;
     if (!link) {
       link = document.createElement('link');
@@ -28,7 +32,7 @@ function ThemeWrapper({
       document.head.appendChild(link);
     }
     link.href = href;
-  }, [theme]);
+  }, [brand, mode]);
 
   // Apply data-layout attribute for layout mode forcing.
   // "responsive" and "mobile" use no attribute (mobile is the base, responsive uses @media).
@@ -43,11 +47,12 @@ function ThemeWrapper({
 }
 
 export const withTheme: Decorator = (Story, context) => {
-  const theme = (context.globals?.theme as string) ?? 'muka-light';
+  const brand = (context.globals?.brand as string) ?? 'muka';
+  const mode = (context.globals?.mode as string) ?? 'light';
   const layoutMode = (context.globals?.layout_mode as string) ?? 'responsive';
   return React.createElement(
     ThemeWrapper,
-    { theme, layoutMode },
+    { brand, mode, layoutMode },
     React.createElement(Story)
   );
 };
