@@ -1,0 +1,46 @@
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "dialog": {
+    "color": {
+      "backdrop": {
+        "$type": "color",
+        "$value": "{color.black-alpha.7}"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.surface.level3}"
+      },
+      "body-background": {
+        "$type": "color",
+        "$value": "{color.surface.level2}"
+      }
+    },
+    "border": {
+      "radius": {
+        "$type": "borderRadius",
+        "$value": "{border.radius.xl}"
+      }
+    },
+    "shadow": {
+      "default": {
+        "$type": "boxShadow",
+        "$value": "{shadow.600}"
+      }
+    },
+    "padding": {
+      "x": {
+        "$type": "dimension",
+        "$value": "{spacing.4}"
+      }
+    },
+    "small": {
+      "max-width": {
+        "$type": "dimension",
+        "$value": "370px"
+      }
+    }
+  }
+}

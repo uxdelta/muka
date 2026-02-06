@@ -1,0 +1,231 @@
+/* BottomBar Component Styles */
+
+.muka-bottombar {
+  width: 100%;
+  background-color: var(--bottombar-color-background);
+}
+
+/* ─── Divider (non-floating) ──────────────────────────── */
+
+.muka-bottombar__divider {
+  height: var(--border-width-regular);
+  background-color: var(--bottombar-color-border);
+  width: 100%;
+}
+
+/* ─── Content container ───────────────────────────────── */
+
+.muka-bottombar__content {
+  display: flex;
+  align-items: center;
+}
+
+/* ─── Actions variant ─────────────────────────────────── */
+
+.muka-bottombar--actions .muka-bottombar__content {
+  flex-direction: row;
+  gap: var(--bottombar-actions-gap);
+  padding: var(--bottombar-actions-padding-t) var(--bottombar-actions-padding-x) var(--bottombar-actions-padding-x);
+}
+
+.muka-bottombar--actions .muka-bottombar__content > * {
+  flex: 1;
+  min-height: var(--bottombar-actions-button-height);
+}
+
+/* ─── Navigation variant ──────────────────────────────── */
+
+.muka-bottombar--navigation .muka-bottombar__content {
+  flex-direction: row;
+}
+
+/* ─── Tab item ────────────────────────────────────────── */
+
+.muka-bottombar__tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--bottombar-tab-gap);
+  padding: var(--bottombar-tab-padding-y) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--bottombar-color-tab-inactive);
+  transition: color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.muka-bottombar__tab:focus-visible {
+  outline: 2px solid var(--color-action-default);
+  outline-offset: -2px;
+  border-radius: var(--border-radius-sm);
+}
+
+.muka-bottombar__tab--active {
+  color: var(--bottombar-color-tab-active);
+}
+
+.muka-bottombar__tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--bottombar-tab-icon-size);
+  height: var(--bottombar-tab-icon-size);
+}
+
+.muka-bottombar__tab-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.muka-bottombar__tab-label {
+  font-family: var(--text-label-sm-fontFamily);
+  font-weight: var(--text-label-sm-fontWeight);
+  font-size: var(--text-label-sm-fontSize);
+  line-height: var(--text-label-sm-lineHeight);
+  letter-spacing: var(--text-label-sm-letterSpacing);
+}
+
+/* ─── Floating modifier ───────────────────────────────── */
+
+.muka-bottombar--floating {
+  background: transparent;
+  padding: 0 var(--bottombar-floating-margin-x);
+}
+
+.muka-bottombar--floating .muka-bottombar__content {
+  background-color: var(--bottombar-color-background);
+  border-radius: var(--bottombar-floating-radius);
+  padding: var(--bottombar-floating-padding);
+  box-shadow: var(--bottombar-floating-shadow);
+}
+
+/* Override the actions content padding inside floating */
+.muka-bottombar--floating.muka-bottombar--actions .muka-bottombar__content {
+  padding: var(--bottombar-floating-padding);
+}
+
+/* ─── Desktop: Sidebar transformation ─────────────────── */
+
+@media (min-width: 1024px) {
+  .muka-bottombar--desktop-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: var(--bottombar-color-background);
+    border-right: var(--border-width-regular) solid var(--bottombar-color-border);
+    z-index: 10;
+  }
+
+  .muka-bottombar--desktop-sidebar .muka-bottombar__divider {
+    display: none;
+  }
+
+  .muka-bottombar--desktop-sidebar .muka-bottombar__content {
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--spacing-4) var(--spacing-3);
+    gap: var(--spacing-1);
+  }
+
+  .muka-bottombar--desktop-sidebar .muka-bottombar__tab {
+    flex: 0 0 auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    border-radius: var(--border-radius-md);
+  }
+
+  .muka-bottombar--desktop-sidebar .muka-bottombar__tab:hover {
+    background-color: var(--color-surface-level2);
+  }
+
+  .muka-bottombar--desktop-sidebar .muka-bottombar__tab-label {
+    font-family: var(--text-label-md-fontFamily);
+    font-weight: var(--text-label-md-fontWeight);
+    font-size: var(--text-label-md-fontSize);
+    line-height: var(--text-label-md-lineHeight);
+    letter-spacing: var(--text-label-md-letterSpacing);
+  }
+
+  /* When floating and sidebar, remove the floating card styles */
+  .muka-bottombar--desktop-sidebar.muka-bottombar--floating {
+    padding: 0;
+  }
+
+  .muka-bottombar--desktop-sidebar.muka-bottombar--floating .muka-bottombar__content {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* ─── Desktop: Top Navigation transformation ──────────── */
+
+@media (min-width: 1024px) {
+  .muka-bottombar--desktop-topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    background-color: var(--bottombar-color-background);
+    border-bottom: var(--border-width-regular) solid var(--bottombar-color-border);
+    z-index: 10;
+  }
+
+  .muka-bottombar--desktop-topnav .muka-bottombar__divider {
+    display: none;
+  }
+
+  .muka-bottombar--desktop-topnav .muka-bottombar__content {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-1);
+    padding: 0 var(--spacing-4);
+    max-width: var(--container-max-width-large, 1200px);
+    margin: 0 auto;
+  }
+
+  .muka-bottombar--desktop-topnav .muka-bottombar__tab {
+    flex: 0 0 auto;
+    flex-direction: row;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3) var(--spacing-4);
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  .muka-bottombar--desktop-topnav .muka-bottombar__tab--active {
+    border-bottom-color: var(--color-action-default);
+  }
+
+  .muka-bottombar--desktop-topnav .muka-bottombar__tab:hover {
+    background-color: var(--color-surface-level2);
+  }
+
+  .muka-bottombar--desktop-topnav .muka-bottombar__tab-label {
+    font-family: var(--text-label-md-fontFamily);
+    font-weight: var(--text-label-md-fontWeight);
+    font-size: var(--text-label-md-fontSize);
+    line-height: var(--text-label-md-lineHeight);
+    letter-spacing: var(--text-label-md-letterSpacing);
+  }
+
+  /* When floating and topnav, remove the floating card styles */
+  .muka-bottombar--desktop-topnav.muka-bottombar--floating {
+    padding: 0;
+  }
+
+  .muka-bottombar--desktop-topnav.muka-bottombar--floating .muka-bottombar__content {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

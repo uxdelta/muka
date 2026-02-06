@@ -1426,6 +1426,13 @@
   --select-field-height-sm: 2rem;
   --select-field-height-default: 2.5rem;
   --select-field-height-lg: 3rem;
+  --dialog-color-backdrop: rgba(0, 0, 0, 0.141);
+  --dialog-color-background: #fdfcfd;
+  --dialog-color-body-background: #f2eff3;
+  --dialog-border-radius: 1.5rem;
+  --dialog-shadow-default: 0px 20px 20px -8px rgba(26, 26, 26, 0.28);
+  --dialog-padding-x: 1rem;
+  --dialog-small-max-width: 370px;
   --tabs-trigger-color-default-background: #f2eff3;
   --tabs-trigger-color-default-foreground: #211f26;
   --tabs-trigger-color-default-border: #d0cdd7;
@@ -1497,6 +1504,43 @@
   --toggle-knob-offset: 0.25rem;
   --toggle-knob-color-default: #fdfcfd;
   --toggle-knob-color-disabled: #f2eff3;
+  --topbar-color-background: #fdfcfd;
+  --topbar-color-foreground: #211f26;
+  --topbar-color-border: #eae7ec;
+  --topbar-height: 52px;
+  --topbar-padding-x: 0.75rem;
+  --topbar-title-max-width: 197px;
+  --topbar-drag-handle-width: 54px;
+  --topbar-drag-handle-height: 4px;
+  --topbar-drag-handle-color: #eae7ec;
+  --topbar-drag-handle-padding-y: 0.75rem;
+  --topbar-drag-handle-radius: 999rem;
+  --bottombar-color-background: #fdfcfd;
+  --bottombar-color-border: #eae7ec;
+  --bottombar-color-tab-active: #211f26;
+  --bottombar-color-tab-inactive: #8e8c99;
+  --bottombar-floating-radius: 1.5rem;
+  --bottombar-floating-padding: 0.75rem;
+  --bottombar-floating-margin-x: 0.75rem;
+  --bottombar-floating-shadow: 0px 3px 1px -1px rgba(26, 26, 26, 0.07);
+  --bottombar-tab-icon-size: 24px;
+  --bottombar-tab-gap: 0.25rem;
+  --bottombar-tab-padding-y: 0.5rem;
+  --bottombar-actions-padding-t: 0.75rem;
+  --bottombar-actions-padding-x: 0.75rem;
+  --bottombar-actions-gap: 0.75rem;
+  --bottombar-actions-button-height: 48px;
+  --sheet-color-backdrop: rgba(0, 0, 0, 0.141);
+  --sheet-color-background: #fdfcfd;
+  --sheet-color-body-background: #f2eff3;
+  --sheet-border-radius: 1.5rem;
+  --sheet-shadow-default: 0px 20px 20px -8px rgba(26, 26, 26, 0.28);
+  --sheet-padding-x: 1rem;
+  --sheet-drag-handle-width: 54px;
+  --sheet-drag-handle-height: 4px;
+  --sheet-drag-handle-color: #eae7ec;
+  --sheet-drag-handle-padding-y: 0.75rem;
+  --sheet-drag-handle-radius: 999rem;
 }
 
 /* Responsive overrides: md (min-width: 768px) */

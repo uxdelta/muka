@@ -1,0 +1,107 @@
+/* Sheet Component Styles */
+
+/* ─── Native dialog reset ─────────────────────────────── */
+
+.muka-sheet {
+  border: none;
+  padding: 0;
+  max-width: none;
+  max-height: none;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+/* ─── Backdrop ────────────────────────────────────────── */
+
+.muka-sheet::backdrop {
+  background-color: var(--sheet-color-backdrop);
+}
+
+/* ─── Positioning: bottom-anchored ────────────────────── */
+
+.muka-sheet {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+/* ─── Surface: the visible panel ──────────────────────── */
+
+.muka-sheet__surface {
+  background-color: var(--sheet-color-background);
+  border-radius: var(--sheet-border-radius) var(--sheet-border-radius) 0 0;
+  box-shadow: var(--sheet-shadow-default);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 100vh;
+}
+
+/* ─── Snap points ─────────────────────────────────────── */
+
+/* Content: height fits content */
+.muka-sheet--content .muka-sheet__surface {
+  max-height: 90vh;
+}
+
+/* Half: ~50% viewport height */
+.muka-sheet--half .muka-sheet__surface {
+  height: 50vh;
+}
+
+/* Full: nearly full viewport */
+.muka-sheet--full .muka-sheet__surface {
+  height: calc(100vh - 44px); /* leave a peek of backdrop at top */
+}
+
+/* ─── Body ────────────────────────────────────────────── */
+
+.muka-sheet__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sheet-padding-x);
+  background-color: var(--sheet-color-body-background);
+}
+
+/* For "content" snap, body doesn't flex-grow */
+.muka-sheet--content .muka-sheet__body {
+  flex: 0 1 auto;
+}
+
+/* ─── Footer ──────────────────────────────────────────── */
+
+.muka-sheet__footer {
+  flex-shrink: 0;
+}
+
+/* ─── Desktop: side panel transformation ──────────────── */
+
+@media (min-width: 1024px) {
+  .muka-sheet {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .muka-sheet__surface {
+    border-radius: var(--sheet-border-radius);
+    max-width: 480px;
+    width: 100%;
+  }
+
+  .muka-sheet--half .muka-sheet__surface {
+    height: auto;
+    max-height: 60vh;
+  }
+
+  .muka-sheet--full .muka-sheet__surface {
+    height: auto;
+    max-height: 90vh;
+  }
+}

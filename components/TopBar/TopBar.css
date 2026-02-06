@@ -1,0 +1,84 @@
+/* TopBar Component Styles */
+
+.muka-topbar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: var(--topbar-color-background);
+  width: 100%;
+}
+
+/* ─── Drag Handle (draggable variant) ─────────────────── */
+
+.muka-topbar__drag-handle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--topbar-drag-handle-padding-y) 0;
+}
+
+.muka-topbar__drag-handle {
+  width: var(--topbar-drag-handle-width);
+  height: var(--topbar-drag-handle-height);
+  background-color: var(--topbar-drag-handle-color);
+  border-radius: var(--topbar-drag-handle-radius);
+}
+
+/* ─── Container (the bar itself) ──────────────────────── */
+
+.muka-topbar__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--topbar-height);
+  padding: 0 var(--topbar-padding-x);
+}
+
+/* ─── Leading slot ────────────────────────────────────── */
+
+.muka-topbar__leading {
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/* ─── Title ───────────────────────────────────────────── */
+
+.muka-topbar__title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: var(--topbar-title-max-width);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  color: var(--topbar-color-foreground);
+  font-family: var(--text-heading-sm-fontFamily);
+  font-weight: var(--text-heading-sm-fontWeight);
+  font-size: var(--text-heading-sm-fontSize);
+  line-height: var(--text-heading-sm-lineHeight);
+  letter-spacing: var(--text-heading-sm-letterSpacing);
+  margin: 0;
+}
+
+/* ─── Trailing slot ───────────────────────────────────── */
+
+.muka-topbar__trailing {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.muka-topbar__trailing-action {
+  flex-shrink: 0;
+}
+
+/* ─── Divider ─────────────────────────────────────────── */
+
+.muka-topbar__divider {
+  height: var(--border-width-regular);
+  background-color: var(--topbar-color-border);
+  width: 100%;
+}

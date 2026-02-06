@@ -1,0 +1,102 @@
+/* Dialog Component Styles */
+
+/* ─── Native dialog reset ─────────────────────────────── */
+
+.muka-dialog {
+  border: none;
+  padding: 0;
+  max-width: none;
+  max-height: none;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+}
+
+/* ─── Backdrop ────────────────────────────────────────── */
+
+.muka-dialog::backdrop {
+  background-color: var(--dialog-color-backdrop);
+}
+
+/* ─── Small dialog: centered card ─────────────────────── */
+
+.muka-dialog--sm {
+  width: calc(100% - var(--dialog-padding-x) * 2);
+  max-width: var(--dialog-small-max-width);
+  margin: auto;
+}
+
+.muka-dialog--sm .muka-dialog__surface {
+  background-color: var(--dialog-color-background);
+  border-radius: var(--dialog-border-radius);
+  box-shadow: var(--dialog-shadow-default);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.muka-dialog--sm .muka-dialog__body {
+  padding: var(--dialog-padding-x);
+  background-color: var(--dialog-color-body-background);
+}
+
+.muka-dialog--sm .muka-dialog__divider {
+  height: var(--border-width-regular);
+  background-color: var(--color-border-default);
+  width: 100%;
+}
+
+/* ─── Large dialog: full-height on mobile ─────────────── */
+
+.muka-dialog--lg {
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+  margin: 0;
+}
+
+.muka-dialog--lg .muka-dialog__surface {
+  background-color: var(--dialog-color-background);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.muka-dialog--lg .muka-dialog__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--dialog-padding-x);
+  background-color: var(--dialog-color-body-background);
+}
+
+/* ─── Footer ──────────────────────────────────────────── */
+
+.muka-dialog__footer {
+  flex-shrink: 0;
+}
+
+/* ─── Non-modal modifier ──────────────────────────────── */
+
+.muka-dialog--non-modal::backdrop {
+  pointer-events: auto;
+}
+
+/* ─── Desktop overrides for large dialogs ─────────────── */
+
+@media (min-width: 1024px) {
+  .muka-dialog--lg {
+    width: auto;
+    max-width: 640px;
+    height: auto;
+    max-height: 90vh;
+    margin: auto;
+  }
+
+  .muka-dialog--lg .muka-dialog__surface {
+    border-radius: var(--dialog-border-radius);
+    box-shadow: var(--dialog-shadow-default);
+    overflow: hidden;
+    max-height: 90vh;
+  }
+}
