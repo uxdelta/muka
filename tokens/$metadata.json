@@ -19,6 +19,18 @@
     "t4-components/button",
     "t4-components/card",
     "t4-components/input",
-    "t4-components/chip"
+    "t4-components/chip",
+    "t4-components/alert",
+    "t4-components/bottombar",
+    "t4-components/checkbox",
+    "t4-components/dialog",
+    "t4-components/radio",
+    "t4-components/select",
+    "t4-components/separator",
+    "t4-components/sheet",
+    "t4-components/tabs",
+    "t4-components/toast",
+    "t4-components/toggle",
+    "t4-components/topbar"
   ]
 }
