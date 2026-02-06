@@ -4,7 +4,7 @@ export { ListItem, type ListItemProps } from './ListItem';
 export { Input, type InputProps } from './Input';
 export { Card, type CardProps } from './Card';
 export { Label, type LabelProps } from './Label';
-export { Icon, type IconProps } from './Icon';
+export { Icon, type IconProps, type IconName } from './Icon';
 export { Badge, type BadgeProps } from './Badge';
 export { Divider, type DividerProps } from './Divider';
 export { Select, type SelectProps, type SelectOption } from './Select';

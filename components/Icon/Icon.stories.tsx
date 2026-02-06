@@ -31,8 +31,11 @@ const meta: Meta<typeof Icon> = {
 # Icon Component
 
 Wrapper that enforces consistent sizing and color inheritance.
-- 4 sizes: xs, sm, md, lg
-- Uses \`icon.size\` tokens
+Icons are provided by **RemixIcon** via the \`name\` prop, or you can pass custom SVG as \`children\`.
+
+- **By name:** \`<Icon name="home" variant="line" />\` — use registered RemixIcon (line or fill).
+- **By children:** \`<Icon><CustomSvg /></Icon>\` — use any SVG or component.
+- 4 sizes: xs, sm, md, lg — uses \`icon.size\` tokens
 - Color inherits from parent or can be overridden
 - Accessible: aria-label for meaningful icons, aria-hidden for decorative
         `,
@@ -40,6 +43,8 @@ Wrapper that enforces consistent sizing and color inheritance.
     },
   },
   argTypes: {
+    name: { control: 'select', options: ['home', 'search', 'bell', 'user', 'arrow-left', 'x', 'dots-vertical', 'heart'] },
+    variant: { control: { type: 'radio' }, options: ['line', 'fill'] },
     size: { control: { type: 'radio' }, options: ['xs', 'sm', 'md', 'lg'] },
     color: { control: 'color' },
   },
@@ -49,16 +54,47 @@ export default meta;
 type Story = StoryObj<typeof Icon>;
 
 export const Playground: Story = {
+  args: { name: 'home', variant: 'line', size: 'md' },
+};
+
+export const ByName: Story = {
+  name: 'By name (RemixIcon)',
+  args: { name: 'heart', variant: 'line', size: 'md' },
+};
+
+export const ByNameFill: Story = {
+  name: 'By name (fill variant)',
+  args: { name: 'heart', variant: 'fill', size: 'lg' },
+};
+
+export const RegisteredIcons: Story = {
+  name: 'Registered icons',
+  render: () => (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+      <Icon name="home" size="md" />
+      <Icon name="search" size="md" />
+      <Icon name="bell" size="md" />
+      <Icon name="user" size="md" />
+      <Icon name="arrow-left" size="md" />
+      <Icon name="x" size="md" />
+      <Icon name="dots-vertical" size="md" />
+      <Icon name="heart" size="md" />
+    </div>
+  ),
+};
+
+export const PlaygroundCustomSvg: Story = {
+  name: 'By children (custom SVG)',
   args: { children: <CarIcon />, size: 'md' },
 };
 
 export const AllSizes: Story = {
   render: () => (
     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-      <Icon size="xs"><CheckIcon /></Icon>
-      <Icon size="sm"><CheckIcon /></Icon>
-      <Icon size="md"><CheckIcon /></Icon>
-      <Icon size="lg"><CheckIcon /></Icon>
+      <Icon name="home" size="xs" />
+      <Icon name="home" size="sm" />
+      <Icon name="home" size="md" />
+      <Icon name="home" size="lg" />
     </div>
   ),
 };

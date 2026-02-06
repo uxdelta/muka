@@ -1,9 +1,18 @@
 import React from 'react';
 import './Icon.css';
+import { getIconComponent, type IconName } from './iconRegistry';
+
+export type { IconName } from './iconRegistry';
 
 export interface IconProps {
-  /** SVG element to render */
-  children: React.ReactNode;
+  /** Registered icon name (RemixIcon). Use with variant for line/fill. */
+  name?: IconName;
+
+  /** Icon style when using name. Default line. */
+  variant?: 'line' | 'fill';
+
+  /** SVG element or custom content. Use when not using name. */
+  children?: React.ReactNode;
 
   /** Size variant — uses icon.size tokens */
   size?: 'xs' | 'sm' | 'md' | 'lg';
@@ -22,11 +31,15 @@ export interface IconProps {
  * Icon Component
  *
  * Wrapper that enforces consistent sizing and color inheritance.
+ * Supports two modes: name (RemixIcon from registry) or children (custom SVG).
+ * Provide exactly one of name or children.
  *
  * Tokens used:
  * - icon.size.{xs|sm|default|lg}
  */
 export const Icon: React.FC<IconProps> = ({
+  name,
+  variant = 'line',
   children,
   size = 'md',
   color,
@@ -40,6 +53,16 @@ export const Icon: React.FC<IconProps> = ({
     className,
   ].filter(Boolean).join(' ');
 
+  let content: React.ReactNode;
+  if (name) {
+    const IconComponent = getIconComponent(name, variant);
+    content = <IconComponent />;
+  } else if (children !== undefined && children !== null) {
+    content = children;
+  } else {
+    content = null;
+  }
+
   return (
     <span
       className={iconClasses}
@@ -49,7 +72,7 @@ export const Icon: React.FC<IconProps> = ({
       aria-hidden={!label}
       {...props}
     >
-      {children}
+      {content}
     </span>
   );
 };

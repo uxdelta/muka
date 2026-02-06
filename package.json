@@ -65,6 +65,9 @@
   ],
   "author": "Revi Körnmann",
   "license": "MIT",
+  "dependencies": {
+    "@remixicon/react": "^4.9.0"
+  },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"

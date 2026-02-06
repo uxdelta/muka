@@ -100,6 +100,9 @@
   border-radius: var(--bottombar-floating-radius);
   padding: var(--bottombar-floating-padding);
   box-shadow: var(--bottombar-floating-shadow);
+  max-width: var(--bottombar-floating-max-width);
+  width: 100%;
+  margin: 0 auto;
 }
 
 /* Override the actions content padding inside floating */

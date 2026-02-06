@@ -1524,6 +1524,7 @@
   --bottombar-floating-margin-x: 0.75rem;
   --bottombar-floating-margin-bottom: 2rem;
   --bottombar-floating-shadow: 0px 3px 1px -1px rgba(26, 26, 26, 0.07);
+  --bottombar-floating-max-width: 640px;
   --bottombar-tab-icon-size: 24px;
   --bottombar-tab-gap: 0.25rem;
   --bottombar-tab-padding-y: 0.5rem;
