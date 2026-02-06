@@ -141,6 +141,101 @@ This single change propagates through semantic and component layers automaticall
 - `{component}.{category}.{variant}.{property}.{state}` 
 - e.g., `button.color.primary.background.hover`
 
+## Responsive Layout Tokens
+
+Layout tokens adapt to screen size via **breakpoint override files** — a single source of truth that drives both production CSS (`@media` queries) and design tool modes (Figma variable modes, Storybook layout switcher).
+
+### Breakpoint Primitives
+
+Breakpoints are defined in `tokens/t1-primitives/scale.json`:
+
+| Name | Value   | Usage          |
+|------|---------|----------------|
+| sm   | 640px   | Small tablets   |
+| md   | 768px   | Tablets         |
+| lg   | 1024px  | Desktops        |
+| xl   | 1280px  | Large screens   |
+
+### Architecture: Override Files
+
+Instead of inline responsive metadata, each breakpoint has its own override JSON file that redefines only the tokens that change:
+
+```
+tokens/
+└── t2-alias/
+    └── layout/
+        ├── mobile.json          # Mobile-first base (default values)
+        ├── tablet.json          # Tablet overrides (md breakpoint)
+        └── desktop.json         # Desktop overrides (lg breakpoint)
+```
+
+Override files only contain the tokens that differ from the base. For example, `tablet.json`:
+
+```json
+{
+  "section": {
+    "padding": {
+      "horizontal": {
+        "default": { "$type": "spacing", "$value": "{size.xl}" }
+      }
+    }
+  }
+}
+```
+
+### Build Configuration
+
+The `build/manifest.json` maps override files to breakpoint names:
+
+```json
+{
+  "breakpoints": {
+    "md": "tokens/t2-alias/layout/tablet.json",
+    "lg": "tokens/t2-alias/layout/desktop.json"
+  }
+}
+```
+
+### Generated CSS Output
+
+The build script produces three types of output from the same override files:
+
+**1. `@media` blocks (production responsive):**
+```css
+@media (min-width: 768px) {
+  :root {
+    --section-padding-horizontal-default: 1.5rem;
+  }
+}
+```
+
+**2. `[data-layout]` blocks (Storybook / design tool forcing):**
+```css
+[data-layout="tablet"] {
+  --section-padding-horizontal-default: 1.5rem;
+}
+```
+
+### How It Works Across Tools
+
+| Context | Mechanism | Behavior |
+|---------|-----------|----------|
+| **Production** | `@media` queries | Automatic — responds to viewport width |
+| **Storybook** | `data-layout` attribute | Manual — select from toolbar dropdown |
+| **Figma** | Tokens Studio variable modes | Manual — select from variable collection |
+
+### Figma / Tokens Studio Integration
+
+The `tokens/$themes.json` file includes a `"Layout"` group with three modes (Mobile, Tablet, Desktop). When synced via Tokens Studio, Figma creates a **Layout variable collection** with selectable modes, independent from the Theme collection.
+
+### Currently Responsive Tokens
+
+- `section.padding.horizontal.*` — Section horizontal padding
+- `section.padding.vertical.*` — Section vertical padding
+- `container.gap.*` — Container gaps
+- `container.max-width.large` — Large container constraint
+- `container.max-width.xlarge` — XL container constraint
+
 ## AI/RAG Enhancement
 
 Tokens include metadata for AI systems:

@@ -156,19 +156,46 @@ class TokenBuilder {
     return processObject(tokens);
   }
 
+  // Resolve override token references using the base (fully resolved) tokens as context
+  resolveOverrideTokens(overrideTokens, contextTokens) {
+    const resolved = JSON.parse(JSON.stringify(overrideTokens));
+
+    const processObject = (obj) => {
+      if (typeof obj !== 'object' || obj === null) return obj;
+      if (obj.$value) {
+        if (typeof obj.$value === 'string') {
+          obj.$value = this.resolveTokenValue(obj.$value, contextTokens);
+        }
+        return obj;
+      }
+      for (const key in obj) {
+        if (key.startsWith('$')) continue;
+        if (obj.hasOwnProperty(key)) {
+          obj[key] = processObject(obj[key]);
+        }
+      }
+      return obj;
+    };
+
+    return processObject(resolved);
+  }
+
   // Convert tokens to CSS custom properties
   generateCSS(tokens, brand = null, theme = null) {
     let css = '';
+    const selector = brand && theme
+      ? `[data-brand="${brand}"][data-theme="${theme}"]`
+      : ':root';
     
     if (brand && theme) {
       css += `/* Muka Design System - ${brand} ${theme} theme */\n`;
       css += `/* Generated automatically from design tokens */\n\n`;
-      css += `[data-brand="${brand}"][data-theme="${theme}"] {\n`;
     } else {
       css += `/* Muka Design System Tokens */\n`;
       css += `/* Generated automatically from design tokens */\n\n`;
-      css += `:root {\n`;
     }
+
+    css += `${selector} {\n`;
     
     this.processTokensForCSS(tokens, '', (name, value) => {
       let resolvedValue = this.resolveTokenValue(value, tokens);
@@ -177,6 +204,12 @@ class TokenBuilder {
     });
     
     css += '}\n';
+
+    // Responsive @media overrides from breakpoint override files
+    css += this.generateBreakpointCSS(tokens, selector);
+
+    // Layout mode forcing (for Storybook / design tools)
+    css += this.generateLayoutModeCSS(tokens);
     
     // Add root fallback for default theme
     if (brand === 'muka' && theme === 'light') {
@@ -187,6 +220,12 @@ class TokenBuilder {
         css += `  --${name}: ${resolvedValue};\n`;
       });
       css += '}\n';
+
+      // Responsive overrides for :root fallback
+      css += this.generateBreakpointCSS(tokens, ':root');
+
+      // Layout mode forcing for :root fallback
+      css += this.generateLayoutModeCSS(tokens);
     }
     
     return css;
@@ -230,6 +269,91 @@ class TokenBuilder {
         this.processTokensForCSS(value, cssName, callback);
       }
     }
+  }
+
+  // Load and resolve a breakpoint override file against the base tokens
+  loadBreakpointOverride(filePath, baseTokens) {
+    const fullPath = path.join(__dirname, '..', filePath);
+    if (!fs.existsSync(fullPath)) {
+      console.warn(`   ⚠️  Breakpoint file not found: ${filePath}`);
+      return null;
+    }
+
+    try {
+      const raw = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+      return this.resolveOverrideTokens(raw, baseTokens);
+    } catch (error) {
+      console.warn(`   ⚠️  Error loading breakpoint file ${filePath}: ${error.message}`);
+      return null;
+    }
+  }
+
+  // Get breakpoint definitions sorted ascending by min-width
+  getSortedBreakpoints(tokens) {
+    const bpConfig = this.manifest.breakpoints || {};
+    const bpTokens = tokens.breakpoint;
+    if (!bpTokens || Object.keys(bpConfig).length === 0) return [];
+
+    const breakpoints = [];
+    for (const [bpName, filePath] of Object.entries(bpConfig)) {
+      const token = bpTokens[bpName];
+      if (!token || !token.$value) {
+        console.warn(`   ⚠️  No breakpoint primitive found for "${bpName}"`);
+        continue;
+      }
+      breakpoints.push({ name: bpName, value: token.$value, filePath });
+    }
+
+    breakpoints.sort((a, b) => parseFloat(a.value) - parseFloat(b.value));
+    return breakpoints;
+  }
+
+  // Generate @media blocks from breakpoint override files (for production)
+  generateBreakpointCSS(tokens, selector) {
+    let css = '';
+    const breakpoints = this.getSortedBreakpoints(tokens);
+
+    for (const bp of breakpoints) {
+      const overrideTokens = this.loadBreakpointOverride(bp.filePath, tokens);
+      if (!overrideTokens) continue;
+
+      css += `\n/* Responsive overrides: ${bp.name} (min-width: ${bp.value}) */\n`;
+      css += `@media (min-width: ${bp.value}) {\n`;
+      css += `  ${selector} {\n`;
+      this.processTokensForCSS(overrideTokens, '', (name, value) => {
+        let resolvedValue = this.fixRgbaHexValues(value);
+        css += `    --${name}: ${resolvedValue};\n`;
+      });
+      css += `  }\n`;
+      css += `}\n`;
+    }
+
+    return css;
+  }
+
+  // Generate [data-layout] blocks for Storybook / design tool forcing
+  generateLayoutModeCSS(tokens) {
+    let css = '';
+    const breakpoints = this.getSortedBreakpoints(tokens);
+
+    // Map breakpoint names to human-friendly layout mode names
+    const layoutModeNames = { sm: 'mobile', md: 'tablet', lg: 'desktop', xl: 'widescreen' };
+
+    for (const bp of breakpoints) {
+      const modeName = layoutModeNames[bp.name] || bp.name;
+      const overrideTokens = this.loadBreakpointOverride(bp.filePath, tokens);
+      if (!overrideTokens) continue;
+
+      css += `\n/* Layout mode: ${modeName} (forced via data-layout attribute) */\n`;
+      css += `[data-layout="${modeName}"] {\n`;
+      this.processTokensForCSS(overrideTokens, '', (name, value) => {
+        let resolvedValue = this.fixRgbaHexValues(value);
+        css += `  --${name}: ${resolvedValue};\n`;
+      });
+      css += `}\n`;
+    }
+
+    return css;
   }
 
   // Build tokens for Storybook

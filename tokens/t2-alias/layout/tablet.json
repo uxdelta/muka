@@ -8,25 +8,25 @@
       "vertical": {
         "default": {
           "$type": "spacing",
-          "$value": "{size.4xl}"
+          "$value": "{size.3xl}"
         },
         "compact": {
           "$type": "spacing",
-          "$value": "{size.3xl}"
+          "$value": "{size.2xl}"
         },
         "spacious": {
           "$type": "spacing",
-          "$value": "{size.6xl}"
+          "$value": "{size.4xl}"
         }
       },
       "horizontal": {
         "default": {
           "$type": "spacing",
-          "$value": "{size.md}"
+          "$value": "{size.xl}"
         },
         "compact": {
           "$type": "spacing",
-          "$value": "{size.sm}"
+          "$value": "{size.md}"
         },
         "spacious": {
           "$type": "spacing",
@@ -47,41 +47,17 @@
       },
       "spacious": {
         "$type": "spacing",
-        "$value": "{size.4xl}"
+        "$value": "{size.3xl}"
       }
     },
     "max-width": {
-      "small": {
-        "$type": "sizing",
-        "$value": "360px"
-      },
-      "medium": {
-        "$type": "sizing",
-        "$value": "640px"
-      },
       "large": {
         "$type": "sizing",
-        "$value": "920px"
+        "$value": "768px"
       },
       "xlarge": {
         "$type": "sizing",
-        "$value": "1280px"
-      }
-    }
-  },
-  "wrapper": {
-    "gap": {
-      "default": {
-        "$type": "spacing",
-        "$value": "{size.md}"
-      },
-      "compact": {
-        "$type": "spacing",
-        "$value": "{size.sm}"
-      },
-      "spacious": {
-        "$type": "spacing",
-        "$value": "{size.2xl}"
+        "$value": "920px"
       }
     }
   }

@@ -12,9 +12,24 @@ const preview: Preview = {
         dynamicTitle: true,
       },
     },
+    layout_mode: {
+      description: 'Responsive layout mode',
+      toolbar: {
+        title: 'Layout',
+        icon: 'mobile',
+        items: [
+          { value: 'responsive', title: 'Responsive (auto)' },
+          { value: 'mobile', title: 'Mobile' },
+          { value: 'tablet', title: 'Tablet' },
+          { value: 'desktop', title: 'Desktop' },
+        ],
+        dynamicTitle: true,
+      },
+    },
   },
   initialGlobals: {
     theme: 'muka-light',
+    layout_mode: 'responsive',
   },
   decorators: [withTheme],
   parameters: {

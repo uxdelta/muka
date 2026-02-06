@@ -1,0 +1,88 @@
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "section": {
+    "padding": {
+      "vertical": {
+        "default": {
+          "$type": "spacing",
+          "$value": "{size.2xl}"
+        },
+        "compact": {
+          "$type": "spacing",
+          "$value": "{size.xl}"
+        },
+        "spacious": {
+          "$type": "spacing",
+          "$value": "{size.3xl}"
+        }
+      },
+      "horizontal": {
+        "default": {
+          "$type": "spacing",
+          "$value": "{size.md}"
+        },
+        "compact": {
+          "$type": "spacing",
+          "$value": "{size.sm}"
+        },
+        "spacious": {
+          "$type": "spacing",
+          "$value": "{size.lg}"
+        }
+      }
+    }
+  },
+  "container": {
+    "gap": {
+      "default": {
+        "$type": "spacing",
+        "$value": "{size.xl}"
+      },
+      "compact": {
+        "$type": "spacing",
+        "$value": "{size.md}"
+      },
+      "spacious": {
+        "$type": "spacing",
+        "$value": "{size.2xl}"
+      }
+    },
+    "max-width": {
+      "small": {
+        "$type": "sizing",
+        "$value": "360px"
+      },
+      "medium": {
+        "$type": "sizing",
+        "$value": "640px"
+      },
+      "large": {
+        "$type": "sizing",
+        "$value": "100%"
+      },
+      "xlarge": {
+        "$type": "sizing",
+        "$value": "100%"
+      }
+    }
+  },
+  "wrapper": {
+    "gap": {
+      "default": {
+        "$type": "spacing",
+        "$value": "{size.md}"
+      },
+      "compact": {
+        "$type": "spacing",
+        "$value": "{size.sm}"
+      },
+      "spacious": {
+        "$type": "spacing",
+        "$value": "{size.2xl}"
+      }
+    }
+  }
+}

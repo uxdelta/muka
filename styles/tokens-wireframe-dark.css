@@ -65,6 +65,10 @@
   --radius-xl: 1.5rem;
   --radius-2xl: 3rem;
   --radius-full: 999rem;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
   --size-0: 0rem;
   --size-4xs: 0.0625rem;
   --size-3xs: 0.125rem;
@@ -1015,6 +1019,22 @@
   --alias-radius-xl: 1.5rem;
   --alias-radius-2xl: 3rem;
   --alias-radius-full: 999rem;
+  --section-padding-vertical-default: 2rem;
+  --section-padding-vertical-compact: 1.5rem;
+  --section-padding-vertical-spacious: 2.5rem;
+  --section-padding-horizontal-default: 1rem;
+  --section-padding-horizontal-compact: 0.75rem;
+  --section-padding-horizontal-spacious: 1.25rem;
+  --container-gap-default: 1.5rem;
+  --container-gap-compact: 1rem;
+  --container-gap-spacious: 2rem;
+  --container-max-width-small: 360px;
+  --container-max-width-medium: 640px;
+  --container-max-width-large: 100%;
+  --container-max-width-xlarge: 100%;
+  --wrapper-gap-default: 1rem;
+  --wrapper-gap-compact: 0.75rem;
+  --wrapper-gap-spacious: 2rem;
   --border-radius-sm: 0.1875rem;
   --border-radius-md: 0.375rem;
   --border-radius-lg: 0.75rem;
@@ -1200,22 +1220,6 @@
   --text-input-lg-fontWeight: 400;
   --text-input-lg-fontSize: 1.125rem;
   --text-input-lg-lineHeight: 1.125rem;
-  --section-padding-vertical-default: 3rem;
-  --section-padding-vertical-compact: 2.5rem;
-  --section-padding-vertical-spacious: 4rem;
-  --section-padding-horizontal-default: 1rem;
-  --section-padding-horizontal-compact: 0.75rem;
-  --section-padding-horizontal-spacious: 2rem;
-  --container-gap-default: 2rem;
-  --container-gap-compact: 1.5rem;
-  --container-gap-spacious: 3rem;
-  --container-max-width-small: 360px;
-  --container-max-width-medium: 640px;
-  --container-max-width-large: 920px;
-  --container-max-width-xlarge: 1280px;
-  --wrapper-gap-default: 1rem;
-  --wrapper-gap-compact: 0.75rem;
-  --wrapper-gap-spacious: 2rem;
   --button-color-primary-background-default: #b4b4b4;
   --button-color-primary-background-hover: #eeeeee;
   --button-color-primary-background-pressed: #b4b4b4;
@@ -1493,4 +1497,66 @@
   --toggle-knob-offset: 0.25rem;
   --toggle-knob-color-default: #111111;
   --toggle-knob-color-disabled: #2a2a2a;
+}
+
+/* Responsive overrides: md (min-width: 768px) */
+@media (min-width: 768px) {
+  :root {
+    --section-padding-vertical-default: 2.5rem;
+    --section-padding-vertical-compact: 2rem;
+    --section-padding-vertical-spacious: 3rem;
+    --section-padding-horizontal-default: 1.5rem;
+    --section-padding-horizontal-compact: 1rem;
+    --section-padding-horizontal-spacious: 2rem;
+    --container-gap-default: 2rem;
+    --container-gap-compact: 1.5rem;
+    --container-gap-spacious: 2.5rem;
+    --container-max-width-large: 768px;
+    --container-max-width-xlarge: 920px;
+  }
+}
+
+/* Responsive overrides: lg (min-width: 1024px) */
+@media (min-width: 1024px) {
+  :root {
+    --section-padding-vertical-default: 3rem;
+    --section-padding-vertical-compact: 2.5rem;
+    --section-padding-vertical-spacious: 4rem;
+    --section-padding-horizontal-default: 2.5rem;
+    --section-padding-horizontal-compact: 1.5rem;
+    --section-padding-horizontal-spacious: 3rem;
+    --container-gap-default: 2rem;
+    --container-gap-spacious: 3rem;
+    --container-max-width-large: 920px;
+    --container-max-width-xlarge: 1280px;
+  }
+}
+
+/* Layout mode: tablet (forced via data-layout attribute) */
+[data-layout="tablet"] {
+  --section-padding-vertical-default: 2.5rem;
+  --section-padding-vertical-compact: 2rem;
+  --section-padding-vertical-spacious: 3rem;
+  --section-padding-horizontal-default: 1.5rem;
+  --section-padding-horizontal-compact: 1rem;
+  --section-padding-horizontal-spacious: 2rem;
+  --container-gap-default: 2rem;
+  --container-gap-compact: 1.5rem;
+  --container-gap-spacious: 2.5rem;
+  --container-max-width-large: 768px;
+  --container-max-width-xlarge: 920px;
+}
+
+/* Layout mode: desktop (forced via data-layout attribute) */
+[data-layout="desktop"] {
+  --section-padding-vertical-default: 3rem;
+  --section-padding-vertical-compact: 2.5rem;
+  --section-padding-vertical-spacious: 4rem;
+  --section-padding-horizontal-default: 2.5rem;
+  --section-padding-horizontal-compact: 1.5rem;
+  --section-padding-horizontal-spacious: 3rem;
+  --container-gap-default: 2rem;
+  --container-gap-spacious: 3rem;
+  --container-max-width-large: 920px;
+  --container-max-width-xlarge: 1280px;
 }

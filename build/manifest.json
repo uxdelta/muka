@@ -6,7 +6,8 @@
       "tokens/t2-alias/base.json",
       "tokens/t2-alias/brand/wireframe/fonts.json",
       "tokens/t2-alias/brand/wireframe/light.json",
-      "tokens/t3-semantics/**/*.json",
+      "tokens/t2-alias/layout/mobile.json",
+      "tokens/t3-semantics/ui.json",
       "tokens/t4-components/button.json",
       "tokens/t4-components/card.json",
       "tokens/t4-components/input.json",
@@ -50,7 +51,8 @@
       "tokens/t2-alias/base.json",
       "tokens/t2-alias/brand/wireframe/fonts.json",
       "tokens/t2-alias/brand/wireframe/dark.json",
-      "tokens/t3-semantics/**/*.json",
+      "tokens/t2-alias/layout/mobile.json",
+      "tokens/t3-semantics/ui.json",
       "tokens/t4-components/button.json",
       "tokens/t4-components/card.json",
       "tokens/t4-components/input.json",
@@ -94,7 +96,8 @@
       "tokens/t2-alias/base.json",
       "tokens/t2-alias/brand/muka/fonts.json",
       "tokens/t2-alias/brand/muka/light.json",
-      "tokens/t3-semantics/**/*.json",
+      "tokens/t2-alias/layout/mobile.json",
+      "tokens/t3-semantics/ui.json",
       "tokens/t4-components/button.json",
       "tokens/t4-components/card.json",
       "tokens/t4-components/input.json",
@@ -138,7 +141,8 @@
       "tokens/t2-alias/base.json",
       "tokens/t2-alias/brand/muka/fonts.json",
       "tokens/t2-alias/brand/muka/dark.json",
-      "tokens/t3-semantics/**/*.json",
+      "tokens/t2-alias/layout/mobile.json",
+      "tokens/t3-semantics/ui.json",
       "tokens/t4-components/button.json",
       "tokens/t4-components/card.json",
       "tokens/t4-components/input.json",
@@ -177,6 +181,10 @@
       "tokens/t4-components/menubar.json",
       "tokens/t4-components/collapsible.json"
     ]
+  },
+  "breakpoints": {
+    "md": "tokens/t2-alias/layout/tablet.json",
+    "lg": "tokens/t2-alias/layout/desktop.json"
   },
   "exports": {
     "css": {

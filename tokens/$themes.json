@@ -12,7 +12,7 @@
       "t1-primitives/typography": "enabled",
       "t2-alias/brand/wireframe/fonts": "enabled",
       "t2-alias/brand/wireframe/light": "enabled",
-      "t3-semantics/layout": "enabled",
+      "t2-alias/layout/mobile": "enabled",
       "t3-semantics/ui": "enabled",
       "t4-components/button": "enabled",
       "t4-components/card": "enabled",
@@ -1183,7 +1183,7 @@
       "t1-primitives/typography": "enabled",
       "t2-alias/brand/wireframe/dark": "enabled",
       "t2-alias/brand/wireframe/fonts": "enabled",
-      "t3-semantics/layout": "enabled",
+      "t2-alias/layout/mobile": "enabled",
       "t3-semantics/ui": "enabled",
       "t4-components/button": "enabled",
       "t4-components/card": "enabled",
@@ -2396,7 +2396,7 @@
       "t2-alias/brand/muka/fonts": "enabled",
       "t2-alias/brand/muka/light": "enabled",
       "t2-alias/brand/muka/radius": "enabled",
-      "t3-semantics/layout": "enabled",
+      "t2-alias/layout/mobile": "enabled",
       "t3-semantics/ui": "enabled",
       "t4-components/button": "enabled",
       "t4-components/card": "enabled",
@@ -3630,7 +3630,7 @@
       "t2-alias/brand/muka/dark": "enabled",
       "t2-alias/brand/muka/fonts": "enabled",
       "t2-alias/brand/muka/radius": "enabled",
-      "t3-semantics/layout": "enabled",
+      "t2-alias/layout/mobile": "enabled",
       "t3-semantics/ui": "enabled",
       "t4-components/button": "enabled",
       "t4-components/card": "enabled",
@@ -4795,5 +4795,37 @@
       "icon.size.lg": "28bf90132491e5f5fdf42242ea2213579e16dfb0"
     },
     "group": "Theme"
+  },
+  {
+    "id": "layout-mobile",
+    "name": "Mobile",
+    "selectedTokenSets": {
+      "t2-alias/layout/mobile": "enabled"
+    },
+    "$figmaStyleReferences": {},
+    "$figmaVariableReferences": {},
+    "group": "Layout"
+  },
+  {
+    "id": "layout-tablet",
+    "name": "Tablet",
+    "selectedTokenSets": {
+      "t2-alias/layout/mobile": "enabled",
+      "t2-alias/layout/tablet": "enabled"
+    },
+    "$figmaStyleReferences": {},
+    "$figmaVariableReferences": {},
+    "group": "Layout"
+  },
+  {
+    "id": "layout-desktop",
+    "name": "Desktop",
+    "selectedTokenSets": {
+      "t2-alias/layout/mobile": "enabled",
+      "t2-alias/layout/desktop": "enabled"
+    },
+    "$figmaStyleReferences": {},
+    "$figmaVariableReferences": {},
+    "group": "Layout"
   }
 ]
