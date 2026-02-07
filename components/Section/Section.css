@@ -1,0 +1,20 @@
+/* Section Component - Layout tokens (section.padding) */
+
+.muka-section {
+  box-sizing: border-box;
+}
+
+.muka-section--padding-compact {
+  padding-block: var(--section-padding-vertical-compact);
+  padding-inline: var(--section-padding-horizontal-compact);
+}
+
+.muka-section--padding-default {
+  padding-block: var(--section-padding-vertical-default);
+  padding-inline: var(--section-padding-horizontal-default);
+}
+
+.muka-section--padding-spacious {
+  padding-block: var(--section-padding-vertical-spacious);
+  padding-inline: var(--section-padding-horizontal-spacious);
+}

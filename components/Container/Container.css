@@ -1,0 +1,48 @@
+/* Container Component - Layout tokens (container.max-width, container.gap) */
+
+.muka-container {
+  box-sizing: border-box;
+  width: 100%;
+  margin-inline: auto;
+}
+
+/* Max-width variants */
+.muka-container--max-width-small {
+  max-width: var(--container-max-width-small);
+}
+
+.muka-container--max-width-medium {
+  max-width: var(--container-max-width-medium);
+}
+
+.muka-container--max-width-large {
+  max-width: var(--container-max-width-large);
+}
+
+.muka-container--max-width-xlarge {
+  max-width: var(--container-max-width-xlarge);
+}
+
+/* No gap — max-width only, no flex */
+.muka-container--gap-none {
+  /* block layout by default */
+}
+
+/* Gap variants — flex column with token gap */
+.muka-container--gap-compact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--container-gap-compact);
+}
+
+.muka-container--gap-default {
+  display: flex;
+  flex-direction: column;
+  gap: var(--container-gap-default);
+}
+
+.muka-container--gap-spacious {
+  display: flex;
+  flex-direction: column;
+  gap: var(--container-gap-spacious);
+}
