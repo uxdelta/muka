@@ -51,13 +51,21 @@
       }
     },
     "max-width": {
+      "small": {
+        "$type": "sizing",
+        "$value": "640px"
+      },
+      "medium": {
+        "$type": "sizing",
+        "$value": "960px"
+      },
       "large": {
         "$type": "sizing",
-        "$value": "768px"
+        "$value": "1024px"
       },
       "xlarge": {
         "$type": "sizing",
-        "$value": "920px"
+        "$value": "100%"
       }
     }
   }
