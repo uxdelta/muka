@@ -61,7 +61,7 @@
       },
       "large": {
         "$type": "sizing",
-        "$value": "100%"
+        "$value": "960px"
       },
       "xlarge": {
         "$type": "sizing",
