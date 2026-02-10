@@ -8,6 +8,10 @@ const meta: Meta<typeof Alert> = {
   component: Alert,
   parameters: {
     layout: 'padded',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/RL5IFLUJk4yeAFNXlsX4b5/Muka-UI-Figma-Library?node-id=463-4932&t=EWdiRlfOlF96s9zJ-11',
+    },
     docs: {
       description: {
         component: `

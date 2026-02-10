@@ -7,6 +7,10 @@ const meta: Meta<typeof Card> = {
   component: Card,
   parameters: {
     layout: 'centered',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/RL5IFLUJk4yeAFNXlsX4b5/Muka-UI-Figma-Library?node-id=742-13000',
+    },
     docs: {
       description: {
         component: `

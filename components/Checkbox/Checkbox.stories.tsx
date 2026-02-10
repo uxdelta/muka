@@ -8,6 +8,10 @@ const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
   parameters: {
     layout: 'centered',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/RL5IFLUJk4yeAFNXlsX4b5/Muka-UI-Figma-Library?node-id=1058-9281',
+    },
     docs: {
       description: {
         component: `
