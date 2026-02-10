@@ -49,6 +49,10 @@ const preview: Preview = {
   },
   decorators: [withTheme],
   parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/RL5IFLUJk4yeAFNXlsX4b5/Muka-UI-Figma-Library?node-id=472-4248&t=EWdiRlfOlF96s9zJ-1',
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
