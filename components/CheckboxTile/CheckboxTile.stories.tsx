@@ -1,6 +1,7 @@
+import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
 import { CheckboxTile } from './CheckboxTile';
+import { Chip } from '../Chip';
 import './CheckboxTile.css';
 
 const StackIcon = () => (
@@ -158,6 +159,34 @@ export const VerticalWithImage: Story = {
         image="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=160&h=120&fit=crop" 
         orientation="vertical" 
         checked 
+      />
+    </div>
+  ),
+};
+
+// ─── With Chip ──────────────────────────────────────────
+export const WithChip: Story = {
+  name: 'With Chip',
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '280px' }}>
+      <CheckboxTile
+        label="Option with chip"
+        caption="Description"
+        icon={<StackIcon />}
+        chip={<Chip variant="success" size="sm">0% bijtelling</Chip>}
+      />
+      <CheckboxTile
+        label="Selected with chip"
+        caption="Description"
+        icon={<StackIcon />}
+        chip={<Chip variant="info" size="sm">Elektrisch</Chip>}
+        checked
+      />
+      <CheckboxTile
+        label="Vertical with chip"
+        icon={<StackIcon />}
+        orientation="vertical"
+        chip={<Chip variant="default" size="sm">Label</Chip>}
       />
     </div>
   ),

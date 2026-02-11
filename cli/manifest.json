@@ -21,13 +21,6 @@
       "props": ["children", "className"]
     },
     {
-      "name": "Badge",
-      "description": "Status indicators and labels",
-      "props": ["variant", "size", "children"],
-      "variants": ["default", "info", "success", "warning", "error"],
-      "sizes": ["sm", "md"]
-    },
-    {
       "name": "Label",
       "description": "Form field labels",
       "props": ["htmlFor", "required", "children"]

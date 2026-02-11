@@ -30,7 +30,7 @@
 
 ```tsx
 // Import components
-import { Button, Card, Input, Badge } from '{{PACKAGE_NAME}}';
+import { Button, Card, Input, Chip } from '{{PACKAGE_NAME}}';
 
 // Import styles (choose one theme)
 import '{{PACKAGE_NAME}}/styles';              // Default theme (muka-light)

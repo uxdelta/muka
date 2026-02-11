@@ -26,7 +26,7 @@ npx muka-ui link /path/to/muka
 
 ```tsx
 // Import individual components
-import { Button, Card, Input, Badge, Select } from '{{PACKAGE_NAME}}';
+import { Button, Card, Input, Chip, Select } from '{{PACKAGE_NAME}}';
 
 // Import types for TypeScript
 import type { ButtonProps, InputProps } from '{{PACKAGE_NAME}}';

@@ -5,7 +5,7 @@ export { Input, type InputProps } from './Input';
 export { Card, type CardProps } from './Card';
 export { Label, type LabelProps } from './Label';
 export { Icon, type IconProps, type IconName } from './Icon';
-export { Badge, type BadgeProps } from './Badge';
+export { Chip, type ChipProps } from './Chip';
 export { Divider, type DividerProps } from './Divider';
 export { Select, type SelectProps, type SelectOption } from './Select';
 export { Tabs, TabList, Tab, TabPanel } from './Tabs';

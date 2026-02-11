@@ -1,5 +1,5 @@
 import React, { useId } from 'react';
-import { Checkbox } from '../Checkbox';
+import { Checkbox } from '../Checkbox/Checkbox';
 import './CheckboxTile.css';
 
 export interface CheckboxTileProps {
@@ -39,6 +39,9 @@ export interface CheckboxTileProps {
   /** Value attribute */
   value?: string;
 
+  /** Optional chip/tag (e.g. <Chip>) shown on the tile */
+  chip?: React.ReactNode;
+
   /** Additional CSS classes */
   className?: string;
 
@@ -71,6 +74,7 @@ export const CheckboxTile: React.FC<CheckboxTileProps> = ({
   disabled = false,
   name,
   value,
+  chip,
   className = '',
   id,
   ...props
@@ -127,6 +131,7 @@ export const CheckboxTile: React.FC<CheckboxTileProps> = ({
             {label}
           </span>
         )}
+        {chip && <div className="muka-checkbox-tile__chip muka-checkbox-tile__chip--vertical">{chip}</div>}
       </label>
     );
   }
@@ -160,16 +165,19 @@ export const CheckboxTile: React.FC<CheckboxTileProps> = ({
       )}
 
       <div className="muka-checkbox-tile__content">
-        {label && (
-          <span className={`muka-checkbox-tile__label ${caption ? 'muka-checkbox-tile__label--bold' : ''}`}>
-            {label}
-          </span>
-        )}
-        {caption && (
-          <span className="muka-checkbox-tile__caption">
-            {caption}
-          </span>
-        )}
+        <div className="muka-checkbox-tile__content-inner">
+          {label && (
+            <span className={`muka-checkbox-tile__label ${caption ? 'muka-checkbox-tile__label--bold' : ''}`}>
+              {label}
+            </span>
+          )}
+          {caption && (
+            <span className="muka-checkbox-tile__caption">
+              {caption}
+            </span>
+          )}
+        </div>
+        {chip && <div className="muka-checkbox-tile__chip">{chip}</div>}
       </div>
     </label>
   );
