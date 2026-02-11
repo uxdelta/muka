@@ -909,6 +909,7 @@
   --color-skyDark-10: #a8eeff;
   --color-skyDark-11: #75c7f0;
   --color-skyDark-12: #c2f3ff;
+  --color-surface-backdrop: rgba(233, 236, 239, 0.6);
   --color-surface-sunken: #3c3c44;
   --color-surface-level0: #323238;
   --color-surface-level1: #2b2b30;
@@ -1426,7 +1427,7 @@
   --select-field-height-sm: 2rem;
   --select-field-height-default: 2.5rem;
   --select-field-height-lg: 3rem;
-  --dialog-color-backdrop: rgba(0, 0, 0, 0.141);
+  --dialog-color-backdrop: rgba(233, 236, 239, 0.6);
   --dialog-color-background: #161618;
   --dialog-color-body-background: #232326;
   --dialog-border-radius: 1.5rem;
