@@ -24,3 +24,20 @@ export { Dialog, type DialogProps } from './Dialog';
 export { Sheet, type SheetProps } from './Sheet';
 export { Section, type SectionProps } from './Section';
 export { Container, type ContainerProps } from './Container';
+export { Badge, type BadgeProps } from './Badge';
+export { Progress, type ProgressProps } from './Progress';
+export {
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  TableHeaderCell,
+  type TableProps,
+  type TableHeadProps,
+  type TableBodyProps,
+  type TableRowProps,
+  type TableCellProps,
+  type TableHeaderCellProps,
+} from './Table';
+export { DatePicker, type DatePickerProps } from './DatePicker';

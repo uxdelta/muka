@@ -1,0 +1,195 @@
+/* DatePicker Component Styles - Using Muka Design Tokens */
+
+.muka-datepicker {
+  display: inline-flex;
+  flex-direction: column;
+  width: var(--datepicker-calendar-width);
+  padding: var(--spacing-3);
+  background-color: var(--color-surface-level0);
+  border: var(--border-width-regular) solid var(--color-border-default);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.muka-datepicker--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.muka-datepicker__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-3);
+}
+
+.muka-datepicker__title {
+  font-family: var(--text-label-md-semibold-fontFamily);
+  font-weight: var(--text-label-md-semibold-fontWeight);
+  font-size: var(--text-label-md-semibold-fontSize);
+  line-height: var(--text-label-md-semibold-lineHeight);
+  color: var(--color-text-default-default);
+  text-transform: capitalize;
+}
+
+.muka-datepicker__nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-3xl);
+  height: var(--size-3xl);
+  padding: 0;
+  border: none;
+  border-radius: var(--border-radius-md);
+  background-color: transparent;
+  color: var(--color-text-subtle-default);
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.muka-datepicker__nav-button:hover:not(:disabled) {
+  background-color: var(--color-surface-level1);
+  color: var(--color-text-default-default);
+}
+
+.muka-datepicker__nav-button:focus-visible {
+  outline: 2px solid var(--color-action-default);
+  outline-offset: 2px;
+}
+
+.muka-datepicker__nav-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.muka-datepicker__nav-button svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+/* ========================================
+   WEEKDAYS
+   ======================================== */
+
+.muka-datepicker__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--datepicker-calendar-gap);
+  margin-bottom: var(--spacing-2);
+}
+
+.muka-datepicker__weekday {
+  font-family: var(--text-label-sm-semibold-fontFamily);
+  font-weight: var(--text-label-sm-semibold-fontWeight);
+  font-size: var(--text-label-sm-semibold-fontSize);
+  line-height: var(--text-label-sm-semibold-lineHeight);
+  color: var(--color-text-subtle-default);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* ========================================
+   CALENDAR GRID
+   ======================================== */
+
+.muka-datepicker__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--datepicker-calendar-gap);
+}
+
+/* ========================================
+   DAY CELLS
+   ======================================== */
+
+.muka-datepicker__day {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  padding: 0;
+  border: none;
+  border-radius: var(--border-radius-md);
+  background-color: transparent;
+  color: var(--color-text-default-default);
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+  font-family: var(--text-body-sm-regular-fontFamily);
+  font-size: var(--text-body-sm-regular-fontSize);
+}
+
+/* Size variants */
+.muka-datepicker--sm .muka-datepicker__day {
+  width: var(--datepicker-size-day-sm);
+  height: var(--datepicker-size-day-sm);
+}
+
+.muka-datepicker--md .muka-datepicker__day {
+  width: var(--datepicker-size-day-md);
+  height: var(--datepicker-size-day-md);
+}
+
+.muka-datepicker--lg .muka-datepicker__day {
+  width: var(--datepicker-size-day-lg);
+  height: var(--datepicker-size-day-lg);
+}
+
+.muka-datepicker__day:hover:not(:disabled):not(.muka-datepicker__day--selected) {
+  background-color: var(--color-surface-level1);
+}
+
+.muka-datepicker__day:focus-visible {
+  outline: 2px solid var(--color-action-default);
+  outline-offset: 2px;
+}
+
+/* Outside current month */
+.muka-datepicker__day--outside {
+  color: var(--color-text-subtle-default);
+  opacity: 0.5;
+}
+
+/* Today indicator */
+.muka-datepicker__day--today:not(.muka-datepicker__day--selected) {
+  font-weight: var(--text-label-sm-semibold-fontWeight);
+  color: var(--color-action-default);
+  position: relative;
+}
+
+.muka-datepicker__day--today::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-action-default);
+}
+
+.muka-datepicker__day--selected::after {
+  display: none;
+}
+
+/* Selected state */
+.muka-datepicker__day--selected {
+  background-color: var(--color-action-default);
+  color: var(--color-action-foreground);
+  font-weight: var(--text-label-sm-semibold-fontWeight);
+}
+
+.muka-datepicker__day--selected:hover:not(:disabled) {
+  background-color: var(--color-action-hover);
+}
+
+/* Disabled state */
+.muka-datepicker__day--disabled,
+.muka-datepicker__day:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}

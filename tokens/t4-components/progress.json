@@ -1,0 +1,52 @@
+{
+  "progress": {
+    "size": {
+      "bar": {
+        "height": {
+          "sm": {
+            "$type": "sizing",
+            "$value": "{size.xs}"
+          },
+          "md": {
+            "$type": "sizing",
+            "$value": "{size.sm}"
+          },
+          "lg": {
+            "$type": "sizing",
+            "$value": "{size.md}"
+          }
+        }
+      },
+      "circle": {
+        "diameter": {
+          "sm": {
+            "$type": "sizing",
+            "$value": "{size.6xl}"
+          },
+          "md": {
+            "$type": "sizing",
+            "$value": "{size.8xl}"
+          },
+          "lg": {
+            "$type": "sizing",
+            "$value": "{size.10xl}"
+          }
+        },
+        "strokeWidth": {
+          "sm": {
+            "$type": "sizing",
+            "$value": "{size.xxs}"
+          },
+          "md": {
+            "$type": "sizing",
+            "$value": "{size.xs}"
+          },
+          "lg": {
+            "$type": "sizing",
+            "$value": "{size.sm}"
+          }
+        }
+      }
+    }
+  }
+}

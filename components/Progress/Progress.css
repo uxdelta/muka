@@ -1,0 +1,169 @@
+/* Progress Component Styles - Using Muka Design Tokens */
+
+/* ========================================
+   BAR VARIANT
+   ======================================== */
+
+.muka-progress--bar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  width: 100%;
+}
+
+.muka-progress--bar .muka-progress__track {
+  flex: 1;
+  background-color: var(--color-surface-level1);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+}
+
+.muka-progress--bar.muka-progress--sm .muka-progress__track {
+  height: var(--progress-size-bar-height-sm);
+}
+
+.muka-progress--bar.muka-progress--md .muka-progress__track {
+  height: var(--progress-size-bar-height-md);
+}
+
+.muka-progress--bar.muka-progress--lg .muka-progress__track {
+  height: var(--progress-size-bar-height-lg);
+}
+
+.muka-progress--bar .muka-progress__fill {
+  height: 100%;
+  background-color: var(--color-action-default);
+  border-radius: var(--border-radius-full);
+  transition: width 0.3s ease;
+}
+
+.muka-progress--bar .muka-progress__label {
+  flex-shrink: 0;
+  font-family: var(--text-label-sm-semibold-fontFamily);
+  font-weight: var(--text-label-sm-semibold-fontWeight);
+  font-size: var(--text-label-sm-semibold-fontSize);
+  line-height: var(--text-label-sm-semibold-lineHeight);
+  color: var(--color-text-default-default);
+  min-width: 3ch;
+  text-align: right;
+}
+
+/* Indeterminate animation for bar */
+.muka-progress--bar.muka-progress--indeterminate .muka-progress__fill {
+  width: 40%;
+  animation: muka-progress-bar-indeterminate 1.5s ease-in-out infinite;
+}
+
+@keyframes muka-progress-bar-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+/* ========================================
+   CIRCLE VARIANT
+   ======================================== */
+
+.muka-progress--circle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.muka-progress--circle.muka-progress--sm {
+  width: var(--progress-size-circle-diameter-sm);
+  height: var(--progress-size-circle-diameter-sm);
+}
+
+.muka-progress--circle.muka-progress--md {
+  width: var(--progress-size-circle-diameter-md);
+  height: var(--progress-size-circle-diameter-md);
+}
+
+.muka-progress--circle.muka-progress--lg {
+  width: var(--progress-size-circle-diameter-lg);
+  height: var(--progress-size-circle-diameter-lg);
+}
+
+.muka-progress__circle {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.muka-progress--circle .muka-progress__track {
+  fill: none;
+  stroke: var(--color-surface-level1);
+}
+
+.muka-progress--circle.muka-progress--sm .muka-progress__track,
+.muka-progress--circle.muka-progress--sm .muka-progress__fill {
+  stroke-width: var(--progress-size-circle-strokeWidth-sm);
+}
+
+.muka-progress--circle.muka-progress--md .muka-progress__track,
+.muka-progress--circle.muka-progress--md .muka-progress__fill {
+  stroke-width: var(--progress-size-circle-strokeWidth-md);
+}
+
+.muka-progress--circle.muka-progress--lg .muka-progress__track,
+.muka-progress--circle.muka-progress--lg .muka-progress__fill {
+  stroke-width: var(--progress-size-circle-strokeWidth-lg);
+}
+
+.muka-progress--circle .muka-progress__fill {
+  fill: none;
+  stroke: var(--color-action-default);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.muka-progress--circle .muka-progress__label {
+  position: absolute;
+  font-family: var(--text-label-sm-semibold-fontFamily);
+  font-weight: var(--text-label-sm-semibold-fontWeight);
+  color: var(--color-text-default-default);
+}
+
+.muka-progress--circle.muka-progress--sm .muka-progress__label {
+  font-size: var(--text-label-sm-semibold-fontSize);
+}
+
+.muka-progress--circle.muka-progress--md .muka-progress__label {
+  font-size: var(--text-label-md-semibold-fontSize);
+}
+
+.muka-progress--circle.muka-progress--lg .muka-progress__label {
+  font-size: var(--text-label-lg-semibold-fontSize);
+}
+
+/* Indeterminate animation for circle */
+.muka-progress--circle.muka-progress--indeterminate .muka-progress__circle {
+  animation: muka-progress-circle-rotate 2s linear infinite;
+}
+
+.muka-progress--circle.muka-progress--indeterminate .muka-progress__fill {
+  animation: muka-progress-circle-dash 1.5s ease-in-out infinite;
+}
+
+@keyframes muka-progress-circle-rotate {
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes muka-progress-circle-dash {
+  0% {
+    stroke-dashoffset: 220;
+  }
+  50% {
+    stroke-dashoffset: 70;
+  }
+  100% {
+    stroke-dashoffset: 220;
+  }
+}

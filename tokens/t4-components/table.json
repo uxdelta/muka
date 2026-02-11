@@ -1,0 +1,36 @@
+{
+  "table": {
+    "cell": {
+      "padding": {
+        "x": {
+          "sm": {
+            "$type": "spacing",
+            "$value": "{spacing.2}"
+          },
+          "md": {
+            "$type": "spacing",
+            "$value": "{spacing.3}"
+          },
+          "lg": {
+            "$type": "spacing",
+            "$value": "{spacing.4}"
+          }
+        },
+        "y": {
+          "sm": {
+            "$type": "spacing",
+            "$value": "{spacing.2}"
+          },
+          "md": {
+            "$type": "spacing",
+            "$value": "{spacing.3}"
+          },
+          "lg": {
+            "$type": "spacing",
+            "$value": "{spacing.4}"
+          }
+        }
+      }
+    }
+  }
+}

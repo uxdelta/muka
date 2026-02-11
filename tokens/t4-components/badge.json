@@ -1,0 +1,34 @@
+{
+  "badge": {
+    "size": {
+      "height": {
+        "sm": {
+          "$type": "sizing",
+          "$value": "{size.xl}"
+        },
+        "md": {
+          "$type": "sizing",
+          "$value": "{size.2xl}"
+        },
+        "lg": {
+          "$type": "sizing",
+          "$value": "{size.3xl}"
+        }
+      },
+      "dot": {
+        "sm": {
+          "$type": "sizing",
+          "$value": "{size.xs}"
+        },
+        "md": {
+          "$type": "sizing",
+          "$value": "{size.sm}"
+        },
+        "lg": {
+          "$type": "sizing",
+          "$value": "{size.md}"
+        }
+      }
+    }
+  }
+}

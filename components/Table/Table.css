@@ -1,0 +1,177 @@
+/* Table Component Styles - Using Muka Design Tokens */
+
+/* ========================================
+   TABLE WRAPPER (Responsive)
+   ======================================== */
+
+.muka-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ========================================
+   TABLE BASE
+   ======================================== */
+
+.muka-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: var(--text-body-md-regular-fontFamily);
+  font-size: var(--text-body-md-regular-fontSize);
+  line-height: var(--text-body-md-regular-lineHeight);
+  color: var(--color-text-default-default);
+  background-color: var(--color-surface-level0);
+}
+
+.muka-table--fixed {
+  table-layout: fixed;
+}
+
+.muka-table__caption {
+  padding: var(--spacing-3);
+  font-weight: var(--text-label-md-semibold-fontWeight);
+  text-align: left;
+  color: var(--color-text-default-default);
+  caption-side: top;
+}
+
+/* ========================================
+   TABLE HEAD
+   ======================================== */
+
+.muka-table__head {
+  border-bottom: var(--border-width-regular) solid var(--color-border-default);
+}
+
+.muka-table__head .muka-table__row {
+  background-color: var(--color-surface-level1);
+}
+
+/* ========================================
+   TABLE BODY
+   ======================================== */
+
+.muka-table__body .muka-table__row {
+  border-bottom: var(--border-width-regular) solid var(--color-border-subtle);
+}
+
+.muka-table__body .muka-table__row:last-child {
+  border-bottom: none;
+}
+
+.muka-table__body .muka-table__row:hover {
+  background-color: var(--color-surface-level1);
+}
+
+.muka-table__body .muka-table__row--selected {
+  background-color: var(--color-action-background);
+}
+
+.muka-table__body .muka-table__row--selected:hover {
+  background-color: var(--color-action-background);
+}
+
+.muka-table__row--clickable {
+  cursor: pointer;
+}
+
+/* ========================================
+   TABLE CELLS
+   ======================================== */
+
+.muka-table__cell,
+.muka-table__header-cell {
+  vertical-align: middle;
+}
+
+/* Size: Small */
+.muka-table--sm .muka-table__cell,
+.muka-table--sm .muka-table__header-cell {
+  padding: var(--table-cell-padding-y-sm) var(--table-cell-padding-x-sm);
+}
+
+/* Size: Medium */
+.muka-table--md .muka-table__cell,
+.muka-table--md .muka-table__header-cell {
+  padding: var(--table-cell-padding-y-md) var(--table-cell-padding-x-md);
+}
+
+/* Size: Large */
+.muka-table--lg .muka-table__cell,
+.muka-table--lg .muka-table__header-cell {
+  padding: var(--table-cell-padding-y-lg) var(--table-cell-padding-x-lg);
+}
+
+/* Alignment */
+.muka-table__cell--left,
+.muka-table__header-cell--left {
+  text-align: left;
+}
+
+.muka-table__cell--center,
+.muka-table__header-cell--center {
+  text-align: center;
+}
+
+.muka-table__cell--right,
+.muka-table__header-cell--right {
+  text-align: right;
+}
+
+/* ========================================
+   HEADER CELLS
+   ======================================== */
+
+.muka-table__header-cell {
+  font-family: var(--text-label-md-semibold-fontFamily);
+  font-weight: var(--text-label-md-semibold-fontWeight);
+  font-size: var(--text-label-md-semibold-fontSize);
+  line-height: var(--text-label-md-semibold-lineHeight);
+  color: var(--color-text-subtle-default);
+  white-space: nowrap;
+}
+
+.muka-table__header-content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+/* Sortable */
+.muka-table__header-cell--sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.muka-table__header-cell--sortable:hover {
+  color: var(--color-text-default-default);
+}
+
+.muka-table__header-cell--sortable:focus-visible {
+  outline: 2px solid var(--color-action-default);
+  outline-offset: -2px;
+}
+
+/* Sort icon */
+.muka-table__sort-icon {
+  width: 1em;
+  height: 1em;
+  opacity: 0.4;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.muka-table__header-cell--sortable:hover .muka-table__sort-icon {
+  opacity: 0.7;
+}
+
+.muka-table__sort-icon--asc {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.muka-table__sort-icon--desc {
+  opacity: 1;
+  transform: rotate(180deg);
+}

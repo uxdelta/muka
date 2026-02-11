@@ -1,0 +1,30 @@
+{
+  "datepicker": {
+    "size": {
+      "day": {
+        "sm": {
+          "$type": "sizing",
+          "$value": "{size.3xl}"
+        },
+        "md": {
+          "$type": "sizing",
+          "$value": "{size.4xl}"
+        },
+        "lg": {
+          "$type": "sizing",
+          "$value": "{size.5xl}"
+        }
+      }
+    },
+    "calendar": {
+      "width": {
+        "$type": "sizing",
+        "$value": "280px"
+      },
+      "gap": {
+        "$type": "spacing",
+        "$value": "{spacing.1}"
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+/* Badge Component Styles - Using Muka Design Tokens */
+
+.muka-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  border-radius: var(--border-radius-full);
+  white-space: nowrap;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+/* Sizes */
+.muka-badge--sm {
+  height: var(--badge-size-height-sm);
+  padding: 0 var(--spacing-2);
+  font-family: var(--text-label-sm-semibold-fontFamily);
+  font-weight: var(--text-label-sm-semibold-fontWeight);
+  font-size: var(--text-label-sm-semibold-fontSize);
+  line-height: var(--text-label-sm-semibold-lineHeight);
+}
+
+.muka-badge--md {
+  height: var(--badge-size-height-md);
+  padding: 0 var(--spacing-2);
+  font-family: var(--text-label-sm-semibold-fontFamily);
+  font-weight: var(--text-label-sm-semibold-fontWeight);
+  font-size: var(--text-label-sm-semibold-fontSize);
+  line-height: var(--text-label-sm-semibold-lineHeight);
+}
+
+.muka-badge--lg {
+  height: var(--badge-size-height-lg);
+  padding: 0 var(--spacing-3);
+  font-family: var(--text-label-md-semibold-fontFamily);
+  font-weight: var(--text-label-md-semibold-fontWeight);
+  font-size: var(--text-label-md-semibold-fontSize);
+  line-height: var(--text-label-md-semibold-lineHeight);
+}
+
+/* Icon slot */
+.muka-badge__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+}
+
+.muka-badge__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Dot indicator */
+.muka-badge__dot {
+  flex-shrink: 0;
+  border-radius: var(--border-radius-full);
+}
+
+.muka-badge--sm .muka-badge__dot {
+  width: var(--badge-size-dot-sm);
+  height: var(--badge-size-dot-sm);
+}
+
+.muka-badge--md .muka-badge__dot {
+  width: var(--badge-size-dot-md);
+  height: var(--badge-size-dot-md);
+}
+
+.muka-badge--lg .muka-badge__dot {
+  width: var(--badge-size-dot-lg);
+  height: var(--badge-size-dot-lg);
+}
+
+.muka-badge__label {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Neutral variant */
+.muka-badge--neutral {
+  background-color: var(--color-surface-level1);
+  color: var(--color-text-default-default);
+}
+
+.muka-badge--neutral .muka-badge__dot {
+  background-color: var(--color-text-subtle-default);
+}
+
+/* Info variant */
+.muka-badge--info {
+  background-color: var(--color-state-info-background);
+  color: var(--color-state-info-foreground);
+}
+
+.muka-badge--info .muka-badge__dot {
+  background-color: var(--color-state-info-foreground);
+}
+
+/* Success variant */
+.muka-badge--success {
+  background-color: var(--color-state-success-background);
+  color: var(--color-state-success-foreground);
+}
+
+.muka-badge--success .muka-badge__dot {
+  background-color: var(--color-state-success-foreground);
+}
+
+/* Warning variant */
+.muka-badge--warning {
+  background-color: var(--color-state-warning-background);
+  color: var(--color-state-warning-foreground);
+}
+
+.muka-badge--warning .muka-badge__dot {
+  background-color: var(--color-state-warning-foreground);
+}
+
+/* Error variant */
+.muka-badge--error {
+  background-color: var(--color-state-error-background);
+  color: var(--color-state-error-foreground);
+}
+
+.muka-badge--error .muka-badge__dot {
+  background-color: var(--color-state-error-foreground);
+}
