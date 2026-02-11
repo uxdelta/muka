@@ -5,6 +5,10 @@
   },
   "color": {
     "surface": {
+      "backdrop": {
+        "$type": "color",
+        "$value": "{alias.color.overlay.60}"
+      },
       "sunken": {
         "$type": "color",
         "$value": "{alias.color.neutral.6}"

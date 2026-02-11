@@ -31,6 +31,10 @@
     "t4-components/tabs",
     "t4-components/toast",
     "t4-components/toggle",
-    "t4-components/topbar"
+    "t4-components/topbar",
+    "t4-components/badge",
+    "t4-components/datepicker",
+    "t4-components/progress",
+    "t4-components/table"
   ]
 }
