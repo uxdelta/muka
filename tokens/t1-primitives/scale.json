@@ -436,6 +436,10 @@
       "xl": {
         "$type": "dimension",
         "$value": "1280px"
+      },
+      "2xl": {
+        "$type": "dimension",
+        "$value": "1536px"
       }
     }
   }
