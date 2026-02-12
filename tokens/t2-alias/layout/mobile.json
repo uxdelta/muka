@@ -51,22 +51,8 @@
       }
     },
     "max-width": {
-      "small": {
-        "$type": "sizing",
-        "$value": "360px"
-      },
-      "medium": {
-        "$type": "sizing",
-        "$value": "640px"
-      },
-      "large": {
-        "$type": "sizing",
-        "$value": "960px"
-      },
-      "xlarge": {
-        "$type": "sizing",
-        "$value": "100%"
-      }
+      "$type": "sizing",
+      "$value": "{container.max-width.sm}"
     }
   },
   "wrapper": {

@@ -30,16 +30,40 @@
         "$value": "{shadow.600}"
       }
     },
-    "padding": {
-      "x": {
+    "width": {
+      "sm": {
         "$type": "dimension",
-        "$value": "{spacing.4}"
+        "$value": "35rem"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "40rem"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "54.5rem"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "76.5rem"
       }
     },
-    "small": {
-      "max-width": {
+    "height": {
+      "sm": {
         "$type": "dimension",
-        "$value": "370px"
+        "$value": "25rem"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "40rem"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "45rem"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "50rem"
       }
     }
   }

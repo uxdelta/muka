@@ -62,7 +62,9 @@
       "xlarge": {
         "$type": "sizing",
         "$value": "100%"
-      }
+      },
+      "$type": "sizing",
+      "$value": "{container.max-width.xl}"
     }
   }
 }
