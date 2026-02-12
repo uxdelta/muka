@@ -130,6 +130,10 @@
   --size-51xl: 48rem;
   --size-52xl: 49rem;
   --size-53xl: 50rem;
+  --container-max-width: {container.max-width.sm};
+  --container-gap-default: 1.5rem;
+  --container-gap-compact: 1rem;
+  --container-gap-spacious: 2rem;
   --shadow-100: 0px 1px 0px 0px rgba(26, 26, 26, 0.07);
   --shadow-200: 0px 3px 1px -1px rgba(26, 26, 26, 0.07);
   --shadow-300: 0px 4px 6px -2px rgba(26, 26, 26, 0.20);
@@ -1026,13 +1030,6 @@
   --section-padding-horizontal-default: 1rem;
   --section-padding-horizontal-compact: 0.75rem;
   --section-padding-horizontal-spacious: 1.25rem;
-  --container-gap-default: 1.5rem;
-  --container-gap-compact: 1rem;
-  --container-gap-spacious: 2rem;
-  --container-max-width-small: 360px;
-  --container-max-width-medium: 640px;
-  --container-max-width-large: 960px;
-  --container-max-width-xlarge: 100%;
   --wrapper-gap-default: 1rem;
   --wrapper-gap-compact: 0.75rem;
   --wrapper-gap-spacious: 2rem;
@@ -1432,8 +1429,14 @@
   --dialog-color-body-background: #e8e8e8;
   --dialog-border-radius: 1.5rem;
   --dialog-shadow-default: 0px 20px 20px -8px rgba(26, 26, 26, 0.28);
-  --dialog-padding-x: 1rem;
-  --dialog-small-max-width: 370px;
+  --dialog-width-sm: 35rem;
+  --dialog-width-md: 40rem;
+  --dialog-width-lg: 54.5rem;
+  --dialog-width-xl: 76.5rem;
+  --dialog-height-sm: 25rem;
+  --dialog-height-md: 40rem;
+  --dialog-height-lg: 45rem;
+  --dialog-height-xl: 50rem;
   --tabs-trigger-color-default-background: #e8e8e8;
   --tabs-trigger-color-default-foreground: #202020;
   --tabs-trigger-color-default-border: #bbbbbb;
@@ -1584,10 +1587,7 @@
     --container-gap-default: 2rem;
     --container-gap-compact: 1.5rem;
     --container-gap-spacious: 2.5rem;
-    --container-max-width-small: 640px;
-    --container-max-width-medium: 960px;
-    --container-max-width-large: 1024px;
-    --container-max-width-xlarge: 100%;
+    --container-max-width: {container.max-width.md};
   }
 }
 
@@ -1602,10 +1602,7 @@
     --section-padding-horizontal-spacious: 3rem;
     --container-gap-default: 2rem;
     --container-gap-spacious: 3rem;
-    --container-max-width-small: 960px;
-    --container-max-width-medium: 1140px;
-    --container-max-width-large: 1440px;
-    --container-max-width-xlarge: 100%;
+    --container-max-width: {container.max-width.xl};
   }
 }
 
@@ -1620,10 +1617,7 @@
   --container-gap-default: 2rem;
   --container-gap-compact: 1.5rem;
   --container-gap-spacious: 2.5rem;
-  --container-max-width-small: 640px;
-  --container-max-width-medium: 960px;
-  --container-max-width-large: 1024px;
-  --container-max-width-xlarge: 100%;
+  --container-max-width: {container.max-width.md};
 }
 
 /* Layout mode: desktop (forced via data-layout attribute) */
@@ -1636,8 +1630,5 @@
   --section-padding-horizontal-spacious: 3rem;
   --container-gap-default: 2rem;
   --container-gap-spacious: 3rem;
-  --container-max-width-small: 960px;
-  --container-max-width-medium: 1140px;
-  --container-max-width-large: 1440px;
-  --container-max-width-xlarge: 100%;
+  --container-max-width: {container.max-width.xl};
 }
