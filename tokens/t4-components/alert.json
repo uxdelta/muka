@@ -16,7 +16,7 @@
         },
         "accent": {
           "$type": "color",
-          "$value": "{color.state.info.default}"
+          "$value": "{alias.color.state.info.contrast}"
         },
         "border": {
           "$type": "color",
@@ -34,29 +34,11 @@
         },
         "accent": {
           "$type": "color",
-          "$value": "{color.state.success.default}"
+          "$value": "{alias.color.state.success.contrast}"
         },
         "border": {
           "$type": "color",
           "$value": "{color.state.success.default}"
-        }
-      },
-      "warning": {
-        "background": {
-          "$type": "color",
-          "$value": "{color.surface.level1}"
-        },
-        "foreground": {
-          "$type": "color",
-          "$value": "{color.text.default.default}"
-        },
-        "accent": {
-          "$type": "color",
-          "$value": "{color.text.default.default}"
-        },
-        "border": {
-          "$type": "color",
-          "$value": "{color.border.contrast}"
         }
       },
       "error": {
@@ -75,6 +57,24 @@
         "border": {
           "$type": "color",
           "$value": "{color.state.error.default}"
+        }
+      },
+      "warning": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.state.warning.background}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.text.default.default}"
+        },
+        "accent": {
+          "$type": "color",
+          "$value": "{alias.color.state.warning.contrast}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{alias.color.state.warning.default}"
         }
       }
     },

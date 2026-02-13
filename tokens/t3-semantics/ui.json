@@ -5,10 +5,6 @@
   },
   "color": {
     "surface": {
-      "backdrop": {
-        "$type": "color",
-        "$value": "{alias.color.overlay.60}"
-      },
       "sunken": {
         "$type": "color",
         "$value": "{alias.color.neutral.6}"
@@ -28,6 +24,14 @@
       "level3": {
         "$type": "color",
         "$value": "{alias.color.neutral.1}"
+      },
+      "backdrop": {
+        "$type": "color",
+        "$value": "{alias.color.overlay.60}"
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{alias.color.neutral.12}"
       }
     },
     "text": {
@@ -78,7 +82,7 @@
           "$type": "color",
           "$value": "{alias.color.state.success.default}"
         },
-        "foreground": {
+        "contrast": {
           "$type": "color",
           "$value": "{alias.color.state.success.contrast}"
         },
@@ -92,7 +96,7 @@
           "$type": "color",
           "$value": "{alias.color.state.error.default}"
         },
-        "foreground": {
+        "contrast": {
           "$type": "color",
           "$value": "{alias.color.state.error.contrast}"
         },
@@ -106,13 +110,27 @@
           "$type": "color",
           "$value": "{alias.color.state.info.default}"
         },
-        "foreground": {
+        "contrast": {
           "$type": "color",
           "$value": "{alias.color.state.info.contrast}"
         },
         "background": {
           "$type": "color",
           "$value": "{alias.color.state.info.muted}"
+        }
+      },
+      "warning": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.state.warning.default}"
+        },
+        "contrast": {
+          "$type": "color",
+          "$value": "{alias.color.state.warning.contrast}"
+        },
+        "background": {
+          "$type": "color",
+          "$value": "{alias.color.state.warning.muted}"
         }
       }
     },

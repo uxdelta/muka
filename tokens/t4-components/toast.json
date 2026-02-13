@@ -8,57 +8,57 @@
       "info": {
         "background": {
           "$type": "color",
-          "$value": "{color.surface.level3}"
+          "$value": "{color.surface.inverse}"
         },
         "foreground": {
           "$type": "color",
-          "$value": "{color.text.default.default}"
+          "$value": "{color.text.default.inverse}"
         },
         "accent": {
           "$type": "color",
-          "$value": "{color.state.info.default}"
+          "$value": "{alias.color.state.info.muted}"
         }
       },
       "success": {
         "background": {
           "$type": "color",
-          "$value": "{color.surface.level3}"
+          "$value": "{color.surface.inverse}"
         },
         "foreground": {
           "$type": "color",
-          "$value": "{color.text.default.default}"
+          "$value": "{color.text.default.inverse}"
         },
         "accent": {
           "$type": "color",
-          "$value": "{color.state.success.default}"
+          "$value": "{alias.color.state.success.muted}"
         }
       },
       "warning": {
         "background": {
           "$type": "color",
-          "$value": "{color.surface.level3}"
+          "$value": "{color.surface.inverse}"
         },
         "foreground": {
           "$type": "color",
-          "$value": "{color.text.default.default}"
+          "$value": "{color.text.default.inverse}"
         },
         "accent": {
           "$type": "color",
-          "$value": "{color.text.default.default}"
+          "$value": "{alias.color.state.warning.muted}"
         }
       },
       "error": {
         "background": {
           "$type": "color",
-          "$value": "{color.surface.level3}"
+          "$value": "{color.surface.inverse}"
         },
         "foreground": {
           "$type": "color",
-          "$value": "{color.text.default.default}"
+          "$value": "{color.text.default.inverse}"
         },
         "accent": {
           "$type": "color",
-          "$value": "{color.state.error.default}"
+          "$value": "{alias.color.state.error.muted}"
         }
       }
     },

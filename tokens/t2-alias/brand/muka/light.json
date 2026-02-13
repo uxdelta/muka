@@ -145,11 +145,11 @@
         "success": {
           "contrast": {
             "$type": "color",
-            "$value": "{color.mint.11}"
+            "$value": "{color.mint.12}"
           },
           "default": {
             "$type": "color",
-            "$value": "{color.mint.9}"
+            "$value": "{color.mint.11}"
           },
           "muted": {
             "$type": "color",
