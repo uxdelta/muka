@@ -633,8 +633,8 @@
       }
     }
   },
-  "elevation": {
-    "100": {
+  "shadow": {
+    "level1": {
       "$type": "boxShadow",
       "$value": [
         {
@@ -655,7 +655,7 @@
         }
       ]
     },
-    "200": {
+    "level2": {
       "$type": "boxShadow",
       "$value": [
         {
@@ -676,7 +676,7 @@
         }
       ]
     },
-    "300": {
+    "level3": {
       "$type": "boxShadow",
       "$value": [
         {
@@ -697,7 +697,7 @@
         }
       ]
     },
-    "400": {
+    "level4": {
       "$type": "boxShadow",
       "$value": [
         {
@@ -718,7 +718,7 @@
         }
       ]
     },
-    "500": {
+    "level5": {
       "$type": "boxShadow",
       "$value": [
         {
@@ -731,7 +731,7 @@
         }
       ]
     },
-    "600": {
+    "level6": {
       "$type": "boxShadow",
       "$value": [
         {
@@ -752,7 +752,7 @@
         }
       ]
     },
-    "bevel-100": {
+    "bevel": {
       "$type": "boxShadow",
       "$value": [
         {
@@ -765,28 +765,7 @@
         }
       ]
     },
-    "inset-100": {
-      "$type": "boxShadow",
-      "$value": [
-        {
-          "x": "0",
-          "y": "0",
-          "blur": "1px",
-          "spread": "0",
-          "color": "{alias.color.neutral.alpha.1}",
-          "type": "innerShadow"
-        },
-        {
-          "x": "0",
-          "y": "2px",
-          "blur": "4px",
-          "spread": "0",
-          "color": "{alias.color.neutral.alpha.1}",
-          "type": "innerShadow"
-        }
-      ]
-    },
-    "inset-200": {
+    "sunken": {
       "$type": "boxShadow",
       "$value": [
         {

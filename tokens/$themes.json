@@ -4300,15 +4300,14 @@
       "dialog.shadow.default": "S:8b8a44dccc549f06535abc25a76e6a06e413898a,",
       "sheet.shadow.default": "S:8b8a44dccc549f06535abc25a76e6a06e413898a,",
       "toast.shadow": "S:30893a86d12ee5be3ea1c6fd29a46e9823999bb0,",
-      "elevation.100": "S:d9795dc94b18fbefdcc953dabb6ab0db23ca3d02,",
-      "elevation.200": "S:31c87139012024655821ac76e292f37a18774467,",
-      "elevation.300": "S:f48912fb723a01145272ca3cebd27d18dccf704f,",
-      "elevation.400": "S:3f1d64faadd7ae81855049e56bc64aff048fee6e,",
-      "elevation.500": "S:1c533f030e3de69ae7971f4a980299c49355e602,",
-      "elevation.600": "S:631790c6cac3b5ee9420b86d0bc9bbd007809b34,",
-      "elevation.bevel-100": "S:8438d3a4d52cabb77c0a6e332f969462cc08eff6,",
-      "elevation.inset-100": "S:49a4b5b88d1a777ee08a2d96bebde3fce59971fb,",
-      "elevation.inset-200": "S:ac5667e62fa28966464a23ca2e036ee23dc9231b,"
+      "shadow.level1": "S:d9795dc94b18fbefdcc953dabb6ab0db23ca3d02,",
+      "shadow.level2": "S:31c87139012024655821ac76e292f37a18774467,",
+      "shadow.level3": "S:f48912fb723a01145272ca3cebd27d18dccf704f,",
+      "shadow.level4": "S:3f1d64faadd7ae81855049e56bc64aff048fee6e,",
+      "shadow.level5": "S:1c533f030e3de69ae7971f4a980299c49355e602,",
+      "shadow.level6": "S:631790c6cac3b5ee9420b86d0bc9bbd007809b34,",
+      "shadow.bevel": "S:8438d3a4d52cabb77c0a6e332f969462cc08eff6,",
+      "shadow.sunken": "S:49a4b5b88d1a777ee08a2d96bebde3fce59971fb,"
     },
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
