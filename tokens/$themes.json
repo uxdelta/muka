@@ -7,7 +7,6 @@
     "author": "Design System Team",
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
-      "t1-primitives/depth": "enabled",
       "t1-primitives/scale": "enabled",
       "t1-primitives/typography": "enabled",
       "t2-alias/brand/wireframe/fonts": "enabled",
@@ -28,7 +27,11 @@
       "t4-components/checkbox": "enabled",
       "t4-components/bottombar": "enabled",
       "t4-components/alert": "enabled",
-      "t4-components/chip": "enabled"
+      "t4-components/chip": "enabled",
+      "t4-components/badge": "enabled",
+      "t4-components/datepicker": "enabled",
+      "t4-components/progress": "enabled",
+      "t4-components/table": "enabled"
     },
     "$figmaStyleReferences": {},
     "$figmaCollectionId": "VariableCollectionId:3:2",
@@ -52,9 +55,6 @@
       "alias.color.brand.secondary.regular": "6fcdd2a0ef0231ec4a5b07b4e28191bf8917d36b",
       "alias.color.brand.secondary.contrast": "87b507632b75dab8d38f6efb50338605ca2661a8",
       "alias.color.brand.secondary.muted": "4e3310a3613580b9fe38741414f9aca4676e2c31",
-      "alias.color.brand.default-deprecated": "7c4e9f9ba91983552f8a5de8d58b2eada9b3760f",
-      "alias.color.brand.contrast-deprecated": "a67e002b13d43e9f3db6e16c24d1e83826c033a9",
-      "alias.color.brand.muted-deprecated": "5ee6765975119f53ce6050e1ed770710ce36ebff",
       "alias.color.accent.default": "ea9cdc767041245f6b95495e983b2050c739e2ae",
       "alias.color.accent.hover": "3a0c3510a2f3e5ea30544018e339d6d747662cb3",
       "alias.color.accent.pressed": "71217a00d6dd822927e8c4baedbb4c95b082d741",
@@ -1377,7 +1377,6 @@
     "author": "Design System Team",
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
-      "t1-primitives/depth": "enabled",
       "t1-primitives/scale": "enabled",
       "t1-primitives/typography": "enabled",
       "t2-alias/brand/wireframe/dark": "enabled",
@@ -1398,7 +1397,11 @@
       "t4-components/checkbox": "enabled",
       "t4-components/bottombar": "enabled",
       "t4-components/alert": "enabled",
-      "t4-components/chip": "enabled"
+      "t4-components/chip": "enabled",
+      "t4-components/datepicker": "enabled",
+      "t4-components/badge": "enabled",
+      "t4-components/progress": "enabled",
+      "t4-components/table": "enabled"
     },
     "$figmaStyleReferences": {
       "text.heading.xl": "S:47e0294c0c82ba991a3daa8b71956fa96b072812,",
@@ -1462,9 +1465,6 @@
       "alias.color.brand.secondary.regular": "6fcdd2a0ef0231ec4a5b07b4e28191bf8917d36b",
       "alias.color.brand.secondary.contrast": "87b507632b75dab8d38f6efb50338605ca2661a8",
       "alias.color.brand.secondary.muted": "4e3310a3613580b9fe38741414f9aca4676e2c31",
-      "alias.color.brand.default-deprecated": "7c4e9f9ba91983552f8a5de8d58b2eada9b3760f",
-      "alias.color.brand.contrast-deprecated": "a67e002b13d43e9f3db6e16c24d1e83826c033a9",
-      "alias.color.brand.muted-deprecated": "5ee6765975119f53ce6050e1ed770710ce36ebff",
       "alias.color.accent.default": "ea9cdc767041245f6b95495e983b2050c739e2ae",
       "alias.color.accent.hover": "3a0c3510a2f3e5ea30544018e339d6d747662cb3",
       "alias.color.accent.pressed": "71217a00d6dd822927e8c4baedbb4c95b082d741",
@@ -2788,7 +2788,6 @@
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
-      "t1-primitives/depth": "enabled",
       "t1-primitives/scale": "enabled",
       "t1-primitives/typography": "enabled",
       "t2-alias/brand/muka/fonts": "enabled",
@@ -2810,7 +2809,11 @@
       "t4-components/checkbox": "enabled",
       "t4-components/bottombar": "enabled",
       "t4-components/alert": "enabled",
-      "t4-components/chip": "enabled"
+      "t4-components/chip": "enabled",
+      "t4-components/badge": "enabled",
+      "t4-components/datepicker": "enabled",
+      "t4-components/progress": "enabled",
+      "t4-components/table": "enabled"
     },
     "$figmaCollectionId": "VariableCollectionId:3:2",
     "$figmaModeId": "3:2",
@@ -4225,7 +4228,6 @@
     },
     "selectedTokenSets": {
       "t1-primitives/color": "enabled",
-      "t1-primitives/depth": "enabled",
       "t1-primitives/scale": "enabled",
       "t1-primitives/typography": "enabled",
       "t2-alias/brand/muka/dark": "enabled",
@@ -4247,7 +4249,11 @@
       "t4-components/bottombar": "enabled",
       "t4-components/checkbox": "enabled",
       "t4-components/alert": "enabled",
-      "t4-components/chip": "enabled"
+      "t4-components/chip": "enabled",
+      "t4-components/badge": "enabled",
+      "t4-components/datepicker": "enabled",
+      "t4-components/progress": "enabled",
+      "t4-components/table": "enabled"
     },
     "$figmaCollectionId": "VariableCollectionId:3:2",
     "$figmaModeId": "3:3",

@@ -3,7 +3,6 @@
     "t1-primitives/color",
     "t1-primitives/scale",
     "t1-primitives/typography",
-    "t1-primitives/depth",
     "t2-alias/base",
     "t2-alias/brand/muka/light",
     "t2-alias/brand/muka/dark",
