@@ -1464,7 +1464,6 @@
       "shadow.level1": "S:81f8755218077936cbfc59bc48c4253bf39c2be1,",
       "shadow.level2": "S:33125f7bc51693c3e44350b9beae97dd64a90897,",
       "shadow.level3": "S:c3cb2a0034e45d71b2e8a0eedb1097d80a55f1d2,",
-      "shadow.overlay": "S:61a57fabd4ea8dfc5eae6e6c586ca193f6bdb4e9,",
       "card.shadow.default": "S:332248444a133662c9bf1a65e47412a4c35d3008,",
       "card.shadow.hover": "S:0a20905063a1b5d83d0b37656a1a0c31012a97b7,",
       "card.shadow.pressed": "S:2e842c633422ebce24cc77d43a2c610bd0711eb4,"
@@ -4276,7 +4275,6 @@
       "shadow.level1": "S:81f8755218077936cbfc59bc48c4253bf39c2be1,",
       "shadow.level2": "S:33125f7bc51693c3e44350b9beae97dd64a90897,",
       "shadow.level3": "S:c3cb2a0034e45d71b2e8a0eedb1097d80a55f1d2,",
-      "shadow.overlay": "S:61a57fabd4ea8dfc5eae6e6c586ca193f6bdb4e9,",
       "card.shadow.default": "S:8b8a44dccc549f06535abc25a76e6a06e413898a,",
       "card.shadow.hover": "S:d9161f73c0da670ed87cc4f114545633516d23e8,",
       "card.shadow.pressed": "S:6072111d9d9d52a3e5f8ce22fe4aa5b1c2ebd113,",
