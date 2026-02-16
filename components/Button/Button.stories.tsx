@@ -1,13 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { within, userEvent, expect, fn } from '@storybook/test';
 import { Button } from './Button';
 import { Icon } from '../Icon';
+import { verifyThemeLoaded, verifyUsesTokens } from '../../.storybook/theme-test-utils';
 import './Button.css';
 
 const PlusIcon = () => <Icon name="add" variant="line" size="sm" />;
 const ChevronIcon = () => <Icon name="arrow-right" variant="line" size="sm" />;
 
 const meta: Meta<typeof Button> = {
-  title: 'Design System/Button',
+  title: 'Components/Input/Button',
   component: Button,
   parameters: {
     layout: 'centered',
@@ -778,6 +780,136 @@ This story is specifically designed for AI-IDE integration and developer educati
 - "Make this button match the secondary variant from our design system"
 - "Apply proper semantic tokens for an action button"
         `,
+      },
+    },
+  },
+};
+// ============================================================================
+// INTERACTION TESTS WITH PLAY FUNCTIONS
+// ============================================================================
+
+export const InteractionTest: Story = {
+  tags: ['test'],
+  args: {
+    variant: 'primary',
+    children: 'Interactive Button',
+    onClick: fn(),
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: 'Interactive Button' });
+
+    // Test click interaction
+    await userEvent.click(button);
+    expect(args.onClick).toHaveBeenCalledTimes(1);
+
+    // Test keyboard interaction
+    button.focus();
+    await userEvent.keyboard('{Enter}');
+    expect(args.onClick).toHaveBeenCalledTimes(2);
+
+    await userEvent.keyboard(' ');
+    expect(args.onClick).toHaveBeenCalledTimes(3);
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Tests button click and keyboard interactions (Enter and Space keys).',
+      },
+    },
+  },
+};
+
+export const DisabledInteraction: Story = {
+  tags: ['test'],
+  args: {
+    variant: 'primary',
+    children: 'Disabled Button',
+    disabled: true,
+    onClick: fn(),
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button');
+
+    // Verify button is disabled
+    expect(button).toBeDisabled();
+
+    // Verify onClick handler was never called
+    expect(args.onClick).not.toHaveBeenCalled();
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Tests that disabled buttons cannot be clicked or interacted with.',
+      },
+    },
+  },
+};
+
+export const IconOnlyA11y: Story = {
+  tags: ['test'],
+  args: {
+    variant: 'primary',
+    iconLeft: <PlusIcon />,
+    iconOnly: true,
+    children: 'Add Item',
+    'aria-label': 'Add item',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // Should be accessible by aria-label
+    const button = canvas.getByRole('button', { name: 'Add item' });
+    expect(button).toBeInTheDocument();
+
+    // Should have icon-only class
+    expect(button).toHaveClass('muka-button--icon-only');
+
+    // Button should still be functional
+    expect(button).toBeEnabled();
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Tests accessibility of icon-only buttons with proper aria-label.',
+      },
+    },
+  },
+};
+
+export const ThemeTokenValidation: Story = {
+  tags: ['test', 'theme'],
+  args: {
+    variant: 'primary',
+    children: 'Button',
+  },
+  play: async ({ canvasElement, globals }) => {
+    const canvas = within(canvasElement);
+
+    // Verify theme is loaded
+    verifyThemeLoaded(globals);
+
+    // Get button element
+    const button = canvas.getByRole('button');
+
+    // Verify uses design tokens
+    verifyUsesTokens(button, [
+      'button-color-primary-background-default',
+      'button-color-primary-foreground-default',
+      'button-padding-md-x',
+      'button-padding-md-y',
+    ]);
+
+    // Verify computed styles are not empty
+    const styles = window.getComputedStyle(button);
+    expect(styles.backgroundColor).not.toBe('rgba(0, 0, 0, 0)');
+    expect(styles.color).not.toBe('rgba(0, 0, 0, 0)');
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Tests that buttons properly use design tokens from the theme system.',
       },
     },
   },

@@ -3,7 +3,7 @@ import { SegmentGroup } from './SegmentGroup';
 import { useState } from 'react';
 
 const meta: Meta<typeof SegmentGroup> = {
-  title: 'Components/SegmentGroup',
+  title: 'Components/Navigation/SegmentGroup',
   component: SegmentGroup,
   parameters: {
     layout: 'centered',

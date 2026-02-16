@@ -4,7 +4,7 @@ import { Section } from '../Section';
 import './Container.css';
 
 const meta: Meta<typeof Container> = {
-  title: 'Design System/Layout/Container',
+  title: 'Components/Layout/Container',
   component: Container,
   parameters: {
     layout: 'padded',

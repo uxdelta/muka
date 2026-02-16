@@ -4,7 +4,7 @@ import { Button } from '../Button';
 import './Alert.css';
 
 const meta: Meta<typeof Alert> = {
-  title: 'Design System/Alert',
+  title: 'Components/Information/Alert',
   component: Alert,
   parameters: {
     layout: 'padded',

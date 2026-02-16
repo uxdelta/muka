@@ -11,7 +11,7 @@ const HomeIcon = () => <Icon name="home" variant="line" size="md" />;
 const StarIcon = () => <Icon name="star" variant="line" size="md" />;
 
 const meta: Meta<typeof CheckboxTile> = {
-  title: 'Design System/CheckboxTile',
+  title: 'Components/Input/CheckboxTile',
   component: CheckboxTile,
   parameters: {
     layout: 'centered',

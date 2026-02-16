@@ -5,7 +5,7 @@ import { Icon } from '../Icon';
 import './BottomBar.css';
 
 const meta: Meta<typeof BottomBar> = {
-  title: 'Design System/BottomBar',
+  title: 'Components/Navigation/BottomBar',
   component: BottomBar,
   parameters: {
     layout: 'fullscreen',

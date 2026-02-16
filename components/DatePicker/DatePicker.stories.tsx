@@ -4,7 +4,7 @@ import { DatePicker } from './DatePicker';
 import './DatePicker.css';
 
 const meta: Meta<typeof DatePicker> = {
-  title: 'Design System/DatePicker',
+  title: 'Components/Input/DatePicker',
   component: DatePicker,
   parameters: {
     layout: 'centered',

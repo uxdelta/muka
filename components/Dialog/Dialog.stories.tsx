@@ -7,7 +7,7 @@ import { Icon } from '../Icon';
 import './Dialog.css';
 
 const meta: Meta<typeof Dialog> = {
-  title: 'Design System/Dialog',
+  title: 'Components/Layout/Dialog',
   component: Dialog,
   parameters: {
     layout: 'fullscreen',

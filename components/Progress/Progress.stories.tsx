@@ -4,7 +4,7 @@ import { Progress } from './Progress';
 import './Progress.css';
 
 const meta: Meta<typeof Progress> = {
-  title: 'Design System/Progress',
+  title: 'Components/Information/Progress',
   component: Progress,
   parameters: {
     layout: 'centered',

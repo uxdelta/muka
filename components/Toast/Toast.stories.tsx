@@ -5,7 +5,7 @@ import { Button } from '../Button';
 import './Toast.css';
 
 const meta: Meta<typeof Toast> = {
-  title: 'Design System/Toast',
+  title: 'Components/Information/Toast',
   component: Toast,
   parameters: {
     layout: 'padded',

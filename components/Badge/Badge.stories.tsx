@@ -5,7 +5,7 @@ import { Icon } from '../Icon';
 import './Badge.css';
 
 const meta: Meta<typeof Badge> = {
-  title: 'Design System/Badge',
+  title: 'Components/Information/Badge',
   component: Badge,
   parameters: {
     layout: 'centered',

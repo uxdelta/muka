@@ -3,7 +3,7 @@ import { Card } from './Card';
 import './Card.css';
 
 const meta: Meta<typeof Card> = {
-  title: 'Design System/Card',
+  title: 'Components/Layout/Card',
   component: Card,
   parameters: {
     layout: 'centered',

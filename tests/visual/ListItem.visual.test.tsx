@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { page } from 'vitest/browser';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ListItem } from '../../components/ListItem';
@@ -39,7 +40,7 @@ describe('ListItem Visual Regression Tests', () => {
   };
 
   describe('Basic Compositions', () => {
-    it('should match default visual appearance', async ({ page }) => {
+    it('should match default visual appearance', async () => {
       await renderInContainer(
         <ListItem
           label="Label"
@@ -49,26 +50,24 @@ describe('ListItem Visual Regression Tests', () => {
         />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
     });
 
-    it('should match label only composition', async ({ page }) => {
+    it('should match label only composition', async () => {
       await renderInContainer(
         <ListItem label="Label only" />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
     });
 
-    it('should match with leading icon', async ({ page }) => {
+    it('should match with leading icon', async () => {
       await renderInContainer(
         <ListItem
           label="Item with icon"
@@ -78,14 +77,13 @@ describe('ListItem Visual Regression Tests', () => {
         />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
     });
 
-    it('should match with leading image', async ({ page }) => {
+    it('should match with leading image', async () => {
       await renderInContainer(
         <ListItem
           label="Item with image"
@@ -95,14 +93,13 @@ describe('ListItem Visual Regression Tests', () => {
         />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
     });
 
-    it('should match with caption', async ({ page }) => {
+    it('should match with caption', async () => {
       await renderInContainer(
         <ListItem
           label="Item with caption"
@@ -112,14 +109,13 @@ describe('ListItem Visual Regression Tests', () => {
         />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
     });
 
-    it('should match without divider', async ({ page }) => {
+    it('should match without divider', async () => {
       await renderInContainer(
         <ListItem
           label="Item without divider"
@@ -130,8 +126,7 @@ describe('ListItem Visual Regression Tests', () => {
         />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
@@ -139,7 +134,7 @@ describe('ListItem Visual Regression Tests', () => {
   });
 
   describe('States', () => {
-    it('should match default state', async ({ page }) => {
+    it('should match default state', async () => {
       await renderInContainer(
         <ListItem
           label="Default state"
@@ -149,14 +144,13 @@ describe('ListItem Visual Regression Tests', () => {
         />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
     });
 
-    it('should match hover state', async ({ page }) => {
+    it('should match hover state', async () => {
       await renderInContainer(
         <ListItem
           label="Hover state"
@@ -169,14 +163,13 @@ describe('ListItem Visual Regression Tests', () => {
       const listItem = page.locator('.muka-listitem');
       await listItem.hover();
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
     });
 
-    it('should match selected state', async ({ page }) => {
+    it('should match selected state', async () => {
       await renderInContainer(
         <ListItem
           label="Selected state"
@@ -187,14 +180,13 @@ describe('ListItem Visual Regression Tests', () => {
         />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
     });
 
-    it('should match disabled state', async ({ page }) => {
+    it('should match disabled state', async () => {
       await renderInContainer(
         <ListItem
           label="Disabled state"
@@ -205,8 +197,7 @@ describe('ListItem Visual Regression Tests', () => {
         />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
@@ -214,7 +205,7 @@ describe('ListItem Visual Regression Tests', () => {
   });
 
   describe('List Groups', () => {
-    it('should match list group with multiple items', async ({ page }) => {
+    it('should match list group with multiple items', async () => {
       await renderInContainer(
         <div>
           <ListItem
@@ -245,14 +236,13 @@ describe('ListItem Visual Regression Tests', () => {
         </div>
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
     });
 
-    it('should match user list', async ({ page }) => {
+    it('should match user list', async () => {
       await renderInContainer(
         <div>
           <ListItem
@@ -277,8 +267,7 @@ describe('ListItem Visual Regression Tests', () => {
         </div>
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
@@ -286,7 +275,7 @@ describe('ListItem Visual Regression Tests', () => {
   });
 
   describe('Different Compositions', () => {
-    it('should match full composition', async ({ page }) => {
+    it('should match full composition', async () => {
       await renderInContainer(
         <ListItem
           label="Full composition"
@@ -296,26 +285,24 @@ describe('ListItem Visual Regression Tests', () => {
         />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
     });
 
-    it('should match minimal composition', async ({ page }) => {
+    it('should match minimal composition', async () => {
       await renderInContainer(
         <ListItem label="Minimal composition" />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
     });
 
-    it('should match icon and label only', async ({ page }) => {
+    it('should match icon and label only', async () => {
       await renderInContainer(
         <ListItem
           label="Icon and label"
@@ -323,14 +310,13 @@ describe('ListItem Visual Regression Tests', () => {
         />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';
     });
 
-    it('should match label and chevron only', async ({ page }) => {
+    it('should match label and chevron only', async () => {
       await renderInContainer(
         <ListItem
           label="Label and chevron"
@@ -338,8 +324,7 @@ describe('ListItem Visual Regression Tests', () => {
         />
       );
 
-      const spec = await page.locator('[data-testid="spec"]').screenshot();
-      expect(spec).toMatchImageSnapshot();
+      await expect.element(page.getByTestId('spec')).toMatchScreenshot();
       
       // Cleanup
       document.body.innerHTML = '';

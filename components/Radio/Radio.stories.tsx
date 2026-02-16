@@ -4,7 +4,7 @@ import { Radio } from './Radio';
 import './Radio.css';
 
 const meta: Meta<typeof Radio> = {
-  title: 'Design System/Radio',
+  title: 'Components/Input/Radio',
   component: Radio,
   parameters: {
     layout: 'centered',

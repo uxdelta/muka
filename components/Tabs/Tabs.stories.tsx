@@ -3,7 +3,7 @@ import { Tabs, TabList, Tab, TabPanel } from './Tabs';
 import './Tabs.css';
 
 const meta: Meta<typeof Tabs> = {
-  title: 'Design System/Tabs',
+  title: 'Components/Navigation/Tabs',
   component: Tabs,
   parameters: {
     layout: 'centered',

@@ -18,7 +18,7 @@ const fuelTypes = [
 ];
 
 const meta: Meta<typeof Select> = {
-  title: 'Design System/Select',
+  title: 'Components/Input/Select',
   component: Select,
   parameters: {
     layout: 'centered',

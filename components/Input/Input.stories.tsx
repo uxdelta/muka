@@ -21,7 +21,7 @@ const AlertIcon = () => (
 );
 
 const meta: Meta<typeof Input> = {
-  title: 'Design System/Input',
+  title: 'Components/Input/Input',
   component: Input,
   parameters: {
     layout: 'centered',

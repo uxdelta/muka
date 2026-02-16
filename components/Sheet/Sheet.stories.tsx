@@ -7,7 +7,7 @@ import { Icon } from '../Icon';
 import './Sheet.css';
 
 const meta: Meta<typeof Sheet> = {
-  title: 'Design System/Sheet',
+  title: 'Components/Layout/Sheet',
   component: Sheet,
   parameters: {
     layout: 'fullscreen',

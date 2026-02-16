@@ -4,7 +4,7 @@ import { Container } from '../Container';
 import './Section.css';
 
 const meta: Meta<typeof Section> = {
-  title: 'Design System/Layout/Section',
+  title: 'Components/Layout/Section',
   component: Section,
   parameters: {
     layout: 'fullscreen',

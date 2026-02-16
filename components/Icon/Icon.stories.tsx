@@ -21,7 +21,7 @@ const AlertIcon = () => (
 );
 
 const meta: Meta<typeof Icon> = {
-  title: 'Design System/Icon',
+  title: 'Components/Assets/Icon',
   component: Icon,
   parameters: {
     layout: 'centered',

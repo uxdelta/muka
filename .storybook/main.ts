@@ -8,7 +8,10 @@ const config: StorybookConfig = {
   "addons": [
     "@storybook/addon-onboarding",
     "@storybook/addon-docs",
-    "@storybook/addon-designs",
+    "@storybook/addon-designs"
+    // Note: @storybook/addon-vitest not loaded in Storybook UI
+    // Story tests run via CLI: npm run test:stories
+    // Play functions still work in Storybook - just no test panel
   ],
   "framework": {
     "name": "@storybook/react-vite",

@@ -10,7 +10,7 @@ const HomeIcon = () => <Icon name="home" variant="line" size="md" />;
 const StarIcon = () => <Icon name="star" variant="line" size="md" />;
 
 const meta: Meta<typeof RadioTile> = {
-  title: 'Design System/RadioTile',
+  title: 'Components/Input/RadioTile',
   component: RadioTile,
   parameters: {
     layout: 'centered',

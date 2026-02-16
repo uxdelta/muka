@@ -4,7 +4,7 @@ import { Table, TableHead, TableBody, TableRow, TableCell, TableHeaderCell } fro
 import './Table.css';
 
 const meta: Meta<typeof Table> = {
-  title: 'Design System/Table',
+  title: 'Components/Information/Table',
   component: Table,
   parameters: {
     layout: 'padded',

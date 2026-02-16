@@ -4,7 +4,7 @@ import { FormProgressBar } from './FormProgressBar';
 import './FormProgressBar.css';
 
 const meta: Meta<typeof FormProgressBar> = {
-  title: 'Design System/FormProgressBar',
+  title: 'Components/Information/FormProgressBar',
   component: FormProgressBar,
   parameters: {
     layout: 'padded',

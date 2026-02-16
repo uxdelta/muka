@@ -6,7 +6,7 @@ import './Chip.css';
 import { Icon } from '../Icon';
 
 const meta: Meta<typeof Chip> = {
-  title: 'Design System/Chip',
+  title: 'Components/Input/Chip',
   component: Chip,
   parameters: {
     layout: 'centered',

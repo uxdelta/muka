@@ -10,7 +10,7 @@ const BellIcon = () => <Icon name="bell" variant="line" size="md" />;
 const MoonIcon = () => <Icon name="moon" variant="line" size="md" />;
 
 const meta: Meta<typeof Toggle> = {
-  title: 'Design System/Toggle',
+  title: 'Components/Input/Toggle',
   component: Toggle,
   parameters: {
     layout: 'centered',

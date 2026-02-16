@@ -21,7 +21,7 @@ const ChevronIcon = () => (
 );
 
 const meta: Meta<typeof ListItem> = {
-  title: 'Design System/ListItem',
+  title: 'Components/Navigation/ListItem',
   component: ListItem,
   parameters: {
     layout: 'padded',
