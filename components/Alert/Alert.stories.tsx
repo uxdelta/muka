@@ -10,7 +10,7 @@ const meta: Meta<typeof Alert> = {
     layout: 'padded',
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/design/RL5IFLUJk4yeAFNXlsX4b5/Muka-UI-Figma-Library?node-id=463-4932&t=EWdiRlfOlF96s9zJ-11',
+      url: 'https://www.figma.com/design/RL5IFLUJk4yeAFNXlsX4b5/Muka-UI-Figma-Library?node-id=463-4962&m=dev',
     },
     docs: {
       description: {
@@ -60,17 +60,17 @@ export const AllVariants: Story = {
   name: 'All Variants',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <Alert variant="info">
-        This is an informational message to provide context.
+      <Alert variant="info" title="Message title" dismissible onDismiss={() => {}}>
+        Message content
       </Alert>
-      <Alert variant="success">
-        Operation completed successfully!
+      <Alert variant="error" title="Message title" dismissible onDismiss={() => {}}>
+        Message content
       </Alert>
-      <Alert variant="warning">
-        Please review the information before continuing.
+      <Alert variant="success" title="Message title" dismissible onDismiss={() => {}}>
+        Message content
       </Alert>
-      <Alert variant="error">
-        An error occurred. Please try again.
+      <Alert variant="warning" title="Message title" dismissible onDismiss={() => {}}>
+        Message content
       </Alert>
     </div>
   ),

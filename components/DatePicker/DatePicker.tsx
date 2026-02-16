@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import './DatePicker.css';
+import { Icon } from '../Icon';
 
 export interface DatePickerProps {
   /** Currently selected date */
@@ -36,18 +37,6 @@ const MONTHS_NL = [
   'juli', 'augustus', 'september', 'oktober', 'november', 'december'
 ];
 const WEEKDAYS_NL = ['ma', 'di', 'wo', 'do', 'vr', 'za', 'zo'];
-
-const ChevronLeft = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M15 18l-6-6 6-6" />
-  </svg>
-);
-
-const ChevronRight = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M9 18l6-6-6-6" />
-  </svg>
-);
 
 function isSameDay(a: Date, b: Date): boolean {
   return (
@@ -184,7 +173,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
           disabled={disabled}
           aria-label="Vorige maand"
         >
-          <ChevronLeft />
+          <Icon name="arrow-left" variant="line" size="sm" />
         </button>
         <span className="muka-datepicker__title">
           {monthName} {currentYear}
@@ -196,7 +185,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
           disabled={disabled}
           aria-label="Volgende maand"
         >
-          <ChevronRight />
+          <Icon name="arrow-right" variant="line" size="sm" />
         </button>
       </div>
 

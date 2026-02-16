@@ -1,5 +1,6 @@
 import React from 'react';
 import './Alert.css';
+import { Icon } from '../Icon';
 
 export interface AlertProps {
   /** Alert content */
@@ -36,50 +37,12 @@ export interface AlertProps {
   role?: 'alert' | 'status' | 'none';
 }
 
-// Default icons for each variant
-const InfoIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5" />
-    <path d="M10 9V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <circle cx="10" cy="6.5" r="0.75" fill="currentColor" />
-  </svg>
-);
-
-const SuccessIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5" />
-    <path d="M6.5 10L9 12.5L13.5 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const WarningIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 2L18.66 17H1.34L10 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-    <path d="M10 8V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <circle cx="10" cy="14" r="0.75" fill="currentColor" />
-  </svg>
-);
-
-const ErrorIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5" />
-    <path d="M7.5 7.5L12.5 12.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M12.5 7.5L7.5 12.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-  </svg>
-);
-
-const CloseIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 4L12 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M12 4L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-  </svg>
-);
-
+// Default icons per variant (Remix Icon fill style)
 const defaultIcons: Record<string, React.ReactNode> = {
-  info: <InfoIcon />,
-  success: <SuccessIcon />,
-  warning: <WarningIcon />,
-  error: <ErrorIcon />,
+  info: <Icon name="information" variant="fill" size="md" />,
+  success: <Icon name="check" variant="fill" size="md" />,
+  warning: <Icon name="error-warning" variant="fill" size="md" />,
+  error: <Icon name="error-warning" variant="fill" size="md" />,
 };
 
 /**
@@ -153,7 +116,7 @@ export const Alert: React.FC<AlertProps> = ({
           onClick={handleDismiss}
           aria-label="Dismiss alert"
         >
-          <CloseIcon />
+          <Icon name="x" variant="line" size="sm" />
         </button>
       )}
     </div>

@@ -1,19 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
+import { Icon } from '../Icon';
 import './Button.css';
 
-// Mock icon component for stories
-const PlusIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-    <path d="M8 3.5a.5.5 0 0 0-1 0V7H3.5a.5.5 0 0 0 0 1H7v3.5a.5.5 0 0 0 1 0V8h3.5a.5.5 0 0 0 0-1H8V3.5z"/>
-  </svg>
-);
-
-const ChevronIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-    <path d="m6 8 4-4v8l-4-4z"/>
-  </svg>
-);
+const PlusIcon = () => <Icon name="add" variant="line" size="sm" />;
+const ChevronIcon = () => <Icon name="arrow-right" variant="line" size="sm" />;
 
 const meta: Meta<typeof Button> = {
   title: 'Design System/Button',

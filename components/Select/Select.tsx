@@ -1,5 +1,6 @@
 import React, { useState, useId, useRef } from 'react';
 import './Select.css';
+import { Icon } from '../Icon';
 
 export interface SelectOption {
   /** Option value */
@@ -159,9 +160,7 @@ export const Select: React.FC<SelectProps> = ({
         </select>
 
         <span className="muka-select__chevron" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M4.427 6.427a.75.75 0 0 1 1.06-.073L8 8.572l2.513-2.218a.75.75 0 1 1 .994 1.124l-3 2.647a.75.75 0 0 1-.994 0l-3-2.647a.75.75 0 0 1-.086-1.071z"/>
-          </svg>
+          <Icon name="arrow-down" variant="line" size="sm" />
         </span>
       </div>
 

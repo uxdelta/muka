@@ -4,9 +4,9 @@
   display: flex;
   align-items: flex-start;
   border-radius: var(--alert-radius);
-  border-width: var(--alert-border-width);
-  border-style: solid;
+  border: none;
   gap: var(--alert-gap);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 /* Size variants */
@@ -26,10 +26,17 @@
 .muka-alert--info {
   background-color: var(--alert-color-info-background);
   color: var(--alert-color-info-foreground);
-  border-color: var(--alert-color-info-border);
 }
 
 .muka-alert--info .muka-alert__icon {
+  color: var(--alert-color-info-accent);
+}
+
+.muka-alert--info .muka-alert__title {
+  color: var(--alert-color-info-accent);
+}
+
+.muka-alert--info .muka-alert__dismiss {
   color: var(--alert-color-info-accent);
 }
 
@@ -37,10 +44,17 @@
 .muka-alert--success {
   background-color: var(--alert-color-success-background);
   color: var(--alert-color-success-foreground);
-  border-color: var(--alert-color-success-border);
 }
 
 .muka-alert--success .muka-alert__icon {
+  color: var(--alert-color-success-accent);
+}
+
+.muka-alert--success .muka-alert__title {
+  color: var(--alert-color-success-accent);
+}
+
+.muka-alert--success .muka-alert__dismiss {
   color: var(--alert-color-success-accent);
 }
 
@@ -48,10 +62,17 @@
 .muka-alert--warning {
   background-color: var(--alert-color-warning-background);
   color: var(--alert-color-warning-foreground);
-  border-color: var(--alert-color-warning-border);
 }
 
 .muka-alert--warning .muka-alert__icon {
+  color: var(--alert-color-warning-accent);
+}
+
+.muka-alert--warning .muka-alert__title {
+  color: var(--alert-color-warning-accent);
+}
+
+.muka-alert--warning .muka-alert__dismiss {
   color: var(--alert-color-warning-accent);
 }
 
@@ -59,10 +80,17 @@
 .muka-alert--error {
   background-color: var(--alert-color-error-background);
   color: var(--alert-color-error-foreground);
-  border-color: var(--alert-color-error-border);
 }
 
 .muka-alert--error .muka-alert__icon {
+  color: var(--alert-color-error-accent);
+}
+
+.muka-alert--error .muka-alert__title {
+  color: var(--alert-color-error-accent);
+}
+
+.muka-alert--error .muka-alert__dismiss {
   color: var(--alert-color-error-accent);
 }
 
@@ -130,34 +158,32 @@
   flex-shrink: 0;
 }
 
-/* Dismiss button */
+/* Dismiss button - uses accent color per variant, aligned with icon row */
 .muka-alert__dismiss {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  align-self: flex-start;
   width: 24px;
   height: 24px;
   padding: 0;
-  margin: -2px -4px -2px 0;
+  margin: 0 0 0 auto;
   border: none;
   background: transparent;
-  color: inherit;
-  opacity: 0.7;
   cursor: pointer;
   border-radius: var(--border-radius-sm);
   transition: opacity 0.15s ease, background-color 0.15s ease;
 }
 
 .muka-alert__dismiss:hover {
-  opacity: 1;
+  opacity: 0.85;
   background-color: rgba(0, 0, 0, 0.05);
 }
 
 .muka-alert__dismiss:focus-visible {
   outline: 2px solid var(--color-border-focus);
   outline-offset: 2px;
-  opacity: 1;
 }
 
 .muka-alert__dismiss svg {

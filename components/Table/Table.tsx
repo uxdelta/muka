@@ -1,5 +1,6 @@
 import React from 'react';
 import './Table.css';
+import { Icon } from '../Icon';
 
 /* ========================================
    Table Component and Sub-components
@@ -87,18 +88,13 @@ export interface TableHeaderCellProps extends TableCellProps {
 }
 
 const SortIcon = ({ direction }: { direction?: 'asc' | 'desc' | null }) => (
-  <svg
-    className={`muka-table__sort-icon ${direction ? `muka-table__sort-icon--${direction}` : ''}`}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <path d="M12 5v14M5 12l7-7 7 7" />
-  </svg>
+  <span className={`muka-table__sort-icon ${direction ? `muka-table__sort-icon--${direction}` : ''}`} aria-hidden="true">
+    {direction === 'desc' ? (
+      <Icon name="sort-desc" variant="line" size="sm" />
+    ) : (
+      <Icon name="sort-asc" variant="line" size="sm" />
+    )}
+  </span>
 );
 
 /**

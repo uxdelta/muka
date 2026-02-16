@@ -1,5 +1,6 @@
 import React from 'react';
 import './Chip.css';
+import { Icon } from '../Icon';
 
 export interface ChipProps {
   /** Chip label / content */
@@ -29,12 +30,6 @@ export interface ChipProps {
   /** Accessible label for the remove button (when onRemove is set) */
   removeButtonLabel?: string;
 }
-
-const CloseIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
-    <path d="M18 6 6 18M6 6l12 12" />
-  </svg>
-);
 
 /**
  * Chip Component
@@ -88,7 +83,7 @@ export const Chip: React.FC<ChipProps> = ({
           onClick={handleRemoveClick}
           aria-label={removeButtonLabel}
         >
-          <CloseIcon />
+          <Icon name="x" variant="line" size="sm" />
         </button>
       )}
     </span>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './FormProgressBar.css';
+import { Icon } from '../Icon';
 
 export interface FormProgressBarStep {
   /** Label displayed below the step indicator */
@@ -30,22 +31,6 @@ export interface FormProgressBarProps {
 
 type StepStatus = 'past' | 'current' | 'upcoming';
 type ConnectorStatus = 'past' | 'current' | 'current-right' | 'upcoming';
-
-/** Checkmark icon (heroicons-mini/check) for completed steps */
-const CheckIcon: React.FC = () => (
-  <svg
-    className="muka-progress-bar__check-icon"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-    aria-hidden="true"
-  >
-    <path
-      fillRule="evenodd"
-      d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
 
 function getStepStatus(stepIndex: number, currentStep: number, totalSteps: number): StepStatus {
   if (currentStep <= 0) return 'upcoming';
@@ -167,7 +152,7 @@ export const FormProgressBar: React.FC<FormProgressBarProps> = ({
                   }
                 >
                   {isPast ? (
-                    <CheckIcon />
+                    <Icon name="check" variant="fill" size="sm" className="muka-progress-bar__check-icon" />
                   ) : (
                     <span className="muka-progress-bar__number">{stepNumber}</span>
                   )}
@@ -187,7 +172,7 @@ export const FormProgressBar: React.FC<FormProgressBarProps> = ({
               `muka-progress-bar__connector--${status}`,
             ].join(' ');
 
-            return <div key={index} className={connectorClasses} />;
+            return <div key={index} className={connectorClasses} aria-hidden="true" />;
           })}
         </div>
       </div>

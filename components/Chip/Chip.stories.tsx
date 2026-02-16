@@ -3,12 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Chip } from './Chip';
 import './Chip.css';
 
-const DocIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-    <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
-  </svg>
-);
+import { Icon } from '../Icon';
 
 const meta: Meta<typeof Chip> = {
   title: 'Design System/Chip',
@@ -85,9 +80,9 @@ export const SolidAndOutline: Story = {
 export const WithIcon: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-      <Chip icon={<DocIcon />} variant="default">Label</Chip>
-      <Chip icon={<DocIcon />} variant="success">Label</Chip>
-      <Chip icon={<DocIcon />} variant="info">Label</Chip>
+      <Chip icon={<Icon name="file-text" variant="line" size="sm" />} variant="default">Label</Chip>
+      <Chip icon={<Icon name="file-text" variant="line" size="sm" />} variant="success">Label</Chip>
+      <Chip icon={<Icon name="file-text" variant="line" size="sm" />} variant="info">Label</Chip>
     </div>
   ),
 };
