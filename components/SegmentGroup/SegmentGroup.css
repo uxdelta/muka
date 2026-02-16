@@ -1,0 +1,106 @@
+/* SegmentGroup Component Styles - Using Muka Design Tokens */
+
+/* Container */
+.muka-segmentgroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: var(--segmentgroup-container-padding);
+  background-color: var(--segmentgroup-container-background);
+  border-radius: var(--segmentgroup-container-radius);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* Inset shadow on container */
+.muka-segmentgroup::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: var(--segmentgroup-container-shadow);
+  pointer-events: none;
+}
+
+/* Full width variant */
+.muka-segmentgroup--full-width {
+  width: 100%;
+}
+
+.muka-segmentgroup--full-width .muka-segmentgroup__segment {
+  flex: 1;
+}
+
+/* Segment button */
+.muka-segmentgroup__segment {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: var(--segmentgroup-segment-color-unselected-background);
+  color: var(--segmentgroup-segment-color-unselected-foreground);
+  border-radius: var(--segmentgroup-segment-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  outline: none;
+  box-shadow: var(--segmentgroup-segment-shadow-unselected);
+  font-family: var(--alias-font-plain-family);
+  font-weight: var(--alias-font-plain-weight-regular);
+}
+
+/* Size variants */
+.muka-segmentgroup--sm .muka-segmentgroup__segment {
+  padding: var(--segmentgroup-segment-padding-sm-y) var(--segmentgroup-segment-padding-sm-x);
+  height: var(--segmentgroup-segment-height-sm);
+  font-size: var(--text-label-sm-fontSize);
+  line-height: var(--text-label-sm-lineHeight);
+}
+
+.muka-segmentgroup--md .muka-segmentgroup__segment {
+  padding: var(--segmentgroup-segment-padding-md-y) var(--segmentgroup-segment-padding-md-x);
+  font-size: var(--text-label-md-fontSize);
+  line-height: var(--text-label-md-lineHeight);
+}
+
+.muka-segmentgroup--lg .muka-segmentgroup__segment {
+  padding: var(--segmentgroup-segment-padding-lg-y) var(--segmentgroup-segment-padding-lg-x);
+  font-size: var(--text-label-lg-fontSize);
+  line-height: var(--text-label-lg-lineHeight);
+}
+
+/* Selected state */
+.muka-segmentgroup__segment--selected {
+  background-color: var(--segmentgroup-segment-color-selected-background);
+  color: var(--segmentgroup-segment-color-selected-foreground);
+  box-shadow: var(--segmentgroup-segment-shadow-selected);
+  font-weight: var(--alias-font-plain-weight-semibold);
+  z-index: 1;
+}
+
+/* Hover state (only for unselected) */
+.muka-segmentgroup__segment:not(.muka-segmentgroup__segment--selected):not(:disabled):hover {
+  color: var(--segmentgroup-segment-color-hover-foreground);
+}
+
+/* Focus visible */
+.muka-segmentgroup__segment:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+  z-index: 2;
+}
+
+/* Disabled state */
+.muka-segmentgroup__segment--disabled,
+.muka-segmentgroup__segment:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Label */
+.muka-segmentgroup__label {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  user-select: none;
+}

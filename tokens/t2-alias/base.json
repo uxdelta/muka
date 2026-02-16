@@ -53,6 +53,44 @@
         "12": {
           "$type": "color",
           "$value": "{color.gray.12}"
+        },
+        "alpha": {
+          "1": {
+            "$type": "color",
+            "$value": "{color.black-alpha.5}"
+          },
+          "2": {
+            "$type": "color",
+            "$value": "{color.black-alpha.8}"
+          },
+          "3": {
+            "$type": "color",
+            "$value": "{color.black-alpha.9}"
+          },
+          "4": {
+            "$type": "color",
+            "$value": "{color.black-alpha.9}"
+          },
+          "5": {
+            "$type": "color",
+            "$value": "{color.black-alpha.10}"
+          },
+          "6": {
+            "$type": "color",
+            "$value": "{color.black-alpha.11}"
+          },
+          "7": {
+            "$type": "color",
+            "$value": "{color.black-alpha.11}"
+          },
+          "8": {
+            "$type": "color",
+            "$value": "{color.black-alpha.12}"
+          },
+          "9": {
+            "$type": "color",
+            "$value": "{color.black-alpha.12}"
+          }
         }
       },
       "brand": {

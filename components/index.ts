@@ -41,3 +41,4 @@ export {
   type TableHeaderCellProps,
 } from './Table';
 export { DatePicker, type DatePickerProps } from './DatePicker';
+export { SegmentGroup, type SegmentGroupProps, type SegmentOption } from './SegmentGroup';

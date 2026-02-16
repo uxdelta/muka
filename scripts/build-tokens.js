@@ -140,6 +140,23 @@ class TokenBuilder {
               obj.$value[key] = this.resolveTokenValue(obj.$value[key], tokens);
             }
           }
+        } else if (Array.isArray(obj.$value)) {
+          // Resolve references inside array values (boxShadow layers, etc.)
+          obj.$value = obj.$value.map(item => {
+            if (typeof item === 'object' && item !== null) {
+              // Process each property in array items
+              const resolvedItem = {};
+              for (const key in item) {
+                if (typeof item[key] === 'string') {
+                  resolvedItem[key] = this.resolveTokenValue(item[key], tokens);
+                } else {
+                  resolvedItem[key] = item[key];
+                }
+              }
+              return resolvedItem;
+            }
+            return item;
+          });
         }
         return obj;
       }
@@ -248,15 +265,16 @@ class TokenBuilder {
           }
         } else if (value.$type === 'border' && typeof value.$value === 'object') {
           // Handle border composite tokens: { color, width, style } → "width style color"
-          const color = value.$value.color;
-          const width = value.$value.width;
+          const color = this.resolveTokenValue(value.$value.color, obj);
+          const width = this.resolveTokenValue(value.$value.width, obj);
           const style = value.$value.style || 'solid';
           callback(cssName, `${width} ${style} ${color}`);
         } else if (value.$type === 'boxShadow' && Array.isArray(value.$value)) {
           // Handle boxShadow composite tokens: array of layers → CSS box-shadow
           const shadowStr = value.$value.map(layer => {
             const inset = layer.type === 'innerShadow' ? 'inset ' : '';
-            return `${inset}${layer.x} ${layer.y} ${layer.blur} ${layer.spread} ${layer.color}`;
+            const color = this.resolveTokenValue(layer.color, obj);
+            return `${inset}${layer.x} ${layer.y} ${layer.blur} ${layer.spread} ${color}`;
           }).join(', ');
           callback(cssName, shadowStr);
         } else {
