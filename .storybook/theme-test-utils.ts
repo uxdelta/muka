@@ -1,4 +1,4 @@
-import { expect } from '@storybook/test';
+import { expect } from 'storybook/test';
 
 export const THEMES = {
   'muka-light': { brand: 'muka', mode: 'light' },
