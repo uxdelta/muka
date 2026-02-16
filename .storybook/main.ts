@@ -6,6 +6,7 @@ const config: StorybookConfig = {
     "../components/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   "addons": [
+    "@storybook/addon-onboarding",
     "@storybook/addon-docs",
     "@storybook/addon-designs",
   ],

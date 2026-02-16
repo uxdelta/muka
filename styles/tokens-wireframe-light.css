@@ -130,10 +130,18 @@
   --size-51xl: 48rem;
   --size-52xl: 49rem;
   --size-53xl: 50rem;
-  --container-max-width: {container.max-width.sm};
-  --container-gap-default: 1.5rem;
-  --container-gap-compact: 1rem;
-  --container-gap-spacious: 2rem;
+  --container-max-width-sm: 640px;
+  --container-max-width-md: 768px;
+  --container-max-width-lg: 1024px;
+  --container-max-width-xl: 1280px;
+  --container-max-width-2xl: 1536px;
+  --container-max-width-small: 640px;
+  --container-max-width-medium: 768px;
+  --container-max-width-large: 1024px;
+  --container-max-width-xlarge: 1280px;
+  --container-gap-default: 2rem;
+  --container-gap-compact: 1.5rem;
+  --container-gap-spacious: 2.5rem;
   --color-white: #ffffff;
   --color-black: #000000;
   --color-gray-1: #fcfcfc;
@@ -1214,7 +1222,7 @@
   --text-input-lg-lineHeight: 1.125rem;
   --shadow-level1: 0px 0px 1px 0px rgba(0, 0, 0, 0.090), 0px 2px 4px 0px rgba(0, 0, 0, 0.090);
   --shadow-level2: 0 0 1px 0 rgba(0, 0, 0, 0.090), 0 2px 4px 0 rgba(0, 0, 0, 0.090);
-  --shadow-level3: 0 0 1 0 rgba(0, 0, 0, 0.090), 0 8px 16px 0 rgba(0, 0, 0, 0.090);
+  --shadow-level3: 0 0 1px 0 rgba(0, 0, 0, 0.090), 0 8px 16px 0 rgba(0, 0, 0, 0.090);
   --shadow-level4: inset 0 0 1px 0 rgba(0, 0, 0, 0.090), 0 16px 32px 0 rgba(0, 0, 0, 0.220);
   --shadow-level5: 0 32px 64px 0 rgba(0, 0, 0, 0.220);
   --shadow-level6: 0 48px 96px 0 rgba(0, 0, 0, 0.220), inset 0 0 1 0 rgba(0, 0, 0, 0.220);
@@ -1298,9 +1306,10 @@
   --card-padding-sm: 0.75rem;
   --card-padding-md: 1rem;
   --card-padding-lg: 1.5rem;
-  --card-shadow-default: {shadow.200};
-  --card-shadow-hover: {shadow.300};
-  --card-shadow-pressed: {shadow.100};
+  --card-shadow-default: 0 0 1px 0 rgba(0, 0, 0, 0.090), 0 2px 4px 0 rgba(0, 0, 0, 0.090);
+  --card-shadow-hover: 0 0 1px 0 rgba(0, 0, 0, 0.090), 0 8px 16px 0 rgba(0, 0, 0, 0.090);
+  --card-shadow-pressed: 0 0 1px 0 rgba(0, 0, 0, 0.090), 0 2px 4px 0 rgba(0, 0, 0, 0.090);
+  --card-shadow-selected: 0px 0px 1px 0px rgba(0, 0, 0, 0.090), 0px 2px 4px 0px rgba(0, 0, 0, 0.090);
   --card-border-default: 0.0625rem solid #e0e0e0;
   --card-border-hover: 0.0625rem solid #bbbbbb;
   --card-border-pressed: 0.125rem solid #202020;
@@ -1608,7 +1617,6 @@
     --container-gap-default: 2rem;
     --container-gap-compact: 1.5rem;
     --container-gap-spacious: 2.5rem;
-    --container-max-width: {container.max-width.md};
   }
 }
 
@@ -1623,7 +1631,6 @@
     --section-padding-horizontal-spacious: 3rem;
     --container-gap-default: 2rem;
     --container-gap-spacious: 3rem;
-    --container-max-width: {container.max-width.xl};
   }
 }
 
@@ -1638,7 +1645,6 @@
   --container-gap-default: 2rem;
   --container-gap-compact: 1.5rem;
   --container-gap-spacious: 2.5rem;
-  --container-max-width: {container.max-width.md};
 }
 
 /* Layout mode: desktop (forced via data-layout attribute) */
@@ -1651,5 +1657,4 @@
   --section-padding-horizontal-spacious: 3rem;
   --container-gap-default: 2rem;
   --container-gap-spacious: 3rem;
-  --container-max-width: {container.max-width.xl};
 }

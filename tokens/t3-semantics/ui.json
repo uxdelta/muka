@@ -682,7 +682,7 @@
         {
           "x": "0",
           "y": "0",
-          "blur": "1",
+          "blur": "1px",
           "spread": "0",
           "color": "{alias.color.neutral.alpha.1}",
           "type": "dropShadow"

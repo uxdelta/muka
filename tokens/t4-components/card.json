@@ -93,15 +93,19 @@
     "shadow": {
       "default": {
         "$type": "boxShadow",
-        "$value": "{shadow.200}"
+        "$value": "{shadow.level2}"
       },
       "hover": {
         "$type": "boxShadow",
-        "$value": "{shadow.300}"
+        "$value": "{shadow.level3}"
       },
       "pressed": {
         "$type": "boxShadow",
-        "$value": "{shadow.100}"
+        "$value": "{shadow.level2}"
+      },
+      "selected": {
+        "$type": "boxShadow",
+        "$value": "{shadow.level1}"
       }
     },
     "border": {

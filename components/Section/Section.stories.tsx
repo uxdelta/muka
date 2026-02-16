@@ -7,7 +7,7 @@ const meta: Meta<typeof Section> = {
   title: 'Design System/Layout/Section',
   component: Section,
   parameters: {
-    layout: 'padded',
+    layout: 'fullscreen',
     docs: {
       description: {
         component: `
@@ -44,6 +44,50 @@ const Placeholder = ({ label }: { label: string }) => (
     {label}
   </div>
 );
+
+const ContainerVisualizer = ({ children }: { children: React.ReactNode }) => (
+  <div
+    style={{
+      background: 'var(--color-surface-level2)',
+      border: '2px solid var(--color-border-brand)',
+      borderRadius: '8px',
+      padding: '2rem',
+      color: 'var(--color-text-default)',
+    }}
+  >
+    {children}
+  </div>
+);
+
+export const ResponsiveTest: Story = {
+  name: 'Responsive Section + Container Test',
+  render: () => (
+    <Section padding="default">
+      <Container gap="default">
+        <ContainerVisualizer>
+          <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.25rem', fontWeight: 600 }}>
+            Responsive Container Max-Width
+          </h3>
+          <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.875rem' }}>
+            <strong>Mobile (640px):</strong> Container max-width = 640px (sm)
+          </p>
+          <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.875rem' }}>
+            <strong>Tablet (768px):</strong> Container max-width = 768px (md)
+          </p>
+          <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.875rem' }}>
+            <strong>Desktop (1024px):</strong> Container max-width = 1280px (xl)
+          </p>
+          <p style={{ margin: '0 0 1rem 0', fontSize: '0.875rem' }}>
+            <strong>Wide (1280px+):</strong> Container max-width = 1536px (2xl)
+          </p>
+          <p style={{ margin: 0, fontSize: '0.875rem', opacity: 0.7 }}>
+            Use the viewport toggle to test each breakpoint. Watch the container border resize!
+          </p>
+        </ContainerVisualizer>
+      </Container>
+    </Section>
+  ),
+};
 
 export const Playground: Story = {
   args: { padding: 'default' },

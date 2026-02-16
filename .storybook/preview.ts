@@ -1,5 +1,50 @@
 import type { Preview } from '@storybook/react';
+import { MINIMAL_VIEWPORTS } from 'storybook/viewport';
 import { withTheme } from './ThemeDecorator';
+
+// Custom viewports matching Muka token breakpoints
+const customViewports = {
+  mobile: {
+    name: 'Mobile (640px)',
+    styles: {
+      width: '640px',
+      height: '800px',
+    },
+    type: 'mobile',
+  },
+  tablet: {
+    name: 'Tablet (768px)',
+    styles: {
+      width: '768px',
+      height: '1024px',
+    },
+    type: 'tablet',
+  },
+  desktop: {
+    name: 'Desktop (1024px)',
+    styles: {
+      width: '1024px',
+      height: '768px',
+    },
+    type: 'desktop',
+  },
+  desktopWide: {
+    name: 'Desktop Wide (1280px)',
+    styles: {
+      width: '1280px',
+      height: '900px',
+    },
+    type: 'desktop',
+  },
+  responsive: {
+    name: 'Responsive (100%)',
+    styles: {
+      width: '100%',
+      height: '100%',
+    },
+    type: 'desktop',
+  },
+};
 
 const preview: Preview = {
   globalTypes: {
@@ -27,28 +72,21 @@ const preview: Preview = {
         dynamicTitle: true,
       },
     },
-    layout_mode: {
-      description: 'Responsive layout mode',
-      toolbar: {
-        title: 'Layout',
-        icon: 'mobile',
-        items: [
-          { value: 'responsive', title: 'Responsive (auto)' },
-          { value: 'mobile', title: 'Mobile' },
-          { value: 'tablet', title: 'Tablet' },
-          { value: 'desktop', title: 'Desktop' },
-        ],
-        dynamicTitle: true,
-      },
-    },
   },
   initialGlobals: {
     brand: 'muka',
     mode: 'light',
-    layout_mode: 'responsive',
+    viewport: 'responsive',
   },
   decorators: [withTheme],
   parameters: {
+    viewport: {
+      viewports: {
+        ...MINIMAL_VIEWPORTS,
+        ...customViewports,
+      },
+      defaultViewport: 'responsive',
+    },
     design: {
       type: 'figma',
       url: 'https://www.figma.com/design/RL5IFLUJk4yeAFNXlsX4b5/Muka-UI-Figma-Library?node-id=472-4248&t=EWdiRlfOlF96s9zJ-1',
@@ -65,7 +103,7 @@ const preview: Preview = {
         base: 'light',
       },
     },
-    layout: 'centered',
+    layout: 'fullscreen',
   },
 };
 

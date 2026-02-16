@@ -136,6 +136,43 @@ export const AllStates: Story = {
   ),
 };
 
+// ─── Elevated States (Shadows) ─────────────────────────
+export const ElevatedStates: Story = {
+  name: 'Elevated States (Shadows)',
+  render: () => (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 200px)', gap: '2rem', padding: '2rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <Card padding="md">
+          <p style={{ margin: 0, fontSize: '0.875rem' }}>Default</p>
+          <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.75rem', opacity: 0.6 }}>shadow.level2</p>
+        </Card>
+        <p style={{ margin: 0, fontSize: '0.75rem', opacity: 0.5, textAlign: 'center' }}>Base elevation</p>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <Card variant="interactive" onClick={() => {}} padding="md" className="muka-card--interactive">
+          <p style={{ margin: 0, fontSize: '0.875rem' }}>Hover</p>
+          <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.75rem', opacity: 0.6 }}>shadow.level3</p>
+        </Card>
+        <p style={{ margin: 0, fontSize: '0.75rem', opacity: 0.5, textAlign: 'center' }}>Hover over card above</p>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <Card variant="interactive" onClick={() => {}} padding="md" className="muka-card--pressed">
+          <p style={{ margin: 0, fontSize: '0.875rem' }}>Pressed</p>
+          <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.75rem', opacity: 0.6 }}>shadow.level2</p>
+        </Card>
+        <p style={{ margin: 0, fontSize: '0.75rem', opacity: 0.5, textAlign: 'center' }}>Active state</p>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <Card selected padding="md">
+          <p style={{ margin: 0, fontSize: '0.875rem' }}>Selected</p>
+          <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.75rem', opacity: 0.6 }}>shadow.level1</p>
+        </Card>
+        <p style={{ margin: 0, fontSize: '0.75rem', opacity: 0.5, textAlign: 'center' }}>Selected state</p>
+      </div>
+    </div>
+  ),
+};
+
 // ─── Composition: Vehicle Card ──────────────────────────
 export const VehicleCard: Story = {
   name: 'Composition: Vehicle Card',

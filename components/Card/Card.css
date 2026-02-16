@@ -4,7 +4,8 @@
   background-color: var(--card-color-default-background);
   color: var(--card-color-default-foreground);
   border: var(--border-width-regular) solid var(--card-color-default-border);
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  box-shadow: var(--card-shadow-default);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Padding variants */
@@ -46,12 +47,14 @@
 .muka-card--interactive:hover {
   background-color: var(--card-color-hover-background);
   border-color: var(--card-color-hover-border);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .muka-card--interactive:active,
 .muka-card--interactive.muka-card--pressed {
   background-color: var(--card-color-pressed-background);
   border-color: var(--card-color-pressed-border);
+  box-shadow: var(--card-shadow-pressed);
 }
 
 .muka-card--interactive:focus-visible {
@@ -64,6 +67,7 @@
   background-color: var(--card-color-selected-background);
   border-color: var(--card-color-selected-border);
   border-width: var(--border-width-bold);
+  box-shadow: var(--card-shadow-selected);
 }
 
 /* Disabled state */

@@ -49,10 +49,6 @@
         "$type": "spacing",
         "$value": "{size.3xl}"
       }
-    },
-    "max-width": {
-      "$type": "sizing",
-      "$value": "{container.max-width.md}"
     }
   }
 }
