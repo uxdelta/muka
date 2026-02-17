@@ -5,10 +5,8 @@
   flex-direction: column;
   width: var(--datepicker-calendar-width);
   padding: var(--spacing-3);
-  background-color: var(--color-surface-level0);
-  border: var(--border-width-regular) solid var(--color-border-default);
+  background-color: var(--color-white);
   border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
 }
 
 .muka-datepicker--disabled {
@@ -110,6 +108,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   aspect-ratio: 1;
   padding: 0;
   border: none;
@@ -120,22 +119,6 @@
   transition: background-color 0.15s, color 0.15s;
   font-family: var(--text-body-sm-regular-fontFamily);
   font-size: var(--text-body-sm-regular-fontSize);
-}
-
-/* Size variants */
-.muka-datepicker--sm .muka-datepicker__day {
-  width: var(--datepicker-size-day-sm);
-  height: var(--datepicker-size-day-sm);
-}
-
-.muka-datepicker--md .muka-datepicker__day {
-  width: var(--datepicker-size-day-md);
-  height: var(--datepicker-size-day-md);
-}
-
-.muka-datepicker--lg .muka-datepicker__day {
-  width: var(--datepicker-size-day-lg);
-  height: var(--datepicker-size-day-lg);
 }
 
 .muka-datepicker__day:hover:not(:disabled):not(.muka-datepicker__day--selected) {
@@ -179,7 +162,7 @@
 /* Selected state */
 .muka-datepicker__day--selected {
   background-color: var(--color-action-default);
-  color: var(--color-action-foreground);
+  color: var(--color-white);
   font-weight: var(--text-label-sm-semibold-fontWeight);
 }
 

@@ -63,11 +63,8 @@ export const Playground: Story = {
   render: function PlaygroundStory(args) {
     const [date, setDate] = useState<Date | null>(null);
     return (
-      <div>
+      <div style={{ boxShadow: 'var(--shadow-level1)', borderRadius: 'var(--border-radius-lg)', overflow: 'hidden' }}>
         <DatePicker {...args} value={date} onChange={setDate} />
-        <p style={{ marginTop: '1rem', color: 'var(--color-text-subtle-default)' }}>
-          Geselecteerd: {date ? date.toLocaleDateString('nl-NL') : 'Geen'}
-        </p>
       </div>
     );
   },

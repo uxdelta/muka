@@ -46,6 +46,8 @@ import {
   RiMoonFill,
   RiSortAsc,
   RiSortDesc,
+  RiShoppingCartLine,
+  RiShoppingCartFill,
 } from '@remixicon/react';
 
 export type IconRegistryEntry = {
@@ -83,6 +85,7 @@ export const iconRegistry: Record<string, IconRegistryEntry> = {
   moon: { line: RiMoonLine, fill: RiMoonFill },
   'sort-asc': { line: RiSortAsc, fill: RiSortAsc },   // Remix has single variant
   'sort-desc': { line: RiSortDesc, fill: RiSortDesc }, // Remix has single variant
+  'shopping-cart': { line: RiShoppingCartLine, fill: RiShoppingCartFill },
 };
 
 export type IconName = keyof typeof iconRegistry;

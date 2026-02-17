@@ -1,0 +1,358 @@
+/* Tile Component Styles - Using Muka Design Tokens */
+
+/* ─── Base ────────────────────────────────────────────── */
+
+.muka-tile {
+  display: flex;
+  color: var(--color-text-default-default);
+}
+
+.muka-tile--interactive {
+  cursor: pointer;
+  user-select: none;
+}
+
+.muka-tile--interactive:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-lg);
+}
+
+/* ─── Image position variants ─────────────────────────── */
+
+.muka-tile--image-top {
+  flex-direction: column;
+}
+
+.muka-tile--image-left {
+  flex-direction: row;
+}
+
+.muka-tile--image-right {
+  flex-direction: row;
+}
+
+/* ─── Gap by size (top) ───────────────────────────────── */
+
+.muka-tile--image-top.muka-tile--lg {
+  gap: var(--spacing-6);
+}
+
+.muka-tile--image-top.muka-tile--md {
+  gap: var(--spacing-6);
+  width: 320px;
+}
+
+.muka-tile--image-top.muka-tile--sm {
+  gap: var(--spacing-4);
+  min-width: 120px;
+}
+
+/* ─── Gap by size (left/right) ────────────────────────── */
+
+.muka-tile--image-left.muka-tile--lg,
+.muka-tile--image-right.muka-tile--lg {
+  gap: var(--spacing-6);
+  align-items: center;
+}
+
+.muka-tile--image-left.muka-tile--md,
+.muka-tile--image-right.muka-tile--md {
+  gap: var(--spacing-6);
+  align-items: center;
+}
+
+.muka-tile--image-left.muka-tile--sm,
+.muka-tile--image-right.muka-tile--sm {
+  gap: var(--spacing-4);
+  align-items: flex-start;
+}
+
+/* ─── Photos container ────────────────────────────────── */
+
+.muka-tile__photos {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+}
+
+/* Photos border radius by size */
+.muka-tile--lg .muka-tile__photos,
+.muka-tile--md .muka-tile__photos {
+  border-radius: var(--border-radius-lg);
+}
+
+.muka-tile--sm .muka-tile__photos {
+  border-radius: var(--border-radius-md);
+}
+
+/* Photos sizing: top layout */
+.muka-tile--image-top .muka-tile__photos {
+  width: 100%;
+}
+
+/* Photos sizing: left/right large */
+.muka-tile--image-left.muka-tile--lg .muka-tile__photos,
+.muka-tile--image-right.muka-tile--lg .muka-tile__photos {
+  width: 520px;
+}
+
+/* Photos sizing: left/right medium */
+.muka-tile--image-left.muka-tile--md .muka-tile__photos,
+.muka-tile--image-right.muka-tile--md .muka-tile__photos {
+  width: 320px;
+}
+
+/* Photos sizing: left/right small (single 80x80 thumbnail) */
+.muka-tile--image-left.muka-tile--sm .muka-tile__photos,
+.muka-tile--image-right.muka-tile--sm .muka-tile__photos {
+  width: 80px;
+  align-self: stretch;
+}
+
+/* ─── Main photo ──────────────────────────────────────── */
+
+.muka-tile__photo-main {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* 16:9 aspect for lg and md */
+.muka-tile--lg .muka-tile__photo-main,
+.muka-tile--md .muka-tile__photo-main {
+  aspect-ratio: 1280 / 720;
+}
+
+/* 1:1 aspect for top + sm */
+.muka-tile--image-top.muka-tile--sm .muka-tile__photo-main {
+  aspect-ratio: 1 / 1;
+}
+
+/* Fixed size for left/right + sm */
+.muka-tile--image-left.muka-tile--sm .muka-tile__photo-main,
+.muka-tile--image-right.muka-tile--sm .muka-tile__photo-main {
+  width: 80px;
+  height: 80px;
+  aspect-ratio: auto;
+}
+
+.muka-tile__photo-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── Favourite overlay ───────────────────────────────── */
+
+.muka-tile__favourite {
+  position: absolute;
+  z-index: 3;
+}
+
+.muka-tile--lg .muka-tile__favourite,
+.muka-tile--md .muka-tile__favourite {
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+}
+
+.muka-tile--image-top.muka-tile--sm .muka-tile__favourite {
+  top: var(--spacing-1);
+  right: var(--spacing-1);
+}
+
+/* ─── Thumbnails ──────────────────────────────────────── */
+
+.muka-tile__thumbnails {
+  display: flex;
+  gap: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+  height: 80px;
+}
+
+.muka-tile__thumbnail {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.muka-tile__thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Gap between main photo and thumbnails */
+.muka-tile__photos > .muka-tile__photo-main + .muka-tile__thumbnails {
+  margin-top: 2px;
+}
+
+/* ─── Content section ─────────────────────────────────── */
+
+.muka-tile__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Top layout: content has horizontal padding */
+.muka-tile--image-top.muka-tile--lg .muka-tile__content {
+  padding: 0 var(--spacing-3);
+  gap: var(--spacing-1);
+}
+
+.muka-tile--image-top.muka-tile--md .muka-tile__content {
+  padding: 0 var(--spacing-3);
+  gap: var(--spacing-2);
+}
+
+.muka-tile--image-top.muka-tile--sm .muka-tile__content {
+  gap: var(--spacing-2);
+}
+
+/* Left/right layout: content grows to fill space */
+.muka-tile--image-left .muka-tile__content,
+.muka-tile--image-right .muka-tile__content {
+  gap: var(--spacing-3);
+}
+
+.muka-tile--image-left.muka-tile--lg .muka-tile__content,
+.muka-tile--image-right.muka-tile--lg .muka-tile__content {
+  padding: 0 var(--spacing-3);
+}
+
+.muka-tile--image-left.muka-tile--md .muka-tile__content,
+.muka-tile--image-right.muka-tile--md .muka-tile__content {
+  padding: var(--spacing-2) var(--spacing-3);
+}
+
+.muka-tile--image-left.muka-tile--sm .muka-tile__content,
+.muka-tile--image-right.muka-tile--sm .muka-tile__content {
+  gap: var(--spacing-2);
+}
+
+/* ─── Header (heading row + price) ────────────────────── */
+
+.muka-tile__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+}
+
+/* Small horizontal: row with text and action */
+.muka-tile--sm:not(.muka-tile--image-top) .muka-tile__header {
+  gap: var(--spacing-2);
+  align-items: center;
+  padding-top: var(--spacing-1);
+}
+
+/* ─── Text group ──────────────────────────────────────── */
+
+.muka-tile__text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  gap: var(--spacing-2);
+}
+
+/* ─── Heading typography ──────────────────────────────── */
+
+.muka-tile__heading {
+  margin: 0;
+}
+
+.muka-tile--lg .muka-tile__heading {
+  font-family: var(--text-label-2xl-semibold-fontFamily);
+  font-weight: var(--text-label-2xl-semibold-fontWeight);
+  font-size: var(--text-label-2xl-semibold-fontSize);
+  line-height: var(--text-label-2xl-semibold-lineHeight);
+  color: var(--color-text-default-default);
+}
+
+.muka-tile--md .muka-tile__heading {
+  font-family: var(--text-label-xl-semibold-fontFamily);
+  font-weight: var(--text-label-xl-semibold-fontWeight);
+  font-size: var(--text-label-xl-semibold-fontSize);
+  line-height: var(--text-label-xl-semibold-lineHeight);
+  color: var(--color-text-default-default);
+}
+
+.muka-tile--sm .muka-tile__heading {
+  font-family: var(--text-label-lg-bold-fontFamily);
+  font-weight: var(--text-label-lg-bold-fontWeight);
+  font-size: var(--text-label-lg-bold-fontSize);
+  line-height: var(--text-label-lg-bold-lineHeight);
+  color: var(--color-text-default-default);
+}
+
+/* ─── Subheading typography ───────────────────────────── */
+
+.muka-tile__subheading {
+  margin: 0;
+  color: var(--color-text-subtle-default);
+}
+
+.muka-tile--lg .muka-tile__subheading {
+  font-family: var(--text-subheading-md-fontFamily);
+  font-weight: var(--text-subheading-md-fontWeight);
+  font-size: var(--text-subheading-md-fontSize);
+  line-height: var(--text-subheading-md-lineHeight);
+}
+
+.muka-tile--md .muka-tile__subheading,
+.muka-tile--sm .muka-tile__subheading {
+  font-family: var(--text-subheading-sm-fontFamily);
+  font-weight: var(--text-subheading-sm-fontWeight);
+  font-size: var(--text-subheading-sm-fontSize);
+  line-height: var(--text-subheading-sm-lineHeight);
+}
+
+/* ─── Description typography ──────────────────────────── */
+
+.muka-tile__description {
+  margin: 0;
+  color: var(--color-text-default-default);
+}
+
+.muka-tile--lg .muka-tile__description {
+  font-family: var(--text-body-lg-regular-fontFamily);
+  font-weight: var(--text-body-lg-regular-fontWeight);
+  font-size: var(--text-body-lg-regular-fontSize);
+  line-height: var(--text-body-lg-regular-lineHeight);
+}
+
+.muka-tile--md .muka-tile__description,
+.muka-tile--sm .muka-tile__description {
+  font-family: var(--text-body-base-regular-fontFamily);
+  font-weight: var(--text-body-base-regular-fontWeight);
+  font-size: var(--text-body-base-regular-fontSize);
+  line-height: var(--text-body-base-regular-lineHeight);
+}
+
+/* Description overflow for medium */
+.muka-tile--md .muka-tile__description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── Price slot ──────────────────────────────────────── */
+
+.muka-tile__price {
+  flex-shrink: 0;
+}
+
+/* ─── Action slot ─────────────────────────────────────── */
+
+.muka-tile__action {
+  flex-shrink: 0;
+}

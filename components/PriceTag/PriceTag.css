@@ -1,0 +1,94 @@
+/* PriceTag Component Styles - Using Muka Design Tokens */
+
+.muka-price-tag {
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* Medium: stacked layout (price on top, unit below) */
+.muka-price-tag--md {
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Small: inline layout */
+.muka-price-tag--sm {
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+}
+
+/* Amount row: currency + numbers */
+.muka-price-tag__amount {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-1);
+}
+
+.muka-price-tag--sm .muka-price-tag__amount {
+  align-items: center;
+}
+
+/* Numbers group: whole + decimal + cents */
+.muka-price-tag__numbers {
+  display: flex;
+  align-items: baseline;
+}
+
+/* ─── Medium size typography ──────────────────────────── */
+
+.muka-price-tag--md .muka-price-tag__currency {
+  font-family: var(--text-subheading-md-fontFamily);
+  font-weight: var(--text-subheading-md-fontWeight);
+  font-size: var(--text-subheading-md-fontSize);
+  line-height: var(--text-label-2xl-bold-lineHeight);
+  color: var(--color-text-subtle-default);
+}
+
+.muka-price-tag--md .muka-price-tag__whole {
+  font-family: var(--text-label-2xl-bold-fontFamily);
+  font-weight: var(--text-label-2xl-bold-fontWeight);
+  font-size: var(--text-label-2xl-bold-fontSize);
+  line-height: var(--text-label-2xl-bold-lineHeight);
+  color: var(--color-text-default-default);
+}
+
+.muka-price-tag--md .muka-price-tag__decimal,
+.muka-price-tag--md .muka-price-tag__cents {
+  font-family: var(--text-label-md-bold-fontFamily);
+  font-weight: var(--text-label-md-bold-fontWeight);
+  font-size: var(--text-label-md-bold-fontSize);
+  line-height: var(--text-label-md-bold-lineHeight);
+  color: var(--color-text-default-default);
+}
+
+/* ─── Small size typography ───────────────────────────── */
+
+.muka-price-tag--sm .muka-price-tag__currency {
+  font-family: var(--text-body-base-regular-fontFamily);
+  font-weight: var(--text-body-base-regular-fontWeight);
+  font-size: var(--text-body-base-regular-fontSize);
+  line-height: var(--text-label-md-bold-lineHeight);
+  color: var(--color-text-subtle-default);
+}
+
+.muka-price-tag--sm .muka-price-tag__whole,
+.muka-price-tag--sm .muka-price-tag__decimal,
+.muka-price-tag--sm .muka-price-tag__cents {
+  font-family: var(--text-label-md-bold-fontFamily);
+  font-weight: var(--text-label-md-bold-fontWeight);
+  font-size: var(--text-label-md-bold-fontSize);
+  line-height: var(--text-label-md-bold-lineHeight);
+  color: var(--color-text-default-default);
+}
+
+/* ─── Unit label (same for both sizes) ────────────────── */
+
+.muka-price-tag__unit {
+  font-family: var(--text-body-sm-regular-fontFamily);
+  font-weight: var(--text-body-sm-regular-fontWeight);
+  font-size: var(--text-body-sm-regular-fontSize);
+  line-height: var(--text-body-sm-regular-lineHeight);
+  color: var(--color-text-subtle-default);
+}
