@@ -90,9 +90,12 @@
 /* ─── Floating modifier ───────────────────────────────── */
 
 .muka-bottombar--floating {
-  background: transparent;
-  padding: 0 var(--bottombar-floating-margin-x);
-  padding-bottom: var(--bottombar-floating-margin-bottom);
+  background: linear-gradient(
+    to bottom,
+    var(--bottombar-floating-backdrop-start),
+    var(--bottombar-floating-backdrop-end)
+  );
+  padding: var(--bottombar-floating-padding-top) var(--bottombar-floating-margin-x) var(--bottombar-floating-margin-bottom);
 }
 
 .muka-bottombar--floating .muka-bottombar__content {
@@ -105,9 +108,13 @@
   margin: 0 auto;
 }
 
-/* Override the actions content padding inside floating */
+/* Override content padding inside floating per variant */
 .muka-bottombar--floating.muka-bottombar--actions .muka-bottombar__content {
   padding: var(--bottombar-floating-padding);
+}
+
+.muka-bottombar--floating.muka-bottombar--navigation .muka-bottombar__content {
+  padding: var(--bottombar-navigation-floating-padding);
 }
 
 /* ─── Desktop: Sidebar transformation ─────────────────── */

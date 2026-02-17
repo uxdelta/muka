@@ -59,26 +59,26 @@
 .muka-button--primary {
   background-color: var(--button-color-primary-background-default);
   color: var(--button-color-primary-foreground-default);
-  box-shadow: 0 -2px 0 0 var(--button-color-primary-shadow-default) inset;
+  box-shadow: var(--button-color-primary-shadow-default);
 }
 
 .muka-button--primary:hover:not(:disabled) {
   background-color: var(--button-color-primary-background-hover);
   color: var(--button-color-primary-foreground-hover);
-  box-shadow: 0 -2px 0 0 var(--button-color-primary-shadow-hover) inset;
+  box-shadow: var(--button-color-primary-shadow-hover);
 }
 
 .muka-button--primary:active:not(:disabled),
 .muka-button--primary.muka-button--pressed:not(:disabled) {
   background-color: var(--button-color-primary-background-pressed);
   color: var(--button-color-primary-foreground-pressed);
-  box-shadow: 0 -2px 0 0 var(--button-color-primary-shadow-pressed) inset;
+  box-shadow: var(--button-color-primary-shadow-pressed);
 }
 
 .muka-button--primary:disabled {
   background-color: var(--button-color-primary-background-disabled);
   color: var(--button-color-primary-foreground-disabled);
-  box-shadow: 0 -2px 0 0 var(--button-color-primary-shadow-disabled) inset;
+  box-shadow: var(--button-color-primary-shadow-disabled);
   cursor: not-allowed;
   opacity: 1; /* Remove opacity since we have proper disabled tokens */
 }
@@ -87,26 +87,26 @@
 .muka-button--secondary {
   background-color: var(--button-color-secondary-background-default);
   color: var(--button-color-secondary-foreground-default);
-  box-shadow: 0 -2px 0 0 var(--button-color-secondary-shadow-default) inset;
+  box-shadow: var(--button-color-secondary-shadow-default);
 }
 
 .muka-button--secondary:hover:not(:disabled) {
   background-color: var(--button-color-secondary-background-hover);
   color: var(--button-color-secondary-foreground-hover);
-  box-shadow: 0 -2px 0 0 var(--button-color-secondary-shadow-hover) inset;
+  box-shadow: var(--button-color-secondary-shadow-hover);
 }
 
 .muka-button--secondary:active:not(:disabled),
 .muka-button--secondary.muka-button--pressed:not(:disabled) {
   background-color: var(--button-color-secondary-background-pressed);
   color: var(--button-color-secondary-foreground-pressed);
-  box-shadow: 0 -2px 0 0 var(--button-color-secondary-shadow-pressed) inset;
+  box-shadow: var(--button-color-secondary-shadow-pressed);
 }
 
 .muka-button--secondary:disabled {
   background-color: var(--button-color-secondary-background-disabled);
   color: var(--button-color-secondary-foreground-disabled);
-  box-shadow: 0 -2px 0 0 var(--button-color-secondary-shadow-disabled) inset;
+  box-shadow: var(--button-color-secondary-shadow-disabled);
   cursor: not-allowed;
   opacity: 1;
 }

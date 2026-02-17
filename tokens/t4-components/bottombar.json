@@ -43,11 +43,23 @@
       },
       "shadow": {
         "$type": "boxShadow",
-        "$value": "{shadow.200}"
+        "$value": "{shadow.level3}"
       },
       "max-width": {
         "$type": "sizing",
         "$value": "640px"
+      },
+      "backdrop-start": {
+        "$type": "color",
+        "$value": "{color.black-alpha.1}"
+      },
+      "backdrop-end": {
+        "$type": "color",
+        "$value": "{color.black-alpha.3}"
+      },
+      "padding-top": {
+        "$type": "dimension",
+        "$value": "{spacing.8}"
       }
     },
     "tab": {
@@ -80,6 +92,12 @@
       "button-height": {
         "$type": "dimension",
         "$value": "48px"
+      }
+    },
+    "navigation": {
+      "floating-padding": {
+        "$type": "dimension",
+        "$value": "{spacing.2}"
       }
     }
   }

@@ -93,8 +93,8 @@ export const Playground: Story = {
   render: (args) => (
     <MobileFrame>
       <BottomBar {...args}>
-        <Button variant="secondary" size="lg">Cancel</Button>
-        <Button variant="primary" size="lg">Save</Button>
+        <Button variant="tertiary" size="md">Cancel</Button>
+        <Button variant="primary" size="md">Save</Button>
       </BottomBar>
     </MobileFrame>
   ),
@@ -106,8 +106,8 @@ export const Actions: Story = {
   render: () => (
     <MobileFrame>
       <BottomBar variant="actions">
-        <Button variant="secondary" size="lg">Cancel</Button>
-        <Button variant="primary" size="lg">Confirm</Button>
+        <Button variant="tertiary" size="md">Cancel</Button>
+        <Button variant="primary" size="md">Confirm</Button>
       </BottomBar>
     </MobileFrame>
   ),
@@ -120,8 +120,8 @@ export const ActionsFloating: Story = {
   render: () => (
     <MobileFrame>
       <BottomBar variant="actions" floating>
-        <Button variant="secondary" size="lg">Discard</Button>
-        <Button variant="primary" size="lg">Apply</Button>
+        <Button variant="tertiary" size="md">Discard</Button>
+        <Button variant="primary" size="md">Apply</Button>
       </BottomBar>
     </MobileFrame>
   ),
@@ -167,8 +167,8 @@ export const AllCombinations: Story = {
         <p style={{ margin: '0 0 0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>Actions (default)</p>
         <MobileFrame>
           <BottomBar variant="actions">
-            <Button variant="secondary" size="lg">Cancel</Button>
-            <Button variant="primary" size="lg">Save</Button>
+            <Button variant="tertiary" size="md">Cancel</Button>
+            <Button variant="primary" size="md">Save</Button>
           </BottomBar>
         </MobileFrame>
       </div>
@@ -176,8 +176,8 @@ export const AllCombinations: Story = {
         <p style={{ margin: '0 0 0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>Actions (floating)</p>
         <MobileFrame>
           <BottomBar variant="actions" floating>
-            <Button variant="secondary" size="lg">Cancel</Button>
-            <Button variant="primary" size="lg">Save</Button>
+            <Button variant="tertiary" size="md">Cancel</Button>
+            <Button variant="primary" size="md">Save</Button>
           </BottomBar>
         </MobileFrame>
       </div>
