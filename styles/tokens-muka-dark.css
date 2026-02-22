@@ -1549,8 +1549,9 @@
   --bottombar-floating-margin-bottom: 2rem;
   --bottombar-floating-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.090), 0 8px 16px 0 rgba(0, 0, 0, 0.090);
   --bottombar-floating-max-width: 640px;
-  --bottombar-floating-backdrop-start: rgba(0, 0, 0, 0.012);
-  --bottombar-floating-backdrop-end: rgba(0, 0, 0, 0.047);
+  --bottombar-floating-backdrop-start: transparent;
+  --bottombar-floating-backdrop-end: rgba(0, 0, 0, 0.090);
+  --bottombar-floating-backdrop-blur: 2px;
   --bottombar-floating-padding-top: 2rem;
   --bottombar-tab-icon-size: 24px;
   --bottombar-tab-gap: 0.25rem;

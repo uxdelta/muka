@@ -95,6 +95,8 @@
     var(--bottombar-floating-backdrop-start),
     var(--bottombar-floating-backdrop-end)
   );
+  backdrop-filter: blur(var(--bottombar-floating-backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--bottombar-floating-backdrop-blur));
   padding: var(--bottombar-floating-padding-top) var(--bottombar-floating-margin-x) var(--bottombar-floating-margin-bottom);
 }
 

@@ -51,11 +51,15 @@
       },
       "backdrop-start": {
         "$type": "color",
-        "$value": "{color.black-alpha.1}"
+        "$value": "transparent"
       },
       "backdrop-end": {
         "$type": "color",
-        "$value": "{color.black-alpha.3}"
+        "$value": "{color.black-alpha.5}"
+      },
+      "backdrop-blur": {
+        "$type": "dimension",
+        "$value": "2px"
       },
       "padding-top": {
         "$type": "dimension",
