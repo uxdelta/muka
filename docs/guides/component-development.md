@@ -123,6 +123,71 @@ registerComponent(ComponentName, {
 - `npm run figma:connect:dev` - Dev mode for testing mappings
 - `npm run figma:connect:publish` - Publish mappings to Figma
 
+**End-to-End Workflow:**
+
+Follow these steps to connect a Figma component to your code component:
+
+1. **Design in Figma:**
+   - Create or identify the component in Figma
+   - Define variants (e.g., size, variant, disabled states)
+   - Note the component name and property names exactly as they appear in Figma
+
+2. **Develop the React Component:**
+   - Build the component following the folder structure above
+   - Ensure prop names align with Figma properties when possible
+   - Export the component from `components/index.ts`
+
+3. **Create the Mapping File:**
+   - Create a new file: `figma/mappings/component-name.codeconnect.tsx`
+   - Import the component and Code Connect utilities:
+     ```tsx
+     import { registerComponent, figma } from "@figma/code-connect";
+     import { YourComponent } from "../../components/YourComponent";
+     ```
+   - Use `registerComponent()` to map Figma properties to component props:
+     ```tsx
+     registerComponent(YourComponent, {
+       figmaNode: figma.instance("Component Name"), // Match Figma exactly
+       example: (
+         <YourComponent
+           variant={figma.enum("variant")}
+           size={figma.enum("size")}
+           disabled={figma.enum("disabled")}
+         >
+           {figma.string("Text")}
+         </YourComponent>
+       ),
+       props: {
+         variant: figma.enum("variant"),
+         size: figma.enum("size"),
+         disabled: figma.enum("disabled"),
+         children: figma.string("Text"),
+       },
+     });
+     ```
+
+4. **Test Locally (Optional):**
+   - Run `npm run figma:connect:dev` to preview mappings
+   - Verify the mapping syntax is correct
+
+5. **Publish to Figma:**
+   - Ensure you have the Figma Code Connect plugin installed
+   - Run `npm run figma:connect:publish` to push mappings to Figma
+   - The command will sync your code examples to the Figma file
+
+6. **Verify in Figma:**
+   - Open your Figma file
+   - Select the component instance
+   - Open the "Code Connect" panel (via the plugin or inspect panel)
+   - Confirm the code example appears correctly
+
+**Mapping Reference:**
+- `figma.enum("propertyName")` - Maps to variant properties
+- `figma.string("propertyName")` - Maps to text properties
+- `figma.boolean("propertyName")` - Maps to boolean properties
+- `figma.children("slotName")` - Maps to nested instances/slots
+- `figma.conditionalProp()` - For conditional property rendering
+
 Reference: Figma Code Connect overview `https://help.figma.com/hc/en-us/articles/23920389749655-Code-Connect`.
 
 #### Review checklist
