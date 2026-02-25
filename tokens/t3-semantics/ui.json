@@ -7,72 +7,237 @@
     "surface": {
       "sunken": {
         "$type": "color",
-        "$value": "{alias.color.neutral.6}"
+        "$value": "{alias.color.neutral.6}",
+        "$rag": {
+          "description": "Recessed surface color for inset areas",
+          "usage": ["Input fields", "Text areas", "Embedded panels", "Recessed containers"],
+          "accessibility": "Provides visual depth while maintaining readable contrast",
+          "relationships": ["color.surface.level0", "color.border.muted", "color.text.default.default"],
+          "examples": ["Search input backgrounds", "Comment boxes", "Code editor backgrounds"],
+          "brand-impact": "Low - neutral surface that adapts to brand",
+          "semantic-meaning": "Sunken or inset surface background",
+          "do": ["Use for input elements", "Apply to editable areas", "Pair with appropriate text colors"],
+          "dont": ["Use for raised elements", "Apply to primary content areas", "Mix with action colors"]
+        }
       },
       "level0": {
         "$type": "color",
-        "$value": "{alias.color.neutral.5}"
+        "$value": "{alias.color.neutral.5}",
+        "$rag": {
+          "description": "Base application background color",
+          "usage": ["Main app background", "Page canvas", "Root surface"],
+          "accessibility": "Foundation color that supports all text hierarchy levels",
+          "relationships": ["color.surface.level1", "color.text.default.default"],
+          "examples": ["App body background", "Page wrapper", "Main canvas"],
+          "brand-impact": "Low - neutral foundation that adapts to brand",
+          "semantic-meaning": "Root application surface",
+          "do": ["Use as base page background", "Maintain as lowest surface level"],
+          "dont": ["Use for content cards", "Apply to interactive elements", "Layer above other surfaces"]
+        }
       },
       "level1": {
         "$type": "color",
-        "$value": "{alias.color.neutral.4}"
+        "$value": "{alias.color.neutral.4}",
+        "$rag": {
+          "description": "Primary surface color for content areas",
+          "usage": ["Card backgrounds", "Modal content", "Sidebar panels", "Content containers"],
+          "accessibility": "Provides sufficient contrast for text content",
+          "relationships": ["color.surface.level2", "color.text.default.default", "color.border.default"],
+          "examples": ["Main content cards", "Form containers", "Navigation panels", "Article backgrounds"],
+          "brand-impact": "Low - neutral surface that adapts to brand",
+          "semantic-meaning": "Primary content container background",
+          "do": ["Use for main content areas", "Pair with appropriate text colors", "Maintain consistent usage across components"],
+          "dont": ["Use for interactive elements", "Mix with similar surface levels without hierarchy", "Override without considering text contrast"]
+        }
       },
       "level2": {
         "$type": "color",
-        "$value": "{alias.color.neutral.3}"
+        "$value": "{alias.color.neutral.3}",
+        "$rag": {
+          "description": "Elevated surface color for layered content",
+          "usage": ["Nested cards", "Dropdown menus", "Popovers", "Elevated panels"],
+          "accessibility": "Maintains hierarchy while ensuring text readability",
+          "relationships": ["color.surface.level1", "color.surface.level3", "color.text.default.default"],
+          "examples": ["Dropdown menus", "Tooltip backgrounds", "Nested card content", "Floating panels"],
+          "brand-impact": "Low - neutral surface that adapts to brand",
+          "semantic-meaning": "Secondary elevated surface",
+          "do": ["Use for layered content", "Apply to dropdown menus", "Create visual hierarchy"],
+          "dont": ["Use as primary surface", "Apply to base backgrounds", "Overuse in flat layouts"]
+        }
       },
       "level3": {
         "$type": "color",
-        "$value": "{alias.color.neutral.1}"
+        "$value": "{alias.color.neutral.1}",
+        "$rag": {
+          "description": "Highest elevation surface for top-layer content",
+          "usage": ["Modal dialogs", "Overlays", "Top-most tooltips", "Maximum elevation panels"],
+          "accessibility": "Highest contrast surface for critical content",
+          "relationships": ["color.surface.level2", "color.surface.backdrop", "color.text.default.default"],
+          "examples": ["Dialog content", "Alert backgrounds", "Top-layer notifications"],
+          "brand-impact": "Low - neutral surface that adapts to brand",
+          "semantic-meaning": "Maximum elevation surface for critical UI",
+          "do": ["Use for modals and dialogs", "Apply to critical notifications", "Reserve for top-layer content"],
+          "dont": ["Use for regular content", "Apply without backdrop", "Overuse in normal layouts"]
+        }
       },
       "backdrop": {
         "$type": "color",
-        "$value": "{alias.color.neutral.alpha.6}"
+        "$value": "{alias.color.neutral.alpha.6}",
+        "$rag": {
+          "description": "Semi-transparent overlay background",
+          "usage": ["Modal backdrops", "Drawer overlays", "Sheet backgrounds", "Lightbox backgrounds"],
+          "accessibility": "Provides focus and context separation for overlaid content",
+          "relationships": ["color.surface.level3", "color.surface.level2"],
+          "examples": ["Modal overlay", "Sheet backdrop", "Menu scrim", "Image lightbox background"],
+          "brand-impact": "Low - functional overlay",
+          "semantic-meaning": "Overlay scrim for modal contexts",
+          "do": ["Use with modal content", "Apply for focus separation", "Ensure sufficient opacity"],
+          "dont": ["Use as solid background", "Apply without overlaid content", "Make fully opaque"]
+        }
       },
       "inverse": {
         "$type": "color",
-        "$value": "{alias.color.neutral.12}"
+        "$value": "{alias.color.neutral.12}",
+        "$rag": {
+          "description": "Inverted surface color for contrast",
+          "usage": ["Tooltips", "Badges", "Chips", "High-contrast elements"],
+          "accessibility": "Provides maximum contrast with inverse text colors",
+          "relationships": ["color.text.default.inverse", "color.surface.level1"],
+          "examples": ["Dark tooltips", "Contrast badges", "Inverted chips"],
+          "brand-impact": "Medium - visible contrast element",
+          "semantic-meaning": "High-contrast inverted surface",
+          "do": ["Use with inverse text", "Apply for high visibility", "Pair with appropriate contrast"],
+          "dont": ["Use for large areas", "Apply without inverse text", "Mix with regular surfaces"]
+        }
       }
     },
     "text": {
       "default": {
         "default": {
           "$type": "color",
-          "$value": "{alias.color.neutral.12}"
+          "$value": "{alias.color.neutral.12}",
+          "$rag": {
+            "description": "Primary text color for body content",
+            "usage": ["Body text", "Headings", "Primary labels", "Main content"],
+            "accessibility": "Ensures WCAG AA compliance with minimum 4.5:1 contrast ratio",
+            "relationships": ["color.surface.level0", "color.surface.level1", "color.text.subtle.default"],
+            "examples": ["Paragraph text", "Article content", "Form labels", "Navigation items"],
+            "brand-impact": "Low - neutral text color",
+            "semantic-meaning": "Default readable text for all content",
+            "do": ["Use for main content", "Ensure proper contrast", "Apply consistently"],
+            "dont": ["Use on dark backgrounds without inverse", "Apply to decorative elements", "Reduce opacity without checking contrast"]
+          }
         },
         "inverse": {
           "$type": "color",
-          "$value": "{alias.color.neutral.1}"
+          "$value": "{alias.color.neutral.1}",
+          "$rag": {
+            "description": "Inverted text color for dark backgrounds",
+            "usage": ["Text on dark surfaces", "Button labels on primary", "Inverse badges", "Dark mode content"],
+            "accessibility": "Provides sufficient contrast on inverse surfaces",
+            "relationships": ["color.surface.inverse", "color.action.default", "color.text.default.default"],
+            "examples": ["Primary button text", "Dark tooltip content", "Badge labels on dark"],
+            "brand-impact": "Low - functional inverse text",
+            "semantic-meaning": "High-contrast text for dark backgrounds",
+            "do": ["Use on inverse surfaces", "Pair with dark backgrounds", "Ensure readability"],
+            "dont": ["Use on light backgrounds", "Apply without contrast check", "Mix with regular text"]
+          }
         }
       },
       "subtle": {
         "default": {
           "$type": "color",
-          "$value": "{alias.color.neutral.9}"
+          "$value": "{alias.color.neutral.9}",
+          "$rag": {
+            "description": "Secondary text color for supporting content",
+            "usage": ["Supporting text", "Descriptions", "Help text", "Secondary labels", "Metadata"],
+            "accessibility": "Maintains readable contrast while being visually subdued",
+            "relationships": ["color.text.default.default", "color.text.muted.default", "color.surface.level1"],
+            "examples": ["Timestamp labels", "Field descriptions", "Bylines", "Secondary navigation"],
+            "brand-impact": "Low - neutral subdued text",
+            "semantic-meaning": "Secondary supporting text content",
+            "do": ["Use for secondary information", "Apply to helper text", "Maintain hierarchy"],
+            "dont": ["Use for primary content", "Apply to critical information", "Overuse in body text"]
+          }
         },
         "inverse": {
           "$type": "color",
-          "$value": "{alias.color.neutral.3}"
+          "$value": "{alias.color.neutral.3}",
+          "$rag": {
+            "description": "Subtle text for dark backgrounds",
+            "usage": ["Secondary text on dark", "Supporting labels on inverse", "Muted content on dark surfaces"],
+            "accessibility": "Provides contrast on dark backgrounds while remaining subtle",
+            "relationships": ["color.text.subtle.default", "color.surface.inverse", "color.text.default.inverse"],
+            "examples": ["Secondary text on dark cards", "Metadata on inverse backgrounds"],
+            "brand-impact": "Low - functional subtle inverse text",
+            "semantic-meaning": "Subdued text for dark backgrounds",
+            "do": ["Use on dark surfaces", "Apply to secondary content", "Maintain visual hierarchy"],
+            "dont": ["Use for primary text", "Apply on light backgrounds", "Use for critical information"]
+          }
         }
       },
       "muted": {
         "default": {
           "$type": "color",
-          "$value": "{alias.color.neutral.7}"
+          "$value": "{alias.color.neutral.7}",
+          "$rag": {
+            "description": "Tertiary text color for minimal emphasis",
+            "usage": ["Placeholder text", "Disabled labels", "Deemphasized content", "Tertiary information"],
+            "accessibility": "May not meet AA standards - use sparingly for non-critical content",
+            "relationships": ["color.text.subtle.default", "color.text.default.default", "color.border.muted"],
+            "examples": ["Input placeholders", "Disabled button text", "Optional field labels"],
+            "brand-impact": "Low - minimal visibility text",
+            "semantic-meaning": "Minimal emphasis text for tertiary content",
+            "do": ["Use for placeholders", "Apply to disabled states", "Reserve for non-critical content"],
+            "dont": ["Use for important information", "Apply to active elements", "Rely on for accessibility"]
+          }
         }
       },
       "action": {
         "default": {
           "$type": "color",
-          "$value": "{alias.color.accent.default}"
+          "$value": "{alias.color.accent.default}",
+          "$rag": {
+            "description": "Interactive text color for links and actions",
+            "usage": ["Hyperlinks", "Text buttons", "Interactive labels", "Clickable text"],
+            "accessibility": "Underline links for accessibility beyond color alone",
+            "relationships": ["color.action.default", "color.text.action.hover", "color.text.default.default"],
+            "examples": ["Navigation links", "Inline links", "Text-only buttons", "Clickable labels"],
+            "brand-impact": "High - core brand expression for interactivity",
+            "semantic-meaning": "Interactive actionable text",
+            "do": ["Use for clickable text", "Underline links", "Apply to interactive elements"],
+            "dont": ["Use for non-interactive text", "Overuse in body content", "Apply without indicating interactivity"]
+          }
         },
         "hover": {
           "$type": "color",
-          "$value": "{alias.color.accent.hover}"
+          "$value": "{alias.color.accent.hover}",
+          "$rag": {
+            "description": "Text color on hover for interactive elements",
+            "usage": ["Link hover states", "Interactive text hover", "Button text hover"],
+            "accessibility": "Provide additional hover indicators beyond color",
+            "relationships": ["color.text.action.default", "color.text.action.pressed", "color.action.hover"],
+            "examples": ["Hovered links", "Text button hover states"],
+            "brand-impact": "High - brand interaction feedback",
+            "semantic-meaning": "Hover state for interactive text",
+            "do": ["Use for hover feedback", "Combine with underlines", "Apply consistently"],
+            "dont": ["Use as static color", "Apply without default state", "Skip focus indicators"]
+          }
         },
         "pressed": {
           "$type": "color",
-          "$value": "{alias.color.accent.pressed}"
+          "$value": "{alias.color.accent.pressed}",
+          "$rag": {
+            "description": "Text color when interactive element is pressed",
+            "usage": ["Link active states", "Text button pressed", "Clicked text elements"],
+            "accessibility": "Ensure sufficient contrast in all interaction states",
+            "relationships": ["color.text.action.hover", "color.text.action.default", "color.action.pressed"],
+            "examples": ["Active link state", "Pressed text button"],
+            "brand-impact": "High - brand interaction feedback",
+            "semantic-meaning": "Active/pressed state for interactive text",
+            "do": ["Use for active states", "Apply on click", "Maintain state visibility"],
+            "dont": ["Skip this state", "Make too subtle", "Apply inconsistently"]
+          }
         }
       }
     },
@@ -80,111 +245,375 @@
       "success": {
         "default": {
           "$type": "color",
-          "$value": "{alias.color.state.success.default}"
+          "$value": "{alias.color.state.success.default}",
+          "$rag": {
+            "description": "Success state color for positive feedback",
+            "usage": ["Success messages", "Confirmation alerts", "Positive status indicators", "Checkmarks"],
+            "accessibility": "Combine with icons and text, not color alone",
+            "relationships": ["color.state.success.contrast", "color.state.success.background", "color.text.default.inverse"],
+            "examples": ["Form submission success", "Successful transaction alert", "Completed status badge"],
+            "brand-impact": "Medium - represents positive outcomes",
+            "semantic-meaning": "Positive confirmation and success feedback",
+            "do": ["Use for positive feedback", "Combine with success icons", "Apply to confirmation messages"],
+            "dont": ["Use for warnings", "Apply without context", "Overuse for decoration"]
+          }
         },
         "contrast": {
           "$type": "color",
-          "$value": "{alias.color.state.success.contrast}"
+          "$value": "{alias.color.state.success.contrast}",
+          "$rag": {
+            "description": "High-contrast success color for emphasis",
+            "usage": ["Success button text", "Emphasized confirmations", "Success icon fills"],
+            "accessibility": "Ensures maximum visibility for success indicators",
+            "relationships": ["color.state.success.default", "color.state.success.background"],
+            "examples": ["Text on success buttons", "Success alert icons"],
+            "brand-impact": "Medium - visible success feedback",
+            "semantic-meaning": "High-contrast success indication",
+            "do": ["Use on success backgrounds", "Apply to success icons", "Ensure visibility"],
+            "dont": ["Use as primary color", "Apply without success context", "Mix with other state colors"]
+          }
         },
         "background": {
           "$type": "color",
-          "$value": "{alias.color.state.success.muted}"
+          "$value": "{alias.color.state.success.muted}",
+          "$rag": {
+            "description": "Subtle background for success alerts and notifications",
+            "usage": ["Success alert backgrounds", "Success banner fills", "Positive notification containers"],
+            "accessibility": "Provides gentle success context while maintaining readability",
+            "relationships": ["color.state.success.default", "color.text.default.default"],
+            "examples": ["Success toast background", "Confirmation banner", "Success message container"],
+            "brand-impact": "Low - subtle success indication",
+            "semantic-meaning": "Gentle success background for alerts",
+            "do": ["Use for success alerts", "Apply to notification backgrounds", "Pair with success text"],
+            "dont": ["Use for buttons", "Apply to primary content", "Make too prominent"]
+          }
         }
       },
       "error": {
         "default": {
           "$type": "color",
-          "$value": "{alias.color.state.error.default}"
+          "$value": "{alias.color.state.error.default}",
+          "$rag": {
+            "description": "Error state color for negative feedback",
+            "usage": ["Error messages", "Validation failures", "Critical alerts", "Destructive actions"],
+            "accessibility": "Always combine with error text and icons, never rely on color alone",
+            "relationships": ["color.state.error.contrast", "color.state.error.background", "color.text.default.inverse"],
+            "examples": ["Form validation errors", "Failed transaction alerts", "Destructive button backgrounds"],
+            "brand-impact": "High - critical user feedback",
+            "semantic-meaning": "Error indication and negative feedback",
+            "do": ["Use for errors and failures", "Combine with error icons", "Apply to destructive actions"],
+            "dont": ["Use for warnings", "Apply decoratively", "Use without clear error context"]
+          }
         },
         "contrast": {
           "$type": "color",
-          "$value": "{alias.color.state.error.contrast}"
+          "$value": "{alias.color.state.error.contrast}",
+          "$rag": {
+            "description": "High-contrast error color for maximum visibility",
+            "usage": ["Error button text", "Critical error icons", "Emphasized error messages"],
+            "accessibility": "Ensures error visibility for critical feedback",
+            "relationships": ["color.state.error.default", "color.state.error.background"],
+            "examples": ["Text on error buttons", "Critical alert icons", "Error badge text"],
+            "brand-impact": "High - critical visibility",
+            "semantic-meaning": "High-contrast error indication",
+            "do": ["Use on error backgrounds", "Apply to critical indicators", "Ensure maximum visibility"],
+            "dont": ["Use casually", "Apply without error context", "Mix with success colors"]
+          }
         },
         "background": {
           "$type": "color",
-          "$value": "{alias.color.state.error.muted}"
+          "$value": "{alias.color.state.error.muted}",
+          "$rag": {
+            "description": "Subtle background for error alerts and messages",
+            "usage": ["Error alert backgrounds", "Validation message containers", "Error notification fills"],
+            "accessibility": "Provides error context while maintaining content readability",
+            "relationships": ["color.state.error.default", "color.text.default.default"],
+            "examples": ["Error toast background", "Validation error container", "Failed status banner"],
+            "brand-impact": "Medium - visible error indication",
+            "semantic-meaning": "Error background for alerts and notifications",
+            "do": ["Use for error alerts", "Apply to validation messages", "Pair with error icons"],
+            "dont": ["Use for buttons", "Apply to general content", "Make alarming without reason"]
+          }
         }
       },
       "info": {
         "default": {
           "$type": "color",
-          "$value": "{alias.color.state.info.default}"
+          "$value": "{alias.color.state.info.default}",
+          "$rag": {
+            "description": "Informational state color for neutral feedback",
+            "usage": ["Info messages", "Helpful tips", "Informational alerts", "Neutral status"],
+            "accessibility": "Combine with info icons and clear messaging",
+            "relationships": ["color.state.info.contrast", "color.state.info.background", "color.text.default.inverse"],
+            "examples": ["Informational tooltips", "Help messages", "System notifications"],
+            "brand-impact": "Low - neutral information",
+            "semantic-meaning": "Neutral informational feedback",
+            "do": ["Use for helpful information", "Combine with info icons", "Apply to tips and hints"],
+            "dont": ["Use for critical information", "Apply for errors or warnings", "Overuse for decoration"]
+          }
         },
         "contrast": {
           "$type": "color",
-          "$value": "{alias.color.state.info.contrast}"
+          "$value": "{alias.color.state.info.contrast}",
+          "$rag": {
+            "description": "High-contrast info color for emphasis",
+            "usage": ["Info button text", "Information icons", "Emphasized info labels"],
+            "accessibility": "Ensures visibility for informational elements",
+            "relationships": ["color.state.info.default", "color.state.info.background"],
+            "examples": ["Text on info buttons", "Info alert icons", "Help indicator fills"],
+            "brand-impact": "Low - functional information",
+            "semantic-meaning": "High-contrast informational indication",
+            "do": ["Use on info backgrounds", "Apply to info icons", "Maintain readability"],
+            "dont": ["Use for other states", "Apply without info context", "Make too prominent"]
+          }
         },
         "background": {
           "$type": "color",
-          "$value": "{alias.color.state.info.muted}"
+          "$value": "{alias.color.state.info.muted}",
+          "$rag": {
+            "description": "Subtle background for informational messages",
+            "usage": ["Info alert backgrounds", "Tip containers", "Help message backgrounds"],
+            "accessibility": "Provides informational context without overwhelming content",
+            "relationships": ["color.state.info.default", "color.text.default.default"],
+            "examples": ["Info toast background", "Help banner", "Tip callout background"],
+            "brand-impact": "Low - subtle information",
+            "semantic-meaning": "Informational background for messages",
+            "do": ["Use for info messages", "Apply to help content", "Keep subtle"],
+            "dont": ["Use for critical alerts", "Apply to primary content", "Make too attention-grabbing"]
+          }
         }
       },
       "warning": {
         "default": {
           "$type": "color",
-          "$value": "{alias.color.state.warning.default}"
+          "$value": "{alias.color.state.warning.default}",
+          "$rag": {
+            "description": "Warning state color for cautionary feedback",
+            "usage": ["Warning messages", "Cautionary alerts", "Important notices", "Potential issues"],
+            "accessibility": "Always pair with warning icons and descriptive text",
+            "relationships": ["color.state.warning.contrast", "color.state.warning.background", "color.text.default.inverse"],
+            "examples": ["Unsaved changes warning", "Cautionary notices", "Attention-required indicators"],
+            "brand-impact": "Medium - important user attention",
+            "semantic-meaning": "Caution and warning feedback",
+            "do": ["Use for warnings", "Combine with warning icons", "Apply to important notices"],
+            "dont": ["Use for errors", "Apply for success states", "Overuse causing alarm fatigue"]
+          }
         },
         "contrast": {
           "$type": "color",
-          "$value": "{alias.color.state.warning.contrast}"
+          "$value": "{alias.color.state.warning.contrast}",
+          "$rag": {
+            "description": "High-contrast warning color for visibility",
+            "usage": ["Warning button text", "Caution icons", "Emphasized warning labels"],
+            "accessibility": "Ensures warning visibility while avoiding alarm",
+            "relationships": ["color.state.warning.default", "color.state.warning.background"],
+            "examples": ["Text on warning buttons", "Warning alert icons", "Caution badge text"],
+            "brand-impact": "Medium - visible warning indication",
+            "semantic-meaning": "High-contrast warning indication",
+            "do": ["Use on warning backgrounds", "Apply to caution icons", "Balance visibility with tone"],
+            "dont": ["Use for errors", "Apply without warning context", "Make too alarming"]
+          }
         },
         "background": {
           "$type": "color",
-          "$value": "{alias.color.state.warning.muted}"
+          "$value": "{alias.color.state.warning.muted}",
+          "$rag": {
+            "description": "Subtle background for warning alerts",
+            "usage": ["Warning alert backgrounds", "Caution message containers", "Warning notification fills"],
+            "accessibility": "Provides warning context while maintaining readability",
+            "relationships": ["color.state.warning.default", "color.text.default.default"],
+            "examples": ["Warning toast background", "Caution banner", "Important notice container"],
+            "brand-impact": "Medium - visible caution",
+            "semantic-meaning": "Warning background for alerts",
+            "do": ["Use for warning alerts", "Apply to caution messages", "Pair with warning icons"],
+            "dont": ["Use for errors or success", "Apply to general content", "Create unnecessary alarm"]
+          }
         }
       }
     },
     "border": {
       "contrast": {
         "$type": "color",
-        "$value": "{alias.color.neutral.7}"
+        "$value": "{alias.color.neutral.7}",
+        "$rag": {
+          "description": "High-contrast border for emphasis and separation",
+          "usage": ["Input field borders", "Card outlines", "Emphasized dividers", "Active element borders"],
+          "accessibility": "Provides clear visual boundaries for interactive elements",
+          "relationships": ["color.border.default", "color.border.muted", "color.text.default.default"],
+          "examples": ["Text input borders", "Card outlines", "Section dividers", "Table borders"],
+          "brand-impact": "Low - neutral structural element",
+          "semantic-meaning": "Emphasized border for definition",
+          "do": ["Use for input borders", "Apply to cards", "Create clear boundaries"],
+          "dont": ["Overuse on every element", "Apply without purpose", "Use for decorative lines only"]
+        }
       },
       "default": {
         "$type": "color",
-        "$value": "{alias.color.neutral.4}"
+        "$value": "{alias.color.neutral.4}",
+        "$rag": {
+          "description": "Standard border color for general use",
+          "usage": ["Component borders", "Dividers", "Separators", "Container outlines"],
+          "accessibility": "Provides subtle definition while maintaining clean aesthetics",
+          "relationships": ["color.border.contrast", "color.border.muted", "color.surface.level1"],
+          "examples": ["Button borders", "Panel dividers", "List item separators", "Tab borders"],
+          "brand-impact": "Low - neutral structural element",
+          "semantic-meaning": "Standard border for component definition",
+          "do": ["Use for general borders", "Apply to separators", "Maintain consistency"],
+          "dont": ["Use for focus states", "Apply for emphasis", "Mix randomly with other border colors"]
+        }
       },
       "muted": {
         "$type": "color",
-        "$value": "{alias.color.neutral.3}"
+        "$value": "{alias.color.neutral.3}",
+        "$rag": {
+          "description": "Subtle border for minimal separation",
+          "usage": ["Light dividers", "Subtle separators", "Background boundaries", "Minimal borders"],
+          "accessibility": "May have low contrast - use for non-critical boundaries",
+          "relationships": ["color.border.default", "color.surface.level2", "color.surface.level1"],
+          "examples": ["Nested card borders", "Subtle list separators", "Background section dividers"],
+          "brand-impact": "Low - minimal structural element",
+          "semantic-meaning": "Minimal border for subtle definition",
+          "do": ["Use for subtle separation", "Apply to nested elements", "Keep backgrounds clean"],
+          "dont": ["Use for important boundaries", "Apply to interactive elements", "Rely on for accessibility"]
+        }
       },
       "focus": {
         "$type": "color",
-        "$value": "{alias.color.accent.default}"
+        "$value": "{alias.color.accent.default}",
+        "$rag": {
+          "description": "Focus indicator border for keyboard navigation",
+          "usage": ["Focused input borders", "Keyboard focus rings", "Active element outlines", "Focus indicators"],
+          "accessibility": "Critical for keyboard navigation - must be clearly visible",
+          "relationships": ["color.action.default", "color.border.default", "color.border.contrast"],
+          "examples": ["Focused text inputs", "Tabbed button outlines", "Keyboard-focused links"],
+          "brand-impact": "High - brand interaction and accessibility",
+          "semantic-meaning": "Keyboard focus and active state indication",
+          "do": ["Use for all focus states", "Apply to keyboard-accessible elements", "Ensure visibility"],
+          "dont": ["Skip focus indicators", "Make invisible", "Use for non-interactive elements"]
+        }
       }
     },
     "action": {
       "default": {
         "$type": "color",
-        "$value": "{alias.color.accent.default}"
+        "$value": "{alias.color.accent.default}",
+        "$rag": {
+          "description": "Primary action color for interactive elements",
+          "usage": ["Primary buttons", "Call-to-action elements", "Interactive components", "Links", "Active states"],
+          "accessibility": "Ensure 4.5:1 contrast ratio against backgrounds and with text",
+          "relationships": ["color.action.hover", "color.action.pressed", "color.text.action.default", "color.border.focus"],
+          "examples": ["Primary CTA button", "Submit button", "Active navigation item", "Interactive links"],
+          "brand-impact": "High - core brand expression and primary interaction color",
+          "semantic-meaning": "Primary brand action and interactivity",
+          "do": ["Use for primary CTAs", "Apply to main interactive elements", "Ensure sufficient contrast", "Limit usage to maintain hierarchy"],
+          "dont": ["Overuse throughout the interface", "Use for secondary actions", "Apply without interaction purpose", "Use for decorative elements"]
+        }
       },
       "hover": {
         "$type": "color",
-        "$value": "{alias.color.accent.hover}"
+        "$value": "{alias.color.accent.hover}",
+        "$rag": {
+          "description": "Action color for hover states",
+          "usage": ["Button hover states", "Link hover effects", "Interactive element hover", "Hoverable cards"],
+          "accessibility": "Provide hover feedback but don't rely solely on color - include other visual changes",
+          "relationships": ["color.action.default", "color.action.pressed", "color.text.action.hover"],
+          "examples": ["Hovered primary button", "Link hover state", "Interactive card hover"],
+          "brand-impact": "High - brand interaction feedback",
+          "semantic-meaning": "Hover state feedback for interactive elements",
+          "do": ["Use for all interactive hovers", "Combine with other hover effects", "Apply consistently"],
+          "dont": ["Skip hover states", "Make too subtle", "Use on touch-only interfaces", "Apply without default state"]
+        }
       },
       "pressed": {
         "$type": "color",
-        "$value": "{alias.color.accent.pressed}"
+        "$value": "{alias.color.accent.pressed}",
+        "$rag": {
+          "description": "Action color for pressed/active states",
+          "usage": ["Button active states", "Pressed links", "Active toggle states", "Click feedback"],
+          "accessibility": "Ensure active states are distinguishable from other states",
+          "relationships": ["color.action.hover", "color.action.default", "color.text.action.pressed"],
+          "examples": ["Pressed primary button", "Active link state", "Clicked toggle"],
+          "brand-impact": "High - brand interaction feedback",
+          "semantic-meaning": "Active/pressed state for interactive elements",
+          "do": ["Use for active states", "Apply on click/press", "Maintain clear state transitions"],
+          "dont": ["Skip active states", "Make indistinguishable from hover", "Use inconsistently"]
+        }
       },
       "muted": {
         "$type": "color",
-        "$value": "{alias.color.accent.muted}"
+        "$value": "{alias.color.accent.muted}",
+        "$rag": {
+          "description": "Subtle action color for low-emphasis interactions",
+          "usage": ["Secondary interactive elements", "Disabled action hints", "Background fills for action elements", "Subtle badges"],
+          "accessibility": "May not meet contrast requirements - use for backgrounds, not text",
+          "relationships": ["color.action.default", "color.surface.level1", "color.text.default.default"],
+          "examples": ["Selected item background", "Active tab background", "Highlighted list item"],
+          "brand-impact": "Medium - subtle brand presence",
+          "semantic-meaning": "Subtle action background and low-emphasis interactivity",
+          "do": ["Use for backgrounds", "Apply to selected states", "Keep subtle"],
+          "dont": ["Use for primary CTAs", "Apply to text", "Overuse for emphasis"]
+        }
       },
       "inverse": {
         "default": {
           "$type": "color",
-          "$value": "{alias.color.accent.inverse.default}"
+          "$value": "{alias.color.accent.inverse.default}",
+          "$rag": {
+            "description": "Inverse action color for use on action backgrounds",
+            "usage": ["Text on primary buttons", "Icons on action backgrounds", "Labels on accent surfaces"],
+            "accessibility": "Must provide sufficient contrast on action color backgrounds",
+            "relationships": ["color.action.default", "color.action.inverse.hover", "color.text.default.inverse"],
+            "examples": ["Primary button text", "CTA button labels", "Icons on action buttons"],
+            "brand-impact": "High - visible on primary brand elements",
+            "semantic-meaning": "Foreground color for action backgrounds",
+            "do": ["Use on action backgrounds", "Ensure high contrast", "Apply to button text"],
+            "dont": ["Use on light backgrounds", "Apply without contrast check", "Mix with regular text"]
+          }
         },
         "hover": {
           "$type": "color",
-          "$value": "{alias.color.accent.inverse.hover}"
+          "$value": "{alias.color.accent.inverse.hover}",
+          "$rag": {
+            "description": "Inverse action color for hover states on action backgrounds",
+            "usage": ["Text on hovered primary buttons", "Hover state labels on action elements"],
+            "accessibility": "Maintain contrast on hover state backgrounds",
+            "relationships": ["color.action.inverse.default", "color.action.inverse.pressed", "color.action.hover"],
+            "examples": ["Hovered button text", "Label on hovered CTA"],
+            "brand-impact": "High - interaction feedback on primary elements",
+            "semantic-meaning": "Hover state foreground on action backgrounds",
+            "do": ["Use on hover backgrounds", "Maintain consistency", "Ensure visibility"],
+            "dont": ["Skip hover states", "Make invisible", "Use without hover background"]
+          }
         },
         "pressed": {
           "$type": "color",
-          "$value": "{alias.color.accent.inverse.pressed}"
+          "$value": "{alias.color.accent.inverse.pressed}",
+          "$rag": {
+            "description": "Inverse action color for pressed states on action backgrounds",
+            "usage": ["Text on pressed primary buttons", "Active state labels on action elements"],
+            "accessibility": "Ensure contrast on all interaction states",
+            "relationships": ["color.action.inverse.hover", "color.action.inverse.default", "color.action.pressed"],
+            "examples": ["Pressed button text", "Active CTA label"],
+            "brand-impact": "High - interaction feedback on primary elements",
+            "semantic-meaning": "Pressed state foreground on action backgrounds",
+            "do": ["Use on pressed backgrounds", "Complete the interaction state cycle", "Maintain visibility"],
+            "dont": ["Skip active states", "Make too subtle", "Apply inconsistently"]
+          }
         },
         "muted": {
           "$type": "color",
-          "$value": "{alias.color.accent.inverse.muted}"
+          "$value": "{alias.color.accent.inverse.muted}",
+          "$rag": {
+            "description": "Subtle inverse action color for secondary content on action backgrounds",
+            "usage": ["Secondary text on action backgrounds", "Subtle icons on primary buttons", "Supporting labels"],
+            "accessibility": "May have reduced contrast - use sparingly for non-critical content",
+            "relationships": ["color.action.inverse.default", "color.action.muted"],
+            "examples": ["Secondary text on CTA buttons", "Icon details on action elements"],
+            "brand-impact": "Medium - subtle content on brand elements",
+            "semantic-meaning": "Subtle foreground for action backgrounds",
+            "do": ["Use for secondary content", "Keep subtle", "Use sparingly"],
+            "dont": ["Use for primary button text", "Apply to critical labels", "Overuse"]
+          }
         }
       }
     }
