@@ -1,0 +1,910 @@
+# Component Generation Rules for AI-Assisted Development
+# Version: 1.0
+# Purpose: Defines variant definitions, token mappings, and constraints for AI-assisted component generation
+# Pattern: RAG (Retrieval-Augmented Generation) implementation for Muka Design System
+
+# ==============================================================================
+# SYSTEM OVERVIEW
+# ==============================================================================
+system:
+  name: "Muka Design System"
+  version: "1.0"
+  brands:
+    - name: "muka"
+      description: "Creative brand with indigo accent"
+      primary_color: "{color.indigo.9}"
+    - name: "wireframe"
+      description: "Professional brand with gray palette"
+      primary_color: "{color.gray.11}"
+  themes:
+    - "light"
+    - "dark"
+  token_architecture:
+    layers:
+      - name: "t1-primitives"
+        description: "Raw design values (colors, scales, typography)"
+        usage: "Never use directly in components"
+      - name: "t2-alias"
+        description: "Brand-specific decisions and personality"
+        usage: "Brand customization point"
+      - name: "t3-semantics"
+        description: "Usage intent and functional meaning"
+        usage: "Stable, defines system behavior"
+      - name: "t4-components"
+        description: "Component-specific implementations"
+        usage: "Use these in component CSS"
+
+# ==============================================================================
+# NAMING CONVENTIONS
+# ==============================================================================
+naming_conventions:
+  css_classes:
+    pattern: "muka-{component}--{modifier}"
+    example: "muka-button--primary"
+    rules:
+      - "Use BEM-like naming with 'muka-' prefix"
+      - "Block: .muka-{component}"
+      - "Element: .muka-{component}__{element}"
+      - "Modifier: .muka-{component}--{modifier}"
+      - "State: .muka-{component}--{state}"
+  
+  component_files:
+    pattern: "ComponentName"
+    structure:
+      - "ComponentName.tsx"
+      - "ComponentName.css"
+      - "ComponentName.stories.tsx"
+      - "ComponentName.test.tsx"
+      - "index.ts"
+  
+  token_references:
+    component_tokens: "var(--{component}-{category}-{variant}-{property}-{state})"
+    semantic_tokens: "var(--{category}-{intent}-{variant})"
+    examples:
+      - "var(--button-color-primary-background-default)"
+      - "var(--color-action-default)"
+      - "var(--spacing-4)"
+
+# ==============================================================================
+# COMMON DESIGN PATTERNS
+# ==============================================================================
+common_patterns:
+  sizes:
+    standard: ["sm", "md", "lg"]
+    description: "Default size variants for most components"
+    token_mapping:
+      sm: "Uses smaller spacing and font sizes"
+      md: "Default/medium size (most common)"
+      lg: "Larger spacing and font sizes"
+  
+  states:
+    interactive:
+      - default
+      - hover
+      - pressed
+      - disabled
+      - focused
+    form:
+      - default
+      - hover
+      - focus
+      - error
+      - disabled
+    selection:
+      - default
+      - selected
+      - disabled
+  
+  color_categories:
+    - background
+    - foreground
+    - border
+    - shadow
+    - accent
+  
+  spacing_properties:
+    padding:
+      x: "horizontal padding"
+      y: "vertical padding"
+    margin:
+      top: "top margin"
+      bottom: "bottom margin"
+      left: "left margin"
+      right: "right margin"
+    gap: "space between child elements"
+
+# ==============================================================================
+# COMPONENT RULES
+# ==============================================================================
+components:
+  
+  # ----------------------------------------------------------------------------
+  # BUTTON
+  # ----------------------------------------------------------------------------
+  button:
+    description: "Interactive button for actions and CTAs"
+    
+    variants:
+      primary:
+        token_mappings:
+          background:
+            default: "{button.color.primary.background.default}"
+            hover: "{button.color.primary.background.hover}"
+            pressed: "{button.color.primary.background.pressed}"
+            disabled: "{button.color.primary.background.disabled}"
+          foreground:
+            default: "{button.color.primary.foreground.default}"
+            hover: "{button.color.primary.foreground.hover}"
+            pressed: "{button.color.primary.foreground.pressed}"
+            disabled: "{button.color.primary.foreground.disabled}"
+          shadow:
+            default: "{button.color.primary.shadow.default}"
+            hover: "{button.color.primary.shadow.hover}"
+            pressed: "{button.color.primary.shadow.pressed}"
+        usage: "Main call-to-action, primary user action"
+        visual_weight: "highest"
+        usage_limit: "1-2 per screen maximum"
+        examples:
+          - "Sign up button"
+          - "Buy now CTA"
+          - "Submit form button"
+        do:
+          - "Use for the most important action"
+          - "Ensure sufficient contrast"
+          - "Limit to 1-2 per screen"
+        dont:
+          - "Use for secondary actions"
+          - "Overuse in layouts"
+          - "Use without clear purpose"
+      
+      secondary:
+        token_mappings:
+          background:
+            default: "{button.color.secondary.background.default}"
+            hover: "{button.color.secondary.background.hover}"
+            pressed: "{button.color.secondary.background.pressed}"
+            disabled: "{button.color.secondary.background.disabled}"
+          foreground:
+            default: "{button.color.secondary.foreground.default}"
+            hover: "{button.color.secondary.foreground.hover}"
+            pressed: "{button.color.secondary.foreground.pressed}"
+            disabled: "{button.color.secondary.foreground.disabled}"
+          shadow:
+            default: "{button.color.secondary.shadow.default}"
+        usage: "Supporting actions, secondary choices"
+        visual_weight: "medium"
+        examples:
+          - "Cancel button"
+          - "Alternative actions"
+          - "Supporting CTAs"
+        do:
+          - "Use for secondary actions"
+          - "Pair with primary buttons"
+        dont:
+          - "Use for primary actions"
+          - "Use without context"
+      
+      tertiary:
+        token_mappings:
+          background:
+            default: "{button.color.tertiary.background.default}"
+            hover: "{button.color.tertiary.background.hover}"
+            pressed: "{button.color.tertiary.background.pressed}"
+            disabled: "{button.color.tertiary.background.disabled}"
+          foreground:
+            default: "{button.color.tertiary.foreground.default}"
+            hover: "{button.color.tertiary.foreground.hover}"
+            pressed: "{button.color.tertiary.foreground.pressed}"
+            disabled: "{button.color.tertiary.foreground.disabled}"
+          border:
+            default: "{button.color.tertiary.border.default}"
+            hover: "{button.color.tertiary.border.hover}"
+            pressed: "{button.color.tertiary.border.pressed}"
+        usage: "Alternative actions, less emphasis than secondary"
+        visual_weight: "medium-low"
+      
+      ghost:
+        token_mappings:
+          background:
+            default: "{button.color.ghost.background.default}"  # transparent
+            hover: "{button.color.ghost.background.hover}"
+            pressed: "{button.color.ghost.background.pressed}"
+          foreground:
+            default: "{button.color.ghost.foreground.default}"
+            hover: "{button.color.ghost.foreground.hover}"
+            pressed: "{button.color.ghost.foreground.pressed}"
+            disabled: "{button.color.ghost.foreground.disabled}"
+          border:
+            default: "{button.color.ghost.border.default}"  # transparent
+            hover: "{button.color.ghost.border.hover}"
+            pressed: "{button.color.ghost.border.pressed}"
+        usage: "Tertiary actions, subtle interactions, toolbar buttons"
+        visual_weight: "lowest"
+        examples:
+          - "Close buttons"
+          - "Menu items"
+          - "Subtle actions"
+    
+    sizing:
+      sm:
+        padding_x: "{button.padding.sm.x}"
+        padding_y: "{button.padding.sm.y}"
+        label_margin: "{button.label.margin.sm}"
+        radius: "{button.radius.sm}"
+        min_height: "32px"
+        font_size: "{text.label.sm.semibold}"
+      md:
+        padding_x: "{button.padding.md.x}"
+        padding_y: "{button.padding.md.y}"
+        label_margin: "{button.label.margin.md}"
+        radius: "{button.radius.md}"
+        min_height: "40px"
+        font_size: "{text.label.md.semibold}"
+      lg:
+        padding_x: "{button.padding.lg.x}"
+        padding_y: "{button.padding.lg.y}"
+        label_margin: "{button.label.margin.lg}"
+        radius: "{button.radius.lg}"
+        min_height: "48px"
+        font_size: "{text.label.lg.semibold}"
+    
+    features:
+      - "Icon support (left, right, or both)"
+      - "Icon-only mode with aria-label"
+      - "Full width option"
+      - "Loading state"
+    
+    accessibility:
+      required:
+        - "Use native <button> element"
+        - "Icon-only buttons must have aria-label"
+        - "Keyboard support (Space, Enter)"
+        - "Focus indicator with :focus-visible"
+        - "Disabled buttons use aria-disabled"
+      wcag_level: "AA"
+      contrast_ratio: "4.5:1 minimum"
+      focus_indicator: "Use {color.border.focus} with 2px outline"
+    
+    constraints:
+      - "Minimum touch target: 44x44px (mobile)"
+      - "Button text should be concise (1-3 words)"
+      - "Maintain consistent spacing between buttons (use gap tokens)"
+      - "Always provide clear action verb"
+  
+  # ----------------------------------------------------------------------------
+  # BADGE
+  # ----------------------------------------------------------------------------
+  badge:
+    description: "Compact status indicators for labels, counts, and status"
+    
+    variants:
+      neutral:
+        usage: "Default badge for general labels"
+        semantic_meaning: "Neutral information"
+      info:
+        color_reference: "{color.state.info}"
+        usage: "Informational badges"
+        semantic_meaning: "Helpful information"
+      success:
+        color_reference: "{color.state.success}"
+        usage: "Success states, confirmations"
+        semantic_meaning: "Positive outcome"
+      warning:
+        color_reference: "{color.state.warning}"
+        usage: "Warning states, cautions"
+        semantic_meaning: "Caution required"
+      error:
+        color_reference: "{color.state.error}"
+        usage: "Error states, critical issues"
+        semantic_meaning: "Error or failure"
+    
+    sizing:
+      sm:
+        height: "{badge.size.height.sm}"
+        dot_size: "{badge.size.dot.sm}"
+      md:
+        height: "{badge.size.height.md}"
+        dot_size: "{badge.size.dot.md}"
+      lg:
+        height: "{badge.size.height.lg}"
+        dot_size: "{badge.size.dot.lg}"
+    
+    features:
+      - "Optional leading icon"
+      - "Optional dot indicator"
+      - "Non-interactive (use Chip for interactive)"
+      - "Non-dismissible"
+    
+    accessibility:
+      required:
+        - "Use role='status' for dynamic content"
+        - "Include aria-label if meaning not clear from text"
+        - "Color is not the only differentiator (use icons)"
+    
+    constraints:
+      - "Keep text short (1-2 words)"
+      - "Use semantic variants for meaning"
+      - "Don't use for interactive elements (use Chip)"
+  
+  # ----------------------------------------------------------------------------
+  # CARD
+  # ----------------------------------------------------------------------------
+  card:
+    description: "Container for grouped content with optional interactivity"
+    
+    variants:
+      default:
+        token_mappings:
+          background: "{card.color.default.background}"
+          foreground: "{card.color.default.foreground}"
+          border: "{card.color.default.border}"
+          shadow: "{card.shadow.default}"
+        usage: "Non-interactive card for content display"
+        interactive: false
+      
+      interactive:
+        token_mappings:
+          background:
+            default: "{card.color.default.background}"
+            hover: "{card.color.hover.background}"
+            pressed: "{card.color.pressed.background}"
+          border:
+            default: "{card.color.default.border}"
+            hover: "{card.color.hover.border}"
+            pressed: "{card.color.pressed.border}"
+          shadow:
+            default: "{card.shadow.default}"
+            hover: "{card.shadow.hover}"
+            pressed: "{card.shadow.pressed}"
+        usage: "Clickable card with hover/press states"
+        interactive: true
+        accessibility_role: "button"
+      
+      selected:
+        token_mappings:
+          background: "{card.color.selected.background}"
+          border: "{card.color.selected.border}"
+          shadow: "{card.shadow.selected}"
+        usage: "Selected state for card selection patterns"
+        interactive: true
+    
+    sizing:
+      padding:
+        sm: "{card.padding.sm}"
+        md: "{card.padding.md}"
+        lg: "{card.padding.lg}"
+        none: "0"
+      radius:
+        sm: "{card.radius.sm}"
+        md: "{card.radius.md}"
+        lg: "{card.radius.lg}"
+    
+    accessibility:
+      required:
+        - "Interactive cards use role='button'"
+        - "Keyboard support (Enter, Space)"
+        - "Focus indicator on interactive cards"
+        - "aria-pressed for selected state"
+      
+    constraints:
+      - "Use semantic HTML (article, section) when appropriate"
+      - "Avoid nesting interactive cards"
+      - "Maintain consistent padding across cards in a layout"
+  
+  # ----------------------------------------------------------------------------
+  # INPUT
+  # ----------------------------------------------------------------------------
+  input:
+    description: "Text input field with label, helper text, and error states"
+    
+    states:
+      default:
+        token_mappings:
+          background: "{input.field.color.default.background}"
+          foreground: "{input.field.color.default.foreground}"
+          border: "{input.field.color.default.border}"
+        description: "Normal resting state"
+      
+      hover:
+        token_mappings:
+          background: "{input.field.color.hover.background}"
+          foreground: "{input.field.color.hover.foreground}"
+          border: "{input.field.color.hover.border}"
+        description: "Mouse hover state"
+      
+      focus:
+        token_mappings:
+          background: "{input.field.color.focus.background}"
+          foreground: "{input.field.color.focus.foreground}"
+          border: "{input.field.color.focus.border}"
+        description: "Focused input with keyboard cursor"
+        border_width: "{border.width.bold}"
+      
+      error:
+        token_mappings:
+          background: "{input.field.color.error.background}"
+          foreground: "{input.field.color.error.foreground}"
+          border: "{input.field.color.error.border}"
+        description: "Validation error state"
+        accessibility: "Error message must have role='alert'"
+      
+      disabled:
+        token_mappings:
+          background: "{input.field.color.disabled.background}"
+          foreground: "{input.field.color.disabled.foreground}"
+          border: "{input.field.color.disabled.border}"
+        description: "Disabled non-editable state"
+    
+    sizing:
+      sm:
+        height: "{input.field.height.sm}"
+        padding_x: "{input.field.padding.x}"
+        padding_y: "{input.field.padding.y}"
+        font: "{text.input.sm}"
+      md:
+        height: "{input.field.height.default}"
+        padding_x: "{input.field.padding.x}"
+        padding_y: "{input.field.padding.y}"
+        font: "{text.input.md}"
+      lg:
+        height: "{input.field.height.lg}"
+        padding_x: "{input.field.padding.x}"
+        padding_y: "{input.field.padding.y}"
+        font: "{text.input.lg}"
+    
+    features:
+      - "Label (optional but recommended)"
+      - "Helper text"
+      - "Error message with role='alert'"
+      - "Icon support (left, right, or both)"
+      - "Required field indicator (*)"
+    
+    accessibility:
+      required:
+        - "Associate label with input via htmlFor/id"
+        - "Use aria-invalid for error state"
+        - "Use aria-describedby for helper text and errors"
+        - "Required fields marked with required attribute and visual indicator"
+        - "Error messages use role='alert'"
+      wcag_level: "AA"
+    
+    constraints:
+      - "Label should clearly describe input purpose"
+      - "Error messages should be specific and actionable"
+      - "Placeholder is not a substitute for label"
+      - "Helper text provides additional context"
+  
+  # ----------------------------------------------------------------------------
+  # ALERT
+  # ----------------------------------------------------------------------------
+  alert:
+    description: "Inline alert for status messages and notifications"
+    
+    variants:
+      info:
+        token_mappings:
+          background: "{alert.color.info.background}"
+          foreground: "{alert.color.info.foreground}"
+          accent: "{alert.color.info.accent}"
+          border: "{alert.color.info.border}"
+        usage: "Informational messages"
+        role: "status"
+        icon: "information"
+      
+      success:
+        token_mappings:
+          background: "{alert.color.success.background}"
+          foreground: "{alert.color.success.foreground}"
+          accent: "{alert.color.success.accent}"
+          border: "{alert.color.success.border}"
+        usage: "Success confirmations"
+        role: "status"
+        icon: "check"
+      
+      warning:
+        token_mappings:
+          background: "{alert.color.warning.background}"
+          foreground: "{alert.color.warning.foreground}"
+          accent: "{alert.color.warning.accent}"
+          border: "{alert.color.warning.border}"
+        usage: "Warning messages"
+        role: "status"
+        icon: "error-warning"
+      
+      error:
+        token_mappings:
+          background: "{alert.color.error.background}"
+          foreground: "{alert.color.error.foreground}"
+          accent: "{alert.color.error.accent}"
+          border: "{alert.color.error.border}"
+        usage: "Error messages"
+        role: "alert"
+        aria_live: "assertive"
+        icon: "error-warning"
+    
+    sizing:
+      sm:
+        padding_x: "{alert.padding.sm.x}"
+        padding_y: "{alert.padding.sm.y}"
+      md:
+        padding_x: "{alert.padding.md.x}"
+        padding_y: "{alert.padding.md.y}"
+      lg:
+        padding_x: "{alert.padding.lg.x}"
+        padding_y: "{alert.padding.lg.y}"
+    
+    common_tokens:
+      radius: "{alert.radius}"
+      gap: "{alert.gap}"
+      icon_size: "{alert.icon.size}"
+      border_width: "{alert.border.width}"
+    
+    features:
+      - "Optional title"
+      - "Variant-specific default icons"
+      - "Custom icon support"
+      - "Dismissible with close button"
+      - "Action element (button/link)"
+    
+    accessibility:
+      required:
+        - "Error alerts use role='alert' and aria-live='assertive'"
+        - "Other variants use role='status' and aria-live='polite'"
+        - "Color is not the only differentiator (use icons)"
+        - "Dismiss button has aria-label"
+    
+    constraints:
+      - "Keep messages concise and actionable"
+      - "Use appropriate variant for message type"
+      - "Don't stack multiple alerts (use Toast for multiple)"
+
+# ==============================================================================
+# ACCESSIBILITY GUIDELINES
+# ==============================================================================
+accessibility:
+  general_principles:
+    - "Follow WAI-ARIA Authoring Practices Guide (APG)"
+    - "Meet WCAG 2.1 Level AA standards minimum"
+    - "Provide keyboard navigation for all interactive elements"
+    - "Ensure visible focus indicators (:focus-visible)"
+    - "Use semantic HTML elements when possible"
+    - "Color is never the only means of conveying information"
+  
+  focus_management:
+    focus_indicator:
+      color: "{color.border.focus}"
+      width: "2px"
+      style: "solid outline"
+      offset: "2px"
+    keyboard_support:
+      - "Tab: Move focus between elements"
+      - "Enter: Activate buttons and links"
+      - "Space: Activate buttons, toggle checkboxes"
+      - "Escape: Close modals, dismiss overlays"
+      - "Arrow keys: Navigate lists, menus, tabs"
+  
+  color_contrast:
+    wcag_aa:
+      normal_text: "4.5:1"
+      large_text: "3:1"
+      ui_components: "3:1"
+    wcag_aaa:
+      normal_text: "7:1"
+      large_text: "4.5:1"
+  
+  aria_patterns:
+    button:
+      role: "button"
+      attributes:
+        - "aria-label (for icon-only)"
+        - "aria-pressed (for toggle)"
+        - "aria-expanded (for menus)"
+        - "aria-disabled (when disabled)"
+    
+    form_field:
+      required_associations:
+        - "Label associated via htmlFor/id"
+        - "aria-describedby for helper text"
+        - "aria-invalid for error state"
+        - "aria-required for required fields"
+    
+    alert:
+      role: "alert or status"
+      attributes:
+        - "aria-live: assertive (errors)"
+        - "aria-live: polite (other)"
+
+# ==============================================================================
+# TOKEN USAGE RULES
+# ==============================================================================
+token_usage:
+  hierarchy:
+    preferred_order:
+      1: "Component tokens (t4-components)"
+      2: "Semantic tokens (t3-semantics)"
+      3: "Never use primitives directly"
+  
+  resolution_chain:
+    example: |
+      button.color.primary.background.default 
+        → {color.action.default}
+        → {alias.color.brand.primary}
+        → {color.indigo.9}
+        → "#3e63dd"
+  
+  common_semantic_tokens:
+    colors:
+      action:
+        - "{color.action.default}"
+        - "{color.action.hover}"
+        - "{color.action.pressed}"
+        - "{color.action.muted}"
+        - "{color.action.inverse.default}"
+      surface:
+        - "{color.surface.sunken}"
+        - "{color.surface.level0}"
+        - "{color.surface.level1}"
+        - "{color.surface.level2}"
+        - "{color.surface.level3}"
+        - "{color.surface.backdrop}"
+        - "{color.surface.inverse}"
+      text:
+        - "{color.text.default.default}"
+        - "{color.text.default.inverse}"
+        - "{color.text.subtle.default}"
+        - "{color.text.muted.default}"
+      border:
+        - "{color.border.default}"
+        - "{color.border.contrast}"
+        - "{color.border.muted}"
+        - "{color.border.focus}"
+      state:
+        - "{color.state.success.default}"
+        - "{color.state.error.default}"
+        - "{color.state.warning.default}"
+        - "{color.state.info.default}"
+    
+    spacing:
+      scale: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      usage: "{spacing.{scale}}"
+      examples:
+        - "{spacing.2}  # Small spacing"
+        - "{spacing.4}  # Medium spacing"
+        - "{spacing.6}  # Large spacing"
+    
+    typography:
+      headings:
+        - "{text.heading.xl}"
+        - "{text.heading.lg}"
+        - "{text.heading.md}"
+        - "{text.heading.sm}"
+        - "{text.heading.xs}"
+      labels:
+        - "{text.label.sm.regular}"
+        - "{text.label.md.semibold}"
+        - "{text.label.lg.bold}"
+      body:
+        - "{text.body.sm.regular}"
+        - "{text.body.base.regular}"
+        - "{text.body.lg.regular}"
+    
+    shadows:
+      - "{shadow.level1}"
+      - "{shadow.level2}"
+      - "{shadow.level3}"
+      - "{shadow.bevel}"
+      - "{shadow.sunken}"
+
+# ==============================================================================
+# BRAND CUSTOMIZATION
+# ==============================================================================
+brand_customization:
+  description: "Brand customization happens at the alias layer (t2-alias)"
+  
+  process:
+    1: "Define brand colors in alias layer"
+    2: "Override alias.color.brand.primary"
+    3: "Override alias.color.accent.default"
+    4: "Override alias.font.brand.family"
+    5: "Changes propagate through semantic and component layers"
+  
+  example_muka:
+    alias:
+      color:
+        brand:
+          primary: "{color.indigo.9}"
+        accent:
+          default: "{color.indigo.9}"
+      font:
+        brand:
+          family: "Funnel Display"
+  
+  example_wireframe:
+    alias:
+      color:
+        brand:
+          primary: "{color.gray.11}"
+        accent:
+          default: "{color.gray.11}"
+      font:
+        brand:
+          family: "Inter"
+  
+  brand_impact:
+    high:
+      - "Primary buttons"
+      - "Links and CTAs"
+      - "Focus indicators"
+      - "Brand headers"
+    
+    low:
+      - "Surface colors"
+      - "Neutral borders"
+      - "Body text"
+
+# ==============================================================================
+# COMPONENT DEVELOPMENT WORKFLOW
+# ==============================================================================
+development_workflow:
+  steps:
+    1:
+      name: "Review component token file"
+      location: "tokens/t4-components/{component}.json"
+      action: "Understand available tokens and variants"
+    
+    2:
+      name: "Define component structure"
+      file: "components/{Component}/{Component}.tsx"
+      requirements:
+        - "Export props interface"
+        - "Support variants via props"
+        - "Use data attributes for CSS variants"
+        - "Include accessibility props"
+    
+    3:
+      name: "Implement styles"
+      file: "components/{Component}/{Component}.css"
+      requirements:
+        - "Use component tokens (t4)"
+        - "Use CSS custom properties (var(--token-name))"
+        - "BEM-like class naming"
+        - "Support all variants and states"
+    
+    4:
+      name: "Create stories"
+      file: "components/{Component}/{Component}.stories.tsx"
+      requirements:
+        - "Document all variants"
+        - "Show all sizes"
+        - "Demonstrate states"
+        - "Include usage examples"
+    
+    5:
+      name: "Write tests"
+      files:
+        - "tests/components/{Component}.test.tsx"
+        - "tests/visual/{Component}.visual.test.tsx"
+      requirements:
+        - "Test accessibility (roles, ARIA)"
+        - "Test keyboard navigation"
+        - "Test variants and states"
+        - "Visual regression tests"
+  
+  checklist:
+    api:
+      - "API mirrors Figma composition"
+      - "No unnecessary props"
+      - "Variants via explicit props"
+    
+    accessibility:
+      - "Correct semantic HTML or ARIA roles"
+      - "Keyboard navigation support"
+      - "Focus management"
+      - "Disabled state handling"
+    
+    tokens:
+      - "Uses component tokens (t4)"
+      - "Fallback to semantic tokens (t3)"
+      - "Never uses primitives directly"
+      - "Supports all theme variants"
+    
+    testing:
+      - "Unit tests cover behavior and a11y"
+      - "Visual tests cover appearance"
+      - "Tests run across all themes"
+      - "Storybook stories demonstrate variants"
+
+# ==============================================================================
+# AI GENERATION GUIDELINES
+# ==============================================================================
+ai_guidelines:
+  description: "Guidelines for AI when generating components"
+  
+  component_generation:
+    analyze:
+      - "Identify component type and purpose"
+      - "Determine required variants"
+      - "Map to appropriate tokens"
+      - "Check accessibility requirements"
+    
+    validate:
+      - "Token usage follows hierarchy"
+      - "All states have proper tokens"
+      - "Accessibility requirements met"
+      - "Naming conventions followed"
+    
+    generate:
+      - "TypeScript React component with props interface"
+      - "CSS using token custom properties"
+      - "Storybook stories for all variants"
+      - "Unit tests covering functionality"
+      - "Visual regression tests"
+  
+  best_practices:
+    - "Start with similar existing components as reference"
+    - "Use component tokens when available"
+    - "Ensure responsive behavior with layout tokens"
+    - "Test across all brand/theme combinations"
+    - "Document usage and constraints"
+    - "Include accessibility notes in comments"
+  
+  common_mistakes:
+    avoid:
+      - "Using primitive tokens directly in components"
+      - "Hardcoding color values"
+      - "Skipping accessibility attributes"
+      - "Inconsistent naming conventions"
+      - "Missing keyboard support"
+      - "Forgetting disabled states"
+      - "Not testing across themes"
+
+# ==============================================================================
+# RESPONSIVE DESIGN
+# ==============================================================================
+responsive_design:
+  breakpoints:
+    sm: "640px"
+    md: "768px"
+    lg: "1024px"
+    xl: "1280px"
+  
+  responsive_tokens:
+    location: "tokens/t2-alias/layout/"
+    files:
+      - "mobile.json (base)"
+      - "tablet.json (md overrides)"
+      - "desktop.json (lg overrides)"
+  
+  responsive_properties:
+    - "section.padding.horizontal.default"
+    - "section.padding.vertical.default"
+    - "container.gap.*"
+    - "container.max-width.*"
+  
+  implementation:
+    production: "Uses @media queries automatically"
+    storybook: "Uses data-layout attribute for manual control"
+    figma: "Uses variable modes for layout"
+
+# ==============================================================================
+# REFERENCES
+# ==============================================================================
+references:
+  internal_docs:
+    - "docs/guides/rag-implementation.md"
+    - "docs/guides/token-architecture-guide.md"
+    - "docs/guides/component-development.md"
+    - "docs/guides/multi-brand-strategy.md"
+    - "CLAUDE.md"
+  
+  external_standards:
+    - url: "https://www.w3.org/WAI/ARIA/apg/patterns/"
+      description: "WAI-ARIA Authoring Practices Guide"
+    - url: "https://www.w3.org/WAI/WCAG21/quickref/"
+      description: "WCAG 2.1 Quick Reference"
+    - url: "https://design-tokens.org/"
+      description: "Design Tokens Community Group"
+  
+  token_schema:
+    url: "https://design-tokens.org/schemas/1.0/schema.json"
+    description: "W3C Design Tokens Format Module"
