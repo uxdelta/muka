@@ -42,13 +42,16 @@ primitives → alias → semantic → component
 ### Current Brands
 
 - **Muka:** Modern, creative brand with orange primary color
-- **WhiteLabel:** Professional, clean brand with blue primary color
+- **Wireframe:** Professional, clean brand with blue primary color
 
 ### AI-First Development
 
 This system is optimized for AI-assisted development using tools like Cursor, with rich metadata and clear architectural patterns.
 
 ## 📚 Documentation
+
+### Product
+- [Product Brief](./product-brief.md) - Vision, scope, feature pillars, and success criteria
 
 ### Architecture & Decisions
 - [ADR-001: Token Architecture](./architecture/adr-001-token-architecture.md) - Core architectural decisions and rationale
@@ -90,7 +93,7 @@ When working with this design system:
 
 To create a new brand variant:
 
-1. Create folder: `themes/[brandname]/`
+1. Create folder: `tokens/t2-alias/brand/[brandname]/`
 2. Define alias overrides: Start with `base.json`
 3. Test propagation: Verify changes affect all components
 4. Document rationale: Explain brand decisions
