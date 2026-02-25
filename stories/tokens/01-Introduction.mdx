@@ -1,0 +1,321 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Design Tokens/01 - Introduction" />
+
+# Muka Design Token System
+
+The Muka design system uses a 4-layer token architecture that enables multi-brand theming, consistent design decisions, and maintainable scalability.
+
+## Why Design Tokens?
+
+Design tokens are the foundation of the Muka design system. They provide:
+
+- **Consistency**: Shared design decisions across all components
+- **Multi-brand support**: Switch between Muka and Wireframe brands instantly
+- **Theme switching**: Light and dark modes with zero component changes
+- **Maintainability**: Change one token, update everywhere
+- **Developer experience**: Clear naming conventions and documentation
+
+## The 4-Layer Architecture
+
+```
+┌─────────────────────────────────────────────────────┐
+│  T4: Components                                     │
+│  button.color.primary.background.default            │
+│  ↓ references                                       │
+└─────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────┐
+│  T3: Semantics                                      │
+│  color.action.default                               │
+│  ↓ references                                       │
+└─────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────┐
+│  T2: Alias (Brand + Theme specific)                 │
+│  alias.color.accent.default → {color.indigo.9}      │
+│  ↓ resolves to                                      │
+└─────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────┐
+│  T1: Primitives                                     │
+│  color.indigo.9 → #3e63dd                           │
+└─────────────────────────────────────────────────────┘
+```
+
+### Layer 1: Primitives (t1-primitives/)
+
+**Raw, immutable design values**
+
+- Color palettes (gray, indigo, red, blue, etc.)
+- Spacing scales (0, 1, 2, 3... 96)
+- Typography primitives (font sizes, weights, families)
+- Border radius values
+
+**Never use directly in components!**
+
+```json
+{
+  "color": {
+    "indigo": {
+      "9": {
+        "$type": "color",
+        "$value": "#3e63dd"
+      }
+    }
+  }
+}
+```
+
+### Layer 2: Alias (t2-alias/)
+
+**Brand-agnostic semantic references with brand overrides**
+
+- Base aliases that reference primitives: `{color.gray.9}`
+- Brand-specific overrides in `brand/muka/` and `brand/wireframe/`
+- Theme-specific variations (light/dark)
+
+```json
+{
+  "alias": {
+    "color": {
+      "accent": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.indigo.9}"
+        }
+      }
+    }
+  }
+}
+```
+
+### Layer 3: Semantics (t3-semantics/)
+
+**Meaningful abstractions with design intent**
+
+- Surface colors (backgrounds, overlays)
+- Text colors (default, subtle, muted)
+- State colors (success, error, warning, info)
+- Border colors
+- Action colors
+
+```json
+{
+  "color": {
+    "action": {
+      "default": {
+        "$type": "color",
+        "$value": "{alias.color.accent.default}"
+      }
+    }
+  }
+}
+```
+
+### Layer 4: Components (t4-components/)
+
+**Component-specific tokens**
+
+- Button tokens (`button.color.primary.background.default`)
+- Input tokens (`input.color.border.default`)
+- Card tokens (`card.padding.md`)
+
+```json
+{
+  "button": {
+    "color": {
+      "primary": {
+        "background": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.action.default}"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+## Token Resolution Flow
+
+When you use a component token, here's how it resolves:
+
+```
+Component CSS:
+  background-color: var(--button-color-primary-background-default);
+
+Token Resolution:
+  button.color.primary.background.default
+  → {color.action.default}                    (T4 → T3)
+  → {alias.color.accent.default}              (T3 → T2)
+  → {color.indigo.9}                          (T2 → T1)
+  → #3e63dd                                   (T1 → Value)
+
+Final CSS:
+  background-color: #3e63dd;
+```
+
+## Multi-Brand & Theme Support
+
+The system supports 4 combinations:
+
+| Brand | Theme | Primary Color | Description |
+|-------|-------|---------------|-------------|
+| Muka | Light | Indigo | Creative, modern, vibrant |
+| Muka | Dark | Indigo | Creative, modern, dark mode |
+| Wireframe | Light | Gray | Professional, neutral, enterprise |
+| Wireframe | Dark | Gray | Professional, neutral, dark mode |
+
+### How Brand Switching Works
+
+The alias layer (t2) contains brand-specific overrides:
+
+**Base (t2-alias/base.json):**
+```json
+{
+  "alias": {
+    "color": {
+      "accent": {
+        "default": { "$value": "{color.gray.9}" }
+      }
+    }
+  }
+}
+```
+
+**Muka Override (t2-alias/brand/muka/light.json):**
+```json
+{
+  "alias": {
+    "color": {
+      "accent": {
+        "default": { "$value": "{color.indigo.9}" }
+      }
+    }
+  }
+}
+```
+
+When you switch brands in Storybook, the build system loads different alias tokens, but **all components remain unchanged**!
+
+## Build Process
+
+Tokens are built using `scripts/build-tokens.js`:
+
+```bash
+npm run build:tokens
+```
+
+This process:
+1. Reads `build/manifest.json` for theme configurations
+2. Loads tokens in order (t1 → t2 → t3 → t4)
+3. Resolves all references (`{token.path}` → actual value)
+4. Generates CSS custom properties in `styles/tokens-{brand}-{theme}.css`
+
+**Example Output:**
+```css
+/* styles/tokens-muka-light.css */
+:root {
+  --button-color-primary-background-default: #3e63dd;
+  --button-color-primary-foreground-default: #ffffff;
+  --button-padding-md-x: 1.25rem;
+  --button-padding-md-y: 0.75rem;
+}
+```
+
+## Using Tokens in Components
+
+### In CSS
+
+Always use component tokens (T4) or semantic tokens (T3):
+
+```css
+/* ✅ Good - Uses component token */
+.muka-button--primary {
+  background-color: var(--button-color-primary-background-default);
+  color: var(--button-color-primary-foreground-default);
+  padding: var(--button-padding-md-y) var(--button-padding-md-x);
+}
+
+/* ✅ Good - Uses semantic token for custom component */
+.custom-component {
+  background-color: var(--color-surface-level1);
+  color: var(--color-text-default-default);
+  border: 1px solid var(--color-border-default);
+}
+
+/* ❌ Bad - Never use primitives directly */
+.bad-component {
+  background-color: var(--color-indigo-9);
+  color: var(--color-gray-12);
+}
+```
+
+### In React/TypeScript
+
+```tsx
+import './Button.css';
+
+export const Button = ({ variant = 'primary', children }) => {
+  return (
+    <button className={`muka-button muka-button--${variant}`}>
+      {children}
+    </button>
+  );
+};
+```
+
+## Token Naming Convention
+
+Tokens follow a consistent naming pattern:
+
+```
+{layer}.{category}.{subcategory}.{variant}.{state}
+```
+
+**Examples:**
+- `button.color.primary.background.default`
+- `button.color.primary.background.hover`
+- `color.text.default.default`
+- `spacing.4`
+- `border.radius.md`
+
+### CSS Custom Property Names
+
+JSON token paths are converted to kebab-case with `--` prefix:
+
+| JSON Token Path | CSS Custom Property |
+|----------------|---------------------|
+| `button.color.primary.background.default` | `--button-color-primary-background-default` |
+| `color.action.default` | `--color-action-default` |
+| `spacing.4` | `--spacing-4` |
+| `border.radius.md` | `--border-radius-md` |
+
+## Testing Across Brands & Themes
+
+Use Storybook's toolbar to test components:
+
+1. Open any component story
+2. Use the **Brand** toolbar to switch between Muka/Wireframe
+3. Use the **Mode** toolbar to switch between Light/Dark
+4. Verify component appearance across all 4 combinations
+
+## Quick Reference
+
+| Layer | Purpose | Example | Use in Components? |
+|-------|---------|---------|-------------------|
+| **T1: Primitives** | Raw values | `color.indigo.9` | ❌ Never |
+| **T2: Alias** | Brand/theme references | `alias.color.accent.default` | ⚠️ Rarely |
+| **T3: Semantics** | Design intent | `color.action.default` | ✅ Yes |
+| **T4: Components** | Component-specific | `button.color.primary.background.default` | ✅ Preferred |
+
+## Next Steps
+
+- [T1: Primitives →](/docs/design-tokens-02-primitives--docs) - Explore raw design values
+- [T2: Alias →](/docs/design-tokens-03-alias--docs) - Understanding brand references
+- [T3: Semantics →](/docs/design-tokens-04-semantics--docs) - Meaningful abstractions
+- [T4: Components →](/docs/design-tokens-05-components--docs) - Component-specific tokens
+- [Token Resolution →](/docs/design-tokens-06-token-resolution--docs) - How tokens are resolved
+
+---
+
+**Pro Tip for AI-IDEs:** When creating new components, always start with semantic tokens (T3) or component tokens (T4). Never reference primitives (T1) directly. This ensures your components automatically adapt to brand and theme changes!

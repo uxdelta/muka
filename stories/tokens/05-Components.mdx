@@ -1,0 +1,538 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Design Tokens/05 - Components (T4)" />
+
+# T4: Components Layer
+
+The components layer contains **component-specific tokens** that define the exact appearance and behavior of individual UI components. This is the most granular token layer.
+
+## Location
+
+```
+tokens/t4-components/
+├── button.json
+├── input.json
+├── card.json
+├── alert.json
+├── badge.json
+├── checkbox.json
+├── radio.json
+├── select.json
+├── dialog.json
+├── toast.json
+├── table.json
+├── tabs.json
+└── ... (one file per component)
+```
+
+## Purpose
+
+Component tokens provide:
+
+- **Component-specific values**: Tailored to each component's needs
+- **Variant management**: Different styles (primary, secondary, ghost)
+- **State management**: Default, hover, pressed, disabled states
+- **Size management**: sm, md, lg variants
+- **Consistency**: Reusable patterns across component families
+
+## Structure
+
+Each component token file follows this pattern:
+
+```
+{component-name}.{category}.{variant}.{property}.{state}
+```
+
+### Button Example
+
+```json
+{
+  "button": {
+    "color": {
+      "primary": {
+        "background": {
+          "default": { "$value": "{color.action.default}" },
+          "hover": { "$value": "{color.action.hover}" },
+          "pressed": { "$value": "{color.action.pressed}" },
+          "disabled": { "$value": "{color.action.muted}" }
+        },
+        "foreground": {
+          "default": { "$value": "{color.action.inverse.default}" },
+          "hover": { "$value": "{color.action.inverse.hover}" },
+          "pressed": { "$value": "{color.action.inverse.pressed}" },
+          "disabled": { "$value": "{color.action.inverse.muted}" }
+        },
+        "shadow": {
+          "default": { "$value": "{shadow.bevel}" },
+          "hover": { "$value": "{shadow.bevel}" },
+          "pressed": { "$value": "none" },
+          "disabled": { "$value": "none" }
+        }
+      },
+      "secondary": { ... },
+      "tertiary": { ... },
+      "ghost": { ... }
+    },
+    "padding": {
+      "sm": {
+        "x": { "$value": "{spacing.4}" },
+        "y": { "$value": "{spacing.2}" }
+      },
+      "md": {
+        "x": { "$value": "{spacing.5}" },
+        "y": { "$value": "{spacing.3}" }
+      },
+      "lg": {
+        "x": { "$value": "{spacing.6}" },
+        "y": { "$value": "{spacing.4}" }
+      }
+    },
+    "radius": {
+      "sm": { "$value": "{border.radius.lg}" },
+      "md": { "$value": "{border.radius.lg}" },
+      "lg": { "$value": "{border.radius.lg}" }
+    }
+  }
+}
+```
+
+## Component Anatomy
+
+### Button Component Tokens
+
+**Color Variants:**
+- `primary` - Main CTA, high emphasis
+- `secondary` - Alternative actions
+- `tertiary` - Outlined style with borders
+- `ghost` - Minimal, transparent style
+
+**States per Variant:**
+- `default` - Normal state
+- `hover` - Mouse hover
+- `pressed` - Active/clicked
+- `disabled` - Non-interactive
+
+**Size Variants:**
+- `sm` - Small (compact layouts)
+- `md` - Medium (default)
+- `lg` - Large (prominent CTAs)
+
+**Complete Button Token Structure:**
+
+```
+button.color.{variant}.{property}.{state}
+  variants: primary, secondary, tertiary, ghost
+  properties: background, foreground, shadow, border
+  states: default, hover, pressed, disabled
+
+button.padding.{size}.{direction}
+  size: sm, md, lg
+  direction: x, y
+
+button.radius.{size}
+  size: sm, md, lg
+
+button.label.margin.{size}
+  size: sm, md, lg
+```
+
+### Input Component Tokens
+
+```json
+{
+  "input": {
+    "color": {
+      "background": {
+        "default": { "$value": "{color.surface.level3}" },
+        "disabled": { "$value": "{color.surface.level1}" }
+      },
+      "border": {
+        "default": { "$value": "{color.border.default}" },
+        "hover": { "$value": "{color.border.contrast}" },
+        "focus": { "$value": "{color.border.focus}" },
+        "error": { "$value": "{color.state.error.default}" },
+        "disabled": { "$value": "{color.border.muted}" }
+      },
+      "text": {
+        "default": { "$value": "{color.text.default.default}" },
+        "placeholder": { "$value": "{color.text.muted.default}" },
+        "disabled": { "$value": "{color.text.subtle.default}" }
+      }
+    },
+    "padding": {
+      "sm": {
+        "x": { "$value": "{spacing.3}" },
+        "y": { "$value": "{spacing.2}" }
+      },
+      "md": {
+        "x": { "$value": "{spacing.4}" },
+        "y": { "$value": "{spacing.3}" }
+      },
+      "lg": {
+        "x": { "$value": "{spacing.5}" },
+        "y": { "$value": "{spacing.4}" }
+      }
+    },
+    "radius": {
+      "sm": { "$value": "{border.radius.md}" },
+      "md": { "$value": "{border.radius.md}" },
+      "lg": { "$value": "{border.radius.lg}" }
+    }
+  }
+}
+```
+
+### Card Component Tokens
+
+```json
+{
+  "card": {
+    "color": {
+      "background": {
+        "default": { "$value": "{color.surface.level1}" },
+        "hover": { "$value": "{color.surface.level2}" },
+        "interactive": { "$value": "{color.surface.level1}" }
+      },
+      "border": {
+        "default": { "$value": "{color.border.default}" },
+        "hover": { "$value": "{color.border.contrast}" }
+      }
+    },
+    "padding": {
+      "sm": { "$value": "{spacing.4}" },
+      "md": { "$value": "{spacing.6}" },
+      "lg": { "$value": "{spacing.8}" }
+    },
+    "radius": {
+      "sm": { "$value": "{border.radius.md}" },
+      "md": { "$value": "{border.radius.lg}" },
+      "lg": { "$value": "{border.radius.xl}" }
+    },
+    "shadow": {
+      "default": { "$value": "{shadow.level1}" },
+      "hover": { "$value": "{shadow.level2}" }
+    }
+  }
+}
+```
+
+### Alert Component Tokens
+
+```json
+{
+  "alert": {
+    "color": {
+      "success": {
+        "background": { "$value": "{color.state.success.background}" },
+        "border": { "$value": "{color.state.success.default}" },
+        "text": { "$value": "{color.state.success.contrast}" },
+        "icon": { "$value": "{color.state.success.default}" }
+      },
+      "error": {
+        "background": { "$value": "{color.state.error.background}" },
+        "border": { "$value": "{color.state.error.default}" },
+        "text": { "$value": "{color.state.error.contrast}" },
+        "icon": { "$value": "{color.state.error.default}" }
+      },
+      "warning": { ... },
+      "info": { ... }
+    },
+    "padding": {
+      "x": { "$value": "{spacing.4}" },
+      "y": { "$value": "{spacing.3}" }
+    },
+    "radius": { "$value": "{border.radius.md}" }
+  }
+}
+```
+
+## Token Resolution Example
+
+Let's trace how a button token resolves:
+
+```
+Component CSS:
+  background-color: var(--button-color-primary-background-default);
+
+Token Path Resolution:
+  1. button.color.primary.background.default
+     → {color.action.default}                      [T4 → T3]
+     
+  2. color.action.default
+     → {alias.color.accent.default}                [T3 → T2]
+     
+  3. alias.color.accent.default (Muka brand)
+     → {color.indigo.9}                            [T2 → T1]
+     
+  4. color.indigo.9
+     → #3e63dd                                     [T1 → Value]
+
+Final CSS Output:
+  background-color: #3e63dd;
+```
+
+## Using Component Tokens in CSS
+
+Always use component tokens when they exist:
+
+```css
+/* ✅ Excellent - Uses component tokens */
+.muka-button--primary {
+  background-color: var(--button-color-primary-background-default);
+  color: var(--button-color-primary-foreground-default);
+  padding: var(--button-padding-md-y) var(--button-padding-md-x);
+  border-radius: var(--button-radius-md);
+  box-shadow: var(--button-color-primary-shadow-default);
+}
+
+.muka-button--primary:hover {
+  background-color: var(--button-color-primary-background-hover);
+  color: var(--button-color-primary-foreground-hover);
+  box-shadow: var(--button-color-primary-shadow-hover);
+}
+
+.muka-button--primary:active {
+  background-color: var(--button-color-primary-background-pressed);
+  color: var(--button-color-primary-foreground-pressed);
+  box-shadow: var(--button-color-primary-shadow-pressed);
+}
+
+.muka-button--primary:disabled {
+  background-color: var(--button-color-primary-background-disabled);
+  color: var(--button-color-primary-foreground-disabled);
+  box-shadow: var(--button-color-primary-shadow-disabled);
+}
+```
+
+## Creating New Component Tokens
+
+When adding a new component, follow this process:
+
+### 1. Create Token File
+
+```bash
+touch tokens/t4-components/newcomponent.json
+```
+
+### 2. Define Token Structure
+
+```json
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "newcomponent": {
+    "color": {
+      "background": {
+        "default": { "$value": "{color.surface.level2}" },
+        "hover": { "$value": "{color.surface.level3}" }
+      },
+      "text": {
+        "default": { "$value": "{color.text.default.default}" }
+      },
+      "border": {
+        "default": { "$value": "{color.border.default}" }
+      }
+    },
+    "padding": {
+      "sm": {
+        "x": { "$value": "{spacing.3}" },
+        "y": { "$value": "{spacing.2}" }
+      },
+      "md": {
+        "x": { "$value": "{spacing.4}" },
+        "y": { "$value": "{spacing.3}" }
+      }
+    },
+    "radius": {
+      "sm": { "$value": "{border.radius.md}" },
+      "md": { "$value": "{border.radius.lg}" }
+    }
+  }
+}
+```
+
+### 3. Add to Build Manifest
+
+```json
+// build/manifest.json
+{
+  "themes": {
+    "muka-light": [
+      "tokens/t1-primitives/**/*.json",
+      "tokens/t2-alias/base.json",
+      "tokens/t2-alias/brand/muka/fonts.json",
+      "tokens/t2-alias/brand/muka/light.json",
+      "tokens/t3-semantics/ui.json",
+      "tokens/t4-components/button.json",
+      "tokens/t4-components/newcomponent.json"  // ← Add here
+    ]
+  }
+}
+```
+
+### 4. Rebuild Tokens
+
+```bash
+npm run build:tokens
+```
+
+### 5. Use in Component
+
+```css
+.muka-newcomponent {
+  background-color: var(--newcomponent-color-background-default);
+  color: var(--newcomponent-color-text-default);
+  padding: var(--newcomponent-padding-md-y) var(--newcomponent-padding-md-x);
+  border: 1px solid var(--newcomponent-color-border-default);
+  border-radius: var(--newcomponent-radius-md);
+}
+```
+
+## Common Component Patterns
+
+### State Pattern (Button, Input)
+
+```json
+{
+  "property": {
+    "default": { "$value": "..." },
+    "hover": { "$value": "..." },
+    "pressed": { "$value": "..." },
+    "disabled": { "$value": "..." }
+  }
+}
+```
+
+### Variant Pattern (Alert, Badge)
+
+```json
+{
+  "variant": {
+    "success": { "$value": "..." },
+    "error": { "$value": "..." },
+    "warning": { "$value": "..." },
+    "info": { "$value": "..." }
+  }
+}
+```
+
+### Size Pattern (Button, Input, Card)
+
+```json
+{
+  "property": {
+    "sm": { "$value": "..." },
+    "md": { "$value": "..." },
+    "lg": { "$value": "..." }
+  }
+}
+```
+
+## Component Token Checklist
+
+When creating component tokens, ensure you include:
+
+- [ ] **Colors**: background, foreground, border
+- [ ] **States**: default, hover, pressed, disabled, focus, error
+- [ ] **Variants**: primary, secondary, tertiary (if applicable)
+- [ ] **Sizes**: sm, md, lg (if applicable)
+- [ ] **Spacing**: padding (x, y), margin, gap
+- [ ] **Border**: radius, width
+- [ ] **Shadow**: elevation states
+- [ ] **Typography**: font-size, font-weight (if text-heavy)
+
+## Testing Component Tokens
+
+### Visual Testing
+
+1. Open component in Storybook
+2. Switch between brands (Muka ↔ Wireframe)
+3. Switch between themes (Light ↔ Dark)
+4. Verify all states (hover, pressed, disabled)
+5. Check all variants (primary, secondary, etc.)
+6. Test all sizes (sm, md, lg)
+
+### Console Testing
+
+```javascript
+// Inspect generated CSS custom properties
+const root = getComputedStyle(document.documentElement);
+
+// Check button primary background
+root.getPropertyValue('--button-color-primary-background-default');
+
+// Verify it changes with brand
+// Muka → indigo color
+// Wireframe → gray color
+
+// List all component tokens for a component
+Object.keys(root)
+  .filter(prop => prop.startsWith('--button-'))
+  .sort();
+```
+
+## Best Practices
+
+✅ **Do:**
+- Create component tokens for all design system components
+- Reference semantic tokens, not primitives or aliases
+- Include all states and variants
+- Test across all brand/theme combinations
+- Document token purpose with descriptions
+
+❌ **Don't:**
+- Reference primitives directly (`{color.indigo.9}`)
+- Skip states (always include hover, disabled, etc.)
+- Hard-code values (`"#3e63dd"` instead of references)
+- Create component tokens for one-off elements (use semantic instead)
+
+## Debugging Component Tokens
+
+### Token not applying?
+
+```javascript
+// 1. Check if token exists
+getComputedStyle(document.documentElement)
+  .getPropertyValue('--button-color-primary-background-default');
+
+// 2. If empty, rebuild tokens
+// npm run build:tokens
+
+// 3. Check token file is in manifest
+// build/manifest.json
+
+// 4. Verify reference chain
+// t4 → t3 → t2 → t1
+```
+
+### Color not changing with brand?
+
+```javascript
+// 1. Check alias layer override
+// Does brand override this token in t2-alias/brand/{brand}/light.json?
+
+// 2. Verify semantic layer
+// Does t3-semantics reference the correct alias?
+
+// 3. Check component layer
+// Does t4-components reference semantic, not primitive?
+```
+
+## Key Takeaways
+
+- **Component tokens are the most specific layer**
+- One JSON file per component
+- Reference semantic tokens, not primitives
+- Include all states, variants, and sizes
+- Automatic brand/theme switching through references
+
+## Next Steps
+
+- [← T3: Semantics](/docs/design-tokens-04-semantics--docs) - Meaningful abstractions
+- [Token Resolution →](/docs/design-tokens-06-token-resolution--docs) - How tokens are resolved
+
+---
+
+**Pro Tip:** When creating new component tokens, start by copying an existing similar component's token file. Button and Input are great templates for interactive components, while Card works well for container components.
