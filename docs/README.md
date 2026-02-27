@@ -79,6 +79,61 @@ This system is optimized for AI-assisted development using tools like Cursor, wi
 - **Cross-Platform:** Compatible with Penpot and other tools
 - **Version Control:** Git-based workflow with automated validation
 
+## 📊 Component Status
+
+The table below tracks the implementation status of all components in the design system:
+
+| Component | Implemented | Has Tokens | Has Tests | Has Story | Has Figma |
+|-----------|-------------|------------|-----------|-----------|-----------|
+| Alert | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Badge | ✅ | ✅ | ❌ | ✅ | ❌ |
+| BottomBar | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Button | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Card | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Checkbox | ✅ | ✅ | ❌ | ✅ | ✅ |
+| CheckboxTile | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Chip | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Container | ✅ | ✅ | ✅ | ✅ | ❌ |
+| DatePicker | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Dialog | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Divider | ✅ | ✅ | ❌ | ✅ | ❌ |
+| FormProgressBar | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Icon | ✅ | ❌ | ✅ | ✅ | ❌ |
+| Input | ✅ | ✅ | ❌ | ✅ | ✅ |
+| Label | ✅ | ❌ | ❌ | ✅ | ❌ |
+| ListItem | ✅ | ❌ | ✅ | ✅ | ✅ |
+| PriceTag | ✅ | ❌ | ✅ | ✅ | ❌ |
+| Progress | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Radio | ✅ | ✅ | ❌ | ✅ | ✅ |
+| RadioTile | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Section | ✅ | ❌ | ✅ | ✅ | ❌ |
+| SegmentGroup | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Select | ✅ | ✅ | ❌ | ✅ | ✅ |
+| Sheet | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Table | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Tabs | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Tile | ✅ | ❌ | ✅ | ✅ | ❌ |
+| Toast | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Toggle | ✅ | ✅ | ❌ | ✅ | ❌ |
+| TopBar | ✅ | ✅ | ❌ | ✅ | ❌ |
+
+**Summary:**
+- **Total Components:** 31
+- **Implemented:** 31/31 (100%)
+- **Has Tokens:** 22/31 (71%)
+- **Has Tests:** 9/31 (29%)
+- **Has Stories:** 31/31 (100%)
+- **Has Figma Mapping:** 6/31 (19%)
+
+**Legend:**
+- ✅ = Complete
+- ❌ = Not yet implemented
+- **Implemented:** Component has .tsx and .css files
+- **Has Tokens:** Component has t4-components token definitions
+- **Has Tests:** Component has unit tests in `tests/components/`
+- **Has Story:** Component has Storybook stories
+- **Has Figma:** Component has Figma Code Connect mapping in `figma/mappings/`
+
 ## 📖 Contributing
 
 When working with this design system:
