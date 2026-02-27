@@ -1,0 +1,199 @@
+/* TablePagination Component Styles - Using Muka Design Tokens */
+
+/* ========================================
+   PAGINATION CONTAINER
+   ======================================== */
+
+.muka-table-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--table-pagination-gap, var(--spacing-4));
+  padding: var(--table-pagination-padding, var(--spacing-3));
+  background-color: var(--table-pagination-background, var(--color-surface-level1));
+  border-top: var(--border-width-regular) solid var(--table-pagination-border, var(--color-border-default));
+  font-family: var(--text-body-md-regular-fontFamily);
+  font-size: var(--text-body-sm-regular-fontSize);
+  line-height: var(--text-body-sm-regular-lineHeight);
+  color: var(--color-text-default-default);
+}
+
+/* ========================================
+   LEFT SECTION (Page Size & Range)
+   ======================================== */
+
+.muka-table-pagination__left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.muka-table-pagination__page-size {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.muka-table-pagination__label {
+  color: var(--color-text-subtle-default);
+  white-space: nowrap;
+}
+
+.muka-table-pagination__select {
+  appearance: none;
+  padding: var(--spacing-1) var(--spacing-3) var(--spacing-1) var(--spacing-2);
+  background-color: var(--color-surface-level0);
+  border: var(--border-width-regular) solid var(--color-border-default);
+  border-radius: var(--border-radius-sm);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--color-text-default-default);
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-1) center;
+  background-size: 12px;
+  padding-right: var(--spacing-5);
+}
+
+.muka-table-pagination__select:hover {
+  border-color: var(--color-border-contrast);
+}
+
+.muka-table-pagination__select:focus {
+  outline: 2px solid var(--color-action-default);
+  outline-offset: -2px;
+}
+
+.muka-table-pagination__range {
+  color: var(--color-text-subtle-default);
+  white-space: nowrap;
+}
+
+/* ========================================
+   RIGHT SECTION (Page Numbers & Navigation)
+   ======================================== */
+
+.muka-table-pagination__right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.muka-table-pagination__pages {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.muka-table-pagination__nav-only {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.muka-table-pagination__page-indicator {
+  color: var(--color-text-subtle-default);
+  white-space: nowrap;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.muka-table-pagination__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--size-2xl);
+  height: var(--size-2xl);
+  padding: var(--spacing-1);
+  border: var(--border-width-regular) solid transparent;
+  border-radius: var(--border-radius-sm);
+  background-color: transparent;
+  color: var(--color-text-default-default);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.muka-table-pagination__button:hover:not(:disabled) {
+  background-color: var(--color-surface-level2);
+}
+
+.muka-table-pagination__button:focus-visible {
+  outline: 2px solid var(--color-action-default);
+  outline-offset: -2px;
+}
+
+.muka-table-pagination__button:disabled {
+  color: var(--color-text-muted-default);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Navigation buttons (arrows) */
+.muka-table-pagination__button--nav {
+  gap: -4px;
+}
+
+.muka-table-pagination__button--nav svg {
+  margin: -2px;
+}
+
+/* Page number buttons */
+.muka-table-pagination__button--page {
+  font-weight: var(--text-label-md-regular-fontWeight);
+}
+
+.muka-table-pagination__button--active {
+  background-color: var(--color-action-default);
+  color: var(--color-text-default-inverse);
+  border-color: var(--color-action-default);
+}
+
+.muka-table-pagination__button--active:hover:not(:disabled) {
+  background-color: var(--color-action-hover);
+  border-color: var(--color-action-hover);
+}
+
+/* ========================================
+   ELLIPSIS
+   ======================================== */
+
+.muka-table-pagination__ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--size-2xl);
+  height: var(--size-2xl);
+  color: var(--color-text-muted-default);
+  user-select: none;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 640px) {
+  .muka-table-pagination {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .muka-table-pagination__left,
+  .muka-table-pagination__right {
+    justify-content: center;
+  }
+
+  .muka-table-pagination__pages {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
