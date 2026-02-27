@@ -1,0 +1,536 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Design Tokens/03 - Alias (T2)" />
+
+# T2: Alias Layer
+
+The alias layer provides **brand-agnostic semantic references** with brand-specific overrides. This is where multi-brand theming magic happens!
+
+## Location
+
+```
+tokens/t2-alias/
+├── base.json                    # Base aliases (neutral defaults)
+└── brand/
+    ├── muka/
+    │   ├── light.json          # Muka light theme overrides
+    │   ├── dark.json           # Muka dark theme overrides
+    │   ├── fonts.json          # Muka font customizations
+    │   └── radius.json         # Muka border radius preferences
+    └── wireframe/
+        ├── light.json          # Wireframe light theme overrides
+        ├── dark.json           # Wireframe dark theme overrides
+        └── fonts.json          # Wireframe font customizations
+```
+
+## Purpose
+
+The alias layer serves two critical functions:
+
+1. **Semantic Naming**: Convert primitive tokens into meaningful names
+2. **Brand Theming**: Enable different brands to override specific tokens
+
+## How It Works
+
+### Base Aliases
+
+The base file establishes default semantic names that reference primitives:
+
+```json
+// t2-alias/base.json
+{
+  "alias": {
+    "color": {
+      "neutral": {
+        "1": { "$type": "color", "$value": "{color.gray.1}" },
+        "2": { "$type": "color", "$value": "{color.gray.3}" },
+        "9": { "$type": "color", "$value": "{color.gray.10}" }
+      },
+      "brand": {
+        "primary": {
+          "regular": { "$value": "{color.gray.11}" },
+          "contrast": { "$value": "{color.gray.12}" }
+        }
+      },
+      "accent": {
+        "default": { "$value": "{color.gray.9}" },
+        "hover": { "$value": "{color.gray.10}" },
+        "pressed": { "$value": "{color.gray.11}" }
+      }
+    }
+  }
+}
+```
+
+### Brand Overrides
+
+Brand-specific files override the base tokens:
+
+```json
+// t2-alias/brand/muka/light.json
+{
+  "alias": {
+    "color": {
+      "accent": {
+        "default": { "$value": "{color.indigo.9}" },   // Override!
+        "hover": { "$value": "{color.indigo.10}" },    // Override!
+        "pressed": { "$value": "{color.indigo.11}" }   // Override!
+      },
+      "brand": {
+        "primary": {
+          "regular": { "$value": "{color.indigo.11}" }  // Override!
+        }
+      }
+    }
+  }
+}
+```
+
+```json
+// t2-alias/brand/wireframe/light.json
+{
+  "alias": {
+    "color": {
+      "accent": {
+        "default": { "$value": "{color.gray.9}" },     // Uses gray!
+        "hover": { "$value": "{color.gray.10}" },
+        "pressed": { "$value": "{color.gray.11}" }
+      }
+    }
+  }
+}
+```
+
+### The Magic
+
+When you switch brands, **components don't change** — only the alias tokens change:
+
+```
+// Same component code for both brands:
+button.color.primary.background.default
+  → {color.action.default}
+  → {alias.color.accent.default}
+  
+// Muka brand:
+  → {color.indigo.9} → #3e63dd  (Indigo!)
+
+// Wireframe brand:
+  → {color.gray.9} → #8d8d8d    (Gray!)
+```
+
+## Alias Categories
+
+### Color Aliases
+
+#### Neutral Colors
+
+Maps to appropriate gray scale for the brand:
+
+```json
+{
+  "alias": {
+    "color": {
+      "neutral": {
+        "1": { "$value": "{color.gray.1}" },   // Lightest
+        "2": { "$value": "{color.gray.3}" },
+        "3": { "$value": "{color.gray.4}" },
+        "4": { "$value": "{color.gray.5}" },
+        "5": { "$value": "{color.gray.6}" },
+        "6": { "$value": "{color.gray.7}" },
+        "7": { "$value": "{color.gray.8}" },
+        "8": { "$value": "{color.gray.9}" },
+        "9": { "$value": "{color.gray.10}" },
+        "10": { "$value": "{color.gray.11}" },
+        "11": { "$value": "{color.gray.12}" }, // Darkest
+        "alpha": {
+          "1": { "$value": "{color.black-alpha.5}" },
+          "9": { "$value": "{color.black-alpha.12}" }
+        }
+      }
+    }
+  }
+}
+```
+
+#### Brand Colors
+
+Brand identity colors:
+
+```json
+{
+  "alias": {
+    "color": {
+      "brand": {
+        "primary": {
+          "regular": { "$value": "{color.gray.11}" },
+          "contrast": { "$value": "{color.gray.12}" },
+          "muted": { "$value": "{color.gray.3}" }
+        },
+        "secondary": {
+          "regular": { "$value": "{color.gray.9}" },
+          "contrast": { "$value": "{color.gray.11}" }
+        }
+      }
+    }
+  }
+}
+```
+
+**Muka Override:**
+```json
+{
+  "alias": {
+    "color": {
+      "brand": {
+        "primary": {
+          "regular": { "$value": "{color.indigo.11}" },
+          "contrast": { "$value": "{color.indigo.12}" },
+          "muted": { "$value": "{color.indigo.3}" }
+        }
+      }
+    }
+  }
+}
+```
+
+#### Accent Colors
+
+Interactive elements and actions:
+
+```json
+{
+  "alias": {
+    "color": {
+      "accent": {
+        "default": { "$value": "{color.gray.9}" },
+        "hover": { "$value": "{color.gray.10}" },
+        "pressed": { "$value": "{color.gray.11}" },
+        "contrast": { "$value": "{color.gray.12}" },
+        "muted": { "$value": "{color.gray.8}" },
+        "inverse": {
+          "default": { "$value": "{color.gray.1}" },
+          "hover": { "$value": "{color.white}" }
+        }
+      }
+    }
+  }
+}
+```
+
+#### State Colors
+
+Semantic feedback colors (usually consistent across brands):
+
+```json
+{
+  "alias": {
+    "color": {
+      "state": {
+        "success": {
+          "default": { "$value": "{color.green.9}" },
+          "contrast": { "$value": "{color.green.11}" },
+          "muted": { "$value": "{color.green.3}" }
+        },
+        "warning": {
+          "default": { "$value": "{color.amber.9}" },
+          "contrast": { "$value": "{color.amber.11}" },
+          "muted": { "$value": "{color.amber.3}" }
+        },
+        "error": {
+          "default": { "$value": "{color.red.9}" },
+          "contrast": { "$value": "{color.red.11}" },
+          "muted": { "$value": "{color.red.3}" }
+        },
+        "info": {
+          "default": { "$value": "{color.blue.9}" },
+          "contrast": { "$value": "{color.blue.11}" },
+          "muted": { "$value": "{color.blue.3}" }
+        }
+      }
+    }
+  }
+}
+```
+
+### Font Aliases
+
+Brand-specific typography:
+
+```json
+// t2-alias/base.json
+{
+  "alias": {
+    "font": {
+      "plain": {
+        "family": { "$value": "Arial" },
+        "weight": {
+          "regular": { "$value": "400" },
+          "semibold": { "$value": "600" },
+          "bold": { "$value": "700" }
+        }
+      },
+      "brand": {
+        "family": { "$value": "Arial" },
+        "weight": {
+          "regular": { "$value": "400" },
+          "semibold": { "$value": "600" }
+        }
+      }
+    }
+  }
+}
+```
+
+**Muka Override:**
+```json
+// t2-alias/brand/muka/fonts.json
+{
+  "alias": {
+    "font": {
+      "brand": {
+        "family": { "$value": "Inter, sans-serif" },
+        "weight": {
+          "regular": { "$value": "400" },
+          "semibold": { "$value": "600" },
+          "bold": { "$value": "700" }
+        }
+      },
+      "plain": {
+        "family": { "$value": "Inter, system-ui, sans-serif" }
+      }
+    }
+  }
+}
+```
+
+**Wireframe Override:**
+```json
+// t2-alias/brand/wireframe/fonts.json
+{
+  "alias": {
+    "font": {
+      "brand": {
+        "family": { "$value": "Arial, sans-serif" }
+      },
+      "plain": {
+        "family": { "$value": "Arial, system-ui, sans-serif" }
+      }
+    }
+  }
+}
+```
+
+### Radius Aliases
+
+Border radius preferences per brand:
+
+```json
+// t2-alias/base.json
+{
+  "alias": {
+    "radius": {
+      "sm": { "$value": "{radius.sm}" },
+      "md": { "$value": "{radius.md}" },
+      "lg": { "$value": "{radius.lg}" },
+      "xl": { "$value": "{radius.xl}" },
+      "full": { "$value": "{radius.full}" }
+    }
+  }
+}
+```
+
+**Muka Override (more rounded):**
+```json
+// t2-alias/brand/muka/radius.json
+{
+  "alias": {
+    "radius": {
+      "sm": { "$value": "{radius.md}" },   // More rounded!
+      "md": { "$value": "{radius.lg}" },   // More rounded!
+      "lg": { "$value": "{radius.xl}" }    // More rounded!
+    }
+  }
+}
+```
+
+## Theme Loading Order
+
+The build system merges tokens in this order (later overrides earlier):
+
+```
+1. t1-primitives/**/*.json        (Foundation)
+2. t2-alias/base.json             (Base aliases)
+3. t2-alias/brand/{brand}/fonts.json
+4. t2-alias/brand/{brand}/{theme}.json  (Brand + theme specific)
+5. t3-semantics/**/*.json
+6. t4-components/**/*.json
+```
+
+**Example for `muka-light`:**
+```
+1. color.indigo.9 = #3e63dd
+2. alias.color.accent.default = {color.gray.9}
+3. (fonts loaded)
+4. alias.color.accent.default = {color.indigo.9}  ← Override!
+5. color.action.default = {alias.color.accent.default}
+6. button.color.primary.background.default = {color.action.default}
+
+Final resolution:
+button → action → accent → indigo.9 → #3e63dd
+```
+
+**Example for `wireframe-light`:**
+```
+1. color.gray.9 = #8d8d8d
+2. alias.color.accent.default = {color.gray.9}
+3. (fonts loaded)
+4. (wireframe doesn't override accent, keeps gray)
+5. color.action.default = {alias.color.accent.default}
+6. button.color.primary.background.default = {color.action.default}
+
+Final resolution:
+button → action → accent → gray.9 → #8d8d8d
+```
+
+## Brand Comparison
+
+| Alias Token | Base (Neutral) | Muka Override | Wireframe Override |
+|-------------|----------------|---------------|-------------------|
+| `alias.color.accent.default` | `{color.gray.9}` | `{color.indigo.9}` | `{color.gray.9}` |
+| `alias.color.brand.primary.regular` | `{color.gray.11}` | `{color.indigo.11}` | `{color.gray.11}` |
+| `alias.font.brand.family` | `Arial` | `Inter` | `Arial` |
+| `alias.radius.md` | `{radius.md}` | `{radius.lg}` | `{radius.md}` |
+
+## Dark Mode Support
+
+Each brand has light and dark theme files:
+
+```json
+// t2-alias/brand/muka/light.json
+{
+  "alias": {
+    "color": {
+      "accent": {
+        "default": { "$value": "{color.indigo.9}" }  // Light mode indigo
+      }
+    }
+  }
+}
+```
+
+```json
+// t2-alias/brand/muka/dark.json
+{
+  "alias": {
+    "color": {
+      "accent": {
+        "default": { "$value": "{color.indigoDark.9}" }  // Dark mode indigo
+      }
+    }
+  }
+}
+```
+
+Dark mode primitives end with `Dark` (e.g., `color.grayDark.9`, `color.indigoDark.9`).
+
+## Creating a New Brand
+
+To add a new brand (e.g., "corporate"):
+
+1. Create brand folder:
+```
+tokens/t2-alias/brand/corporate/
+├── light.json
+├── dark.json
+├── fonts.json
+└── radius.json (optional)
+```
+
+2. Define overrides:
+```json
+// brand/corporate/light.json
+{
+  "alias": {
+    "color": {
+      "accent": {
+        "default": { "$value": "{color.blue.9}" }  // Corporate blue
+      },
+      "brand": {
+        "primary": {
+          "regular": { "$value": "{color.blue.11}" }
+        }
+      }
+    }
+  }
+}
+```
+
+3. Add to build manifest:
+```json
+// build/manifest.json
+{
+  "themes": {
+    "corporate-light": [
+      "tokens/t1-primitives/**/*.json",
+      "tokens/t2-alias/base.json",
+      "tokens/t2-alias/brand/corporate/fonts.json",
+      "tokens/t2-alias/brand/corporate/light.json",
+      "tokens/t3-semantics/ui.json",
+      "tokens/t4-components/**/*.json"
+    ]
+  }
+}
+```
+
+4. Rebuild tokens:
+```bash
+npm run build:tokens
+```
+
+## Testing Alias Tokens
+
+Use Storybook's brand switcher to test alias overrides:
+
+1. Open any component story
+2. Switch between brands using the toolbar
+3. Inspect element and verify CSS custom properties change
+4. Check computed values in DevTools
+
+```javascript
+// Test alias resolution in console
+const root = getComputedStyle(document.documentElement);
+root.getPropertyValue('--alias-color-accent-default');
+// Muka → indigo color
+// Wireframe → gray color
+```
+
+## Best Practices
+
+✅ **Do:**
+- Use alias tokens for brand-specific customizations
+- Keep state colors (success, error) consistent across brands
+- Override only what's necessary (don't duplicate base values)
+- Test all brand combinations
+
+❌ **Don't:**
+- Reference primitives directly in semantic or component layers
+- Override too many tokens (maintain brand consistency)
+- Forget to provide both light and dark theme overrides
+- Create brand-specific tokens that break accessibility
+
+## Key Takeaways
+
+- **Alias layer = Brand personality**
+- Base file provides neutral defaults
+- Brand folders override specific tokens
+- Components never reference this layer directly
+- Enables seamless brand switching without code changes
+
+## Next Steps
+
+- [← T1: Primitives](/docs/design-tokens-02-primitives--docs) - Raw design values
+- [T3: Semantics →](/docs/design-tokens-04-semantics--docs) - Meaningful abstractions
+
+---
+
+**Pro Tip:** When creating brand overrides, focus on accent colors, typography, and border radius. These three elements give each brand its unique personality while maintaining consistency across the system.

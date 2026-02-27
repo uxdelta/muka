@@ -1,0 +1,605 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Design Tokens/06 - Token Resolution & Usage" />
+
+# Token Resolution & Usage Guide
+
+This guide explains how tokens are resolved, built, and used throughout the Muka design system.
+
+## Table of Contents
+
+1. [Token Resolution Flow](#token-resolution-flow)
+2. [Build Process](#build-process)
+3. [CSS Custom Properties](#css-custom-properties)
+4. [Multi-Brand Architecture](#multi-brand-architecture)
+5. [Theme Switching](#theme-switching)
+6. [Best Practices](#best-practices)
+7. [Troubleshooting](#troubleshooting)
+
+---
+
+## Token Resolution Flow
+
+### Step-by-Step Resolution
+
+Let's trace how `button.color.primary.background.default` resolves to a final value:
+
+```
+Step 1: Component Layer (T4)
+────────────────────────────────────────────
+File: tokens/t4-components/button.json
+Token: button.color.primary.background.default
+Value: "{color.action.default}"
+↓
+
+
+Step 2: Semantics Layer (T3)
+────────────────────────────────────────────
+File: tokens/t3-semantics/ui.json
+Token: color.action.default
+Value: "{alias.color.accent.default}"
+↓
+
+
+Step 3: Alias Layer (T2) - Brand Specific
+────────────────────────────────────────────
+Base File: tokens/t2-alias/base.json
+Token: alias.color.accent.default
+Value: "{color.gray.9}"
+
+Muka Override: tokens/t2-alias/brand/muka/light.json
+Token: alias.color.accent.default
+Value: "{color.indigo.9}"  ← OVERRIDE!
+
+Wireframe Override: tokens/t2-alias/brand/wireframe/light.json
+Token: alias.color.accent.default
+Value: "{color.gray.9}"  ← Uses base
+↓
+
+
+Step 4: Primitives Layer (T1)
+────────────────────────────────────────────
+File: tokens/t1-primitives/color.json
+Token (Muka): color.indigo.9
+Value: "#3e63dd"
+
+Token (Wireframe): color.gray.9
+Value: "#8d8d8d"
+↓
+
+
+Final Result
+────────────────────────────────────────────
+Muka: #3e63dd (indigo)
+Wireframe: #8d8d8d (gray)
+```
+
+### Visual Resolution Diagram
+
+```
+┌──────────────────────────────────────────────────────┐
+│ Component CSS                                        │
+│ background: var(--button-color-primary-bg-default); │
+└────────────────────┬─────────────────────────────────┘
+                     │
+┌────────────────────▼─────────────────────────────────┐
+│ T4: Components                                       │
+│ button.color.primary.background.default              │
+│ → {color.action.default}                             │
+└────────────────────┬─────────────────────────────────┘
+                     │
+┌────────────────────▼─────────────────────────────────┐
+│ T3: Semantics                                        │
+│ color.action.default                                 │
+│ → {alias.color.accent.default}                       │
+└────────────────────┬─────────────────────────────────┘
+                     │
+           ┌─────────┴─────────┐
+           │                   │
+┌──────────▼────────┐ ┌────────▼──────────┐
+│ T2: Alias (Muka)  │ │ T2: Alias (Wire)  │
+│ accent.default    │ │ accent.default    │
+│ → {indigo.9}      │ │ → {gray.9}        │
+└──────────┬────────┘ └────────┬──────────┘
+           │                   │
+┌──────────▼────────┐ ┌────────▼──────────┐
+│ T1: Primitives    │ │ T1: Primitives    │
+│ indigo.9          │ │ gray.9            │
+│ → #3e63dd         │ │ → #8d8d8d         │
+└───────────────────┘ └───────────────────┘
+```
+
+---
+
+## Build Process
+
+### Token Build Script
+
+The build process is handled by `scripts/build-tokens.js`:
+
+```bash
+npm run build:tokens
+```
+
+### Build Steps
+
+1. **Read Manifest**
+   ```javascript
+   // Loads build/manifest.json
+   {
+     "themes": {
+       "muka-light": [
+         "tokens/t1-primitives/**/*.json",
+         "tokens/t2-alias/base.json",
+         "tokens/t2-alias/brand/muka/fonts.json",
+         "tokens/t2-alias/brand/muka/light.json",
+         "tokens/t3-semantics/ui.json",
+         "tokens/t4-components/**/*.json"
+       ]
+     }
+   }
+   ```
+
+2. **Load Tokens in Order**
+   - Loads each file in the order specified
+   - Later files override earlier ones
+   - Builds a merged token object
+
+3. **Resolve References**
+   - Finds all `{token.path}` references
+   - Recursively resolves them
+   - Replaces references with actual values
+
+4. **Generate CSS**
+   - Converts token paths to CSS custom properties
+   - Writes to `styles/tokens-{brand}-{theme}.css`
+
+5. **Output**
+   ```css
+   /* styles/tokens-muka-light.css */
+   :root {
+     --color-indigo-9: #3e63dd;
+     --alias-color-accent-default: var(--color-indigo-9);
+     --color-action-default: var(--alias-color-accent-default);
+     --button-color-primary-background-default: var(--color-action-default);
+   }
+   ```
+
+### Reference Resolution Algorithm
+
+```javascript
+function resolveToken(value, allTokens) {
+  // Check if value contains reference
+  const referenceMatch = value.match(/\{([^}]+)\}/);
+  
+  if (!referenceMatch) {
+    return value; // No reference, return as-is
+  }
+  
+  // Extract reference path
+  const referencePath = referenceMatch[1];
+  
+  // Look up referenced token
+  const referencedToken = getToken(allTokens, referencePath);
+  
+  // Recursively resolve
+  return resolveToken(referencedToken.$value, allTokens);
+}
+```
+
+**Example:**
+```javascript
+Input: "{color.action.default}"
+  → Lookup: color.action.default = "{alias.color.accent.default}"
+  → Lookup: alias.color.accent.default = "{color.indigo.9}"
+  → Lookup: color.indigo.9 = "#3e63dd"
+  → Output: "#3e63dd"
+```
+
+---
+
+## CSS Custom Properties
+
+### Naming Convention
+
+Token paths are converted to kebab-case with `--` prefix:
+
+| Token Path | CSS Custom Property |
+|-----------|---------------------|
+| `button.color.primary.background.default` | `--button-color-primary-background-default` |
+| `color.action.default` | `--color-action-default` |
+| `alias.color.accent.default` | `--alias-color-accent-default` |
+| `spacing.4` | `--spacing-4` |
+| `border.radius.md` | `--border-radius-md` |
+
+### Generated CSS Output
+
+```css
+/* styles/tokens-muka-light.css */
+:root {
+  /* Primitives */
+  --color-indigo-1: #fdfdfe;
+  --color-indigo-9: #3e63dd;
+  --spacing-4: 1rem;
+  
+  /* Aliases */
+  --alias-color-accent-default: var(--color-indigo-9);
+  --alias-radius-md: var(--radius-md);
+  
+  /* Semantics */
+  --color-action-default: var(--alias-color-accent-default);
+  --color-surface-level1: var(--alias-color-neutral-4);
+  
+  /* Components */
+  --button-color-primary-background-default: var(--color-action-default);
+  --button-padding-md-x: var(--spacing-5);
+}
+```
+
+### Using in CSS
+
+```css
+.muka-button--primary {
+  background-color: var(--button-color-primary-background-default);
+  color: var(--button-color-primary-foreground-default);
+  padding: var(--button-padding-md-y) var(--button-padding-md-x);
+  border-radius: var(--button-radius-md);
+}
+```
+
+### Fallback Values
+
+CSS custom properties support fallbacks:
+
+```css
+.component {
+  /* Fallback to semantic token if component token doesn't exist */
+  background: var(
+    --custom-component-background,
+    var(--color-surface-level1)
+  );
+  
+  /* Fallback to hard-coded value (not recommended) */
+  color: var(--text-color, #000000);
+}
+```
+
+---
+
+## Multi-Brand Architecture
+
+### How Brands Work
+
+Brands override alias tokens to change component appearance:
+
+**Base Aliases (Neutral):**
+```json
+{
+  "alias": {
+    "color": {
+      "accent": { "default": { "$value": "{color.gray.9}" } }
+    }
+  }
+}
+```
+
+**Muka Brand:**
+```json
+{
+  "alias": {
+    "color": {
+      "accent": { "default": { "$value": "{color.indigo.9}" } }
+    }
+  }
+}
+```
+
+**Wireframe Brand:**
+```json
+{
+  "alias": {
+    "color": {
+      "accent": { "default": { "$value": "{color.gray.9}" } }
+    }
+  }
+}
+```
+
+### Brand Loading
+
+The manifest defines which files load for each brand:
+
+```json
+{
+  "themes": {
+    "muka-light": [
+      "tokens/t1-primitives/**/*.json",
+      "tokens/t2-alias/base.json",
+      "tokens/t2-alias/brand/muka/fonts.json",
+      "tokens/t2-alias/brand/muka/light.json",  // ← Brand override
+      "tokens/t3-semantics/ui.json",
+      "tokens/t4-components/**/*.json"
+    ],
+    "wireframe-light": [
+      "tokens/t1-primitives/**/*.json",
+      "tokens/t2-alias/base.json",
+      "tokens/t2-alias/brand/wireframe/fonts.json",
+      "tokens/t2-alias/brand/wireframe/light.json",  // ← Brand override
+      "tokens/t3-semantics/ui.json",
+      "tokens/t4-components/**/*.json"
+    ]
+  }
+}
+```
+
+### Brand Switching at Runtime
+
+Storybook switches brands by loading different CSS files:
+
+```html
+<!-- Muka Light -->
+<link rel="stylesheet" href="/styles/tokens-muka-light.css">
+
+<!-- Switch to Wireframe Light -->
+<link rel="stylesheet" href="/styles/tokens-wireframe-light.css">
+```
+
+All components automatically adapt because they reference the same CSS custom property names!
+
+---
+
+## Theme Switching
+
+### Light vs Dark Themes
+
+Each brand has light and dark variants:
+
+| Theme | Primitives Used | Background | Text |
+|-------|----------------|------------|------|
+| Muka Light | `indigo.9` | Light | Dark |
+| Muka Dark | `indigoDark.9` | Dark | Light |
+| Wireframe Light | `gray.9` | Light | Dark |
+| Wireframe Dark | `grayDark.9` | Dark | Light |
+
+### Dark Mode Primitives
+
+Dark mode uses `*Dark` primitives:
+
+```json
+// Light mode
+{
+  "alias": {
+    "color": {
+      "neutral": {
+        "1": { "$value": "{color.gray.1}" }  // #fcfcfc
+      }
+    }
+  }
+}
+
+// Dark mode
+{
+  "alias": {
+    "color": {
+      "neutral": {
+        "1": { "$value": "{color.grayDark.1}" }  // #111111
+      }
+    }
+  }
+}
+```
+
+### Theme-Specific Overrides
+
+```json
+// muka/light.json
+{
+  "alias": {
+    "color": {
+      "neutral": { "1": { "$value": "{color.mauve.1}" } }
+    }
+  }
+}
+
+// muka/dark.json
+{
+  "alias": {
+    "color": {
+      "neutral": { "1": { "$value": "{color.mauveDark.1}" } }
+    }
+  }
+}
+```
+
+### Testing Themes
+
+Use Storybook's theme switcher:
+
+1. Open any component story
+2. Use **Mode** toolbar: Light ↔ Dark
+3. Use **Brand** toolbar: Muka ↔ Wireframe
+4. Test all 4 combinations
+
+---
+
+## Best Practices
+
+### Token Selection Hierarchy
+
+When writing CSS, follow this priority:
+
+1. **Component tokens (T4)** - If available, always use these first
+   ```css
+   background: var(--button-color-primary-background-default);
+   ```
+
+2. **Semantic tokens (T3)** - For custom components without T4 tokens
+   ```css
+   background: var(--color-surface-level1);
+   ```
+
+3. **Alias tokens (T2)** - Rarely needed, only for brand-specific overrides
+   ```css
+   background: var(--alias-color-accent-default);
+   ```
+
+4. **Primitives (T1)** - ❌ Never use directly in components!
+   ```css
+   background: var(--color-indigo-9); /* ❌ Don't do this */
+   ```
+
+### Reference Best Practices
+
+✅ **Do:**
+```json
+{
+  "button": {
+    "color": {
+      "primary": {
+        "background": {
+          "default": { "$value": "{color.action.default}" }  // ✅ Reference semantic
+        }
+      }
+    }
+  }
+}
+```
+
+❌ **Don't:**
+```json
+{
+  "button": {
+    "color": {
+      "primary": {
+        "background": {
+          "default": { "$value": "{color.indigo.9}" }  // ❌ Skip layers
+        }
+      }
+    }
+  }
+}
+```
+
+### Testing Checklist
+
+Before committing token changes:
+
+- [ ] Run `npm run build:tokens`
+- [ ] Test in Storybook (all 4 brand/theme combos)
+- [ ] Verify contrast ratios (WCAG AA minimum)
+- [ ] Check hover/focus states
+- [ ] Test disabled states
+- [ ] Validate in light and dark modes
+- [ ] Confirm no hard-coded values in CSS
+
+---
+
+## Troubleshooting
+
+### Token Not Updating
+
+**Problem:** Changed token value but component didn't update
+
+**Solutions:**
+1. Rebuild tokens: `npm run build:tokens`
+2. Hard refresh browser: `Cmd+Shift+R` or `Ctrl+Shift+R`
+3. Check if component uses the token in CSS
+4. Verify reference chain is correct
+
+### Token Resolves to Wrong Value
+
+**Problem:** Token shows unexpected color/value
+
+**Solutions:**
+1. Check brand override in `t2-alias/brand/{brand}/`
+2. Verify load order in `build/manifest.json`
+3. Trace reference chain manually
+4. Ensure no circular references
+
+### Brand Not Switching
+
+**Problem:** Switching brands in Storybook has no effect
+
+**Solutions:**
+1. Rebuild tokens: `npm run build:tokens`
+2. Check `ThemeDecorator.ts` loads correct CSS file
+3. Verify brand override file exists
+4. Confirm alias tokens are being overridden
+
+### Circular Reference Error
+
+**Problem:** Build fails with circular reference
+
+**Example:**
+```json
+// ❌ Circular reference
+{
+  "token-a": { "$value": "{token-b}" },
+  "token-b": { "$value": "{token-a}" }  // ← Loops back!
+}
+```
+
+**Solution:**
+- Break the circle by referencing a primitive
+- Trace the reference chain
+- Use primitives as the final stop
+
+### Missing Token
+
+**Problem:** `var(--token-name)` is empty/undefined
+
+**Solutions:**
+1. Check token exists in JSON files
+2. Verify token file is in `build/manifest.json`
+3. Rebuild tokens: `npm run build:tokens`
+4. Check CSS file is loaded in browser
+
+### Console Debugging
+
+```javascript
+// Get all CSS custom properties
+const root = getComputedStyle(document.documentElement);
+
+// Check if token exists
+root.getPropertyValue('--button-color-primary-background-default');
+
+// List all tokens with prefix
+Object.keys(root)
+  .filter(prop => prop.startsWith('--button-'))
+  .forEach(prop => {
+    console.log(prop, root.getPropertyValue(prop));
+  });
+
+// Find where a color is used
+const searchColor = '#3e63dd';
+Object.keys(root)
+  .filter(prop => root.getPropertyValue(prop) === searchColor)
+  .forEach(prop => console.log(prop));
+```
+
+---
+
+## Key Takeaways
+
+✅ **Token resolution flows through 4 layers: T4 → T3 → T2 → T1**
+
+✅ **Brand switching works by overriding alias tokens (T2)**
+
+✅ **Theme switching uses different primitive values (*Dark)**
+
+✅ **Always use component tokens (T4) or semantic tokens (T3) in CSS**
+
+✅ **Test across all 4 brand/theme combinations**
+
+✅ **Rebuild tokens after any JSON changes: `npm run build:tokens`**
+
+---
+
+## Next Steps
+
+- [← T4: Components](/docs/design-tokens-05-components--docs) - Component-specific tokens
+- [Introduction →](/docs/design-tokens-01-introduction--docs) - Back to overview
+
+---
+
+**Pro Tip:** When debugging token issues, use browser DevTools to inspect computed values and trace the reference chain backwards from the CSS custom property to the primitive value.

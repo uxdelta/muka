@@ -1,0 +1,619 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Design Tokens/04 - Semantics (T3)" />
+
+# T3: Semantics Layer
+
+The semantics layer provides **meaningful abstractions with clear design intent**. These tokens describe what something *is* or *does*, not what it looks like.
+
+## Location
+
+```
+tokens/t3-semantics/
+└── ui.json                     # All semantic UI tokens
+```
+
+## Purpose
+
+Semantic tokens bridge the gap between brand-agnostic aliases and component-specific tokens. They provide:
+
+- **Design Intent**: Names describe purpose, not appearance
+- **Context**: Tokens for specific use cases (surfaces, text, borders, actions)
+- **Consistency**: Shared tokens across similar component patterns
+- **Flexibility**: Can be used directly or referenced by component tokens
+
+## Token Categories
+
+### Surface Colors
+
+Background colors for different UI layers:
+
+```json
+{
+  "color": {
+    "surface": {
+      "sunken": {
+        "$type": "color",
+        "$value": "{alias.color.neutral.6}",
+        "description": "Deepest recessed areas, below level 0"
+      },
+      "level0": {
+        "$type": "color",
+        "$value": "{alias.color.neutral.5}",
+        "description": "Base surface, default background"
+      },
+      "level1": {
+        "$type": "color",
+        "$value": "{alias.color.neutral.4}",
+        "description": "Raised surface, cards on backgrounds"
+      },
+      "level2": {
+        "$type": "color",
+        "$value": "{alias.color.neutral.3}",
+        "description": "Higher elevation, buttons on cards"
+      },
+      "level3": {
+        "$type": "color",
+        "$value": "{alias.color.neutral.1}",
+        "description": "Highest elevation, popovers, modals"
+      },
+      "backdrop": {
+        "$type": "color",
+        "$value": "{alias.color.neutral.alpha.6}",
+        "description": "Semi-transparent overlay for modals"
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{alias.color.neutral.12}",
+        "description": "Inverse background (dark on light, light on dark)"
+      }
+    }
+  }
+}
+```
+
+**Visual Hierarchy:**
+
+<div style={{ 
+  display: 'grid', 
+  gap: '1rem',
+  padding: '2rem',
+  backgroundColor: 'var(--color-surface-level0)',
+  borderRadius: '0.5rem',
+  marginBottom: '2rem'
+}}>
+  <div style={{ 
+    padding: '1.5rem', 
+    backgroundColor: 'var(--color-surface-sunken)',
+    borderRadius: '0.5rem'
+  }}>
+    <code>surface.sunken</code> - Deepest layer
+  </div>
+  <div style={{ 
+    padding: '1.5rem', 
+    backgroundColor: 'var(--color-surface-level0)',
+    borderRadius: '0.5rem',
+    border: '1px solid var(--color-border-default)'
+  }}>
+    <code>surface.level0</code> - Base background
+    <div style={{ 
+      marginTop: '1rem',
+      padding: '1rem', 
+      backgroundColor: 'var(--color-surface-level1)',
+      borderRadius: '0.5rem'
+    }}>
+      <code>surface.level1</code> - Cards
+      <div style={{ 
+        marginTop: '1rem',
+        padding: '1rem', 
+        backgroundColor: 'var(--color-surface-level2)',
+        borderRadius: '0.5rem'
+      }}>
+        <code>surface.level2</code> - Buttons
+        <div style={{ 
+          marginTop: '1rem',
+          padding: '1rem', 
+          backgroundColor: 'var(--color-surface-level3)',
+          borderRadius: '0.5rem'
+        }}>
+          <code>surface.level3</code> - Popovers
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+### Text Colors
+
+Hierarchical text colors for different emphasis levels:
+
+```json
+{
+  "color": {
+    "text": {
+      "default": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.neutral.12}",
+          "description": "Primary text, headings, high emphasis"
+        },
+        "inverse": {
+          "$type": "color",
+          "$value": "{alias.color.neutral.1}",
+          "description": "Text on dark backgrounds"
+        }
+      },
+      "subtle": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.neutral.9}",
+          "description": "Secondary text, medium emphasis"
+        },
+        "inverse": {
+          "$type": "color",
+          "$value": "{alias.color.neutral.3}",
+          "description": "Subtle text on dark backgrounds"
+        }
+      },
+      "muted": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.neutral.7}",
+          "description": "Tertiary text, low emphasis, placeholders"
+        }
+      },
+      "action": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.accent.default}",
+          "description": "Interactive text, links"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{alias.color.accent.hover}"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "{alias.color.accent.pressed}"
+        }
+      }
+    }
+  }
+}
+```
+
+**Text Hierarchy Example:**
+
+<div style={{ 
+  padding: '2rem', 
+  backgroundColor: 'var(--color-surface-level1)',
+  borderRadius: '0.5rem',
+  marginBottom: '2rem'
+}}>
+  <h3 style={{ color: 'var(--color-text-default-default)', margin: '0 0 1rem 0' }}>
+    Default Text (Headings)
+  </h3>
+  <p style={{ color: 'var(--color-text-default-default)', margin: '0 0 1rem 0' }}>
+    This is default text used for primary content and body text. High contrast and emphasis.
+  </p>
+  <p style={{ color: 'var(--color-text-subtle-default)', margin: '0 0 1rem 0' }}>
+    This is subtle text used for secondary information, captions, or supporting details.
+  </p>
+  <p style={{ color: 'var(--color-text-muted-default)', margin: '0' }}>
+    This is muted text used for placeholders, disabled states, or very low emphasis content.
+  </p>
+</div>
+
+### State Colors
+
+Semantic feedback colors for different states:
+
+```json
+{
+  "color": {
+    "state": {
+      "success": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.state.success.default}",
+          "description": "Success state, confirmations"
+        },
+        "contrast": {
+          "$type": "color",
+          "$value": "{alias.color.state.success.contrast}",
+          "description": "High contrast success text"
+        },
+        "background": {
+          "$type": "color",
+          "$value": "{alias.color.state.success.muted}",
+          "description": "Success background, alerts"
+        }
+      },
+      "error": {
+        "default": { "$value": "{alias.color.state.error.default}" },
+        "contrast": { "$value": "{alias.color.state.error.contrast}" },
+        "background": { "$value": "{alias.color.state.error.muted}" }
+      },
+      "warning": {
+        "default": { "$value": "{alias.color.state.warning.default}" },
+        "contrast": { "$value": "{alias.color.state.warning.contrast}" },
+        "background": { "$value": "{alias.color.state.warning.muted}" }
+      },
+      "info": {
+        "default": { "$value": "{alias.color.state.info.default}" },
+        "contrast": { "$value": "{alias.color.state.info.contrast}" },
+        "background": { "$value": "{alias.color.state.info.muted}" }
+      }
+    }
+  }
+}
+```
+
+**State Colors Example:**
+
+<div style={{ display: 'grid', gap: '1rem', marginBottom: '2rem' }}>
+  {[
+    { name: 'Success', color: 'success', icon: '✓' },
+    { name: 'Error', color: 'error', icon: '✗' },
+    { name: 'Warning', color: 'warning', icon: '⚠' },
+    { name: 'Info', color: 'info', icon: 'ℹ' }
+  ].map(({ name, color, icon }) => (
+    <div key={color} style={{
+      padding: '1rem',
+      backgroundColor: `var(--color-state-${color}-background)`,
+      border: `1px solid var(--color-state-${color}-default)`,
+      borderRadius: '0.5rem',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.75rem'
+    }}>
+      <span style={{ 
+        fontSize: '1.5rem',
+        color: `var(--color-state-${color}-default)`
+      }}>
+        {icon}
+      </span>
+      <div>
+        <strong style={{ color: `var(--color-state-${color}-contrast)` }}>
+          {name}
+        </strong>
+        <div style={{ 
+          fontSize: '0.875rem',
+          color: `var(--color-state-${color}-contrast)`,
+          marginTop: '0.25rem'
+        }}>
+          <code>state.{color}.default</code>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+### Border Colors
+
+Border and separator colors:
+
+```json
+{
+  "color": {
+    "border": {
+      "contrast": {
+        "$type": "color",
+        "$value": "{alias.color.neutral.7}",
+        "description": "High contrast borders, focus rings"
+      },
+      "default": {
+        "$type": "color",
+        "$value": "{alias.color.neutral.4}",
+        "description": "Standard borders, dividers"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{alias.color.neutral.3}",
+        "description": "Subtle borders, table rules"
+      },
+      "focus": {
+        "$type": "color",
+        "$value": "{alias.color.accent.default}",
+        "description": "Focus indicator rings"
+      }
+    }
+  }
+}
+```
+
+### Action Colors
+
+Interactive element colors:
+
+```json
+{
+  "color": {
+    "action": {
+      "default": {
+        "$type": "color",
+        "$value": "{alias.color.accent.default}",
+        "description": "Primary action, default state"
+      },
+      "hover": {
+        "$type": "color",
+        "$value": "{alias.color.accent.hover}",
+        "description": "Hover state"
+      },
+      "pressed": {
+        "$type": "color",
+        "$value": "{alias.color.accent.pressed}",
+        "description": "Active/pressed state"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{alias.color.accent.muted}",
+        "description": "Disabled action state"
+      },
+      "inverse": {
+        "default": { "$value": "{alias.color.accent.inverse.default}" },
+        "hover": { "$value": "{alias.color.accent.inverse.hover}" },
+        "pressed": { "$value": "{alias.color.accent.inverse.pressed}" },
+        "muted": { "$value": "{alias.color.accent.inverse.muted}" }
+      }
+    }
+  }
+}
+```
+
+### Border Properties
+
+Border radius and width:
+
+```json
+{
+  "border": {
+    "radius": {
+      "sm": { "$value": "{alias.radius.sm}" },
+      "md": { "$value": "{alias.radius.md}" },
+      "lg": { "$value": "{alias.radius.lg}" },
+      "xl": { "$value": "{alias.radius.xl}" },
+      "2xl": { "$value": "{alias.radius.2xl}" },
+      "full": { "$value": "{alias.radius.full}" }
+    },
+    "width": {
+      "regular": {
+        "$type": "borderWidth",
+        "$value": "{size.4xs}",
+        "description": "Standard border width (1px)"
+      },
+      "bold": {
+        "$type": "borderWidth",
+        "$value": "{size.3xs}",
+        "description": "Emphasized border width (2px)"
+      }
+    }
+  }
+}
+```
+
+### Typography Tokens
+
+Semantic typography scales:
+
+```json
+{
+  "text": {
+    "heading": {
+      "xl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{alias.font.brand.family}",
+          "fontWeight": "{alias.font.brand.weight.semibold}",
+          "fontSize": "{font.size.4xl}",
+          "lineHeight": "{font.size.5xl}",
+          "letterSpacing": "{font.letterSpacing.normal}"
+        }
+      },
+      "lg": { ... },
+      "md": { ... },
+      "sm": { ... }
+    },
+    "body": {
+      "base": {
+        "regular": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{alias.font.plain.family}",
+            "fontWeight": "{alias.font.plain.weight.regular}",
+            "fontSize": "{font.size.md}",
+            "lineHeight": "{font.size.2xl}"
+          }
+        },
+        "bold": { ... }
+      },
+      "sm": { ... },
+      "lg": { ... }
+    },
+    "label": {
+      "sm": { ... },
+      "md": { ... },
+      "lg": { ... }
+    }
+  }
+}
+```
+
+### Shadows
+
+Elevation and depth:
+
+```json
+{
+  "shadow": {
+    "level1": {
+      "$type": "boxShadow",
+      "$value": [
+        {
+          "x": "0px",
+          "y": "2px",
+          "blur": "4px",
+          "spread": "0px",
+          "color": "{alias.color.neutral.alpha.1}",
+          "type": "dropShadow"
+        }
+      ],
+      "description": "Subtle elevation, cards"
+    },
+    "level2": { "description": "Moderate elevation, dropdowns" },
+    "level3": { "description": "High elevation, modals" },
+    "bevel": { "description": "Inset shadow for pressed states" },
+    "sunken": { "description": "Inset shadow for inputs" }
+  }
+}
+```
+
+## Token Resolution
+
+Semantic tokens reference alias tokens, which resolve to primitives:
+
+```
+Semantic:
+  color.action.default
+  
+↓ References alias:
+  {alias.color.accent.default}
+  
+↓ Muka brand resolves to:
+  {color.indigo.9}
+  
+↓ Primitive value:
+  #3e63dd
+```
+
+## When to Use Semantic Tokens
+
+✅ **Use semantic tokens when:**
+- Creating a new component without specific component tokens
+- The semantic meaning is more important than the component
+- Building one-off or custom UI elements
+- You need consistent color/spacing across different components
+
+**Example:**
+```css
+/* Custom info card - no component token exists */
+.info-card {
+  background-color: var(--color-surface-level1);
+  color: var(--color-text-default-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-4);
+  box-shadow: var(--shadow-level1);
+}
+```
+
+❌ **Don't use semantic tokens when:**
+- A component token exists (use that instead!)
+- You're building a design system component (create component tokens)
+
+## Semantic vs Component Tokens
+
+| Scenario | Use | Example |
+|----------|-----|---------|
+| Button component | Component token | `button.color.primary.background.default` |
+| Custom card | Semantic token | `color.surface.level1` |
+| Form input | Component token | `input.color.border.default` |
+| Custom badge | Semantic token | `color.state.info.default` |
+| Alert component | Component token | `alert.color.error.background` |
+
+## Testing Semantic Tokens
+
+Test semantic tokens across brands and themes:
+
+```javascript
+// Console test
+const root = getComputedStyle(document.documentElement);
+
+// Action color should change with brand
+console.log(root.getPropertyValue('--color-action-default'));
+// Muka: indigo
+// Wireframe: gray
+
+// Surface colors should change with theme
+console.log(root.getPropertyValue('--color-surface-level0'));
+// Light: light gray
+// Dark: dark gray
+
+// State colors should be consistent
+console.log(root.getPropertyValue('--color-state-success-default'));
+// Always green (both brands)
+```
+
+## Best Practices
+
+✅ **Do:**
+- Use semantic tokens for custom components
+- Choose tokens based on purpose, not appearance
+- Test across all brand/theme combinations
+- Reference semantic tokens in component tokens
+
+❌ **Don't:**
+- Skip semantic layer and go straight to alias/primitives
+- Use appearance-based names (use `surface.level1`, not `background.gray`)
+- Create one-off semantic tokens for single components
+- Mix semantic and primitive tokens
+
+## Common Patterns
+
+### Card Pattern
+```css
+.card {
+  background-color: var(--color-surface-level1);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-level1);
+  padding: var(--spacing-4);
+}
+```
+
+### Text Hierarchy Pattern
+```css
+.heading {
+  color: var(--color-text-default-default);
+}
+
+.subheading {
+  color: var(--color-text-subtle-default);
+}
+
+.caption {
+  color: var(--color-text-muted-default);
+}
+```
+
+### Interactive Element Pattern
+```css
+.interactive {
+  color: var(--color-action-default);
+}
+
+.interactive:hover {
+  color: var(--color-action-hover);
+}
+
+.interactive:active {
+  color: var(--color-action-pressed);
+}
+```
+
+## Key Takeaways
+
+- **Semantic tokens describe purpose, not appearance**
+- They bridge alias (brand) and component (specific) layers
+- Use them for custom components without specific tokens
+- Always test across brands and themes
+- State colors (success, error) are usually brand-agnostic
+
+## Next Steps
+
+- [← T2: Alias](/docs/design-tokens-03-alias--docs) - Brand-specific references
+- [T4: Components →](/docs/design-tokens-05-components--docs) - Component-specific tokens
+
+---
+
+**Pro Tip:** When choosing between semantic and component tokens, ask: "Is this UI pattern used in multiple places with slight variations?" If yes, use semantic tokens. If it's always the same, create component tokens.
