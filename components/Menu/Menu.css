@@ -1,0 +1,280 @@
+/* Menu Component Styles */
+
+/* ─── Content Container ──────────────────────────────────────────────────── */
+
+.muka-menu__content {
+  min-width: var(--menu-content-min-width);
+  max-height: var(--menu-content-max-height);
+  overflow-y: auto;
+  background-color: var(--menu-content-color-background);
+  border: var(--menu-content-border-width) solid var(--menu-content-color-border);
+  border-radius: var(--menu-content-border-radius);
+  box-shadow: var(--menu-content-shadow);
+  padding: var(--menu-content-padding);
+  z-index: 50;
+
+  /* Animation */
+  animation-duration: 150ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.muka-menu__content[data-state='open'] {
+  animation-name: muka-menu-fade-in;
+}
+
+.muka-menu__content[data-state='closed'] {
+  animation-name: muka-menu-fade-out;
+}
+
+.muka-menu__content[data-side='top'] {
+  animation-name: muka-menu-slide-down;
+}
+
+.muka-menu__content[data-side='bottom'] {
+  animation-name: muka-menu-slide-up;
+}
+
+.muka-menu__content[data-side='left'] {
+  animation-name: muka-menu-slide-right;
+}
+
+.muka-menu__content[data-side='right'] {
+  animation-name: muka-menu-slide-left;
+}
+
+/* ─── Menu Item ──────────────────────────────────────────────────────────── */
+
+.muka-menu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--menu-item-gap);
+  min-height: var(--menu-item-height);
+  padding: var(--menu-item-padding-y) var(--menu-item-padding-x);
+  border-radius: var(--menu-item-border-radius);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  font-family: var(--text-label-md-regular-font-family);
+  font-size: var(--text-label-md-regular-font-size);
+  font-weight: var(--text-label-md-regular-font-weight);
+  line-height: var(--text-label-md-regular-line-height);
+  color: var(--menu-item-color-default-foreground);
+  background-color: var(--menu-item-color-default-background);
+  transition: background-color 100ms ease, color 100ms ease;
+}
+
+.muka-menu__item:hover,
+.muka-menu__item[data-highlighted] {
+  background-color: var(--menu-item-color-hover-background);
+  color: var(--menu-item-color-hover-foreground);
+}
+
+.muka-menu__item:focus,
+.muka-menu__item[data-highlighted]:focus {
+  background-color: var(--menu-item-color-focus-background);
+  color: var(--menu-item-color-focus-foreground);
+}
+
+/* Disabled */
+.muka-menu__item--disabled,
+.muka-menu__item[data-disabled] {
+  color: var(--menu-item-color-disabled-foreground);
+  background-color: var(--menu-item-color-disabled-background);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.muka-menu__item--disabled .muka-menu__item-icon,
+.muka-menu__item[data-disabled] .muka-menu__item-icon {
+  color: var(--menu-item-color-disabled-icon);
+}
+
+/* Destructive */
+.muka-menu__item--destructive {
+  color: var(--menu-item-color-destructive-default-foreground);
+}
+
+.muka-menu__item--destructive .muka-menu__item-icon {
+  color: var(--menu-item-color-destructive-default-icon);
+}
+
+.muka-menu__item--destructive:hover,
+.muka-menu__item--destructive[data-highlighted] {
+  background-color: var(--menu-item-color-destructive-hover-background);
+  color: var(--menu-item-color-destructive-hover-foreground);
+}
+
+.muka-menu__item--destructive:hover .muka-menu__item-icon,
+.muka-menu__item--destructive[data-highlighted] .muka-menu__item-icon {
+  color: var(--menu-item-color-destructive-hover-icon);
+}
+
+/* ─── Item Parts ─────────────────────────────────────────────────────────── */
+
+.muka-menu__item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--menu-item-color-default-icon);
+  transition: color 100ms ease;
+}
+
+.muka-menu__item:hover .muka-menu__item-icon,
+.muka-menu__item[data-highlighted] .muka-menu__item-icon {
+  color: var(--menu-item-color-hover-icon);
+}
+
+.muka-menu__item-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.muka-menu__item-shortcut {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding-left: var(--menu-item-gap);
+  font-size: var(--text-label-sm-regular-font-size);
+  color: var(--menu-shortcut-color);
+  opacity: 0.7;
+}
+
+.muka-menu__item-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: auto;
+  color: var(--menu-shortcut-color);
+}
+
+/* ─── Indicator (Checkbox/Radio) ─────────────────────────────────────────── */
+
+.muka-menu__item-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--menu-checkbox-indicator-size);
+  height: var(--menu-checkbox-indicator-size);
+  flex-shrink: 0;
+  color: var(--menu-checkbox-indicator-color);
+}
+
+.muka-menu__item--checkbox,
+.muka-menu__item--radio {
+  padding-left: var(--menu-item-padding-x);
+}
+
+.muka-menu__radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--menu-radio-indicator-color);
+}
+
+/* ─── Separator ──────────────────────────────────────────────────────────── */
+
+.muka-menu__separator {
+  height: var(--menu-separator-height);
+  margin: var(--menu-separator-margin-y) 0;
+  background-color: var(--menu-separator-color);
+}
+
+/* ─── Group ──────────────────────────────────────────────────────────────── */
+
+.muka-menu__group {
+  /* No additional styles needed - just a container */
+}
+
+.muka-menu__group-label {
+  padding: var(--menu-group-label-padding-y) var(--menu-group-label-padding-x);
+  font-family: var(--text-label-sm-semibold-font-family);
+  font-size: var(--text-label-sm-semibold-font-size);
+  font-weight: var(--text-label-sm-semibold-font-weight);
+  line-height: var(--text-label-sm-semibold-line-height);
+  color: var(--menu-group-label-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Radio Group ────────────────────────────────────────────────────────── */
+
+.muka-menu__radio-group {
+  /* No additional styles needed - just a container */
+}
+
+/* ─── Context Menu Trigger ───────────────────────────────────────────────── */
+
+.muka-context-menu__trigger {
+  /* Allow the trigger to be styled by the parent */
+}
+
+.muka-context-menu__trigger:focus-visible {
+  outline: var(--contextmenu-trigger-outline-width) solid var(--contextmenu-trigger-outline-color);
+  outline-offset: var(--contextmenu-trigger-outline-offset);
+  border-radius: var(--border-radius-sm);
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+
+@keyframes muka-menu-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes muka-menu-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes muka-menu-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes muka-menu-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes muka-menu-slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes muka-menu-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
