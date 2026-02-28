@@ -1,0 +1,276 @@
+/* DocumentViewer Component Styles - Using Muka Design Tokens */
+
+.muka-documentviewer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--documentviewer-container-background);
+  border-radius: var(--documentviewer-container-borderRadius);
+  overflow: hidden;
+  position: relative;
+}
+
+.muka-documentviewer--fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  border-radius: 0;
+}
+
+/* Toolbar */
+.muka-documentviewer__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--documentviewer-toolbar-height);
+  padding: var(--documentviewer-toolbar-padding-y) var(--documentviewer-toolbar-padding-x);
+  background-color: var(--documentviewer-toolbar-background);
+  border-bottom: 1px solid var(--documentviewer-toolbar-border);
+  gap: var(--documentviewer-toolbar-gap);
+  flex-shrink: 0;
+}
+
+.muka-documentviewer__toolbar-section {
+  display: flex;
+  align-items: center;
+  gap: var(--documentviewer-toolbar-gap);
+}
+
+.muka-documentviewer__toolbar-section--center {
+  flex: 1;
+  justify-content: center;
+}
+
+.muka-documentviewer__toolbar-section--end {
+  justify-content: flex-end;
+}
+
+/* Page navigation */
+.muka-documentviewer__page-input {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.muka-documentviewer__page-number {
+  width: 3rem;
+  padding: var(--spacing-1) var(--spacing-2);
+  text-align: center;
+  font-family: var(--alias-font-brand-family);
+  font-size: var(--text-label-sm-fontSize);
+  line-height: var(--text-label-sm-lineHeight);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-surface-default);
+  color: var(--color-text-default-default);
+}
+
+.muka-documentviewer__page-number:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 0;
+  border-color: var(--color-border-focus);
+}
+
+.muka-documentviewer__page-total {
+  font-family: var(--alias-font-brand-family);
+  font-size: var(--text-label-sm-fontSize);
+  color: var(--color-text-subtle-default);
+}
+
+/* Zoom controls */
+.muka-documentviewer__zoom-display {
+  min-width: var(--documentviewer-zoom-button-width);
+  padding: var(--spacing-1) var(--spacing-2);
+  font-family: var(--alias-font-brand-family);
+  font-size: var(--text-label-sm-fontSize);
+  font-weight: var(--alias-font-brand-weight-semibold);
+  color: var(--color-text-default-default);
+  background: transparent;
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.muka-documentviewer__zoom-display:hover {
+  background-color: var(--color-surface-level2);
+}
+
+.muka-documentviewer__zoom-display:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 0;
+}
+
+/* Content area */
+.muka-documentviewer__content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.muka-documentviewer__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Canvas */
+.muka-documentviewer__canvas {
+  flex: 1;
+  background-color: var(--documentviewer-canvas-background);
+  padding: var(--documentviewer-canvas-padding);
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.muka-documentviewer__page {
+  background-color: var(--documentviewer-page-background);
+  box-shadow: var(--documentviewer-page-shadow);
+  border-radius: var(--documentviewer-page-borderRadius);
+  overflow: hidden;
+}
+
+.muka-documentviewer__page canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.muka-documentviewer__page-number {
+  text-align: center;
+  padding: var(--spacing-2);
+  font-family: var(--alias-font-brand-family);
+  font-size: var(--text-label-sm-fontSize);
+  color: var(--color-text-subtle-default);
+}
+
+/* Thumbnails */
+.muka-documentviewer__thumbnails {
+  width: var(--documentviewer-thumbnails-width);
+  background-color: var(--documentviewer-thumbnails-background);
+  border-right: 1px solid var(--documentviewer-thumbnails-border);
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.muka-documentviewer__thumbnails-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--documentviewer-thumbnails-item-gap);
+  padding: var(--spacing-2);
+}
+
+.muka-documentviewer__thumbnail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-1);
+  padding: var(--documentviewer-thumbnails-item-padding);
+  border-radius: var(--documentviewer-thumbnails-item-borderRadius);
+  border: 2px solid var(--documentviewer-thumbnails-item-border-default);
+  background-color: var(--documentviewer-thumbnails-item-background-default);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.muka-documentviewer__thumbnail-item:hover {
+  background-color: var(--documentviewer-thumbnails-item-background-hover);
+}
+
+.muka-documentviewer__thumbnail-item--selected {
+  background-color: var(--documentviewer-thumbnails-item-background-selected);
+  border-color: var(--documentviewer-thumbnails-item-border-selected);
+}
+
+.muka-documentviewer__thumbnail-item:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.muka-documentviewer__thumbnail-preview {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--border-radius-sm);
+}
+
+.muka-documentviewer__thumbnail-preview canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.muka-documentviewer__thumbnail-label {
+  font-family: var(--alias-font-brand-family);
+  font-size: var(--text-label-xs-fontSize);
+  color: var(--color-text-default-default);
+  font-weight: var(--alias-font-brand-weight-medium);
+}
+
+/* Loading state */
+.muka-documentviewer__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background-color: var(--documentviewer-loading-overlay-background);
+}
+
+/* Error state */
+.muka-documentviewer__error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: var(--spacing-4);
+  background-color: var(--documentviewer-error-background);
+}
+
+/* Accessibility - visually hidden */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* React-PDF specific styles */
+.react-pdf__Document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.react-pdf__Page {
+  max-width: 100%;
+  box-shadow: var(--documentviewer-page-shadow);
+  border-radius: var(--documentviewer-page-borderRadius);
+  overflow: hidden;
+}
+
+.react-pdf__Page__canvas {
+  max-width: 100%;
+  height: auto !important;
+  display: block;
+}
+
+.react-pdf__Page__textContent {
+  max-width: 100%;
+}
+
+.react-pdf__Page__annotations {
+  max-width: 100%;
+}

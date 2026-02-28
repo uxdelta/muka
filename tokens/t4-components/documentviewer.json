@@ -1,0 +1,148 @@
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "documentviewer": {
+    "container": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.surface.subtle}"
+      },
+      "borderRadius": {
+        "$type": "borderRadius",
+        "$value": "{border.radius.lg}"
+      }
+    },
+    "toolbar": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{spacing.12}"
+      },
+      "padding": {
+        "x": {
+          "$type": "dimension",
+          "$value": "{spacing.4}"
+        },
+        "y": {
+          "$type": "dimension",
+          "$value": "{spacing.2}"
+        }
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.surface.default}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.border.default}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.2}"
+      }
+    },
+    "canvas": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.surface.muted}"
+      },
+      "padding": {
+        "$type": "dimension",
+        "$value": "{spacing.4}"
+      }
+    },
+    "thumbnails": {
+      "width": {
+        "$type": "dimension",
+        "$value": "{spacing.32}"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.surface.default}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.border.default}"
+      },
+      "item": {
+        "padding": {
+          "$type": "dimension",
+          "$value": "{spacing.2}"
+        },
+        "borderRadius": {
+          "$type": "borderRadius",
+          "$value": "{border.radius.sm}"
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{spacing.1}"
+        },
+        "background": {
+          "default": {
+            "$type": "color",
+            "$value": "transparent"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{color.surface.level2}"
+          },
+          "selected": {
+            "$type": "color",
+            "$value": "{color.surface.level3}"
+          }
+        },
+        "border": {
+          "default": {
+            "$type": "color",
+            "$value": "transparent"
+          },
+          "selected": {
+            "$type": "color",
+            "$value": "{color.action.default}"
+          }
+        }
+      }
+    },
+    "page": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.surface.white}"
+      },
+      "shadow": {
+        "$type": "boxShadow",
+        "$value": "{shadow.md}"
+      },
+      "borderRadius": {
+        "$type": "borderRadius",
+        "$value": "{border.radius.sm}"
+      }
+    },
+    "zoom": {
+      "button": {
+        "width": {
+          "$type": "dimension",
+          "$value": "{spacing.8}"
+        }
+      }
+    },
+    "loading": {
+      "overlay": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.surface.overlay}"
+        }
+      }
+    },
+    "error": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.surface.default}"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{color.text.default.default}"
+      }
+    }
+  }
+}

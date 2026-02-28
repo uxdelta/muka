@@ -26,6 +26,7 @@ export { Sheet, type SheetProps } from './Sheet';
 export { Section, type SectionProps } from './Section';
 export { Container, type ContainerProps } from './Container';
 export { Badge, type BadgeProps } from './Badge';
+export { Avatar, AvatarGroup, type AvatarProps, type AvatarGroupProps } from './Avatar';
 export { Progress, type ProgressProps } from './Progress';
 export {
   Table,
@@ -51,6 +52,7 @@ export { DatePicker, type DatePickerProps } from './DatePicker';
 export { SegmentGroup, type SegmentGroupProps, type SegmentOption } from './SegmentGroup';
 export { PriceTag, type PriceTagProps } from './PriceTag';
 export { Tile, type TileProps } from './Tile';
+export { DocumentViewer, type DocumentViewerProps, type DocumentMetadata } from './DocumentViewer';
 export {
   Menu,
   MenuTrigger,
