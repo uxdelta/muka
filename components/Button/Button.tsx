@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef } from 'react';
 import { warnMissingA11yProp, VISUALLY_HIDDEN_CLASS } from '../../utils/accessibility';
 import './Button.css';
 
-export interface ButtonProps {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Button content */
   children: React.ReactNode;
 
@@ -14,9 +14,6 @@ export interface ButtonProps {
 
   /** Disabled state */
   disabled?: boolean;
-
-  /** Click handler */
-  onClick?: () => void;
 
   /** Button type for forms */
   type?: 'button' | 'submit' | 'reset';
@@ -35,21 +32,6 @@ export interface ButtonProps {
 
   /** Additional CSS classes */
   className?: string;
-
-  /** Accessible label (required for icon-only buttons) */
-  'aria-label'?: string;
-
-  /** Indicates button is currently pressed (for toggle buttons) */
-  'aria-pressed'?: boolean;
-
-  /** Indicates button controls an expanded element */
-  'aria-expanded'?: boolean;
-
-  /** ID of element this button controls */
-  'aria-controls'?: string;
-
-  /** Indicates button triggers a popup */
-  'aria-haspopup'?: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
 }
 
 /**
@@ -72,113 +54,113 @@ export interface ButtonProps {
  *
  * @see https://www.w3.org/WAI/ARIA/apg/patterns/button/
  */
-export const Button: React.FC<ButtonProps> = ({
-  children,
-  variant = 'primary',
-  size = 'md',
-  disabled = false,
-  onClick,
-  type = 'button',
-  iconLeft,
-  iconRight,
-  iconOnly = false,
-  fullWidth = false,
-  className = '',
-  'aria-label': ariaLabel,
-  'aria-pressed': ariaPressed,
-  'aria-expanded': ariaExpanded,
-  'aria-controls': ariaControls,
-  'aria-haspopup': ariaHaspopup,
-  ...props
-}) => {
-  const [isPressed, setIsPressed] = useState(false);
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      children,
+      variant = 'primary',
+      size = 'md',
+      disabled = false,
+      onClick,
+      type = 'button',
+      iconLeft,
+      iconRight,
+      iconOnly = false,
+      fullWidth = false,
+      className = '',
+      onMouseDown,
+      onMouseUp,
+      onMouseLeave,
+      ...props
+    },
+    ref
+  ) => {
+    const [isPressed, setIsPressed] = useState(false);
 
-  // Warn in development if icon-only button lacks aria-label
-  warnMissingA11yProp(
-    'Button',
-    iconOnly && !ariaLabel,
-    'Icon-only buttons require an aria-label for accessibility'
-  );
+    // Warn in development if icon-only button lacks aria-label
+    warnMissingA11yProp(
+      'Button',
+      iconOnly && !props['aria-label'],
+      'Icon-only buttons require an aria-label for accessibility'
+    );
 
-  const handleClick = () => {
-    if (!disabled && onClick) {
-      onClick();
-    }
-  };
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+      if (!disabled && onClick) {
+        onClick(e);
+      }
+    };
 
-  const handleMouseDown = () => {
-    if (!disabled) {
-      setIsPressed(true);
-    }
-  };
+    const handleMouseDown = (e: React.MouseEvent<HTMLButtonElement>) => {
+      if (!disabled) {
+        setIsPressed(true);
+      }
+      onMouseDown?.(e);
+    };
 
-  const handleMouseUp = () => {
-    setIsPressed(false);
-  };
+    const handleMouseUp = (e: React.MouseEvent<HTMLButtonElement>) => {
+      setIsPressed(false);
+      onMouseUp?.(e);
+    };
 
-  const handleMouseLeave = () => {
-    setIsPressed(false);
-  };
+    const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
+      setIsPressed(false);
+      onMouseLeave?.(e);
+    };
 
-  // Generate CSS classes for the button
-  const buttonClasses = [
-    'muka-button',
-    `muka-button--${variant}`,
-    `muka-button--${size}`,
-    disabled && 'muka-button--disabled',
-    fullWidth && 'muka-button--full-width',
-    iconOnly && 'muka-button--icon-only',
-    isPressed && 'muka-button--pressed',
-    className
-  ].filter(Boolean).join(' ');
+    // Generate CSS classes for the button
+    const buttonClasses = [
+      'muka-button',
+      `muka-button--${variant}`,
+      `muka-button--${size}`,
+      disabled && 'muka-button--disabled',
+      fullWidth && 'muka-button--full-width',
+      iconOnly && 'muka-button--icon-only',
+      isPressed && 'muka-button--pressed',
+      className,
+    ]
+      .filter(Boolean)
+      .join(' ');
 
-  // Consistent spacing: button padding matches label padding for balanced distribution
-  const hasLeftIcon = Boolean(iconLeft);
-  const hasRightIcon = Boolean(iconRight);
-  const showLabel = !iconOnly;
+    // Consistent spacing: button padding matches label padding for balanced distribution
+    const hasLeftIcon = Boolean(iconLeft);
+    const hasRightIcon = Boolean(iconRight);
+    const showLabel = !iconOnly;
 
-  return (
-    <button
-      className={buttonClasses}
-      onClick={handleClick}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseLeave}
-      disabled={disabled}
-      type={type}
-      aria-label={ariaLabel}
-      aria-pressed={ariaPressed}
-      aria-expanded={ariaExpanded}
-      aria-controls={ariaControls}
-      aria-haspopup={ariaHaspopup}
-      {...props}
-    >
-      {hasLeftIcon && (
-        <span className={`muka-button__icon ${showLabel ? 'muka-button__icon--left' : ''}`}>
-          {iconLeft}
-        </span>
-      )}
+    return (
+      <button
+        ref={ref}
+        className={buttonClasses}
+        onClick={handleClick}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
+        disabled={disabled}
+        type={type}
+        {...props}
+      >
+        {hasLeftIcon && (
+          <span className={`muka-button__icon ${showLabel ? 'muka-button__icon--left' : ''}`}>
+            {iconLeft}
+          </span>
+        )}
 
-      {showLabel && (
-        <span className="muka-button__label">
-          {children}
-        </span>
-      )}
+        {showLabel && <span className="muka-button__label">{children}</span>}
 
-      {/* Visually hidden fallback for icon-only buttons without aria-label */}
-      {iconOnly && !ariaLabel && (
-        <span className={VISUALLY_HIDDEN_CLASS}>
-          {children}
-        </span>
-      )}
+        {/* Visually hidden fallback for icon-only buttons without aria-label */}
+        {iconOnly && !props['aria-label'] && (
+          <span className={VISUALLY_HIDDEN_CLASS}>{children}</span>
+        )}
 
-      {hasRightIcon && (
-        <span className={`muka-button__icon ${showLabel ? 'muka-button__icon--right' : ''}`}>
-          {iconRight}
-        </span>
-      )}
-    </button>
-  );
-};
+        {hasRightIcon && (
+          <span className={`muka-button__icon ${showLabel ? 'muka-button__icon--right' : ''}`}>
+            {iconRight}
+          </span>
+        )}
+      </button>
+    );
+  }
+);
+
+Button.displayName = 'Button';
 
 export default Button;

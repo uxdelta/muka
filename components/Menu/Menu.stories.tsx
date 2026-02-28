@@ -84,7 +84,7 @@ export const Playground: Story = {
   render: () => (
     <Menu>
       <MenuTrigger asChild>
-        <Button variant="secondary">
+        <Button variant="ghost">
           Open Menu
           <Icon name="arrow-down" variant="line" size="sm" />
         </Button>
@@ -140,7 +140,7 @@ export const WithShortcuts: Story = {
   render: () => (
     <Menu>
       <MenuTrigger asChild>
-        <Button variant="secondary">Edit Menu</Button>
+        <Button variant="ghost">Edit Menu</Button>
       </MenuTrigger>
       <MenuContent>
         <MenuItem shortcut="Cmd+Z">Undo</MenuItem>
@@ -163,7 +163,7 @@ export const WithDisabledItems: Story = {
   render: () => (
     <Menu>
       <MenuTrigger asChild>
-        <Button variant="secondary">Actions</Button>
+        <Button variant="ghost">Actions</Button>
       </MenuTrigger>
       <MenuContent>
         <MenuItem>Available action</MenuItem>
@@ -185,7 +185,7 @@ export const WithGroups: Story = {
   render: () => (
     <Menu>
       <MenuTrigger asChild>
-        <Button variant="secondary">Grouped Menu</Button>
+        <Button variant="ghost">Grouped Menu</Button>
       </MenuTrigger>
       <MenuContent>
         <MenuGroup label="Actions">
@@ -220,7 +220,7 @@ export const CheckboxItems: Story = {
     return (
       <Menu>
         <MenuTrigger asChild>
-          <Button variant="secondary">
+          <Button variant="ghost">
             <Icon name="settings-3" variant="line" size="sm" />
             View Options
           </Button>
@@ -252,7 +252,7 @@ export const RadioGroup: Story = {
     return (
       <Menu>
         <MenuTrigger asChild>
-          <Button variant="secondary">
+          <Button variant="ghost">
             <Icon name="sort-desc" variant="line" size="sm" />
             Sort by
           </Button>
@@ -277,7 +277,7 @@ export const WithSubmenu: Story = {
   render: () => (
     <Menu>
       <MenuTrigger asChild>
-        <Button variant="secondary">Menu with Submenu</Button>
+        <Button variant="ghost">Menu with Submenu</Button>
       </MenuTrigger>
       <MenuContent>
         <MenuItem icon={<Icon name="eye" variant="line" size="sm" />}>View</MenuItem>
@@ -421,7 +421,7 @@ export const Alignments: Story = {
     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
       <Menu>
         <MenuTrigger asChild>
-          <Button variant="secondary">Align Start</Button>
+          <Button variant="ghost">Align Start</Button>
         </MenuTrigger>
         <MenuContent align="start">
           <MenuItem>Option 1</MenuItem>
@@ -432,7 +432,7 @@ export const Alignments: Story = {
 
       <Menu>
         <MenuTrigger asChild>
-          <Button variant="secondary">Align Center</Button>
+          <Button variant="ghost">Align Center</Button>
         </MenuTrigger>
         <MenuContent align="center">
           <MenuItem>Option 1</MenuItem>
@@ -443,7 +443,7 @@ export const Alignments: Story = {
 
       <Menu>
         <MenuTrigger asChild>
-          <Button variant="secondary">Align End</Button>
+          <Button variant="ghost">Align End</Button>
         </MenuTrigger>
         <MenuContent align="end">
           <MenuItem>Option 1</MenuItem>
@@ -466,7 +466,7 @@ export const ComplexExample: Story = {
     return (
       <Menu>
         <MenuTrigger asChild>
-          <Button variant="secondary">
+          <Button variant="ghost">
             <Icon name="settings-3" variant="line" size="sm" />
             Settings
           </Button>
