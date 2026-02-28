@@ -1,6 +1,12 @@
 import type { Preview } from '@storybook/react';
 import { MINIMAL_VIEWPORTS } from 'storybook/viewport';
+import { create } from 'storybook/theming';
 import { withTheme } from './ThemeDecorator';
+
+const docsTheme = create({
+  base: 'light',
+  brandTitle: 'Muka Design System',
+});
 
 // Custom viewports matching Muka token breakpoints
 const customViewports = {
@@ -80,6 +86,11 @@ const preview: Preview = {
   },
   decorators: [withTheme],
   parameters: {
+    options: {
+      storySort: {
+        order: ['Documentation', 'Design Tokens', 'Components'],
+      },
+    },
     viewport: {
       viewports: {
         ...MINIMAL_VIEWPORTS,
@@ -98,10 +109,7 @@ const preview: Preview = {
       },
     },
     docs: {
-      theme: {
-        brandTitle: 'Muka Design System',
-        base: 'light',
-      },
+      theme: docsTheme,
     },
     layout: 'fullscreen',
   },
