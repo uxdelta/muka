@@ -112,7 +112,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 
   const isControlled = controlledFiles !== undefined;
   const fileStates = isControlled
-    ? controlledFiles.map(f => ({ file: f, progress: 0, status: 'pending' as const }))
+    ? controlledFiles.map(f => ({ file: f, progress: 0, status: 'pending' as const, error: undefined }))
     : internalFiles;
 
   // Validate a single file
