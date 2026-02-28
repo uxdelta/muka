@@ -1,0 +1,205 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Documentation/Guides/Interaction Design Patterns" />
+
+# Interaction Design Patterns
+
+> Personal interaction design notes for mobile-first UX design. All features of all apps built with Muka UI are composed from these five application view patterns.
+>
+> For component composition details (which components make up each view), see `docs/guides/view-modes-strategy.md` in the repo.
+
+## How to Use This Document
+
+**For AI agents (Cursor, Claude Code):** Reference this document before implementing any navigation flow, view transition, or dialog. It defines the behavioral rules that determine _which_ view pattern to use and _how_ it should behave — not just what it looks like.
+
+**Decision priority:** Start from the user's intent (what are they trying to do?), then match to the correct pattern. Never choose a pattern based on visual preference alone.
+
+---
+
+## 1. Top-Level View
+
+**Figma:** [node 643-8634](https://www.figma.com/design/RL5IFLUJk4yeAFNXlsX4b5/Muka-UI-Figma-Library?node-id=643-8634&m=dev)
+
+A fullscreen view with a top bar (title, no back button) and bottom navigation bar. This is the entry point of any navigation branch.
+
+### Applies to
+
+- App home screen
+- Start screen of every bottom navigation menu item
+
+### Behavior
+
+- Always shows the bottom navigation bar
+- Top bar displays the view title without a back action
+- Scrollable content area between top bar and bottom navigation
+- Navigating between top-level views uses the bottom navigation — no transition animation between them
+
+---
+
+## 2. Sub-Level View
+
+**Figma:** [node 625-1853](https://www.figma.com/design/RL5IFLUJk4yeAFNXlsX4b5/Muka-UI-Figma-Library?node-id=625-1853&m=dev)
+
+A fullscreen view with a top bar that includes a back button. The bottom navigation bar is hidden. This is a deeper layer within a navigation branch.
+
+### Applies to
+
+- Deeper level content views that contain no input elements
+- Presentational content (articles, detail pages, read-only information)
+- Functional views that contain interactions of direct manipulation only (e.g., a group of toggles, switches, or other controls that take immediate effect without a submit action)
+
+### Behavior
+
+- Top bar shows a back button in the leading slot and a contextual title
+- Bottom navigation bar is hidden — the user has drilled down from a top-level view
+- Back navigation returns to the previous view in the stack
+- Content scrolls independently within the view
+- Home indicator visible at the bottom of the screen
+
+### Key distinction
+
+Sub-level views are for **consuming content or making direct-manipulation changes**. If the view requires the user to fill in form fields and explicitly submit, use a Modal Dialog instead.
+
+---
+
+## 3. Non-Modal Top-Level Dialog
+
+**Figma:** [node 653-8749](https://www.figma.com/design/RL5IFLUJk4yeAFNXlsX4b5/Muka-UI-Figma-Library?node-id=653-8749&m=dev)
+
+A sheet that slides in from the bottom, covering a limited or major part of the UI. It sits on top of the current view with or without a backdrop. User input is never mandatory.
+
+### Applies to
+
+- User wants to see details of an item from an overview (e.g., tapping a card to see its full content)
+- User wants to pick a specific task from a list of menu items
+- User can apply settings with direct manipulation, like filters or toggles
+
+### Behavior
+
+- Slides in from the bottom, partially or fully covering the current view
+- Shows a drag handle at the top and a close button in the top bar
+- **Can be dismissed** by dragging down or tapping outside the dialog
+- User input is never mandatory — the dialog is purely additive to the current context
+- May or may not show a backdrop behind the dialog
+- **Allowed to transition** to a Non-Modal Sub-Level Dialog (pattern 4) for deeper content
+- Does not show Cancel/Submit buttons — all interactions take immediate effect or are purely informational
+
+### Primary purpose
+
+Low-threshold focus on presentational content or direct-manipulation controls. The user should never feel "trapped" in this dialog.
+
+---
+
+## 4. Non-Modal Sub-Level Dialog
+
+**Figma:** [node 653-8797](https://www.figma.com/design/RL5IFLUJk4yeAFNXlsX4b5/Muka-UI-Figma-Library?node-id=653-8797&m=dev)
+
+A deeper layer within a non-modal dialog. It can only be reached from a Non-Modal Top-Level Dialog.
+
+### Applies to
+
+- Presenting the details of an item selected within a Non-Modal Top-Level Dialog (e.g., reading a specific FAQ from a list of FAQs)
+- Offering a menu of options or preferences that directly affect the content shown in the parent Non-Modal Top-Level Dialog
+
+### Behavior
+
+- **Can only be transitioned to from a Non-Modal Top-Level Dialog** — never opened independently
+- Shows a back button (returning to the parent dialog) and a close button (dismissing the entire dialog stack)
+- Inherits the dismissibility of its parent — can still be dismissed by dragging down or tapping outside
+- Maintains the same backdrop state as the parent dialog
+- Covers more of the screen than the parent dialog (sits lower in the viewport to indicate depth)
+
+### Transition rules
+
+- Back button → returns to Non-Modal Top-Level Dialog
+- Close button → dismisses the entire non-modal dialog stack
+- Drag down → dismisses the entire non-modal dialog stack
+- Tap outside → dismisses the entire non-modal dialog stack
+
+---
+
+## 5. Modal Dialog
+
+**Figma:** [node 657-9369](https://www.figma.com/design/RL5IFLUJk4yeAFNXlsX4b5/Muka-UI-Figma-Library?node-id=657-9369&m=dev)
+
+A fullscreen-like dialog that slides in from the bottom and demands a response from the user. It blocks all interaction with the underlying UI until the user explicitly cancels or submits.
+
+### Applies to
+
+- Dialogs that contain complex input elements (text inputs, date pickers, etc.)
+- Dialogs with any textual input element
+- Dialogs with more than one radio group
+- Dialogs with a checkbox group
+- Any task that requires explicit confirmation before changes take effect
+
+### Behavior
+
+- Slides in from the bottom and sits on top of the entire UI
+- **Cannot be dismissed** by dragging down or tapping outside
+- Shows a Cancel action and a Submit (or equivalent) action in the footer
+- The user must explicitly choose to cancel or submit — there is no passive dismissal
+- Always shows a backdrop that blocks interaction with the content behind it
+
+### Explicit confirmation rules
+
+These rules protect the user from accidentally losing work:
+
+- **If something changed and the user presses Cancel:** Show a confirmation dialog asking "Save changes? Yes / No" (or equivalent)
+- **If nothing changed and the user presses Cancel:** Dismiss the modal immediately without confirmation
+
+### Key distinction
+
+Modal dialogs are for **tasks that require deliberate input and explicit submission**. If the content is purely presentational or uses only direct-manipulation controls (toggles, switches), use a Non-Modal Dialog instead.
+
+---
+
+## Decision Framework
+
+Use this flowchart to determine which pattern to use:
+
+```
+Is this a root-level navigation destination?
+├─ Yes → Top-Level View
+└─ No
+   ├─ Is this a deeper page within a navigation branch?
+   │  └─ Yes → Does it require form submission?
+   │     ├─ Yes → Modal Dialog
+   │     └─ No → Sub-Level View
+   └─ Is this an overlay on top of existing content?
+      └─ Yes → Does it require explicit form submission?
+         ├─ Yes → Modal Dialog
+         └─ No → Does it need a deeper level?
+            ├─ Yes → Non-Modal Top-Level Dialog → Non-Modal Sub-Level Dialog
+            └─ No → Non-Modal Top-Level Dialog
+```
+
+### Quick Reference
+
+| User intent | Contains text inputs or complex forms? | Requires explicit submit? | Pattern |
+|---|---|---|---|
+| Navigate to a main section | — | — | Top-Level View |
+| Drill into content from a main section | No | No | Sub-Level View |
+| Drill into toggles/switches from a main section | No (direct manipulation only) | No | Sub-Level View |
+| Preview item details from an overview | No | No | Non-Modal Top-Level Dialog |
+| Pick from a list of actions | No | No | Non-Modal Top-Level Dialog |
+| Apply filters with toggles | No | No | Non-Modal Top-Level Dialog |
+| Read detail from a list inside a dialog | No | No | Non-Modal Sub-Level Dialog |
+| Edit profile, create item, fill a form | Yes | Yes | Modal Dialog |
+| Select from multiple radio/checkbox groups | Yes | Yes | Modal Dialog |
+
+---
+
+## Transition Rules Summary
+
+| From | To | Allowed? | Mechanism |
+|---|---|---|---|
+| Top-Level View | Sub-Level View | ✅ | Push navigation |
+| Top-Level View | Non-Modal Top-Level Dialog | ✅ | Slide up from bottom |
+| Top-Level View | Modal Dialog | ✅ | Slide up from bottom |
+| Sub-Level View | Sub-Level View | ✅ | Push navigation (deeper) |
+| Sub-Level View | Non-Modal Top-Level Dialog | ✅ | Slide up from bottom |
+| Sub-Level View | Modal Dialog | ✅ | Slide up from bottom |
+| Non-Modal Top-Level Dialog | Non-Modal Sub-Level Dialog | ✅ | Internal transition (deeper) |
+| Non-Modal Sub-Level Dialog | Non-Modal Top-Level Dialog | ✅ | Back button |
+| Non-Modal Top-Level Dialog | Modal Dialog | ❌ | Not allowed — dismiss first, then open modal |
+| Modal Dialog | Any | ❌ | Must cancel or submit first |
