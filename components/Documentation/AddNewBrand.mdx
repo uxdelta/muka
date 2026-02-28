@@ -1,0 +1,924 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Documentation/Guides/Add a New Brand" />
+
+# Add a New Brand: Step-by-Step Walkthrough
+
+This is a practical, hands-on guide for adding a new brand to the Muka design system. Follow these exact steps to create a new brand variant that works seamlessly with all existing components.
+
+For the **conceptual overview** of the multi-brand architecture, see `docs/guides/multi-brand-strategy.md` in the repository.
+
+---
+
+## What You'll Build
+
+By the end of this guide, you'll have:
+- A new brand with its own color palette and typography
+- Light and dark theme variants
+- All components automatically styled for your brand
+- Full Storybook integration with brand switcher support
+
+**Example:** We'll walk through creating a brand called "Aurora" with a purple/teal color scheme and Inter font family.
+
+---
+
+## Prerequisites
+
+Before starting, ensure:
+- You have the repository cloned and dependencies installed (`npm install`)
+- You understand the 4-layer token architecture (see [Design Tokens Introduction](/docs/design-tokens-01-introduction--docs))
+- You have your brand's design specifications ready (colors, fonts, etc.)
+
+---
+
+## Step 1: Plan Your Brand Identity
+
+Define your brand's core design attributes before writing any code.
+
+### Brand Planning Checklist
+
+```markdown
+Brand: Aurora
+Personality: Vibrant, innovative, energetic
+Primary Color: Purple (violet scale)
+Secondary Color: Teal (cyan scale)
+Typography: Inter (modern, clean, professional)
+Neutral Colors: Slate (cooler than gray)
+```
+
+### Map Colors to Primitives
+
+Identify which primitive color scales from `tokens/t1-primitives/` you'll use:
+
+| Brand Attribute | Primitive Scale | Example Token |
+|----------------|----------------|---------------|
+| Primary color | `color.violet.*` | `{color.violet.9}` |
+| Secondary color | `color.cyan.*` | `{color.cyan.8}` |
+| Neutral scale | `color.slate.*` | `{color.slate.1-12}` |
+| Success state | `color.teal.*` | `{color.teal.11}` |
+| Error state | `color.red.*` | `{color.red.9}` |
+| Warning state | `color.amber.*` | `{color.amber.9}` |
+
+💡 **Tip:** Browse `tokens/t1-primitives/colors/` to see all available color scales.
+
+---
+
+## Step 2: Create Brand Directory Structure
+
+Create a new directory for your brand under the alias layer.
+
+### Terminal Commands
+
+```bash
+# Navigate to the tokens directory
+cd tokens/t2-alias/brand
+
+# Create brand directory
+mkdir aurora
+
+# Create the three required token files
+touch aurora/fonts.json
+touch aurora/light.json
+touch aurora/dark.json
+```
+
+Your structure should now look like:
+
+```
+tokens/t2-alias/brand/
+├── muka/
+│   ├── fonts.json
+│   ├── light.json
+│   ├── dark.json
+│   └── radius.json
+├── wireframe/
+│   ├── fonts.json
+│   ├── light.json
+│   └── dark.json
+└── aurora/              ← NEW
+    ├── fonts.json       ← NEW
+    ├── light.json       ← NEW
+    └── dark.json        ← NEW
+```
+
+---
+
+## Step 3: Define Brand Typography
+
+Edit `tokens/t2-alias/brand/aurora/fonts.json` to define your brand's font families and weights.
+
+### File: `tokens/t2-alias/brand/aurora/fonts.json`
+
+```json
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "alias": {
+    "font": {
+      "brand": {
+        "family": { "$type": "fontFamilies", "$value": "Inter" },
+        "weight": {
+          "regular": { "$type": "fontWeights", "$value": "400" },
+          "medium": { "$type": "fontWeights", "$value": "500" },
+          "semibold": { "$type": "fontWeights", "$value": "600" },
+          "bold": { "$type": "fontWeights", "$value": "700" }
+        }
+      },
+      "plain": {
+        "family": { "$type": "fontFamilies", "$value": "Inter" },
+        "weight": {
+          "regular": { "$type": "fontWeights", "$value": "400" },
+          "medium": { "$type": "fontWeights", "$value": "500" },
+          "semibold": { "$type": "fontWeights", "$value": "600" },
+          "bold": { "$type": "fontWeights", "$value": "700" }
+        }
+      },
+      "mono": {
+        "family": { "$type": "fontFamilies", "$value": "JetBrains Mono" },
+        "weight": {
+          "regular": { "$type": "fontWeights", "$value": "Regular" },
+          "bold": { "$type": "fontWeights", "$value": "Bold" }
+        }
+      },
+      "script": {
+        "family": { "$type": "fontFamilies", "$value": "Pacifico" }
+      }
+    }
+  }
+}
+```
+
+### Key Points
+
+- `alias.font.brand.family` is your primary brand font
+- `alias.font.plain.family` is used for body text
+- `alias.font.mono.family` is for code blocks
+- `alias.font.script.family` is for decorative elements
+- Font weights should match what your font family actually provides
+
+---
+
+## Step 4: Define Light Theme Colors
+
+Edit `tokens/t2-alias/brand/aurora/light.json` to override the default color aliases for light mode.
+
+### File: `tokens/t2-alias/brand/aurora/light.json`
+
+```json
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "alias": {
+    "color": {
+      "neutral": {
+        "1": { "$type": "color", "$value": "{color.slate.1}" },
+        "2": { "$type": "color", "$value": "{color.slate.2}" },
+        "3": { "$type": "color", "$value": "{color.slate.3}" },
+        "4": { "$type": "color", "$value": "{color.slate.4}" },
+        "5": { "$type": "color", "$value": "{color.slate.5}" },
+        "6": { "$type": "color", "$value": "{color.slate.6}" },
+        "7": { "$type": "color", "$value": "{color.slate.7}" },
+        "8": { "$type": "color", "$value": "{color.slate.8}" },
+        "9": { "$type": "color", "$value": "{color.slate.9}" },
+        "10": { "$type": "color", "$value": "{color.slate.10}" },
+        "11": { "$type": "color", "$value": "{color.slate.11}" },
+        "12": { "$type": "color", "$value": "{color.slate.12}" }
+      },
+      "brand": {
+        "primary": {
+          "regular": { "$type": "color", "$value": "{color.violet.11}" },
+          "contrast": { "$type": "color", "$value": "{color.violet.12}" },
+          "muted": { "$type": "color", "$value": "{color.violet.3}" }
+        },
+        "secondary": {
+          "regular": { "$type": "color", "$value": "{color.cyan.8}" },
+          "contrast": { "$type": "color", "$value": "{color.cyan.11}" },
+          "muted": { "$type": "color", "$value": "{color.cyan.3}" }
+        }
+      },
+      "accent": {
+        "default": { "$type": "color", "$value": "{color.violet.9}" },
+        "hover": { "$type": "color", "$value": "{color.violet.10}" },
+        "pressed": { "$type": "color", "$value": "{color.violet.11}" },
+        "contrast": { "$type": "color", "$value": "{color.violet.12}" },
+        "muted": { "$type": "color", "$value": "{color.violet.8}" },
+        "inverse": {
+          "default": { "$type": "color", "$value": "{color.violet.1}" },
+          "hover": { "$type": "color", "$value": "{color.white}" },
+          "pressed": { "$type": "color", "$value": "{color.violet.2}" },
+          "contrast": { "$type": "color", "$value": "{color.white}" },
+          "muted": { "$type": "color", "$value": "{color.violet.3}" }
+        }
+      },
+      "state": {
+        "success": {
+          "contrast": { "$type": "color", "$value": "{color.teal.12}" },
+          "default": { "$type": "color", "$value": "{color.teal.11}" },
+          "muted": { "$type": "color", "$value": "{color.teal.3}" }
+        },
+        "warning": {
+          "contrast": { "$type": "color", "$value": "{color.amber.11}" },
+          "default": { "$type": "color", "$value": "{color.amber.9}" },
+          "muted": { "$type": "color", "$value": "{color.amber.3}" }
+        },
+        "error": {
+          "contrast": { "$type": "color", "$value": "{color.red.11}" },
+          "default": { "$type": "color", "$value": "{color.red.9}" },
+          "muted": { "$type": "color", "$value": "{color.red.3}" }
+        },
+        "info": {
+          "contrast": { "$type": "color", "$value": "{color.violet.11}" },
+          "default": { "$type": "color", "$value": "{color.violet.9}" },
+          "muted": { "$type": "color", "$value": "{color.violet.3}" }
+        },
+        "neutral": {
+          "contrast": { "$type": "color", "$value": "{color.slate.11}" },
+          "default": { "$type": "color", "$value": "{color.slate.9}" },
+          "muted": { "$type": "color", "$value": "{color.slate.3}" }
+        }
+      }
+    }
+  }
+}
+```
+
+### Understanding the Structure
+
+| Token Path | Purpose | Guidelines |
+|-----------|---------|-----------|
+| `alias.color.neutral.*` | Neutral scale (backgrounds, borders, text) | Map to your chosen neutral primitive (slate, gray, mauve) |
+| `alias.color.brand.primary.*` | Primary brand color | Use for main brand identity elements |
+| `alias.color.brand.secondary.*` | Secondary brand color | Use for accents and highlights |
+| `alias.color.accent.*` | Interactive elements (buttons, links) | Usually matches primary color |
+| `alias.color.state.*` | Feedback states (success, error, warning, info) | Use semantically appropriate colors |
+
+### Color Scale Guidelines
+
+- **1-3**: Subtle backgrounds and muted states
+- **4-6**: Borders and subtle UI elements
+- **7-9**: Interactive states (hover, active) and solid backgrounds
+- **10-12**: High contrast text and important elements
+
+---
+
+## Step 5: Define Dark Theme Colors
+
+Edit `tokens/t2-alias/brand/aurora/dark.json` to override colors for dark mode.
+
+### File: `tokens/t2-alias/brand/aurora/dark.json`
+
+```json
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "alias": {
+    "color": {
+      "neutral": {
+        "1": { "$type": "color", "$value": "{color.slatedark.1}" },
+        "2": { "$type": "color", "$value": "{color.slatedark.2}" },
+        "3": { "$type": "color", "$value": "{color.slatedark.3}" },
+        "4": { "$type": "color", "$value": "{color.slatedark.4}" },
+        "5": { "$type": "color", "$value": "{color.slatedark.5}" },
+        "6": { "$type": "color", "$value": "{color.slatedark.6}" },
+        "7": { "$type": "color", "$value": "{color.slatedark.7}" },
+        "8": { "$type": "color", "$value": "{color.slatedark.8}" },
+        "9": { "$type": "color", "$value": "{color.slatedark.9}" },
+        "10": { "$type": "color", "$value": "{color.slatedark.10}" },
+        "11": { "$type": "color", "$value": "{color.slatedark.11}" },
+        "12": { "$type": "color", "$value": "{color.slatedark.12}" }
+      },
+      "brand": {
+        "primary": {
+          "regular": { "$type": "color", "$value": "{color.violetdark.11}" },
+          "contrast": { "$type": "color", "$value": "{color.violetdark.12}" },
+          "muted": { "$type": "color", "$value": "{color.violetdark.3}" }
+        },
+        "secondary": {
+          "regular": { "$type": "color", "$value": "{color.cyandark.8}" },
+          "contrast": { "$type": "color", "$value": "{color.cyandark.11}" },
+          "muted": { "$type": "color", "$value": "{color.cyandark.3}" }
+        }
+      },
+      "accent": {
+        "default": { "$type": "color", "$value": "{color.violetdark.9}" },
+        "hover": { "$type": "color", "$value": "{color.violetdark.10}" },
+        "pressed": { "$type": "color", "$value": "{color.violetdark.11}" },
+        "contrast": { "$type": "color", "$value": "{color.violetdark.12}" },
+        "muted": { "$type": "color", "$value": "{color.violetdark.8}" },
+        "inverse": {
+          "default": { "$type": "color", "$value": "{color.violetdark.1}" },
+          "hover": { "$type": "color", "$value": "{color.white}" },
+          "pressed": { "$type": "color", "$value": "{color.violetdark.2}" },
+          "contrast": { "$type": "color", "$value": "{color.white}" },
+          "muted": { "$type": "color", "$value": "{color.violetdark.3}" }
+        }
+      },
+      "state": {
+        "success": {
+          "contrast": { "$type": "color", "$value": "{color.tealdark.12}" },
+          "default": { "$type": "color", "$value": "{color.tealdark.11}" },
+          "muted": { "$type": "color", "$value": "{color.tealdark.3}" }
+        },
+        "warning": {
+          "contrast": { "$type": "color", "$value": "{color.amberdark.11}" },
+          "default": { "$type": "color", "$value": "{color.amberdark.9}" },
+          "muted": { "$type": "color", "$value": "{color.amberdark.3}" }
+        },
+        "error": {
+          "contrast": { "$type": "color", "$value": "{color.reddark.11}" },
+          "default": { "$type": "color", "$value": "{color.reddark.9}" },
+          "muted": { "$type": "color", "$value": "{color.reddark.3}" }
+        },
+        "info": {
+          "contrast": { "$type": "color", "$value": "{color.violetdark.11}" },
+          "default": { "$type": "color", "$value": "{color.violetdark.9}" },
+          "muted": { "$type": "color", "$value": "{color.violetdark.3}" }
+        },
+        "neutral": {
+          "contrast": { "$type": "color", "$value": "{color.slatedark.11}" },
+          "default": { "$type": "color", "$value": "{color.slatedark.9}" },
+          "muted": { "$type": "color", "$value": "{color.slatedark.3}" }
+        }
+      }
+    }
+  }
+}
+```
+
+### Dark Mode Color Guidelines
+
+- **Use dark variants:** Reference `{color.scaledark.*}` primitives (e.g., `{color.slatedark.1}`)
+- **Invert contrast:** What's light in light mode becomes dark in dark mode
+- **Maintain accessibility:** Ensure sufficient contrast ratios (WCAG AA minimum: 4.5:1 for text)
+- **Test both themes:** Verify all components look good in both light and dark modes
+
+---
+
+## Step 6: Update Build Manifest
+
+Edit `build/manifest.json` to register your new brand themes in the build pipeline.
+
+### File: `build/manifest.json`
+
+Add two new theme entries (light and dark) for your brand. Copy the structure from existing themes and modify the brand-specific paths.
+
+```json
+{
+  "$schema": "https://example.com/muka/manifest.schema.json",
+  "themes": {
+    "wireframe-light": [ /* existing... */ ],
+    "wireframe-dark": [ /* existing... */ ],
+    "muka-light": [ /* existing... */ ],
+    "muka-dark": [ /* existing... */ ],
+    "aurora-light": [
+      "tokens/t1-primitives/**/*.json",
+      "tokens/t2-alias/base.json",
+      "tokens/t2-alias/brand/aurora/fonts.json",
+      "tokens/t2-alias/brand/aurora/light.json",
+      "tokens/t2-alias/layout/mobile.json",
+      "tokens/t3-semantics/ui.json",
+      "tokens/t4-components/button.json",
+      "tokens/t4-components/card.json",
+      "tokens/t4-components/container.json",
+      "tokens/t4-components/input.json",
+      "tokens/t4-components/chip.json",
+      "tokens/t4-components/accordion.json",
+      "tokens/t4-components/checkbox.json",
+      "tokens/t4-components/alert.json",
+      "tokens/t4-components/select.json",
+      "tokens/t4-components/switch.json",
+      "tokens/t4-components/slider.json",
+      "tokens/t4-components/dialog.json",
+      "tokens/t4-components/popover.json",
+      "tokens/t4-components/tooltip.json",
+      "tokens/t4-components/menu.json",
+      "tokens/t4-components/contextmenu.json",
+      "tokens/t4-components/navigationmenu.json",
+      "tokens/t4-components/tabs.json",
+      "tokens/t4-components/separator.json",
+      "tokens/t4-components/form.json",
+      "tokens/t4-components/field.json",
+      "tokens/t4-components/fieldset.json",
+      "tokens/t4-components/numberfield.json",
+      "tokens/t4-components/autocomplete.json",
+      "tokens/t4-components/combobox.json",
+      "tokens/t4-components/radio.json",
+      "tokens/t4-components/checkboxgroup.json",
+      "tokens/t4-components/togglegroup.json",
+      "tokens/t4-components/meter.json",
+      "tokens/t4-components/progress.json",
+      "tokens/t4-components/scrollarea.json",
+      "tokens/t4-components/avatar.json",
+      "tokens/t4-components/previewcard.json",
+      "tokens/t4-components/toast.json",
+      "tokens/t4-components/toggle.json",
+      "tokens/t4-components/toolbar.json",
+      "tokens/t4-components/menubar.json",
+      "tokens/t4-components/collapsible.json",
+      "tokens/t4-components/topbar.json",
+      "tokens/t4-components/bottombar.json",
+      "tokens/t4-components/sheet.json",
+      "tokens/t4-components/badge.json",
+      "tokens/t4-components/table.json",
+      "tokens/t4-components/datepicker.json",
+      "tokens/t4-components/segmentgroup.json",
+      "tokens/t4-components/emptystate.json",
+      "tokens/t4-components/documentviewer.json",
+      "tokens/t4-components/fileupload.json"
+    ],
+    "aurora-dark": [
+      "tokens/t1-primitives/**/*.json",
+      "tokens/t2-alias/base.json",
+      "tokens/t2-alias/brand/aurora/fonts.json",
+      "tokens/t2-alias/brand/aurora/dark.json",
+      "tokens/t2-alias/layout/mobile.json",
+      "tokens/t3-semantics/ui.json",
+      "tokens/t4-components/button.json",
+      "tokens/t4-components/card.json",
+      "tokens/t4-components/container.json",
+      "tokens/t4-components/input.json",
+      "tokens/t4-components/chip.json",
+      "tokens/t4-components/accordion.json",
+      "tokens/t4-components/checkbox.json",
+      "tokens/t4-components/alert.json",
+      "tokens/t4-components/select.json",
+      "tokens/t4-components/switch.json",
+      "tokens/t4-components/slider.json",
+      "tokens/t4-components/dialog.json",
+      "tokens/t4-components/popover.json",
+      "tokens/t4-components/tooltip.json",
+      "tokens/t4-components/menu.json",
+      "tokens/t4-components/contextmenu.json",
+      "tokens/t4-components/navigationmenu.json",
+      "tokens/t4-components/tabs.json",
+      "tokens/t4-components/separator.json",
+      "tokens/t4-components/form.json",
+      "tokens/t4-components/field.json",
+      "tokens/t4-components/fieldset.json",
+      "tokens/t4-components/numberfield.json",
+      "tokens/t4-components/autocomplete.json",
+      "tokens/t4-components/combobox.json",
+      "tokens/t4-components/radio.json",
+      "tokens/t4-components/checkboxgroup.json",
+      "tokens/t4-components/togglegroup.json",
+      "tokens/t4-components/meter.json",
+      "tokens/t4-components/progress.json",
+      "tokens/t4-components/scrollarea.json",
+      "tokens/t4-components/avatar.json",
+      "tokens/t4-components/previewcard.json",
+      "tokens/t4-components/toast.json",
+      "tokens/t4-components/toggle.json",
+      "tokens/t4-components/toolbar.json",
+      "tokens/t4-components/menubar.json",
+      "tokens/t4-components/collapsible.json",
+      "tokens/t4-components/topbar.json",
+      "tokens/t4-components/bottombar.json",
+      "tokens/t4-components/sheet.json",
+      "tokens/t4-components/badge.json",
+      "tokens/t4-components/table.json",
+      "tokens/t4-components/datepicker.json",
+      "tokens/t4-components/segmentgroup.json",
+      "tokens/t4-components/emptystate.json",
+      "tokens/t4-components/documentviewer.json",
+      "tokens/t4-components/fileupload.json"
+    ]
+  },
+  "breakpoints": { /* existing... */ },
+  "exports": { /* existing... */ }
+}
+```
+
+### Manifest Structure Explained
+
+Each theme entry is an **ordered array** of token files that are loaded and merged in sequence:
+
+1. **Primitives** (`t1-primitives/**/*.json`) — Raw design values
+2. **Base aliases** (`t2-alias/base.json`) — Default brand-agnostic references
+3. **Brand fonts** (`t2-alias/brand/aurora/fonts.json`) — Your brand's typography
+4. **Brand theme** (`t2-alias/brand/aurora/light.json` or `dark.json`) — Your brand's colors
+5. **Layout tokens** (`t2-alias/layout/mobile.json`) — Responsive defaults
+6. **Semantics** (`t3-semantics/ui.json`) — Design intent layer
+7. **Component tokens** (`t4-components/*.json`) — All component-specific tokens
+
+💡 **Pro Tip:** The order matters! Files loaded later override earlier values.
+
+---
+
+## Step 7: Build the Tokens
+
+Run the token build script to generate CSS custom properties for your new brand.
+
+### Terminal Commands
+
+```bash
+# Build tokens
+npm run build:tokens
+```
+
+### Expected Output
+
+```
+🚀 Building design tokens for Storybook...
+
+📋 Loaded manifest configuration
+
+🎨 Building brand/theme combinations...
+
+📦 Building aurora-light...
+🏗️  Loading design tokens for aurora-light...
+   ✅ Loaded t1-primitives/colors/amber.json
+   ✅ Loaded t1-primitives/colors/blue.json
+   ...
+   ✅ Loaded t2-alias/brand/aurora/fonts.json
+   ✅ Loaded t2-alias/brand/aurora/light.json
+   ...
+   ✅ Generated: tokens-aurora-light.css
+
+📦 Building aurora-dark...
+🏗️  Loading design tokens for aurora-dark...
+   ...
+   ✅ Generated: tokens-aurora-dark.css
+
+🎉 All theme combinations built successfully!
+```
+
+### Verify Output Files
+
+Check that the CSS files were created:
+
+```bash
+ls -la styles/tokens-aurora-*.css
+```
+
+You should see:
+- `styles/tokens-aurora-light.css`
+- `styles/tokens-aurora-dark.css`
+
+### Inspect Generated CSS
+
+Open `styles/tokens-aurora-light.css` to verify the output:
+
+```css
+/* Muka Design System - aurora-light theme */
+/* Generated automatically from design tokens */
+
+[data-brand="aurora"][data-theme="light"] {
+  --alias-color-neutral-1: #fcfcfd;
+  --alias-color-neutral-2: #f9f9fb;
+  --alias-color-accent-default: #7c66dc;
+  --alias-font-brand-family: Inter;
+  --button-color-primary-background-default: #7c66dc;
+  --button-color-primary-foreground-default: #ffffff;
+  /* ... hundreds more tokens ... */
+}
+```
+
+---
+
+## Step 8: Add Brand to Storybook Theme Switcher
+
+Update Storybook's theme decorator to make your brand selectable in the toolbar.
+
+### File: `.storybook/preview.ts`
+
+Locate the `globalTypes` object and add your brand to the `brand` toolbar options.
+
+```typescript
+// .storybook/preview.ts
+import type { Preview } from '@storybook/react';
+import { ThemeDecorator } from './ThemeDecorator';
+
+const preview: Preview = {
+  parameters: {
+    // ... existing parameters
+  },
+  decorators: [ThemeDecorator],
+  globalTypes: {
+    brand: {
+      name: 'Brand',
+      description: 'Brand theme variant',
+      defaultValue: 'muka',
+      toolbar: {
+        icon: 'paintbrush',
+        items: [
+          { value: 'muka', title: 'Muka' },
+          { value: 'wireframe', title: 'Wireframe' },
+          { value: 'aurora', title: 'Aurora' }  // ← ADD THIS LINE
+        ],
+        dynamicTitle: true
+      }
+    },
+    theme: {
+      name: 'Mode',
+      description: 'Light or dark mode',
+      defaultValue: 'light',
+      toolbar: {
+        icon: 'circlehollow',
+        items: [
+          { value: 'light', icon: 'sun', title: 'Light' },
+          { value: 'dark', icon: 'moon', title: 'Dark' }
+        ],
+        dynamicTitle: true
+      }
+    }
+  }
+};
+
+export default preview;
+```
+
+### File: `.storybook/ThemeDecorator.ts`
+
+Ensure the decorator imports your brand's CSS files. If there's a dynamic import or switch statement, add your brand case.
+
+**Most likely, the existing decorator already handles all CSS files in the `styles/` directory dynamically, so no changes are needed here.** Verify by checking the code.
+
+If the decorator explicitly lists CSS imports, add:
+
+```typescript
+import '../styles/tokens-aurora-light.css';
+import '../styles/tokens-aurora-dark.css';
+```
+
+---
+
+## Step 9: Verify in Storybook
+
+Start Storybook and test your new brand across all components.
+
+### Terminal Commands
+
+```bash
+# Start Storybook
+npm run dev
+```
+
+Storybook will start on `http://localhost:6006`.
+
+### Manual Testing Steps
+
+1. **Open Storybook** in your browser (`http://localhost:6006`)
+
+2. **Navigate to any component story** (e.g., Components → Button)
+
+3. **Use the toolbar to switch brands:**
+   - Click the paintbrush icon in the toolbar
+   - Select "Aurora" from the dropdown
+
+4. **Switch between light and dark modes:**
+   - Click the theme icon in the toolbar
+   - Toggle between Light (sun) and Dark (moon)
+
+5. **Verify visual appearance:**
+   - ✅ Primary buttons should use your purple accent color
+   - ✅ Text should use the Inter font family
+   - ✅ Neutral backgrounds should use slate colors
+   - ✅ All interactive states (hover, active) should work
+
+6. **Test across multiple components:**
+   - Button (all variants)
+   - Input fields
+   - Cards
+   - Alerts
+   - Dialogs
+   - Navigation components
+
+### Browser DevTools Verification
+
+Open DevTools and inspect the `<html>` or `<body>` element:
+
+```html
+<html data-brand="aurora" data-theme="light">
+```
+
+Inspect a button element and check computed styles:
+
+```css
+.muka-button--primary {
+  background-color: var(--button-color-primary-background-default);
+  /* Should resolve to your purple color: #7c66dc */
+}
+```
+
+---
+
+## Step 10: Run Automated Tests
+
+Ensure your brand passes all existing tests.
+
+### Terminal Commands
+
+```bash
+# Run unit tests
+npm run test:unit
+
+# Run visual regression tests (if configured)
+npm run test:visual
+```
+
+### Expected Results
+
+- ✅ All component tests should pass
+- ✅ No TypeScript errors
+- ✅ No console warnings in Storybook
+
+If tests fail, verify:
+- All token files have valid JSON syntax
+- All token references resolve correctly (no `{undefined}` values)
+- CSS files were generated without errors
+
+---
+
+## Step 11: Document Your Brand
+
+Create brand-specific documentation for your team.
+
+### Create Brand Guidelines Document
+
+Create a new file: `docs/brands/aurora.md`
+
+```markdown
+# Aurora Brand Guidelines
+
+## Brand Identity
+
+**Personality:** Vibrant, innovative, energetic
+
+**Primary Use Cases:**
+- Tech startups
+- Creative agencies
+- Innovation-focused products
+
+## Color Palette
+
+| Token | Light Mode | Dark Mode | Usage |
+|-------|-----------|-----------|-------|
+| Primary | Violet #7c66dc | Violet #9d8df1 | Buttons, links, primary actions |
+| Secondary | Cyan #00a4cc | Cyan #00c2ea | Accents, highlights |
+| Neutral | Slate | Slate Dark | Backgrounds, text, borders |
+| Success | Teal | Teal Dark | Success states, confirmations |
+| Error | Red | Red Dark | Errors, destructive actions |
+
+## Typography
+
+| Type | Font Family | Weight | Usage |
+|------|-------------|--------|-------|
+| Brand | Inter | 400-700 | Headings, buttons, labels |
+| Plain | Inter | 400-700 | Body text, paragraphs |
+| Mono | JetBrains Mono | Regular, Bold | Code blocks, technical content |
+| Script | Pacifico | Regular | Decorative elements, branding |
+
+## Accessibility
+
+- All color combinations meet WCAG AA contrast requirements (4.5:1 minimum)
+- Font sizes scale appropriately for readability
+- Interactive elements have sufficient touch targets (44x44px minimum)
+
+## Brand-Specific Customizations
+
+None (uses default component tokens from t4 layer).
+
+## Usage in Projects
+
+```tsx
+import { ThemeProvider } from '@muka/ui';
+
+function App() {
+  return (
+    <ThemeProvider brand="aurora" theme="light">
+      {/* Your app */}
+    </ThemeProvider>
+  );
+}
+```
+
+## Maintenance
+
+**Owner:** Design Team  
+**Last Updated:** 2026-02-28  
+**Review Cadence:** Quarterly
+```
+
+---
+
+## Troubleshooting
+
+### Issue: Tokens not updating in Storybook
+
+**Solution:**
+1. Stop Storybook (`Ctrl+C`)
+2. Rebuild tokens: `npm run build:tokens`
+3. Restart Storybook: `npm run dev`
+4. Hard refresh browser (`Cmd+Shift+R` or `Ctrl+Shift+R`)
+
+### Issue: Brand not appearing in toolbar
+
+**Solution:**
+- Verify you added the brand to `.storybook/preview.ts` → `globalTypes.brand.toolbar.items`
+- Restart Storybook
+
+### Issue: Colors look wrong
+
+**Solution:**
+- Check that color primitives exist (e.g., `color.violet.9` must be defined in `t1-primitives/`)
+- Verify dark mode uses `colordark` variants (e.g., `{color.violetdark.9}`)
+- Inspect CSS output in `styles/tokens-aurora-*.css` to see resolved values
+
+### Issue: Build fails with "Cannot find module"
+
+**Solution:**
+- Verify all paths in `build/manifest.json` are correct
+- Ensure all referenced token files exist
+- Check for typos in file paths (case-sensitive on Linux/macOS)
+
+### Issue: Fonts not loading
+
+**Solution:**
+- Ensure font families are installed/available in your environment
+- Use web-safe fallbacks: `"Inter, system-ui, sans-serif"`
+- Add `@font-face` declarations in your app or Storybook preview
+
+---
+
+## Advanced Customizations
+
+### Adding Brand-Specific Component Overrides
+
+If your brand requires unique component styling (e.g., square buttons instead of rounded), create brand-specific component tokens.
+
+**Example:** Create `tokens/t4-components/brand-overrides/aurora/button.json`
+
+```json
+{
+  "button": {
+    "radius": {
+      "sm": { "$type": "dimension", "$value": "0px" },
+      "md": { "$type": "dimension", "$value": "0px" },
+      "lg": { "$type": "dimension", "$value": "0px" }
+    }
+  }
+}
+```
+
+Then add this file to your theme arrays in `build/manifest.json` **after** the default button token file.
+
+### Adding Custom Semantic Tokens
+
+If your brand uses different interaction patterns, create brand-specific semantic overrides.
+
+**Example:** Create `tokens/t3-semantics/brand-overrides/aurora/ui.json`
+
+```json
+{
+  "color": {
+    "action": {
+      "hover": {
+        "$type": "color",
+        "$value": "{alias.color.brand.secondary}"
+      }
+    }
+  }
+}
+```
+
+Add to manifest after the base semantic file.
+
+---
+
+## Summary Checklist
+
+Before considering your brand complete, verify:
+
+- [ ] Created brand directory: `tokens/t2-alias/brand/aurora/`
+- [ ] Created `fonts.json` with typography tokens
+- [ ] Created `light.json` with light theme colors
+- [ ] Created `dark.json` with dark theme colors
+- [ ] Updated `build/manifest.json` with `aurora-light` and `aurora-dark` themes
+- [ ] Ran `npm run build:tokens` successfully
+- [ ] Verified CSS files generated in `styles/`
+- [ ] Added brand to Storybook toolbar in `.storybook/preview.ts`
+- [ ] Tested brand in Storybook (light and dark modes)
+- [ ] All components display correctly with new brand
+- [ ] Created brand documentation in `docs/brands/aurora.md`
+- [ ] Tests pass (`npm run test:unit`)
+- [ ] Committed changes to version control
+
+---
+
+## Next Steps
+
+- **Explore Token Layers:** [Design Tokens Introduction](/docs/design-tokens-01-introduction--docs)
+- **Multi-Brand Strategy:** Read `docs/guides/multi-brand-strategy.md` for conceptual overview
+- **Customize Components:** Add brand-specific component token overrides as needed
+- **Accessibility:** Run `npm run test:a11y` to validate WCAG compliance
+- **Deploy:** Integrate your brand into your production build pipeline
+
+---
+
+**Congratulations!** 🎉 You've successfully added a new brand to the Muka design system. All components now support your brand with zero code changes required in React components.
