@@ -53,6 +53,7 @@
       "tokens/t4-components/table.json",
       "tokens/t4-components/datepicker.json",
       "tokens/t4-components/segmentgroup.json",
+      "tokens/t4-components/emptystate.json",
       "tokens/t4-components/documentviewer.json"
     ],
     "wireframe-dark": [
@@ -107,6 +108,7 @@
       "tokens/t4-components/table.json",
       "tokens/t4-components/datepicker.json",
       "tokens/t4-components/segmentgroup.json",
+      "tokens/t4-components/emptystate.json",
       "tokens/t4-components/documentviewer.json"
     ],
     "muka-light": [
@@ -161,6 +163,7 @@
       "tokens/t4-components/table.json",
       "tokens/t4-components/datepicker.json",
       "tokens/t4-components/segmentgroup.json",
+      "tokens/t4-components/emptystate.json",
       "tokens/t4-components/documentviewer.json"
     ],
     "muka-dark": [
@@ -215,6 +218,7 @@
       "tokens/t4-components/table.json",
       "tokens/t4-components/datepicker.json",
       "tokens/t4-components/segmentgroup.json",
+      "tokens/t4-components/emptystate.json",
       "tokens/t4-components/documentviewer.json"
     ]
   },
