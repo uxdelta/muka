@@ -1727,6 +1727,37 @@
   --documentviewer-loading-overlay-background: {color.surface.overlay};
   --documentviewer-error-background: {color.surface.default};
   --documentviewer-error-text: #eeeeee;
+  --fileupload-dropzone-color-default-background: #2a2a2a;
+  --fileupload-dropzone-color-default-border: #313131;
+  --fileupload-dropzone-color-default-foreground: #7b7b7b;
+  --fileupload-dropzone-color-hover-background: #313131;
+  --fileupload-dropzone-color-hover-border: #606060;
+  --fileupload-dropzone-color-active-background: {color.state.info.subtle};
+  --fileupload-dropzone-color-active-border: #b4b4b4;
+  --fileupload-dropzone-color-error-background: {color.state.error.subtle};
+  --fileupload-dropzone-color-error-border: #fea6a6;
+  --fileupload-dropzone-color-disabled-background: #313131;
+  --fileupload-dropzone-color-disabled-border: #313131;
+  --fileupload-dropzone-color-disabled-foreground: #7b7b7b;
+  --fileupload-dropzone-padding-sm: 1rem;
+  --fileupload-dropzone-padding-md: 1.5rem;
+  --fileupload-dropzone-padding-lg: 2rem;
+  --fileupload-dropzone-radius: 0.75rem;
+  --fileupload-dropzone-border-width: 0.125rem;
+  --fileupload-dropzone-border-style: dashed;
+  --fileupload-dropzone-gap: 0.75rem;
+  --fileupload-item-color-default-background: #2a2a2a;
+  --fileupload-item-color-default-foreground: #eeeeee;
+  --fileupload-item-color-error-background: {color.state.error.subtle};
+  --fileupload-item-color-error-foreground: {color.state.error.foreground};
+  --fileupload-item-color-success-background: {color.state.success.subtle};
+  --fileupload-item-color-success-foreground: {color.state.success.foreground};
+  --fileupload-item-padding-x: 0.75rem;
+  --fileupload-item-padding-y: 0.75rem;
+  --fileupload-item-radius: 0.375rem;
+  --fileupload-item-gap: 0.75rem;
+  --fileupload-preview-size: 2.5rem;
+  --fileupload-preview-radius: 0.1875rem;
 }
 
 /* Responsive overrides: md (min-width: 768px) */

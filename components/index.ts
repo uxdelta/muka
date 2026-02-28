@@ -54,6 +54,15 @@ export { PriceTag, type PriceTagProps } from './PriceTag';
 export { Tile, type TileProps } from './Tile';
 export { DocumentViewer, type DocumentViewerProps, type DocumentMetadata } from './DocumentViewer';
 export {
+  FileUpload,
+  FileUploadItem,
+  type FileUploadProps,
+  type FileUploadItemProps,
+  type FileUploadError,
+  type FileWithStatus,
+  type UploadResult,
+} from './FileUpload';
+export {
   Menu,
   MenuTrigger,
   MenuContent,

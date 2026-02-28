@@ -1,0 +1,164 @@
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "fileupload": {
+    "dropzone": {
+      "color": {
+        "default": {
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level2}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.border.default}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.text.subtle.default}"
+          }
+        },
+        "hover": {
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level1}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.border.contrast}"
+          }
+        },
+        "active": {
+          "background": {
+            "$type": "color",
+            "$value": "{color.state.info.subtle}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.action.default}"
+          }
+        },
+        "error": {
+          "background": {
+            "$type": "color",
+            "$value": "{color.state.error.subtle}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.state.error.contrast}"
+          }
+        },
+        "disabled": {
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level1}"
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{color.border.default}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.text.subtle.default}"
+          }
+        }
+      },
+      "padding": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "{spacing.4}"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{spacing.6}"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{spacing.8}"
+        }
+      },
+      "radius": {
+        "$type": "borderRadius",
+        "$value": "{border.radius.lg}"
+      },
+      "border": {
+        "width": {
+          "$type": "dimension",
+          "$value": "{border.width.bold}"
+        },
+        "style": {
+          "$type": "other",
+          "$value": "dashed"
+        }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.3}"
+      }
+    },
+    "item": {
+      "color": {
+        "default": {
+          "background": {
+            "$type": "color",
+            "$value": "{color.surface.level2}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.text.default.default}"
+          }
+        },
+        "error": {
+          "background": {
+            "$type": "color",
+            "$value": "{color.state.error.subtle}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.state.error.foreground}"
+          }
+        },
+        "success": {
+          "background": {
+            "$type": "color",
+            "$value": "{color.state.success.subtle}"
+          },
+          "foreground": {
+            "$type": "color",
+            "$value": "{color.state.success.foreground}"
+          }
+        }
+      },
+      "padding": {
+        "x": {
+          "$type": "dimension",
+          "$value": "{spacing.3}"
+        },
+        "y": {
+          "$type": "dimension",
+          "$value": "{spacing.3}"
+        }
+      },
+      "radius": {
+        "$type": "borderRadius",
+        "$value": "{border.radius.md}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.3}"
+      }
+    },
+    "preview": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{size.3xl}"
+      },
+      "radius": {
+        "$type": "borderRadius",
+        "$value": "{border.radius.sm}"
+      }
+    }
+  }
+}
