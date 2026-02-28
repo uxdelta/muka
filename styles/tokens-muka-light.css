@@ -1657,6 +1657,19 @@
   --segmentgroup-segment-padding-lg-x: 1.5rem;
   --segmentgroup-segment-padding-lg-y: 0.5rem;
   --segmentgroup-segment-height-sm: 1.5rem;
+  --emptystate-container-padding-sm: 1.5rem;
+  --emptystate-container-padding-md: 2rem;
+  --emptystate-container-padding-lg: 3rem;
+  --emptystate-container-gap: 1rem;
+  --emptystate-container-maxWidth: 24rem;
+  --emptystate-icon-size-sm: 2rem;
+  --emptystate-icon-size-md: 3rem;
+  --emptystate-icon-size-lg: 4rem;
+  --emptystate-icon-color: #d0cdd7;
+  --emptystate-title-color: #211f26;
+  --emptystate-description-color: #d0cdd7;
+  --emptystate-actions-gap: 0.75rem;
+  --emptystate-actions-marginTop: 1rem;
 }
 
 /* Responsive overrides: md (min-width: 768px) */

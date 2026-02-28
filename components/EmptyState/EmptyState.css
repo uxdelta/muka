@@ -1,0 +1,138 @@
+/* EmptyState Component Styles - Using Muka Design Tokens */
+
+.muka-emptystate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--emptystate-container-gap);
+  max-width: var(--emptystate-container-maxWidth);
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Alignment variants */
+.muka-emptystate--left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Size variants */
+.muka-emptystate--sm {
+  padding: var(--emptystate-container-padding-sm);
+}
+
+.muka-emptystate--md {
+  padding: var(--emptystate-container-padding-md);
+}
+
+.muka-emptystate--lg {
+  padding: var(--emptystate-container-padding-lg);
+}
+
+/* Visual (icon or illustration) */
+.muka-emptystate__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--emptystate-icon-color);
+  flex-shrink: 0;
+}
+
+.muka-emptystate--sm .muka-emptystate__visual {
+  width: var(--emptystate-icon-size-sm);
+  height: var(--emptystate-icon-size-sm);
+}
+
+.muka-emptystate--md .muka-emptystate__visual {
+  width: var(--emptystate-icon-size-md);
+  height: var(--emptystate-icon-size-md);
+}
+
+.muka-emptystate--lg .muka-emptystate__visual {
+  width: var(--emptystate-icon-size-lg);
+  height: var(--emptystate-icon-size-lg);
+}
+
+.muka-emptystate__visual svg {
+  width: 100%;
+  height: 100%;
+}
+
+.muka-emptystate__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Content */
+.muka-emptystate__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.muka-emptystate--left .muka-emptystate__content {
+  align-items: flex-start;
+}
+
+/* Title */
+.muka-emptystate__title {
+  color: var(--emptystate-title-color);
+  margin: 0;
+  font-family: var(--text-heading-h4-fontFamily);
+  font-weight: var(--text-heading-h4-fontWeight);
+  font-size: var(--text-heading-h4-fontSize);
+  line-height: var(--text-heading-h4-lineHeight);
+}
+
+.muka-emptystate--sm .muka-emptystate__title {
+  font-family: var(--text-label-lg-semibold-fontFamily);
+  font-weight: var(--text-label-lg-semibold-fontWeight);
+  font-size: var(--text-label-lg-semibold-fontSize);
+  line-height: var(--text-label-lg-semibold-lineHeight);
+}
+
+.muka-emptystate--lg .muka-emptystate__title {
+  font-family: var(--text-heading-h3-fontFamily);
+  font-weight: var(--text-heading-h3-fontWeight);
+  font-size: var(--text-heading-h3-fontSize);
+  line-height: var(--text-heading-h3-lineHeight);
+}
+
+/* Description */
+.muka-emptystate__description {
+  color: var(--emptystate-description-color);
+  margin: 0;
+  font-family: var(--text-body-sm-regular-fontFamily);
+  font-weight: var(--text-body-sm-regular-fontWeight);
+  font-size: var(--text-body-sm-regular-fontSize);
+  line-height: var(--text-body-sm-regular-lineHeight);
+}
+
+.muka-emptystate--md .muka-emptystate__description {
+  font-family: var(--text-body-base-regular-fontFamily);
+  font-weight: var(--text-body-base-regular-fontWeight);
+  font-size: var(--text-body-base-regular-fontSize);
+  line-height: var(--text-body-base-regular-lineHeight);
+}
+
+.muka-emptystate--lg .muka-emptystate__description {
+  font-family: var(--text-body-lg-regular-fontFamily);
+  font-weight: var(--text-body-lg-regular-fontWeight);
+  font-size: var(--text-body-lg-regular-fontSize);
+  line-height: var(--text-body-lg-regular-lineHeight);
+}
+
+/* Actions */
+.muka-emptystate__actions {
+  display: flex;
+  gap: var(--emptystate-actions-gap);
+  margin-top: var(--emptystate-actions-marginTop);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.muka-emptystate--left .muka-emptystate__actions {
+  justify-content: flex-start;
+}
