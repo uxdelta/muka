@@ -1,0 +1,266 @@
+/* Avatar Component Styles - Using Muka Design Tokens */
+
+/* Base avatar styles */
+.muka-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  user-select: none;
+  vertical-align: middle;
+  background-color: var(--avatar-color-background-default);
+  color: var(--avatar-color-foreground-default);
+  border: var(--avatar-border-width) solid var(--avatar-color-border-default);
+  font-family: var(--alias-font-brand-family);
+  font-weight: var(--alias-font-brand-weight-semibold);
+}
+
+/* Size variants */
+.muka-avatar--xs {
+  width: var(--avatar-size-xs);
+  height: var(--avatar-size-xs);
+  font-size: var(--avatar-font-size-xs);
+}
+
+.muka-avatar--sm {
+  width: var(--avatar-size-sm);
+  height: var(--avatar-size-sm);
+  font-size: var(--avatar-font-size-sm);
+}
+
+.muka-avatar--md {
+  width: var(--avatar-size-md);
+  height: var(--avatar-size-md);
+  font-size: var(--avatar-font-size-md);
+}
+
+.muka-avatar--lg {
+  width: var(--avatar-size-lg);
+  height: var(--avatar-size-lg);
+  font-size: var(--avatar-font-size-lg);
+}
+
+.muka-avatar--xl {
+  width: var(--avatar-size-xl);
+  height: var(--avatar-size-xl);
+  font-size: var(--avatar-font-size-xl);
+}
+
+/* Shape variants */
+.muka-avatar--circle {
+  border-radius: var(--avatar-radius-circle);
+}
+
+.muka-avatar--square {
+  border-radius: var(--avatar-radius-square);
+}
+
+/* Clickable state */
+.muka-avatar--clickable {
+  cursor: pointer;
+  transition: opacity 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.muka-avatar--clickable:hover {
+  opacity: 0.9;
+}
+
+.muka-avatar--clickable:active {
+  opacity: 0.8;
+}
+
+.muka-avatar--clickable:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Loading state */
+.muka-avatar--loading {
+  background-color: var(--avatar-color-background-loading);
+}
+
+.muka-avatar__skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-surface-level1) 50%,
+    transparent 100%
+  );
+  animation: avatar-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes avatar-loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Avatar content */
+.muka-avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.muka-avatar__icon {
+  width: 60%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.muka-avatar__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.muka-avatar__initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.muka-avatar__fallback {
+  width: 60%;
+  height: 60%;
+  color: var(--avatar-color-foreground-muted);
+}
+
+.muka-avatar__overflow-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: inherit;
+  line-height: 1;
+}
+
+/* Status indicator */
+.muka-avatar__status {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid var(--color-surface-level1);
+  box-sizing: border-box;
+}
+
+.muka-avatar--xs .muka-avatar__status {
+  width: var(--avatar-status-size-xs);
+  height: var(--avatar-status-size-xs);
+}
+
+.muka-avatar--sm .muka-avatar__status {
+  width: var(--avatar-status-size-sm);
+  height: var(--avatar-status-size-sm);
+}
+
+.muka-avatar--md .muka-avatar__status {
+  width: var(--avatar-status-size-md);
+  height: var(--avatar-status-size-md);
+}
+
+.muka-avatar--lg .muka-avatar__status {
+  width: var(--avatar-status-size-lg);
+  height: var(--avatar-status-size-lg);
+}
+
+.muka-avatar--xl .muka-avatar__status {
+  width: var(--avatar-status-size-xl);
+  height: var(--avatar-status-size-xl);
+}
+
+/* Status positioning */
+.muka-avatar__status--top-right {
+  top: 0;
+  right: 0;
+}
+
+.muka-avatar__status--bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+/* Status colors */
+.muka-avatar__status--online {
+  background-color: var(--avatar-color-status-online);
+}
+
+.muka-avatar__status--offline {
+  background-color: var(--avatar-color-status-offline);
+}
+
+.muka-avatar__status--busy {
+  background-color: var(--avatar-color-status-busy);
+}
+
+.muka-avatar__status--away {
+  background-color: var(--avatar-color-status-away);
+}
+
+/* Avatar Group */
+.muka-avatar-group {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.muka-avatar-group__item {
+  position: relative;
+  display: inline-flex;
+  border: 2px solid var(--color-surface-level1);
+  border-radius: inherit;
+}
+
+/* Add border radius to match avatar shape */
+.muka-avatar-group__item .muka-avatar--circle {
+  border-radius: var(--avatar-radius-circle);
+}
+
+.muka-avatar-group__item .muka-avatar--square {
+  border-radius: var(--avatar-radius-square);
+}
+
+.muka-avatar-group__item .muka-avatar {
+  border: none;
+}
+
+/* Spacing variants for avatar group */
+.muka-avatar-group--tight .muka-avatar-group__item:not(:first-child) {
+  margin-left: calc(var(--avatar-group-spacing-tight));
+}
+
+.muka-avatar-group--normal .muka-avatar-group__item:not(:first-child) {
+  margin-left: calc(var(--avatar-group-spacing-normal));
+}
+
+/* Z-index stacking for overlap effect */
+.muka-avatar-group__item {
+  z-index: 0;
+}
+
+.muka-avatar-group__item:hover {
+  z-index: 10;
+}
+
+/* Overflow avatar styling */
+.muka-avatar--overflow {
+  background-color: var(--avatar-color-background-default);
+  color: var(--avatar-color-foreground-default);
+  font-weight: var(--alias-font-brand-weight-semibold);
+}

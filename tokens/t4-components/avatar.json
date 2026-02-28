@@ -1,0 +1,148 @@
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "avatar": {
+    "size": {
+      "xs": {
+        "$type": "sizing",
+        "$value": "{size.3xl}"
+      },
+      "sm": {
+        "$type": "sizing",
+        "$value": "{size.4xl}"
+      },
+      "md": {
+        "$type": "sizing",
+        "$value": "{size.6xl}"
+      },
+      "lg": {
+        "$type": "sizing",
+        "$value": "{size.8xl}"
+      },
+      "xl": {
+        "$type": "sizing",
+        "$value": "{size.10xl}"
+      }
+    },
+    "color": {
+      "background": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.surface.level2}"
+        },
+        "loading": {
+          "$type": "color",
+          "$value": "{color.surface.level1}"
+        }
+      },
+      "foreground": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.text.default.default}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.text.muted.default}"
+        }
+      },
+      "border": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.border.default}"
+        }
+      },
+      "status": {
+        "online": {
+          "$type": "color",
+          "$value": "{color.semantic.success.default}"
+        },
+        "offline": {
+          "$type": "color",
+          "$value": "{color.text.muted.default}"
+        },
+        "busy": {
+          "$type": "color",
+          "$value": "{color.semantic.error.default}"
+        },
+        "away": {
+          "$type": "color",
+          "$value": "{color.semantic.warning.default}"
+        }
+      }
+    },
+    "radius": {
+      "circle": {
+        "$type": "borderRadius",
+        "$value": "{radius.full}"
+      },
+      "square": {
+        "$type": "borderRadius",
+        "$value": "{border.radius.lg}"
+      }
+    },
+    "font-size": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "{font.size.xs}"
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{font.size.sm}"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{font.size.lg}"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{font.size.xl}"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{font.size.2xl}"
+      }
+    },
+    "status-size": {
+      "xs": {
+        "$type": "sizing",
+        "$value": "{size.xs}"
+      },
+      "sm": {
+        "$type": "sizing",
+        "$value": "{size.sm}"
+      },
+      "md": {
+        "$type": "sizing",
+        "$value": "{size.md}"
+      },
+      "lg": {
+        "$type": "sizing",
+        "$value": "{size.lg}"
+      },
+      "xl": {
+        "$type": "sizing",
+        "$value": "{size.xl}"
+      }
+    },
+    "border": {
+      "width": {
+        "$type": "dimension",
+        "$value": "{spacing.px}"
+      }
+    },
+    "group": {
+      "spacing": {
+        "tight": {
+          "$type": "dimension",
+          "$value": "-{spacing.2}"
+        },
+        "normal": {
+          "$type": "dimension",
+          "$value": "-{spacing.1}"
+        }
+      }
+    }
+  }
+}
