@@ -82,7 +82,6 @@ export const Avatar: React.FC<AvatarProps> = ({
   onClick,
   className = '',
   'aria-label': ariaLabel,
-  ...props
 }) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(!!src);
@@ -90,7 +89,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   // Warn if src provided without alt
   warnMissingA11yProp(
     'Avatar',
-    src && !alt,
+    !!(src && !alt),
     'Avatar with src requires alt text for accessibility'
   );
 
@@ -162,7 +161,6 @@ export const Avatar: React.FC<AvatarProps> = ({
     <WrapperTag
       className={avatarClasses}
       {...wrapperProps}
-      {...props}
     >
       {showImage && (
         <img
