@@ -119,8 +119,13 @@ export const WithIcons: Story = {
   render: () => (
     <Menu>
       <MenuTrigger asChild>
-        <Button variant="ghost" iconOnly aria-label="More options">
-          <Icon name="more-2" variant="line" size="md" />
+        <Button
+          variant="ghost"
+          iconOnly
+          iconLeft={<Icon name="more-2" variant="line" size="md" />}
+          aria-label="More options"
+        >
+          More options
         </Button>
       </MenuTrigger>
       <MenuContent align="end">
