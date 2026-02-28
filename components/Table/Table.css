@@ -66,11 +66,11 @@
 }
 
 .muka-table__body .muka-table__row--selected {
-  background-color: var(--color-action-background);
+  background-color: var(--table-row-selected-background, var(--color-action-background));
 }
 
 .muka-table__body .muka-table__row--selected:hover {
-  background-color: var(--color-action-background);
+  background-color: var(--table-row-selected-background, var(--color-action-background));
 }
 
 .muka-table__row--clickable {

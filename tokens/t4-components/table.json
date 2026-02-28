@@ -31,6 +31,32 @@
           }
         }
       }
+    },
+    "row": {
+      "selected": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.state.info.background}"
+        }
+      }
+    },
+    "pagination": {
+      "padding": {
+        "$type": "spacing",
+        "$value": "{spacing.3}"
+      },
+      "gap": {
+        "$type": "spacing",
+        "$value": "{spacing.4}"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.surface.level1}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.border.default}"
+      }
     }
   }
 }

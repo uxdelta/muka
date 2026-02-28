@@ -1,0 +1,25 @@
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "contextmenu": {
+    "$description": "Context menu uses menu tokens. This file exists for manifest completeness.",
+    "trigger": {
+      "outline": {
+        "width": {
+          "$type": "dimension",
+          "$value": "{border.width.bold}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{color.border.focus}"
+        },
+        "offset": {
+          "$type": "dimension",
+          "$value": "{spacing.0-5}"
+        }
+      }
+    }
+  }
+}

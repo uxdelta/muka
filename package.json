@@ -70,6 +70,8 @@
   "author": "Revi Körnmann",
   "license": "MIT",
   "dependencies": {
+    "@radix-ui/react-context-menu": "^2.2.16",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
     "@remixicon/react": "^4.9.0"
   },
   "peerDependencies": {
