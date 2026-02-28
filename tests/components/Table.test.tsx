@@ -137,10 +137,11 @@ describe('TablePagination Component', () => {
 
     it('renders page size options', () => {
       render(<TablePagination {...defaultProps} pageSizeOptions={[5, 10, 25]} />);
-      const select = screen.getByRole('combobox');
-      expect(select).toContainElement(screen.getByText('5'));
-      expect(select).toContainElement(screen.getByText('10'));
-      expect(select).toContainElement(screen.getByText('25'));
+      const select = screen.getByRole('combobox') as HTMLSelectElement;
+      const options = Array.from(select.options).map(opt => opt.value);
+      expect(options).toContain('5');
+      expect(options).toContain('10');
+      expect(options).toContain('25');
     });
 
     it('hides page size selector when showPageSizeSelector is false', () => {
@@ -194,10 +195,11 @@ describe('TablePagination Component', () => {
     it('calls onPageChange when clicking a page number', async () => {
       const user = userEvent.setup();
       const onPageChange = vi.fn();
-      render(<TablePagination {...defaultProps} onPageChange={onPageChange} showPageNumbers />);
+      // Use page 5 so that page 3 is visible in the pagination (pages shown: 1, ..., 4, 5, 6, ..., 10)
+      render(<TablePagination {...defaultProps} page={5} onPageChange={onPageChange} showPageNumbers />);
 
-      await user.click(screen.getByRole('button', { name: 'Page 3' }));
-      expect(onPageChange).toHaveBeenCalledWith(3);
+      await user.click(screen.getByRole('button', { name: 'Page 4' }));
+      expect(onPageChange).toHaveBeenCalledWith(4);
     });
 
     it('calls onPageChange when clicking first page button', async () => {
