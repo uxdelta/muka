@@ -190,7 +190,7 @@ export const SearchResults: Story = {
       <EmptyState
         icon={<Icon name="search" variant="line" size="md" />}
         title="No results found"
-        description='We couldn\'t find any results matching your search criteria. Try adjusting your filters or search terms.'
+        description="We couldn't find any results matching your search criteria. Try adjusting your filters or search terms."
         secondaryAction={{
           label: 'Clear filters',
           onClick: () => console.log('Clear filters clicked'),
