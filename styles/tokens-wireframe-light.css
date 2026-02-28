@@ -1657,6 +1657,24 @@
   --segmentgroup-segment-padding-lg-x: 1.5rem;
   --segmentgroup-segment-padding-lg-y: 0.5rem;
   --segmentgroup-segment-height-sm: 1.5rem;
+  --fileupload-dropzone-padding: 2rem;
+  --fileupload-dropzone-borderRadius: 0.75rem;
+  --fileupload-dropzone-borderWidth: 2px;
+  --fileupload-dropzone-borderStyle: dashed;
+  --fileupload-dropzone-background-default: {color.surface.subtle};
+  --fileupload-dropzone-background-hover: {color.surface.muted};
+  --fileupload-dropzone-background-active: {color.surface.info-subtle};
+  --fileupload-dropzone-background-disabled: {color.surface.disabled};
+  --fileupload-dropzone-border-default: #e0e0e0;
+  --fileupload-dropzone-border-hover: {color.border.strong};
+  --fileupload-dropzone-border-active: {color.action.primary};
+  --fileupload-dropzone-border-error: {color.border.error};
+  --fileupload-item-padding: 0.75rem;
+  --fileupload-item-gap: 0.75rem;
+  --fileupload-item-borderRadius: 0.375rem;
+  --fileupload-item-background: {color.surface.default};
+  --fileupload-preview-size: 2.5rem;
+  --fileupload-preview-borderRadius: 0.1875rem;
 }
 
 /* Responsive overrides: md (min-width: 768px) */

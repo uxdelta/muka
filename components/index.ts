@@ -48,6 +48,7 @@ export {
 } from './Table';
 export { DatePicker, type DatePickerProps } from './DatePicker';
 export { SegmentGroup, type SegmentGroupProps, type SegmentOption } from './SegmentGroup';
+export { FileUpload, FileUploadItem, type FileUploadProps, type FileUploadItemProps, type FileUploadError, type UploadResult } from './FileUpload';
 export { PriceTag, type PriceTagProps } from './PriceTag';
 export { Tile, type TileProps } from './Tile';
 export {

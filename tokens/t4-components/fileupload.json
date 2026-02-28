@@ -1,0 +1,90 @@
+{
+  "$schema": {
+    "$type": "other",
+    "$value": "https://design-tokens.org/schemas/1.0/schema.json"
+  },
+  "fileupload": {
+    "dropzone": {
+      "padding": {
+        "$type": "dimension",
+        "$value": "{spacing.8}"
+      },
+      "borderRadius": {
+        "$type": "borderRadius",
+        "$value": "{radius.lg}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "2px"
+      },
+      "borderStyle": {
+        "$type": "other",
+        "$value": "dashed"
+      },
+      "background": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.surface.subtle}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.surface.muted}"
+        },
+        "active": {
+          "$type": "color",
+          "$value": "{color.surface.info-subtle}"
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "{color.surface.disabled}"
+        }
+      },
+      "border": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.border.default}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.border.strong}"
+        },
+        "active": {
+          "$type": "color",
+          "$value": "{color.action.primary}"
+        },
+        "error": {
+          "$type": "color",
+          "$value": "{color.border.error}"
+        }
+      }
+    },
+    "item": {
+      "padding": {
+        "$type": "dimension",
+        "$value": "{spacing.3}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.3}"
+      },
+      "borderRadius": {
+        "$type": "borderRadius",
+        "$value": "{radius.md}"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.surface.default}"
+      }
+    },
+    "preview": {
+      "size": {
+        "$type": "sizing",
+        "$value": "{spacing.10}"
+      },
+      "borderRadius": {
+        "$type": "borderRadius",
+        "$value": "{radius.sm}"
+      }
+    }
+  }
+}
