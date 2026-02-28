@@ -1,0 +1,116 @@
+/* Tooltip Component Styles - Using Muka Design Tokens */
+
+/* Tooltip Content */
+.muka-tooltip__content {
+  /* Layout */
+  display: block;
+  border-radius: var(--tooltip-content-border-radius);
+  padding: var(--tooltip-content-padding-y) var(--tooltip-content-padding-x);
+  max-width: var(--tooltip-content-max-width);
+  z-index: var(--tooltip-content-z-index);
+  
+  /* Typography */
+  font-family: var(--alias-font-brand-family);
+  font-size: var(--text-body-sm-fontSize);
+  line-height: var(--text-body-sm-lineHeight);
+  
+  /* Animation */
+  animation-duration: 200ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  
+  /* Break words if they're too long */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Default variant - inverse colors for high contrast */
+.muka-tooltip__content--default {
+  background-color: var(--tooltip-content-color-default-background);
+  color: var(--tooltip-content-color-default-foreground);
+  box-shadow: var(--tooltip-content-shadow-default);
+}
+
+/* Contrast variant - lighter with border */
+.muka-tooltip__content--contrast {
+  background-color: var(--tooltip-content-color-contrast-background);
+  color: var(--tooltip-content-color-contrast-foreground);
+  border: var(--tooltip-content-border-width) solid var(--tooltip-content-color-contrast-border);
+  box-shadow: var(--tooltip-content-shadow-contrast);
+}
+
+/* Animation states */
+.muka-tooltip__content[data-state='delayed-open'][data-side='top'] {
+  animation-name: slideDownAndFade;
+}
+
+.muka-tooltip__content[data-state='delayed-open'][data-side='right'] {
+  animation-name: slideLeftAndFade;
+}
+
+.muka-tooltip__content[data-state='delayed-open'][data-side='bottom'] {
+  animation-name: slideUpAndFade;
+}
+
+.muka-tooltip__content[data-state='delayed-open'][data-side='left'] {
+  animation-name: slideRightAndFade;
+}
+
+/* Arrow */
+.muka-tooltip__arrow {
+  /* Arrow inherits the background color from parent */
+}
+
+.muka-tooltip__content--default .muka-tooltip__arrow {
+  fill: var(--tooltip-content-color-default-background);
+}
+
+.muka-tooltip__content--contrast .muka-tooltip__arrow {
+  fill: var(--tooltip-content-color-contrast-background);
+}
+
+/* Keyframe animations */
+@keyframes slideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRightAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

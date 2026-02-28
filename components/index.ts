@@ -106,3 +106,4 @@ export type {
   ContextMenuSubTriggerProps,
   ContextMenuSubContentProps,
 } from './ContextMenu';
+export { Tooltip, type TooltipProps } from './Tooltip';
