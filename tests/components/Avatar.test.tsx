@@ -24,7 +24,7 @@ describe('Avatar Component', () => {
 
     it('renders with image when src is provided', () => {
       render(<Avatar src="https://example.com/avatar.jpg" alt="User avatar" />);
-      const img = screen.getByRole('img');
+      const img = screen.getByAltText('User avatar');
       expect(img).toHaveAttribute('src', 'https://example.com/avatar.jpg');
       expect(img).toHaveAttribute('alt', 'User avatar');
     });
