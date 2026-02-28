@@ -1,0 +1,209 @@
+/* EmptyState Component Styles - Using Muka Design Tokens */
+
+/* Base container */
+.muka-emptystate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: var(--emptystate-container-maxWidth);
+  margin: 0 auto;
+}
+
+/* Alignment variants */
+.muka-emptystate--left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.muka-emptystate--center {
+  align-items: center;
+  text-align: center;
+}
+
+/* Size variants - padding */
+.muka-emptystate--sm {
+  padding: var(--emptystate-container-padding-sm);
+  gap: var(--emptystate-container-gap);
+}
+
+.muka-emptystate--md {
+  padding: var(--emptystate-container-padding-md);
+  gap: var(--emptystate-container-gap);
+}
+
+.muka-emptystate--lg {
+  padding: var(--emptystate-container-padding-lg);
+  gap: var(--emptystate-container-gap);
+}
+
+/* Visual container (icon or illustration) */
+.muka-emptystate__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--emptystate-icon-color);
+}
+
+.muka-emptystate--sm .muka-emptystate__visual {
+  width: var(--emptystate-icon-size-sm);
+  height: var(--emptystate-icon-size-sm);
+  font-size: var(--emptystate-icon-size-sm);
+}
+
+.muka-emptystate--md .muka-emptystate__visual {
+  width: var(--emptystate-icon-size-md);
+  height: var(--emptystate-icon-size-md);
+  font-size: var(--emptystate-icon-size-md);
+}
+
+.muka-emptystate--lg .muka-emptystate__visual {
+  width: var(--emptystate-icon-size-lg);
+  height: var(--emptystate-icon-size-lg);
+  font-size: var(--emptystate-icon-size-lg);
+}
+
+.muka-emptystate__visual svg,
+.muka-emptystate__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Content container */
+.muka-emptystate__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+/* Title */
+.muka-emptystate__title {
+  color: var(--emptystate-title-color);
+  font-family: var(--alias-font-brand-family);
+  font-weight: var(--alias-font-brand-weight-semibold);
+  margin: 0;
+}
+
+.muka-emptystate--sm .muka-emptystate__title {
+  font-size: var(--text-size-md);
+  line-height: var(--text-lineHeight-md);
+}
+
+.muka-emptystate--md .muka-emptystate__title {
+  font-size: var(--text-size-lg);
+  line-height: var(--text-lineHeight-lg);
+}
+
+.muka-emptystate--lg .muka-emptystate__title {
+  font-size: var(--text-size-xl);
+  line-height: var(--text-lineHeight-xl);
+}
+
+/* Description */
+.muka-emptystate__description {
+  color: var(--emptystate-description-color);
+  font-family: var(--alias-font-brand-family);
+  font-weight: var(--alias-font-brand-weight-regular);
+  margin: 0;
+}
+
+.muka-emptystate--sm .muka-emptystate__description {
+  font-size: var(--text-size-sm);
+  line-height: var(--text-lineHeight-sm);
+}
+
+.muka-emptystate--md .muka-emptystate__description {
+  font-size: var(--text-size-md);
+  line-height: var(--text-lineHeight-md);
+}
+
+.muka-emptystate--lg .muka-emptystate__description {
+  font-size: var(--text-size-md);
+  line-height: var(--text-lineHeight-md);
+}
+
+/* Actions container */
+.muka-emptystate__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--emptystate-actions-gap);
+  margin-top: var(--emptystate-actions-marginTop);
+}
+
+.muka-emptystate--center .muka-emptystate__actions {
+  justify-content: center;
+}
+
+.muka-emptystate--left .muka-emptystate__actions {
+  justify-content: flex-start;
+}
+
+/* Action buttons */
+.muka-emptystate__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--button-padding-md-y) var(--button-padding-md-x);
+  border-radius: var(--button-radius-md);
+  font-family: var(--alias-font-brand-family);
+  font-weight: var(--alias-font-brand-weight-semibold);
+  font-size: var(--text-label-md-fontSize);
+  line-height: var(--text-label-md-lineHeight);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  min-height: 40px;
+}
+
+.muka-emptystate__action:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Primary action button */
+.muka-emptystate__action--primary {
+  background-color: var(--button-color-primary-background-default);
+  color: var(--button-color-primary-foreground-default);
+  box-shadow: var(--button-color-primary-shadow-default);
+}
+
+.muka-emptystate__action--primary:hover {
+  background-color: var(--button-color-primary-background-hover);
+  color: var(--button-color-primary-foreground-hover);
+  box-shadow: var(--button-color-primary-shadow-hover);
+}
+
+.muka-emptystate__action--primary:active {
+  background-color: var(--button-color-primary-background-pressed);
+  color: var(--button-color-primary-foreground-pressed);
+  box-shadow: var(--button-color-primary-shadow-pressed);
+}
+
+/* Secondary action button */
+.muka-emptystate__action--secondary {
+  background-color: var(--button-color-secondary-background-default);
+  color: var(--button-color-secondary-foreground-default);
+  box-shadow: var(--button-color-secondary-shadow-default);
+}
+
+.muka-emptystate__action--secondary:hover {
+  background-color: var(--button-color-secondary-background-hover);
+  color: var(--button-color-secondary-foreground-hover);
+  box-shadow: var(--button-color-secondary-shadow-hover);
+}
+
+.muka-emptystate__action--secondary:active {
+  background-color: var(--button-color-secondary-background-pressed);
+  color: var(--button-color-secondary-foreground-pressed);
+  box-shadow: var(--button-color-secondary-shadow-pressed);
+}
+
+/* Action icon */
+.muka-emptystate__action-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}

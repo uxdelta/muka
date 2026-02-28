@@ -50,6 +50,7 @@ export { DatePicker, type DatePickerProps } from './DatePicker';
 export { SegmentGroup, type SegmentGroupProps, type SegmentOption } from './SegmentGroup';
 export { PriceTag, type PriceTagProps } from './PriceTag';
 export { Tile, type TileProps } from './Tile';
+export { EmptyState, type EmptyStateProps } from './EmptyState';
 export {
   Menu,
   MenuTrigger,
