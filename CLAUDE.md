@@ -78,6 +78,10 @@ Always use component tokens (t4) or semantic tokens (t3) in CSS, never primitive
 - **Visual tests:** Vitest browser mode with Playwright in `tests/visual/`
 - **Always test components across all 4 brand/theme combinations** using Storybook's theme switcher
 
+## Interaction Design
+
+Before implementing any view navigation or dialog flow, read `docs/guides/interaction-design-patterns.md` for behavioral rules and transition logic.
+
 ## Key Files
 
 - `build/manifest.json` - Defines theme token sets for build
