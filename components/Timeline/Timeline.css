@@ -1,0 +1,277 @@
+/* Timeline Component Styles - Using Muka Design Tokens */
+
+/* ─── Root Timeline Container ───────────────────────────── */
+.muka-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* ─── Vertical Timeline ─────────────────────────────────── */
+.muka-timeline--vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Horizontal Timeline ───────────────────────────────── */
+.muka-timeline--horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--timeline-item-gap);
+}
+
+/* ─── Timeline Item ─────────────────────────────────────── */
+.muka-timeline-item {
+  position: relative;
+  display: flex;
+  min-height: var(--timeline-item-minHeight);
+}
+
+/* Vertical layout: items are stacked */
+.muka-timeline--vertical .muka-timeline-item {
+  flex-direction: row;
+  gap: var(--timeline-item-gap);
+}
+
+/* Horizontal layout: items are inline */
+.muka-timeline--horizontal .muka-timeline-item {
+  flex-direction: column;
+  align-items: center;
+  gap: var(--timeline-content-gap);
+  flex: 1 1 0;
+  min-height: auto;
+}
+
+/* Remove bottom padding from last item in vertical */
+.muka-timeline--vertical .muka-timeline-item:last-child {
+  min-height: auto;
+}
+
+/* ─── Alignment Variants (Vertical Only) ────────────────── */
+
+/* Left alignment: separator + icon | content */
+.muka-timeline--vertical.muka-timeline--align-left .muka-timeline-item {
+  flex-direction: row;
+}
+
+/* Right alignment: content | icon + separator */
+.muka-timeline--vertical.muka-timeline--align-right .muka-timeline-item {
+  flex-direction: row-reverse;
+}
+
+.muka-timeline--vertical.muka-timeline--align-right .muka-timeline-content {
+  text-align: right;
+}
+
+/* Alternate alignment: alternates between left and right */
+.muka-timeline--vertical.muka-timeline--align-alternate .muka-timeline-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.muka-timeline--vertical.muka-timeline--align-alternate .muka-timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.muka-timeline--vertical.muka-timeline--align-alternate .muka-timeline-item:nth-child(even) .muka-timeline-content {
+  text-align: right;
+}
+
+/* ─── Timeline Separator (Connector Line) ───────────────── */
+.muka-timeline-separator {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Vertical timeline: separator is a vertical line */
+.muka-timeline--vertical .muka-timeline-separator {
+  width: var(--timeline-connector-width);
+  align-self: stretch;
+  background-color: var(--timeline-connector-color-default);
+  margin-left: calc((var(--timeline-icon-size) - var(--timeline-connector-width)) / 2);
+  margin-right: calc((var(--timeline-icon-size) - var(--timeline-connector-width)) / 2);
+}
+
+/* Horizontal timeline: separator is a horizontal line */
+.muka-timeline--horizontal .muka-timeline-separator {
+  height: var(--timeline-connector-width);
+  flex: 1 1 0;
+  background-color: var(--timeline-connector-color-default);
+  align-self: center;
+  margin-top: calc((var(--timeline-icon-size) - var(--timeline-connector-width)) / 2);
+}
+
+/* Dashed variant */
+.muka-timeline-separator--dashed {
+  background: none !important;
+}
+
+.muka-timeline--vertical .muka-timeline-separator--dashed {
+  border-left: var(--timeline-connector-width) dashed var(--timeline-connector-color-default);
+  width: 0;
+}
+
+.muka-timeline--horizontal .muka-timeline-separator--dashed {
+  border-top: var(--timeline-connector-width) dashed var(--timeline-connector-color-default);
+  height: 0;
+}
+
+/* Completed status: green connector */
+.muka-timeline-item--completed .muka-timeline-separator--solid {
+  background-color: var(--timeline-connector-color-completed);
+}
+
+.muka-timeline-item--completed .muka-timeline-separator--dashed {
+  border-color: var(--timeline-connector-color-completed);
+}
+
+/* Hide separator on last item in vertical */
+.muka-timeline--vertical .muka-timeline-item:last-child .muka-timeline-separator {
+  visibility: hidden;
+}
+
+/* Hide separator on last item in horizontal */
+.muka-timeline--horizontal .muka-timeline-item:last-child .muka-timeline-separator {
+  display: none;
+}
+
+/* ─── Timeline Icon (Status Indicator) ──────────────────── */
+.muka-timeline-icon {
+  width: var(--timeline-icon-size);
+  height: var(--timeline-icon-size);
+  border-radius: var(--border-radius-full);
+  border: var(--timeline-icon-border-width) solid var(--timeline-icon-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Status-based backgrounds */
+.muka-timeline-icon--completed {
+  background-color: var(--timeline-icon-background-completed);
+  border-color: var(--timeline-icon-background-completed);
+}
+
+.muka-timeline-icon--current {
+  background-color: var(--timeline-icon-background-current);
+  border-color: var(--timeline-icon-background-current);
+}
+
+.muka-timeline-icon--upcoming {
+  background-color: var(--timeline-icon-background-upcoming);
+  border-color: var(--timeline-icon-border-color);
+}
+
+.muka-timeline-icon--blocked {
+  background-color: var(--timeline-icon-background-blocked);
+  border-color: var(--timeline-icon-background-blocked);
+}
+
+/* Icon content (custom icon) */
+.muka-timeline-icon__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--color-text-default-inverse);
+}
+
+.muka-timeline-icon--upcoming .muka-timeline-icon__content {
+  color: var(--color-text-default-default);
+}
+
+.muka-timeline-icon__content svg {
+  width: 60%;
+  height: 60%;
+}
+
+/* Dot indicator (default when no icon) */
+.muka-timeline-icon__dot {
+  width: 50%;
+  height: 50%;
+  border-radius: var(--border-radius-full);
+  background-color: currentColor;
+}
+
+.muka-timeline-icon--completed .muka-timeline-icon__dot {
+  background-color: var(--color-state-success-foreground);
+}
+
+.muka-timeline-icon--current .muka-timeline-icon__dot {
+  background-color: var(--color-state-info-foreground);
+}
+
+.muka-timeline-icon--upcoming .muka-timeline-icon__dot {
+  background-color: var(--color-text-subtle-default);
+}
+
+.muka-timeline-icon--blocked .muka-timeline-icon__dot {
+  background-color: var(--color-state-error-foreground);
+}
+
+/* ─── Timeline Content ──────────────────────────────────── */
+.muka-timeline-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--timeline-content-gap);
+  padding-bottom: var(--timeline-content-padding);
+  min-width: 0;
+}
+
+/* Remove bottom padding from last item */
+.muka-timeline--vertical .muka-timeline-item:last-child .muka-timeline-content {
+  padding-bottom: 0;
+}
+
+/* Horizontal layout: content is below icon */
+.muka-timeline--horizontal .muka-timeline-content {
+  padding-bottom: 0;
+  text-align: center;
+  align-items: center;
+}
+
+/* ─── Responsive Adjustments ────────────────────────────── */
+@media (max-width: 640px) {
+  /* Force vertical on mobile for horizontal timelines */
+  .muka-timeline--horizontal {
+    flex-direction: column;
+  }
+  
+  .muka-timeline--horizontal .muka-timeline-item {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .muka-timeline--horizontal .muka-timeline-separator {
+    width: var(--timeline-connector-width);
+    height: auto;
+    align-self: stretch;
+    margin-left: calc((var(--timeline-icon-size) - var(--timeline-connector-width)) / 2);
+    margin-right: calc((var(--timeline-icon-size) - var(--timeline-connector-width)) / 2);
+    margin-top: 0;
+  }
+  
+  .muka-timeline--horizontal .muka-timeline-separator--dashed {
+    border-left: var(--timeline-connector-width) dashed var(--timeline-connector-color-default);
+    border-top: none;
+    width: 0;
+    height: auto;
+  }
+  
+  .muka-timeline--horizontal .muka-timeline-content {
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .muka-timeline--horizontal .muka-timeline-item:last-child .muka-timeline-separator {
+    display: block;
+    visibility: hidden;
+  }
+}

@@ -1657,6 +1657,20 @@
   --segmentgroup-segment-padding-lg-x: 1.5rem;
   --segmentgroup-segment-padding-lg-y: 0.5rem;
   --segmentgroup-segment-height-sm: 1.5rem;
+  --timeline-connector-width: {spacing.0.5};
+  --timeline-connector-color-default: #313131;
+  --timeline-connector-color-completed: {color.border.success};
+  --timeline-icon-size: 1.5rem;
+  --timeline-icon-background-completed: {color.surface.success};
+  --timeline-icon-background-current: {color.surface.info};
+  --timeline-icon-background-upcoming: {color.surface.neutral};
+  --timeline-icon-background-blocked: {color.surface.error};
+  --timeline-icon-border-width: {spacing.0.5};
+  --timeline-icon-border-color: #313131;
+  --timeline-content-gap: 0.5rem;
+  --timeline-content-padding: 1rem;
+  --timeline-item-gap: 1rem;
+  --timeline-item-minHeight: 4rem;
 }
 
 /* Responsive overrides: md (min-width: 768px) */

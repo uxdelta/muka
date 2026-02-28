@@ -106,3 +106,17 @@ export type {
   ContextMenuSubTriggerProps,
   ContextMenuSubContentProps,
 } from './ContextMenu';
+export {
+  Timeline,
+  TimelineItem,
+  TimelineSeparator,
+  TimelineContent,
+  TimelineIcon,
+} from './Timeline';
+export type {
+  TimelineProps,
+  TimelineItemProps,
+  TimelineSeparatorProps,
+  TimelineContentProps,
+  TimelineIconProps,
+} from './Timeline';
