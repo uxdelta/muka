@@ -1,54 +1,5 @@
 import React from 'react';
-import {
-  RiHomeLine,
-  RiHomeFill,
-  RiSearchLine,
-  RiSearchFill,
-  RiBellLine,
-  RiBellFill,
-  RiUserLine,
-  RiUserFill,
-  RiArrowLeftLine,
-  RiArrowLeftFill,
-  RiArrowRightLine,
-  RiArrowRightFill,
-  RiArrowDownSLine,
-  RiArrowDownSFill,
-  RiArrowUpLine,
-  RiArrowUpFill,
-  RiCloseLine,
-  RiCloseFill,
-  RiMore2Line,
-  RiMore2Fill,
-  RiHeartLine,
-  RiHeartFill,
-  RiCarLine,
-  RiCarFill,
-  RiCalculatorLine,
-  RiCalculatorFill,
-  RiBarChartLine,
-  RiBarChartFill,
-  RiAddLine,
-  RiAddFill,
-  RiInformationLine,
-  RiInformationFill,
-  RiCheckLine,
-  RiCheckFill,
-  RiErrorWarningLine,
-  RiErrorWarningFill,
-  RiFileTextLine,
-  RiFileTextFill,
-  RiLayoutGridLine,
-  RiLayoutGridFill,
-  RiStarLine,
-  RiStarFill,
-  RiMoonLine,
-  RiMoonFill,
-  RiSortAsc,
-  RiSortDesc,
-  RiShoppingCartLine,
-  RiShoppingCartFill,
-} from '@remixicon/react';
+import * as RemixIcons from '@remixicon/react';
 
 export type IconRegistryEntry = {
   line: React.ComponentType<{ className?: string }>;
@@ -56,45 +7,83 @@ export type IconRegistryEntry = {
 };
 
 /**
- * Registry of RemixIcon components keyed by kebab-case name.
- * Only icons used by the design system are included for tree-shaking.
- * To add more: import from @remixicon/react and add to the map and IconName.
+ * Convert PascalCase to kebab-case
+ * e.g., "ArrowLeftS" -> "arrow-left-s"
  */
-export const iconRegistry: Record<string, IconRegistryEntry> = {
-  home: { line: RiHomeLine, fill: RiHomeFill },
-  search: { line: RiSearchLine, fill: RiSearchFill },
-  bell: { line: RiBellLine, fill: RiBellFill },
-  user: { line: RiUserLine, fill: RiUserFill },
-  'arrow-left': { line: RiArrowLeftLine, fill: RiArrowLeftFill },
-  'arrow-right': { line: RiArrowRightLine, fill: RiArrowRightFill },
-  'arrow-down': { line: RiArrowDownSLine, fill: RiArrowDownSFill },
-  'arrow-up': { line: RiArrowUpLine, fill: RiArrowUpFill },
-  x: { line: RiCloseLine, fill: RiCloseFill },
-  'dots-vertical': { line: RiMore2Line, fill: RiMore2Fill },
-  heart: { line: RiHeartLine, fill: RiHeartFill },
-  car: { line: RiCarLine, fill: RiCarFill },
-  calculator: { line: RiCalculatorLine, fill: RiCalculatorFill },
-  'bar-chart': { line: RiBarChartLine, fill: RiBarChartFill },
-  add: { line: RiAddLine, fill: RiAddFill },
-  information: { line: RiInformationLine, fill: RiInformationFill },
-  check: { line: RiCheckLine, fill: RiCheckFill },
-  'error-warning': { line: RiErrorWarningLine, fill: RiErrorWarningFill },
-  'file-text': { line: RiFileTextLine, fill: RiFileTextFill },
-  stack: { line: RiLayoutGridLine, fill: RiLayoutGridFill },
-  star: { line: RiStarLine, fill: RiStarFill },
-  moon: { line: RiMoonLine, fill: RiMoonFill },
-  'sort-asc': { line: RiSortAsc, fill: RiSortAsc },   // Remix has single variant
-  'sort-desc': { line: RiSortDesc, fill: RiSortDesc }, // Remix has single variant
-  'shopping-cart': { line: RiShoppingCartLine, fill: RiShoppingCartFill },
+function toKebabCase(str: string): string {
+  return str
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+    .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2')
+    .toLowerCase();
+}
+
+const NullComponent: React.ComponentType<{ className?: string }> = function NullIcon() {
+  return null;
 };
 
-export type IconName = keyof typeof iconRegistry;
+/**
+ * Auto-generated registry of all RemixIcon components.
+ * Icons are keyed by kebab-case name (e.g., "arrow-left", "delete-bin-2", "more-2").
+ *
+ * Usage: <Icon name="arrow-left" variant="line" />
+ *
+ * Note: This includes all ~2,800 RemixIcons for development convenience.
+ * Before production release, consider trimming to only used icons for smaller bundles.
+ */
+export const iconRegistry: Record<string, IconRegistryEntry> = {};
+
+// Build registry from all RemixIcon exports
+// Pattern: Ri{Name}Line or Ri{Name}Fill
+const iconExports = RemixIcons as Record<string, React.ComponentType<{ className?: string }>>;
+
+const exportNames = Object.keys(iconExports);
+for (let i = 0; i < exportNames.length; i++) {
+  const exportName = exportNames[i];
+  const Component = iconExports[exportName];
+
+  if (!exportName.startsWith('Ri')) continue;
+
+  const isLine = exportName.endsWith('Line');
+  const isFill = exportName.endsWith('Fill');
+
+  if (!isLine && !isFill) continue;
+
+  // Extract name: "RiArrowLeftLine" -> "ArrowLeft"
+  const baseName = exportName.slice(2, -4);
+  const kebabName = toKebabCase(baseName);
+
+  if (!iconRegistry[kebabName]) {
+    iconRegistry[kebabName] = {
+      line: NullComponent,
+      fill: NullComponent,
+    };
+  }
+
+  if (isLine) {
+    iconRegistry[kebabName].line = Component;
+  } else {
+    iconRegistry[kebabName].fill = Component;
+  }
+}
+
+// For icons without both variants, use the available one for both
+const registryKeys = Object.keys(iconRegistry);
+for (let i = 0; i < registryKeys.length; i++) {
+  const entry = iconRegistry[registryKeys[i]];
+  if (entry.line === NullComponent && entry.fill !== NullComponent) {
+    entry.line = entry.fill;
+  } else if (entry.fill === NullComponent && entry.line !== NullComponent) {
+    entry.fill = entry.line;
+  }
+}
+
+export type IconName = string;
 
 export function getIconComponent(
   name: IconName,
   variant: 'line' | 'fill'
 ): React.ComponentType<{ className?: string }> {
   const entry = iconRegistry[name];
-  if (!entry) return () => null;
+  if (!entry) return NullComponent;
   return variant === 'fill' ? entry.fill : entry.line;
 }

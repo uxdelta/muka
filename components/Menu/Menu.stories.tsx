@@ -33,7 +33,7 @@ import { Icon } from '../Icon';
 import './Menu.css';
 
 const meta: Meta<typeof Menu> = {
-  title: 'Components/Overlay/Menu',
+  title: 'Components/Navigation/Menu',
   component: Menu,
   parameters: {
     layout: 'centered',
