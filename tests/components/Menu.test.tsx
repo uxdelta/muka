@@ -34,7 +34,7 @@ describe('Menu Component', () => {
     it('renders the trigger button', () => {
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -49,7 +49,7 @@ describe('Menu Component', () => {
     it('does not show content when closed', () => {
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -65,7 +65,7 @@ describe('Menu Component', () => {
       const user = userEvent.setup();
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -85,7 +85,7 @@ describe('Menu Component', () => {
       const user = userEvent.setup();
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -105,7 +105,7 @@ describe('Menu Component', () => {
       const user = userEvent.setup();
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -125,7 +125,7 @@ describe('Menu Component', () => {
       const user = userEvent.setup();
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -148,7 +148,7 @@ describe('Menu Component', () => {
       const user = userEvent.setup();
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -175,7 +175,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -200,7 +200,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -228,7 +228,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -245,7 +245,9 @@ describe('Menu Component', () => {
         expect(screen.getByText('Disabled Item')).toBeInTheDocument();
       });
 
-      await user.click(screen.getByText('Disabled Item'));
+      // Use fireEvent since disabled items have pointer-events: none
+      // which prevents userEvent.click() from working
+      fireEvent.click(screen.getByText('Disabled Item'));
 
       expect(handleSelect).not.toHaveBeenCalled();
     });
@@ -255,7 +257,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -284,7 +286,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -306,7 +308,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -335,7 +337,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -361,7 +363,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -391,7 +393,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -417,7 +419,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -451,7 +453,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -473,7 +475,7 @@ describe('Menu Component', () => {
     it('respects controlled open state', async () => {
       const { rerender } = render(
         <Menu open={false}>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -486,7 +488,7 @@ describe('Menu Component', () => {
 
       rerender(
         <Menu open={true}>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -506,7 +508,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu onOpenChange={handleOpenChange}>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -525,7 +527,7 @@ describe('Menu Component', () => {
     it('has correct ARIA attributes on trigger', async () => {
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
@@ -543,7 +545,7 @@ describe('Menu Component', () => {
 
       render(
         <Menu>
-          <MenuTrigger>
+          <MenuTrigger asChild>
             <button>Open Menu</button>
           </MenuTrigger>
           <MenuContent>
