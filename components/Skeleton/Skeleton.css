@@ -1,0 +1,76 @@
+/* Skeleton Component Styles - Using Muka Design Tokens */
+
+/* Base skeleton styles */
+.muka-skeleton {
+  display: inline-block;
+  background-color: var(--skeleton-background);
+  border-radius: 0;
+}
+
+/* Shape variants */
+.muka-skeleton--rectangular {
+  border-radius: var(--skeleton-borderRadius-rectangular);
+}
+
+.muka-skeleton--rounded {
+  border-radius: var(--skeleton-borderRadius-rounded);
+}
+
+.muka-skeleton--circular {
+  border-radius: var(--skeleton-borderRadius-circular);
+}
+
+/* Animation keyframes */
+@keyframes muka-skeleton-pulse {
+  0%, 100% { 
+    opacity: 1; 
+  }
+  50% { 
+    opacity: 0.5; 
+  }
+}
+
+@keyframes muka-skeleton-wave {
+  0% { 
+    transform: translateX(-100%); 
+  }
+  100% { 
+    transform: translateX(100%); 
+  }
+}
+
+/* Pulse animation */
+.muka-skeleton--pulse {
+  animation: muka-skeleton-pulse var(--skeleton-animation-duration) var(--skeleton-animation-timingFunction) infinite;
+}
+
+/* Wave animation */
+.muka-skeleton--wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.muka-skeleton--wave::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    var(--skeleton-highlight), 
+    transparent
+  );
+  animation: muka-skeleton-wave var(--skeleton-animation-duration) var(--skeleton-animation-timingFunction) infinite;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .muka-skeleton--pulse,
+  .muka-skeleton--wave::after {
+    animation: none;
+  }
+  
+  .muka-skeleton--pulse {
+    opacity: 0.7;
+  }
+}
