@@ -1657,6 +1657,34 @@
   --segmentgroup-segment-padding-lg-x: 1.5rem;
   --segmentgroup-segment-padding-lg-y: 0.5rem;
   --segmentgroup-segment-height-sm: 1.5rem;
+  --documentviewer-container-background: {color.surface.subtle};
+  --documentviewer-container-borderRadius: 0.75rem;
+  --documentviewer-toolbar-height: 3rem;
+  --documentviewer-toolbar-padding-x: 1rem;
+  --documentviewer-toolbar-padding-y: 0.5rem;
+  --documentviewer-toolbar-background: {color.surface.default};
+  --documentviewer-toolbar-border: #e0e0e0;
+  --documentviewer-toolbar-gap: 0.5rem;
+  --documentviewer-canvas-background: {color.surface.muted};
+  --documentviewer-canvas-padding: 1rem;
+  --documentviewer-thumbnails-width: 8rem;
+  --documentviewer-thumbnails-background: {color.surface.default};
+  --documentviewer-thumbnails-border: #e0e0e0;
+  --documentviewer-thumbnails-item-padding: 0.5rem;
+  --documentviewer-thumbnails-item-borderRadius: 0.1875rem;
+  --documentviewer-thumbnails-item-gap: 0.25rem;
+  --documentviewer-thumbnails-item-background-default: transparent;
+  --documentviewer-thumbnails-item-background-hover: #e8e8e8;
+  --documentviewer-thumbnails-item-background-selected: #fcfcfc;
+  --documentviewer-thumbnails-item-border-default: transparent;
+  --documentviewer-thumbnails-item-border-selected: #202020;
+  --documentviewer-page-background: {color.surface.white};
+  --documentviewer-page-shadow: {shadow.md};
+  --documentviewer-page-borderRadius: 0.1875rem;
+  --documentviewer-zoom-button-width: 2rem;
+  --documentviewer-loading-overlay-background: {color.surface.overlay};
+  --documentviewer-error-background: {color.surface.default};
+  --documentviewer-error-text: #202020;
 }
 
 /* Responsive overrides: md (min-width: 768px) */
