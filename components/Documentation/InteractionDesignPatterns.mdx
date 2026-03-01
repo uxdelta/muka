@@ -1,4 +1,5 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as ViewStories from '../../stories/views/Views.stories';
 
 <Meta title="Documentation/Guides/Interaction Design Patterns" />
 
@@ -203,3 +204,69 @@ Is this a root-level navigation destination?
 | Non-Modal Sub-Level Dialog | Non-Modal Top-Level Dialog | ✅ | Back button |
 | Non-Modal Top-Level Dialog | Modal Dialog | ❌ | Not allowed — dismiss first, then open modal |
 | Modal Dialog | Any | ❌ | Must cancel or submit first |
+
+---
+
+## Implementation Guidelines
+
+This section provides specific implementation details and rationale for key design decisions.
+
+### Surface Elevation Tokens
+
+Views and dialogs use a layered surface system for visual hierarchy:
+
+| Layer | Token | Usage |
+|-------|-------|-------|
+| Views (Home, Details) | `--color-surface-level2` | Base view background |
+| Dialogs & Sheets | `--color-surface-level3` | Elevated overlays |
+
+This creates visual separation between the underlying view and overlaid dialogs.
+
+### Design Decisions Rationale
+
+Understanding **why** certain patterns exist helps maintain consistency:
+
+- **Edit dialogs use close button only (not back)** — The dialog is a discrete task, not part of a navigation hierarchy. "Back" implies returning to a previous step; "Close" implies dismissing the task entirely.
+- **Confirmation sheets are non-modal** — This allows the user to tap the backdrop to return to editing, providing an "escape hatch" that feels less aggressive than a blocking modal.
+- **Sheets are conditionally rendered** — Only render the sheet component when it's open to prevent it from appearing in the DOM prematurely and causing layout issues.
+
+### Unsaved Changes Trigger Conditions
+
+When to show a confirmation dialog for unsaved changes:
+
+**Trigger confirmation:**
+- User has modified form values (dirty state)
+- User clicks Close button OR Cancel button
+
+**Skip confirmation:**
+- User clicks Save button (no confirmation needed — intent is clear)
+- No changes have been made (close immediately)
+
+### Action Button Order Convention
+
+For confirmation dialogs with Save/Discard options:
+
+- **Discard** (secondary): Left position, less prominent
+- **Save** (primary): Right position, more prominent
+
+This follows the convention of placing the "safe" or "constructive" action in the primary position, making it harder to accidentally lose work.
+
+### Complete Flow Summary
+
+| Step | View/Component | User Action | Result |
+|------|----------------|-------------|--------|
+| 1 | Home (Top-Level) | Tap project item | Navigate to Project Details |
+| 2 | Project Details (Sub-Level) | Tap "Edit Project" | Open Edit Dialog |
+| 3 | Edit Dialog | Modify form fields | Track dirty state |
+| 4a | Edit Dialog | Tap Save | Save & close (no confirmation) |
+| 4b | Edit Dialog | Tap Close/Cancel (no changes) | Close immediately |
+| 4c | Edit Dialog | Tap Close/Cancel (with changes) | Show Confirmation Sheet |
+| 5a | Confirmation Sheet | Tap Save | Save & close all |
+| 5b | Confirmation Sheet | Tap Discard | Reset form & close all |
+| 5c | Confirmation Sheet | Tap backdrop | Return to Edit Dialog |
+
+### Interactive Demo
+
+Try the complete navigation flow with edit dialog and unsaved changes confirmation:
+
+<Canvas of={ViewStories.NavigationFlow} />

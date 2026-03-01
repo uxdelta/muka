@@ -1,0 +1,28 @@
+/* ControlBar Component Styles */
+
+.muka-controlbar {
+  display: flex;
+  align-items: center;
+  gap: var(--controlbar-gap);
+  background-color: var(--controlbar-color-background);
+  padding: 0 var(--controlbar-padding-x) var(--controlbar-padding-bottom);
+  width: 100%;
+}
+
+/* ─── Justification variants ─────────────────────────── */
+
+.muka-controlbar--justify-start {
+  justify-content: flex-start;
+}
+
+.muka-controlbar--justify-center {
+  justify-content: center;
+}
+
+.muka-controlbar--justify-end {
+  justify-content: flex-end;
+}
+
+.muka-controlbar--justify-between {
+  justify-content: space-between;
+}

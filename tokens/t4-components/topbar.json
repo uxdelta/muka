@@ -19,8 +19,14 @@
       }
     },
     "height": {
-      "$type": "dimension",
-      "$value": "52px"
+      "mobile": {
+        "$type": "dimension",
+        "$value": "64px"
+      },
+      "desktop": {
+        "$type": "dimension",
+        "$value": "80px"
+      }
     },
     "padding": {
       "x": {
@@ -32,6 +38,30 @@
       "max-width": {
         "$type": "dimension",
         "$value": "197px"
+      }
+    },
+    "icon": {
+      "size": {
+        "mobile": {
+          "$type": "dimension",
+          "$value": "24px"
+        },
+        "desktop": {
+          "$type": "dimension",
+          "$value": "32px"
+        }
+      }
+    },
+    "button": {
+      "size": {
+        "mobile": {
+          "$type": "dimension",
+          "$value": "48px"
+        },
+        "desktop": {
+          "$type": "dimension",
+          "$value": "64px"
+        }
       }
     },
     "drag-handle": {
@@ -55,6 +85,28 @@
         "$type": "borderRadius",
         "$value": "{border.radius.full}"
       }
+    }
+  },
+  "controlbar": {
+    "color": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.surface.level3}"
+      }
+    },
+    "padding": {
+      "x": {
+        "$type": "dimension",
+        "$value": "{spacing.4}"
+      },
+      "bottom": {
+        "$type": "dimension",
+        "$value": "{spacing.3}"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{spacing.2}"
     }
   }
 }

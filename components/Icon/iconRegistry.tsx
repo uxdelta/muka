@@ -33,7 +33,7 @@ const NullComponent: React.ComponentType<{ className?: string }> = function Null
 export const iconRegistry: Record<string, IconRegistryEntry> = {};
 
 // Build registry from all RemixIcon exports
-// Pattern: Ri{Name}Line or Ri{Name}Fill
+// Pattern: Ri{Name}Line, Ri{Name}Fill, or Ri{Name} (single-variant)
 const iconExports = RemixIcons as Record<string, React.ComponentType<{ className?: string }>>;
 
 const exportNames = Object.keys(iconExports);
@@ -42,14 +42,20 @@ for (let i = 0; i < exportNames.length; i++) {
   const Component = iconExports[exportName];
 
   if (!exportName.startsWith('Ri')) continue;
+  if (typeof Component !== 'function') continue;
 
   const isLine = exportName.endsWith('Line');
   const isFill = exportName.endsWith('Fill');
 
-  if (!isLine && !isFill) continue;
+  let baseName: string;
+  if (isLine || isFill) {
+    // Extract name: "RiArrowLeftLine" -> "ArrowLeft"
+    baseName = exportName.slice(2, -4);
+  } else {
+    // Single-variant icon: "RiSortDesc" -> "SortDesc"
+    baseName = exportName.slice(2);
+  }
 
-  // Extract name: "RiArrowLeftLine" -> "ArrowLeft"
-  const baseName = exportName.slice(2, -4);
   const kebabName = toKebabCase(baseName);
 
   if (!iconRegistry[kebabName]) {
@@ -61,7 +67,11 @@ for (let i = 0; i < exportNames.length; i++) {
 
   if (isLine) {
     iconRegistry[kebabName].line = Component;
+  } else if (isFill) {
+    iconRegistry[kebabName].fill = Component;
   } else {
+    // Single-variant icons use the same component for both
+    iconRegistry[kebabName].line = Component;
     iconRegistry[kebabName].fill = Component;
   }
 }
