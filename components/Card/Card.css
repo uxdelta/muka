@@ -6,6 +6,7 @@
   border: var(--border-width-regular) solid var(--card-color-default-border);
   box-shadow: var(--card-shadow-default);
   transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
 }
 
 /* Padding variants */
