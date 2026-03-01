@@ -17,8 +17,8 @@ export interface TopBarProps {
   /** TopBar variant */
   variant?: 'default' | 'draggable';
 
-  /** Show bottom divider (default: true) */
-  bordered?: boolean;
+  /** ControlBar slot - renders below the main bar */
+  controlBar?: React.ReactNode;
 
   /** Additional CSS classes */
   className?: string;
@@ -45,7 +45,7 @@ export const TopBar: React.FC<TopBarProps> = ({
   trailing,
   trailingSecondary,
   variant = 'default',
-  bordered = true,
+  controlBar,
   className = '',
 }) => {
   const topBarClasses = [
@@ -89,8 +89,10 @@ export const TopBar: React.FC<TopBarProps> = ({
         </div>
       </div>
 
-      {bordered && (
-        <div className="muka-topbar__divider" role="separator" />
+      {controlBar && (
+        <div className="muka-topbar__controlbar">
+          {controlBar}
+        </div>
       )}
     </header>
   );

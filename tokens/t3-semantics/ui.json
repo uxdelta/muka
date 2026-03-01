@@ -771,6 +771,16 @@
           "letterSpacing": "{font.letterSpacing.normal}"
         }
       },
+      "xsmall": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{alias.font.brand.family}",
+          "fontWeight": "{alias.font.brand.weight.medium}",
+          "fontSize": "{font.size.lg}",
+          "lineHeight": "{font.size.xl}",
+          "letterSpacing": "{font.letterSpacing.normal}"
+        }
+      },
       "xs": {
         "$type": "typography",
         "$value": {

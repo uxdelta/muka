@@ -69,13 +69,25 @@ const ViewContainer: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
 const BackButton = ({ onClick }: { onClick: () => void }) => (
   <Button variant="ghost" size="sm" iconOnly aria-label="Go back" onClick={onClick}>
-    <Icon name="arrow-left-s" size="md" />
+    <Icon name="arrow-left" size="md" />
   </Button>
 );
 
 const CloseButton = ({ onClick }: { onClick: () => void }) => (
   <Button variant="ghost" size="sm" iconOnly aria-label="Close" onClick={onClick}>
     <Icon name="close" size="md" />
+  </Button>
+);
+
+const HeartButton = () => (
+  <Button variant="ghost" size="sm" iconOnly aria-label="Favorites">
+    <Icon name="heart" size="md" />
+  </Button>
+);
+
+const CartButton = () => (
+  <Button variant="ghost" size="sm" iconOnly aria-label="Cart">
+    <Icon name="shopping-cart2" size="md" />
   </Button>
 );
 
@@ -130,9 +142,9 @@ const ProjectDetailContent: React.FC<{ projectId: string; onEditClick: () => voi
         Project details and settings
       </p>
       <Card padding="none">
-        <ListItem label="Status" trailing={<span style={{ opacity: 0.7 }}>Active</span>} />
-        <ListItem label="Members" trailing={<span style={{ opacity: 0.7 }}>5</span>} />
-        <ListItem label="Created" trailing={<span style={{ opacity: 0.7 }}>Jan 15, 2024</span>} />
+        <ListItem label="Status" trailing={<span style={{ color: 'var(--color-text-subtle-default)' }}>Active</span>} />
+        <ListItem label="Members" trailing={<span style={{ color: 'var(--color-text-subtle-default)' }}>5</span>} />
+        <ListItem label="Created" trailing={<span style={{ color: 'var(--color-text-subtle-default)' }}>Jan 15, 2024</span>} />
       </Card>
       <div style={{ marginTop: '1rem' }}>
         <Button variant="primary" fullWidth onClick={onEditClick}>
@@ -204,7 +216,7 @@ export const NavigationFlow: Story = {
     if (!selectedProject) {
       return (
         <ViewContainer>
-          <TopBar title="Home" bordered />
+          <TopBar title="Home" />
           <div style={{ flex: 1, overflow: 'auto' }}>
             <HomeContent onItemClick={setSelectedProject} />
           </div>
@@ -238,7 +250,6 @@ export const NavigationFlow: Story = {
         <TopBar
           title="Project Details"
           leading={<BackButton onClick={() => setSelectedProject(null)} />}
-          bordered
         />
         <div style={{ flex: 1, overflow: 'auto' }}>
           <ProjectDetailContent
@@ -255,6 +266,10 @@ export const NavigationFlow: Story = {
           size="lg"
           modal
           trailing={<CloseButton onClick={handleCloseOrCancel} />}
+          mobileLeadingLabel="Cancel"
+          mobileTrailingLabel="Save"
+          onMobileLeadingClick={handleCloseOrCancel}
+          onMobileTrailingClick={handleSaveChanges}
           footer={
             <BottomBar variant="actions">
               <Button variant="secondary" size="lg" onClick={handleCloseOrCancel}>
@@ -328,8 +343,8 @@ export const NavigationFlow: Story = {
 
 /* ─── Story 2: Top-Level View with Non-Modal Sheet ─── */
 
-export const SheetFlow: Story = {
-  name: 'Sheet Dialog Demo',
+export const NonModalDialog: Story = {
+  name: 'Non-Modal Dialog Demo',
   parameters: {
     design: {
       type: 'figma',
@@ -350,15 +365,14 @@ export const SheetFlow: Story = {
               <Icon name="add" size="md" />
             </Button>
           }
-          bordered
         />
         <div style={{ flex: 1, overflow: 'auto' }}>
           <Section padding="compact">
             <Container gap="compact">
-              <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.25rem', fontWeight: 600 }}>
+              <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-default-default)' }}>
                 Quick Actions
               </h2>
-              <p style={{ margin: '0 0 1rem', opacity: 0.7, fontSize: '0.875rem' }}>
+              <p style={{ margin: '0 0 1rem', fontSize: '0.875rem', color: 'var(--color-text-subtle-default)' }}>
                 Tap the + button to open a non-modal sheet
               </p>
               <Card padding="none">
@@ -409,7 +423,7 @@ export const SheetFlow: Story = {
         >
           <Section padding="compact">
             <Container gap="compact">
-              <p style={{ margin: '0 0 1rem', opacity: 0.7 }}>
+              <p style={{ margin: '0 0 1rem', color: 'var(--color-text-subtle-default)' }}>
                 Choose what you want to create. Tap backdrop to dismiss.
               </p>
               <Card padding="none">
@@ -436,14 +450,14 @@ export const SheetFlow: Story = {
           </Section>
         </Sheet>
 
-        {/* Non-Modal Sub-Level Sheet */}
+        {/* Non-Modal Sub-Level Sheet - purely presentational, no submit buttons */}
         <Sheet
           open={subSheetOpen}
           onClose={() => {
             setSubSheetOpen(false);
             setSheetOpen(false);
           }}
-          title="Project Details"
+          title="Template Preview"
           snapPoint="full"
           leading={<BackButton onClick={() => setSubSheetOpen(false)} />}
           trailing={
@@ -454,41 +468,21 @@ export const SheetFlow: Story = {
               }}
             />
           }
-          footer={
-            <BottomBar variant="actions">
-              <Button
-                variant="secondary"
-                size="lg"
-                onClick={() => {
-                  setSubSheetOpen(false);
-                  setSheetOpen(false);
-                }}
-              >
-                Cancel
-              </Button>
-              <Button
-                variant="primary"
-                size="lg"
-                onClick={() => {
-                  setSubSheetOpen(false);
-                  setSheetOpen(false);
-                }}
-              >
-                Create
-              </Button>
-            </BottomBar>
-          }
         >
           <Section padding="compact">
             <Container gap="compact">
-              <p style={{ margin: '0 0 1rem', opacity: 0.7 }}>
-                Sub-level sheet: Back returns to parent, Close dismisses all.
+              <p style={{ margin: '0 0 1rem', color: 'var(--color-text-subtle-default)' }}>
+                Non-Modal Sub-Level Dialog: Back returns to parent sheet, Close dismisses all.
+                No Cancel/Submit buttons — this is purely presentational.
               </p>
               <Card padding="none">
-                <ListItem label="Name" trailing={<span style={{ opacity: 0.7 }}>Enter name...</span>} />
-                <ListItem label="Description" trailing={<span style={{ opacity: 0.7 }}>Optional</span>} />
-                <ListItem label="Template" trailing={<span style={{ opacity: 0.7 }}>Blank</span>} />
+                <ListItem label="Template" trailing={<span style={{ color: 'var(--color-text-subtle-default)' }}>Blank Project</span>} />
+                <ListItem label="Includes" trailing={<span style={{ color: 'var(--color-text-subtle-default)' }}>Empty canvas</span>} />
+                <ListItem label="Best for" trailing={<span style={{ color: 'var(--color-text-subtle-default)' }}>Starting fresh</span>} />
               </Card>
+              <p style={{ margin: '1rem 0 0', fontSize: '0.875rem', color: 'var(--color-text-subtle-default)' }}>
+                To create a project with this template, dismiss this sheet and use a Modal Dialog with form inputs.
+              </p>
             </Container>
           </Section>
         </Sheet>
@@ -514,7 +508,7 @@ export const ModalDialogDemo: Story = {
       <div style={{ padding: '2rem' }}>
         <div style={{ maxWidth: '400px' }}>
           <h3 style={{ margin: '0 0 0.5rem' }}>Modal Dialog Pattern</h3>
-          <p style={{ margin: '0 0 1rem', opacity: 0.7, fontSize: '0.875rem' }}>
+          <p style={{ margin: '0 0 1rem', fontSize: '0.875rem', color: 'var(--color-text-subtle-default)' }}>
             A blocking dialog that requires user action. Cannot be dismissed by tapping the backdrop.
             On mobile: full-width. On desktop: centered card with backdrop.
           </p>
@@ -530,6 +524,10 @@ export const ModalDialogDemo: Story = {
           size="lg"
           modal
           trailing={<CloseButton onClick={() => setOpen(false)} />}
+          mobileLeadingLabel="Cancel"
+          mobileTrailingLabel="Delete"
+          onMobileLeadingClick={() => setOpen(false)}
+          onMobileTrailingClick={() => setOpen(false)}
           footer={
             <BottomBar variant="actions">
               <Button variant="secondary" size="lg" onClick={() => setOpen(false)}>
@@ -569,14 +567,18 @@ export const TopLevelView: Story = {
 
     return (
       <ViewContainer>
-        <TopBar title="Home" bordered />
+        <TopBar
+          title="Home"
+          trailing={<CartButton />}
+          trailingSecondary={<HeartButton />}
+        />
         <div style={{ flex: 1, overflow: 'auto' }}>
           <Section padding="compact">
             <Container gap="compact">
-              <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.25rem', fontWeight: 600 }}>
+              <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-default-default)' }}>
                 Top-Level View
               </h2>
-              <p style={{ margin: '0 0 1rem', opacity: 0.7, fontSize: '0.875rem' }}>
+              <p style={{ margin: '0 0 1rem', fontSize: '0.875rem', color: 'var(--color-text-subtle-default)' }}>
                 App home screen with floating navigation bar. No back button — this is the root.
               </p>
               <Card padding="none">
@@ -646,23 +648,24 @@ export const SubLevelView: Story = {
         <TopBar
           title="Project Details"
           leading={<BackButton onClick={() => alert('Navigate back')} />}
-          bordered
+          trailing={<CartButton />}
+          trailingSecondary={<HeartButton />}
         />
         <div style={{ flex: 1, overflow: 'auto' }}>
           <Section padding="compact">
             <Container gap="compact">
-              <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.25rem', fontWeight: 600 }}>
+              <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-default-default)' }}>
                 Sub-Level View
               </h2>
-              <p style={{ margin: '0 0 1rem', opacity: 0.7, fontSize: '0.875rem' }}>
+              <p style={{ margin: '0 0 1rem', fontSize: '0.875rem', color: 'var(--color-text-subtle-default)' }}>
                 Deeper view with back button. No bottom navigation bar — user is focused on this
                 content.
               </p>
               <Card padding="none">
-                <ListItem label="Name" trailing={<span style={{ opacity: 0.7 }}>Project Alpha</span>} />
-                <ListItem label="Status" trailing={<span style={{ opacity: 0.7 }}>Active</span>} />
-                <ListItem label="Members" trailing={<span style={{ opacity: 0.7 }}>5</span>} />
-                <ListItem label="Created" trailing={<span style={{ opacity: 0.7 }}>Jan 15, 2024</span>} />
+                <ListItem label="Name" trailing={<span style={{ color: 'var(--color-text-subtle-default)' }}>Project Alpha</span>} />
+                <ListItem label="Status" trailing={<span style={{ color: 'var(--color-text-subtle-default)' }}>Active</span>} />
+                <ListItem label="Members" trailing={<span style={{ color: 'var(--color-text-subtle-default)' }}>5</span>} />
+                <ListItem label="Created" trailing={<span style={{ color: 'var(--color-text-subtle-default)' }}>Jan 15, 2024</span>} />
               </Card>
               <div style={{ marginTop: '1rem' }}>
                 <Button variant="primary" fullWidth>

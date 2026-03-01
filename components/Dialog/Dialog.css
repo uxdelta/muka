@@ -76,6 +76,13 @@
   flex-shrink: 0;
 }
 
+/* Hide footer on mobile for modal dialogs (actions move to TopBar on mobile) */
+@media (max-width: 1023px) {
+  .muka-dialog--lg:not(.muka-dialog--non-modal) .muka-dialog__footer {
+    display: none;
+  }
+}
+
 /* ─── Non-modal modifier ──────────────────────────────── */
 
 .muka-dialog--non-modal::backdrop {
@@ -98,5 +105,29 @@
     box-shadow: var(--dialog-shadow-default);
     overflow: hidden;
     max-height: 90vh;
+  }
+}
+
+/* ─── Responsive visibility helpers ──────────────────── */
+
+/* Visible on desktop only (≥ 1024px) */
+.muka-dialog__desktop-only {
+  display: flex;
+}
+
+@media (max-width: 1023px) {
+  .muka-dialog__desktop-only {
+    display: none;
+  }
+}
+
+/* Visible on mobile only (< 1024px) */
+.muka-dialog__mobile-only {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .muka-dialog__mobile-only {
+    display: flex;
   }
 }

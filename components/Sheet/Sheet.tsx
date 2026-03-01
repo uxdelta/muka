@@ -120,7 +120,6 @@ export const Sheet: React.FC<SheetProps> = ({
           title={title}
           trailing={trailing}
           variant="draggable"
-          bordered
         />
 
         <div className="muka-sheet__body">

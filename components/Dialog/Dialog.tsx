@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import { TopBar } from '../TopBar';
+import { Button } from '../Button';
 import './Dialog.css';
 
 export interface DialogProps {
@@ -29,6 +30,18 @@ export interface DialogProps {
 
   /** Footer content (e.g. BottomBar with action buttons) */
   footer?: React.ReactNode;
+
+  /** Mobile-only: leading action text (e.g., "Cancel") */
+  mobileLeadingLabel?: string;
+
+  /** Mobile-only: trailing action text (e.g., "Done") */
+  mobileTrailingLabel?: string;
+
+  /** Callback for mobile leading action */
+  onMobileLeadingClick?: () => void;
+
+  /** Callback for mobile trailing action (defaults to onClose) */
+  onMobileTrailingClick?: () => void;
 
   /** Accessible label */
   'aria-label'?: string;
@@ -70,6 +83,10 @@ export const Dialog: React.FC<DialogProps> = ({
   leading,
   trailing,
   footer,
+  mobileLeadingLabel,
+  mobileTrailingLabel,
+  onMobileLeadingClick,
+  onMobileTrailingClick,
   'aria-label': ariaLabel,
   'aria-describedby': ariaDescribedBy,
   className = '',
@@ -136,9 +153,36 @@ export const Dialog: React.FC<DialogProps> = ({
       <div className="muka-dialog__surface">
         <TopBar
           title={title}
-          leading={leading}
-          trailing={trailing}
-          bordered={size === 'sm'}
+          leading={
+            <>
+              {/* Desktop: original leading (if any) */}
+              {leading && <span className="muka-dialog__desktop-only">{leading}</span>}
+
+              {/* Mobile: Cancel/leading button */}
+              {mobileLeadingLabel && (
+                <span className="muka-dialog__mobile-only">
+                  <Button variant="tertiary" size="sm" onClick={onMobileLeadingClick}>
+                    {mobileLeadingLabel}
+                  </Button>
+                </span>
+              )}
+            </>
+          }
+          trailing={
+            <>
+              {/* Desktop: original trailing (close button) */}
+              {trailing && <span className="muka-dialog__desktop-only">{trailing}</span>}
+
+              {/* Mobile: Done/trailing button */}
+              {mobileTrailingLabel && (
+                <span className="muka-dialog__mobile-only">
+                  <Button variant="primary" size="sm" onClick={onMobileTrailingClick || onClose}>
+                    {mobileTrailingLabel}
+                  </Button>
+                </span>
+              )}
+            </>
+          }
         />
 
         <div className="muka-dialog__body">
