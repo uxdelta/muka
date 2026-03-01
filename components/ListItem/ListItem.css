@@ -67,6 +67,11 @@
   display: none;
 }
 
+/* Center content vertically when no caption */
+.muka-listitem--no-caption {
+  align-items: center;
+}
+
 /* Leading content (icon or image) */
 .muka-listitem__leading {
   display: flex;
@@ -161,8 +166,8 @@
 .muka-listitem__divider {
   position: absolute;
   bottom: 0;
-  left: var(--spacing-4);
-  right: var(--spacing-4);
+  left: 0;
+  right: 0;
   height: 1px;
   background-color: var(--color-border-default);
 }

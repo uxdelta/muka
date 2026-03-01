@@ -50,6 +50,9 @@ export interface CardProps {
  * - Semantic HTML element support
  * - Multi-brand theming through design tokens
  *
+ * @usage When containing ListItem components, use `padding="none"` to avoid
+ * double padding since ListItems have their own internal padding.
+ *
  * @accessibility WCAG 2.1 AA compliant
  * - Interactive cards have role="button" for assistive technology
  * - Keyboard support: Enter and Space keys activate the card
@@ -63,7 +66,7 @@ export const Card: React.FC<CardProps> = ({
   children,
   variant = 'default',
   padding = 'md',
-  radius = 'md',
+  radius = 'lg',
   as = 'div',
   onClick,
   selected = false,

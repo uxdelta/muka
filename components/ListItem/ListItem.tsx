@@ -136,6 +136,7 @@ export const ListItem: React.FC<ListItemProps> = ({
     selected && 'muka-listitem--selected',
     isPressed && 'muka-listitem--pressed',
     !showDivider && 'muka-listitem--no-divider',
+    !caption && 'muka-listitem--no-caption',
     className
   ].filter(Boolean).join(' ');
 

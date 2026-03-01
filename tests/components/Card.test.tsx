@@ -14,7 +14,7 @@ describe('Card Component', () => {
       const { container } = render(<Card>Content</Card>);
       expect(container.querySelector('.muka-card')).toBeInTheDocument();
       expect(container.querySelector('.muka-card--padding-md')).toBeInTheDocument();
-      expect(container.querySelector('.muka-card--radius-md')).toBeInTheDocument();
+      expect(container.querySelector('.muka-card--radius-lg')).toBeInTheDocument();
     });
 
     it('applies padding variants', () => {
