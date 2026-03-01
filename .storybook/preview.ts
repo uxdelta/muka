@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react';
 import { MINIMAL_VIEWPORTS } from 'storybook/viewport';
 import { create } from 'storybook/theming';
-import { withTheme } from './ThemeDecorator';
+import { withTheme, withLayout } from './ThemeDecorator';
 
 const docsTheme = create({
   base: 'light',
@@ -82,9 +82,9 @@ const preview: Preview = {
   initialGlobals: {
     brand: 'muka',
     mode: 'light',
-    viewport: 'responsive',
+    viewport: 'mobile2',
   },
-  decorators: [withTheme],
+  decorators: [withTheme, withLayout],
   parameters: {
     options: {
       storySort: {
@@ -96,7 +96,7 @@ const preview: Preview = {
         ...MINIMAL_VIEWPORTS,
         ...customViewports,
       },
-      defaultViewport: 'responsive',
+      defaultViewport: 'mobile2',
     },
     design: {
       type: 'figma',

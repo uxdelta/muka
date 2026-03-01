@@ -1442,7 +1442,7 @@
   --select-field-height-lg: 3rem;
   --dialog-color-backdrop: rgba(0, 0, 0, 0.565);
   --dialog-color-background: #fcfcfc;
-  --dialog-color-body-background: #e8e8e8;
+  --dialog-color-body-background: #fcfcfc;
   --dialog-border-radius: 1.5rem;
   --dialog-shadow-default: {shadow.600};
   --dialog-width-sm: 35rem;
@@ -1641,7 +1641,7 @@
   --bottombar-navigation-floating-padding: 0.5rem;
   --sheet-color-backdrop: rgba(0, 0, 0, 0.141);
   --sheet-color-background: #fcfcfc;
-  --sheet-color-body-background: #e8e8e8;
+  --sheet-color-body-background: #fcfcfc;
   --sheet-border-radius: 1.5rem;
   --sheet-shadow-default: {shadow.600};
   --sheet-padding-x: 1rem;

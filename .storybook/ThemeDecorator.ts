@@ -1,5 +1,7 @@
 import React, { useEffect, type ReactNode } from 'react';
 import type { Decorator } from '@storybook/react';
+import { Section } from '../components/Section';
+import { Container } from '../components/Container';
 
 const THEME_LINK_ID = 'muka-theme-tokens';
 const BRANDS = ['muka', 'wireframe'] as const;
@@ -67,5 +69,18 @@ export const withTheme: Decorator = (Story, context) => {
     ThemeWrapper,
     { brand, mode, dataLayout },
     React.createElement(Story)
+  );
+};
+
+export const withLayout: Decorator = (Story, context) => {
+  // Skip wrapper for fullscreen stories
+  if (context.parameters?.layout === 'fullscreen') {
+    return React.createElement(Story);
+  }
+
+  return React.createElement(
+    Section,
+    null,
+    React.createElement(Container, null, React.createElement(Story))
   );
 };

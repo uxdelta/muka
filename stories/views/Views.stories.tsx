@@ -12,6 +12,8 @@ import {
   Container,
   ListItem,
   Card,
+  Input,
+  Select,
 } from '../../components';
 
 const meta: Meta = {
@@ -47,19 +49,15 @@ These patterns define how users navigate through the app and interact with conte
 export default meta;
 type Story = StoryObj;
 
-/* ─── Helper: MobileFrame container ───────────────────── */
+/* ─── Helper: Full viewport container ───────────────────── */
 
-const MobileFrame: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+const ViewContainer: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <div
     style={{
-      width: '375px',
-      height: '667px',
+      height: '100vh',
       display: 'flex',
       flexDirection: 'column',
-      border: '1px solid var(--color-border-default)',
-      borderRadius: '12px',
-      overflow: 'hidden',
-      background: 'var(--color-surface-level0)',
+      background: 'var(--color-surface-level2)',
       position: 'relative',
     }}
   >
@@ -86,30 +84,33 @@ const CloseButton = ({ onClick }: { onClick: () => void }) => (
 const HomeContent: React.FC<{ onItemClick: (id: string) => void }> = ({ onItemClick }) => (
   <Section padding="compact">
     <Container gap="compact">
-      <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.25rem', fontWeight: 600 }}>
+      <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-default-default)' }}>
         Welcome Back
       </h2>
-      <p style={{ margin: '0 0 1rem', opacity: 0.7, fontSize: '0.875rem' }}>
+      <p style={{ margin: '0 0 1rem', fontSize: '0.875rem', color: 'var(--color-text-subtle-default)' }}>
         Your recent items
       </p>
-      <Card>
+      <Card padding="none">
         <ListItem
           label="Project Alpha"
-          description="Last edited 2 hours ago"
+          caption="Last edited 2 hours ago"
+          leadingImage="https://picsum.photos/seed/alpha/80/80"
+          showChevron
           onClick={() => onItemClick('alpha')}
-          trailing={<Icon name="arrow-right-s" size="sm" />}
         />
         <ListItem
           label="Project Beta"
-          description="Last edited yesterday"
+          caption="Last edited yesterday"
+          leadingImage="https://picsum.photos/seed/beta/80/80"
+          showChevron
           onClick={() => onItemClick('beta')}
-          trailing={<Icon name="arrow-right-s" size="sm" />}
         />
         <ListItem
           label="Project Gamma"
-          description="Last edited 3 days ago"
+          caption="Last edited 3 days ago"
+          leadingImage="https://picsum.photos/seed/gamma/80/80"
+          showChevron
           onClick={() => onItemClick('gamma')}
-          trailing={<Icon name="arrow-right-s" size="sm" />}
         />
       </Card>
     </Container>
@@ -122,13 +123,13 @@ const ProjectDetailContent: React.FC<{ projectId: string; onEditClick: () => voi
 }) => (
   <Section padding="compact">
     <Container gap="compact">
-      <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.25rem', fontWeight: 600 }}>
+      <h2 style={{ margin: '0 0 0.5rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-default-default)' }}>
         Project {projectId.charAt(0).toUpperCase() + projectId.slice(1)}
       </h2>
-      <p style={{ margin: '0 0 1rem', opacity: 0.7, fontSize: '0.875rem' }}>
+      <p style={{ margin: '0 0 1rem', fontSize: '0.875rem', color: 'var(--color-text-subtle-default)' }}>
         Project details and settings
       </p>
-      <Card>
+      <Card padding="none">
         <ListItem label="Status" trailing={<span style={{ opacity: 0.7 }}>Active</span>} />
         <ListItem label="Members" trailing={<span style={{ opacity: 0.7 }}>5</span>} />
         <ListItem label="Created" trailing={<span style={{ opacity: 0.7 }}>Jan 15, 2024</span>} />
@@ -156,11 +157,53 @@ export const NavigationFlow: Story = {
     const [activeTab, setActiveTab] = useState<'home' | 'search' | 'profile'>('home');
     const [selectedProject, setSelectedProject] = useState<string | null>(null);
     const [editDialogOpen, setEditDialogOpen] = useState(false);
+    const [confirmSheetOpen, setConfirmSheetOpen] = useState(false);
+
+    // Initial values to detect changes
+    const initialValues = { name: 'Alpha', description: '', visibility: 'private' };
+
+    // Form state for edit dialog
+    const [projectName, setProjectName] = useState(initialValues.name);
+    const [projectDescription, setProjectDescription] = useState(initialValues.description);
+    const [visibility, setVisibility] = useState(initialValues.visibility);
+
+    // Check if form has unsaved changes
+    const hasChanges =
+      projectName !== initialValues.name ||
+      projectDescription !== initialValues.description ||
+      visibility !== initialValues.visibility;
+
+    const handleCloseOrCancel = () => {
+      if (hasChanges) {
+        setConfirmSheetOpen(true);
+      } else {
+        setEditDialogOpen(false);
+      }
+    };
+
+    const handleSaveChanges = () => {
+      // Save and close directly (no confirmation needed)
+      setEditDialogOpen(false);
+    };
+
+    const handleConfirmSave = () => {
+      setConfirmSheetOpen(false);
+      setEditDialogOpen(false);
+    };
+
+    const handleDiscardChanges = () => {
+      // Reset form values
+      setProjectName(initialValues.name);
+      setProjectDescription(initialValues.description);
+      setVisibility(initialValues.visibility);
+      setConfirmSheetOpen(false);
+      setEditDialogOpen(false);
+    };
 
     // Top-Level View (home with tabs)
     if (!selectedProject) {
       return (
-        <MobileFrame>
+        <ViewContainer>
           <TopBar title="Home" bordered />
           <div style={{ flex: 1, overflow: 'auto' }}>
             <HomeContent onItemClick={setSelectedProject} />
@@ -185,13 +228,13 @@ export const NavigationFlow: Story = {
               onClick={() => setActiveTab('profile')}
             />
           </BottomBar>
-        </MobileFrame>
+        </ViewContainer>
       );
     }
 
     // Sub-Level View (project detail)
     return (
-      <MobileFrame>
+      <ViewContainer>
         <TopBar
           title="Project Details"
           leading={<BackButton onClick={() => setSelectedProject(null)} />}
@@ -204,40 +247,81 @@ export const NavigationFlow: Story = {
           />
         </div>
 
-        {/* Modal Dialog */}
+        {/* Edit Project Dialog - only close button, no back button */}
         <Dialog
           open={editDialogOpen}
-          onClose={() => setEditDialogOpen(false)}
+          onClose={handleCloseOrCancel}
           title="Edit Project"
           size="lg"
           modal
-          leading={<BackButton onClick={() => setEditDialogOpen(false)} />}
-          trailing={<CloseButton onClick={() => setEditDialogOpen(false)} />}
+          trailing={<CloseButton onClick={handleCloseOrCancel} />}
           footer={
             <BottomBar variant="actions">
-              <Button variant="secondary" size="lg" onClick={() => setEditDialogOpen(false)}>
+              <Button variant="secondary" size="lg" onClick={handleCloseOrCancel}>
                 Cancel
               </Button>
-              <Button variant="primary" size="lg" onClick={() => setEditDialogOpen(false)}>
-                Save Changes
+              <Button variant="primary" size="lg" onClick={handleSaveChanges}>
+                Save
               </Button>
             </BottomBar>
           }
         >
           <Section padding="compact">
             <Container gap="compact">
-              <p style={{ margin: '0 0 1rem', opacity: 0.7 }}>
-                This modal dialog blocks interaction until dismissed.
-              </p>
-              <Card>
-                <ListItem label="Project Name" trailing={<span style={{ opacity: 0.7 }}>Alpha</span>} />
-                <ListItem label="Description" trailing={<span style={{ opacity: 0.7 }}>Edit...</span>} />
-                <ListItem label="Visibility" trailing={<span style={{ opacity: 0.7 }}>Private</span>} />
-              </Card>
+              <Input
+                label="Project Name"
+                value={projectName}
+                onChange={(e) => setProjectName(e.target.value)}
+                placeholder="Enter project name"
+                fullWidth
+              />
+              <Input
+                label="Description"
+                value={projectDescription}
+                onChange={(e) => setProjectDescription(e.target.value)}
+                placeholder="Enter project description"
+                fullWidth
+              />
+              <Select
+                label="Visibility"
+                value={visibility}
+                onChange={(e) => setVisibility(e.target.value)}
+                options={[
+                  { value: 'private', label: 'Private' },
+                  { value: 'public', label: 'Public' },
+                ]}
+                fullWidth
+              />
             </Container>
           </Section>
+
+          {/* Save Changes Confirmation Sheet (non-modal, inside Dialog) */}
+          {confirmSheetOpen && (
+            <Sheet
+              open={confirmSheetOpen}
+              onClose={() => setConfirmSheetOpen(false)}
+              title="Save changes?"
+              snapPoint="content"
+            >
+              <Section padding="compact" style={{ padding: 0 }}>
+                <Container gap="compact" style={{ maxWidth: 'none' }}>
+                  <p style={{ margin: 0, color: 'var(--color-text-subtle-default)' }}>
+                    You have made changes. Do you want to save them?
+                  </p>
+                  <BottomBar variant="actions">
+                    <Button variant="secondary" size="lg" onClick={handleDiscardChanges}>
+                      Discard
+                    </Button>
+                    <Button variant="primary" size="lg" onClick={handleConfirmSave}>
+                      Save
+                    </Button>
+                  </BottomBar>
+                </Container>
+              </Section>
+            </Sheet>
+          )}
         </Dialog>
-      </MobileFrame>
+      </ViewContainer>
     );
   },
 };
@@ -258,7 +342,7 @@ export const SheetFlow: Story = {
     const [subSheetOpen, setSubSheetOpen] = useState(false);
 
     return (
-      <MobileFrame>
+      <ViewContainer>
         <TopBar
           title="Home"
           trailing={
@@ -277,7 +361,7 @@ export const SheetFlow: Story = {
               <p style={{ margin: '0 0 1rem', opacity: 0.7, fontSize: '0.875rem' }}>
                 Tap the + button to open a non-modal sheet
               </p>
-              <Card>
+              <Card padding="none">
                 <ListItem
                   label="Create New Project"
                   description="Start from scratch"
@@ -328,7 +412,7 @@ export const SheetFlow: Story = {
               <p style={{ margin: '0 0 1rem', opacity: 0.7 }}>
                 Choose what you want to create. Tap backdrop to dismiss.
               </p>
-              <Card>
+              <Card padding="none">
                 <ListItem
                   label="Blank Project"
                   description="Start with an empty canvas"
@@ -400,7 +484,7 @@ export const SheetFlow: Story = {
               <p style={{ margin: '0 0 1rem', opacity: 0.7 }}>
                 Sub-level sheet: Back returns to parent, Close dismisses all.
               </p>
-              <Card>
+              <Card padding="none">
                 <ListItem label="Name" trailing={<span style={{ opacity: 0.7 }}>Enter name...</span>} />
                 <ListItem label="Description" trailing={<span style={{ opacity: 0.7 }}>Optional</span>} />
                 <ListItem label="Template" trailing={<span style={{ opacity: 0.7 }}>Blank</span>} />
@@ -408,7 +492,7 @@ export const SheetFlow: Story = {
             </Container>
           </Section>
         </Sheet>
-      </MobileFrame>
+      </ViewContainer>
     );
   },
 };
@@ -484,7 +568,7 @@ export const TopLevelView: Story = {
     const [activeTab, setActiveTab] = useState<'home' | 'search' | 'alerts' | 'profile'>('home');
 
     return (
-      <MobileFrame>
+      <ViewContainer>
         <TopBar title="Home" bordered />
         <div style={{ flex: 1, overflow: 'auto' }}>
           <Section padding="compact">
@@ -495,7 +579,7 @@ export const TopLevelView: Story = {
               <p style={{ margin: '0 0 1rem', opacity: 0.7, fontSize: '0.875rem' }}>
                 App home screen with floating navigation bar. No back button — this is the root.
               </p>
-              <Card>
+              <Card padding="none">
                 <ListItem
                   label="Feature 1"
                   description="Tap to navigate deeper"
@@ -541,7 +625,7 @@ export const TopLevelView: Story = {
             onClick={() => setActiveTab('profile')}
           />
         </BottomBar>
-      </MobileFrame>
+      </ViewContainer>
     );
   },
 };
@@ -558,7 +642,7 @@ export const SubLevelView: Story = {
   },
   render: () => {
     return (
-      <MobileFrame>
+      <ViewContainer>
         <TopBar
           title="Project Details"
           leading={<BackButton onClick={() => alert('Navigate back')} />}
@@ -574,7 +658,7 @@ export const SubLevelView: Story = {
                 Deeper view with back button. No bottom navigation bar — user is focused on this
                 content.
               </p>
-              <Card>
+              <Card padding="none">
                 <ListItem label="Name" trailing={<span style={{ opacity: 0.7 }}>Project Alpha</span>} />
                 <ListItem label="Status" trailing={<span style={{ opacity: 0.7 }}>Active</span>} />
                 <ListItem label="Members" trailing={<span style={{ opacity: 0.7 }}>5</span>} />
@@ -588,7 +672,7 @@ export const SubLevelView: Story = {
             </Container>
           </Section>
         </div>
-      </MobileFrame>
+      </ViewContainer>
     );
   },
 };
