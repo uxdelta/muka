@@ -1,5 +1,5 @@
 import React, { useState, forwardRef } from 'react';
-import { warnMissingA11yProp, VISUALLY_HIDDEN_CLASS } from '../../utils/accessibility';
+import { warnMissingA11yProp } from '../../utils/accessibility';
 import './Button.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -144,12 +144,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           </span>
         )}
 
-        {showLabel && <span className="muka-button__label">{children}</span>}
-
-        {/* Visually hidden fallback for icon-only buttons without aria-label */}
-        {iconOnly && !props['aria-label'] && (
-          <span className={VISUALLY_HIDDEN_CLASS}>{children}</span>
+        {/* When iconOnly and no iconLeft/iconRight, render children as the icon */}
+        {iconOnly && !hasLeftIcon && !hasRightIcon && (
+          <span className="muka-button__icon">{children}</span>
         )}
+
+        {showLabel && <span className="muka-button__label">{children}</span>}
 
         {hasRightIcon && (
           <span className={`muka-button__icon ${showLabel ? 'muka-button__icon--right' : ''}`}>

@@ -5,7 +5,24 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: currentColor;
+  color: var(--color-icon-default-default, currentColor);
+}
+
+/* Icons inside buttons should inherit from button's foreground color */
+.muka-button .muka-icon {
+  color: inherit;
+}
+
+.muka-icon--subtle {
+  color: var(--color-icon-subtle-default);
+}
+
+.muka-icon--muted {
+  color: var(--color-icon-muted-default);
+}
+
+.muka-icon--inverse {
+  color: var(--color-icon-default-inverse);
 }
 
 .muka-icon--xs {

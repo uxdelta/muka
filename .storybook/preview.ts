@@ -88,7 +88,7 @@ const preview: Preview = {
   parameters: {
     options: {
       storySort: {
-        order: ['Documentation', 'Design Tokens', 'Components'],
+        order: ['Documentation', 'Design Tokens', 'Views', 'Components'],
       },
     },
     viewport: {

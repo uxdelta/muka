@@ -919,6 +919,11 @@
   --color-surface-level3: #fcfcfc;
   --color-surface-backdrop: rgba(0, 0, 0, 0.565);
   --color-surface-inverse: #202020;
+  --color-icon-default-default: #202020;
+  --color-icon-default-inverse: #fcfcfc;
+  --color-icon-subtle-default: #838383;
+  --color-icon-subtle-inverse: #e8e8e8;
+  --color-icon-muted-default: #bbbbbb;
   --color-text-default-default: #202020;
   --color-text-default-inverse: #fcfcfc;
   --color-text-subtle-default: #838383;

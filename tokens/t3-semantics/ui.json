@@ -111,6 +111,79 @@
         }
       }
     },
+    "icon": {
+      "default": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.neutral.12}",
+          "$rag": {
+            "description": "Primary icon color matching default text",
+            "usage": ["Navigation icons", "Action icons", "UI indicators"],
+            "accessibility": "Ensures WCAG AA compliance with minimum 4.5:1 contrast ratio",
+            "relationships": ["color.text.default.default", "color.icon.subtle.default"],
+            "examples": ["Menu icons", "Button icons", "List item icons"],
+            "brand-impact": "Low - neutral icon color",
+            "semantic-meaning": "Default icon color for UI elements"
+          }
+        },
+        "inverse": {
+          "$type": "color",
+          "$value": "{alias.color.neutral.1}",
+          "$rag": {
+            "description": "Inverted icon color for dark backgrounds",
+            "usage": ["Icons on dark surfaces", "Button icons on primary", "Icons on inverse backgrounds"],
+            "accessibility": "Provides sufficient contrast on inverse surfaces",
+            "relationships": ["color.text.default.inverse", "color.surface.inverse"],
+            "examples": ["Primary button icons", "Dark tooltip icons", "Icons on dark cards"],
+            "brand-impact": "Low - functional inverse icon",
+            "semantic-meaning": "High-contrast icon for dark backgrounds"
+          }
+        }
+      },
+      "subtle": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.neutral.9}",
+          "$rag": {
+            "description": "Secondary icon color for supporting elements",
+            "usage": ["Secondary icons", "Decorative icons", "Metadata icons", "Inactive states"],
+            "accessibility": "Maintains readable contrast while being visually subdued",
+            "relationships": ["color.text.subtle.default", "color.icon.default.default"],
+            "examples": ["Trailing icons", "Info icons", "Status indicators"],
+            "brand-impact": "Low - neutral subdued icon",
+            "semantic-meaning": "Secondary icon color for less prominent elements"
+          }
+        },
+        "inverse": {
+          "$type": "color",
+          "$value": "{alias.color.neutral.3}",
+          "$rag": {
+            "description": "Subtle icon color for dark backgrounds",
+            "usage": ["Secondary icons on dark", "Supporting icons on inverse surfaces"],
+            "accessibility": "Provides contrast on dark backgrounds while remaining subtle",
+            "relationships": ["color.text.subtle.inverse", "color.icon.default.inverse"],
+            "examples": ["Secondary icons on dark cards", "Metadata icons on inverse backgrounds"],
+            "brand-impact": "Low - functional subtle inverse icon",
+            "semantic-meaning": "Subdued icon for dark backgrounds"
+          }
+        }
+      },
+      "muted": {
+        "default": {
+          "$type": "color",
+          "$value": "{alias.color.neutral.7}",
+          "$rag": {
+            "description": "Tertiary icon color for minimal emphasis",
+            "usage": ["Disabled icons", "Placeholder icons", "Deemphasized indicators"],
+            "accessibility": "May not meet AA standards - use sparingly for non-critical icons",
+            "relationships": ["color.text.muted.default", "color.icon.subtle.default"],
+            "examples": ["Disabled button icons", "Empty state icons", "Inactive indicators"],
+            "brand-impact": "Low - minimal visibility icon",
+            "semantic-meaning": "Minimal emphasis icon for tertiary content"
+          }
+        }
+      }
+    },
     "text": {
       "default": {
         "default": {

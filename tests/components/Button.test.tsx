@@ -191,14 +191,16 @@ describe('Button Component', () => {
       expect(button).toBeInTheDocument();
     });
 
-    it('maintains label text for screen readers when iconOnly is true', () => {
+    it('renders children as icon when iconOnly is true without iconLeft/iconRight', () => {
       render(
-        <Button iconLeft={<PlusIcon />} iconOnly={true}>
-          Add Item
+        <Button iconOnly={true} aria-label="Add Item">
+          <PlusIcon />
         </Button>
       );
-      // Label text should still be in DOM for accessibility (visually hidden)
-      expect(screen.getByText('Add Item')).toBeInTheDocument();
+      // Children should be rendered as the icon when iconOnly and no iconLeft/iconRight
+      expect(screen.getByTestId('plus-icon')).toBeInTheDocument();
+      // The button should have the icon wrapper
+      expect(screen.getByRole('button').querySelector('.muka-button__icon')).toBeInTheDocument();
     });
 
     it('warns in dev when iconOnly lacks aria-label', () => {

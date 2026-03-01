@@ -17,7 +17,10 @@ export interface IconProps {
   /** Size variant — uses icon.size tokens */
   size?: 'xs' | 'sm' | 'md' | 'lg';
 
-  /** Color override (defaults to currentColor) */
+  /** Color variant — uses icon.color tokens for theme-aware colors */
+  colorVariant?: 'default' | 'subtle' | 'muted' | 'inverse';
+
+  /** Color override (overrides colorVariant) */
   color?: string;
 
   /** Accessible label (sets aria-label) */
@@ -42,6 +45,7 @@ export const Icon: React.FC<IconProps> = ({
   variant = 'line',
   children,
   size = 'md',
+  colorVariant,
   color,
   label,
   className = '',
@@ -50,6 +54,7 @@ export const Icon: React.FC<IconProps> = ({
   const iconClasses = [
     'muka-icon',
     `muka-icon--${size}`,
+    colorVariant && colorVariant !== 'default' && `muka-icon--${colorVariant}`,
     className,
   ].filter(Boolean).join(' ');
 
